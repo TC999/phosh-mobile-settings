@@ -142,6 +142,61 @@
                   </object>
                 </child>
 
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="description" translatable="yes">Notification categories that wake up the screen independent from their urgency</property>
+                    <child>
+                      <object class="AdwSwitchRow" id="call_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">Calls</property>
+                        <property name="subtitle" translatable="yes">A generic audio or video call notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="device_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">Device events</property>
+                        <property name="subtitle" translatable="yes">A generic device-related notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="email_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">Emails</property>
+                        <property name="subtitle" translatable="yes">A generic e-mail-related notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="im_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">Instant Messages</property>
+                        <property name="subtitle" translatable="yes">A generic instant message-related notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="network_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">Network events</property>
+                        <property name="subtitle" translatable="yes">A generic network notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="presence_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">Presence changes</property>
+                        <property name="subtitle" translatable="yes">A generic presence change notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="transfer_notifications_wakeup_switch">
+                        <property name="title" translatable="yes">File transfers</property>
+                        <property name="subtitle" translatable="yes">A generic file transfer or download notification</property>
+                        <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
               </object>
             </child>
           </object>
