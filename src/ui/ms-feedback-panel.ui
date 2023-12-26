@@ -91,9 +91,10 @@
                 <child>
                   <object class="AdwPreferencesGroup">
                     <property name="title" translatable="yes">Screen Wakeup</property>
+                    <property name="description" translatable="yes">Notification categories and urgency that wake up the screen</property>
                     <child>
                       <object class="AdwComboRow" id="notificationssettings_row">
-                        <property name="title" translatable="yes">Notification urgency that lights up the screen</property>
+                        <property name="title" translatable="yes">Lowest urgency that wakes up the screen</property>
                         <property name="use_underline">True</property>
                         <signal name="notify::selected-item" handler="change_notifications_settings" object="MsFeedbackPanel" swapped="yes"/>
                         <property name="model">
@@ -107,6 +108,110 @@
                       </object>
                     </child>
                   </object>
+                </child>
+
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="description" translatable="yes">Additional notification categories that wake up the screen</property>
+                    <child>
+                      <object class="GtkListBox">
+                        <property name="selection-mode">none</property>
+                        <style>
+                          <class name="boxed-list"/>
+                        </style>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Device events</property>
+                            <property name="use-underline">true</property>
+                            <child>
+                              <object class="GtkSwitch" id="device_notifications_wakeup_switch">
+                                <property name="valign">center</property>
+                                <signal name="state-set" handler="on_notifications_wakeup_state_set" object="MsFeedbackPanel" swapped="yes"/>
+                                <accessibility>
+                                  <property name="label" translatable="yes">Enabled</property>
+                                </accessibility>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Emails</property>
+                            <property name="use-underline">true</property>
+                            <child>
+                              <object class="GtkSwitch" id="email_notifications_wakeup_switch">
+                                <property name="valign">center</property>
+                                <signal name="state-set" handler="on_notifications_wakeup_state_set" object="MsFeedbackPanel" swapped="yes"/>
+                                <accessibility>
+                                  <property name="label" translatable="yes">Enabled</property>
+                                </accessibility>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Instant Messages</property>
+                            <property name="use-underline">true</property>
+                            <child>
+                              <object class="GtkSwitch" id="im_notifications_wakeup_switch">
+                                <property name="valign">center</property>
+                                <signal name="state-set" handler="on_notifications_wakeup_state_set" object="MsFeedbackPanel" swapped="yes"/>
+                                <accessibility>
+                                  <property name="label" translatable="yes">Enabled</property>
+                                </accessibility>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Network events</property>
+                            <property name="use-underline">true</property>
+                            <child>
+                              <object class="GtkSwitch" id="network_notifications_wakeup_switch">
+                                <property name="valign">center</property>
+                                <signal name="state-set" handler="on_notifications_wakeup_state_set" object="MsFeedbackPanel" swapped="yes"/>
+                                <accessibility>
+                                  <property name="label" translatable="yes">Enabled</property>
+                                </accessibility>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Presence changes</property>
+                            <property name="use-underline">true</property>
+                            <child>
+                              <object class="GtkSwitch" id="presence_notifications_wakeup_switch">
+                                <property name="valign">center</property>
+                                <signal name="state-set" handler="on_notifications_wakeup_state_set" object="MsFeedbackPanel" swapped="yes"/>
+                                <accessibility>
+                                  <property name="label" translatable="yes">Enabled</property>
+                                </accessibility>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">File transfers</property>
+                            <property name="use-underline">true</property>
+                            <child>
+                              <object class="GtkSwitch" id="transfer_notifications_wakeup_switch">
+                                <property name="valign">center</property>
+                                <signal name="state-set" handler="on_notifications_wakeup_state_set" object="MsFeedbackPanel" swapped="yes"/>
+                                <accessibility>
+                                  <property name="label" translatable="yes">Enabled</property>
+                                </accessibility>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>  
                 </child>
               </object>
             </child>
