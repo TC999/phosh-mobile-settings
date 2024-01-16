@@ -707,8 +707,8 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
 
   g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
                            G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
+  // g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
+  //                          G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
   on_notifications_settings_changed (self);
 
   g_signal_connect_swapped (self->notifications_settings,
