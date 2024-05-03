@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-04-29 13:18+0000\n"
-"PO-Revision-Date: 2024-05-03 17:43+0200\n"
+"POT-Creation-Date: 2024-05-03 15:44+0000\n"
+"PO-Revision-Date: 2024-05-03 17:45+0200\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -17,12 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
 "%100<=4 ? 2 : 3);\n"
-"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 2.2.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
-#: src/ui/mobile-settings-window.ui:6
+#: src/mobile-settings-application.c:218 src/ui/mobile-settings-window.ui:6
 msgid "Mobile Settings"
 msgstr "Nastavitve mobilnega telefona"
 
@@ -47,16 +47,16 @@ msgstr ""
 msgid "Advanced settings for Mobile devices using Phosh"
 msgstr "Napredne nastavitve za mobilne naprave, ki uporabljajo Phosh"
 
-#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:36
 msgid "Available panels"
 msgstr "Razpoložljivi pulti"
 
-#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
 #, fuzzy
 msgid "Compositor panel"
 msgstr "Plošča skladatelja"
 
-#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
 msgid "Feedback panel"
 msgstr "Podokno s povratnimi informacijami"
 
@@ -64,47 +64,6 @@ msgstr "Podokno s povratnimi informacijami"
 #, c-format
 msgid "Critical temperature is %.2f°C"
 msgstr "Kritična temperatura je %.2f °C"
-
-#. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:19
-msgid "U-Boot"
-msgstr "U-Boot"
-
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:31
-msgid "Suspend device"
-msgstr "Postavi napravo v stanje pripravljenosti"
-
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
-msgid "Suspend is experimental"
-msgstr "Stanje pripravljenosti je poskusno"
-
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:51
-msgid "Temperatures"
-msgstr "Temperature"
-
-#. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:55
-msgid "CPU"
-msgstr "Obremenite CPE"
-
-#. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:74
-msgid "GPU"
-msgstr "GPE"
-
-#. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:93
-msgid "VPU"
-msgstr "VPE"
-
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:111
-#, fuzzy
-msgid "Fuel Gauge"
-msgstr "Merilnik goriva"
-
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:129
-msgid "Battery"
-msgstr "Baterija"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -121,45 +80,36 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Konča program"
 
-#: src/mobile-settings-application.c:28
-msgid "- Manage your mobile settings"
-msgstr "- Upravljajte nastavitve svojega mobilnika"
+#: src/mobile-settings-application.c:228
+msgid "translator-credits"
+msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/mobile-settings-window.c:77
+#: src/mobile-settings-window.c:73
 msgid "Device"
 msgstr "Naprava"
 
-#: src/ms-feedback-panel.c:135
-msgid "Sound file does not exist"
-msgstr "Zvočna datoteka ne obstaja"
-
-#: src/ms-feedback-panel.c:137
-msgid "Sound file is corrupt"
-msgstr "Zvočna datoteka je okvarjena"
-
-#: src/ms-feedback-panel.c:139
+#: src/ms-feedback-panel.c:114
 msgid "Failed to play sound"
 msgstr "Predvajanje zvoka ni uspelo"
 
-#: src/ms-feedback-panel.c:178
+#: src/ms-feedback-panel.c:147
 #, c-format
 msgid "Playing %s"
 msgstr "Igranje %s"
 
-#: src/ms-feedback-panel.c:339 src/ms-feedback-panel.c:347
+#: src/ms-feedback-panel.c:308 src/ms-feedback-panel.c:316
 msgid "none"
 msgstr "brez"
 
-#: src/ms-feedback-panel.c:341
+#: src/ms-feedback-panel.c:310
 msgid "low"
 msgstr "nizko"
 
-#. 1.0
-#: src/ms-feedback-panel.c:343 src/ui/ms-osk-panel.ui:36
+#: src/ms-feedback-panel.c:312
 msgid "normal"
 msgstr "navadno"
 
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:314
 msgid "critical"
 msgstr "kritično"
 
@@ -200,11 +150,11 @@ msgstr "Poteka posodabljanje …"
 msgid "Not available"
 msgstr "Ni na voljo"
 
-#: src/ms-sound-row.c:127
+#: src/ms-sound-row.c:109
 msgid "Custom"
 msgstr "Po meri"
 
-#: src/ms-sound-row.c:308
+#: src/ms-sound-row.c:262
 msgid "Choose sound file"
 msgstr "Izberite zvočno datoteko"
 
@@ -233,87 +183,41 @@ msgid "Tweak advanced mobile settings"
 msgstr "Prilagodi napredne mobilne nastavitve"
 
 #: src/ui/mobile-settings-window.ui:89
-msgid "Top Bar"
-msgstr "Vrhnja vrstica"
-
-#: src/ui/mobile-settings-window.ui:100
-msgid "Applications"
-msgstr "Programi"
-
-#: src/ui/mobile-settings-window.ui:111
 msgid "Feedback"
 msgstr "Povratne informacije"
 
-#: src/ui/mobile-settings-window.ui:122
+#: src/ui/mobile-settings-window.ui:100
 #, fuzzy
 msgid "Compositor"
 msgstr "Skladatelj"
 
-#: src/ui/mobile-settings-window.ui:133
+#: src/ui/mobile-settings-window.ui:111
 msgid "Lockscreen"
 msgstr "Zaklep zaslona"
 
-#: src/ui/mobile-settings-window.ui:144
+#: src/ui/mobile-settings-window.ui:122
 msgid "Convergence"
 msgstr "Konvergenca"
 
-#: src/ui/mobile-settings-window.ui:155
+#: src/ui/mobile-settings-window.ui:133
 msgid "On Screen Keyboard"
 msgstr "Zaslonska tipkovnica"
 
-#: src/ui/mobile-settings-window.ui:166 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:144 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Tipala"
 
-#: src/ui/mobile-settings-window.ui:177
+#: src/ui/mobile-settings-window.ui:155
 msgid "Experimental features"
 msgstr "Poskusne funkcionalnosti"
 
-#: src/ui/mobile-settings-window.ui:201
+#: src/ui/mobile-settings-window.ui:179
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice‫"
 
-#: src/ui/mobile-settings-window.ui:205
+#: src/ui/mobile-settings-window.ui:183
 msgid "_About Mobile Settings"
 msgstr "_O programu Mobilne nastavitve"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Priljubljeno"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organiziraj priljubljene"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-"Povlecite in spustite spodnje aplikacije, da preuredite svoje najljubše "
-"aplikacije"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Ponastavi priljubljene"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Nastavi seznam priljubljenih aplikacij nazaj na privzetega"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Ponastavi"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Filtriranje aplikacij za mobilne naprave"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Nastavite način filtra aplikacij"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "V pregledu pokaži samo mobilne aplikacije"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -339,7 +243,7 @@ msgstr "Zmanjšaj obseg vseh aplikacij"
 #: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
 #: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
 #: src/ui/ms-lockscreen-panel.ui:21 src/ui/ms-osk-panel.ui:20
-#: src/ui/ms-osk-panel.ui:67 src/ui/ms-osk-panel.ui:83
+#: src/ui/ms-osk-panel.ui:43 src/ui/ms-osk-panel.ui:59
 #: src/ui/ms-scale-to-fit-row.ui:11
 msgid "Enabled"
 msgstr "Omogočenoe"
@@ -376,14 +280,6 @@ msgstr ""
 #: src/ui/ms-features-panel.ui:31
 msgid "Enable suspend via the system menu"
 msgstr "Omogoči stanje pripravljenosti prek sistemskega menija"
-
-#: src/ui/ms-features-panel.ui:33
-msgid ""
-"Please only enable this if you're aware of the limitations like data "
-"connection loss or missed alarms"
-msgstr ""
-"To omogočite le, če se zavedate omejitev, kot so izguba podatkovne povezave "
-"ali zgrešeni alarmi"
 
 #: src/ui/ms-feedback-panel.ui:16
 msgid "Feedback profile"
@@ -455,68 +351,36 @@ msgstr "Omo_goči zaslonsko tipkovnico"
 msgid "Whether to show the on screen keyboard when needed"
 msgstr "Ali želite po potrebi prikazati zaslonsko tipkovnico"
 
-#: src/ui/ms-osk-panel.ui:28
-#, fuzzy
-msgid "Unfold long-press"
-msgstr "Raztegnite dolg pritisk"
-
-#: src/ui/ms-osk-panel.ui:29
-msgid ""
-"How long to press the center of the home bar to unfold the on screen keyboard"
-msgstr ""
-"Kako dolgo morate pritisniti sredino domače vrstice, da razgrnete zaslonsko "
-"tipkovnico"
-
-#. 0.5
-#: src/ui/ms-osk-panel.ui:34
-msgid "short"
-msgstr "kratko"
-
-#. 2.0
-#: src/ui/ms-osk-panel.ui:38
-msgid "long"
-msgstr "dolgo"
-
-#: src/ui/ms-osk-panel.ui:46
-msgid "Ignore hardware keyboard"
-msgstr "Prezri strojno tipkovnico"
-
-#: src/ui/ms-osk-panel.ui:47
-msgid ""
-"Whether to show the on screen keyboard when a physical keyboard is present"
-msgstr ""
-"Ali želite prikaz zaslonske tipkovnice, ko je prisotna fizična tipkovnica"
-
-#: src/ui/ms-osk-panel.ui:56
+#: src/ui/ms-osk-panel.ui:32
 msgid "Text Completion"
 msgstr "Dokončanje besedila"
 
-#: src/ui/ms-osk-panel.ui:59
+#: src/ui/ms-osk-panel.ui:35
 msgid "Opportunistic word completion"
 msgstr "Oportunistično dokončanje besed"
 
-#: src/ui/ms-osk-panel.ui:60
+#: src/ui/ms-osk-panel.ui:36
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Omogoči dokončanja besed, ko aplikacija pokaže, da je uporabna"
 
-#: src/ui/ms-osk-panel.ui:75
+#: src/ui/ms-osk-panel.ui:51
 msgid "Toggle via OSK menu"
 msgstr "Preklapljanje prek menija zaslonske tipkovnice"
 
-#: src/ui/ms-osk-panel.ui:76
+#: src/ui/ms-osk-panel.ui:52
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "Omogočanje preklapljanja med dokončanjem besede z gumbom menija tipkovnice"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:70
 msgid "Terminal Layout"
 msgstr "Postavitev terminala"
 
-#: src/ui/ms-osk-panel.ui:98
+#: src/ui/ms-osk-panel.ui:74
 msgid "Shortcuts"
 msgstr "Pokaže tipkovne bližnjice"
 
-#: src/ui/ms-osk-panel.ui:99
+#: src/ui/ms-osk-panel.ui:75
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Bližnjice, ki so na voljo v vrstici z bližnjicami"
 
@@ -584,10 +448,112 @@ msgstr "Tema bo preklopila na visok kontrast nad pragom"
 msgid "Sound files (ogg)"
 msgstr "Zvočne datoteke (ogg)"
 
-#: src/ui/ms-topbar-panel.ui:12
-msgid "Quick Settings"
-msgstr "Hitre nastavitve"
+#~ msgid "U-Boot"
+#~ msgstr "U-Boot"
 
-#: src/ui/ms-topbar-panel.ui:13
-msgid "Organize your additional Quick Settings"
-msgstr "Organizirajte dodatne hitre nastavite"
+#~ msgid "Suspend device"
+#~ msgstr "Postavi napravo v stanje pripravljenosti"
+
+#~ msgid "Suspend is experimental"
+#~ msgstr "Stanje pripravljenosti je poskusno"
+
+#~ msgid "Temperatures"
+#~ msgstr "Temperature"
+
+#~ msgid "CPU"
+#~ msgstr "Obremenite CPE"
+
+#~ msgid "GPU"
+#~ msgstr "GPE"
+
+#~ msgid "VPU"
+#~ msgstr "VPE"
+
+#, fuzzy
+#~ msgid "Fuel Gauge"
+#~ msgstr "Merilnik goriva"
+
+#~ msgid "Battery"
+#~ msgstr "Baterija"
+
+#~ msgid "- Manage your mobile settings"
+#~ msgstr "- Upravljajte nastavitve svojega mobilnika"
+
+#~ msgid "Sound file does not exist"
+#~ msgstr "Zvočna datoteka ne obstaja"
+
+#~ msgid "Sound file is corrupt"
+#~ msgstr "Zvočna datoteka je okvarjena"
+
+#~ msgid "Top Bar"
+#~ msgstr "Vrhnja vrstica"
+
+#~ msgid "Applications"
+#~ msgstr "Programi"
+
+#~ msgid "Favorites"
+#~ msgstr "Priljubljeno"
+
+#~ msgid "Organize Favorites"
+#~ msgstr "Organiziraj priljubljene"
+
+#~ msgid "Drag and drop the apps below to rearrange your favorite apps"
+#~ msgstr ""
+#~ "Povlecite in spustite spodnje aplikacije, da preuredite svoje najljubše "
+#~ "aplikacije"
+
+#~ msgid "Reset Favorites"
+#~ msgstr "Ponastavi priljubljene"
+
+#~ msgid "Set list of favorite apps back to the default"
+#~ msgstr "Nastavi seznam priljubljenih aplikacij nazaj na privzetega"
+
+#~ msgid "Reset"
+#~ msgstr "Ponastavi"
+
+#~ msgid "Mobile App Filtering"
+#~ msgstr "Filtriranje aplikacij za mobilne naprave"
+
+#~ msgid "Set Application Filter Mode"
+#~ msgstr "Nastavite način filtra aplikacij"
+
+#~ msgid "Show only mobile apps in the overview"
+#~ msgstr "V pregledu pokaži samo mobilne aplikacije"
+
+#~ msgid ""
+#~ "Please only enable this if you're aware of the limitations like data "
+#~ "connection loss or missed alarms"
+#~ msgstr ""
+#~ "To omogočite le, če se zavedate omejitev, kot so izguba podatkovne "
+#~ "povezave ali zgrešeni alarmi"
+
+#, fuzzy
+#~ msgid "Unfold long-press"
+#~ msgstr "Raztegnite dolg pritisk"
+
+#~ msgid ""
+#~ "How long to press the center of the home bar to unfold the on screen "
+#~ "keyboard"
+#~ msgstr ""
+#~ "Kako dolgo morate pritisniti sredino domače vrstice, da razgrnete "
+#~ "zaslonsko tipkovnico"
+
+#~ msgid "short"
+#~ msgstr "kratko"
+
+#~ msgid "long"
+#~ msgstr "dolgo"
+
+#~ msgid "Ignore hardware keyboard"
+#~ msgstr "Prezri strojno tipkovnico"
+
+#~ msgid ""
+#~ "Whether to show the on screen keyboard when a physical keyboard is present"
+#~ msgstr ""
+#~ "Ali želite prikaz zaslonske tipkovnice, ko je prisotna fizična tipkovnica"
+
+#~ msgid "Quick Settings"
+#~ msgstr "Hitre nastavitve"
+
+#~ msgid "Organize your additional Quick Settings"
+#~ msgstr "Organizirajte dodatne hitre nastavite"
