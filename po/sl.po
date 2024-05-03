@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
 "POT-Creation-Date: 2024-05-03 15:44+0000\n"
-"PO-Revision-Date: 2024-05-03 17:45+0200\n"
+"PO-Revision-Date: 2024-05-03 18:10+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -52,9 +52,8 @@ msgid "Available panels"
 msgstr "Razpoložljivi pulti"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
-#, fuzzy
 msgid "Compositor panel"
-msgstr "Plošča skladatelja"
+msgstr "Plošča grafičnega upodobilnika"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
 msgid "Feedback panel"
@@ -187,9 +186,8 @@ msgid "Feedback"
 msgstr "Povratne informacije"
 
 #: src/ui/mobile-settings-window.ui:100
-#, fuzzy
 msgid "Compositor"
-msgstr "Skladatelj"
+msgstr "Grafični upodobilnik"
 
 #: src/ui/mobile-settings-window.ui:111
 msgid "Lockscreen"
@@ -253,9 +251,8 @@ msgid "No known docks detected"
 msgstr "Zaznana ni nobena znana priklopna postaja"
 
 #: src/ui/ms-convergence-panel.ui:29
-#, fuzzy
 msgid "Map built-in touch screen"
-msgstr "Vgrajen zaslon na dotik z zemljevidom"
+msgstr "Preslikaj vgrajeni zaslon na dotik"
 
 #: src/ui/ms-features-panel.ui:11
 msgid "Experimental Features"
@@ -286,9 +283,8 @@ msgid "Feedback profile"
 msgstr "Profil za povratne informacije"
 
 #: src/ui/ms-feedback-panel.ui:17
-#, fuzzy
 msgid "The global maximum feedback profile"
-msgstr "Globalni profil največjega števila povratnih informacij"
+msgstr "Globalni profil za čim več povratnih informacij"
 
 #: src/ui/ms-feedback-panel.ui:33
 msgid "Per Application settings"
@@ -315,9 +311,8 @@ msgid "Instant messages"
 msgstr "Neposredna sporočila"
 
 #: src/ui/ms-feedback-panel.ui:78
-#, fuzzy
 msgid "Screen Wakeup"
-msgstr "Bujenje zaslona"
+msgstr "Povrnitev zaslona iz pripravljenosti"
 
 #: src/ui/ms-feedback-panel.ui:81
 msgid "Notification urgency that lights up the screen"
@@ -447,113 +442,3 @@ msgstr "Tema bo preklopila na visok kontrast nad pragom"
 #: src/ui/ms-sound-row.ui:54
 msgid "Sound files (ogg)"
 msgstr "Zvočne datoteke (ogg)"
-
-#~ msgid "U-Boot"
-#~ msgstr "U-Boot"
-
-#~ msgid "Suspend device"
-#~ msgstr "Postavi napravo v stanje pripravljenosti"
-
-#~ msgid "Suspend is experimental"
-#~ msgstr "Stanje pripravljenosti je poskusno"
-
-#~ msgid "Temperatures"
-#~ msgstr "Temperature"
-
-#~ msgid "CPU"
-#~ msgstr "Obremenite CPE"
-
-#~ msgid "GPU"
-#~ msgstr "GPE"
-
-#~ msgid "VPU"
-#~ msgstr "VPE"
-
-#, fuzzy
-#~ msgid "Fuel Gauge"
-#~ msgstr "Merilnik goriva"
-
-#~ msgid "Battery"
-#~ msgstr "Baterija"
-
-#~ msgid "- Manage your mobile settings"
-#~ msgstr "- Upravljajte nastavitve svojega mobilnika"
-
-#~ msgid "Sound file does not exist"
-#~ msgstr "Zvočna datoteka ne obstaja"
-
-#~ msgid "Sound file is corrupt"
-#~ msgstr "Zvočna datoteka je okvarjena"
-
-#~ msgid "Top Bar"
-#~ msgstr "Vrhnja vrstica"
-
-#~ msgid "Applications"
-#~ msgstr "Programi"
-
-#~ msgid "Favorites"
-#~ msgstr "Priljubljeno"
-
-#~ msgid "Organize Favorites"
-#~ msgstr "Organiziraj priljubljene"
-
-#~ msgid "Drag and drop the apps below to rearrange your favorite apps"
-#~ msgstr ""
-#~ "Povlecite in spustite spodnje aplikacije, da preuredite svoje najljubše "
-#~ "aplikacije"
-
-#~ msgid "Reset Favorites"
-#~ msgstr "Ponastavi priljubljene"
-
-#~ msgid "Set list of favorite apps back to the default"
-#~ msgstr "Nastavi seznam priljubljenih aplikacij nazaj na privzetega"
-
-#~ msgid "Reset"
-#~ msgstr "Ponastavi"
-
-#~ msgid "Mobile App Filtering"
-#~ msgstr "Filtriranje aplikacij za mobilne naprave"
-
-#~ msgid "Set Application Filter Mode"
-#~ msgstr "Nastavite način filtra aplikacij"
-
-#~ msgid "Show only mobile apps in the overview"
-#~ msgstr "V pregledu pokaži samo mobilne aplikacije"
-
-#~ msgid ""
-#~ "Please only enable this if you're aware of the limitations like data "
-#~ "connection loss or missed alarms"
-#~ msgstr ""
-#~ "To omogočite le, če se zavedate omejitev, kot so izguba podatkovne "
-#~ "povezave ali zgrešeni alarmi"
-
-#, fuzzy
-#~ msgid "Unfold long-press"
-#~ msgstr "Raztegnite dolg pritisk"
-
-#~ msgid ""
-#~ "How long to press the center of the home bar to unfold the on screen "
-#~ "keyboard"
-#~ msgstr ""
-#~ "Kako dolgo morate pritisniti sredino domače vrstice, da razgrnete "
-#~ "zaslonsko tipkovnico"
-
-#~ msgid "short"
-#~ msgstr "kratko"
-
-#~ msgid "long"
-#~ msgstr "dolgo"
-
-#~ msgid "Ignore hardware keyboard"
-#~ msgstr "Prezri strojno tipkovnico"
-
-#~ msgid ""
-#~ "Whether to show the on screen keyboard when a physical keyboard is present"
-#~ msgstr ""
-#~ "Ali želite prikaz zaslonske tipkovnice, ko je prisotna fizična tipkovnica"
-
-#~ msgid "Quick Settings"
-#~ msgstr "Hitre nastavitve"
-
-#~ msgid "Organize your additional Quick Settings"
-#~ msgstr "Organizirajte dodatne hitre nastavite"
