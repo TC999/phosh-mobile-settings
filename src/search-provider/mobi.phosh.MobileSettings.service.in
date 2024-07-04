@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=mobi.phosh.MobileSettings.SearchProvider
+Exec=@libexecdir@/phosh-mobile-settings-search-provider

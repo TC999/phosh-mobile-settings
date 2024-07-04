@@ -9,10 +9,13 @@ project('phosh-mobile-settings', 'c',
 
 app_id = 'mobi.phosh.MobileSettings'
 
+top_inc = include_directories('.')
+
 prefix = get_option('prefix')
 bindir = prefix / get_option('bindir')
 datadir = prefix / get_option('datadir')
 libdir = prefix / get_option('libdir')
+libexecdir = join_paths(prefix, get_option('libexecdir'))
 ms_plugins_dir = prefix / libdir / 'phosh-mobile-settings' / 'plugins'
 
 glib_ver = '2.74'
