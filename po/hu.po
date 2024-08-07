@@ -1,0 +1,447 @@
+# Hungarian translation for phosh-mobile-settings.
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the phosh-mobile-settings package.
+#
+# Balázs Úr <ur.balazs at fsf dot hu>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings phosh-mobile-settings-0.35.x\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2024-05-03 16:11+0000\n"
+"PO-Revision-Date: 2024-08-07 14:02+0200\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.4\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:3
+#: src/mobile-settings-application.c:218 src/ui/mobile-settings-window.ui:6
+msgid "Mobile Settings"
+msgstr "Mobilbeállítások"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;"
+msgstr "Mobil;Beállítások;Mobilbeállítások;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Phosh mobilbeállítások"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"Ez az alkalmazás lehetővé teszi a Phosh néhány olyan tulajdonságának "
+"beállítását, amelyhez egyébként parancssori használatra lenne szükség."
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Speciális beállítások a Phosht használó mobileszközökhöz"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:36
+msgid "Available panels"
+msgstr "Elérhető panelek"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Compositor panel"
+msgstr "Összeállító panel"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Feedback panel"
+msgstr "Visszajelzés panel"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "A kritikus hőmérséklet %.2f°C"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Általános"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Gyorsbillentyűk megjelenítése"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Kilépés"
+
+#: src/mobile-settings-application.c:228
+msgid "translator-credits"
+msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2024."
+
+#: src/mobile-settings-window.c:73
+msgid "Device"
+msgstr "Eszköz"
+
+#: src/ms-feedback-panel.c:114
+msgid "Failed to play sound"
+msgstr "Nem sikerült lejátszani a hangot"
+
+#: src/ms-feedback-panel.c:147
+#, c-format
+msgid "Playing %s"
+msgstr "%s lejátszása"
+
+#: src/ms-feedback-panel.c:308 src/ms-feedback-panel.c:316
+msgid "none"
+msgstr "nincs"
+
+#: src/ms-feedback-panel.c:310
+msgid "low"
+msgstr "alacsony"
+
+#: src/ms-feedback-panel.c:312
+msgid "normal"
+msgstr "normál"
+
+#: src/ms-feedback-panel.c:314
+msgid "critical"
+msgstr "kritikus"
+
+#: src/ms-sensor-panel.c:92
+msgid "Normal"
+msgstr "Normál"
+
+#: src/ms-sensor-panel.c:94
+msgid "Bottom up"
+msgstr "Lentről felfelé"
+
+#: src/ms-sensor-panel.c:96
+msgid "Left up"
+msgstr "Balról felfelé"
+
+#: src/ms-sensor-panel.c:98
+msgid "Right up"
+msgstr "Jobbról felfelé"
+
+#: src/ms-sensor-panel.c:100
+msgid "Undefined"
+msgstr "Nincs meghatározva"
+
+#: src/ms-sensor-panel.c:135
+msgid "Near"
+msgstr "Közel"
+
+#: src/ms-sensor-panel.c:135
+msgid "Far"
+msgstr "Távol"
+
+#: src/ms-sensor-panel.c:253
+msgid "Updating…"
+msgstr "Frissítés…"
+
+#: src/ms-sensor-panel.c:269 src/ms-sensor-panel.c:270
+#: src/ms-sensor-panel.c:271
+msgid "Not available"
+msgstr "Nem érhető el"
+
+#: src/ms-sound-row.c:109
+msgid "Custom"
+msgstr "Egyéni"
+
+#: src/ms-sound-row.c:262
+msgid "Choose sound file"
+msgstr "Hangfájl kiválasztása"
+
+#: src/ms-util.c:149
+msgid "Full"
+msgstr "Teljes"
+
+#: src/ms-util.c:151
+msgid "Quiet"
+msgstr "Csendes"
+
+#: src/ms-util.c:153
+msgid "Silent"
+msgstr "Néma"
+
+#: src/ui/mobile-settings-window.ui:74
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#: src/ui/mobile-settings-window.ui:80
+msgid "Welcome to Mobile Settings"
+msgstr "Üdvözöljük a mobilbeállításokban"
+
+#: src/ui/mobile-settings-window.ui:81
+msgid "Tweak advanced mobile settings"
+msgstr "Speciális mobilbeállítások finomhangolása"
+
+#: src/ui/mobile-settings-window.ui:89
+msgid "Feedback"
+msgstr "Visszajelzés"
+
+#: src/ui/mobile-settings-window.ui:100
+msgid "Compositor"
+msgstr "Összeállító"
+
+#: src/ui/mobile-settings-window.ui:111
+msgid "Lockscreen"
+msgstr "Zárolási képernyő"
+
+#: src/ui/mobile-settings-window.ui:122
+msgid "Convergence"
+msgstr "Konvergencia"
+
+#: src/ui/mobile-settings-window.ui:133
+msgid "On Screen Keyboard"
+msgstr "Képernyő-billentyűzet"
+
+#: src/ui/mobile-settings-window.ui:144 src/ui/ms-sensor-panel.ui:28
+msgid "Sensors"
+msgstr "Érzékelők"
+
+#: src/ui/mobile-settings-window.ui:155
+msgid "Experimental features"
+msgstr "Kísérleti funkciók"
+
+#: src/ui/mobile-settings-window.ui:179
+msgid "_Keyboard Shortcuts"
+msgstr "_Gyorsbillentyűk"
+
+#: src/ui/mobile-settings-window.ui:183
+msgid "_About Mobile Settings"
+msgstr "A Mobilbeállítások _névjegye"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "A futó alkalmazások méretének csökkentése"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr ""
+"Ezt csak olyan törött alkalmazásoknál engedélyezze, amelyek nem illeszkednek "
+"a képernyőhöz"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "Összes alkalmazás méretének csökkentése"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr ""
+"Az összes alkalmazás méretének kényszerű csökkentése. Ezt csak végső esetben "
+"használja."
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "Összes alkalmazás méretének csökkentése"
+
+#: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
+#: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:21 src/ui/ms-osk-panel.ui:20
+#: src/ui/ms-osk-panel.ui:43 src/ui/ms-osk-panel.ui:59
+#: src/ui/ms-scale-to-fit-row.ui:11
+msgid "Enabled"
+msgstr "Engedélyezve"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "Nem találhatók ismert dokkok"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "Beépített érintőképernyő leképezése"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "Kísérleti funkciók"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "A funkciók még nem tekinthetők teljesen stabilnak"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "Segélyhívások"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"A segélyhívások engedélyezése. Ezt csak akkor engedélyezze, ha biztonságosan "
+"tudja biztosítani, hogy ez működik a szolgáltatójánál."
+
+#: src/ui/ms-features-panel.ui:31
+msgid "Enable suspend via the system menu"
+msgstr "A rendszermenün keresztüli felfüggesztés engedélyezése"
+
+#: src/ui/ms-feedback-panel.ui:16
+msgid "Feedback profile"
+msgstr "Visszajelzési profil"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "The global maximum feedback profile"
+msgstr "A globálisan legnagyobb visszajelzési profil"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Per Application settings"
+msgstr "Alkalmazásonkénti beállítások"
+
+#: src/ui/ms-feedback-panel.ui:46
+msgid "Sounds"
+msgstr "Hangok"
+
+#: src/ui/ms-feedback-panel.ui:47
+msgid "The sound to use for certain events"
+msgstr "A bizonyos eseményekhez használandó hang"
+
+#: src/ui/ms-feedback-panel.ui:55
+msgid "Phone Calls"
+msgstr "Telefonhívások"
+
+#: src/ui/ms-feedback-panel.ui:61
+msgid "SMS"
+msgstr "SMS"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Instant messages"
+msgstr "Azonnali üzenetek"
+
+#: src/ui/ms-feedback-panel.ui:78
+msgid "Screen Wakeup"
+msgstr "Képernyő felébresztése"
+
+#: src/ui/ms-feedback-panel.ui:81
+msgid "Notification urgency that lights up the screen"
+msgstr "Értesítési sürgősség, amely felvillantja a képernyőt"
+
+#: src/ui/ms-lockscreen-panel.ui:11
+msgid "Unlocking"
+msgstr "Feloldás"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Shuffle keypad"
+msgstr "Számbillentyűzet keverése"
+
+#: src/ui/ms-lockscreen-panel.ui:15
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "Meg kell-e keverni a számokat a számbillentyűzeten"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Widgets"
+msgstr "Felületi elemek"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Additional widgets for the lock screen"
+msgstr "További felületi elemek a zárolási képernyőhöz"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "_Képernyő-billentyűzet engedélyezése"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "Meg kell-e jeleníteni a képernyő-billentyűzetet, ha szükséges"
+
+#: src/ui/ms-osk-panel.ui:32
+msgid "Text Completion"
+msgstr "Szövegkiegészítés"
+
+#: src/ui/ms-osk-panel.ui:35
+msgid "Opportunistic word completion"
+msgstr "Megalkuvó szókiegészítés"
+
+#: src/ui/ms-osk-panel.ui:36
+msgid "Enable word completion when the app indicates it is useful"
+msgstr ""
+"Szókiegészítés engedélyezése, ha az alkalmazás azt jelzi, hogy ez hasznos"
+
+#: src/ui/ms-osk-panel.ui:51
+msgid "Toggle via OSK menu"
+msgstr "Be- és kikapcsolás az OSK menün keresztül"
+
+#: src/ui/ms-osk-panel.ui:52
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr ""
+"A szókiegészítés be- és kikapcsolásának lehetővé tétele a billentyűzet "
+"menügombján keresztül"
+
+#: src/ui/ms-osk-panel.ui:70
+msgid "Terminal Layout"
+msgstr "Terminál elrendezése"
+
+#: src/ui/ms-osk-panel.ui:74
+msgid "Shortcuts"
+msgstr "Gyorsbillentyűk"
+
+#: src/ui/ms-osk-panel.ui:75
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "A gyorsbillentyűsávon elérhető gyorsbillentyűk"
+
+#: src/ui/ms-plugin-row.ui:33
+msgid "More options…"
+msgstr "További beállítások…"
+
+#: src/ui/ms-plugin-row.ui:46
+msgid "Move Up"
+msgstr "Mozgatás fel"
+
+#: src/ui/ms-plugin-row.ui:50
+msgid "Move Down"
+msgstr "Mozgatás le"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "Nem találhatók érzékelők"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"Vagy nincsenek érzékelők telepítve a készülékre, vagy le vannak tiltva egy "
+"fizikai kapcsolóval."
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "Érzékelőolvasások"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "Közelség"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "Fény"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "Tájolás"
+
+#: src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "Nagy kontraszt"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "Automatikus nagy kontraszt"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "A környezeti fény érzékelője által vezérelve"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "Fényintenzitás küszöbszintje"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "A téma átvált nagy kontrasztra a küszöbszint felett"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "Hangfájlok (ogg)"
