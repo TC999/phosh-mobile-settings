@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-11-16 20:16+0000\n"
-"PO-Revision-Date: 2024-11-24 08:26+0200\n"
+"POT-Creation-Date: 2024-12-20 13:48+0000\n"
+"PO-Revision-Date: 2025-01-07 11:14+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew\n"
 "Language: he\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -524,25 +524,27 @@ msgstr "השהיה אוטומטית לנעילת מסך"
 msgid "Seconds from screen blank to screen lock"
 msgstr "משך הזמן מהחשכת המסך לנעילת המסך"
 
-#: src/ui/ms-lockscreen-panel.ui:30
+#: src/ui/ms-lockscreen-panel.ui:31
 msgid "Shuffle keypad"
 msgstr "ערבוב ספרות בלוח המקשים"
 
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:32
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "האם לערבב את הספרות בלוח המקשים"
 
-#. Translators: setting to shuffle the numbers on the keypad
 #: src/ui/ms-lockscreen-panel.ui:38
-msgctxt "shuffle keypad setting"
-msgid "Enabled"
-msgstr "פעיל"
+msgid "Require authentication to unlock"
+msgstr "לדרוש אימות כדי לשחרר"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:39
+msgid "Require typing PIN or password to unlock the device"
+msgstr "לדרוש הקלדת קוד אישי או סיסמה כדי לשחרר את המכשיר"
+
+#: src/ui/ms-lockscreen-panel.ui:48
 msgid "Widgets"
 msgstr "יישומונים"
 
-#: src/ui/ms-lockscreen-panel.ui:50
+#: src/ui/ms-lockscreen-panel.ui:49
 msgid "Additional widgets for the lock screen"
 msgstr "יישומונים נוספים למסך הנעילה"
 
@@ -769,6 +771,10 @@ msgstr "הגדרות מהירות"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "מיון ההגדרות המהירות הנוספות שלך"
+
+#~ msgctxt "shuffle keypad setting"
+#~ msgid "Enabled"
+#~ msgstr "פעיל"
 
 #~ msgid "Unlocking"
 #~ msgstr "שחרור"
