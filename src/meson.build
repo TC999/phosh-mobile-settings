@@ -1,4 +1,5 @@
 subdir('dbus')
+subdir('search-provider')
 
 mobile_settings_enum_sources = gnome.mkenums_simple('ms-enum-types',
      sources : files('mobile-settings-enums.h'))
