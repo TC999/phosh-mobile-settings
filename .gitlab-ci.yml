@@ -46,7 +46,7 @@ variables:
 .build_step: &build_step
   script:
     - 'echo "Build opts: ${BUILD_OPTS}"'
-    - meson ${BUILD_OPTS} . _build
+    - meson setup ${BUILD_OPTS} . _build
     - meson compile -C _build
 
 .test_step: &test_step
