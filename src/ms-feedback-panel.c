@@ -7,6 +7,8 @@
  */
 
 #define G_LOG_DOMAIN "ms-feedback-panel"
+#define STRV_IS_NULL_OR_EMPTY(x) \
+  ((x) == NULL || (x)[0] == NULL)
 
 #include "mobile-settings-config.h"
 #include "mobile-settings-enums.h"
@@ -32,6 +34,7 @@
 #define NOTIFICATIONS_URGENCY_ENUM "sm.puri.phosh.NotificationUrgency"
 #define NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY "wakeup-screen-triggers"
 #define NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY "wakeup-screen-urgency"
+#define NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY "wakeup-screen-categories"
 
 enum {
   PROP_0,
@@ -68,6 +71,14 @@ struct _MsFeedbackPanel {
   AdwComboRow               *notificationssettings_row;
   GSettings                 *notifications_settings;
   MsPhoshNotificationUrgency notifications_urgency;
+  GStrv                      notifications_wakeup_categories;
+
+  GtkSwitch                 *device_notifications_wakeup_switch;
+  GtkSwitch                 *email_notifications_wakeup_switch;
+  GtkSwitch                 *im_notifications_wakeup_switch;
+  GtkSwitch                 *network_notifications_wakeup_switch;
+  GtkSwitch                 *presence_notifications_wakeup_switch;
+  GtkSwitch                 *transfer_notifications_wakeup_switch;
 };
 
 G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
@@ -361,7 +372,9 @@ static void
 update_wakeup_screen_triggers (MsFeedbackPanel *self)
 {
   gboolean wants_urgency;
-  PhoshNotifyScreenWakeupFlags flags, new_flags;
+  gboolean wants_category;
+
+  MsPhoshNotifyScreenWakeupFlags flags, new_flags;
 
   switch (self->notifications_urgency) {
   case MS_PHOSH_NOTIFICATION_URGENCY_LOW:
@@ -374,10 +387,17 @@ update_wakeup_screen_triggers (MsFeedbackPanel *self)
     wants_urgency = FALSE;
   }
 
+  wants_category = !STRV_IS_NULL_OR_EMPTY (self->notifications_wakeup_categories);
+
   flags = g_settings_get_flags (self->notifications_settings, NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY);
-  new_flags = flags ^ PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_URGENCY;
+  new_flags = flags ^ (MS_PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_URGENCY |
+                       MS_PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_CATEGORY);
+
   if (wants_urgency)
     new_flags |= PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_URGENCY;
+
+  if (wants_category)
+    new_flags |= MS_PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_CATEGORY;
 
   if (flags == new_flags)
     return;
@@ -435,6 +455,104 @@ change_notifications_settings (MsFeedbackPanel *self)
   update_wakeup_screen_triggers (self);
 }
 
+static void
+sync_switch (MsFeedbackPanel *self, GtkSwitch *switch_, const char *category)
+{
+  gboolean on;
+
+  on = g_strv_contains ((const char *const *)self->notifications_wakeup_categories, category);
+  gtk_switch_set_state (switch_, on);
+  gtk_switch_set_active (switch_, on);
+}
+
+static void
+on_wakeup_screen_categories_key_changed (MsFeedbackPanel *self)
+{
+  g_strfreev (self->notifications_wakeup_categories);
+  self->notifications_wakeup_categories = g_settings_get_strv (self->notifications_settings,
+                                                               NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY);
+
+  sync_switch (self, self->device_notifications_wakeup_switch, "device");
+  sync_switch (self, self->email_notifications_wakeup_switch, "email");
+  sync_switch (self, self->im_notifications_wakeup_switch, "im");
+  sync_switch (self, self->network_notifications_wakeup_switch, "network");
+  sync_switch (self, self->presence_notifications_wakeup_switch, "presence");
+  sync_switch (self, self->transfer_notifications_wakeup_switch, "transfer");
+
+  update_wakeup_screen_triggers (self);
+}
+
+static GStrv
+wakeup_categories_append (const char *const *categories, const char *category)
+{
+  g_autoptr (GStrvBuilder) builder = g_strv_builder_new ();
+  GStrv new_categories = NULL;
+
+  if (g_strv_contains (categories, category))
+    return g_strdupv ((GStrv)categories);
+
+  for (int i = 0; categories && categories[i]; i++) 
+    g_strv_builder_add (builder, categories[i]);  
+
+  g_strv_builder_add (builder, category);
+  new_categories = g_strv_builder_end (builder);
+
+  return new_categories;
+}
+
+static GStrv
+wakeup_categories_remove (const char *const *categories, const char *category)
+{
+  g_autoptr (GStrvBuilder) builder = g_strv_builder_new ();
+  GStrv new_categories = NULL;
+
+  for (int i = 0; categories && categories[i]; i++) {
+    if (g_strcmp0 (category, categories[i]) == 0)
+      continue;
+    g_strv_builder_add (builder, categories[i]);
+  }
+
+  new_categories = g_strv_builder_end (builder);
+
+  return new_categories;
+}
+
+static gboolean
+on_notifications_wakeup_state_set (MsFeedbackPanel *self, gboolean state, GtkSwitch *switch_)
+{
+  const char *category = NULL;
+  g_auto (GStrv) categories = NULL;
+
+  if (switch_ == self->device_notifications_wakeup_switch) {
+    category = "device";
+  } else if (switch_ == self->email_notifications_wakeup_switch) {
+    category = "email";
+  } else if (switch_ == self->im_notifications_wakeup_switch) {
+    category = "im";
+  } else if (switch_ == self->network_notifications_wakeup_switch) {
+    category = "network";
+  } else if (switch_ == self->presence_notifications_wakeup_switch) {
+    category = "presence";
+  } else if (switch_ == self->transfer_notifications_wakeup_switch) {
+    category = "transfer";
+  } else {
+    g_critical ("Unknown notification wakeup switch");
+    return TRUE;
+  }
+
+  if (state) {
+    categories = wakeup_categories_append (
+      (const char * const *) self->notifications_wakeup_categories, category);
+  } else {
+    categories = wakeup_categories_remove (
+      (const char * const *) self->notifications_wakeup_categories, category);
+  }
+
+  g_settings_set_strv (self->notifications_settings, NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY,
+                       (const char * const *)categories);
+
+  return TRUE;
+}
 
 static void
 ms_feedback_panel_set_property (GObject      *object,
@@ -515,6 +633,7 @@ ms_feedback_panel_dispose (GObject *object)
   g_clear_object (&self->sound_context);
   g_clear_object (&self->settings);
   g_clear_object (&self->notifications_settings);
+  g_strfreev(self->notifications_wakeup_categories);
   g_clear_pointer (&self->known_applications, g_hash_table_unref);
 
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->dispose (object);
@@ -554,6 +673,20 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_bind_template_callback (widget_class, on_notifications_urgency);
   gtk_widget_class_bind_template_callback (widget_class, change_notifications_settings);
 
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel,
+                                        device_notifications_wakeup_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel,
+                                        email_notifications_wakeup_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel,
+                                        im_notifications_wakeup_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel,
+                                        network_notifications_wakeup_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel,
+                                        presence_notifications_wakeup_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel,
+                                        transfer_notifications_wakeup_switch);
+  gtk_widget_class_bind_template_callback (widget_class, on_notifications_wakeup_state_set);
+
   gtk_widget_class_install_action (widget_class, "sound-player.play", "s",
                                    play_sound_activated);
   gtk_widget_class_install_action (widget_class, "sound-player.stop", NULL, stop_sound_activated);
@@ -569,12 +702,19 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
 
   /* Notifications settings */
   self->notifications_settings = g_settings_new (NOTIFICATIONS_SCHEMA);
+  self->notifications_wakeup_categories = g_settings_get_strv (self->notifications_settings,
+                                                               NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY);
 
   g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
                            G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
+  // g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
+  //                          G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
   on_notifications_settings_changed (self);
+
+  g_signal_connect_swapped (self->notifications_settings,
+                            "changed::" NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY,
+                            G_CALLBACK (on_wakeup_screen_categories_key_changed), self);
+  on_wakeup_screen_categories_key_changed (self);
 
   self->known_applications = g_hash_table_new_full (g_str_hash, g_str_equal,
                                                     NULL, g_free);
