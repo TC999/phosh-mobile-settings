@@ -50,6 +50,10 @@ zwlr_output_mode_v1_handle_size (void                       *data,
                                  int32_t                     width,
                                  int32_t                     height)
 {
+  MsHead *head = data;
+
+  head->width = width;
+  head->height = height;
 }
 
 
@@ -58,6 +62,9 @@ zwlr_output_mode_v1_handle_refresh (void                       *data,
                                     struct zwlr_output_mode_v1 *wlr_mode,
                                     int32_t                     refresh)
 {
+  MsHead *head = data;
+
+  head->refresh_rate = refresh;
 }
 
 
@@ -104,6 +111,10 @@ handle_zwlr_output_head_description (void                       *data,
                                      struct zwlr_output_head_v1 *zwlr_output_head_v1,
                                      const char                 *description)
 {
+  MsHead *head = data;
+
+  g_free (head->description);
+  head->description = g_strdup (description);
 }
 
 
@@ -113,6 +124,10 @@ handle_zwlr_output_head_physical_size (void                       *data,
                                        int32_t                     width,
                                        int32_t                     height)
 {
+  MsHead *head = data;
+
+  head->physical_width = width;
+  head->physical_height = height;
 }
 
 
@@ -121,7 +136,7 @@ handle_zwlr_output_head_mode (void                       *data,
                               struct zwlr_output_head_v1 *zwlr_output_head_v1,
                               struct zwlr_output_mode_v1 *mode)
 {
-  zwlr_output_mode_v1_add_listener (mode, &mode_listener, NULL);
+  zwlr_output_mode_v1_add_listener (mode, &mode_listener, data);
 }
 
 
@@ -130,6 +145,9 @@ handle_zwlr_output_head_enabled (void                       *data,
                                  struct zwlr_output_head_v1 *zwlr_output_head_v1,
                                  int32_t                     enabled)
 {
+  MsHead *head = data;
+
+  head->enabled = !!enabled;
 }
 
 
@@ -138,6 +156,10 @@ handle_zwlr_output_head_current_mode (void                       *data,
                                       struct zwlr_output_head_v1 *zwlr_output_head_v1,
                                       struct zwlr_output_mode_v1 *mode)
 {
+  MsHead *head = data;
+
+  g_free (head->current_mode);
+  head->current_mode = mode;
 }
 
 
@@ -147,6 +169,10 @@ handle_zwlr_output_head_position (void                       *data,
                                   int32_t                     x,
                                   int32_t                     y)
 {
+  MsHead *head = data;
+
+  head->x = x;
+  head->y = y;
 }
 
 
@@ -155,6 +181,9 @@ handle_zwlr_output_head_transform (void                       *data,
                                    struct zwlr_output_head_v1 *zwlr_output_head_v1,
                                    int32_t                     transform)
 {
+  MsHead *head = data;
+
+  head->transform = transform;
 }
 
 
@@ -163,6 +192,9 @@ handle_zwlr_output_head_scale (void                       *data,
                                struct zwlr_output_head_v1 *zwlr_output_head_v1,
                                wl_fixed_t                  scale)
 {
+  MsHead *head = data;
+
+  head->scale = scale;
 }
 
 
