@@ -117,6 +117,51 @@ get_os_info (void)
 }
 
 
+static void
+append_display_configuration (GString *string)
+{
+  MobileSettingsApplication *app = NULL;
+  MsHeadTracker *tracker = NULL;
+  GPtrArray *heads = NULL;
+
+  app = MOBILE_SETTINGS_APPLICATION (g_application_get_default ());
+  tracker = mobile_settings_application_get_head_tracker (app);
+
+  if (tracker == NULL) {
+    g_string_append_printf (string, "No head tracker available\n");
+    return;
+  }
+
+  heads = ms_head_tracker_get_heads (tracker);
+
+  if (heads == NULL || heads->len == 0) {
+    g_string_append_printf (string, "No heads detected\n");
+    return;
+  }
+
+  for (int i = 0; i < heads->len; i++) {
+    MsHead *head = g_ptr_array_index (heads, i);
+
+    g_string_append_printf (string, "Head %d:\n", i + 1);
+    g_string_append_printf (string, "  Name: %s\n", head->name ? head->name : "Unknown");
+    g_string_append_printf (string, "  Make: %s\n", head->make ? head->make : "Unknown");
+    g_string_append_printf (string, "  Model: %s\n", head->model ? head->model : "Unknown");
+    g_string_append_printf (string, "  Scale: %d\n", head->scale);
+    g_string_append_printf (string, "  Serial: %s\n", head->serial_number ? head->serial_number : "Unknown");
+    g_string_append_printf (string, "  Description: %s\n", head->description ? head->description : "Unknown");
+    g_string_append_printf (string, "  Enabled: %s\n", head->enabled ? "Yes" : "No");
+    g_string_append_printf (string, "  Position: (%d, %d)\n", head->x, head->y);
+    g_string_append_printf (string, "  Physical size: %dx%d mm\n", head->physical_width, head->physical_height);
+    if (head->current_mode) {
+      g_string_append_printf (string, "  Current mode: %dx%d@%dHz\n",
+                              head->width, head->height, head->refresh_rate / 1000);
+    }
+    g_string_append_printf (string, "  Transform: %d\n", head->transform);
+    g_string_append_printf (string, "\n");
+  }
+}
+
+
 char *
 mobile_settings_generate_debug_info (void)
 {
@@ -287,6 +332,12 @@ mobile_settings_generate_debug_info (void)
     }
   }
   g_string_append (string, "\n");
+
+  g_string_append_printf (string, "Display Configuration\n");
+  {
+    append_display_configuration (string);
+  }
+  g_string_append(string, "\n");
 
   g_string_append_printf (string, "Hardware Information:\n");
   {
