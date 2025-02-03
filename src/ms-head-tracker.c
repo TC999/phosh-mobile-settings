@@ -45,8 +45,10 @@ G_DEFINE_BOXED_TYPE (MsHead, ms_head, ms_head_ref, ms_head_unref);
 
 
 static void
-zwlr_output_mode_v1_handle_size (void *data, struct zwlr_output_mode_v1 *wlr_mode,
-                                 int32_t width, int32_t height)
+zwlr_output_mode_v1_handle_size (void                       *data,
+                                 struct zwlr_output_mode_v1 *wlr_mode,
+                                 int32_t                     width,
+                                 int32_t                     height)
 {
 }
 
@@ -84,10 +86,9 @@ static const struct zwlr_output_mode_v1_listener mode_listener = {
 
 
 static void
-handle_zwlr_output_head_name (
-  void *data,
-  struct zwlr_output_head_v1 *zwlr_output_head_v1,
-  const char* name)
+handle_zwlr_output_head_name (void                       *data,
+                              struct zwlr_output_head_v1 *zwlr_output_head_v1,
+                              const char                 *name)
 {
   MsHead *head = data;
 
@@ -99,71 +100,74 @@ handle_zwlr_output_head_name (
 
 
 static void
-handle_zwlr_output_head_description(void *data,
-                                    struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                                    const char*description)
+handle_zwlr_output_head_description (void                       *data,
+                                     struct zwlr_output_head_v1 *zwlr_output_head_v1,
+                                     const char                 *description)
 {
 }
 
 
 static void
-handle_zwlr_output_head_physical_size (void *data,
+handle_zwlr_output_head_physical_size (void                       *data,
                                        struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                                       int32_t width,
-                                       int32_t height)
+                                       int32_t                     width,
+                                       int32_t                     height)
 {
 }
 
+
 static void
-handle_zwlr_output_head_mode (void *data,
+handle_zwlr_output_head_mode (void                       *data,
                               struct zwlr_output_head_v1 *zwlr_output_head_v1,
                               struct zwlr_output_mode_v1 *mode)
 {
   zwlr_output_mode_v1_add_listener (mode, &mode_listener, NULL);
 }
 
+
 static void
-handle_zwlr_output_head_enabled (void *data,
+handle_zwlr_output_head_enabled (void                       *data,
                                  struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                                 int32_t enabled)
+                                 int32_t                     enabled)
 {
 }
 
 
 static void
-handle_zwlr_output_head_current_mode (void *data,
+handle_zwlr_output_head_current_mode (void                       *data,
                                       struct zwlr_output_head_v1 *zwlr_output_head_v1,
                                       struct zwlr_output_mode_v1 *mode)
 {
 }
 
+
 static void
-handle_zwlr_output_head_position (void *data,
+handle_zwlr_output_head_position (void                       *data,
                                   struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                                  int32_t x,
-                                  int32_t y)
+                                  int32_t                     x,
+                                  int32_t                     y)
 {
 }
 
 
 static void
-handle_zwlr_output_head_transform (void *data,
+handle_zwlr_output_head_transform (void                       *data,
                                    struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                                   int32_t transform)
+                                   int32_t                     transform)
 {
 }
 
 
 static void
-handle_zwlr_output_head_scale (void *data,
+handle_zwlr_output_head_scale (void                       *data,
                                struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                               wl_fixed_t scale)
+                               wl_fixed_t                  scale)
 {
 }
 
 
 static void
-handle_zwlr_output_head_finished (void *data,
+handle_zwlr_output_head_finished (void                       *data,
                                   struct zwlr_output_head_v1 *zwlr_output_head_v1)
 {
   MsHead *head = data;
@@ -181,9 +185,9 @@ handle_zwlr_output_head_finished (void *data,
 
 
 static void
-handle_zwlr_output_head_make (void *data,
+handle_zwlr_output_head_make (void                       *data,
                               struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                              const char *make)
+                              const char                 *make)
 {
   MsHead *head = data;
 
@@ -195,9 +199,9 @@ handle_zwlr_output_head_make (void *data,
 
 
 static void
-handle_zwlr_output_head_model (void *data,
-                              struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                              const char *model)
+handle_zwlr_output_head_model (void                       *data,
+                               struct zwlr_output_head_v1 *zwlr_output_head_v1,
+                               const char                 *model)
 {
   MsHead *head = data;
 
@@ -209,9 +213,9 @@ handle_zwlr_output_head_model (void *data,
 
 
 static void
-handle_zwlr_output_head_serial_number (void *data,
+handle_zwlr_output_head_serial_number (void                       *data,
                                        struct zwlr_output_head_v1 *zwlr_output_head_v1,
-                                       const char *serial_number)
+                                       const char                 *serial_number)
 {
   MsHead *head = data;
 
@@ -220,7 +224,6 @@ handle_zwlr_output_head_serial_number (void *data,
 
   g_debug ("%p: Got serial number %s", zwlr_output_head_v1, serial_number);
 }
-
 
 
 static const struct zwlr_output_head_v1_listener zwlr_output_head_v1_listener = {
@@ -270,9 +273,9 @@ ms_head_new (struct zwlr_output_head_v1 *zwlr_output_head_v1, MsHeadTracker *tra
 
 
 static void
-handle_zwlr_output_manager_head (void *data,
-  struct zwlr_output_manager_v1 *zwlr_foreign_head_manager_v1,
-  struct zwlr_output_head_v1     *zwlr_output_head_v1)
+handle_zwlr_output_manager_head (void                          *data,
+                                 struct zwlr_output_manager_v1 *zwlr_foreign_head_manager_v1,
+                                 struct zwlr_output_head_v1    *zwlr_output_head_v1)
 {
   MsHeadTracker *self = MS_HEAD_TRACKER (data);
   MsHead *head;
@@ -285,9 +288,9 @@ handle_zwlr_output_manager_head (void *data,
 
 
 static void
-handle_zwlr_output_manager_done (void *data,
+handle_zwlr_output_manager_done (void                          *data,
                                  struct zwlr_output_manager_v1 *zwlr_output_manager_v1,
-                                 uint32_t serial)
+                                 uint32_t                       serial)
 {
   MsHeadTracker *self = MS_HEAD_TRACKER (data);
 
@@ -301,7 +304,7 @@ handle_zwlr_output_manager_done (void *data,
 
 
 static void
-handle_zwlr_output_manager_finished (void *data,
+handle_zwlr_output_manager_finished (void                          *data,
                                      struct zwlr_output_manager_v1 *zwlr_output_manager_v1)
 {
   g_debug ("wlr_output_manager_finished");
@@ -317,9 +320,9 @@ static const struct zwlr_output_manager_v1_listener zwlr_output_manager_listener
 
 static void
 ms_head_tracker_set_property (GObject      *object,
-                                  guint         property_id,
-                                  const GValue *value,
-                                  GParamSpec   *pspec)
+                              guint         property_id,
+                              const GValue *value,
+                              GParamSpec   *pspec)
 {
   MsHeadTracker *self = MS_HEAD_TRACKER (object);
 
@@ -336,9 +339,9 @@ ms_head_tracker_set_property (GObject      *object,
 
 static void
 ms_head_tracker_get_property (GObject    *object,
-                                  guint       property_id,
-                                  GValue     *value,
-                                  GParamSpec *pspec)
+                              guint       property_id,
+                              GValue     *value,
+                              GParamSpec *pspec)
 {
   MsHeadTracker *self = MS_HEAD_TRACKER (object);
 
@@ -356,7 +359,7 @@ ms_head_tracker_get_property (GObject    *object,
 static void
 ms_head_tracker_constructed (GObject *object)
 {
-  MsHeadTracker *self = MS_HEAD_TRACKER(object);
+  MsHeadTracker *self = MS_HEAD_TRACKER (object);
 
   G_OBJECT_CLASS (ms_head_tracker_parent_class)->constructed (object);
 
@@ -368,7 +371,7 @@ ms_head_tracker_constructed (GObject *object)
 static void
 ms_head_tracker_finalize (GObject *object)
 {
-  MsHeadTracker *self = MS_HEAD_TRACKER(object);
+  MsHeadTracker *self = MS_HEAD_TRACKER (object);
 
   g_clear_pointer (&self->heads, g_ptr_array_unref);
   g_clear_pointer (&self->heads_added, g_ptr_array_unref);
@@ -453,6 +456,7 @@ ms_head_ref (MsHead *self)
 
   return self;
 }
+
 
 void
 ms_head_unref (MsHead *self)
