@@ -49,4 +49,4 @@ deb http://ports.ubuntu.com/ubuntu-ports jammy-security universe
 deb http://ports.ubuntu.com/ubuntu-ports jammy-security multiverse
 # deb-src http://ports.ubuntu.com/ubuntu-ports jammy-security multiverse
 
-deb http://deb.debian.org/debian sid main
+deb http://ports.ubuntu.com/ubuntu-ports pool universe
