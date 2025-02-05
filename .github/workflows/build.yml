@@ -12,8 +12,9 @@ jobs:
           sudo cp phosh/sources.list /etc/apt/sources.list
           sudo apt update
       - run: |
+          cd phosh
           sudo apt-get -y install build-essential
-          cd phosh && sudo apt-get -y build-dep .
+          sudo apt-get -y build-dep .
       - run: |
           cd phosh
           meson setup _build
