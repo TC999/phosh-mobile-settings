@@ -1,0 +1,23 @@
+name: 编译 deb 包
+on:
+  workflow_dispatch:
+jobs:
+  Build:
+    runs-on: ununtu-22.04-arm
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          path: phosh
+      - run: |
+          sudo apt-get -y install build-essential
+          cd phosh && sudo apt-get -y build-dep .
+      - run: |
+          cd phosh
+          meson setup _build
+          meson compile -C _build
+      - run: dpkg-deb --build phosh
+      - name: 上传文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: phosh-mobile-settings
+          path: phosh.deb
