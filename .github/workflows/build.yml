@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   Build:
-    runs-on: ununtu-22.04-arm
+    runs-on: ubuntu-22.04-arm
     steps:
       - uses: actions/checkout@v4.2.2
         with:
