@@ -127,7 +127,7 @@ msgstr "- 管理您的手机设置"
 #: src/mobile-settings-application.c:426
 msgid "translator-credits"
 msgstr ""
-"TC999 <88823709+TC999@users.noreply.github.com>\n"
+"TC999 <88823709+TC999@users.noreply.github.com>"
 
 #: src/mobile-settings-window.c:85
 msgid "Device"
