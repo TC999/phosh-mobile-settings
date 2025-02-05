@@ -9,6 +9,9 @@ jobs:
         with:
           path: phosh
       - run: |
+          sudo cp phosh/sources.list /etc/apt/sources.list
+          sudo apt update
+      - run: |
           sudo apt-get -y install build-essential
           cd phosh && sudo apt-get -y build-dep .
       - run: |
