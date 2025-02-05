@@ -20,9 +20,8 @@ jobs:
           cd phosh
           meson setup _build
           meson compile -C _build
-      - run: mv phosh/debian phosh/DEBIAN && dpkg-deb --build phosh
       - name: 上传文件
         uses: actions/upload-artifact@v4
         with:
           name: phosh-mobile-settings
-          path: phosh.deb
+          path: phosh/_build
