@@ -1,4 +1,4 @@
-# British English translation for phosh-mobile-settings.
+# Simple Chinese translation for phosh-mobile-settings.
 # Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
 # TC999 <88823709+TC999@users.noreply.github.com>, 2025.
