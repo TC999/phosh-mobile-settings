@@ -19,8 +19,8 @@ jobs:
 
     - name: Set up Git committer identity
       run: |
-        git config --global user.email "88823709+TC999@users.noreply.github.com"
-        git config --global user.name "TC999"
+        git config --global user.email "actions@github.com"
+        git config --global user.name "actions-bot"
 
     - name: Pull from external repository
       run: |
