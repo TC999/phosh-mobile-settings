@@ -618,7 +618,7 @@ msgstr "快捷键栏中可用的快捷方式"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
-msgstr "No Sensors found"
+msgstr "未找到传感器"
 
 #: src/ui/ms-sensor-panel.ui:17
 msgid ""
