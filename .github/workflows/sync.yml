@@ -1,0 +1,24 @@
+name: Sync from GitLab
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天运行一次
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout target repository
+      uses: actions/checkout@v2
+      #with:
+        #repository: owner/target-repo
+        #token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Pull from external repository
+      run: |
+        git remote add external https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings.git
+        git fetch external
+        git merge external/main --allow-unrelated-histories
+        git push origin main
