@@ -12,7 +12,8 @@ jobs:
     steps:
     - name: Checkout target repository
       uses: actions/checkout@v2
-      #with:
+      with:
+        ref: sync
         #repository: owner/target-repo
         #token: ${{ secrets.GITHUB_TOKEN }}
 
