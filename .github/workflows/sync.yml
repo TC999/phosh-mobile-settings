@@ -26,5 +26,5 @@ jobs:
       run: |
         git remote add external https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings.git
         git fetch external
-        git merge external/main --allow-unrelated-histories
-        git push origin main
+        git merge external/sync --allow-unrelated-histories
+        git push origin sync
