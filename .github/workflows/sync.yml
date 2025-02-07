@@ -13,7 +13,7 @@ jobs:
     - name: Checkout target repository
       uses: actions/checkout@v2
       with:
-        ref: sync
+        ref: main
         #repository: owner/target-repo
         #token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -27,4 +27,4 @@ jobs:
         git remote add external https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings.git
         git fetch external
         git merge external/main --allow-unrelated-histories
-        git push origin sync
+        git push origin main
