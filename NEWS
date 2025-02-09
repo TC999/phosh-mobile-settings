@@ -260,7 +260,7 @@ Released: October 2023
 phosh-mobile-settings 0.31.0
 ----------------------------
 Released: August 2023
-* Allow to configure notification priority that triggers screen wakup
+* Allow to configure notification priority that triggers screen wake-up
 * Make it easier to run from source tree
 * Improved debug info
 * Contributors:

@@ -134,7 +134,7 @@ ms_osk_layout_class_init (MsOskLayoutClass *klass)
   /**
    * PosOskLayout:id:
    *
-   * THe id identifiying the layout e.g. `de` for `xkb` or
+   * The id identifying the layout e.g. `de` for `xkb` or
    * `varname:ml` for `ibus`
    */
   props[PROP_ID] =
