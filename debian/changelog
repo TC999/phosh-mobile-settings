@@ -1,3 +1,23 @@
+phosh-mobile-settings (0.45~rc1) experimental; urgency=medium
+
+  [ Stefan Hansson ]
+  * ci: Use meson setup <path>. Using meson <path> to run setup is deprecated.
+
+  [ Tomi Lähteenmäki ]
+  * tests: Use GSK_RENDERER=ngl. GTK removed the "gl" renderer in 4.17 series.
+
+  [ Gotam Gorabh ]
+  * ms-head-tracker: Add new event to MsHead
+  * debug-info: Add current output configuration.
+    It would be nice to have the current output configuration (including
+    resolution and scale).
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/51
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 09 Feb 2025 13:02:18 +0100
+
 phosh-mobile-settings (0.44.0) experimental; urgency=medium
 
   [ Anders Jonsson ]
