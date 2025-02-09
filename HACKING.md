@@ -12,7 +12,7 @@ isn't the better place as this benefits mobile and non-mobile users alike.
 Environment variables
 ---------------------
 
-mobile settings honors the following enviroment variables that might
+mobile settings honors the following environment variables that might
 be useful for development:
 
 - `MS_FORCE_OSK` : assume a certain on screen keyboard. Valid values

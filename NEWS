@@ -1,3 +1,16 @@
+phosh-mobile-settings 0.45~rc1
+------------------------------
+Released February 2025
+* Add output information to debug output
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/51
+* Contributors:
+    * Gotam Gorabh
+    * Stefan Hansson
+    * Tomi Lähteenmäki
+* UI translations:
+    * Yaron Shahrabani (he)
+
 phosh-mobile-settings 0.44.0
 ----------------------------
 Released December 2024
@@ -260,7 +273,7 @@ Released: October 2023
 phosh-mobile-settings 0.31.0
 ----------------------------
 Released: August 2023
-* Allow to configure notification priority that triggers screen wakup
+* Allow to configure notification priority that triggers screen wake-up
 * Make it easier to run from source tree
 * Improved debug info
 * Contributors:
