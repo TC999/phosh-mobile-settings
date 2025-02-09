@@ -205,6 +205,7 @@ print_system_information (GApplication *app)
   setup_wayland (self);
   /* Make sure all pending events got processed by the server */
   wl_display_roundtrip (self->wl_display);
+  wl_display_dispatch (self->wl_display);
 
   g_print ("Debugging information:\n%s", mobile_settings_generate_debug_info ());
 }
