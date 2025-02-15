@@ -1,3 +1,9 @@
+phosh-mobile-settings (0.45.0) experimental; urgency=medium
+
+  * No changes over 0.45~rc1
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 15 Feb 2025 09:56:25 +0100
+
 phosh-mobile-settings (0.45~rc1) experimental; urgency=medium
 
   [ Stefan Hansson ]
