@@ -52,6 +52,14 @@
 
   <releases>
 
+    <release version="0.45.0" date="2025-02-15">
+      <description translate="no">
+        <ul>
+          <li>Add output information to debug output</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="0.44.0" date="2024-12-31">
       <description translate="no">
         <ul>

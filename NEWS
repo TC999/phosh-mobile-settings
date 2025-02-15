@@ -1,5 +1,5 @@
-phosh-mobile-settings 0.45~rc1
-------------------------------
+phosh-mobile-settings 0.45.0
+----------------------------
 Released February 2025
 * Add output information to debug output
 * Issues fixed:
