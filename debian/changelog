@@ -1,3 +1,29 @@
+phosh-mobile-settings (0.45.0) experimental; urgency=medium
+
+  * No changes over 0.45~rc1
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 15 Feb 2025 09:56:25 +0100
+
+phosh-mobile-settings (0.45~rc1) experimental; urgency=medium
+
+  [ Stefan Hansson ]
+  * ci: Use meson setup <path>. Using meson <path> to run setup is deprecated.
+
+  [ Tomi Lähteenmäki ]
+  * tests: Use GSK_RENDERER=ngl. GTK removed the "gl" renderer in 4.17 series.
+
+  [ Gotam Gorabh ]
+  * ms-head-tracker: Add new event to MsHead
+  * debug-info: Add current output configuration.
+    It would be nice to have the current output configuration (including
+    resolution and scale).
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/51
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 09 Feb 2025 13:02:18 +0100
+
 phosh-mobile-settings (0.44.0) experimental; urgency=medium
 
   [ Anders Jonsson ]
@@ -152,18 +178,18 @@ phosh-mobile-settings (0.43~rc1) experimental; urgency=medium
   [ Stefan Hansson ]
   * gmobile: Update to 0.2.1
   * panel-switcher: Make scrollable.
-    This allows the switcher to be scolled if the height of the program is
+    This allows the switcher to be scrolled if the height of the program is
     too small to display all options, which can happen if a device like the
     Librem 5 is viewing the program in landscape mode. It might also help
     devices with shorter screen if users have chosen a large text font.
-    Additionally, it faciliates adding more options to the list in the
+    Additionally, it facilitates adding more options to the list in the
     future.
   * doap: Fix name, shortname, shortdesc and a typo.
     This project is not called Phosh, so let's set it to the real name.
     Makes for a slightly less confusing experience when selecting project in
     GNOME Builder.
     Additionally, make the shortdesc something unique.
-    And, finally, fix a typo in descrption (up -> app).
+    And, finally, fix a typo in description (up -> app).
 
   [ Martin ]
   * Update Slovenian translation
@@ -247,7 +273,7 @@ phosh-mobile-settings (0.42~rc1) experimental; urgency=medium
     Drop the fallback as we'' require it in other parts of mobile settings
     too.
   * app-panel: Use enum filter-mode-flag enum from phosh
-  * feedback-panel: Use phosh's enums for screen wakup flags.
+  * feedback-panel: Use phosh's enums for screen wake-up flags.
     Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/55
   * run: Abort on criticals by default.
     They're too often ignored
@@ -734,7 +760,7 @@ phosh-mobile-settings (0.36.0) experimental; urgency=medium
   * osk: Allow to set the unfold delay
   * l5-panel: Init temperatures.
     This ensures they don't contain garbage in case sensors_get_value()
-    doen't set them.
+    doesn't set them.
   * application: Don't use self for GApplication
     self refers to an object of type PhoshMobileSettingsApplication not
     GApplication. Adjust the variable names in functions that did this
@@ -779,7 +805,7 @@ phosh-mobile-settings (0.35.0) experimental; urgency=medium
     We use the same pattern as with glib
   * sound-row: Drop G_GNUC_END_IGNORE_DEPRECATIONS.
     Not needed as we specify a GTK version
-  * sound-row: Swith to GtkFileDialog.
+  * sound-row: Switch to GtkFileDialog.
     This makes us use the portal and hence we get an adaptive file dialog in
     most distros.
     We bump the required GTK version for 4.12 to that. We require 4.12
@@ -1008,7 +1034,7 @@ phosh-mobile-settings (0.25.0) experimental; urgency=medium
   * build: Fix gettext name.
     This allows translations to be found
   * feedback-panel: Separate feedback settings from setting their labels.
-    We want the labels to be translatable while the stings uses for
+    We want the labels to be translatable while the strings uses for
     settings should be untranslated.
   * po: Translate some DE strings.
     This allows to test i18n.
@@ -1049,7 +1075,7 @@ phosh-mobile-settings (0.23.1) experimental; urgency=medium
     and we also have `display_length` set as well.
   * Revert "build: Make phosh-dev dependency optional for the moment"
     There's now a release shipping the pkg-config files so let's drop this
-    to avoid inconistencies between builds that use pkg-config and those
+    to avoid inconsistencies between builds that use pkg-config and those
     that use hardcoded paths.
   * ms-plugin-row: Don't overwrite plugin name with file name.
     (Fixes: #22)
@@ -1086,7 +1112,7 @@ phosh-mobile-settings (0.22.0) experimental; urgency=medium
     As pointed out by exalm doing this in realize is a bad idea.
     We had it there as we wanted to access GApplication but that wasn't set
     as prop yet but we can simply use g_application_get_default()
-  * main: Use G_APPLICATION_DEFAULT_FLAGS to avoid depreation warning.
+  * main: Use G_APPLICATION_DEFAULT_FLAGS to avoid deprecation warning.
     Provide a fallback for older glib until we can enforce 2.74.
   * build: Add and use app id
   * app: Use AdwAboutDialog.
@@ -1138,7 +1164,7 @@ phosh-mobile-settings (0.21.0) experimental; urgency=medium
   [ Sebastian Krzyszkowiak ]
   * librem5-plugin: Adjust sensor mappings for temperatures.
     On the Librem 5, bq25890_charger driver reports the temperature
-    as monitored by the thermisor inside the battery, while the
+    as monitored by the thermistor inside the battery, while the
     max170xx_battery driver reports the internal temperature of
     the fuel gauge chip. Adjust sensor descriptions to match that.
 

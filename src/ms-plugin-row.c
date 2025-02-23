@@ -205,7 +205,7 @@ on_drop (MsPluginRow *self, const GValue *value, gdouble x, gdouble y)
 {
   MsPluginRow *source;
 
-  g_debug ("Droped");
+  g_debug ("Dropped");
 
   if (!G_VALUE_HOLDS (value, MS_TYPE_PLUGIN_ROW))
     return FALSE;
