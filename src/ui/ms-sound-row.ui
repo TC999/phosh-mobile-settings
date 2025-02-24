@@ -54,6 +54,7 @@
     <property name="name" translatable="yes">Sound files (ogg)</property>
     <suffixes>
       <suffix>ogg</suffix>
+      <suffix>oga</suffix>
     </suffixes>
   </object>
 
