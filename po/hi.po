@@ -1,15 +1,15 @@
 # Hindi translation for phosh-mobile-settings.
-# Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
+# Copyright (C) 2025 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
-# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-08-11 12:50+0000\n"
-"PO-Revision-Date: 2024-08-11 19:13+0530\n"
+"POT-Creation-Date: 2025-01-13 12:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:56+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 46.1\n"
+"X-Generator: Gtranslator 47.1\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -62,43 +62,53 @@ msgstr "प्रतिक्रिया फलक"
 msgid "Critical temperature is %.2f°C"
 msgstr "क्रांतिक तापमान %.2f°C है"
 
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+msgid "Librem 5"
+msgstr "Librem 5"
+
 #. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:19
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
 msgid "U-Boot"
 msgstr "U-Boot"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:31
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
 msgid "Suspend device"
 msgstr "उपकरण निलंबित करें"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
 msgid "Suspend is experimental"
 msgstr "निलंबन प्रायोगिक है"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:51
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+msgid "suspend now"
+msgstr "अभी निलंबित करें"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
 msgid "Temperatures"
 msgstr "तापमान"
 
 #. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:55
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
 msgid "CPU"
 msgstr "CPU"
 
 #. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:74
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
 msgid "GPU"
 msgstr "GPU"
 
 #. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:93
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
 msgid "VPU"
 msgstr "VPU"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:111
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
 msgid "Fuel Gauge"
 msgstr "ईंधन गेज"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:129
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
 msgid "Battery"
 msgstr "बैटरी"
 
@@ -115,165 +125,205 @@ msgstr "शॉर्टकट दिखाएं"
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "छोड़ें"
+msgstr "बंद करें"
 
-#: src/mobile-settings-application.c:32
+#: src/mobile-settings-application.c:34
 msgid "- Manage your mobile settings"
 msgstr "- अपनी मोबाइल सेटिंग प्रबंधित करें"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:403
+#: src/mobile-settings-application.c:426
 msgid "translator-credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
-#: src/mobile-settings-window.c:77
+#: src/mobile-settings-window.c:85
 msgid "Device"
 msgstr "उपकरण"
 
-#: src/ms-feedback-panel.c:138
+#: src/ms-feedback-panel.c:140
 msgid "Sound file does not exist"
 msgstr "ध्वनि फाइल मौजूद नहीं है"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-feedback-panel.c:142
 msgid "Sound file is corrupt"
 msgstr "ध्वनि फाइल भ्रष्ट है"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:144
 msgid "Failed to play sound"
 msgstr "ध्वनि चलाने में विफल"
 
-#: src/ms-feedback-panel.c:181
+#: src/ms-feedback-panel.c:183
 #, c-format
 msgid "Playing %s"
 msgstr "%s बज रहा है"
 
-#: src/ms-feedback-panel.c:342 src/ms-feedback-panel.c:350
-msgid "none"
-msgstr "कोई नहीं"
-
-#: src/ms-feedback-panel.c:344
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:345
 msgid "low"
 msgstr "निम्न"
 
-#. 1.0
-#: src/ms-feedback-panel.c:346 src/ui/ms-osk-panel.ui:36
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:348
 msgid "normal"
 msgstr "सामान्य"
 
-#: src/ms-feedback-panel.c:348
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:351
 msgid "critical"
 msgstr "क्रांतिक"
 
-#: src/ms-sensor-panel.c:92
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:355
+msgid "none"
+msgstr "कोई नहीं"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:545
+msgid "Default"
+msgstr "तयशुदा"
+
+#: src/ms-osk-panel.c:546
+msgid "The default completer selected by the OSK"
+msgstr "OSK द्वारा चयनित तयशुदा समापक"
+
+#: src/ms-osk-panel.c:549
+msgid "No information available for this completer"
+msgstr "इस समापक के लिए कोई जानकारी उपलब्ध नहीं है"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
 msgid "Normal"
 msgstr "सामान्य"
 
-#: src/ms-sensor-panel.c:94
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
 msgid "Bottom up"
 msgstr "पोर्ट्रेट (उल्टा)"
 
-#: src/ms-sensor-panel.c:96
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
 msgid "Left up"
 msgstr "लैंडस्केप (बाएं)"
 
-#: src/ms-sensor-panel.c:98
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
 msgid "Right up"
 msgstr "लैंडस्केप (दाएं)"
 
-#: src/ms-sensor-panel.c:100
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
 msgid "Undefined"
 msgstr "अपरिभाषित"
 
-#: src/ms-sensor-panel.c:135
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
 msgid "Near"
 msgstr "पास"
 
-#: src/ms-sensor-panel.c:135
+#: src/ms-sensor-panel.c:142
 msgid "Far"
 msgstr "दूर"
 
-#: src/ms-sensor-panel.c:253
+#: src/ms-sensor-panel.c:260
 msgid "Updating…"
 msgstr "अद्यतन किया जा रहा है…"
 
-#: src/ms-sensor-panel.c:269 src/ms-sensor-panel.c:270
-#: src/ms-sensor-panel.c:271
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
 msgid "Not available"
-msgstr "उपलब्ध नहीं है"
+msgstr "उपलब्ध नहीं"
 
-#: src/ms-sound-row.c:127
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "उपलब्ध नहीं"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "उपलब्ध नहीं"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:128
 msgid "Custom"
 msgstr "तदनुकूल"
 
-#: src/ms-sound-row.c:308
+#: src/ms-sound-row.c:309
 msgid "Choose sound file"
 msgstr "ध्वनि फाइल चुनें"
 
-#: src/ms-util.c:150
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:151
 msgid "Full"
 msgstr "पूर्ण"
 
-#: src/ms-util.c:152
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:154
 msgid "Quiet"
 msgstr "शांत"
 
-#: src/ms-util.c:154
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:157
 msgid "Silent"
 msgstr "मूक"
 
-#: src/ui/mobile-settings-window.ui:75
+#: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
 msgstr "स्वागत है"
 
-#: src/ui/mobile-settings-window.ui:81
+#: src/ui/mobile-settings-window.ui:85
 msgid "Welcome to Mobile Settings"
 msgstr "मोबाइल सेटिंग्स में आपका स्वागत है"
 
-#: src/ui/mobile-settings-window.ui:82
+#: src/ui/mobile-settings-window.ui:86
 msgid "Tweak advanced mobile settings"
 msgstr "उन्नत मोबाइल सेटिंग्स में बदलाव करें"
 
-#: src/ui/mobile-settings-window.ui:90
+#: src/ui/mobile-settings-window.ui:94
 msgid "Top Bar"
 msgstr "शीर्ष पट्टी"
 
-#: src/ui/mobile-settings-window.ui:101
+#: src/ui/mobile-settings-window.ui:105
 msgid "Applications"
 msgstr "अनुप्रयोग"
 
-#: src/ui/mobile-settings-window.ui:112
+#: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
 msgstr "प्रतिक्रिया"
 
-#: src/ui/mobile-settings-window.ui:123
+#: src/ui/mobile-settings-window.ui:127
 msgid "Compositor"
 msgstr "कंपोज़ीटर"
 
-#: src/ui/mobile-settings-window.ui:134
+#: src/ui/mobile-settings-window.ui:138
 msgid "Lockscreen"
 msgstr "लॉकस्क्रीन"
 
-#: src/ui/mobile-settings-window.ui:145
+#: src/ui/mobile-settings-window.ui:149
 msgid "Convergence"
 msgstr "अभिसरण"
 
-#: src/ui/mobile-settings-window.ui:156
+#: src/ui/mobile-settings-window.ui:160
 msgid "On Screen Keyboard"
 msgstr "ऑन स्क्रीन कीबोर्ड"
 
-#: src/ui/mobile-settings-window.ui:167 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "सेंसर"
 
-#: src/ui/mobile-settings-window.ui:178
+#: src/ui/mobile-settings-window.ui:182
 msgid "Experimental features"
 msgstr "प्रायोगिक विशेषताएं"
 
-#: src/ui/mobile-settings-window.ui:202
+#: src/ui/mobile-settings-window.ui:206
 msgid "_Keyboard Shortcuts"
 msgstr "कीबोर्ड शॉर्टकट (_K)"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "मोबाइल सेटिंग्स के बारे में (_A)"
 
@@ -333,11 +383,10 @@ msgstr "सभी अनुप्रयोगों को जबरन छो�
 msgid "Scale down all apps"
 msgstr "सभी ऐप्स को छोटा करें"
 
-#: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
-#: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
-#: src/ui/ms-lockscreen-panel.ui:37 src/ui/ms-osk-panel.ui:20
-#: src/ui/ms-osk-panel.ui:67 src/ui/ms-osk-panel.ui:83
-#: src/ui/ms-scale-to-fit-row.ui:11
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
 msgid "Enabled"
 msgstr "सक्षम"
 
@@ -348,6 +397,12 @@ msgstr "कोई ज्ञात डॉक नहीं मिला"
 #: src/ui/ms-convergence-panel.ui:29
 msgid "Map built-in touch screen"
 msgstr "अंतर्निर्मित टच स्क्रीन को मैप करें"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "सक्षम"
 
 #: src/ui/ms-features-panel.ui:11
 msgid "Experimental Features"
@@ -369,17 +424,29 @@ msgstr ""
 "आपातकालीन कॉल सक्षम करें। कृपया इसे केवल तभी सक्षम करें जब आप सुरक्षित रूप से यह सुनिश्चित "
 "कर सकें कि यह आपके प्रदाता के साथ काम कर रहा है।"
 
-#: src/ui/ms-features-panel.ui:31
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "सक्षम"
+
+#: src/ui/ms-features-panel.ui:32
 msgid "Enable suspend via the system menu"
 msgstr "सिस्टम मेनू के माध्यम से निलंबित सक्षम करें"
 
-#: src/ui/ms-features-panel.ui:33
+#: src/ui/ms-features-panel.ui:34
 msgid ""
 "Please only enable this if you're aware of the limitations like data "
 "connection loss or missed alarms"
 msgstr ""
 "कृपया इसे केवल तभी सक्षम करें जब आप डेटा कनेक्शन हानि या छूटे हुए अलार्म जैसी सीमाओं से अवगत "
 "हों"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "सक्षम"
 
 #: src/ui/ms-feedback-panel.ui:16
 msgid "Feedback profile"
@@ -451,13 +518,21 @@ msgstr "स्वचालित स्क्रीन लॉक विलंब
 msgid "Seconds from screen blank to screen lock"
 msgstr "स्क्रीन रिक्त से स्क्रीन लॉक तक का समय"
 
-#: src/ui/ms-lockscreen-panel.ui:30
-msgid "Shuffle keypad"
-msgstr "कीपैड शफ़ल करें"
-
 #: src/ui/ms-lockscreen-panel.ui:31
+msgid "Shuffle keypad"
+msgstr "कीपैड में फेरबदल करें"
+
+#: src/ui/ms-lockscreen-panel.ui:32
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "क्या कीपैड पर संख्याओं का फेरबदल करना है"
+
+#: src/ui/ms-lockscreen-panel.ui:38
+msgid "Require authentication to unlock"
+msgstr "अनलॉक करने के लिए प्रमाणीकरण आवश्यक"
+
+#: src/ui/ms-lockscreen-panel.ui:39
+msgid "Require typing PIN or password to unlock the device"
+msgstr "डिवाइस अनलॉक करने हेतु पिन या पासवर्ड की आवश्यकता होती है"
 
 #: src/ui/ms-lockscreen-panel.ui:48
 msgid "Widgets"
@@ -467,6 +542,50 @@ msgstr "विजेट"
 msgid "Additional widgets for the lock screen"
 msgstr "लॉक स्क्रीन के लिए अतिरिक्त विजेट"
 
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "अभिन्यास जोड़ें"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:14
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:20
+msgid "Add"
+msgstr "जोड़ें"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "भाषा"
+
+#: src/ui/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "अभिन्यास"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: src/ui/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "कोई अभिन्यास विन्यस्त नहीं"
+
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
+msgid "More options…"
+msgstr "अधिक विकल्प…"
+
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
+msgid "Move Up"
+msgstr "ऊपर जाएं"
+
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
+msgid "Move Down"
+msgstr "नीचे जाएं"
+
+#: src/ui/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "हटाएं"
+
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
 msgstr "ऑनस्क्रीन कीबोर्ड सक्षम करें (_O)"
@@ -475,77 +594,99 @@ msgstr "ऑनस्क्रीन कीबोर्ड सक्षम कर
 msgid "Whether to show the on screen keyboard when needed"
 msgstr "क्या जरूरत पड़ने पर ऑन स्क्रीन कीबोर्ड दिखाना है"
 
-#: src/ui/ms-osk-panel.ui:28
+#: src/ui/ms-osk-panel.ui:20
 msgid "Unfold long-press"
 msgstr "लंबे समय तक दबाकर रखें"
 
-#: src/ui/ms-osk-panel.ui:29
+#: src/ui/ms-osk-panel.ui:21
 msgid ""
 "How long to press the center of the home bar to unfold the on screen keyboard"
 msgstr "ऑन स्क्रीन कीबोर्ड को खोलने के लिए होम बार के मध्य भाग को कितनी देर तक दबाना है"
 
-#. 0.5
-#: src/ui/ms-osk-panel.ui:34
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
 msgid "short"
-msgstr "छोटे"
+msgstr "छोटा"
 
-#. 2.0
-#: src/ui/ms-osk-panel.ui:38
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "सामान्य"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
 msgid "long"
-msgstr "लंबे"
+msgstr "लंबा"
 
-#: src/ui/ms-osk-panel.ui:46
+#: src/ui/ms-osk-panel.ui:38
 msgid "Ignore hardware keyboard"
 msgstr "हार्डवेयर कीबोर्ड को नजरअंदाज करें"
 
-#: src/ui/ms-osk-panel.ui:47
+#: src/ui/ms-osk-panel.ui:39
 msgid ""
 "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr "क्या भौतिक कीबोर्ड मौजूद होने पर ऑन स्क्रीन कीबोर्ड दिखाना है"
 
-#: src/ui/ms-osk-panel.ui:56
+#: src/ui/ms-osk-panel.ui:51
+msgid "Keyboard height in portrait mode"
+msgstr "पोर्ट्रेट मोड में कीबोर्ड की ऊंचाई"
+
+#: src/ui/ms-osk-panel.ui:52
+msgid "When the screen is taller than wide"
+msgstr "जब स्क्रीन की चौड़ाई लंबाई से अधिक हो"
+
+#: src/ui/ms-osk-panel.ui:67
+msgid "Keyboard height in landscape mode"
+msgstr "लैंडस्केप मोड में कीबोर्ड की ऊंचाई"
+
+#: src/ui/ms-osk-panel.ui:68
+msgid "When the screen is wider than tall"
+msgstr "जब स्क्रीन की लंबाई चौड़ाई से अधिक हो"
+
+#: src/ui/ms-osk-panel.ui:91
 msgid "Text Completion"
 msgstr "पाठ पूर्णता"
 
-#: src/ui/ms-osk-panel.ui:59
+#: src/ui/ms-osk-panel.ui:94
 msgid "Opportunistic word completion"
 msgstr "अवसरवादी शब्द पूर्णता"
 
-#: src/ui/ms-osk-panel.ui:60
+#: src/ui/ms-osk-panel.ui:95
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "जब ऐप इंगित करता है कि यह उपयोगी है तो शब्द पूर्णता सक्षम करें"
 
-#: src/ui/ms-osk-panel.ui:75
+#: src/ui/ms-osk-panel.ui:102
 msgid "Toggle via OSK menu"
 msgstr "OSK मेनू के माध्यम से टॉगल करें"
 
-#: src/ui/ms-osk-panel.ui:76
+#: src/ui/ms-osk-panel.ui:103
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "कीबोर्ड के मेनू बटन के माध्यम से शब्द पूर्णता को टॉगल करने की अनुमति दें"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:109
+msgid "Default Completer"
+msgstr "तयशुदा समापक"
+
+#: src/ui/ms-osk-panel.ui:110
+msgid "The default completion engine to use"
+msgstr "उपयोग करने हेतु तयशुदा समापन इंजन"
+
+#: src/ui/ms-osk-panel.ui:121
 msgid "Terminal Layout"
 msgstr "टर्मिनल अभिन्यास"
 
-#: src/ui/ms-osk-panel.ui:98
+#: src/ui/ms-osk-panel.ui:125
 msgid "Shortcuts"
 msgstr "शॉर्टकट"
 
-#: src/ui/ms-osk-panel.ui:99
+#: src/ui/ms-osk-panel.ui:126
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "शॉर्टकट बार में उपलब्ध शॉर्टकट"
 
-#: src/ui/ms-plugin-row.ui:41
-msgid "More options…"
-msgstr "अधिक विकल्प…"
-
-#: src/ui/ms-plugin-row.ui:54
-msgid "Move Up"
-msgstr "ऊपर जाएं"
-
-#: src/ui/ms-plugin-row.ui:58
-msgid "Move Down"
-msgstr "नीचे जाएं"
+#: src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "एप्लिकेशन"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
