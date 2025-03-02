@@ -25,6 +25,7 @@
 #define FEEDBACKD_SCHEMA_ID "org.sigxcpu.feedbackd"
 #define FEEDBACKD_KEY_PROFILE "profile"
 #define FEEDBACKD_KEY_PREFER_FLASH "prefer-flash"
+#define FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH "max-haptic-strength"
 #define APP_SCHEMA FEEDBACKD_SCHEMA_ID ".application"
 #define APP_PREFIX "/org/sigxcpu/feedbackd/application/"
 
@@ -53,6 +54,8 @@ struct _MsFeedbackPanel {
   GtkListBox                *sounds_listbox;
   GHashTable                *known_applications;
   AdwSwitchRow              *quick_silent_switch;
+  GtkAdjustment             *haptic_strenth_adj;
+  AdwSpinRow                *haptic_strenth_row;
 
   GSettings                 *settings;
   MsFeedbackProfile          profile;
@@ -474,10 +477,34 @@ ms_feedback_panel_get_property (GObject    *object,
 }
 
 
+static gboolean
+max_haptic_strength_get (GValue *value, GVariant *variant, gpointer user_data)
+{
+  double strength = g_variant_get_double (variant);
+
+  g_value_set_double (value, (strength * 100));
+
+  return TRUE;
+}
+
+
+static GVariant *
+max_haptic_strength_set (const GValue       *value,
+                         const GVariantType *expected_type,
+                         gpointer            user_data)
+{
+  guint percent = g_value_get_double (value);
+
+  return g_variant_new_double (0.01 * percent);
+}
+
+
 static void
 ms_feedback_panel_constructed (GObject *object)
 {
   MsFeedbackPanel *self = MS_FEEDBACK_PANEL (object);
+  GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
+  g_autoptr (GSettingsSchema) schema = NULL;
   gboolean found;
 
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->constructed (object);
@@ -502,6 +529,22 @@ ms_feedback_panel_constructed (GObject *object)
                                    "active",
                                    G_SETTINGS_BIND_DEFAULT);
   gtk_widget_set_visible (GTK_WIDGET (self->quick_silent_switch), found);
+
+  /* TODO: Simplify once we can rely on the schema key being present */
+  schema = g_settings_schema_source_lookup (source, FEEDBACKD_SCHEMA_ID, TRUE);
+  if (g_settings_schema_has_key (schema, FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH)) {
+    gtk_widget_set_visible (GTK_WIDGET (self->haptic_strenth_row), TRUE);
+
+    g_settings_bind_with_mapping (self->settings,
+                                  FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH,
+                                  G_OBJECT (self->haptic_strenth_adj),
+                                  "value",
+                                  G_SETTINGS_BIND_DEFAULT,
+                                  max_haptic_strength_get,
+                                  max_haptic_strength_set,
+                                  NULL,
+                                  NULL);
+  }
 }
 
 
@@ -544,6 +587,8 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-feedback-panel.ui");
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, app_listbox);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_adj);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_row);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, prefer_flash);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sounds_listbox);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, quick_silent_switch);
@@ -590,4 +635,3 @@ ms_feedback_panel_new (void)
 {
   return MS_FEEDBACK_PANEL (g_object_new (MS_TYPE_FEEDBACK_PANEL, NULL));
 }
-
