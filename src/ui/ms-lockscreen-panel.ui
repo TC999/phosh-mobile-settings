@@ -29,6 +29,7 @@
                   <object class="AdwSpinRow">
                     <property name="title" translatable="yes">Automatic screen lock delay</property>
                     <property name="subtitle" translatable="yes">Seconds from screen blank to screen lock</property>
+                    <property name="numeric">1</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment" id="lock_delay_adjustment">
                         <property name="lower">0</property>
