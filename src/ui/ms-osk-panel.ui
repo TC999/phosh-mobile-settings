@@ -52,6 +52,7 @@
                     <property name="subtitle" translatable="yes">When the screen is taller than wide</property>
                     <property name="digits">2</property>
                     <property name="visible">False</property>
+                    <property name="numeric">1</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">0.50</property>
@@ -68,6 +69,7 @@
                     <property name="subtitle" translatable="yes">When the screen is wider than tall</property>
                     <property name="digits">2</property>
                     <property name="visible">False</property>
+                    <property name="numeric">1</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">0.50</property>
