@@ -10,6 +10,21 @@
 
               <object class="AdwPreferencesGroup">
                 <property name="title" translatable="yes">Locking and unlocking</property>
+
+                <child>
+                  <object class="AdwSwitchRow" id="shuffle_switch">
+                    <property name="title" translatable="yes">Shuffle keypad</property>
+                    <property name="subtitle" translatable="yes">Whether to shuffle the numbers on the keypad</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="AdwSwitchRow" id="require_unlock_switch">
+                    <property name="title" translatable="yes">Require authentication to unlock</property>
+                    <property name="subtitle" translatable="yes">Require typing PIN or password to unlock the device</property>
+                  </object>
+                </child>
+
                 <child>
                   <object class="AdwSpinRow">
                     <property name="title" translatable="yes">Automatic screen lock delay</property>
@@ -23,20 +38,6 @@
                         <property name="step-increment">1</property>
                       </object>
                     </property>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="AdwSwitchRow" id="shuffle_switch">
-                    <property name="title" translatable="yes">Shuffle keypad</property>
-                    <property name="subtitle" translatable="yes">Whether to shuffle the numbers on the keypad</property>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="AdwSwitchRow" id="require_unlock_switch">
-                    <property name="title" translatable="yes">Require authentication to unlock</property>
-                    <property name="subtitle" translatable="yes">Require typing PIN or password to unlock the device</property>
                   </object>
                 </child>
 
