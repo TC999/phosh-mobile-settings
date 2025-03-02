@@ -18,6 +18,8 @@
 
 #include <phosh-settings-enums.h>
 
+#include <libfeedback.h>
+
 #include <gio/gdesktopappinfo.h>
 #include <glib/gi18n.h>
 
@@ -75,6 +77,26 @@ struct _MsFeedbackPanel {
 
 G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
 
+
+static void
+wait_a_bit (gpointer unused)
+{
+  g_autoptr (LfbEvent) event = lfb_event_new ("message-new-sms");
+
+  if (!lfb_is_initted ())
+    return;
+
+  lfb_event_set_feedback_profile (event, "quiet");
+  lfb_event_trigger_feedback (event, NULL);
+}
+
+
+static void
+on_haptic_strength_changed (void)
+{
+  /* We don't know when exactly feedbackd picked up the new value so wait a bit */
+  g_timeout_add_once (200, wait_a_bit, NULL);
+}
 
 static void
 stop_playback (MsFeedbackPanel *self)
@@ -544,6 +566,11 @@ ms_feedback_panel_constructed (GObject *object)
                                   max_haptic_strength_set,
                                   NULL,
                                   NULL);
+
+    g_signal_connect (self->settings,
+                      "changed::" FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH,
+                      G_CALLBACK (on_haptic_strength_changed),
+                      NULL);
   }
 }
 
