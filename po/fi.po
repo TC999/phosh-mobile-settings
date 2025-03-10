@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-05-25 15:02+0000\n"
-"PO-Revision-Date: 2024-05-25 20:06+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2025-02-15 09:25+0000\n"
+"PO-Revision-Date: 2025-03-09 16:59+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgid "Mobile Settings"
 msgstr "Mobiiliasetukset"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:12
+#: data/mobi.phosh.MobileSettings.desktop.in:13
 msgid "Mobile;Preferences;MobileSettings;"
 msgstr "Mobile;Preferences;MobileSettings;mobiili;asetukset;"
 
@@ -62,43 +62,53 @@ msgstr "Palautepaneeli"
 msgid "Critical temperature is %.2f°C"
 msgstr "Kriittinen lämpötila on %.2f°C"
 
-#. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:19
-msgid "U-Boot"
-msgstr ""
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+msgid "Librem 5"
+msgstr "Librem 5"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:31
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
 msgid "Suspend device"
 msgstr ""
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
 msgid "Suspend is experimental"
 msgstr ""
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:51
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+msgid "suspend now"
+msgstr ""
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
 msgid "Temperatures"
 msgstr "Lämpötilat"
 
 #. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:55
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
 msgid "CPU"
 msgstr "CPU"
 
 #. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:74
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
 msgid "GPU"
 msgstr "GPU"
 
 #. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:93
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
 msgid "VPU"
 msgstr "VPU"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:111
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
 msgid "Fuel Gauge"
 msgstr ""
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:129
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
 msgid "Battery"
 msgstr "Akku"
 
@@ -117,158 +127,203 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Lopeta"
 
-#: src/mobile-settings-application.c:30
+#: src/mobile-settings-application.c:34
 msgid "- Manage your mobile settings"
 msgstr "- Hallitse mobiiliasetuksia"
 
-#: src/mobile-settings-window.c:77
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/mobile-settings-application.c:427
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: src/mobile-settings-window.c:85
 msgid "Device"
 msgstr "Laite"
 
-#: src/ms-feedback-panel.c:135
+#: src/ms-feedback-panel.c:140
 msgid "Sound file does not exist"
 msgstr "Äänitiedostoa ei ole olemassa"
 
-#: src/ms-feedback-panel.c:137
+#: src/ms-feedback-panel.c:142
 msgid "Sound file is corrupt"
 msgstr "Äänitiedosto on rikkoutunut"
 
-#: src/ms-feedback-panel.c:139
+#: src/ms-feedback-panel.c:144
 msgid "Failed to play sound"
 msgstr "Äänen toistaminen epäonnistui"
 
-#: src/ms-feedback-panel.c:178
+#: src/ms-feedback-panel.c:183
 #, c-format
 msgid "Playing %s"
 msgstr "Toistetaan %s"
 
-#: src/ms-feedback-panel.c:339 src/ms-feedback-panel.c:347
-msgid "none"
-msgstr "ei mitään"
-
-#: src/ms-feedback-panel.c:341
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:345
 msgid "low"
 msgstr "matala"
 
-#. 1.0
-#: src/ms-feedback-panel.c:343 src/ui/ms-osk-panel.ui:36
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:348
 msgid "normal"
 msgstr "normaali"
 
-#: src/ms-feedback-panel.c:345
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:351
 msgid "critical"
 msgstr "kriittinen"
 
-#: src/ms-sensor-panel.c:92
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:355
+msgid "none"
+msgstr "ei mitään"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:545
+msgid "Default"
+msgstr "Oletus"
+
+#: src/ms-osk-panel.c:546
+msgid "The default completer selected by the OSK"
+msgstr ""
+
+#: src/ms-osk-panel.c:549
+msgid "No information available for this completer"
+msgstr ""
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
 msgid "Normal"
 msgstr ""
 
-#: src/ms-sensor-panel.c:94
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
 msgid "Bottom up"
 msgstr ""
 
-#: src/ms-sensor-panel.c:96
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
 msgid "Left up"
 msgstr ""
 
-#: src/ms-sensor-panel.c:98
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
 msgid "Right up"
 msgstr ""
 
-#: src/ms-sensor-panel.c:100
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
 msgid "Undefined"
-msgstr ""
+msgstr "Määrittämätön"
 
-#: src/ms-sensor-panel.c:135
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
 msgid "Near"
 msgstr ""
 
-#: src/ms-sensor-panel.c:135
+#: src/ms-sensor-panel.c:142
 msgid "Far"
 msgstr ""
 
-#: src/ms-sensor-panel.c:253
+#: src/ms-sensor-panel.c:260
 msgid "Updating…"
 msgstr "Päivitetään…"
 
-#: src/ms-sensor-panel.c:269 src/ms-sensor-panel.c:270
-#: src/ms-sensor-panel.c:271
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
 msgid "Not available"
 msgstr "Ei saatavilla"
 
-#: src/ms-sound-row.c:127
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Ei saatavilla"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Ei saatavilla"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:128
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: src/ms-sound-row.c:308
+#: src/ms-sound-row.c:309
 msgid "Choose sound file"
 msgstr "Valitse äänitiedosto"
 
-#: src/ms-util.c:149
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:151
 msgid "Full"
 msgstr ""
 
-#: src/ms-util.c:151
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:154
 msgid "Quiet"
 msgstr "Hiljainen"
 
-#: src/ms-util.c:153
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:157
 msgid "Silent"
 msgstr "Äänetön"
 
-#: src/ui/mobile-settings-window.ui:74
+#: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
 msgstr "Tervetuloa"
 
-#: src/ui/mobile-settings-window.ui:80
+#: src/ui/mobile-settings-window.ui:85
 msgid "Welcome to Mobile Settings"
 msgstr "Tervetuloa mobiiliasetuksiin"
 
-#: src/ui/mobile-settings-window.ui:81
+#: src/ui/mobile-settings-window.ui:86
 msgid "Tweak advanced mobile settings"
 msgstr "Säädä mobiiliasetuksia"
 
-#: src/ui/mobile-settings-window.ui:89
+#: src/ui/mobile-settings-window.ui:94
 msgid "Top Bar"
 msgstr "Yläpalkki"
 
-#: src/ui/mobile-settings-window.ui:100
+#: src/ui/mobile-settings-window.ui:105
 msgid "Applications"
 msgstr "Sovellukset"
 
-#: src/ui/mobile-settings-window.ui:111
+#: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
 msgstr "Palaute"
 
-#: src/ui/mobile-settings-window.ui:122
+#: src/ui/mobile-settings-window.ui:127
 msgid "Compositor"
 msgstr "Komposiittori"
 
-#: src/ui/mobile-settings-window.ui:133
+#: src/ui/mobile-settings-window.ui:138
 msgid "Lockscreen"
 msgstr "Lukitusnäyttö"
 
-#: src/ui/mobile-settings-window.ui:144
+#: src/ui/mobile-settings-window.ui:149
 msgid "Convergence"
 msgstr "Konvergenssi"
 
-#: src/ui/mobile-settings-window.ui:155
+#: src/ui/mobile-settings-window.ui:160
 msgid "On Screen Keyboard"
 msgstr "Näyttönäppäimistö"
 
-#: src/ui/mobile-settings-window.ui:166 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Sensorit"
 
-#: src/ui/mobile-settings-window.ui:177
+#: src/ui/mobile-settings-window.ui:182
 msgid "Experimental features"
 msgstr "Kokeelliset ominaisuudet"
 
-#: src/ui/mobile-settings-window.ui:201
+#: src/ui/mobile-settings-window.ui:206
 msgid "_Keyboard Shortcuts"
 msgstr "_Pikanäppäimet"
 
-#: src/ui/mobile-settings-window.ui:205
+#: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_Tietoja - Mobiiliasetukset"
 
@@ -328,21 +383,26 @@ msgstr ""
 msgid "Scale down all apps"
 msgstr ""
 
-#: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
-#: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
-#: src/ui/ms-lockscreen-panel.ui:21 src/ui/ms-osk-panel.ui:20
-#: src/ui/ms-osk-panel.ui:67 src/ui/ms-osk-panel.ui:83
-#: src/ui/ms-scale-to-fit-row.ui:11
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
 msgid "Enabled"
 msgstr "Käytössä"
 
 #: src/ui/ms-convergence-panel.ui:15
 msgid "No known docks detected"
-msgstr ""
+msgstr "Tunnettuja telakoita ei havaittu"
 
 #: src/ui/ms-convergence-panel.ui:29
 msgid "Map built-in touch screen"
 msgstr ""
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Käytössä"
 
 #: src/ui/ms-features-panel.ui:11
 msgid "Experimental Features"
@@ -362,15 +422,27 @@ msgid ""
 "that it's working with your provider."
 msgstr ""
 
-#: src/ui/ms-features-panel.ui:31
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Käytössä"
+
+#: src/ui/ms-features-panel.ui:32
 msgid "Enable suspend via the system menu"
 msgstr ""
 
-#: src/ui/ms-features-panel.ui:33
+#: src/ui/ms-features-panel.ui:34
 msgid ""
 "Please only enable this if you're aware of the limitations like data "
 "connection loss or missed alarms"
 msgstr ""
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Käytössä"
 
 #: src/ui/ms-feedback-panel.ui:16
 msgid "Feedback profile"
@@ -380,57 +452,136 @@ msgstr "Palauteprofiili"
 msgid "The global maximum feedback profile"
 msgstr ""
 
+#: src/ui/ms-feedback-panel.ui:32
+msgid "Prefer flash"
+msgstr ""
+
 #: src/ui/ms-feedback-panel.ui:33
+msgid "Prefer camera flash over status LED when available"
+msgstr ""
+
+#. Translators: Vol- means the 'Lower Volume' key
+#: src/ui/ms-feedback-panel.ui:39
+msgid "Silence on Vol-"
+msgstr "Aseta äänettömäksi painamalla Vol-"
+
+#: src/ui/ms-feedback-panel.ui:40
+msgid ""
+"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:48
 msgid "Per Application settings"
 msgstr "Sovelluskohtaiset asetukset"
 
-#: src/ui/ms-feedback-panel.ui:46
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Sounds"
 msgstr "Äänet"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:62
 msgid "The sound to use for certain events"
 msgstr "Eri tapahtumiin käytettävät äänet"
 
-#: src/ui/ms-feedback-panel.ui:55
+#: src/ui/ms-feedback-panel.ui:70
 msgid "Phone Calls"
 msgstr "Puhelut"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:76
 msgid "SMS"
 msgstr "Tekstiviestit"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:82
 msgid "Instant messages"
 msgstr "Pikaviestit"
 
-#: src/ui/ms-feedback-panel.ui:78
+#: src/ui/ms-feedback-panel.ui:93
 msgid "Screen Wakeup"
 msgstr ""
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:96
 msgid "Notification urgency that lights up the screen"
 msgstr ""
 
-#: src/ui/ms-lockscreen-panel.ui:11
-msgid "Unlocking"
-msgstr "Lukituksen avaaminen"
+#: src/ui/ms-lockscreen-panel.ui:12
+msgid "Locking and unlocking"
+msgstr "Lukitus ja lukituksen avaaminen"
 
-#: src/ui/ms-lockscreen-panel.ui:14
+#: src/ui/ms-lockscreen-panel.ui:15
+msgid "Automatic screen lock delay"
+msgstr "Näytön automaattisen lukituksen viive"
+
+#: src/ui/ms-lockscreen-panel.ui:16
+msgid "Seconds from screen blank to screen lock"
+msgstr ""
+
+#: src/ui/ms-lockscreen-panel.ui:31
 msgid "Shuffle keypad"
 msgstr ""
 
-#: src/ui/ms-lockscreen-panel.ui:15
+#: src/ui/ms-lockscreen-panel.ui:32
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr ""
 
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:38
+msgid "Require authentication to unlock"
+msgstr "Vaadi tunnistautuminen lukituksen avaamiseksi"
+
+#: src/ui/ms-lockscreen-panel.ui:39
+msgid "Require typing PIN or password to unlock the device"
+msgstr ""
+"Vaadi PIN-koodin tai salasanan kirjoittaminen laitteen lukituksen avaamiseksi"
+
+#: src/ui/ms-lockscreen-panel.ui:48
 msgid "Widgets"
 msgstr "Widgetit"
 
-#: src/ui/ms-lockscreen-panel.ui:33
+#: src/ui/ms-lockscreen-panel.ui:49
 msgid "Additional widgets for the lock screen"
 msgstr ""
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "Lisää asettelu"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:14
+msgid "Cancel"
+msgstr "Peru"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:20
+msgid "Add"
+msgstr "Lisää"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "Kieli"
+
+#: src/ui/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Asettelut"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: src/ui/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "Asetteluja ei ole määritetty"
+
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
+msgid "More options…"
+msgstr "Lisää valintoja…"
+
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
+msgid "Move Up"
+msgstr "Siirrä ylös"
+
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
+msgid "Move Down"
+msgstr "Siirrä alas"
+
+#: src/ui/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Poista"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
@@ -440,77 +591,101 @@ msgstr "Käytä _näyttönäppäimistöä"
 msgid "Whether to show the on screen keyboard when needed"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:28
+#: src/ui/ms-osk-panel.ui:20
 msgid "Unfold long-press"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:29
+#: src/ui/ms-osk-panel.ui:21
 msgid ""
 "How long to press the center of the home bar to unfold the on screen keyboard"
 msgstr ""
 
-#. 0.5
-#: src/ui/ms-osk-panel.ui:34
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
 msgid "short"
 msgstr ""
 
-#. 2.0
-#: src/ui/ms-osk-panel.ui:38
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "normaali"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
 msgid "long"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:46
+#: src/ui/ms-osk-panel.ui:38
 msgid "Ignore hardware keyboard"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:47
+#: src/ui/ms-osk-panel.ui:39
 msgid ""
 "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:56
+#: src/ui/ms-osk-panel.ui:51
+msgid "Keyboard height in portrait mode"
+msgstr "Näppäimistön korkeus pystyasennossa"
+
+#: src/ui/ms-osk-panel.ui:52
+msgid "When the screen is taller than wide"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:67
+msgid "Keyboard height in landscape mode"
+msgstr "Näppäimistön korkeus vaaka-asennossa"
+
+#: src/ui/ms-osk-panel.ui:68
+msgid "When the screen is wider than tall"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:91
 msgid "Text Completion"
 msgstr "Tekstin täydentäminen"
 
-#: src/ui/ms-osk-panel.ui:59
+#: src/ui/ms-osk-panel.ui:94
 msgid "Opportunistic word completion"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:60
+#: src/ui/ms-osk-panel.ui:95
 msgid "Enable word completion when the app indicates it is useful"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:75
+#: src/ui/ms-osk-panel.ui:102
 msgid "Toggle via OSK menu"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:76
+#: src/ui/ms-osk-panel.ui:103
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:109
+#, fuzzy
+#| msgid "Text Completion"
+msgid "Default Completer"
+msgstr "Tekstin täydentäminen"
+
+#: src/ui/ms-osk-panel.ui:110
+msgid "The default completion engine to use"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:121
 msgid "Terminal Layout"
 msgstr "Päätteen asettelu"
 
-#: src/ui/ms-osk-panel.ui:98
+#: src/ui/ms-osk-panel.ui:125
 msgid "Shortcuts"
 msgstr ""
 
-#: src/ui/ms-osk-panel.ui:99
+#: src/ui/ms-osk-panel.ui:126
 msgid "The shortcuts available in the shortcuts bar"
 msgstr ""
 
-#: src/ui/ms-plugin-row.ui:33
-msgid "More options…"
-msgstr "Lisää valintoja…"
-
-#: src/ui/ms-plugin-row.ui:46
-msgid "Move Up"
-msgstr "Siirrä ylös"
-
-#: src/ui/ms-plugin-row.ui:50
-msgid "Move Down"
-msgstr "Siirrä alas"
+#: src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "Sovellus"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
@@ -563,9 +738,32 @@ msgid "Sound files (ogg)"
 msgstr "Äänitiedostot (ogg)"
 
 #: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "Käyttöliittymän elementit"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "Näytä akun prosentti"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "Näyttä tarkka varaustaso yläpalkissa"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr ""
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr ""
+
+#: src/ui/ms-topbar-panel.ui:34
 msgid "Quick Settings"
 msgstr "Pika-asetukset"
 
-#: src/ui/ms-topbar-panel.ui:13
+#: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr ""
+
+#~ msgid "Unlocking"
+#~ msgstr "Lukituksen avaaminen"
