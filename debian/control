@@ -13,6 +13,7 @@ Build-Depends:
  libgnome-desktop-4-dev,
  libgtk-4-dev,
  libjson-glib-dev,
+ libportal-gtk4-dev,
  libsensors-dev,
  meson,
  phosh-dev (>= 0.40.0),
