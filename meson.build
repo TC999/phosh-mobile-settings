@@ -1,10 +1,9 @@
-project('phosh-mobile-settings', 'c',
-          version: '0.45.0',
-    meson_version: '>= 1.0.0',
-  default_options: [ 'warning_level=2',
-                     'werror=false',
-                     'c_std=gnu11',
-                   ],
+project(
+  'phosh-mobile-settings',
+  'c',
+  version: '0.45.0',
+  meson_version: '>= 1.0.0',
+  default_options: ['warning_level=2', 'werror=false', 'c_std=gnu11'],
 )
 
 app_id = 'mobi.phosh.MobileSettings'
@@ -16,7 +15,7 @@ libdir = prefix / get_option('libdir')
 ms_plugins_dir = prefix / libdir / 'phosh-mobile-settings' / 'plugins'
 
 glib_ver = '2.76'
-glib_ver_str = 'GLIB_VERSION_@0@'.format(glib_ver.replace('.','_'))
+glib_ver_str = 'GLIB_VERSION_@0@'.format(glib_ver.replace('.', '_'))
 glib_ver_cmp = '>=@0@'.format(glib_ver)
 
 gtk_ver = '4.12.5'
@@ -25,22 +24,19 @@ gtk_ver_str = 'GDK_VERSION_@0@_@1@'.format(gtk_ver_arr[0], gtk_ver_arr[1])
 gtk_ver_cmp = '>=@0@'.format(gtk_ver)
 
 adw_ver = '1.5'
-adw_ver_str = 'ADW_VERSION_@0@'.format(adw_ver.replace('.','_'))
+adw_ver_str = 'ADW_VERSION_@0@'.format(adw_ver.replace('.', '_'))
 adw_ver_cmp = '>=@0@'.format(adw_ver)
 
 glib_dep = dependency('glib-2.0', version: glib_ver_cmp)
 gio_dep = dependency('gio-2.0', version: glib_ver_cmp)
-gio_unix_dep =  dependency('gio-unix-2.0', version: glib_ver_cmp)
+gio_unix_dep = dependency('gio-unix-2.0', version: glib_ver_cmp)
 gmodule_dep = dependency('gmodule-2.0', version: glib_ver_cmp)
-gmobile_dep = dependency('gmobile',
+gmobile_dep = dependency(
+  'gmobile',
   version: '>= 0.2.0',
   fallback: ['gmobile', 'gmobile_dep'],
-  default_options:
-    [ 'examples=false',
-      'introspection=false',
-      'gtk_doc=false',
-      'tests=false'
-    ])
+  default_options: ['examples=false', 'introspection=false', 'gtk_doc=false', 'tests=false'],
+)
 gnome_desktop_dep = dependency('gnome-desktop-4', version: '>= 44')
 gsound_dep = dependency('gsound')
 gtk_dep = dependency('gtk4', version: gtk_ver_cmp)
@@ -56,11 +52,7 @@ adwaita_dep = dependency(
   'libadwaita-1',
   version: adw_ver_cmp,
   fallback: ['libadwaita', 'adwaita_dep'],
-  default_options: [
-    'examples=false',
-    'introspection=disabled',
-    'tests=false',
-  ],
+  default_options: ['examples=false', 'introspection=disabled', 'tests=false'],
 )
 
 i18n = import('i18n')
@@ -110,31 +102,29 @@ if get_option('buildtype') != 'plain'
   test_c_args += '-fstack-protector-strong'
 endif
 
-foreach arg: test_c_args
+foreach arg : test_c_args
   if cc.has_multi_arguments(arg)
     global_c_args += arg
   endif
 endforeach
 add_project_arguments(
-  [global_c_args,
-   '-DGMOBILE_USE_UNSTABLE_API',
-   '-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_ver_str),
-   '-DGLIB_VERSION_MAX_ALLOWED=@0@'.format(glib_ver_str),
-   '-DGDK_VERSION_MIN_REQUIRED=@0@'.format(gtk_ver_str),
-   '-DGDK_VERSION_MAX_ALLOWED=@0@'.format(gtk_ver_str),
-   '-DADW_VERSION_MIN_REQUIRED=@0@'.format(adw_ver_str),
-   '-DADW_VERSION_MAX_ALLOWED=@0@'.format(adw_ver_str),
-   '-DLIBFEEDBACK_USE_UNSTABLE_API',
+  [
+    global_c_args,
+    '-DGMOBILE_USE_UNSTABLE_API',
+    '-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_ver_str),
+    '-DGLIB_VERSION_MAX_ALLOWED=@0@'.format(glib_ver_str),
+    '-DGDK_VERSION_MIN_REQUIRED=@0@'.format(gtk_ver_str),
+    '-DGDK_VERSION_MAX_ALLOWED=@0@'.format(gtk_ver_str),
+    '-DADW_VERSION_MIN_REQUIRED=@0@'.format(adw_ver_str),
+    '-DADW_VERSION_MAX_ALLOWED=@0@'.format(adw_ver_str),
+    '-DLIBFEEDBACK_USE_UNSTABLE_API',
   ],
   language: 'c',
 )
 
 run_data = configuration_data()
 run_data.set('ABS_BUILDDIR', meson.current_build_dir())
-configure_file(
-  input: 'run.in',
-  output: 'run',
-  configuration: run_data)
+configure_file(input: 'run.in', output: 'run', configuration: run_data)
 
 config_h = configuration_data()
 config_h.set_quoted('PACKAGE_VERSION', meson.project_version())
@@ -143,20 +133,19 @@ config_h.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('lo
 config_h.set_quoted('MOBILE_SETTINGS_APP_ID', app_id)
 config_h.set_quoted('MOBILE_SETTINGS_VERSION', meson.project_version())
 config_h.set_quoted('MOBILE_SETTINGS_PLUGINS_DIR', ms_plugins_dir)
-config_h.set_quoted('MOBILE_SETTINGS_PHOSH_PLUGINS_DIR',
-		    phosh_plugins_dep.get_variable(pkgconfig: 'lockscreen_plugins_dir'))
-config_h.set_quoted('MOBILE_SETTINGS_PHOSH_PREFS_DIR',
-		    phosh_plugins_dep.get_variable(pkgconfig: 'lockscreen_prefs_dir'))
+config_h.set_quoted(
+  'MOBILE_SETTINGS_PHOSH_PLUGINS_DIR',
+  phosh_plugins_dep.get_variable(pkgconfig: 'lockscreen_plugins_dir'),
+)
+config_h.set_quoted(
+  'MOBILE_SETTINGS_PHOSH_PREFS_DIR',
+  phosh_plugins_dep.get_variable(pkgconfig: 'lockscreen_prefs_dir'),
+)
 config_h.set_quoted('MOBILE_SETTINGS_OSK_LAYOUTS', datadir / 'phosh-osk-stub' / 'layouts.json')
 config_h.set_quoted('MOBILE_SETTINGS_OSK_COMPLETERS_DIR', datadir / 'phosh-osk-stub' / 'completers')
 
-configure_file(
-  output: 'mobile-settings-config.h',
-  configuration: config_h,
-)
-add_project_arguments([
-  '-I' + meson.project_build_root(),
-], language: 'c')
+configure_file(output: 'mobile-settings-config.h', configuration: config_h)
+add_project_arguments(['-I' + meson.project_build_root()], language: 'c')
 
 
 subdir('data')
@@ -169,8 +158,5 @@ subdir('po')
 # Older meson can't handle gnome.post_install but that only
 # matters for distro backports:
 if meson.version().version_compare('>=0.59.0')
-  gnome.post_install(
-    gtk_update_icon_cache: true,
-    update_desktop_database: true,
-  )
+  gnome.post_install(gtk_update_icon_cache: true, update_desktop_database: true)
 endif
