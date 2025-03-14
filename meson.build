@@ -46,6 +46,7 @@ gsound_dep = dependency('gsound')
 gtk_dep = dependency('gtk4', version: gtk_ver_cmp)
 gtk_wayland_dep = dependency('gtk4-wayland', version: gtk_ver_cmp)
 json_glib_dep = dependency('json-glib-1.0', version: '>= 1.6.2')
+libfeedback_dep = dependency('libfeedback-0.0', version: '>= 0.7.0')
 phosh_plugins_dep = dependency('phosh-plugins', version: '>= 0.23.0')
 phosh_settings_dep = dependency('phosh-settings', version: '>= 0.40.0')
 wayland_client_dep = dependency('wayland-client', version: '>=1.14')
@@ -123,6 +124,7 @@ add_project_arguments(
    '-DGDK_VERSION_MAX_ALLOWED=@0@'.format(gtk_ver_str),
    '-DADW_VERSION_MIN_REQUIRED=@0@'.format(adw_ver_str),
    '-DADW_VERSION_MAX_ALLOWED=@0@'.format(adw_ver_str),
+   '-DLIBFEEDBACK_USE_UNSTABLE_API',
   ],
   language: 'c',
 )

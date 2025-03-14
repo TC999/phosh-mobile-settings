@@ -41,6 +41,25 @@
                        </object>
                      </child>
 
+                     <child>
+                       <object class="AdwSpinRow" id="haptic_strenth_row">
+                         <property name="visible">0</property>
+                         <property name="title" translatable="yes" comments="Translators: Strength of the haptic motor">Haptic strength</property>
+                         <property name="subtitle" translatable="yes">Maximum haptic feedback strength precentage</property>
+                         <property name="snap-to-ticks">1</property>
+                         <property name="wrap">1</property>
+                         <property name="numeric">1</property>
+                         <property name="adjustment">
+                           <object class="GtkAdjustment"  id="haptic_strenth_adj">
+                             <property name="lower">0</property>
+                             <property name="upper">100</property>
+                             <property name="step-increment">10</property>
+                             <property name="page-increment">25</property>
+                           </object>
+                         </property>
+                       </object>
+                     </child>
+
                    </object>
                  </child>
                  <child>
