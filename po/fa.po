@@ -1,15 +1,15 @@
 # Persian translation for phosh-mobile-settings.
 # Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
-# Danial Behzadi <dani.behzi@ubuntu.com>, 2024.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-11-29 11:19+0000\n"
-"PO-Revision-Date: 2024-11-29 17:57+0330\n"
+"POT-Creation-Date: 2025-03-14 15:21+0000\n"
+"PO-Revision-Date: 2025-03-15 03:57+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
@@ -130,7 +130,7 @@ msgid "- Manage your mobile settings"
 msgstr "- مدیریت تنظیمات همراهتان"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:426
+#: src/mobile-settings-application.c:427
 msgid "translator-credits"
 msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
 
@@ -138,40 +138,40 @@ msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
 msgid "Device"
 msgstr "افزاره"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-feedback-panel.c:165
 msgid "Sound file does not exist"
 msgstr "پروندهٔ صدا وجود ندارد"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:167
 msgid "Sound file is corrupt"
 msgstr "پروندهٔ صدا خراب است"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:169
 msgid "Failed to play sound"
 msgstr "شکست در پخش صد"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:208
 #, c-format
 msgid "Playing %s"
 msgstr "پخش کردن %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:370
 msgid "low"
 msgstr "کم"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:348
+#: src/ms-feedback-panel.c:373
 msgid "normal"
 msgstr "معمولی"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:351
+#: src/ms-feedback-panel.c:376
 msgid "critical"
 msgstr "بحرانی"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:355
+#: src/ms-feedback-panel.c:380
 msgid "none"
 msgstr "هیچ"
 
@@ -474,35 +474,44 @@ msgstr ""
 "هنگام قفل بودن تلفن را با فشردن دکمهٔ کاهش حجم صدا در مواقع زنگ خوردن به حالت "
 "بی‌صدا می‌برد"
 
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Haptic strength"
+msgstr "قدرت لرزش"
+
 #: src/ui/ms-feedback-panel.ui:48
+msgid "Maximum haptic feedback strength percentage"
+msgstr "بیشینهٔ درصد قدرت بازخورد لرزشی"
+
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Per Application settings"
 msgstr "تنظیمات به ازای برنامه"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Sounds"
 msgstr "صداها"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:81
 msgid "The sound to use for certain events"
 msgstr "صدای استفاده شده برای رویدادهای خاص"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:89
 msgid "Phone Calls"
 msgstr "تماس‌های تلفنی"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:95
 msgid "SMS"
 msgstr "پیامک"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:101
 msgid "Instant messages"
 msgstr "پیام‌های فوری"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:112
 msgid "Screen Wakeup"
 msgstr "بیدار شدن صفحه"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Notification urgency that lights up the screen"
 msgstr "ضروریت آگاهی‌ای که صفحه را روشن می‌کند"
 
@@ -510,35 +519,35 @@ msgstr "ضروریت آگاهی‌ای که صفحه را روشن می‌کند
 msgid "Locking and unlocking"
 msgstr "قفل و قفل‌گشایی"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "تأخیر قفل صفحهٔ خودکار"
-
 #: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "ثانیه‌ها از سیاه شدن صفحه تا قفل"
-
-#: src/ui/ms-lockscreen-panel.ui:31
 msgid "Shuffle keypad"
 msgstr "در هم ریختن شماره‌ها"
 
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:17
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "این که رقم‌های روی صفحه در هم ریخته شوند یا نه"
 
-#: src/ui/ms-lockscreen-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:23
 msgid "Require authentication to unlock"
 msgstr "قفل‌گشایی نیازمند هویت‌سنجی"
 
-#: src/ui/ms-lockscreen-panel.ui:39
+#: src/ui/ms-lockscreen-panel.ui:24
 msgid "Require typing PIN or password to unlock the device"
 msgstr "قفل‌گشایی افزاره نیازمند نوشتن پین یا گذرواژه است"
 
-#: src/ui/ms-lockscreen-panel.ui:48
+#: src/ui/ms-lockscreen-panel.ui:30
+msgid "Automatic screen lock delay"
+msgstr "تأخیر قفل صفحهٔ خودکار"
+
+#: src/ui/ms-lockscreen-panel.ui:31
+msgid "Seconds from screen blank to screen lock"
+msgstr "ثانیه‌ها از سیاه شدن صفحه تا قفل"
+
+#: src/ui/ms-lockscreen-panel.ui:50
 msgid "Widgets"
 msgstr "ابزارک‌ها"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:51
 msgid "Additional widgets for the lock screen"
 msgstr "ابزارک‌های اضافی برای صفحهٔ قفل"
 
@@ -636,51 +645,51 @@ msgstr "بلندای صفحه‌کلید در حالت عمودی"
 msgid "When the screen is taller than wide"
 msgstr "هنگامی که صفحه بلندتر از پهناست"
 
-#: src/ui/ms-osk-panel.ui:67
+#: src/ui/ms-osk-panel.ui:68
 msgid "Keyboard height in landscape mode"
 msgstr "بلندای صفحه‌کلید در حالت افقی"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:69
 msgid "When the screen is wider than tall"
 msgstr "هنگامی که صفحه پهن‌تر از بلنداست"
 
-#: src/ui/ms-osk-panel.ui:91
+#: src/ui/ms-osk-panel.ui:93
 msgid "Text Completion"
 msgstr "کامل کردن متن"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:96
 msgid "Opportunistic word completion"
 msgstr "کامل کردن متن خوشبینانه"
 
-#: src/ui/ms-osk-panel.ui:95
+#: src/ui/ms-osk-panel.ui:97
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "به کار انداختن کامل کردن متن هنگامی که کاره مفید بودنش را مشخّص کند"
 
-#: src/ui/ms-osk-panel.ui:102
+#: src/ui/ms-osk-panel.ui:104
 msgid "Toggle via OSK menu"
 msgstr "تغییر وضعیت با فهرست"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:105
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "اجازه به تغییر وضعیت کامل کردن متن با دکمهٔ فهرست صفحه‌کلید"
 
-#: src/ui/ms-osk-panel.ui:109
+#: src/ui/ms-osk-panel.ui:111
 msgid "Default Completer"
 msgstr "کامل کنندهٔ پیش‌گزیده"
 
-#: src/ui/ms-osk-panel.ui:110
+#: src/ui/ms-osk-panel.ui:112
 msgid "The default completion engine to use"
 msgstr "موتور تکمیل پیش‌گزیده برای استفاده"
 
-#: src/ui/ms-osk-panel.ui:121
+#: src/ui/ms-osk-panel.ui:123
 msgid "Terminal Layout"
 msgstr "چینش پایانه"
 
-#: src/ui/ms-osk-panel.ui:125
+#: src/ui/ms-osk-panel.ui:127
 msgid "Shortcuts"
 msgstr "میان‌برها"
 
-#: src/ui/ms-osk-panel.ui:126
+#: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "میان‌برهای موجود در نوار میان‌برها"
 
