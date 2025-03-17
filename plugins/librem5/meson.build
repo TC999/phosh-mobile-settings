@@ -17,16 +17,16 @@ librem5_plugin_resources = gnome.compile_resources(
 )
 
 librem5_plugin_sources = files(
-  'ms-plugin-librem5.c',
-  'ms-plugin-librem5-panel.h',
   'ms-plugin-librem5-panel.c',
+  'ms-plugin-librem5-panel.h',
+  'ms-plugin-librem5.c',
 ) + librem5_plugin_resources + l5_plugin_dbus_sources
 
 linrem5_plugin = shared_module(
   'ms-plugin-librem5',
   librem5_plugin_sources,
   dependencies: librem5_plugin_deps,
-  c_args : ['-DG_LOG_DOMAIN="ms-plugin-librem5"'],
+  c_args: ['-DG_LOG_DOMAIN="ms-plugin-librem5"'],
   include_directories: ms_plugin_inc,
   install: true,
   install_dir: ms_plugins_dir,

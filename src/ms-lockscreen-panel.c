@@ -13,6 +13,9 @@
 #include "ms-plugin-row.h"
 #include "ms-util.h"
 
+#include <libportal/portal.h>
+#include <libportal-gtk4/portal-gtk4.h>
+
 #include <gio/gdesktopappinfo.h>
 #include <glib/gi18n.h>
 
@@ -25,18 +28,125 @@
 
 #define SCREENSAVER_SCHEMA_ID "org.gnome.desktop.screensaver"
 #define SCREENSAVER_KEY_LOCK_DELAY "lock-delay"
+#define SCREENSAVER_KEY_PICTURE_OPTIONS "picture-options"
 
 struct _MsLockscreenPanel {
-  AdwBin     parent;
+  AdwBin           parent;
 
-  GSettings *settings;
-  GSettings *screensaver_settings;
-  AdwSwitchRow *shuffle_switch;
-  AdwSwitchRow *require_unlock_switch;
-  GtkWidget *lock_delay_adjustment;
+  GSettings       *settings;
+  GSettings       *screensaver_settings;
+  AdwSwitchRow    *shuffle_switch;
+  AdwSwitchRow    *require_unlock_switch;
+  AdwSwitchRow    *wallpaper_switch;
+  GtkWidget       *lock_delay_adjustment;
+
+  AdwToastOverlay *toast_overlay;
+  AdwToast        *toast;
 };
 
 G_DEFINE_TYPE (MsLockscreenPanel, ms_lockscreen_panel, ADW_TYPE_BIN)
+
+
+static gboolean
+picture_mode_to_bool (GValue *out_value, GVariant *in_variant, gpointer user_data)
+{
+  const char *mode = g_variant_get_string (in_variant, NULL);
+  gboolean active;
+
+  active = g_strcmp0 (mode, "none");
+  g_value_set_boolean (out_value, active);
+  return TRUE;
+}
+
+
+static GVariant *
+bool_to_picture_mode (const GValue *in_value, const GVariantType *out_type, gpointer data)
+{
+  gboolean active = g_value_get_boolean (in_value);
+  const char *mode;
+
+  mode = active ? "zoom" : "none";
+
+  return g_variant_new_string (mode);
+}
+
+
+static void
+on_set_wallpaper (GObject *source, GAsyncResult *result, gpointer user_data)
+{
+  MsLockscreenPanel *self = MS_LOCKSCREEN_PANEL (user_data);
+  XdpPortal *portal = XDP_PORTAL (source);
+  g_autoptr(GError) err = NULL;
+
+  if (!xdp_portal_set_wallpaper_finish (portal, result, &err)
+      && !g_error_matches (err, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
+    AdwToast *toast;
+
+    toast = adw_toast_new (_("Failed to set lockscreen wallpaper"));
+    adw_toast_overlay_add_toast (self->toast_overlay, toast);
+    g_warning ("Failed to set lockscreen wallpaper: %s", err->message);
+    return;
+  }
+
+  g_debug ("Updated wallpaper via portal");
+}
+
+
+static void
+on_file_chooser_done (GObject *source_object, GAsyncResult *res, gpointer user_data)
+{
+  MsLockscreenPanel *self = MS_LOCKSCREEN_PANEL (user_data);
+  GtkWindow *parent = GTK_WINDOW (gtk_widget_get_ancestor (GTK_WIDGET (self), GTK_TYPE_WINDOW));
+  GtkFileDialog *filechooser = GTK_FILE_DIALOG (source_object);
+  g_autofree char *uri = NULL;
+  g_autoptr (XdpParent) xdp_parent = NULL;
+  g_autoptr (XdpPortal) portal = NULL;
+  g_autoptr (GFile) file = NULL;
+  g_autoptr (GError) err = NULL;
+
+  file = gtk_file_dialog_open_finish (filechooser, res, &err);
+  if (!file) {
+    g_warning ("Failed to load background: %s", err->message);
+     return;
+  }
+
+  uri = g_file_get_uri (file);
+  portal = xdp_portal_new ();
+  xdp_parent = xdp_parent_new_gtk (parent);
+  xdp_portal_set_wallpaper (portal,
+                            xdp_parent,
+                            uri,
+                            XDP_WALLPAPER_FLAG_LOCKSCREEN | XDP_WALLPAPER_FLAG_PREVIEW,
+                            NULL,
+                            on_set_wallpaper,
+                            self);
+}
+
+
+static void
+on_select_wallpaper_clicked (MsLockscreenPanel *self)
+{
+  GtkFileDialog *filechooser;
+  GtkFileFilter *filter;
+  GListStore *filters;
+  g_autoptr (GFile) pictures_folder = NULL;
+  GtkWindow *parent = GTK_WINDOW (gtk_widget_get_ancestor (GTK_WIDGET (self), GTK_TYPE_WINDOW));
+
+  filechooser = gtk_file_dialog_new ();
+  gtk_file_dialog_set_title (filechooser, _("Choose Wallpaper"));
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_add_pixbuf_formats (filter);
+
+  filters = g_list_store_new (GTK_TYPE_FILE_FILTER);
+  g_list_store_append (filters, filter);
+  gtk_file_dialog_set_filters (filechooser, G_LIST_MODEL (filters));
+
+  pictures_folder = g_file_new_for_path (g_get_user_special_dir (G_USER_DIRECTORY_PICTURES));
+  gtk_file_dialog_set_initial_folder (filechooser, pictures_folder);
+
+  gtk_file_dialog_open (filechooser, parent, NULL, on_file_chooser_done, self);
+}
 
 
 static gboolean
@@ -81,9 +191,13 @@ ms_lockscreen_panel_class_init (MsLockscreenPanelClass *klass)
 
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-lockscreen-panel.ui");
-  gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, shuffle_switch);
-  gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, require_unlock_switch);
   gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, lock_delay_adjustment);
+  gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, require_unlock_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, shuffle_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, toast_overlay);
+  gtk_widget_class_bind_template_child (widget_class, MsLockscreenPanel, wallpaper_switch);
+
+  gtk_widget_class_bind_template_callback (widget_class, on_select_wallpaper_clicked);
 }
 
 
@@ -110,6 +224,15 @@ ms_lockscreen_panel_init (MsLockscreenPanel *self)
                                 G_SETTINGS_BIND_DEFAULT,
                                 uint32_to_double_get_mapping,
                                 double_to_uint32_set_mapping,
+                                NULL, NULL);
+
+  g_settings_bind_with_mapping (self->screensaver_settings,
+                                SCREENSAVER_KEY_PICTURE_OPTIONS,
+                                self->wallpaper_switch,
+                                "active",
+                                G_SETTINGS_BIND_DEFAULT,
+                                picture_mode_to_bool,
+                                bool_to_picture_mode,
                                 NULL, NULL);
 }
 

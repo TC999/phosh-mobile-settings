@@ -1,8 +1,8 @@
 include:
  - project: 'guidog/meta-phosh'
-   ref: '2c115683e25dfc458d3b462df3759e1ace2196f7'
+   ref: '0ed15edd821f8afacbf7a9c0f2a6266873289115'
    file: '/ci/phosh-common-jobs.yml'
- - remote: 'https://gitlab.freedesktop.org/freedesktop/ci-templates/-/raw/6a40df92957c8ce9ee741aaccc5daaaf70545b1e/templates/ci-fairy.yml'
+ - remote: 'https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/freedesktop/ci-templates/-/raw/d03cddbcff35f26861429fc816c00323f48e99af/templates/ci-fairy.yml'   
 
 stages:
  - build
@@ -117,6 +117,11 @@ format-check:
   stage: style-checks
   extends: .phosh-format-check
   allow_failure: true
+
+check-meson:
+  stage: style-checks
+  extends:
+    - .phosh-check-meson
 
 check-markdown:
   stage: style-checks
