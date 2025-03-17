@@ -7,6 +7,7 @@ Build-Depends:
  debhelper-compat (= 13),
  desktop-file-utils,
  libadwaita-1-dev (>= 1.5),
+ libfeedback-dev (>= 0.7.0),
  libgsound-dev,
  libgmobile-dev (>= 0.2.1),
  libgnome-desktop-4-dev,
