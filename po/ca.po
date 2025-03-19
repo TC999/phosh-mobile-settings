@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-02-15 09:25+0000\n"
-"PO-Revision-Date: 2025-03-10 21:34+0100\n"
+"POT-Creation-Date: 2025-03-17 11:16+0000\n"
+"PO-Revision-Date: 2025-03-18 22:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
@@ -139,42 +139,50 @@ msgstr "poc senderi <pocsenderi@protonmail.com>"
 msgid "Device"
 msgstr "Dispositiu"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-feedback-panel.c:165
 msgid "Sound file does not exist"
 msgstr "El fitxer de so no existeix"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:167
 msgid "Sound file is corrupt"
 msgstr "El fitxer de so està corromput"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:169
 msgid "Failed to play sound"
 msgstr "No s'ha pogut reproduir cap so"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:208
 #, c-format
 msgid "Playing %s"
 msgstr "S'està reproduïnt %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:370
 msgid "low"
 msgstr "baix"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:348
+#: src/ms-feedback-panel.c:373
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:351
+#: src/ms-feedback-panel.c:376
 msgid "critical"
 msgstr "crític"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:355
+#: src/ms-feedback-panel.c:380
 msgid "none"
 msgstr "cap"
+
+#: src/ms-lockscreen-panel.c:85
+msgid "Failed to set lockscreen wallpaper"
+msgstr "No s'ha pogut establir el fons de pantalla de la pantalla de bloqueig"
+
+#: src/ms-lockscreen-panel.c:136
+msgid "Choose Wallpaper"
+msgstr "Trieu un fons de pantalla"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -480,72 +488,97 @@ msgstr ""
 "Quan està bloquejat, posa el telèfon en mode silenciós en prémer «Vol-» en "
 "les trucades entrants"
 
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Haptic strength"
+msgstr ""
+
 #: src/ui/ms-feedback-panel.ui:48
+msgid "Maximum haptic feedback strength percentage"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Per Application settings"
 msgstr "Configuració per aplicació"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Sounds"
 msgstr "Sons"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:81
 msgid "The sound to use for certain events"
 msgstr "El so a usar per a certs esdeveniments"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:89
 msgid "Phone Calls"
 msgstr "Trucades telefòniques"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:95
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:101
 msgid "Instant messages"
 msgstr "Missatges instantanis"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:112
 msgid "Screen Wakeup"
 msgstr "Activació de la pantalla"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Notification urgency that lights up the screen"
 msgstr "Urgència de notificació que il·lumina la pantalla"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "Bloqueig i desbloqueig"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "Retard del bloqueig automàtic de la pantalla"
-
-#: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "Segons entre el posar la pantalla en blanc i el bloquejar-la"
-
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "Barreja el teclat numèric"
 
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "Si s'han de barrejar els números del teclat numèric"
 
-#: src/ui/ms-lockscreen-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:25
 msgid "Require authentication to unlock"
 msgstr "Requereix autenticació per a desbloquejar"
 
-#: src/ui/ms-lockscreen-panel.ui:39
+#: src/ui/ms-lockscreen-panel.ui:26
 msgid "Require typing PIN or password to unlock the device"
 msgstr ""
 "Requereix introduir un PIN o contrasenya per desbloquejar el dispositiu"
 
-#: src/ui/ms-lockscreen-panel.ui:48
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Retard del bloqueig automàtic de la pantalla"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Segons entre el posar la pantalla en blanc i el bloquejar-la"
+
+#: src/ui/ms-lockscreen-panel.ui:52
+msgid "Background"
+msgstr "Segon pla"
+
+#: src/ui/ms-lockscreen-panel.ui:58
+msgid "_Select Wallpaper…"
+msgstr "_Seleccioneu un fons de pantalla…"
+
+#: src/ui/ms-lockscreen-panel.ui:70
+msgid "Use wallpaper"
+msgstr "Usa el fons de pantalla"
+
+#: src/ui/ms-lockscreen-panel.ui:71
+msgid "Whether to show a colorful wallpaper"
+msgstr "Si s'ha de mostrar un fons de pantalla acolorit"
+
+#: src/ui/ms-lockscreen-panel.ui:79
 msgid "Widgets"
 msgstr "Ginys"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "Ginys addicionals per a la pantalla de bloqueig"
 
@@ -645,53 +678,53 @@ msgstr "Alçada del teclat en mode vertical"
 msgid "When the screen is taller than wide"
 msgstr "Quan la pantalla és més alta que no pas ampla"
 
-#: src/ui/ms-osk-panel.ui:67
+#: src/ui/ms-osk-panel.ui:68
 msgid "Keyboard height in landscape mode"
 msgstr "Alçada del teclat en mode horitzontal"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:69
 msgid "When the screen is wider than tall"
 msgstr "Quan la pantalla és més ampla que no pas alta"
 
-#: src/ui/ms-osk-panel.ui:91
+#: src/ui/ms-osk-panel.ui:93
 msgid "Text Completion"
 msgstr "Compleció de text"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:96
 msgid "Opportunistic word completion"
 msgstr "Compleció de paraules oportunística"
 
-#: src/ui/ms-osk-panel.ui:95
+#: src/ui/ms-osk-panel.ui:97
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Activa la compleció de paraules quan l'aplicació indiqui que és útil"
 
-#: src/ui/ms-osk-panel.ui:102
+#: src/ui/ms-osk-panel.ui:104
 msgid "Toggle via OSK menu"
 msgstr "Commuta mitjançant el menú OSK"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:105
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "Permet commutar la compleció de paraules mitjançant el botó de menú del "
 "teclat"
 
-#: src/ui/ms-osk-panel.ui:109
+#: src/ui/ms-osk-panel.ui:111
 msgid "Default Completer"
 msgstr "Completador predeterminat"
 
-#: src/ui/ms-osk-panel.ui:110
+#: src/ui/ms-osk-panel.ui:112
 msgid "The default completion engine to use"
 msgstr "El motor de compleció predeterminat a usar"
 
-#: src/ui/ms-osk-panel.ui:121
+#: src/ui/ms-osk-panel.ui:123
 msgid "Terminal Layout"
 msgstr "Disposició del terminal"
 
-#: src/ui/ms-osk-panel.ui:125
+#: src/ui/ms-osk-panel.ui:127
 msgid "Shortcuts"
 msgstr "Dreceres"
 
-#: src/ui/ms-osk-panel.ui:126
+#: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Les dreceres disponibles a la barra de dreceres"
 
