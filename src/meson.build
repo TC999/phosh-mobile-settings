@@ -1,7 +1,9 @@
 subdir('dbus')
 
-mobile_settings_enum_sources = gnome.mkenums_simple('ms-enum-types',
-     sources : files('mobile-settings-enums.h'))
+mobile_settings_enum_sources = gnome.mkenums_simple(
+  'ms-enum-types',
+  sources: files('mobile-settings-enums.h'),
+)
 
 mobile_settings_plugin_sources = [
   'mobile-settings-plugin.h',
@@ -87,6 +89,8 @@ mobile_settings_deps = [
   gtk_dep,
   gtk_wayland_dep,
   json_glib_dep,
+  libportal_dep,
+  libportal_gtk4_dep,
   phosh_plugins_dep,
   phosh_settings_dep,
   wayland_client_dep,
@@ -94,12 +98,15 @@ mobile_settings_deps = [
 
 gnome = import('gnome')
 
-mobile_settings_sources += gnome.compile_resources('mobile-settings-resources',
+mobile_settings_sources += gnome.compile_resources(
+  'mobile-settings-resources',
   'mobile-settings.gresource.xml',
-  c_name: 'mobile_settings'
+  c_name: 'mobile_settings',
 )
 
-executable('phosh-mobile-settings', mobile_settings_sources,
+executable(
+  'phosh-mobile-settings',
+  mobile_settings_sources,
   dependencies: mobile_settings_deps,
   install: true,
 )
@@ -107,15 +114,15 @@ executable('phosh-mobile-settings', mobile_settings_sources,
 
 # Helpers for plugins */
 ms_plugin_inc = include_directories('.')
-ms_plugin_deps = [
-  glib_dep,
-  adwaita_dep,
-]
-mobile_settings_plugin_lib = static_library('mobile-settings-plugin',
+ms_plugin_deps = [glib_dep, adwaita_dep]
+mobile_settings_plugin_lib = static_library(
+  'mobile-settings-plugin',
   mobile_settings_plugin_sources,
   include_directories: [ms_plugin_inc, dbus_inc],
-  dependencies: ms_plugin_deps)
+  dependencies: ms_plugin_deps,
+)
 mobile_settings_plugin_dep = declare_dependency(
   include_directories: [ms_plugin_inc, dbus_inc],
   link_with: mobile_settings_plugin_lib,
-  dependencies: ms_plugin_deps)
+  dependencies: ms_plugin_deps,
+)

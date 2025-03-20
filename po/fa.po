@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-14 15:21+0000\n"
-"PO-Revision-Date: 2025-03-15 03:57+0330\n"
+"POT-Creation-Date: 2025-03-17 11:16+0000\n"
+"PO-Revision-Date: 2025-03-17 17:50+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
@@ -174,6 +174,14 @@ msgstr "بحرانی"
 #: src/ms-feedback-panel.c:380
 msgid "none"
 msgstr "هیچ"
+
+#: src/ms-lockscreen-panel.c:85
+msgid "Failed to set lockscreen wallpaper"
+msgstr "شکست در تنظیم کاغذدیواری صفحهٔ قفل"
+
+#: src/ms-lockscreen-panel.c:136
+msgid "Choose Wallpaper"
+msgstr "گزینش کاغذدیواری"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -515,39 +523,55 @@ msgstr "بیدار شدن صفحه"
 msgid "Notification urgency that lights up the screen"
 msgstr "ضروریت آگاهی‌ای که صفحه را روشن می‌کند"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "قفل و قفل‌گشایی"
 
-#: src/ui/ms-lockscreen-panel.ui:16
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "در هم ریختن شماره‌ها"
 
-#: src/ui/ms-lockscreen-panel.ui:17
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "این که رقم‌های روی صفحه در هم ریخته شوند یا نه"
 
-#: src/ui/ms-lockscreen-panel.ui:23
+#: src/ui/ms-lockscreen-panel.ui:25
 msgid "Require authentication to unlock"
 msgstr "قفل‌گشایی نیازمند هویت‌سنجی"
 
-#: src/ui/ms-lockscreen-panel.ui:24
+#: src/ui/ms-lockscreen-panel.ui:26
 msgid "Require typing PIN or password to unlock the device"
 msgstr "قفل‌گشایی افزاره نیازمند نوشتن پین یا گذرواژه است"
 
-#: src/ui/ms-lockscreen-panel.ui:30
+#: src/ui/ms-lockscreen-panel.ui:32
 msgid "Automatic screen lock delay"
 msgstr "تأخیر قفل صفحهٔ خودکار"
 
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:33
 msgid "Seconds from screen blank to screen lock"
 msgstr "ثانیه‌ها از سیاه شدن صفحه تا قفل"
 
-#: src/ui/ms-lockscreen-panel.ui:50
+#: src/ui/ms-lockscreen-panel.ui:52
+msgid "Background"
+msgstr "پس‌زمینه"
+
+#: src/ui/ms-lockscreen-panel.ui:58
+msgid "_Select Wallpaper…"
+msgstr "_گزینش کاغذدیواری"
+
+#: src/ui/ms-lockscreen-panel.ui:70
+msgid "Use wallpaper"
+msgstr "استفاده از کاغذدیواری"
+
+#: src/ui/ms-lockscreen-panel.ui:71
+msgid "Whether to show a colorful wallpaper"
+msgstr "این که کاغذدیواری رنگی نشان داده شود یا نه"
+
+#: src/ui/ms-lockscreen-panel.ui:79
 msgid "Widgets"
 msgstr "ابزارک‌ها"
 
-#: src/ui/ms-lockscreen-panel.ui:51
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "ابزارک‌های اضافی برای صفحهٔ قفل"
 

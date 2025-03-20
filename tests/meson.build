@@ -20,20 +20,16 @@ if phoc.found()
   test_env_phoc.set('WLR_RENDERER', 'pixman')
   test_env_phoc.set('WLR_BACKENDS', 'headless')
 
-  local_opts = [
-    'debug-info',
-    'help',
-    'list',
-    'version',
-  ]
+  local_opts = ['debug-info', 'help', 'list', 'version']
 
   # Execute these tests under phoc
   foreach opt : local_opts
-    test('test-@0@'.format(opt), phoc,
-         args: ['-E',
-		'@0@/src/phosh-mobile-settings --@1@'.format(meson.project_build_root(), opt),
-	       ],
-         env: test_env_phoc)
+    test(
+      'test-@0@'.format(opt),
+      phoc,
+      args: ['-E', '@0@/src/phosh-mobile-settings --@1@'.format(meson.project_build_root(), opt)],
+      env: test_env_phoc,
+    )
   endforeach
 
 endif
