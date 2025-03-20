@@ -1,7 +1,7 @@
 # Swedish translation for phosh-mobile-settings.
-# Copyright © 2024 phosh-mobile-settings's COPYRIGHT HOLDER
+# Copyright © 2024-2025 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2024.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2024, 2025.
 # Luna Jernberg <droidbittin@gmail.com>, 2024.
 #
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-11-29 11:19+0000\n"
-"PO-Revision-Date: 2024-11-29 16:29+0100\n"
+"POT-Creation-Date: 2025-03-17 12:32+0000\n"
+"PO-Revision-Date: 2025-03-20 19:20+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -133,7 +133,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Hantera dina mobilinställningar"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:426
+#: src/mobile-settings-application.c:427
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -143,42 +143,50 @@ msgstr ""
 msgid "Device"
 msgstr "Enhet"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-feedback-panel.c:165
 msgid "Sound file does not exist"
 msgstr "Ljudfilen finns inte"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:167
 msgid "Sound file is corrupt"
 msgstr "Ljudfilen är trasig"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:169
 msgid "Failed to play sound"
 msgstr "Misslyckades med att spela upp ljud"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:208
 #, c-format
 msgid "Playing %s"
 msgstr "Spelar %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:370
 msgid "low"
 msgstr "låg"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:348
+#: src/ms-feedback-panel.c:373
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:351
+#: src/ms-feedback-panel.c:376
 msgid "critical"
 msgstr "kritisk"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:355
+#: src/ms-feedback-panel.c:380
 msgid "none"
 msgstr "ingen"
+
+#: src/ms-lockscreen-panel.c:85
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Misslyckades med att ställa in låsskärmens bakgrund"
+
+#: src/ms-lockscreen-panel.c:136
+msgid "Choose Wallpaper"
+msgstr "Välj bakgrundsbild"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -478,71 +486,96 @@ msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr "När låst, sätt telefonen i tyst läge med Vol- vid inkommande samtal"
 
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Haptic strength"
+msgstr "Haptisk styrka"
+
 #: src/ui/ms-feedback-panel.ui:48
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Maximal styrka i procent för haptisk återkoppling"
+
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Per Application settings"
 msgstr "Inställningar per program"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Sounds"
 msgstr "Ljud"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:81
 msgid "The sound to use for certain events"
 msgstr "Ljudet att använda för vissa händelser"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:89
 msgid "Phone Calls"
 msgstr "Telefonsamtal"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:95
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:101
 msgid "Instant messages"
 msgstr "Snabbmeddelanden"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:112
 msgid "Screen Wakeup"
 msgstr "Skärmväckning"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Notification urgency that lights up the screen"
 msgstr "Aviseringsgrad som lyser upp skärmen"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "Låsning och upplåsning"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "Fördröjning för automatiskt skärmlås"
-
-#: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "Sekunder från det att skärmen töms till den låses"
-
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "Växla knappsats"
 
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "Huruvida siffrorna på knappsatsen ska växlas"
 
-#: src/ui/ms-lockscreen-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:25
 msgid "Require authentication to unlock"
 msgstr "Kräv autentisering för att låsa upp"
 
-#: src/ui/ms-lockscreen-panel.ui:39
+#: src/ui/ms-lockscreen-panel.ui:26
 msgid "Require typing PIN or password to unlock the device"
 msgstr "Kräv inmatning av PIN-kod eller lösenord för att låsa upp enheten"
 
-#: src/ui/ms-lockscreen-panel.ui:48
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Fördröjning för automatiskt skärmlås"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Sekunder från det att skärmen töms till den låses"
+
+#: src/ui/ms-lockscreen-panel.ui:52
+msgid "Background"
+msgstr "Bakgrund"
+
+#: src/ui/ms-lockscreen-panel.ui:58
+msgid "_Select Wallpaper…"
+msgstr "_Välj bakgrundsbild…"
+
+#: src/ui/ms-lockscreen-panel.ui:70
+msgid "Use wallpaper"
+msgstr "Använd bakgrundsbild"
+
+#: src/ui/ms-lockscreen-panel.ui:71
+msgid "Whether to show a colorful wallpaper"
+msgstr "Huruvida en färgglad bakgrundsbild ska visas"
+
+#: src/ui/ms-lockscreen-panel.ui:79
 msgid "Widgets"
 msgstr "Komponenter"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "Ytterligare komponenter för låsskärmen"
 
@@ -644,51 +677,51 @@ msgstr "Tangentbordshöjd i stående läge"
 msgid "When the screen is taller than wide"
 msgstr "När skärmen är högre än den är bred"
 
-#: src/ui/ms-osk-panel.ui:67
+#: src/ui/ms-osk-panel.ui:68
 msgid "Keyboard height in landscape mode"
 msgstr "Tangentbordshöjd i liggande läge"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:69
 msgid "When the screen is wider than tall"
 msgstr "När skärmen är bredare än den är hög"
 
-#: src/ui/ms-osk-panel.ui:91
+#: src/ui/ms-osk-panel.ui:93
 msgid "Text Completion"
 msgstr "Textkomplettering"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:96
 msgid "Opportunistic word completion"
 msgstr "Opportunistisk ordkomplettering"
 
-#: src/ui/ms-osk-panel.ui:95
+#: src/ui/ms-osk-panel.ui:97
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Aktivera ordkomplettering när appen indikerar att det är användbart"
 
-#: src/ui/ms-osk-panel.ui:102
+#: src/ui/ms-osk-panel.ui:104
 msgid "Toggle via OSK menu"
 msgstr "Växla via tangentbordsmeny"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:105
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "Tillåt växling av ordkomplettering via tangentbordets menyknapp"
 
-#: src/ui/ms-osk-panel.ui:109
+#: src/ui/ms-osk-panel.ui:111
 msgid "Default Completer"
 msgstr "Standardkompletterare"
 
-#: src/ui/ms-osk-panel.ui:110
+#: src/ui/ms-osk-panel.ui:112
 msgid "The default completion engine to use"
 msgstr "Kompletteringsmotorn att använda som standard"
 
-#: src/ui/ms-osk-panel.ui:121
+#: src/ui/ms-osk-panel.ui:123
 msgid "Terminal Layout"
 msgstr "Terminallayout"
 
-#: src/ui/ms-osk-panel.ui:125
+#: src/ui/ms-osk-panel.ui:127
 msgid "Shortcuts"
 msgstr "Kortkommandon"
 
-#: src/ui/ms-osk-panel.ui:126
+#: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Kortkommandona som är tillgängliga i kortkommandoraden"
 
