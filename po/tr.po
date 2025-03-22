@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the phosh-mobile-settings package.
 #
 # Sabri Ünal <yakushabb@gmail.com>, 2024.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2024.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-11-29 11:19+0000\n"
-"PO-Revision-Date: 2024-12-01 01:21+0300\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"POT-Creation-Date: 2025-03-17 11:16+0000\n"
+"PO-Revision-Date: 2025-03-21 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -136,7 +136,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Mobil ayarlarınızı yönetin"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:426
+#: src/mobile-settings-application.c:427
 msgid "translator-credits"
 msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
@@ -146,42 +146,50 @@ msgstr ""
 msgid "Device"
 msgstr "Aygıt"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-feedback-panel.c:165
 msgid "Sound file does not exist"
 msgstr "Ses dosyası yok"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:167
 msgid "Sound file is corrupt"
 msgstr "Ses dosyası bozuk"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:169
 msgid "Failed to play sound"
 msgstr "Ses oynatılamadı"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:208
 #, c-format
 msgid "Playing %s"
 msgstr "%s oynatılıyor"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:370
 msgid "low"
 msgstr "düşük"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:348
+#: src/ms-feedback-panel.c:373
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:351
+#: src/ms-feedback-panel.c:376
 msgid "critical"
 msgstr "kritik"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:355
+#: src/ms-feedback-panel.c:380
 msgid "none"
 msgstr "yok"
+
+#: src/ms-lockscreen-panel.c:85
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Kilit ekranı duvar kağıdı belirlenemedi"
+
+#: src/ms-lockscreen-panel.c:136
+msgid "Choose Wallpaper"
+msgstr "Duvar Kağıdı Seç"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -484,71 +492,96 @@ msgstr ""
 "Kilitlendiğinde, gelen aramalarda sesi azalt tuşuna basıldığında telefonu "
 "sessiz kipe al"
 
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Haptic strength"
+msgstr "Dokunsal güç"
+
 #: src/ui/ms-feedback-panel.ui:48
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Azami dokunsal geri bildirim gücü yüzdesi"
+
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Per Application settings"
 msgstr "Uygulama Başına ayarlar"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Sounds"
 msgstr "Sesler"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:81
 msgid "The sound to use for certain events"
 msgstr "Belirli olaylar için kullanılacak ses"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:89
 msgid "Phone Calls"
 msgstr "Telefon Çağrıları"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:95
 msgid "SMS"
 msgstr "Kısa İleti"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:101
 msgid "Instant messages"
 msgstr "Anlık iletiler"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:112
 msgid "Screen Wakeup"
 msgstr "Ekran Uyandırma"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Notification urgency that lights up the screen"
 msgstr "Ekranı aydınlatan bildirim aciliyeti"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "Kilitleme ve kilit açma"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "Kendiliğinden ekran kilidi gecikmesi"
-
-#: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "Boş ekrandan ekran kilidine dek geçen saniye"
-
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "Tuş takımını karıştır"
 
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "Tuş takımındaki sayıların karıştırılma durumu"
 
-#: src/ui/ms-lockscreen-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:25
 msgid "Require authentication to unlock"
 msgstr "Kilidi açmak için kimlik doğrulama gerektir"
 
-#: src/ui/ms-lockscreen-panel.ui:39
+#: src/ui/ms-lockscreen-panel.ui:26
 msgid "Require typing PIN or password to unlock the device"
 msgstr "Aygıtın kilidini açmak için PIN ya da parola yazma gerektir"
 
-#: src/ui/ms-lockscreen-panel.ui:48
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Kendiliğinden ekran kilidi gecikmesi"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Boş ekrandan ekran kilidine dek geçen saniye"
+
+#: src/ui/ms-lockscreen-panel.ui:52
+msgid "Background"
+msgstr "Arka Plan"
+
+#: src/ui/ms-lockscreen-panel.ui:58
+msgid "_Select Wallpaper…"
+msgstr "Duvar Kağıdı _Seç…"
+
+#: src/ui/ms-lockscreen-panel.ui:70
+msgid "Use wallpaper"
+msgstr "Duvar kağıdı kullan"
+
+#: src/ui/ms-lockscreen-panel.ui:71
+msgid "Whether to show a colorful wallpaper"
+msgstr "Renkli duvar kağıdının gösterilmesi"
+
+#: src/ui/ms-lockscreen-panel.ui:79
 msgid "Widgets"
 msgstr "Parçacıklar"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "Kilit ekranı için ek parçacıklar"
 
@@ -648,53 +681,53 @@ msgstr "Dikey kipte klavye yüksekliği"
 msgid "When the screen is taller than wide"
 msgstr "Ekran genişlikten daha uzun olduğunda"
 
-#: src/ui/ms-osk-panel.ui:67
+#: src/ui/ms-osk-panel.ui:68
 msgid "Keyboard height in landscape mode"
 msgstr "Yatay kipte klavye yüksekliği"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:69
 msgid "When the screen is wider than tall"
 msgstr "Ekran boydan daha geniş olduğunda"
 
-#: src/ui/ms-osk-panel.ui:91
+#: src/ui/ms-osk-panel.ui:93
 msgid "Text Completion"
 msgstr "Metin Tamamlama"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:96
 msgid "Opportunistic word completion"
 msgstr "Fırsatçı sözcük tamamlama"
 
-#: src/ui/ms-osk-panel.ui:95
+#: src/ui/ms-osk-panel.ui:97
 msgid "Enable word completion when the app indicates it is useful"
 msgstr ""
 "Uygulama, yararlı olduğunu belirttiğinde sözcük tamamlamayı etkinleştir"
 
 # OSK: On Screen Keyboard
-#: src/ui/ms-osk-panel.ui:102
+#: src/ui/ms-osk-panel.ui:104
 msgid "Toggle via OSK menu"
 msgstr "Ekran Klavyesi menüsü ile değiştir"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:105
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "Klavyenin menü düğmesiyle sözcük tamamlamayı açıp kapatmaya izin ver"
 
-#: src/ui/ms-osk-panel.ui:109
+#: src/ui/ms-osk-panel.ui:111
 msgid "Default Completer"
 msgstr "Öntanımlı Tamamlayıcı"
 
-#: src/ui/ms-osk-panel.ui:110
+#: src/ui/ms-osk-panel.ui:112
 msgid "The default completion engine to use"
 msgstr "Kullanılacak öntanımlı tamamlama motoru"
 
-#: src/ui/ms-osk-panel.ui:121
+#: src/ui/ms-osk-panel.ui:123
 msgid "Terminal Layout"
 msgstr "Uçbirim Yerleşimi"
 
-#: src/ui/ms-osk-panel.ui:125
+#: src/ui/ms-osk-panel.ui:127
 msgid "Shortcuts"
 msgstr "Kısayollar"
 
-#: src/ui/ms-osk-panel.ui:126
+#: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Kısayollar çubuğundaki kısayollar"
 
