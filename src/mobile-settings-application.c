@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022 Purism SPC
+ *               2025 The Phosh Developers
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -23,6 +24,7 @@
 
 #include <phosh-plugin.h>
 
+#include <libfeedback.h>
 #include <gmobile.h>
 
 #include <gdk/wayland/gdkwayland.h>
@@ -355,7 +357,11 @@ static const GActionEntry actions[] = {
 static void
 mobile_settings_application_startup (GApplication *app)
 {
+  g_autoptr (GError) err = NULL;
   MobileSettingsApplication *self = MOBILE_SETTINGS_APPLICATION (app);
+
+  if (!lfb_init (MOBILE_SETTINGS_APP_ID, &err))
+    g_warning ("Failed to init libfeedback: %s", err->message);
 
   g_action_map_add_action_entries (G_ACTION_MAP (self),
                                    actions,
@@ -363,6 +369,15 @@ mobile_settings_application_startup (GApplication *app)
                                    self);
 
   G_APPLICATION_CLASS (mobile_settings_application_parent_class)->startup (app);
+}
+
+
+static void
+mobile_settings_application_shutdown (GApplication *app)
+{
+  G_APPLICATION_CLASS (mobile_settings_application_parent_class)->shutdown (app);
+
+  lfb_uninit ();
 }
 
 
@@ -389,6 +404,7 @@ mobile_settings_application_class_init (MobileSettingsApplicationClass *klass)
 
   app_class->activate = mobile_settings_application_activate;
   app_class->startup = mobile_settings_application_startup;
+  app_class->shutdown = mobile_settings_application_shutdown;
   app_class->handle_local_options = mobile_settings_application_handle_local_options;
 
   props[PROP_TOPLEVEL_TRACKER] =
