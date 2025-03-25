@@ -1,3 +1,79 @@
+phosh-mobile-settings (0.46~rc1) experimental; urgency=medium
+
+  [ Sebastian Krzyszkowiak ]
+  * ms-sound-row: Add .oga to the list of suffixes
+    .oga is the recommended file extension by the sound theme spec.
+
+  [ Guido Günther ]
+  * osk-panel: Mark spin buttons as numeric.
+    This way we get a matching numeric OSK layout.
+  * lockscreen-panel: Move screen delay to the end of the group.
+    This avoids unfolding the OSK when opening the page
+  * lockscreen-panel: Mark spin row as numeric.
+    This way we get a matching numeric OSK layout.
+  * build: Update editorconfig and dirlocals.el from meta-phosh
+  * feedback-panel: Make maximum haptic-strength configurable.
+    This is an important accessibility feature.
+  * main: Init libfeedback.
+    Needed to emit haptic
+  * feedback-panel: Emit feedback when hapitc strength changes.
+    Makes it easier to find a suitable value
+  * ci: Use GNOME's mirror for CI fairy
+  * treewide: Update shared scripts and dotfiles to 0ed15ed
+  * treewide: Format meson files
+  * ci: Check meson format
+  * lockscreen: Allow to set lockscreen walllpaper.
+    After selection we present the wallpaper via the wallpaper portal.
+  * lockscreen: Reindent UI file
+
+  [ Alexandre Franke ]
+  * Update French translation
+
+  [ Scrambled 777 ]
+  * Update Hindi translation
+
+  [ Jiri Grönroos ]
+  * Update Finnish translation
+
+  [ Jordi Mas i Hernandez ]
+  * Update Catalan translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Alexander Shopov ]
+  * Update Bulgarian translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+  * feedback-panel: Fix typo
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Álvaro Burns ]
+  * Update Brazilian Portuguese translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Emin Tufan Çetin ]
+  * Update Turkish translation
+
+  [ Yosef Or Boczko ]
+  * Update Hebrew translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 21 Mar 2025 18:48:55 +0100
+
 phosh-mobile-settings (0.45.0) experimental; urgency=medium
 
   * No changes over 0.45~rc1
