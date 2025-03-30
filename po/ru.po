@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-11-29 11:19+0000\n"
-"PO-Revision-Date: 2024-11-29 16:34+0300\n"
+"POT-Creation-Date: 2025-03-17 11:16+0000\n"
+"PO-Revision-Date: 2025-03-17 16:52+0300\n"
 "Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -133,7 +133,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Управление мобильными настройками"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:426
+#: src/mobile-settings-application.c:427
 msgid "translator-credits"
 msgstr "Artur So"
 
@@ -141,42 +141,50 @@ msgstr "Artur So"
 msgid "Device"
 msgstr "Устройство"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-feedback-panel.c:165
 msgid "Sound file does not exist"
 msgstr "Аудиофайл не существует"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:167
 msgid "Sound file is corrupt"
 msgstr "Аудиофайл поврежден"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:169
 msgid "Failed to play sound"
 msgstr "Ошибка при воспроизвести аудио"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:208
 #, c-format
 msgid "Playing %s"
 msgstr "Играет %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:370
 msgid "low"
 msgstr "низкая"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:348
+#: src/ms-feedback-panel.c:373
 msgid "normal"
 msgstr "нормальная"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:351
+#: src/ms-feedback-panel.c:376
 msgid "critical"
 msgstr "критическая"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:355
+#: src/ms-feedback-panel.c:380
 msgid "none"
 msgstr "ничего"
+
+#: src/ms-lockscreen-panel.c:85
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Не удалось установить обои для экрана блокировки"
+
+#: src/ms-lockscreen-panel.c:136
+msgid "Choose Wallpaper"
+msgstr "Выбрать обои"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -494,71 +502,96 @@ msgstr ""
 "Когда телефон заблокирован, перевести его в беззвучный режим при нажатии "
 "кнопки Vol- при входящих вызовах"
 
-#: src/ui/ms-feedback-panel.ui:48
-msgid "Per Application settings"
-msgstr "Настройка для каждого приложения"
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Haptic strength"
+msgstr "Тактильная чувствительность"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:48
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Максимальный процент тактильной чувствительности"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Per Application settings"
+msgstr "Настройки для каждого приложения"
+
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Sounds"
 msgstr "Звуки"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:81
 msgid "The sound to use for certain events"
 msgstr "Звук, используемый для определенных событий"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:89
 msgid "Phone Calls"
 msgstr "Телефонные вызовы"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:95
 msgid "SMS"
 msgstr "СМС"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:101
 msgid "Instant messages"
 msgstr "Мгновенные сообщения"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:112
 msgid "Screen Wakeup"
 msgstr "Пробуждение телефона"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Notification urgency that lights up the screen"
 msgstr "Срочное уведомление, при котором загорается экран"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "Блокировка и разблокировка"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "Автоматическая задержка блокировки экрана"
-
-#: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "Секунды после отключения экрана до его блокировки"
-
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "Тасовать кнопки"
 
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "Тасовать кнопки с цифрами на клавиатуре"
 
-#: src/ui/ms-lockscreen-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:25
 msgid "Require authentication to unlock"
 msgstr "Требовать аутентификацию для разблокировки"
 
-#: src/ui/ms-lockscreen-panel.ui:39
+#: src/ui/ms-lockscreen-panel.ui:26
 msgid "Require typing PIN or password to unlock the device"
 msgstr "Требовать ввода PIN-кода или пароля для разблокировки устройства"
 
-#: src/ui/ms-lockscreen-panel.ui:48
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Автоматическая задержка блокировки экрана"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Секунды после отключения экрана до его блокировки"
+
+#: src/ui/ms-lockscreen-panel.ui:52
+msgid "Background"
+msgstr "Фон"
+
+#: src/ui/ms-lockscreen-panel.ui:58
+msgid "_Select Wallpaper…"
+msgstr "_Выбрать обои…"
+
+#: src/ui/ms-lockscreen-panel.ui:70
+msgid "Use wallpaper"
+msgstr "Использовать обои"
+
+#: src/ui/ms-lockscreen-panel.ui:71
+msgid "Whether to show a colorful wallpaper"
+msgstr "Нужно ли показывать красочные обои"
+
+#: src/ui/ms-lockscreen-panel.ui:79
 msgid "Widgets"
 msgstr "Виджеты"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "Дополнительные виджеты для экрана блокировки"
 
@@ -658,53 +691,53 @@ msgstr "Высота клавиатуры в портретном режиме"
 msgid "When the screen is taller than wide"
 msgstr "Когда экран больше в высоту, чем в ширину"
 
-#: src/ui/ms-osk-panel.ui:67
+#: src/ui/ms-osk-panel.ui:68
 msgid "Keyboard height in landscape mode"
 msgstr "Высота клавиатуры в ландшафтном режиме"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:69
 msgid "When the screen is wider than tall"
 msgstr "Когда экран больше по ширине, чем по высоте"
 
-#: src/ui/ms-osk-panel.ui:91
+#: src/ui/ms-osk-panel.ui:93
 msgid "Text Completion"
 msgstr "Автозавершение текста"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:96
 msgid "Opportunistic word completion"
 msgstr "Условное завершение слов"
 
-#: src/ui/ms-osk-panel.ui:95
+#: src/ui/ms-osk-panel.ui:97
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Включать завершение слов, когда приложение считает это полезным"
 
-#: src/ui/ms-osk-panel.ui:102
+#: src/ui/ms-osk-panel.ui:104
 msgid "Toggle via OSK menu"
 msgstr "Переключать через экранную клавиатуру"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:105
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "Разрешить переключение завершения слов с помощью кнопки меню экранной "
 "клавиатуры"
 
-#: src/ui/ms-osk-panel.ui:109
+#: src/ui/ms-osk-panel.ui:111
 msgid "Default Completer"
 msgstr "Завершитель по умолчанию"
 
-#: src/ui/ms-osk-panel.ui:110
+#: src/ui/ms-osk-panel.ui:112
 msgid "The default completion engine to use"
 msgstr "Используемый по умолчанию механизм завершения"
 
-#: src/ui/ms-osk-panel.ui:121
+#: src/ui/ms-osk-panel.ui:123
 msgid "Terminal Layout"
 msgstr "Раскладка терминала"
 
-#: src/ui/ms-osk-panel.ui:125
+#: src/ui/ms-osk-panel.ui:127
 msgid "Shortcuts"
 msgstr "Комбинации клавиш"
 
-#: src/ui/ms-osk-panel.ui:126
+#: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Комбинации клавиш, доступные на соответствующей панели"
 
