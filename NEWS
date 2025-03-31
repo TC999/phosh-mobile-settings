@@ -1,5 +1,5 @@
-phosh-mobile-settings 0.46~rc1
-------------------------------
+phosh-mobile-settings 0.46.0
+----------------------------
 Released March 2025
 * Allow to set lockscreen wallpapper (needs xdg-desktop-portal-phosh 0.46)
 * Make maximum haptic feedback strength configurable
@@ -12,9 +12,10 @@ Released March 2025
 * UI translations:
     * Alexander Shopov (bg)
     * Alexandre Franke (fr)
-    * Álvaro Burns (pt_BR)
     * Anders Jonsson (sv)
     * Antonio Marin (ro)
+    * Artur S0 (ru)
+    * Bruce Cowan (en_GB)
     * Danial Behzadi (fa)
     * Daniel Rusek (cs)
     * Ekaterine Papava (ka)
@@ -22,7 +23,9 @@ Released March 2025
     * Jordi Mas i Hernandez (ca)
     * Martin (sl)
     * Scrambled 777 (hi)
+    * Vasil Pupkin (be)
     * Yuri Chornoivan (uk)
+    * Álvaro Burns (pt_BR)
 
 phosh-mobile-settings 0.45.0
 ----------------------------
