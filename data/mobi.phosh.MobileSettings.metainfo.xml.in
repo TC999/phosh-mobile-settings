@@ -52,6 +52,15 @@
 
   <releases>
 
+    <release version="0.46.0" date="2025-03-31">
+      <description translate="no">
+        <ul>
+          <li>Allow to set lockscreen wallpapper</li>
+          <li>Make maximum haptic feedback strength configurable</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="0.45.0" date="2025-02-15">
       <description translate="no">
         <ul>

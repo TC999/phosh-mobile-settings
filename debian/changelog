@@ -1,3 +1,20 @@
+phosh-mobile-settings (0.46.0) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * main: Move lfb init to application.
+    This avoids warnings e.g. in CI when feedbackd can't be initialized.
+
+  [ Vasil Pupkin ]
+  * Update Belarusian translation
+
+  [ Bruce Cowan ]
+  * Update British English translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 31 Mar 2025 09:10:38 +0200
+
 phosh-mobile-settings (0.46~rc1) experimental; urgency=medium
 
   [ Sebastian Krzyszkowiak ]
