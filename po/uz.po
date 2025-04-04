@@ -1,0 +1,814 @@
+# Uzbek (Latin) translation for phosh-mobile-settings.
+# Copyright (C) 2025 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# Baxrom Raxmatov <magdiyevbahrom@gmail.com>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2025-04-03 12:56+0000\n"
+"PO-Revision-Date: 2025-04-04 22:16+0500\n"
+"Last-Translator: \n"
+"Language-Team: Uzbek (Latin) <uz@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:3
+#: src/ui/mobile-settings-window.ui:6
+msgid "Mobile Settings"
+msgstr "Mobil sozlamalar"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:13
+msgid "Mobile;Preferences;MobileSettings;"
+msgstr "Mobil;Sozlamalar;Mobil sozlamalari;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Phosh mobil sozlamalari"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"Ushbu ilova sizga Phosh-ning buyruq qatoridan foydalanishni talab qiladigan "
+"ba'zi jihatlarini sozlash imkonini beradi."
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Phosh yordamida mobil qurilmalar uchun kengaytirilgan sozlamalar"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "Mavjud panellar"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "Kompozitor paneli"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "Fikr-mulohaza paneli"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "Kritik harorat %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+msgid "Librem 5"
+msgstr "Librem 5"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+msgid "Suspend device"
+msgstr "Qurilmani to'xtatib turish"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
+msgid "Suspend is experimental"
+msgstr "Toʻxtatib turish eksperimental hisoblanadi"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+msgid "suspend now"
+msgstr "hozir to'xtating"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
+msgid "Temperatures"
+msgstr "Haroratlar"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
+msgid "CPU"
+msgstr "CPU"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
+msgid "GPU"
+msgstr "GPU"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
+msgid "VPU"
+msgstr "VPU"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
+msgid "Fuel Gauge"
+msgstr "Yoqilg'i o'lchagich"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
+msgid "Battery"
+msgstr "Batareya"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Umumiy"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Yorliqlarni ko’rsatish"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Chiqish"
+
+#: src/mobile-settings-application.c:36
+msgid "- Manage your mobile settings"
+msgstr "- Mobil sozlamalaringizni boshqaring"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/mobile-settings-application.c:443
+msgid "translator-credits"
+msgstr "Baxrom Raxmatov <magdiyevbahrom@gmail.com>"
+
+#: src/mobile-settings-window.c:85
+msgid "Device"
+msgstr "Qurilma"
+
+#: src/ms-feedback-panel.c:165
+msgid "Sound file does not exist"
+msgstr "Ovoz fayli mavjud emas"
+
+#: src/ms-feedback-panel.c:167
+msgid "Sound file is corrupt"
+msgstr "Ovoz fayli buzilgan"
+
+#: src/ms-feedback-panel.c:169
+msgid "Failed to play sound"
+msgstr "Ovoz ijro qilinmadi"
+
+#: src/ms-feedback-panel.c:208
+#, c-format
+msgid "Playing %s"
+msgstr "%s ijro etilmoqda"
+
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:370
+msgid "low"
+msgstr "past"
+
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:373
+msgid "normal"
+msgstr "normal"
+
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:376
+msgid "critical"
+msgstr "juda muhim xato"
+
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:380
+msgid "none"
+msgstr "mavjud emas"
+
+#: src/ms-lockscreen-panel.c:85
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Bloklangan ekran fon rasmini o‘rnatib bo‘lmadi"
+
+#: src/ms-lockscreen-panel.c:136
+msgid "Choose Wallpaper"
+msgstr "Fon rasmi tanlang"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:545
+msgid "Default"
+msgstr "Odatiy"
+
+#: src/ms-osk-panel.c:546
+msgid "The default completer selected by the OSK"
+msgstr "OSK tomonidan tanlangan standart to'ldiruvchi"
+
+#: src/ms-osk-panel.c:549
+msgid "No information available for this completer"
+msgstr "Bu toʻldiruvchi uchun maʼlumot yoʻq"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
+msgid "Normal"
+msgstr "Oddiy"
+
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
+msgid "Bottom up"
+msgstr "Ostin-ustin"
+
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
+msgid "Left up"
+msgstr "Chapga"
+
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
+msgid "Right up"
+msgstr "Yuqoriga"
+
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
+msgid "Undefined"
+msgstr "Nomalum"
+
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
+msgid "Near"
+msgstr "Yaqin"
+
+#: src/ms-sensor-panel.c:142
+msgid "Far"
+msgstr "Uzoq"
+
+#: src/ms-sensor-panel.c:260
+msgid "Updating…"
+msgstr "Yangilanmoqda…"
+
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
+msgid "Not available"
+msgstr "Mavjud emas"
+
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Mavjud emas"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Mavjud emas"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:128
+msgid "Custom"
+msgstr "Xususiy"
+
+#: src/ms-sound-row.c:309
+msgid "Choose sound file"
+msgstr "Ovoz faylini tanlang"
+
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:151
+msgid "Full"
+msgstr "Toʻliq"
+
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:154
+msgid "Quiet"
+msgstr "Tinch"
+
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:157
+msgid "Silent"
+msgstr "Jim"
+
+#: src/ui/mobile-settings-window.ui:79
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+#: src/ui/mobile-settings-window.ui:85
+msgid "Welcome to Mobile Settings"
+msgstr "Mobil sozlamalarga xush kelibsiz"
+
+#: src/ui/mobile-settings-window.ui:86
+msgid "Tweak advanced mobile settings"
+msgstr "Kengaytirilgan mobil sozlamalarni o'zgartiring"
+
+#: src/ui/mobile-settings-window.ui:94
+msgid "Top Bar"
+msgstr "Yuqori bar"
+
+#: src/ui/mobile-settings-window.ui:105
+msgid "Applications"
+msgstr "Ilovalar"
+
+#: src/ui/mobile-settings-window.ui:116
+msgid "Feedback"
+msgstr "Fikr-mulohaza"
+
+#: src/ui/mobile-settings-window.ui:127
+msgid "Compositor"
+msgstr "Kompozitor"
+
+#: src/ui/mobile-settings-window.ui:138
+msgid "Lockscreen"
+msgstr "Bloklangan ekran"
+
+#: src/ui/mobile-settings-window.ui:149
+#, fuzzy
+msgid "Convergence"
+msgstr "Konvergentsiya"
+
+#: src/ui/mobile-settings-window.ui:160
+msgid "On Screen Keyboard"
+msgstr "Ekran klaviaturasi"
+
+#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+msgid "Sensors"
+msgstr "Sensorlar"
+
+#: src/ui/mobile-settings-window.ui:182
+msgid "Experimental features"
+msgstr "Eksperimental xususiyatlar"
+
+#: src/ui/mobile-settings-window.ui:206
+msgid "_Keyboard Shortcuts"
+msgstr "_Klaviatura yorliqlari"
+
+#: src/ui/mobile-settings-window.ui:210
+msgid "_About Mobile Settings"
+msgstr "_Mobil sozlamalari haqida"
+
+#: src/ui/ms-applications-panel.ui:11
+msgid "Favorites"
+msgstr "Sevimlilar"
+
+#: src/ui/ms-applications-panel.ui:20
+msgid "Organize Favorites"
+msgstr "Sevimlilarni tashkil qilish"
+
+#: src/ui/ms-applications-panel.ui:21
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Sevimli ilovalaringizni qayta tartiblash uchun quyidagi ilovalarni sudrab "
+"olib tashlang"
+
+#: src/ui/ms-applications-panel.ui:46
+msgid "Reset Favorites"
+msgstr "Sevimlilarni tiklash"
+
+#: src/ui/ms-applications-panel.ui:47
+msgid "Set list of favorite apps back to the default"
+msgstr "Sevimli ilovalar ro'yxatini standart holatga qaytaring"
+
+#: src/ui/ms-applications-panel.ui:51
+msgid "Reset"
+msgstr "Qayta tiklash"
+
+#: src/ui/ms-applications-panel.ui:62
+msgid "Mobile App Filtering"
+msgstr "Mobil ilovalarni filtrlash"
+
+#: src/ui/ms-applications-panel.ui:65
+msgid "Set Application Filter Mode"
+msgstr "Ilova filtri rejimini o'rnating"
+
+#: src/ui/ms-applications-panel.ui:66
+msgid "Show only mobile apps in the overview"
+msgstr "Umumiy koʻrinishda faqat mobil ilovalarni koʻrsatish"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "Ishlayotgan ilovalarni kichraytirish"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr "Buni faqat ekranga mos kelmaydigan buzilgan ilovalar uchun yoqing"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "Barcha ilovalarni kichraytiring"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr ""
+"Barcha ilovalarni majburan kichraytiring. Buni faqat oxirgi chora sifatida "
+"foydalaning."
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "Barcha ilovalarni kichraytiring"
+
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
+msgid "Enabled"
+msgstr "Yoqilgan"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "Hech qanday maʼlum dok aniqlanmadi"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "Xarita o'rnatilgan sensorli ekran"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Yoqilgan"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "Eksperimental xususiyatlar"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "Xususiyatlar hali to'liq barqaror deb hisoblanmagan"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "Favqulodda qo'ng'iroqlar"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"Favqulodda qo'ng'iroqlarni yoqing. Iltimos, buni faqat provayderingiz bilan "
+"ishlayotganiga ishonch hosil qilsangizgina yoqing."
+
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Yoqilgan"
+
+#: src/ui/ms-features-panel.ui:32
+msgid "Enable suspend via the system menu"
+msgstr "Tizim menyusi orqali to'xtatib turishni yoqing"
+
+#: src/ui/ms-features-panel.ui:34
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"Iltimos, buni faqat maʼlumotlar ulanishi yoʻqolishi yoki oʻtkazib yuborilgan "
+"signallar kabi cheklovlardan xabardor boʻlsangiz, yoqing"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Yoqilgan"
+
+#: src/ui/ms-feedback-panel.ui:16
+msgid "Feedback profile"
+msgstr "Fikr-mulohaza profili"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "The global maximum feedback profile"
+msgstr "Global maksimal qayta aloqa profili"
+
+#: src/ui/ms-feedback-panel.ui:32
+msgid "Prefer flash"
+msgstr "Chiroqni afzal ko'ring"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Prefer camera flash over status LED when available"
+msgstr "Mavjud bo'lsa, holat LED'idan ko'ra kamera chirog'ini afzal ko'ring"
+
+#. Translators: Vol- means the 'Lower Volume' key
+#: src/ui/ms-feedback-panel.ui:39
+msgid "Silence on Vol-"
+msgstr "Ovozdagi sukunat"
+
+#: src/ui/ms-feedback-panel.ui:40
+msgid ""
+"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+msgstr ""
+"Qulflanganda, kiruvchi qo'ng'iroqlar ovozini bosganda telefonni jim rejimga "
+"qo'ying"
+
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Haptic strength"
+msgstr "Haptik kuch"
+
+#: src/ui/ms-feedback-panel.ui:48
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Haptik aloqa kuchining maksimal foizi"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Per Application settings"
+msgstr "Har bir ilova sozlamalari"
+
+#: src/ui/ms-feedback-panel.ui:80
+msgid "Sounds"
+msgstr "Tovushlar"
+
+#: src/ui/ms-feedback-panel.ui:81
+msgid "The sound to use for certain events"
+msgstr "Muayyan hodisalar uchun ishlatiladigan ovoz"
+
+#: src/ui/ms-feedback-panel.ui:89
+msgid "Phone Calls"
+msgstr "Telefon qo'ng'iroqlari"
+
+#: src/ui/ms-feedback-panel.ui:95
+msgid "SMS"
+msgstr "SMS"
+
+#: src/ui/ms-feedback-panel.ui:101
+msgid "Instant messages"
+msgstr "Tezkor xabarlar"
+
+#: src/ui/ms-feedback-panel.ui:112
+msgid "Screen Wakeup"
+msgstr "Ekranni uyg'otish"
+
+#: src/ui/ms-feedback-panel.ui:115
+msgid "Notification urgency that lights up the screen"
+msgstr "Ekranni yoritib yuboradigan shoshilinch bildirishnoma"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Locking and unlocking"
+msgstr "Qulflash va qulfni ochish"
+
+#: src/ui/ms-lockscreen-panel.ui:18
+msgid "Shuffle keypad"
+msgstr "Klaviaturani aralashtirish"
+
+#: src/ui/ms-lockscreen-panel.ui:19
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "Klaviaturadagi raqamlarni aralashtirib yuborish kerakmi"
+
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Qulfni ochish uchun autentifikatsiya talab qilinadi"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr ""
+"Qurilmani qulfdan chiqarish uchun PIN yoki parolni kiritish talab qilinadi"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Avtomatik _Ekran blokirovkasini kechiktirish"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Ekranning boʻshligidan ekran qulfigacha boʻlgan soniyalar"
+
+#: src/ui/ms-lockscreen-panel.ui:52
+msgid "Background"
+msgstr "Fon"
+
+#: src/ui/ms-lockscreen-panel.ui:58
+msgid "_Select Wallpaper…"
+msgstr "_Fon rasmini tanlang…"
+
+#: src/ui/ms-lockscreen-panel.ui:70
+msgid "Use wallpaper"
+msgstr "Fon rasmi foydalaning"
+
+#: src/ui/ms-lockscreen-panel.ui:71
+msgid "Whether to show a colorful wallpaper"
+msgstr "Rangli fon rasmi ko'rsatish kerakmi"
+
+#: src/ui/ms-lockscreen-panel.ui:79
+msgid "Widgets"
+msgstr "Vidjetlar"
+
+#: src/ui/ms-lockscreen-panel.ui:80
+msgid "Additional widgets for the lock screen"
+msgstr "Bloklash ekrani uchun qo'shimcha vidjetlar"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "Layout qo'shish"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:14
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:20
+msgid "Add"
+msgstr "Qo'shish"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "Til"
+
+#: src/ui/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Tartiblar"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: src/ui/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "Hech qanday tartib sozlanmagan"
+
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
+msgid "More options…"
+msgstr "Boshqa variantlar…"
+
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
+msgid "Move Up"
+msgstr "Yuqoriga siljitish"
+
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
+msgid "Move Down"
+msgstr "Pastga siljiting"
+
+#: src/ui/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "O'chirish"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "_On Screen klaviaturasini yoqing"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "Zarur bo'lganda ekran klaviaturasini ko'rsatish kerakmi"
+
+#: src/ui/ms-osk-panel.ui:20
+msgid "Unfold long-press"
+msgstr "Uzoq bosib turing"
+
+#: src/ui/ms-osk-panel.ui:21
+msgid ""
+"How long to press the center of the home bar to unfold the on screen keyboard"
+msgstr ""
+"Ekrandagi klaviaturani ochish uchun uy satrining markazini qancha vaqt bosib "
+"turish kerak"
+
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
+msgid "short"
+msgstr "qisqa"
+
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "normal"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
+msgid "long"
+msgstr "uzoq"
+
+#: src/ui/ms-osk-panel.ui:38
+msgid "Ignore hardware keyboard"
+msgstr "Uskuna klaviaturasiga e'tibor bermang"
+
+#: src/ui/ms-osk-panel.ui:39
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr ""
+"Jismoniy klaviatura mavjud bo'lganda ekran klaviaturasini ko'rsatish kerakmi"
+
+#: src/ui/ms-osk-panel.ui:51
+msgid "Keyboard height in portrait mode"
+msgstr "Portret rejimida klaviatura balandligi"
+
+#: src/ui/ms-osk-panel.ui:52
+msgid "When the screen is taller than wide"
+msgstr "Ekran kengligidan balandroq bo'lganda"
+
+#: src/ui/ms-osk-panel.ui:68
+msgid "Keyboard height in landscape mode"
+msgstr "Landshaft rejimida klaviatura balandligi"
+
+#: src/ui/ms-osk-panel.ui:69
+msgid "When the screen is wider than tall"
+msgstr "Ekran balanddan kengroq bo'lganda"
+
+#: src/ui/ms-osk-panel.ui:93
+msgid "Text Completion"
+msgstr "Matnni yakunlash"
+
+#: src/ui/ms-osk-panel.ui:96
+msgid "Opportunistic word completion"
+msgstr "Opportunistik so'zni to'ldirish"
+
+#: src/ui/ms-osk-panel.ui:97
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "Ilova foydali ekanligini ko'rsatsa, so'zni yakunlashni yoqing"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Toggle via OSK menu"
+msgstr "OSK menyusi orqali o'tish"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr ""
+"Klaviatura menyusi tugmasi orqali soʻzni yakunlashni oʻzgartirishga ruxsat "
+"bering"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Default Completer"
+msgstr "Standart yakunlovchi"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "The default completion engine to use"
+msgstr "Foydalanish uchun standart yakunlovchi vosita"
+
+#: src/ui/ms-osk-panel.ui:123
+msgid "Terminal Layout"
+msgstr "Terminal tartibi"
+
+#: src/ui/ms-osk-panel.ui:127
+msgid "Shortcuts"
+msgstr "Yorliqlar"
+
+#: src/ui/ms-osk-panel.ui:128
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "Yorliqlar panelida mavjud yorliqlar"
+
+#: src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "Ilova"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "Sensor topilmadi"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"Yoki qurilmangizda sensorlar o'rnatilmagan yoki ular o'chirish tugmasi "
+"tomonidan o'chirilgan."
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "Sensor ko'rsatkichlari"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "Yaqinlik"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "Yorqin"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "Orientatsiya"
+
+#: src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "Yuqori kontrast"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "Avtomatik yuqori kontrast"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "Atrof muhit yorug'ligi sensori tomonidan boshqariladi"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "Yorug'lik intensivligi chegarasi"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "Mavzu chegaradan yuqori kontrastga oʻtadi"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "Ovoz fayllari (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "UI elementlari"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "Batareya foizini ko'rsatish"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "Yuqori satrda aniq zaryad darajasini ko'rsating"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "Teshiklardan saqlaning"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr "UI elementlarini tirqishlar va displey kesiklari ostiga qo'ymang"
+
+#: src/ui/ms-topbar-panel.ui:34
+msgid "Quick Settings"
+msgstr "Tez sozlamalar elementi"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organize your additional Quick Settings"
+msgstr "Qo'shimcha tezkor sozlamalarni tartibga soling"
