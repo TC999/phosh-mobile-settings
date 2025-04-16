@@ -1,0 +1,30 @@
+name: 从 GitLab 同步
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天运行一次
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出
+      uses: actions/checkout@v2
+      with:
+        ref: sync
+        #repository: owner/target-repo
+        #token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 设置提交者信息
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "actions-bot"
+
+    - name: 拉取 GitLab 仓库并推送
+      run: |
+        git remote add external https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings.git
+        git fetch external
+        git merge external/main --allow-unrelated-histories
+        git push origin sync

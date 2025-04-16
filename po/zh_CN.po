@@ -1,0 +1,699 @@
+# Simple Chinese translation for phosh-mobile-settings.
+# Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# TC999 <88823709+TC999@users.noreply.github.com>, 2025.
+# DeepSeek <chat.deepseek.com>, 2025.
+# Copilot <github.com/copilot>, 2025.
+
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2024-10-26 06:56+0000\n"
+"PO-Revision-Date: 2025-02-05 12:04+0000\n"
+"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
+"Language-Team: English - United Kingdom <en@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:3
+#: src/ui/mobile-settings-window.ui:6
+msgid "Mobile Settings"
+msgstr "手机设置"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:13
+msgid "Mobile;Preferences;MobileSettings;"
+msgstr "手机;外观;手机设置;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Phosh 手机设置"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"通过该应用程序，您可以配置 Phosh 的某些方面，否则就需要使用命令行。"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "使用 Phosh 的移动设备的高级设置"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "可用面板"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "组合面板"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "反馈面板"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "临界温度：%.2f°C"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:19
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:31
+msgid "Suspend device"
+msgstr "挂起设备"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+msgid "Suspend is experimental"
+msgstr "挂起为实验性"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:51
+msgid "Temperatures"
+msgstr "温度"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:55
+msgid "CPU"
+msgstr "处理器"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:74
+msgid "GPU"
+msgstr "显卡"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:93
+msgid "VPU"
+msgstr "VPU"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:111
+msgid "Fuel Gauge"
+msgstr "Fuel Gauge"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:129
+msgid "Battery"
+msgstr "电池"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "常规"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "显示快捷方式"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#: src/mobile-settings-application.c:34
+msgid "- Manage your mobile settings"
+msgstr "- 管理您的手机设置"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/mobile-settings-application.c:426
+msgid "translator-credits"
+msgstr ""
+"TC999 <88823709+TC999@users.noreply.github.com>"
+
+#: src/mobile-settings-window.c:85
+msgid "Device"
+msgstr "设备"
+
+#: src/ms-feedback-panel.c:140
+msgid "Sound file does not exist"
+msgstr "音频文件不存在"
+
+#: src/ms-feedback-panel.c:142
+msgid "Sound file is corrupt"
+msgstr "音频文件已损坏"
+
+#: src/ms-feedback-panel.c:144
+msgid "Failed to play sound"
+msgstr "播放音频失败"
+
+#: src/ms-feedback-panel.c:183
+#, c-format
+msgid "Playing %s"
+msgstr "正在播放 %s"
+
+#: src/ms-feedback-panel.c:344 src/ms-feedback-panel.c:352
+msgid "none"
+msgstr "无"
+
+#: src/ms-feedback-panel.c:346
+msgid "low"
+msgstr "低"
+
+#. 1.0
+#: src/ms-feedback-panel.c:348 src/ui/ms-osk-panel.ui:27
+msgid "normal"
+msgstr "普通"
+
+#: src/ms-feedback-panel.c:350
+msgid "critical"
+msgstr "严重"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:534
+msgid "Default"
+msgstr "默认"
+
+#: src/ms-osk-panel.c:535
+msgid "The default completer selected by the OSK"
+msgstr "由OSK选择的默认补全器"
+
+#: src/ms-osk-panel.c:538
+msgid "No information available for this completer"
+msgstr "此补全器无可用信息"
+
+#: src/ms-sensor-panel.c:92
+msgid "Normal"
+msgstr "普通"
+
+#: src/ms-sensor-panel.c:94
+msgid "Bottom up"
+msgstr "自下而上"
+
+#: src/ms-sensor-panel.c:96
+msgid "Left up"
+msgstr "自左而上"
+
+#: src/ms-sensor-panel.c:98
+msgid "Right up"
+msgstr "自右而上"
+
+#: src/ms-sensor-panel.c:100
+msgid "Undefined"
+msgstr "未定义"
+
+#: src/ms-sensor-panel.c:135
+msgid "Near"
+msgstr "近"
+
+#: src/ms-sensor-panel.c:135
+msgid "Far"
+msgstr "远"
+
+#: src/ms-sensor-panel.c:253
+msgid "Updating…"
+msgstr "更新中…"
+
+#: src/ms-sensor-panel.c:269 src/ms-sensor-panel.c:270
+#: src/ms-sensor-panel.c:271
+msgid "Not available"
+msgstr "不可用"
+
+#: src/ms-sound-row.c:127
+msgid "Custom"
+msgstr "自定义"
+
+#: src/ms-sound-row.c:308
+msgid "Choose sound file"
+msgstr "选择音频文件"
+
+#: src/ms-util.c:150
+msgid "Full"
+msgstr "完整"
+
+#: src/ms-util.c:152
+msgid "Quiet"
+msgstr "安静"
+
+#: src/ms-util.c:154
+msgid "Silent"
+msgstr "静音"
+
+#: src/ui/mobile-settings-window.ui:75
+msgid "Welcome"
+msgstr "欢迎"
+
+#: src/ui/mobile-settings-window.ui:81
+msgid "Welcome to Mobile Settings"
+msgstr "欢迎使用移动设置"
+
+#: src/ui/mobile-settings-window.ui:82
+msgid "Tweak advanced mobile settings"
+msgstr "调整高级移动设置"
+
+#: src/ui/mobile-settings-window.ui:90
+msgid "Top Bar"
+msgstr "顶部栏"
+
+#: src/ui/mobile-settings-window.ui:101
+msgid "Applications"
+msgstr "应用程序"
+
+#: src/ui/mobile-settings-window.ui:112
+msgid "Feedback"
+msgstr "反馈"
+
+#: src/ui/mobile-settings-window.ui:123
+msgid "Compositor"
+msgstr "合成器"
+
+#: src/ui/mobile-settings-window.ui:134
+msgid "Lockscreen"
+msgstr "锁屏"
+
+#: src/ui/mobile-settings-window.ui:145
+msgid "Convergence"
+msgstr "融合"
+
+#: src/ui/mobile-settings-window.ui:156
+msgid "On Screen Keyboard"
+msgstr "屏幕键盘"
+
+#: src/ui/mobile-settings-window.ui:167 src/ui/ms-sensor-panel.ui:28
+msgid "Sensors"
+msgstr "传感器"
+
+#: src/ui/mobile-settings-window.ui:178
+msgid "Experimental features"
+msgstr "实验性功能"
+
+#: src/ui/mobile-settings-window.ui:202
+msgid "_Keyboard Shortcuts"
+msgstr "_键盘快捷键"
+
+#: src/ui/mobile-settings-window.ui:206
+msgid "_About Mobile Settings"
+msgstr "_关于移动设置"
+
+#: src/ui/ms-applications-panel.ui:11
+msgid "Favorites"
+msgstr "收藏夹"
+
+#: src/ui/ms-applications-panel.ui:20
+msgid "Organize Favorites"
+msgstr "整理收藏夹"
+
+#: src/ui/ms-applications-panel.ui:21
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "拖拽下方的应用，以重新排列您的收藏应用"
+
+#: src/ui/ms-applications-panel.ui:46
+msgid "Reset Favorites"
+msgstr "重置收藏夹"
+
+#: src/ui/ms-applications-panel.ui:47
+msgid "Set list of favorite apps back to the default"
+msgstr "将收藏应用列表恢复为默认设置"
+
+#: src/ui/ms-applications-panel.ui:51
+msgid "Reset"
+msgstr "重置"
+
+#: src/ui/ms-applications-panel.ui:62
+msgid "Mobile App Filtering"
+msgstr "移动应用过滤"
+
+#: src/ui/ms-applications-panel.ui:65
+msgid "Set Application Filter Mode"
+msgstr "设置应用过滤模式"
+
+#: src/ui/ms-applications-panel.ui:66
+msgid "Show only mobile apps in the overview"
+msgstr "在概览中仅显示移动应用"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "缩小正在运行应用的显示"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr "仅对那些无法适应屏幕的异常应用启用此功能"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "缩小所有应用"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr "强制缩小所有应用，仅在万不得已时使用。"
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "缩小所有应用"
+
+#: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
+#: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:37 src/ui/ms-scale-to-fit-row.ui:11
+msgid "Enabled"
+msgstr "启用"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "未检测到已知坞站"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "映射内置触摸屏"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "实验性功能"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "功能尚未被认为完全稳定"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "紧急呼叫"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"启用紧急呼叫。请仅在您能安全确认该功能与您的服务提供商正常工作时启用。"
+
+#: src/ui/ms-features-panel.ui:31
+msgid "Enable suspend via the system menu"
+msgstr "通过系统菜单启用挂起"
+
+#: src/ui/ms-features-panel.ui:33
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"仅当您了解例如数据连接中断或闹钟遗漏等限制时，请启用此功能"
+
+#: src/ui/ms-feedback-panel.ui:16
+msgid "Feedback profile"
+msgstr "反馈配置文件"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "The global maximum feedback profile"
+msgstr "全局最高反馈配置文件"
+
+#: src/ui/ms-feedback-panel.ui:32
+msgid "Prefer flash"
+msgstr "优先使用闪光灯"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Prefer camera flash over status LED when available"
+msgstr "在可用时优先使用摄像头闪光灯而非状态LED"
+
+#. Translators: Vol- means the 'Lower Volume' key
+#: src/ui/ms-feedback-panel.ui:39
+msgid "Silence on Vol-"
+msgstr "按音量减键静音"
+
+#: src/ui/ms-feedback-panel.ui:40
+msgid ""
+"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+msgstr ""
+"锁定状态下，接来电时按音量减键将手机设置为静音模式"
+
+#: src/ui/ms-feedback-panel.ui:48
+msgid "Per Application settings"
+msgstr "各应用设置"
+
+#: src/ui/ms-feedback-panel.ui:61
+msgid "Sounds"
+msgstr "声音"
+
+#: src/ui/ms-feedback-panel.ui:62
+msgid "The sound to use for certain events"
+msgstr "用于特定事件的声音"
+
+#: src/ui/ms-feedback-panel.ui:70
+msgid "Phone Calls"
+msgstr "电话"
+
+#: src/ui/ms-feedback-panel.ui:76
+msgid "SMS"
+msgstr "短信"
+
+#: src/ui/ms-feedback-panel.ui:82
+msgid "Instant messages"
+msgstr "即时消息"
+
+#: src/ui/ms-feedback-panel.ui:93
+msgid "Screen Wakeup"
+msgstr "屏幕唤醒"
+
+#: src/ui/ms-feedback-panel.ui:96
+msgid "Notification urgency that lights up the screen"
+msgstr "通知紧急程度用于点亮屏幕"
+
+#: src/ui/ms-lockscreen-panel.ui:12
+msgid "Locking and unlocking"
+msgstr "锁定与解锁"
+
+#: src/ui/ms-lockscreen-panel.ui:15
+msgid "Automatic screen lock delay"
+msgstr "自动屏幕锁定延迟"
+
+#: src/ui/ms-lockscreen-panel.ui:16
+msgid "Seconds from screen blank to screen lock"
+msgstr "从屏幕变黑到锁定的秒数"
+
+#: src/ui/ms-lockscreen-panel.ui:30
+msgid "Shuffle keypad"
+msgstr "随机排列键盘"
+
+#: src/ui/ms-lockscreen-panel.ui:31
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "是否随机排列键盘上的数字"
+
+#: src/ui/ms-lockscreen-panel.ui:48
+msgid "Widgets"
+msgstr "小部件"
+
+#: src/ui/ms-lockscreen-panel.ui:49
+msgid "Additional widgets for the lock screen"
+msgstr "锁屏的附加小部件"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:4 src/ui/ms-osk-layout-prefs.ui:13
+msgctxt "on screen keyboard"
+msgid "Add Layout"
+msgstr "添加布局"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:13
+msgid "Cancel"
+msgstr "取消"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:19
+msgid "Add"
+msgstr "添加"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:39
+msgid "Language"
+msgstr "语言"
+
+#: src/ui/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "布局"
+
+#: src/ui/ms-osk-layout-prefs.ui:28
+msgctxt "on screen keyboard"
+msgid "No Layouts configured"
+msgstr "未配置布局"
+
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
+msgid "More options…"
+msgstr "更多选项…"
+
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
+msgid "Move Up"
+msgstr "上移"
+
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
+msgid "Move Down"
+msgstr "下移"
+
+#: src/ui/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "移除"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "启用 _屏幕键盘"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "需要时是否显示屏幕键盘"
+
+#: src/ui/ms-osk-panel.ui:19
+msgid "Unfold long-press"
+msgstr "展开长按"
+
+#: src/ui/ms-osk-panel.ui:20
+msgid ""
+"How long to press the centre of the home bar to unfold the on screen keyboard"
+msgstr ""
+"按住主页栏中心的时间以展开屏幕键盘"
+
+#: src/ui/ms-osk-panel.ui:25
+msgid "short"
+msgstr "短"
+
+#: src/ui/ms-osk-panel.ui:29
+msgid "long"
+msgstr "长"
+
+#: src/ui/ms-osk-panel.ui:37
+msgid "Ignore hardware keyboard"
+msgstr "忽略硬件键盘"
+
+#: src/ui/ms-osk-panel.ui:38
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr ""
+"当存在物理键盘时是否显示屏幕键盘"
+
+#: src/ui/ms-osk-panel.ui:50
+msgid "Keyboard height in portrait mode"
+msgstr "竖屏模式下键盘高度"
+
+#: src/ui/ms-osk-panel.ui:51
+msgid "When the screen is taller than wide"
+msgstr "当屏幕高度大于宽度时"
+
+#: src/ui/ms-osk-panel.ui:66
+msgid "Keyboard height in landscape mode"
+msgstr "横屏模式下键盘高度"
+
+#: src/ui/ms-osk-panel.ui:67
+msgid "When the screen is wider than tall"
+msgstr "当屏幕宽度大于高度时"
+
+#: src/ui/ms-osk-panel.ui:90
+msgid "Text Completion"
+msgstr "文本自动完成"
+
+#: src/ui/ms-osk-panel.ui:93
+msgid "Opportunistic word completion"
+msgstr "机会性单词自动完成"
+
+#: src/ui/ms-osk-panel.ui:94
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "当应用提示有用时启用单词自动完成"
+
+#: src/ui/ms-osk-panel.ui:101
+msgid "Toggle via OSK menu"
+msgstr "通过屏幕键盘菜单切换"
+
+#: src/ui/ms-osk-panel.ui:102
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr "允许通过键盘菜单按钮切换单词自动完成"
+
+#: src/ui/ms-osk-panel.ui:108
+#| msgid "Text Completion"
+msgid "Default Completer"
+msgstr "默认补全器"
+
+#: src/ui/ms-osk-panel.ui:109
+msgid "The default completion engine to use"
+msgstr "使用的默认自动完成引擎"
+
+#: src/ui/ms-osk-panel.ui:120
+msgid "Terminal Layout"
+msgstr "终端布局"
+
+#: src/ui/ms-osk-panel.ui:124
+msgid "Shortcuts"
+msgstr "快捷键"
+
+#: src/ui/ms-osk-panel.ui:125
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "快捷键栏中可用的快捷方式"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "未找到传感器"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"您的设备上可能未安装传感器，或者它们被杀开关禁用了。"
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "传感器读数"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "接近"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "光"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "方向"
+
+#: src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "高对比度"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "自动高对比度"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "由环境光传感器控制"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "光强阈值"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "超过阈值后主题将切换到高对比度"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "音频文件 (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "用户界面元素"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "显示电池百分比"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "在顶部栏显示精确电量"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "避免刘海"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr "不要将用户界面元素放置在刘海和屏幕凹口下方"
+
+#: src/ui/ms-topbar-panel.ui:34
+msgid "Quick Settings"
+msgstr "快速设置"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organise your additional Quick Settings"
+msgstr "整理您的额外快速设置"
+
+#~ msgid "Unlocking"
+#~ msgstr "Unlocking"

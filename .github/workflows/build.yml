@@ -1,0 +1,27 @@
+name: 编译 deb 包
+on:
+  workflow_dispatch:
+jobs:
+  Build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          path: phosh
+      - run: |
+          sudo cp phosh/sources.list /etc/apt/sources.list
+          sudo apt update
+      - run: |
+          cd phosh
+          # sudo apt-get -y install chrony=4.2
+          sudo apt-get -y install build-essential
+          sudo apt-get -y build-dep .
+      - run: |
+          cd phosh
+          meson setup _build
+          meson compile -C _build
+      - name: 上传文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: phosh-mobile-settings
+          path: phosh/_build
