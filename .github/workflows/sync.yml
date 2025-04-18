@@ -8,6 +8,8 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      LANG: zh_CN.UTF-8
 
     steps:
     - name: 检出
@@ -16,6 +18,9 @@ jobs:
         ref: sync
         #repository: owner/target-repo
         #token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 终端汉化
+      run: sudo apt-get install language-pack-zh-hans
 
     - name: 设置提交者信息
       run: |
