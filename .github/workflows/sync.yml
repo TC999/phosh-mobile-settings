@@ -41,6 +41,7 @@ jobs:
     - name: 强制同步
       if: inputs.force_pull || failure()
       run: |
-        git fetch external
-        git reset --hard external/main
-        git push origin sync
+        git remote add upstream https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings.git
+        git fetch upstream
+        git reset --hard upstream/main
+        git push origin sync --force
