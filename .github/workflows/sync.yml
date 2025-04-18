@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # 允许手动触发工作流
     inputs:
       force_pull:
-        type: bool
+        type: boolean
         description: "强制同步"
 
 jobs:
