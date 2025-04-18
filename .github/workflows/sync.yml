@@ -41,7 +41,7 @@ jobs:
     - name: 强制同步
       if: inputs.force_pull || failure()
       run: |
-        git fetch origin
+        git fetch external
         git pull
         git reset --hard external/main
         git push origin sync
