@@ -42,5 +42,6 @@ jobs:
       if: inputs.force_pull || failure()
       run: |
         git fetch origin
+        git pull
         git reset --hard external/main
         git push origin sync
