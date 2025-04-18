@@ -39,7 +39,7 @@ jobs:
         git push origin sync
 
     - name: 强制同步
-      if: inputs.force_pull
+      if: inputs.force_pull || failure()
       run: |
         git fetch origin
         git reset --hard external/main
