@@ -27,19 +27,27 @@
 #define PHOSH_SCHEMA_ID          "sm.puri.phosh"
 #define FAVORITES_LIST_ICON_SIZE 48
 
+#define BACKGROUND_SCHEMA_ID "org.gnome.desktop.background"
+#define BACKGROUND_KEY_PICTURE_OPTIONS "picture-options"
 
 struct _MsOverviewPanel {
   AdwBin                   parent;
 
   GSettings               *settings;
+  GSettings               *background_settings;
 
   /* Favorites */
   AdwPreferencesGroup     *arrange_favs;
   GtkFlowBox              *fbox;
   GListStore              *apps;
   GtkWidget               *reset_btn;
-
+  /* App filtering */
   AdwSwitchRow            *afm_switch_row;
+  /* Wallpaper */
+  AdwSwitchRow            *wallpaper_switch;
+
+  AdwToastOverlay         *toast_overlay;
+  AdwToast                *toast;
 };
 
 G_DEFINE_TYPE (MsOverviewPanel, ms_overview_panel, ADW_TYPE_BIN)
@@ -282,12 +290,38 @@ on_afm_setting_changed (MsOverviewPanel *self)
 
 
 static void
+on_select_wallpaper_ready (GObject *source, GAsyncResult *result, gpointer user_data)
+{
+  MsOverviewPanel *self = MS_OVERVIEW_PANEL (source);
+  g_autoptr (GError) err = NULL;
+  gboolean success;
+
+  success = ms_select_wallpaper_finish (ADW_BIN (source), result, &err);
+  if (!success  && !g_error_matches (err, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
+    AdwToast *toast;
+
+    toast = adw_toast_new (_("Failed to set wallpaper for overview"));
+    adw_toast_overlay_add_toast (self->toast_overlay, toast);
+    return;
+  }
+}
+
+
+static void
+on_select_wallpaper_clicked (MsOverviewPanel *self)
+{
+  ms_select_wallpaper_async (ADW_BIN (self), on_select_wallpaper_ready, FALSE, NULL);
+}
+
+
+static void
 ms_overview_panel_finalize (GObject *object)
 {
   MsOverviewPanel *self = MS_OVERVIEW_PANEL (object);
 
   g_clear_object (&self->apps);
   g_clear_object (&self->settings);
+  g_clear_object (&self->background_settings);
 
   G_OBJECT_CLASS (ms_overview_panel_parent_class)->finalize (object);
 }
@@ -308,9 +342,12 @@ ms_overview_panel_class_init (MsOverviewPanelClass *klass)
   gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, arrange_favs);
   gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, fbox);
   gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, reset_btn);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, toast_overlay);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, wallpaper_switch);
 
   gtk_widget_class_bind_template_callback (widget_class, afm_switch_row_cb);
   gtk_widget_class_bind_template_callback (widget_class, on_reset_btn_clicked);
+  gtk_widget_class_bind_template_callback (widget_class, on_select_wallpaper_clicked);
 }
 
 
@@ -343,6 +380,16 @@ ms_overview_panel_init (MsOverviewPanel *self)
                             self);
 
   on_afm_setting_changed (self);
+
+  self->background_settings = g_settings_new (BACKGROUND_SCHEMA_ID);
+  g_settings_bind_with_mapping (self->background_settings,
+                                BACKGROUND_KEY_PICTURE_OPTIONS,
+                                self->wallpaper_switch,
+                                "active",
+                                G_SETTINGS_BIND_DEFAULT,
+                                ms_picture_mode_to_bool,
+                                ms_bool_to_picture_mode,
+                                NULL, NULL);
 }
 
 

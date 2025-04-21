@@ -8,6 +8,7 @@ src/mobile-settings-window.c
 src/ms-feedback-panel.c
 src/ms-lockscreen-panel.c
 src/ms-osk-panel.c
+src/ms-overview-panel.c
 src/ms-sensor-panel.c
 src/ms-sound-row.c
 src/ms-util.c
