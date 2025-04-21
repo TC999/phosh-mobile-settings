@@ -12,7 +12,6 @@ src/ms-sensor-panel.c
 src/ms-sound-row.c
 src/ms-util.c
 src/ui/mobile-settings-window.ui
-src/ui/ms-applications-panel.ui
 src/ui/ms-compositor-panel.ui
 src/ui/ms-convergence-panel.ui
 src/ui/ms-features-panel.ui
@@ -22,6 +21,7 @@ src/ui/ms-osk-add-layout-dialog.ui
 src/ui/ms-osk-layout-prefs.ui
 src/ui/ms-osk-layout-row.ui
 src/ui/ms-osk-panel.ui
+src/ui/ms-overview-panel.ui
 src/ui/ms-plugin-row.ui
 src/ui/ms-scale-to-fit-row.ui
 src/ui/ms-sensor-panel.ui

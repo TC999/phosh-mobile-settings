@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="MsApplicationsPanel" parent="AdwBin">
+  <template class="MsOverviewPanel" parent="AdwBin">
     <child>
       <object class="GtkScrolledWindow">
         <child>
@@ -64,7 +64,7 @@
                   <object class="AdwSwitchRow" id="afm_switch_row">
                     <property name="title" translatable="yes">Set Application Filter Mode</property>
                     <property name="subtitle" translatable="yes">Show only mobile apps in the overview</property>
-                    <signal name="notify::active" handler="afm_switch_row_cb" object="MsApplicationsPanel" swapped="yes"/>
+                    <signal name="notify::active" handler="afm_switch_row_cb" object="MsOverviewPanel" swapped="yes"/>
                   </object>
                 </child>
               </object>
