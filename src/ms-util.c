@@ -301,3 +301,27 @@ ms_select_wallpaper_finish (AdwBin *panel, GAsyncResult *result, GError **error)
 
   return g_task_propagate_boolean (G_TASK (result), error);
 }
+
+
+gboolean
+ms_picture_mode_to_bool (GValue *out_value, GVariant *in_variant, gpointer user_data)
+{
+  const char *mode = g_variant_get_string (in_variant, NULL);
+  gboolean active;
+
+  active = g_strcmp0 (mode, "none");
+  g_value_set_boolean (out_value, active);
+  return TRUE;
+}
+
+
+GVariant *
+ms_bool_to_picture_mode (const GValue *in_value, const GVariantType *out_type, gpointer data)
+{
+  gboolean active = g_value_get_boolean (in_value);
+  const char *mode;
+
+  mode = active ? "zoom" : "none";
+
+  return g_variant_new_string (mode);
+}
