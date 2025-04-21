@@ -286,8 +286,8 @@ ms_overview_panel_finalize (GObject *object)
 {
   MsOverviewPanel *self = MS_OVERVIEW_PANEL (object);
 
-  g_clear_pointer (&self->apps, g_object_unref);
-  g_clear_pointer (&self->settings, g_object_unref);
+  g_clear_object (&self->apps);
+  g_clear_object (&self->settings);
 
   G_OBJECT_CLASS (ms_overview_panel_parent_class)->finalize (object);
 }
