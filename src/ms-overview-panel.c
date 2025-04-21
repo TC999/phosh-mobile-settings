@@ -317,7 +317,6 @@ ms_overview_panel_class_init (MsOverviewPanelClass *klass)
 static void
 ms_overview_panel_init (MsOverviewPanel *self)
 {
-  const char *version_check;
   GtkDropTarget *target = gtk_drop_target_new (GTK_TYPE_WIDGET, GDK_ACTION_COPY);
 
   gtk_widget_init_template (GTK_WIDGET (self));
@@ -344,12 +343,6 @@ ms_overview_panel_init (MsOverviewPanel *self)
                             self);
 
   on_afm_setting_changed (self);
-
-  version_check = gtk_check_version (4, 13, 2);
-  if (version_check) {
-    g_debug ("%s: Disabling arranging favorites", version_check);
-    gtk_widget_set_visible (GTK_WIDGET (self->arrange_favs), FALSE);
-  }
 }
 
 
