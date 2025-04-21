@@ -304,13 +304,13 @@ ms_overview_panel_class_init (MsOverviewPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-overview-panel.ui");
 
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, afm_switch_row);
   gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, arrange_favs);
   gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, fbox);
   gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, reset_btn);
-  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, afm_switch_row);
 
-  gtk_widget_class_bind_template_callback (widget_class, on_reset_btn_clicked);
   gtk_widget_class_bind_template_callback (widget_class, afm_switch_row_cb);
+  gtk_widget_class_bind_template_callback (widget_class, on_reset_btn_clicked);
 }
 
 
