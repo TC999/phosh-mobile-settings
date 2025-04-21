@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2022 Purism SPC
- *               2024 THe Phosh Developers
+ *               2024-2025 The Phosh Developers
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -9,6 +9,12 @@
 
 #include <ms-util.h>
 #include <glib/gi18n.h>
+
+#include <libportal/portal.h>
+#include <libportal-gtk4/portal-gtk4.h>
+
+#include <gtk/gtk.h>
+#include <adwaita.h>
 
 /**
  * ms_munge_app_id:
@@ -197,4 +203,101 @@ ms_schema_bind_property (const char         *id,
   settings = g_settings_new (id);
   g_settings_bind (settings, key, object, property, flags);
   return TRUE;
+}
+
+
+static void
+on_set_wallpaper (GObject *source, GAsyncResult *result, gpointer user_data)
+{
+  g_autoptr (GTask) task = G_TASK (user_data);
+  XdpPortal *portal = XDP_PORTAL (source);
+  g_autoptr (GError) err = NULL;
+
+  if (!xdp_portal_set_wallpaper_finish (portal, result, &err)) {
+    g_task_return_error (task, g_steal_pointer (&err));
+    return;
+  }
+
+  g_debug ("Updated wallpaper via portal");
+  g_task_return_boolean (task, TRUE);
+}
+
+
+static void
+on_file_chooser_done (GObject *source_object, GAsyncResult *res, gpointer user_data)
+{
+  g_autoptr (GTask) task = G_TASK (user_data);
+  AdwBin *panel = ADW_BIN (g_task_get_source_object (task));
+  GtkWindow *parent = GTK_WINDOW (gtk_widget_get_ancestor (GTK_WIDGET (panel), GTK_TYPE_WINDOW));
+  GtkFileDialog *filechooser = GTK_FILE_DIALOG (source_object);
+  g_autofree char *uri = NULL;
+  g_autoptr (XdpParent) xdp_parent = NULL;
+  g_autoptr (XdpPortal) portal = NULL;
+  g_autoptr (GFile) file = NULL;
+  g_autoptr (GError) err = NULL;
+  XdpWallpaperFlags flags = XDP_WALLPAPER_FLAG_PREVIEW;
+  gboolean lockscreen = !!GPOINTER_TO_INT (g_task_get_task_data (task));
+
+  file = gtk_file_dialog_open_finish (filechooser, res, &err);
+  if (!file) {
+    g_task_return_error (task, g_steal_pointer (&err));
+    return;
+  }
+
+  flags |= lockscreen ? XDP_WALLPAPER_FLAG_LOCKSCREEN : XDP_WALLPAPER_FLAG_BACKGROUND;
+  uri = g_file_get_uri (file);
+  portal = xdp_portal_new ();
+  xdp_parent = xdp_parent_new_gtk (parent);
+  xdp_portal_set_wallpaper (portal,
+                            xdp_parent,
+                            uri,
+                            flags,
+                            NULL,
+                            on_set_wallpaper,
+                            g_steal_pointer (&task));
+}
+
+
+void
+ms_select_wallpaper_async (AdwBin              *panel,
+                           GAsyncReadyCallback  callback,
+                           gboolean             lockscreen,
+                           gpointer             user_data)
+{
+  GtkFileDialog *filechooser;
+  GtkFileFilter *filter;
+  GListStore *filters;
+  g_autoptr (GFile) pictures_folder = NULL;
+  GtkWindow *parent = GTK_WINDOW (gtk_widget_get_ancestor (GTK_WIDGET (panel), GTK_TYPE_WINDOW));
+  GTask *task;
+
+  task = g_task_new (panel, NULL, callback, user_data);
+  g_task_set_task_data (task, GINT_TO_POINTER (lockscreen), NULL);
+  g_task_set_source_tag (task, ms_select_wallpaper_async);
+
+  filechooser = gtk_file_dialog_new ();
+  gtk_file_dialog_set_title (filechooser, _("Choose Wallpaper"));
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_add_pixbuf_formats (filter);
+
+  filters = g_list_store_new (GTK_TYPE_FILE_FILTER);
+  g_list_store_append (filters, filter);
+  gtk_file_dialog_set_filters (filechooser, G_LIST_MODEL (filters));
+
+  pictures_folder = g_file_new_for_path (g_get_user_special_dir (G_USER_DIRECTORY_PICTURES));
+  gtk_file_dialog_set_initial_folder (filechooser, pictures_folder);
+
+  gtk_file_dialog_open (filechooser, parent, NULL, on_file_chooser_done, task);
+}
+
+
+gboolean
+ms_select_wallpaper_finish (AdwBin *panel, GAsyncResult *result, GError **error)
+{
+  g_assert (ADW_IS_BIN (panel));
+  g_assert (g_async_result_is_tagged (result, ms_select_wallpaper_async));
+  g_assert (!error || !*error);
+
+  return g_task_propagate_boolean (G_TASK (result), error);
 }
