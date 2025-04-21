@@ -54,10 +54,39 @@ G_DEFINE_TYPE (MsOverviewPanel, ms_overview_panel, ADW_TYPE_BIN)
 
 
 static void
+on_reset_favorites_response (MsOverviewPanel *self, char *response)
+{
+  g_assert (MS_IS_OVERVIEW_PANEL (self));
+
+  if (g_strcmp0 (response, "reset") == 0)
+    g_settings_reset (self->settings, FAVORITES_KEY);
+}
+
+
+static void
 on_reset_btn_clicked (GtkButton *reset_btn, MsOverviewPanel *self)
 {
-  g_settings_reset (self->settings, FAVORITES_KEY);
+  AdwDialog *dialog = adw_alert_dialog_new (_("Reset favorites?"), NULL);
+
+  adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
+                                _("Reset list of favorite applications to the default?"));
+
+  adw_alert_dialog_add_responses (ADW_ALERT_DIALOG (dialog),
+                                  "cancel",  _("_Cancel"),
+                                  "reset", _("_Reset"),
+                                  NULL);
+
+  adw_alert_dialog_set_response_appearance (ADW_ALERT_DIALOG (dialog),
+                                            "reset",
+                                            ADW_RESPONSE_DESTRUCTIVE);
+
+  adw_alert_dialog_set_default_response (ADW_ALERT_DIALOG (dialog), "cancel");
+  adw_alert_dialog_set_close_response (ADW_ALERT_DIALOG (dialog), "cancel");
+
+  g_signal_connect_swapped (dialog, "response", G_CALLBACK (on_reset_favorites_response), self);
+  adw_dialog_present (dialog, GTK_WIDGET (self));
 }
+
 
 static void
 afm_switch_row_cb (MsOverviewPanel *self)
