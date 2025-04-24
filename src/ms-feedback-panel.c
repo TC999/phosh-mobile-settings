@@ -642,10 +642,17 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
   /* Notifications settings */
   self->notifications_settings = g_settings_new (NOTIFICATIONS_SCHEMA);
 
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
+  g_signal_connect_object (self->notifications_settings,
+                           "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
+                           G_CALLBACK (on_notifications_settings_changed),
+                           self,
+                           G_CONNECT_SWAPPED);
+  g_signal_connect_object (self->notifications_settings,
+                           "changed::"
+                           NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
+                           G_CALLBACK (on_notifications_settings_changed),
+                           self,
+                           G_CONNECT_SWAPPED);
   on_notifications_settings_changed (self);
 
   self->known_applications = g_hash_table_new_full (g_str_hash, g_str_equal,
