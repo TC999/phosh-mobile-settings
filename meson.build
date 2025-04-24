@@ -85,7 +85,6 @@ test_c_args = [
   '-Wmissing-include-dirs',
   '-Wmissing-noreturn',
   '-Wnested-externs',
-  '-Wno-missing-field-initializers',
   '-Wno-strict-aliasing',
   '-Wno-unused-parameter',
   '-Wold-style-definition',
