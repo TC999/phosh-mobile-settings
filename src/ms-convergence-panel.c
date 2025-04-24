@@ -109,7 +109,7 @@ ms_dock_has_touch (const MsDock *dock)
 static const MsDock *
 find_dock (MsHead *head)
 {
-  for (int i = 0; i < G_N_ELEMENTS (docks); i++) {
+  for (guint i = 0; i < G_N_ELEMENTS (docks); i++) {
     if ((STR_IS_NULL_OR_EMPTY (docks[i].make) || g_strcmp0 (docks[i].make, head->make) == 0) &&
         (STR_IS_NULL_OR_EMPTY (docks[i].model) || g_strcmp0 (docks[i].model, head->model) == 0) &&
         (STR_IS_NULL_OR_EMPTY (docks[i].serial) || g_strcmp0 (docks[i].serial, head->serial_number) == 0)) {
@@ -249,7 +249,7 @@ on_head_tracker_changed (MsConvergencePanel *self, GParamSpec *spec, MobileSetti
                     NULL);
 
   heads = ms_head_tracker_get_heads (self->tracker);
-  for (int i = 0; i < heads->len; i++) {
+  for (guint i = 0; i < heads->len; i++) {
     MsHead *head = g_ptr_array_index (heads, i);
     g_debug ("Initial head: %s", head->name);
     on_head_added (self, head);

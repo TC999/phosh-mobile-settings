@@ -78,7 +78,7 @@ ms_get_desktop_app_info_for_app_id (const char *app_id)
   g_assert (app_id);
 
   /* fix up applications with known broken app-id */
-  for (int i = 0; i < G_N_ELEMENTS (mappings); i++) {
+  for (guint i = 0; i < G_N_ELEMENTS (mappings); i++) {
     if (strcmp (app_id, mappings[i][0]) == 0) {
       app_id = mappings[i][1];
       break;

@@ -104,7 +104,7 @@ sync_settings (MsOskPanel *self)
 
   self->shortcuts_updating = TRUE;
 
-  for (int i = 0; i < g_list_model_get_n_items (model); i++) {
+  for (guint i = 0; i < g_list_model_get_n_items (model); i++) {
     g_autoptr (GtkStringObject) string = g_list_model_get_item (model, i);
 
     g_strv_builder_add (builder, gtk_string_object_get_string (string));
