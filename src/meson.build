@@ -89,6 +89,7 @@ mobile_settings_deps = [
   gtk_dep,
   gtk_wayland_dep,
   json_glib_dep,
+  libgvc_dep,
   libportal_dep,
   libportal_gtk4_dep,
   phosh_plugins_dep,
