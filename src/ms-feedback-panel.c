@@ -82,6 +82,7 @@ struct _MsFeedbackPanel {
   GvcMixerControl           *mixer_control;
   MsAudioDevices            *audio_devices;
   GtkListBox                *audio_devices_listbox;
+  AdwPreferencesGroup       *sound_settings_group;
 };
 
 G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
@@ -638,6 +639,7 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_adj);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_row);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, prefer_flash);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sound_settings_group);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sounds_listbox);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, quick_silent_switch);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, toast_overlay);
@@ -660,11 +662,17 @@ ms_feedback_panel_init_audio (MsFeedbackPanel *self)
   g_return_if_fail (self->mixer_control);
   gvc_mixer_control_open (self->mixer_control);
   self->audio_devices = ms_audio_devices_new (self->mixer_control, FALSE);
-  gtk_list_box_bind_model (GTK_LIST_BOX (self->audio_devices_listbox),
+  gtk_list_box_bind_model (self->audio_devices_listbox,
                            G_LIST_MODEL (self->audio_devices),
                            create_audio_device_row,
                            self,
                            NULL);
+
+  g_object_bind_property (self->audio_devices,
+                          "has-devices",
+                          self->sound_settings_group,
+                          "visible",
+                          G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
 }
 
 
