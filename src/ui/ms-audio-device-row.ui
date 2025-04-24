@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="MsAudioDeviceRow" parent="AdwPreferencesRow">
+    <property name="activatable">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox">
+            <property name="margin-top">12</property>
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkImage" id="icon">
+                <property name="pixel-size">16</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="description">
+                <property name="ellipsize">end</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale" id="scale">
+            <property name="adjustment">adjustment</property>
+            <property name="hexpand">True</property>
+            <property name="digits">0</property>
+            <accessibility>
+              <property name="label" translatable="yes">Volume</property>
+            </accessibility>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+  <object class="GtkAdjustment" id="adjustment">
+    <property name="lower">0</property>
+    <property name="upper">100</property>
+    <signal name="value_changed" handler="on_volume_changed" object="MsAudioDeviceRow" swapped="yes"/>
+  </object>
+</interface>

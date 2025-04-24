@@ -22,6 +22,8 @@ mobile_settings_sources = [
   'mobile-settings-debug-info.c',
   'ms-audio-device.c',
   'ms-audio-device.h',
+  'ms-audio-device-row.c',
+  'ms-audio-device-row.h',
   'ms-audio-devices.c',
   'ms-audio-devices.h',
   'ms-completer-info.c',
@@ -99,6 +101,7 @@ mobile_settings_deps = [
   phosh_plugins_dep,
   phosh_settings_dep,
   wayland_client_dep,
+  cc.find_library('m', required: false),
 ]
 
 gnome = import('gnome')
