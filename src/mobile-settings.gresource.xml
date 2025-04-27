@@ -25,6 +25,7 @@
   </gresource>
   <gresource prefix="/mobi/phosh/MobileSettings/icons/scalable/status/">
     <file alias="applications-symbolic.svg">../data/icons/applications-symbolic.svg</file>
+    <file alias="call-ring-symbolic.svg">../data/icons/call-ring-symbolic.svg</file>
     <file alias="computer-chip-symbolic.svg">../data/icons/computer-chip-symbolic.svg</file>
     <file alias="feedback-quiet-symbolic.svg">../data/icons/feedback-quiet-symbolic.svg</file>
     <file alias="focus-top-bar-symbolic.svg">../data/icons/focus-top-bar-symbolic.svg</file>
