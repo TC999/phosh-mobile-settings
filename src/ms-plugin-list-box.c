@@ -220,8 +220,8 @@ sort_plugins_store (MsPluginListBox *self)
 {
   g_auto (GStrv) plugins_order = g_settings_get_strv (self->settings, self->settings_key);
 
-  for (int i = 0; i < g_strv_length (plugins_order); i++) {
-    for (int j = 0; j < g_list_model_get_n_items (G_LIST_MODEL (self->store)); j++) {
+  for (guint i = 0; i < g_strv_length (plugins_order); i++) {
+    for (guint j = 0; j < g_list_model_get_n_items (G_LIST_MODEL (self->store)); j++) {
       MsPluginRow *plugin_row = g_list_model_get_item (G_LIST_MODEL (self->store), j);
 
       if (g_strcmp0 (plugins_order[i], ms_plugin_row_get_name (plugin_row)) == 0) {

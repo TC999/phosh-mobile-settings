@@ -37,7 +37,7 @@ ms_plugin_check_device_support (const char * const *supported)
   }
 
   comp = compatibles;
-  while (comp - compatibles < len) {
+  while ((gsize)(comp - compatibles) < len) {
     if (g_strv_contains (supported, comp))
       return TRUE;
 
