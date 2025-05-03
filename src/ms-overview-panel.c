@@ -7,14 +7,14 @@
  *          Rudra Pratap Singh <rudrasingh900@gmail.com>
  */
 
-#define G_LOG_DOMAIN "ms-feedback-panel"
+#define G_LOG_DOMAIN "ms-overview-panel"
 
 #include "mobile-settings-config.h"
 #include "mobile-settings-application.h"
 #include "mobile-settings-enums.h"
 #include "ms-enum-types.h"
 #include "ms-feedback-row.h"
-#include "ms-applications-panel.h"
+#include "ms-overview-panel.h"
 #include "ms-util.h"
 
 #include <phosh-settings-enums.h>
@@ -27,32 +27,40 @@
 #define PHOSH_SCHEMA_ID          "sm.puri.phosh"
 #define FAVORITES_LIST_ICON_SIZE 48
 
+#define BACKGROUND_SCHEMA_ID "org.gnome.desktop.background"
+#define BACKGROUND_KEY_PICTURE_OPTIONS "picture-options"
 
-struct _MsApplicationsPanel {
+struct _MsOverviewPanel {
   AdwBin                   parent;
 
   GSettings               *settings;
+  GSettings               *background_settings;
 
   /* Favorites */
   AdwPreferencesGroup     *arrange_favs;
   GtkFlowBox              *fbox;
   GListStore              *apps;
   GtkWidget               *reset_btn;
-
+  /* App filtering */
   AdwSwitchRow            *afm_switch_row;
+  /* Wallpaper */
+  AdwSwitchRow            *wallpaper_switch;
+
+  AdwToastOverlay         *toast_overlay;
+  AdwToast                *toast;
 };
 
-G_DEFINE_TYPE (MsApplicationsPanel, ms_applications_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE (MsOverviewPanel, ms_overview_panel, ADW_TYPE_BIN)
 
 
 static void
-on_reset_btn_clicked (GtkButton *reset_btn, MsApplicationsPanel *self)
+on_reset_btn_clicked (GtkButton *reset_btn, MsOverviewPanel *self)
 {
   g_settings_reset (self->settings, FAVORITES_KEY);
 }
 
 static void
-afm_switch_row_cb (MsApplicationsPanel *self)
+afm_switch_row_cb (MsOverviewPanel *self)
 {
   gboolean switch_state;
   gint flags;
@@ -65,7 +73,7 @@ afm_switch_row_cb (MsApplicationsPanel *self)
 
 
 static void
-sync_favorites (int start, int end, MsApplicationsPanel *self)
+sync_favorites (int start, int end, MsOverviewPanel *self)
 {
   int shift = start < end ? 1 : -1;
   g_auto (GStrv) fav_list = g_settings_get_strv (self->settings, FAVORITES_KEY);
@@ -83,11 +91,11 @@ sync_favorites (int start, int end, MsApplicationsPanel *self)
 
 
 static void
-on_drop_flowbox (GtkDropTarget       *target,
-                 GValue              *value,
-                 gdouble              x,
-                 gdouble              y,
-                 MsApplicationsPanel *self)
+on_drop_flowbox (GtkDropTarget   *target,
+                 GValue          *value,
+                 gdouble          x,
+                 gdouble          y,
+                 MsOverviewPanel *self)
 {
   GtkWidget *drag_app = g_value_get_object (value);
   GtkFlowBoxChild *child = gtk_flow_box_get_child_at_index (self->fbox, 0);
@@ -130,11 +138,11 @@ on_drop_flowbox (GtkDropTarget       *target,
 
 
 static void
-on_drop (GtkDropTarget       *target,
-         GValue              *value,
-         gdouble              x,
-         gdouble              y,
-         MsApplicationsPanel *self)
+on_drop (GtkDropTarget   *target,
+         GValue          *value,
+         gdouble          x,
+         gdouble          y,
+         MsOverviewPanel *self)
 {
   int start = -1, end = -1;
   const char *drag_app_id, *drop_app_id;
@@ -167,7 +175,7 @@ on_drop (GtkDropTarget       *target,
 
 
 static GdkDragAction
-on_enter (GtkDropTarget *target, gdouble x, gdouble y, MsApplicationsPanel *self)
+on_enter (GtkDropTarget *target, gdouble x, gdouble y, MsOverviewPanel *self)
 {
   GtkWidget *app = gtk_event_controller_get_widget (GTK_EVENT_CONTROLLER (target));
 
@@ -178,7 +186,7 @@ on_enter (GtkDropTarget *target, gdouble x, gdouble y, MsApplicationsPanel *self
 
 
 static void
-on_leave (GtkDropTarget *target, MsApplicationsPanel *self)
+on_leave (GtkDropTarget *target, MsOverviewPanel *self)
 {
   GtkWidget *app = gtk_event_controller_get_widget (GTK_EVENT_CONTROLLER (target));
 
@@ -187,7 +195,7 @@ on_leave (GtkDropTarget *target, MsApplicationsPanel *self)
 
 
 static void
-add_drop_target (GtkWidget *app, MsApplicationsPanel *self)
+add_drop_target (GtkWidget *app, MsOverviewPanel *self)
 {
   GtkDropTarget *target = gtk_drop_target_new (GTK_TYPE_WIDGET, GDK_ACTION_COPY);
 
@@ -232,7 +240,7 @@ create_fav_app (gpointer item, gpointer user_data)
 {
   GtkWidget *app = gtk_button_new ();
   GAppInfo *app_info = G_APP_INFO (item);
-  MsApplicationsPanel *self = MS_APPLICATIONS_PANEL (user_data);
+  MsOverviewPanel *self = MS_OVERVIEW_PANEL (user_data);
   GIcon *icon = g_app_info_get_icon (app_info);
   GtkWidget *img = gtk_image_new_from_gicon (icon);
 
@@ -252,7 +260,7 @@ create_fav_app (gpointer item, gpointer user_data)
 
 
 static void
-on_favorites_changed (MsApplicationsPanel *self)
+on_favorites_changed (MsOverviewPanel *self)
 {
   g_autoptr (GDesktopAppInfo) app_info = NULL;
   g_auto (GStrv) fav_list = g_settings_get_strv (self->settings, FAVORITES_KEY);
@@ -269,7 +277,7 @@ on_favorites_changed (MsApplicationsPanel *self)
 
 
 static void
-on_afm_setting_changed (MsApplicationsPanel *self)
+on_afm_setting_changed (MsOverviewPanel *self)
 {
   PhoshAppFilterModeFlags filter_mode;
   gboolean active;
@@ -282,42 +290,70 @@ on_afm_setting_changed (MsApplicationsPanel *self)
 
 
 static void
-ms_applications_panel_finalize (GObject *object)
+on_select_wallpaper_ready (GObject *source, GAsyncResult *result, gpointer user_data)
 {
-  MsApplicationsPanel *self = MS_APPLICATIONS_PANEL (object);
+  MsOverviewPanel *self = MS_OVERVIEW_PANEL (source);
+  g_autoptr (GError) err = NULL;
+  gboolean success;
 
-  g_clear_pointer (&self->apps, g_object_unref);
-  g_clear_pointer (&self->settings, g_object_unref);
+  success = ms_select_wallpaper_finish (ADW_BIN (source), result, &err);
+  if (!success  && !g_error_matches (err, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
+    AdwToast *toast;
 
-  G_OBJECT_CLASS (ms_applications_panel_parent_class)->finalize (object);
+    toast = adw_toast_new (_("Failed to set wallpaper for overview"));
+    adw_toast_overlay_add_toast (self->toast_overlay, toast);
+    return;
+  }
 }
 
 
 static void
-ms_applications_panel_class_init (MsApplicationsPanelClass *klass)
+on_select_wallpaper_clicked (MsOverviewPanel *self)
+{
+  ms_select_wallpaper_async (ADW_BIN (self), on_select_wallpaper_ready, FALSE, NULL);
+}
+
+
+static void
+ms_overview_panel_finalize (GObject *object)
+{
+  MsOverviewPanel *self = MS_OVERVIEW_PANEL (object);
+
+  g_clear_object (&self->apps);
+  g_clear_object (&self->settings);
+  g_clear_object (&self->background_settings);
+
+  G_OBJECT_CLASS (ms_overview_panel_parent_class)->finalize (object);
+}
+
+
+static void
+ms_overview_panel_class_init (MsOverviewPanelClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-  object_class->finalize = ms_applications_panel_finalize;
+  object_class->finalize = ms_overview_panel_finalize;
 
   gtk_widget_class_set_template_from_resource (widget_class,
-                                               "/mobi/phosh/MobileSettings/ui/ms-applications-panel.ui");
+                                               "/mobi/phosh/MobileSettings/ui/ms-overview-panel.ui");
 
-  gtk_widget_class_bind_template_child (widget_class, MsApplicationsPanel, arrange_favs);
-  gtk_widget_class_bind_template_child (widget_class, MsApplicationsPanel, fbox);
-  gtk_widget_class_bind_template_child (widget_class, MsApplicationsPanel, reset_btn);
-  gtk_widget_class_bind_template_child (widget_class, MsApplicationsPanel, afm_switch_row);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, afm_switch_row);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, arrange_favs);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, fbox);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, reset_btn);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, toast_overlay);
+  gtk_widget_class_bind_template_child (widget_class, MsOverviewPanel, wallpaper_switch);
 
-  gtk_widget_class_bind_template_callback (widget_class, on_reset_btn_clicked);
   gtk_widget_class_bind_template_callback (widget_class, afm_switch_row_cb);
+  gtk_widget_class_bind_template_callback (widget_class, on_reset_btn_clicked);
+  gtk_widget_class_bind_template_callback (widget_class, on_select_wallpaper_clicked);
 }
 
 
 static void
-ms_applications_panel_init (MsApplicationsPanel *self)
+ms_overview_panel_init (MsOverviewPanel *self)
 {
-  const char *version_check;
   GtkDropTarget *target = gtk_drop_target_new (GTK_TYPE_WIDGET, GDK_ACTION_COPY);
 
   gtk_widget_init_template (GTK_WIDGET (self));
@@ -345,16 +381,20 @@ ms_applications_panel_init (MsApplicationsPanel *self)
 
   on_afm_setting_changed (self);
 
-  version_check = gtk_check_version (4, 13, 2);
-  if (version_check) {
-    g_debug ("%s: Disabling arranging favorites", version_check);
-    gtk_widget_set_visible (GTK_WIDGET (self->arrange_favs), FALSE);
-  }
+  self->background_settings = g_settings_new (BACKGROUND_SCHEMA_ID);
+  g_settings_bind_with_mapping (self->background_settings,
+                                BACKGROUND_KEY_PICTURE_OPTIONS,
+                                self->wallpaper_switch,
+                                "active",
+                                G_SETTINGS_BIND_DEFAULT,
+                                ms_picture_mode_to_bool,
+                                ms_bool_to_picture_mode,
+                                NULL, NULL);
 }
 
 
-MsApplicationsPanel *
-ms_applications_panel_new (void)
+MsOverviewPanel *
+ms_overview_panel_new (void)
 {
-  return MS_APPLICATIONS_PANEL (g_object_new (MS_TYPE_APPLICATIONS_PANEL, NULL));
+  return MS_OVERVIEW_PANEL (g_object_new (MS_TYPE_OVERVIEW_PANEL, NULL));
 }

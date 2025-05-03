@@ -9,6 +9,8 @@
 
 #include "mobile-settings-enums.h"
 
+#include <adwaita.h>
+
 #include <glib.h>
 #include <gio/gdesktopappinfo.h>
 
@@ -26,5 +28,16 @@ gboolean          ms_schema_bind_property (const char         *id,
                                            GObject            *object,
                                            const char         *property,
                                            GSettingsBindFlags  flags);
+void              ms_select_wallpaper_async (AdwBin              *panel,
+                                             GAsyncReadyCallback  callback,
+                                             gboolean             lockscreen,
+                                             gpointer             user_data);
+gboolean          ms_select_wallpaper_finish (AdwBin *panel, GAsyncResult *result, GError **error);
+gboolean          ms_picture_mode_to_bool (GValue   *out_value,
+                                           GVariant *in_variant,
+                                           gpointer   user_data);
+GVariant *        ms_bool_to_picture_mode (const GValue       *in_value,
+                                           const GVariantType *out_type,
+                                           gpointer            data);
 
 G_END_DECLS
