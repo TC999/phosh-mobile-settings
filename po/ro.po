@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-04-15 01:30+0000\n"
-"PO-Revision-Date: 2025-03-18 11:35+0100\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-04 10:58+0200\n"
 "Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Gtranslator 47.1\n"
+"20)) ? 1 : 2);\n"
+"X-Generator: Gtranslator 48.0\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -28,9 +28,7 @@ msgstr "Reglări Mobil"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
 #: data/mobi.phosh.MobileSettings.desktop.in:13
 msgid "Mobile;Preferences;MobileSettings;"
-msgstr ""
-"Mobile;Preferences;MobileSettings;Mobil;Preferințe;Configurări;Opțiuni;"
-"ReglăriMobil;"
+msgstr "Mobile;Preferences;MobileSettings;Mobil;Preferințe;Configurări;Opțiuni;ReglăriMobil;"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
 msgid "Phosh Mobile Settings"
@@ -180,13 +178,9 @@ msgstr "critic"
 msgid "none"
 msgstr "nimic"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Nu s-a reușit stabilirea fundalului pentru ecranul blocat"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Alege fundalul"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -200,6 +194,26 @@ msgstr "Completarea prestabilită aleasă de tastatura virtuală"
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "Nicio informație disponibilă pentru această completare"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "Se restabilesc preferatele?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "Se restabilește starea inițială a listei de aplicații preferate?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "_Anulează"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "_Restabilește"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "Nu s-a reușit stabilirea fundalului pentru prezentare"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -268,19 +282,23 @@ msgid "Choose sound file"
 msgstr "Alege fișierul audio"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Complet"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Vibrații"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Silențios"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Alege fundalul"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -299,8 +317,8 @@ msgid "Top Bar"
 msgstr "Spațiul de sus"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Aplicații"
+msgid "Overview"
+msgstr "Prezentare"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -337,44 +355,6 @@ msgstr "_Taste rapide"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_Despre Reglări Mobil"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Preferate"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organizare Preferate"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-"Trage și așează aplicațiile de mai jos pentru a rearanja aplicațiile "
-"preferate"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Restabilire Preferate"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Restabilește starea inițială a listei de aplicații preferate"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Restabilește"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Filtrare aplicații de mobil"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Alege modul de filtrare a aplicațiilor"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Arată doar aplicații pentru mobil"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -562,19 +542,19 @@ msgstr "Amânarea blocării automate a ecranului"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Numărul de secunde de la stingerea ecranului până la blocarea lui"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Fundal"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Alege fundalul…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Folosește un fundal"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Dacă să se afișeze un fundal colorat"
 
@@ -735,6 +715,44 @@ msgstr "Scurtături"
 #: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Scurtături disponibile în spațiul scurtăturilor"
+
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Preferate"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organizare Preferate"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Trage și așează aplicațiile de mai jos pentru a rearanja aplicațiile "
+"preferate"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Restabilire Preferate"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Restabilește starea inițială a listei de aplicații preferate"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Restabilește"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Filtrare aplicații de mobil"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Alege modul de filtrare a aplicațiilor"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Arată doar aplicații pentru mobil în prezentare"
 
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
