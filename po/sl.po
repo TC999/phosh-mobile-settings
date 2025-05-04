@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-19 22:28+0100\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-04 19:36+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -129,12 +129,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Konča program"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- Upravljajte nastavitve svojega mobilnika"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
@@ -179,13 +179,9 @@ msgstr "kritično"
 msgid "none"
 msgstr "brez"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Nastavitev slike ozadja zaklenjenega zaslona ni uspela"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Izberite sliko ozadja"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -199,6 +195,27 @@ msgstr "Privzeti uporabljeni mehanizem za dokončanje po izboru OSK"
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "Za ta mehanizem za dokončanje ni na voljo nobenih informacij"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "Ali želite ponastaviti priljubljene?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr ""
+"Ali želite nastaviti seznam priljubljenih programov nazaj na privzetega?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "Pre_kliči"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "Po_nastavi"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "Nastavitev slike ozadja za pregled ni uspela"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -267,19 +284,23 @@ msgid "Choose sound file"
 msgstr "Izberite zvočno datoteko"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Polno"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Tiho"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Tiho"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Izberite sliko ozadja"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -298,8 +319,8 @@ msgid "Top Bar"
 msgstr "Vrhnja vrstica"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Programi"
+msgid "Overview"
+msgstr "Pregled"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -336,44 +357,6 @@ msgstr "_Tipkovne bližnjice‫"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_O programu Mobilne nastavitve"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Priljubljeno"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organiziraj priljubljene"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-"Povlecite in spustite spodnje aplikacije, da preuredite svoje najljubše "
-"aplikacije"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Ponastavi priljubljene"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Nastavi seznam priljubljenih aplikacij nazaj na privzetega"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Ponastavi"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Filtriranje aplikacij za mobilne naprave"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Nastavite način filtra aplikacij"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "V pregledu pokaži samo mobilne aplikacije"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -558,19 +541,19 @@ msgstr "Samodejna zakasnitev zaklepanja zaslona"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Čas (v s) od praznega zaslona do zaklepa zaslona"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Ozadje"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Izberi sliko ozadja ..."
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Uporabi sliko ozadja"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Ali naj prikažete barvito ozadje"
 
@@ -727,6 +710,44 @@ msgstr "Pokaže tipkovne bližnjice"
 #: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Bližnjice, ki so na voljo v vrstici z bližnjicami"
+
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Priljubljeno"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organiziraj priljubljene"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Povlecite in spustite spodnje aplikacije, da preuredite svoje najljubše "
+"aplikacije"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Ponastavi priljubljene"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Nastavi seznam priljubljenih aplikacij nazaj na privzetega"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Ponastavi"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Filtriranje aplikacij za mobilne naprave"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Nastavite način filtra aplikacij"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "V pregledu pokaži samo mobilne aplikacije"
 
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
