@@ -166,7 +166,7 @@ parse_uboot_version (MsPluginLibrem5Panel *self)
     return FALSE;
 
   parts = g_strsplit (cmdline, " ", -1);
-  for (int i = 0; i < g_strv_length (parts); i++) {
+  for (guint i = 0; i < g_strv_length (parts); i++) {
     const char *version;
 
     if (g_str_has_prefix (parts[i], "u_boot_version=") == FALSE)

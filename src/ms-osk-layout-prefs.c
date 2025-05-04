@@ -221,7 +221,7 @@ on_add_layout_activated (GtkWidget *widget, const char *action_name, GVariant *p
   guint n_items;
 
   n_items = g_list_model_get_n_items (G_LIST_MODEL (self->available_layouts));
-  for (int i = 0; i < n_items; i++) {
+  for (guint i = 0; i < n_items; i++) {
     g_autoptr (MsOskLayout) layout = NULL;
 
     layout = g_list_model_get_item (G_LIST_MODEL (self->available_layouts), i);
@@ -374,7 +374,7 @@ on_load_osk_layouts_from_stream_ready (JsonParser *parser, GAsyncResult *res, gp
     return;
   }
 
-  for (int i = 0; i < json_array_get_length (layouts); i++) {
+  for (guint i = 0; i < json_array_get_length (layouts); i++) {
     g_autoptr (MsOskLayout) layout = NULL;
     JsonObject *layout_obj;
     const char *name, *type, *layout_id, *display_name;

@@ -139,7 +139,7 @@ append_display_configuration (GString *string)
     return;
   }
 
-  for (int i = 0; i < heads->len; i++) {
+  for (guint i = 0; i < heads->len; i++) {
     MsHead *head = g_ptr_array_index (heads, i);
     const char *transform_str = NULL;
 
@@ -338,7 +338,7 @@ mobile_settings_generate_debug_info (void)
 
     g_string_append (string, "Settings:\n");
 
-    for (int i = 0; i < G_N_ELEMENTS (schema); i++) {
+    for (guint i = 0; i < G_N_ELEMENTS (schema); i++) {
       g_autoptr (GSettings) settings = g_settings_new (schema[i].schema);
       g_autoptr (GVariant) value;
       g_autofree char *result;

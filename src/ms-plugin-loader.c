@@ -95,7 +95,7 @@ ms_plugin_loader_constructed (GObject *object)
   /* TODO: Make configurable */
   g_io_extension_point_set_required_type (ep, GTK_TYPE_WIDGET);
 
-  for (int i = 0; i < g_strv_length (self->plugin_dirs); i++) {
+  for (guint i = 0; i < g_strv_length (self->plugin_dirs); i++) {
     g_debug ("Will load plugins from '%s' for '%s'", self->plugin_dirs[i], self->extension_point);
     g_io_modules_scan_all_in_directory (self->plugin_dirs[i]);
   }
