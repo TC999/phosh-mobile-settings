@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
 "PO-Revision-Date: 2025-03-21 08:00+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -131,12 +131,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- Mobil ayarlarınızı yönetin"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
@@ -183,13 +183,9 @@ msgstr "kritik"
 msgid "none"
 msgstr "yok"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Kilit ekranı duvar kağıdı belirlenemedi"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Duvar Kağıdı Seç"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -204,10 +200,30 @@ msgstr "OSK tarafından seçilen öntanımlı tamamlayıcı"
 msgid "No information available for this completer"
 msgstr "Bu tamamlayıcı için bilgi yok"
 
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "Gözdeler sıfırlansın mı?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "Gözde uygulamalar listesi öntanımlıya sıfırlansın mı?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "İ_ptal"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "_Sıfırla"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "Genel görünüm için duvar kağıdı belirlenemedi"
+
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
 msgid "Normal"
-msgstr "Normal"
+msgstr "Olağan"
 
 #. Translators: "Bottom up" indicates the orientation is flipped vertically
 #: src/ms-sensor-panel.c:96
@@ -271,19 +287,23 @@ msgid "Choose sound file"
 msgstr "Ses dosyası seç"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Tam"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Neredeyse Sessiz"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Sessiz"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Duvar Kağıdı Seç"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -302,8 +322,8 @@ msgid "Top Bar"
 msgstr "Üst Çubuk"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Uygulamalar"
+msgid "Overview"
+msgstr "Genel Görünüm"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -340,44 +360,6 @@ msgstr "_Klavye Kısayolları"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "Mobil Ayarlar _Hakkında"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Gözdeler"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Gözdeleri Düzenle"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-"Gözde uygulamalarınızı düzenlemek için aşağıdaki uygulamaları sürükleyip "
-"bırakın"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Gözdeleri Sıfırla"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Gözde uygulamalar listesini öntanımlılara geri yükle"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Sıfırla"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Mobil Uygulama Süzme"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Uygulama Süzme Kipini Ayarla"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Genel görünümde yalnızca mobil uygulamaları göster"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -561,19 +543,19 @@ msgstr "Kendiliğinden ekran kilidi gecikmesi"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Boş ekrandan ekran kilidine dek geçen saniye"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Arka Plan"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "Duvar Kağıdı _Seç…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Duvar kağıdı kullan"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Renkli duvar kağıdının gösterilmesi"
 
@@ -731,6 +713,44 @@ msgstr "Kısayollar"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Kısayollar çubuğundaki kısayollar"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Gözdeler"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Gözdeleri Düzenle"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Gözde uygulamalarınızı düzenlemek için aşağıdaki uygulamaları sürükleyip "
+"bırakın"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Gözdeleri Sıfırla"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Gözde uygulamalar listesini öntanımlılara geri yükle"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Mobil Uygulama Süzme"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Uygulama Süzme Kipini Ayarla"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Genel görünümde yalnızca mobil uygulamaları göster"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "Uygulama"
@@ -815,7 +835,3 @@ msgstr "Hızlı Ayarlar"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Ek Hızlı Ayarlar’ınızı düzenleyin"
-
-#~ msgctxt "shuffle keypad setting"
-#~ msgid "Enabled"
-#~ msgstr "Etkin"
