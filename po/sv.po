@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 12:32+0000\n"
-"PO-Revision-Date: 2025-03-20 19:20+0100\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-03 23:38+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -128,12 +128,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- Hantera dina mobilinställningar"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -180,13 +180,9 @@ msgstr "kritisk"
 msgid "none"
 msgstr "ingen"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Misslyckades med att ställa in låsskärmens bakgrund"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Välj bakgrundsbild"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -200,6 +196,26 @@ msgstr "Standardkompletteraren vald av tangentbordet"
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "Ingen information tillgänglig för denna kompletterare"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "Återställ favoriter?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "Återställ listan över favoritappar till standardvärdet?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "Å_terställ"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "Misslyckades med att ställa in översiktens bakgrund"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -268,19 +284,23 @@ msgid "Choose sound file"
 msgstr "Välj ljudfil"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Fullständig"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Tyst"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Ljudlös"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Välj bakgrundsbild"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -299,8 +319,8 @@ msgid "Top Bar"
 msgstr "Systemrad"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Program"
+msgid "Overview"
+msgstr "Översikt"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -337,42 +357,6 @@ msgstr "_Tangentbordsgenvägar"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_Om Mobilinställningar"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Favoriter"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organisera favoriter"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr "Dra och släpp apparna nedan för att arrangera om dina favoritappar"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Återställ favoriter"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Ställ in listan över favoritappar till standardvärdet"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Återställ"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Filtrering av mobilappar"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Ställ in programfilterläge"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Visa endast mobilappar i översikten"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -555,19 +539,19 @@ msgstr "Fördröjning för automatiskt skärmlås"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Sekunder från det att skärmen töms till den låses"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Bakgrund"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Välj bakgrundsbild…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Använd bakgrundsbild"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Huruvida en färgglad bakgrundsbild ska visas"
 
@@ -725,6 +709,42 @@ msgstr "Kortkommandon"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Kortkommandona som är tillgängliga i kortkommandoraden"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Favoriter"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organisera favoriter"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "Dra och släpp apparna nedan för att arrangera om dina favoritappar"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Återställ favoriter"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Ställ in listan över favoritappar till standardvärdet"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Återställ"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Filtrering av mobilappar"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Ställ in programfilterläge"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Visa endast mobilappar i översikten"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "Program"
@@ -809,6 +829,9 @@ msgstr "Snabbinställningar"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Organisera dina ytterligare snabbinställningar"
+
+#~ msgid "Applications"
+#~ msgstr "Program"
 
 #~ msgctxt "shuffle keypad setting"
 #~ msgid "Enabled"
