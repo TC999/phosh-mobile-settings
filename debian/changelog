@@ -1,3 +1,59 @@
+phosh-mobile-settings (0.47~rc1) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * applications-panel: Rename to overview panel.
+    It handles aspects of the overview and app-grid.
+  * overview-panel: Sort template children alphabetically
+  * overview-panel: Drop GTK version check.
+    We can assume recent enough GTK nowadays
+  * overview-panel: Use g_object_unref.
+    Simpler than g_clear_pointer
+  * utils: Move wallpaper setting here.
+    We make it an async function so it can be reused in other panels.
+  * utils: Move picture mode from/to bool conversion here
+  * lockscreen-panel: Use new helper from utils
+  * overview-panel: Allow to set background wallpaper.
+    This makes it consistent with the lockscreen wallpaper and gives us an
+    easy way to disable it.
+  * overview: Reindent UI file.
+    No other changes
+  * treewide: Fixed signed vs unsigned comparisons
+  * build: Enable -Ssign-compare
+  * build: Drop -Wno-missing-field-initializers.
+    We set -Wmissing-field-initializers couple of lines above
+  * overview-panel: Ask for confirmation when resetting favorites.
+    People take great care in setting these up, let's check before going
+    back to the defaults.
+
+  [ Baxrom Raxmatov ]
+  * Add Uzbek (Latin) translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Bruce Cowan ]
+  * Update British English translation
+
+  [ Emin Tufan Çetin ]
+  * Update Turkish translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 08 May 2025 09:06:28 +0200
+
 phosh-mobile-settings (0.46.0) experimental; urgency=medium
 
   [ Guido Günther ]
