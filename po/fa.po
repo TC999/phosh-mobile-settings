@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-17 17:50+0330\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-05 02:43+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3 src/ui/mobile-settings-window.ui:6
 msgid "Mobile Settings"
@@ -125,12 +125,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "خروج"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- مدیریت تنظیمات همراهتان"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
 
@@ -175,13 +175,9 @@ msgstr "بحرانی"
 msgid "none"
 msgstr "هیچ"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "شکست در تنظیم کاغذدیواری صفحهٔ قفل"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "گزینش کاغذدیواری"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -195,6 +191,26 @@ msgstr "تکمیلگر پیش‌گزیده به دست صفحعه‌کلید م�
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "هیچ اطّلاعاتی از این رایانه موجود نیست"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "بازنشانی برگزیده‌ها؟"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "بازنشانی سیاههٔ برنامه‌های برگزیده به پیش‌گزیده؟"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "_لغو"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "_بازنشانی"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "شکست در تنظیم کاغذدیواری نمای کلی"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -263,19 +279,23 @@ msgid "Choose sound file"
 msgstr "گزینش پروندهٔ صدا"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "کامل"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "کم‌صدا"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "بی‌صدا"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "گزینش کاغذدیواری"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -294,8 +314,8 @@ msgid "Top Bar"
 msgstr "نوار بالا"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "برنامه‌ها"
+msgid "Overview"
+msgstr "نمای کلی"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -332,42 +352,6 @@ msgstr "_میان‌برهای صفحه‌کلید"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_دربارهٔ تنظیمات همراه"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "محبوب‌ها"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "سازمان‌دهی محبوب‌ها"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr "برای تغییر جایگاه کاره‌های محبوبتان آن‌ها را کشیده و در زیر رها کنید"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "بازنشانی برگزیده‌ها"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "تنظیم دوبارهٔ سیاههٔ کاره‌های محبوب به پیش‌گزیده"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "بازنشانی"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "پالایش کارهٔ همراه"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "تنظیم حالت پالایش برنامه"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "فقط نمایش کاره‌های همراه در نمای کلی"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -551,19 +535,19 @@ msgstr "تأخیر قفل صفحهٔ خودکار"
 msgid "Seconds from screen blank to screen lock"
 msgstr "ثانیه‌ها از سیاه شدن صفحه تا قفل"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "پس‌زمینه"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_گزینش کاغذدیواری"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "استفاده از کاغذدیواری"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "این که کاغذدیواری رنگی نشان داده شود یا نه"
 
@@ -717,6 +701,42 @@ msgstr "میان‌برها"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "میان‌برهای موجود در نوار میان‌برها"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "محبوب‌ها"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "سازمان‌دهی محبوب‌ها"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "برای تغییر جایگاه کاره‌های محبوبتان آن‌ها را کشیده و در زیر رها کنید"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "بازنشانی برگزیده‌ها"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "تنظیم دوبارهٔ سیاههٔ کاره‌های محبوب به پیش‌گزیده"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "بازنشانی"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "پالایش کارهٔ همراه"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "تنظیم حالت پالایش برنامه"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "فقط نمایش کاره‌های همراه در نمای کلی"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "برنامه"
@@ -798,6 +818,9 @@ msgstr "تنظیمات سریع"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "سازمان دهی تنظیمات سریع اضافیتان"
+
+#~ msgid "Applications"
+#~ msgstr "برنامه‌ها"
 
 #~ msgctxt "shuffle keypad setting"
 #~ msgid "Enabled"

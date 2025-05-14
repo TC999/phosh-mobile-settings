@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-20 04:04+0100\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-10 03:31+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -126,12 +126,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "გასვლა"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- მართეთ თქვენი მობილურის პარამეტრები"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr "temuri Doghonadze"
 
@@ -176,13 +176,9 @@ msgstr "კრიტიკული"
 msgid "none"
 msgstr "არა"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "დაბლოკვის ეკრანის ფონის სურათის დაყენება ჩავარდა"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "აირჩიეთ ფონის სურათი"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -196,6 +192,26 @@ msgstr "ნაგულისხმევი დასრულების ძ�
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "ამ დამსრულებლისთვის ინფორმაცია ხელმისაწვდომი არა"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "ჩამოვყარო რჩეულები?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "ჩამოვყარო რჩეული აპლიკაციების სია ნაგულისხმევზე?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "გაუ_ქმება"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "ჩამოყ_რა"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "მიმოხილვის ეკრანის ფონის სურათის დაყენება ჩავარდა"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -264,19 +280,23 @@ msgid "Choose sound file"
 msgstr "აირჩიეთ ხმის ფაილი"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "სრული"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "მშვიდი"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "ჩუმი"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "აირჩიეთ ფონის სურათი"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -295,8 +315,8 @@ msgid "Top Bar"
 msgstr "ზედა ზოლი"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "აპლიკაციები"
+msgid "Overview"
+msgstr "მიმოხილვა"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -333,42 +353,6 @@ msgstr "_კლავიატურის მალსახმობები"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "მობილურის პარამეტრების შეს_ახებ"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "სანიშნეები"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "სანიშნეების დალაგება"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr "გადაათრიეთ და დაყარეთ აპები ქვემოთ, რომ გადაალაგოთ თქვენი რჩეული აპები"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "სანიშნეების ჩამოყრა"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "რჩეული აპების სიის ნაგულისხმევზე დაყენება"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "საწყის მნიშვნელობებზე დაბრუნება"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "მობილური აპების გაფილტვრა"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "აპლიკაციის ფილტრის რეჟიმის დაყენება"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "გადახედვაში, მხოლოდ, მობილური აპების ჩვენება"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -554,19 +538,19 @@ msgstr "ეკრანის ავტომატური დაბლოკ�
 msgid "Seconds from screen blank to screen lock"
 msgstr "ეკრანის დასაბლოკად მისი დაბნელების დრო"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "ფონი"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "ფონის _სურათის არჩევა…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "ფონის სურათის გამოყენება"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "იქნება, თუ არა გამოყენებული ფერადი ფონი"
 
@@ -724,6 +708,42 @@ msgstr "მალსახმობები"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "მალსახმობების პანელზე ხელმისაწვდომი მალსახმობები"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "სანიშნეები"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "სანიშნეების დალაგება"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "გადაათრიეთ და დაყარეთ აპები ქვემოთ, რომ გადაალაგოთ თქვენი რჩეული აპები"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "სანიშნეების ჩამოყრა"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "რჩეული აპების სიის ნაგულისხმევზე დაყენება"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "საწყის მნიშვნელობებზე დაბრუნება"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "მობილური აპების გაფილტვრა"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "აპლიკაციის ფილტრის რეჟიმის დაყენება"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "გადახედვაში, მხოლოდ, მობილური აპების ჩვენება"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "პროგრამა"
@@ -807,6 +827,9 @@ msgstr "სწრაფი მორგება"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "მოირგეთ თქვენი დამატებითი სწრაფი პარამეტრები"
+
+#~ msgid "Applications"
+#~ msgstr "აპლიკაციები"
 
 #~ msgctxt "shuffle keypad setting"
 #~ msgid "Enabled"

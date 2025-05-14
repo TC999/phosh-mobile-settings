@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-23 08:03+0200\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-04 15:02+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3)\n"
-"X-Generator: Gtranslator 47.1\n"
+"2 : 3);\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -128,12 +128,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- ניהול הגדרות המכשיר הנייד שלך"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
@@ -181,13 +181,9 @@ msgstr "קיצוני"
 msgid "none"
 msgstr "ללא"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "הגדרת רקע למסך הנעילה נכשלה"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "בחירת רקע"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -201,6 +197,26 @@ msgstr "משלים ברירת המחדל שנבחר על ידי המקלדת ע�
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "אין מידע זמין על המשלים הזה"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "לאפס את המועדפים?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "לאפס את רשימת היישומונים המועדפים לברירת המחדל?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "_ביטול"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "_איפוס"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "הגדרת רקע לסקירה נכשלה"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -269,19 +285,23 @@ msgid "Choose sound file"
 msgstr "בחירת קובץ שמע"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "מלאה"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "שקטה"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "חרישית"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "בחירת רקע"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -300,8 +320,8 @@ msgid "Top Bar"
 msgstr "סרגל עליון"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "יישומים"
+msgid "Overview"
+msgstr "סקירה"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -338,42 +358,6 @@ msgstr "_קיצורים"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_על הגדרות נייד"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "מועדפים"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "סידור מועדפים"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr "גרירת היישומים להלן כדי לסדר את היישומים המועדפים שלך מחדש"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "איפוס מועדפים"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "הגדרת רשימת היישומים המועדפים בחזרה לברירת המחדל"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "איפוס"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "סינון יישומים לנייד"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "הגדרת מצב סינון יישומים"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "להציג רק יישומים לניידים בסקירה"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -557,19 +541,19 @@ msgstr "השהיה אוטומטית לנעילת מסך"
 msgid "Seconds from screen blank to screen lock"
 msgstr "משך הזמן מהחשכת המסך לנעילת המסך"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "רקע"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_בחירת רקע…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "שימוש ברקע"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "האם להציג רקע צבעוני"
 
@@ -723,6 +707,42 @@ msgstr "קיצורים"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "הקיצורים הזמינים מסרגל הקיצורים"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "מועדפים"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "סידור מועדפים"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "גרירת היישומים להלן כדי לסדר את היישומים המועדפים שלך מחדש"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "איפוס מועדפים"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "הגדרת רשימת היישומים המועדפים בחזרה לברירת המחדל"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "איפוס"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "סינון יישומים לנייד"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "הגדרת מצב סינון יישומים"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "להציג רק יישומים לניידים בסקירה"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "יישומונים"
@@ -804,6 +824,9 @@ msgstr "הגדרות מהירות"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "מיון ההגדרות המהירות הנוספות שלך"
+
+#~ msgid "Applications"
+#~ msgstr "יישומים"
 
 #~ msgctxt "shuffle keypad setting"
 #~ msgid "Enabled"

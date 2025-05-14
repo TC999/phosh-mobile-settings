@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-25 16:52+0000\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-05 19:52+0100\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
-"Language-Team: English - United Kingdom <en@li.org>\n"
+"Language-Team: British English <en@li.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Gtranslator 48.0\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -128,12 +128,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quit"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- Manage your mobile settings"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr ""
 "Andi Chandler <andi@gowling.com>\n"
@@ -180,13 +180,9 @@ msgstr "critical"
 msgid "none"
 msgstr "none"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Failed to set lockscreen wallpaper"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Choose Wallpaper"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -200,6 +196,26 @@ msgstr "The default completer selected by the OSK"
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "No information available for this completer"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "Reset favourites?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "Reset list of favourite applications to the default?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "_Cancel"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "_Reset"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "Failed to set wallpaper for overview"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -268,19 +284,23 @@ msgid "Choose sound file"
 msgstr "Choose sound file"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Full"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Quiet"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Silent"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Choose Wallpaper"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -299,8 +319,8 @@ msgid "Top Bar"
 msgstr "Top Bar"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Applications"
+msgid "Overview"
+msgstr "Overview"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -337,42 +357,6 @@ msgstr "_Keyboard Shortcuts"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_About Mobile Settings"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Favourites"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organise Favourites"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr "Drag and drop the apps below to rearrange your favourite apps"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Reset Favourites"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Set list of favourite apps back to the default"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Reset"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Mobile App Filtering"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Set Application Filter Mode"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Show only mobile apps in the overview"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -555,19 +539,19 @@ msgstr "Automatic screen lock delay"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Seconds from screen blank to screen lock"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Background"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Select Wallpaper…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Use wallpaper"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Whether to show a colourful wallpaper"
 
@@ -723,6 +707,42 @@ msgstr "Shortcuts"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "The shortcuts available in the shortcuts bar"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Favourites"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organise Favourites"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "Drag and drop the apps below to rearrange your favourite apps"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Reset Favourites"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Set list of favourite apps back to the default"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Reset"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Mobile App Filtering"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Set Application Filter Mode"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Show only mobile apps in the overview"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "Application"
@@ -806,6 +826,9 @@ msgstr "Quick Settings"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Organise your additional Quick Settings"
+
+#~ msgid "Applications"
+#~ msgstr "Applications"
 
 #~| msgid "Enabled"
 #~ msgctxt "shuffle keypad setting"

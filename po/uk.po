@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settin"
-"gs/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-17 22:26+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-setti"
+"ngs/-/issues\n"
+"POT-Creation-Date: 2025-05-04 01:19+0000\n"
+"PO-Revision-Date: 2025-05-04 18:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -44,7 +44,8 @@ msgstr ""
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
 msgid "Advanced settings for Mobile devices using Phosh"
-msgstr "Додаткові параметри для мобільних пристроїв, де використовується Phosh"
+msgstr ""
+"Додаткові параметри для мобільних пристроїв, де використовується Phosh"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
 msgid "Available panels"
@@ -128,12 +129,12 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти з програми"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- Керування вашими мобільними параметрами"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
@@ -178,13 +179,9 @@ msgstr "критичний"
 msgid "none"
 msgstr "немає"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Не вдалося встановити фонове зображення вікна блокування"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Виберіть фонове зображення"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -198,6 +195,31 @@ msgstr "Типовий засіб доповнення, який вибрано 
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "Немає даних для цього засобу доповнення"
+
+#: src/ms-overview-panel.c:69
+#| msgid "Reset Favorites"
+msgid "Reset favorites?"
+msgstr "Відновити типові улюблені?"
+
+#: src/ms-overview-panel.c:72
+#| msgid "Set list of favorite apps back to the default"
+msgid "Reset list of favorite applications to the default?"
+msgstr "Відновити типовий список улюблених програм?"
+
+#: src/ms-overview-panel.c:75
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: src/ms-overview-panel.c:76
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "С_кинути"
+
+#: src/ms-overview-panel.c:332
+#| msgid "Failed to set lockscreen wallpaper"
+msgid "Failed to set wallpaper for overview"
+msgstr "Не вдалося встановити фон для огляду"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -266,19 +288,23 @@ msgid "Choose sound file"
 msgstr "Виберіть звуковий файл"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Повний"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Тихо"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Беззвучно"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Виберіть фонове зображення"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -297,8 +323,8 @@ msgid "Top Bar"
 msgstr "Верхня панель"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Програми"
+msgid "Overview"
+msgstr "Огляд"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -335,44 +361,6 @@ msgstr "_Клавіатурні скорочення"
 #: src/ui/mobile-settings-window.ui:210
 msgid "_About Mobile Settings"
 msgstr "_Про «Мобільні параметри»"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Улюблене"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Упорядкувати улюблене"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-"Перетягніть і скиньте програми у списку нижче, щоб перевпорядкувати ваші "
-"улюблені програми"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Відновити типові улюблені"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Відновити типовий стан списку улюблених програм"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Скинути"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Фільтрування мобільних програм"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Встановити режим фільтрування програм"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Показувати на панелі огляду лише мобільні програми"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -558,19 +546,19 @@ msgstr "Затримка автоматичного блокування екр�
 msgid "Seconds from screen blank to screen lock"
 msgstr "К-ть секунд від спорожнення до блокування екрана"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Фонове зображення"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Вибрати фонове зображення…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Використовувати фонове зображення"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Визначає, чи слід використовувати кольорове фонове зображення"
 
@@ -698,7 +686,8 @@ msgstr "Гнучке автоматичне доповнення"
 
 #: src/ui/ms-osk-panel.ui:97
 msgid "Enable word completion when the app indicates it is useful"
-msgstr "Увімкнути автодоповнення слів, якщо програма вказує на його корисність"
+msgstr ""
+"Увімкнути автодоповнення слів, якщо програма вказує на його корисність"
 
 #: src/ui/ms-osk-panel.ui:104
 msgid "Toggle via OSK menu"
@@ -729,6 +718,44 @@ msgstr "Скорочення"
 #: src/ui/ms-osk-panel.ui:128
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Скорочення, якими можна скористатися на панелі скорочень"
+
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Улюблене"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Упорядкувати улюблене"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Перетягніть і скиньте програми у списку нижче, щоб перевпорядкувати ваші "
+"улюблені програми"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Відновити типові улюблені"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Відновити типовий стан списку улюблених програм"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Скинути"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Фільтрування мобільних програм"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Встановити режим фільтрування програм"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Показувати на панелі огляду лише мобільні програми"
 
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
@@ -815,6 +842,9 @@ msgstr "Швидкі параметри"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Упорядковування ваших додаткових швидких параметрів"
+
+#~ msgid "Applications"
+#~ msgstr "Програми"
 
 #~| msgid "Enabled"
 #~ msgctxt "shuffle keypad setting"
