@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-setti"
 "ngs/-/issues\n"
-"POT-Creation-Date: 2025-05-04 01:19+0000\n"
-"PO-Revision-Date: 2025-05-04 18:46+0300\n"
+"POT-Creation-Date: 2025-05-17 18:42+0000\n"
+"PO-Revision-Date: 2025-05-17 21:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -142,42 +142,72 @@ msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 msgid "Device"
 msgstr "Пристрій"
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "Гучність відтворення"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "Гучність сповіщень"
+
+#: src/ms-audio-devices.c:182
+msgid "Ring Tone Volume"
+msgstr "Гучність дзвінка"
+
+#: src/ms-audio-devices.c:184
+msgid "Call volume"
+msgstr "Гучність виклику"
+
+#: src/ms-audio-devices.c:186
+msgid "Alarm Volume"
+msgstr "Гучність будильника"
+
+#: src/ms-audio-devices.c:188
+#| msgid "Emergency Calls"
+msgid "Emergency Alerts Volume"
+msgstr "Гучність термінових попереджень"
+
+#: src/ms-feedback-panel.c:184
 msgid "Sound file does not exist"
 msgstr "Звукового файла не існує"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:186
 msgid "Sound file is corrupt"
 msgstr "Звуковий файл пошкоджено"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:188
 msgid "Failed to play sound"
 msgstr "Не вдалося відтворити звук"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:227
 #, c-format
 msgid "Playing %s"
 msgstr "Граємо у гру %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:389
 msgid "low"
 msgstr "низький"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:392
 msgid "normal"
 msgstr "звичайний"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:395
 msgid "critical"
 msgstr "критичний"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:399
 msgid "none"
 msgstr "немає"
+
+#: src/ms-feedback-panel.c:661
+#| msgid "Mobile Settings"
+msgid "Mobile Settings Volume Control"
+msgstr "Параметри керування гучністю мобільного"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
@@ -197,27 +227,22 @@ msgid "No information available for this completer"
 msgstr "Немає даних для цього засобу доповнення"
 
 #: src/ms-overview-panel.c:69
-#| msgid "Reset Favorites"
 msgid "Reset favorites?"
 msgstr "Відновити типові улюблені?"
 
 #: src/ms-overview-panel.c:72
-#| msgid "Set list of favorite apps back to the default"
 msgid "Reset list of favorite applications to the default?"
 msgstr "Відновити типовий список улюблених програм?"
 
 #: src/ms-overview-panel.c:75
-#| msgid "Cancel"
 msgid "_Cancel"
 msgstr "_Скасувати"
 
 #: src/ms-overview-panel.c:76
-#| msgid "Reset"
 msgid "_Reset"
 msgstr "С_кинути"
 
 #: src/ms-overview-panel.c:332
-#| msgid "Failed to set lockscreen wallpaper"
 msgid "Failed to set wallpaper for overview"
 msgstr "Не вдалося встановити фон для огляду"
 
@@ -362,6 +387,10 @@ msgstr "_Клавіатурні скорочення"
 msgid "_About Mobile Settings"
 msgstr "_Про «Мобільні параметри»"
 
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Гучність"
+
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
 msgstr "Масштабування запущених програм"
@@ -449,28 +478,38 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Увімкнено"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:14
+#| msgid "Quick Settings"
+msgid "Sound Settings"
+msgstr "Параметри звуку"
+
+#: src/ui/ms-feedback-panel.ui:28
+#| msgid "Quick Settings"
+msgid "Feedback Settings"
+msgstr "Параметри відгуку"
+
+#: src/ui/ms-feedback-panel.ui:31
 msgid "Feedback profile"
 msgstr "Профіль зворотного зв'язку"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:32
 msgid "The global maximum feedback profile"
 msgstr "Загальний максимум профілю зворотного зв'язку"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer flash"
 msgstr "Перевага спалаху"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:48
 msgid "Prefer camera flash over status LED when available"
 msgstr "Пріоритет спалаху камери над світлодіодом стану, якщо такий доступний"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
+#: src/ui/ms-feedback-panel.ui:54
 msgid "Silence on Vol-"
 msgstr "Глушити клавішею Гуч-"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:55
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
@@ -478,43 +517,43 @@ msgstr ""
 "при вхідних викликах"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Haptic strength"
 msgstr "Сенсорна потужність"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:63
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Максимальний відсоток потужності сенсорного відгуку"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:82
 msgid "Per Application settings"
 msgstr "Параметри для окремих програм"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:95
 msgid "Sounds"
 msgstr "Звуки"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:96
 msgid "The sound to use for certain events"
 msgstr "Звук, яким слід скористатися для певних подій"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:104
 msgid "Phone Calls"
 msgstr "Телефонні дзвінки"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:110
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:101
+#: src/ui/ms-feedback-panel.ui:116
 msgid "Instant messages"
 msgstr "Миттєві повідомлення"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:127
 msgid "Screen Wakeup"
 msgstr "Пробудження екрана"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:130
 msgid "Notification urgency that lights up the screen"
 msgstr "Критичність сповіщення для засвічування екрана"
 
