@@ -10,11 +10,15 @@
 
 #include "mobile-settings-config.h"
 #include "mobile-settings-enums.h"
+#include "ms-audio-devices.h"
+#include "ms-audio-device-row.h"
 #include "ms-enum-types.h"
 #include "ms-feedback-row.h"
 #include "ms-sound-row.h"
 #include "ms-feedback-panel.h"
 #include "ms-util.h"
+
+#include "gvc-mixer-control.h"
 
 #include <phosh-settings-enums.h>
 
@@ -73,9 +77,24 @@ struct _MsFeedbackPanel {
   AdwComboRow               *notificationssettings_row;
   GSettings                 *notifications_settings;
   MsPhoshNotificationUrgency notifications_urgency;
+
+  /* Audio Settings */
+  GvcMixerControl           *mixer_control;
+  MsAudioDevices            *audio_devices;
+  GtkListBox                *audio_devices_listbox;
+  AdwPreferencesGroup       *sound_settings_group;
 };
 
 G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
+
+
+static GtkWidget *
+create_audio_device_row (gpointer item, gpointer user_data)
+{
+  MsAudioDevice *audio_device = MS_AUDIO_DEVICE (item);
+
+  return GTK_WIDGET (ms_audio_device_row_new (audio_device));
+}
 
 
 static void
@@ -587,6 +606,8 @@ ms_feedback_panel_dispose (GObject *object)
   g_clear_object (&self->notifications_settings);
   g_clear_pointer (&self->known_applications, g_hash_table_unref);
 
+  g_clear_object (&self->mixer_control);
+
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->dispose (object);
 }
 
@@ -614,9 +635,11 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-feedback-panel.ui");
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, app_listbox);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, audio_devices_listbox);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_adj);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_row);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, prefer_flash);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sound_settings_group);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sounds_listbox);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, quick_silent_switch);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, toast_overlay);
@@ -633,6 +656,27 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
 
 
 static void
+ms_feedback_panel_init_audio (MsFeedbackPanel *self)
+{
+  self->mixer_control = gvc_mixer_control_new (_("Mobile Settings Volume Control"));
+  g_return_if_fail (self->mixer_control);
+  gvc_mixer_control_open (self->mixer_control);
+  self->audio_devices = ms_audio_devices_new (self->mixer_control, FALSE);
+  gtk_list_box_bind_model (self->audio_devices_listbox,
+                           G_LIST_MODEL (self->audio_devices),
+                           create_audio_device_row,
+                           self,
+                           NULL);
+
+  g_object_bind_property (self->audio_devices,
+                          "has-devices",
+                          self->sound_settings_group,
+                          "visible",
+                          G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
+}
+
+
+static void
 ms_feedback_panel_init (MsFeedbackPanel *self)
 {
   g_autoptr (GError) error = NULL;
@@ -642,10 +686,17 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
   /* Notifications settings */
   self->notifications_settings = g_settings_new (NOTIFICATIONS_SCHEMA);
 
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
+  g_signal_connect_object (self->notifications_settings,
+                           "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
+                           G_CALLBACK (on_notifications_settings_changed),
+                           self,
+                           G_CONNECT_SWAPPED);
+  g_signal_connect_object (self->notifications_settings,
+                           "changed::"
+                           NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
+                           G_CALLBACK (on_notifications_settings_changed),
+                           self,
+                           G_CONNECT_SWAPPED);
   on_notifications_settings_changed (self);
 
   self->known_applications = g_hash_table_new_full (g_str_hash, g_str_equal,
@@ -654,6 +705,8 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
   self->sound_context = gsound_context_new (NULL, &error);
   if (self->sound_context == NULL)
     g_warning ("Failed to make sound context: %s", error->message);
+
+  ms_feedback_panel_init_audio (self);
 }
 
 

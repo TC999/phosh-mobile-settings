@@ -20,6 +20,12 @@ mobile_settings_sources = [
   'mobile-settings-application.c',
   'mobile-settings-debug-info.h',
   'mobile-settings-debug-info.c',
+  'ms-audio-device.c',
+  'ms-audio-device.h',
+  'ms-audio-device-row.c',
+  'ms-audio-device-row.h',
+  'ms-audio-devices.c',
+  'ms-audio-devices.h',
   'ms-completer-info.c',
   'ms-completer-info.h',
   'ms-compositor-panel.c',
@@ -89,11 +95,13 @@ mobile_settings_deps = [
   gtk_dep,
   gtk_wayland_dep,
   json_glib_dep,
+  libgvc_dep,
   libportal_dep,
   libportal_gtk4_dep,
   phosh_plugins_dep,
   phosh_settings_dep,
   wayland_client_dep,
+  cc.find_library('m', required: false),
 ]
 
 gnome = import('gnome')

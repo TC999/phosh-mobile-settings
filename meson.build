@@ -12,6 +12,8 @@ prefix = get_option('prefix')
 bindir = prefix / get_option('bindir')
 datadir = prefix / get_option('datadir')
 libdir = prefix / get_option('libdir')
+pkgdatadir = datadir / meson.project_name()
+pkglibdir = libdir / meson.project_name()
 ms_plugins_dir = prefix / libdir / 'phosh-mobile-settings' / 'plugins'
 
 glib_ver = '2.76'
@@ -39,6 +41,20 @@ gmobile_dep = dependency(
 )
 gnome_desktop_dep = dependency('gnome-desktop-4', version: '>= 44')
 gsound_dep = dependency('gsound')
+libgvc = subproject(
+  'gvc',
+  default_options: [
+    'warning_level=1',
+    'package_name=' + meson.project_name(),
+    'package_version=' + meson.project_version(),
+    'pkgdatadir=' + pkgdatadir,
+    'pkglibdir=' + pkglibdir,
+    'static=true',
+    'introspection=false',
+    'alsa=false',
+  ],
+)
+libgvc_dep = libgvc.get_variable('libgvc_dep')
 gtk_dep = dependency('gtk4', version: gtk_ver_cmp)
 gtk_wayland_dep = dependency('gtk4-wayland', version: gtk_ver_cmp)
 json_glib_dep = dependency('json-glib-1.0', version: '>= 1.6.2')
