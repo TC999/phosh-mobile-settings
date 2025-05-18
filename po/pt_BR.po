@@ -2,18 +2,18 @@
 # Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2024.
-# Juliano de Souza Camargo <julianosc@pm.me>, 2024.
 # Álvaro Burns <>, 2025.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-04 01:19+0000\n"
-"PO-Revision-Date: 2025-05-05 20:17-0300\n"
-"Last-Translator: Álvaro Burns <>\n"
-"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
+"POT-Creation-Date: 2025-05-17 18:42+0000\n"
+"PO-Revision-Date: 2025-05-18 10:20-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -137,48 +137,78 @@ msgstr "- Gerencia suas configurações móveis"
 #. Translators: Replace "translator-credits" with your names, one name per line
 #: src/mobile-settings-application.c:443
 msgid "translator-credits"
-msgstr "Rafael Fontenelle <rafaelff@gnome.org>"
+msgstr ""
+"Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Juliano de Souza Camargo <julianosc@pm.me>"
 
 #: src/mobile-settings-window.c:85
 msgid "Device"
 msgstr "Dispositivo"
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "Volume da mídia"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "Volume da notificação"
+
+#: src/ms-audio-devices.c:182
+msgid "Ring Tone Volume"
+msgstr "Volume da campainha"
+
+#: src/ms-audio-devices.c:184
+msgid "Call volume"
+msgstr "Volume da ligação"
+
+#: src/ms-audio-devices.c:186
+msgid "Alarm Volume"
+msgstr "Volume do alarme"
+
+#: src/ms-audio-devices.c:188
+msgid "Emergency Alerts Volume"
+msgstr "Volume dos alertas de emergência"
+
+#: src/ms-feedback-panel.c:184
 msgid "Sound file does not exist"
 msgstr "Arquivo de som não existe"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:186
 msgid "Sound file is corrupt"
 msgstr "Arquivo de som corrompido"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:188
 msgid "Failed to play sound"
 msgstr "Falha ao reproduzir o som"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:227
 #, c-format
 msgid "Playing %s"
 msgstr "Reproduzindo %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:389
 msgid "low"
 msgstr "baixo"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:392
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:395
 msgid "critical"
 msgstr "crítico"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:399
 msgid "none"
 msgstr "nada"
+
+#: src/ms-feedback-panel.c:661
+msgid "Mobile Settings Volume Control"
+msgstr "Configurações móveis do controle de volume"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
@@ -358,6 +388,10 @@ msgstr "Atalhos de _teclado"
 msgid "_About Mobile Settings"
 msgstr "_Sobre o Configurações Móveis"
 
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Volume"
+
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
 msgstr "Redução de escala de aplicativos em execução"
@@ -444,28 +478,36 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:14
+msgid "Sound Settings"
+msgstr "Configurações de som"
+
+#: src/ui/ms-feedback-panel.ui:28
+msgid "Feedback Settings"
+msgstr "Configurações de feedback"
+
+#: src/ui/ms-feedback-panel.ui:31
 msgid "Feedback profile"
 msgstr "Perfil de feedback"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:32
 msgid "The global maximum feedback profile"
 msgstr "O perfil de feedback máximo global"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer flash"
 msgstr "Preferir flash"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:48
 msgid "Prefer camera flash over status LED when available"
 msgstr "Prefere o flash da câmera ao LED de status quando disponível"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
+#: src/ui/ms-feedback-panel.ui:54
 msgid "Silence on Vol-"
 msgstr "Silencia ao usar Vol-"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:55
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
@@ -473,43 +515,43 @@ msgstr ""
 "em chamadas recebidas"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Haptic strength"
 msgstr "Força de vibração"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:63
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Porcentagem máxima de força de vibração"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:82
 msgid "Per Application settings"
 msgstr "Configurações por aplicativo"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:95
 msgid "Sounds"
 msgstr "Sons"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:96
 msgid "The sound to use for certain events"
 msgstr "O som a ser usado em determinados eventos"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:104
 msgid "Phone Calls"
 msgstr "Chamadas telefônicas"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:110
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:101
+#: src/ui/ms-feedback-panel.ui:116
 msgid "Instant messages"
 msgstr "Mensagens instantâneas"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:127
 msgid "Screen Wakeup"
 msgstr "Acender tela"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:130
 msgid "Notification urgency that lights up the screen"
 msgstr "Urgência de notificação que ilumina a tela"
 
