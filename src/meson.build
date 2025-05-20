@@ -13,7 +13,6 @@ mobile_settings_plugin_sources = [
 ]
 
 mobile_settings_sources = [
-  'main.c',
   'mobile-settings-window.h',
   'mobile-settings-window.c',
   'mobile-settings-application.h',
@@ -42,6 +41,8 @@ mobile_settings_sources = [
   'ms-head-tracker.h',
   'ms-lockscreen-panel.c',
   'ms-lockscreen-panel.h',
+  'ms-main.c',
+  'ms-main.h',
   'ms-osk-add-layout-dialog.c',
   'ms-osk-add-layout-dialog.h',
   'ms-osk-layout.c',
@@ -75,11 +76,6 @@ mobile_settings_sources = [
   'ms-toplevel-tracker.h',
   'ms-util.c',
   'ms-util.h',
-  generated_dbus_sources,
-  mobile_settings_enum_sources,
-  mobile_settings_plugin_sources,
-  wl_proto_headers,
-  wl_proto_sources,
 ]
 
 mobile_settings_deps = [
@@ -106,17 +102,41 @@ mobile_settings_deps = [
 
 gnome = import('gnome')
 
-mobile_settings_sources += gnome.compile_resources(
+mobile_settings_resources = gnome.compile_resources(
   'mobile-settings-resources',
   'mobile-settings.gresource.xml',
+  extra_args: '--manual-register',
   c_name: 'mobile_settings',
+)
+
+mobile_settings_generated_sources = [
+  generated_dbus_sources,
+  mobile_settings_enum_sources,
+  mobile_settings_plugin_sources,
+  mobile_settings_resources,
+  wl_proto_headers,
+  wl_proto_sources,
+]
+
+ms_lib = static_library(
+  'ms',
+  mobile_settings_sources,
+  mobile_settings_generated_sources,
+  dependencies: mobile_settings_deps,
+  install: false,
+)
+
+libms_dep = declare_dependency(
+  sources: mobile_settings_generated_sources,
+  link_with: ms_lib,
+  dependencies: mobile_settings_deps,
 )
 
 executable(
   'phosh-mobile-settings',
-  mobile_settings_sources,
-  dependencies: mobile_settings_deps,
+  'main.c',
   install: true,
+  dependencies: libms_dep,
 )
 
 
