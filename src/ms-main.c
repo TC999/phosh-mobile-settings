@@ -13,6 +13,7 @@
 #include "mobile-settings-config.h"
 #include "mobile-settings-resources.h"
 #include "mobile-settings-window.h"
+#include "ms-alerts-panel.h"
 #include "ms-compositor-panel.h"
 #include "ms-convergence-panel.h"
 #include "ms-features-panel.h"
@@ -28,6 +29,7 @@
 static void
 ms_init_types (void)
 {
+  g_type_ensure (MS_TYPE_ALERTS_PANEL);
   g_type_ensure (MS_TYPE_COMPOSITOR_PANEL);
   g_type_ensure (MS_TYPE_CONVERGENCE_PANEL);
   g_type_ensure (MS_TYPE_FEATURES_PANEL);
