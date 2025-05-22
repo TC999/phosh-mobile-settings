@@ -132,12 +132,7 @@ libms_dep = declare_dependency(
   dependencies: mobile_settings_deps,
 )
 
-executable(
-  'phosh-mobile-settings',
-  'main.c',
-  install: true,
-  dependencies: libms_dep,
-)
+executable('phosh-mobile-settings', 'main.c', install: true, dependencies: libms_dep)
 
 
 # Helpers for plugins */
