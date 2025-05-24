@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-17 18:42+0000\n"
-"PO-Revision-Date: 2025-05-18 00:29+0300\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"POT-Creation-Date: 2025-05-24 13:50+0000\n"
+"PO-Revision-Date: 2025-05-24 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -170,44 +170,44 @@ msgstr "Alarm Sesi"
 msgid "Emergency Alerts Volume"
 msgstr "Acil Durum Alarm Sesi"
 
-#: src/ms-feedback-panel.c:184
+#: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
 msgstr "Ses dosyası yok"
 
-#: src/ms-feedback-panel.c:186
+#: src/ms-feedback-panel.c:214
 msgid "Sound file is corrupt"
 msgstr "Ses dosyası bozuk"
 
-#: src/ms-feedback-panel.c:188
+#: src/ms-feedback-panel.c:216
 msgid "Failed to play sound"
 msgstr "Ses oynatılamadı"
 
-#: src/ms-feedback-panel.c:227
+#: src/ms-feedback-panel.c:255
 #, c-format
 msgid "Playing %s"
 msgstr "%s oynatılıyor"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:389
+#: src/ms-feedback-panel.c:416
 msgid "low"
 msgstr "düşük"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:392
+#: src/ms-feedback-panel.c:419
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:395
+#: src/ms-feedback-panel.c:422
 msgid "critical"
 msgstr "kritik"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:399
+#: src/ms-feedback-panel.c:426
 msgid "none"
 msgstr "yok"
 
-#: src/ms-feedback-panel.c:661
+#: src/ms-feedback-panel.c:812
 msgid "Mobile Settings Volume Control"
 msgstr "Mobil Ayarlar Ses Denetiemi"
 
@@ -478,36 +478,36 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Etkin"
 
-#: src/ui/ms-feedback-panel.ui:14
+#: src/ui/ms-feedback-panel.ui:13
 msgid "Sound Settings"
 msgstr "Ses Ayarları"
 
-#: src/ui/ms-feedback-panel.ui:28
+#: src/ui/ms-feedback-panel.ui:27
 msgid "Feedback Settings"
 msgstr "Geri Bildirim Ayarları"
 
-#: src/ui/ms-feedback-panel.ui:31
+#: src/ui/ms-feedback-panel.ui:30
 msgid "Feedback profile"
 msgstr "Geri bildirim profili"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:31
 msgid "The global maximum feedback profile"
 msgstr "Genel azami geri bildirim profili"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:46
 msgid "Prefer flash"
 msgstr "Flaşı yeğle"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer camera flash over status LED when available"
 msgstr "Oluyorsa durum LEDʼi yerine kamera flaşını yeğle"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:54
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Silence on Vol-"
 msgstr "Sesi azalt ile sessiz"
 
-#: src/ui/ms-feedback-panel.ui:55
+#: src/ui/ms-feedback-panel.ui:54
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
@@ -515,45 +515,109 @@ msgstr ""
 "sessiz kipe al"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Haptic strength"
 msgstr "Dokunsal güç"
 
-#: src/ui/ms-feedback-panel.ui:63
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Azami dokunsal geri bildirim gücü yüzdesi"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:81
 msgid "Per Application settings"
 msgstr "Uygulama Başına ayarlar"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:94
 msgid "Sounds"
 msgstr "Sesler"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "Belirli olaylar için kullanılacak ses"
 
-#: src/ui/ms-feedback-panel.ui:104
+#: src/ui/ms-feedback-panel.ui:103
 msgid "Phone Calls"
 msgstr "Telefon Çağrıları"
 
-#: src/ui/ms-feedback-panel.ui:110
+#: src/ui/ms-feedback-panel.ui:109
 msgid "SMS"
 msgstr "Kısa İleti"
 
-#: src/ui/ms-feedback-panel.ui:116
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Instant messages"
 msgstr "Anlık iletiler"
 
-#: src/ui/ms-feedback-panel.ui:127
+#: src/ui/ms-feedback-panel.ui:126
 msgid "Screen Wakeup"
 msgstr "Ekran Uyandırma"
 
-#: src/ui/ms-feedback-panel.ui:130
+#: src/ui/ms-feedback-panel.ui:129
 msgid "Notification urgency that lights up the screen"
 msgstr "Ekranı aydınlatan bildirim aciliyeti"
+
+#: src/ui/ms-feedback-panel.ui:147
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim "
+"kategorileri"
+
+#: src/ui/ms-feedback-panel.ui:150
+msgid "Calls"
+msgstr "Çağrılar"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "A generic audio or video call notification"
+msgstr "Sesli ya da görüntülü çağrı bildirimi"
+
+#: src/ui/ms-feedback-panel.ui:157
+msgid "Device events"
+msgstr "Aygıt olayları"
+
+#: src/ui/ms-feedback-panel.ui:158
+msgid "A generic device-related notification"
+msgstr "Aygıtla ilişkili bildirim"
+
+#: src/ui/ms-feedback-panel.ui:164
+msgid "Emails"
+msgstr "E-Postalar"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "A generic e-mail-related notification"
+msgstr "E-postayla ilişkili bildirim"
+
+#: src/ui/ms-feedback-panel.ui:171
+msgid "Instant Messages"
+msgstr "Anlık İletiler"
+
+#: src/ui/ms-feedback-panel.ui:172
+msgid "A generic instant message-related notification"
+msgstr "Anlık iletiyle ilişkili bildirim"
+
+#: src/ui/ms-feedback-panel.ui:178
+msgid "Network events"
+msgstr "Ağ olayları"
+
+#: src/ui/ms-feedback-panel.ui:179
+msgid "A generic network notification"
+msgstr "Ağ bildirimi"
+
+#: src/ui/ms-feedback-panel.ui:185
+msgid "Presence changes"
+msgstr "Bulunuşluk değişimleri"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "A generic presence change notification"
+msgstr "Bulunuşluk değişimi bildirimi"
+
+#: src/ui/ms-feedback-panel.ui:192
+msgid "File transfers"
+msgstr "Dosya aktarımları"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "A generic file transfer or download notification"
+msgstr "Dosya aktarma ya da indirme bildirimi"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
