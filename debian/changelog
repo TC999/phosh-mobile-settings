@@ -1,3 +1,50 @@
+phosh-mobile-settings (0.47.0) experimental; urgency=medium
+
+  [ Tomi Lähteenmäki ]
+  * tests: Use opengl renderer on gtk>=4.19.1.
+    The old "gl" renderer is now accepted again but one should use "opengl"
+    renderer: https://gitlab.gnome.org/GNOME/gtk/-/commit/e19de7ee959929828ff5342617879cc3d97bd2d9
+    See also: https://gitlab.gnome.org/GNOME/gtk/-/commit/b111923d7a6e25c15a813caf350df31afee94706
+
+  [ Guido Günther ]
+  * resources: Sort icons alphabetically
+  * subprojects: Add gvc
+  * audio-devices: New class that allows to track loopback devices.
+    These represent our different stream types like alert, multimedia and
+    notificatio.
+    See https://gitlab.freedesktop.org/agx/feedbackd/-/merge_requests/170
+    for a matching pipewire configuration.
+    The classes are based on Phosh's audio-device* classes.
+  * feedback-panel: Track audio devices.
+    Using ms-audio-devices track the relevant loopback devices
+  * audio-device-row: New widget adjust tweak volume of a loopback sink.
+    The widget is meant to be used with a list box creat function and takes
+    an audio device as input which it then uses to map the volume slider to
+    the stream volume.
+  * data: Add call-ring symbolic icon.
+    Taken from GNOME's awesome IconLibrary
+  * feedback-panel: Allow to set volume of loop streams.
+    This allows to adjust the volumes of alerts, multimedia and
+    notifications separately.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/15
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+  [ Álvaro Burns ]
+  * Update Brazilian Portuguese translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Sabri Ünal ]
+  * Update Turkish translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 18 May 2025 09:25:37 +0200
+
 phosh-mobile-settings (0.47~rc1) experimental; urgency=medium
 
   [ Guido Günther ]

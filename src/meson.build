@@ -13,13 +13,18 @@ mobile_settings_plugin_sources = [
 ]
 
 mobile_settings_sources = [
-  'main.c',
   'mobile-settings-window.h',
   'mobile-settings-window.c',
   'mobile-settings-application.h',
   'mobile-settings-application.c',
   'mobile-settings-debug-info.h',
   'mobile-settings-debug-info.c',
+  'ms-audio-device.c',
+  'ms-audio-device.h',
+  'ms-audio-device-row.c',
+  'ms-audio-device-row.h',
+  'ms-audio-devices.c',
+  'ms-audio-devices.h',
   'ms-completer-info.c',
   'ms-completer-info.h',
   'ms-compositor-panel.c',
@@ -36,6 +41,8 @@ mobile_settings_sources = [
   'ms-head-tracker.h',
   'ms-lockscreen-panel.c',
   'ms-lockscreen-panel.h',
+  'ms-main.c',
+  'ms-main.h',
   'ms-osk-add-layout-dialog.c',
   'ms-osk-add-layout-dialog.h',
   'ms-osk-layout.c',
@@ -69,11 +76,6 @@ mobile_settings_sources = [
   'ms-toplevel-tracker.h',
   'ms-util.c',
   'ms-util.h',
-  generated_dbus_sources,
-  mobile_settings_enum_sources,
-  mobile_settings_plugin_sources,
-  wl_proto_headers,
-  wl_proto_sources,
 ]
 
 mobile_settings_deps = [
@@ -89,27 +91,48 @@ mobile_settings_deps = [
   gtk_dep,
   gtk_wayland_dep,
   json_glib_dep,
+  libgvc_dep,
   libportal_dep,
   libportal_gtk4_dep,
   phosh_plugins_dep,
   phosh_settings_dep,
   wayland_client_dep,
+  cc.find_library('m', required: false),
 ]
 
 gnome = import('gnome')
 
-mobile_settings_sources += gnome.compile_resources(
+mobile_settings_resources = gnome.compile_resources(
   'mobile-settings-resources',
   'mobile-settings.gresource.xml',
+  extra_args: '--manual-register',
   c_name: 'mobile_settings',
 )
 
-executable(
-  'phosh-mobile-settings',
+mobile_settings_generated_sources = [
+  generated_dbus_sources,
+  mobile_settings_enum_sources,
+  mobile_settings_plugin_sources,
+  mobile_settings_resources,
+  wl_proto_headers,
+  wl_proto_sources,
+]
+
+ms_lib = static_library(
+  'ms',
   mobile_settings_sources,
+  mobile_settings_generated_sources,
   dependencies: mobile_settings_deps,
-  install: true,
+  install: false,
 )
+
+libms_dep = declare_dependency(
+  sources: mobile_settings_generated_sources,
+  link_with: ms_lib,
+  dependencies: mobile_settings_deps,
+)
+
+executable('phosh-mobile-settings', 'main.c', install: true, dependencies: libms_dep)
 
 
 # Helpers for plugins */

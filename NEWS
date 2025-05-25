@@ -1,20 +1,29 @@
-phosh-mobile-settings 0.47~rc1
-------------------------------
+phosh-mobile-settings 0.47.0
+----------------------------
 Released May 2025
-* Application panel: Allow to set (and to disable) overview wallpaper
+* Application panel: Allow to set and to disable the wallpaper in the overview
 * Application panel: Ask for confirmation before resetting favorites
+* Feedback panel: Handle volumes of alerts, multimedia,
+  notifications, etc separately when role based streams are in use.
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/15
 * Contributors:
     * Guido Günther
+    * Tomi Lähteenmäki
 * UI translations:
     * Anders Jonsson (sv)
     * Antonio Marin (ro)
+    * Artur S0 (ru)
     * Baxrom Raxmatov (uz)
     * Bruce Cowan (en_GB)
     * Danial Behzadi (fa)
+    * Ekaterine Papava (ka)
     * Emin Tufan Çetin (tr)
     * Martin (sl)
+    * Sabri Ünal (tr)
     * Yaron Shahrabani (he)
     * Yuri Chornoivan (uk)
+    * Álvaro Burns (pt_BR)
 
 phosh-mobile-settings 0.46.0
 ----------------------------

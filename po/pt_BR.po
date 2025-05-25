@@ -2,24 +2,24 @@
 # Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2024.
-# Juliano de Souza Camargo <julianosc@pm.me>, 2024.
 # Álvaro Burns <>, 2025.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-18 22:36-0300\n"
-"Last-Translator: Álvaro Burns <>\n"
-"Language-Team: Brazilian Portuguese\n"
+"POT-Creation-Date: 2025-05-17 18:42+0000\n"
+"PO-Revision-Date: 2025-05-18 10:20-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 47.1\n"
+"X-Generator: Gtranslator 48.0\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -130,63 +130,89 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sai"
 
-#: src/mobile-settings-application.c:34
+#: src/mobile-settings-application.c:36
 msgid "- Manage your mobile settings"
 msgstr "- Gerencia suas configurações móveis"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/mobile-settings-application.c:443
 msgid "translator-credits"
-msgstr "Rafael Fontenelle <rafaelff@gnome.org>"
+msgstr ""
+"Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Juliano de Souza Camargo <julianosc@pm.me>"
 
 #: src/mobile-settings-window.c:85
 msgid "Device"
 msgstr "Dispositivo"
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "Volume da mídia"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "Volume da notificação"
+
+#: src/ms-audio-devices.c:182
+msgid "Ring Tone Volume"
+msgstr "Volume da campainha"
+
+#: src/ms-audio-devices.c:184
+msgid "Call volume"
+msgstr "Volume da ligação"
+
+#: src/ms-audio-devices.c:186
+msgid "Alarm Volume"
+msgstr "Volume do alarme"
+
+#: src/ms-audio-devices.c:188
+msgid "Emergency Alerts Volume"
+msgstr "Volume dos alertas de emergência"
+
+#: src/ms-feedback-panel.c:184
 msgid "Sound file does not exist"
 msgstr "Arquivo de som não existe"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:186
 msgid "Sound file is corrupt"
 msgstr "Arquivo de som corrompido"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:188
 msgid "Failed to play sound"
 msgstr "Falha ao reproduzir o som"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:227
 #, c-format
 msgid "Playing %s"
 msgstr "Reproduzindo %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:389
 msgid "low"
 msgstr "baixo"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:392
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:395
 msgid "critical"
 msgstr "crítico"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:399
 msgid "none"
 msgstr "nada"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-feedback-panel.c:661
+msgid "Mobile Settings Volume Control"
+msgstr "Configurações móveis do controle de volume"
+
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Falha ao configurar papel de parede da tela de bloqueio"
-
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Escolha papel de parede"
 
 #. Translators: The default completer
 #: src/ms-osk-panel.c:545
@@ -200,6 +226,26 @@ msgstr "O padrão de autocompletamento selecionado pelo OSK"
 #: src/ms-osk-panel.c:549
 msgid "No information available for this completer"
 msgstr "Nenhuma informação disponível para este autocompletamento"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset favorites?"
+msgstr "Redefinir favoritos?"
+
+#: src/ms-overview-panel.c:72
+msgid "Reset list of favorite applications to the default?"
+msgstr "Redefinir a lista de aplicativos favoritos de volta ao padrão?"
+
+#: src/ms-overview-panel.c:75
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: src/ms-overview-panel.c:76
+msgid "_Reset"
+msgstr "_Redefinir"
+
+#: src/ms-overview-panel.c:332
+msgid "Failed to set wallpaper for overview"
+msgstr "Falha ao configurar papel de parede da visão geral"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -268,19 +314,23 @@ msgid "Choose sound file"
 msgstr "Escolha o arquivo de som"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:157
 msgid "Full"
 msgstr "Completo"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:160
 msgid "Quiet"
 msgstr "Quieto"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:163
 msgid "Silent"
 msgstr "Silencioso"
+
+#: src/ms-util.c:279
+msgid "Choose Wallpaper"
+msgstr "Escolha papel de parede"
 
 #: src/ui/mobile-settings-window.ui:79
 msgid "Welcome"
@@ -299,8 +349,8 @@ msgid "Top Bar"
 msgstr "Barra superior"
 
 #: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Aplicativos"
+msgid "Overview"
+msgstr "Visão geral"
 
 #: src/ui/mobile-settings-window.ui:116
 msgid "Feedback"
@@ -338,43 +388,9 @@ msgstr "Atalhos de _teclado"
 msgid "_About Mobile Settings"
 msgstr "_Sobre o Configurações Móveis"
 
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Favoritos"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organiza favoritos"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-"Arrasta e solta os aplicativos abaixo para reorganizar seus aplicativos "
-"favoritos"
-
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Redefinir favoritos"
-
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Define a lista de aplicativos favoritos de volta ao padrão"
-
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Redefinir"
-
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Filtragem de aplicativos móveis"
-
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Definir modo de filtro de aplicativos"
-
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Mostrar apenas aplicativos móveis na visão geral"
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Volume"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -462,28 +478,36 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:14
+msgid "Sound Settings"
+msgstr "Configurações de som"
+
+#: src/ui/ms-feedback-panel.ui:28
+msgid "Feedback Settings"
+msgstr "Configurações de feedback"
+
+#: src/ui/ms-feedback-panel.ui:31
 msgid "Feedback profile"
 msgstr "Perfil de feedback"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:32
 msgid "The global maximum feedback profile"
 msgstr "O perfil de feedback máximo global"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer flash"
 msgstr "Preferir flash"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:48
 msgid "Prefer camera flash over status LED when available"
 msgstr "Prefere o flash da câmera ao LED de status quando disponível"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
+#: src/ui/ms-feedback-panel.ui:54
 msgid "Silence on Vol-"
 msgstr "Silencia ao usar Vol-"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:55
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
@@ -491,43 +515,43 @@ msgstr ""
 "em chamadas recebidas"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Haptic strength"
 msgstr "Força de vibração"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:63
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Porcentagem máxima de força de vibração"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:82
 msgid "Per Application settings"
 msgstr "Configurações por aplicativo"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:95
 msgid "Sounds"
 msgstr "Sons"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:96
 msgid "The sound to use for certain events"
 msgstr "O som a ser usado em determinados eventos"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:104
 msgid "Phone Calls"
 msgstr "Chamadas telefônicas"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:110
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:101
+#: src/ui/ms-feedback-panel.ui:116
 msgid "Instant messages"
 msgstr "Mensagens instantâneas"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:127
 msgid "Screen Wakeup"
 msgstr "Acender tela"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:130
 msgid "Notification urgency that lights up the screen"
 msgstr "Urgência de notificação que ilumina a tela"
 
@@ -559,19 +583,19 @@ msgstr "Atraso automático de bloqueio de tela"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Segundos entre a tela em branco e o bloqueio da tela"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Fundo"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Escolha papel de parede..."
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Usar papel de parede"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Se deve mostrar papel de parede colorido"
 
@@ -731,6 +755,44 @@ msgstr "Atalhos"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Os atalhos disponíveis na barra de atalhos"
 
+#: src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Favoritos"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organiza favoritos"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Arrasta e solta os aplicativos abaixo para reorganizar seus aplicativos "
+"favoritos"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Redefinir favoritos"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Define a lista de aplicativos favoritos de volta ao padrão"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Redefinir"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Filtragem de aplicativos móveis"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Definir modo de filtro de aplicativos"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Mostrar apenas aplicativos móveis na visão geral"
+
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
 msgstr "Aplicativo"
@@ -816,6 +878,9 @@ msgstr "Configurações rápidas"
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Organiza suas configurações rápidas adicionais"
+
+#~ msgid "Applications"
+#~ msgstr "Aplicativos"
 
 #~ msgctxt "shuffle keypad setting"
 #~ msgid "Enabled"

@@ -52,6 +52,17 @@
 
   <releases>
 
+    <release version="0.47.0" date="2025-05-18">
+      <description translate="no">
+        <ul>
+          <li>Application panel: Allow to set and to disable the wallpaper in the overview</li>
+          <li>Application panel: Ask for confirmation before resetting favorites</li>
+          <li>Feedback panel: Handle volumes of alerts, multimedia,
+          notifications, etc separately when role based streams are in use.</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="0.46.0" date="2025-03-31">
       <description translate="no">
         <ul>
@@ -191,7 +202,7 @@
     <release version="0.31.0" date="2023-08-29">
       <description translate="no">
         <ul>
-          <li>Allow to configure notification priority that triggers screen wakup</li>
+          <li>Allow to configure notification priority that triggers screen wakeup</li>
           <li>More troubleshooting information</li>
         </ul>
       </description>

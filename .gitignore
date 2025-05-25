@@ -17,4 +17,5 @@ debian/*debhelper*
 debian/phosh-mobile-settings/
 debian/tmp/
 subprojects/gmobile/
+subprojects/gvc/
 subprojects/libadwaita/

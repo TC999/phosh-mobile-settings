@@ -109,9 +109,6 @@ mobile_settings_window_class_init (MobileSettingsWindowClass *klass)
   object_class->constructed = ms_settings_window_constructed;
   object_class->dispose = ms_settings_window_dispose;
 
-  g_type_ensure (MS_TYPE_COMPOSITOR_PANEL);
-  g_type_ensure (MS_TYPE_FEEDBACK_PANEL);
-
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/mobile-settings-window.ui");
   gtk_widget_class_bind_template_child (widget_class, MobileSettingsWindow, split_view);

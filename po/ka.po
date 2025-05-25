@@ -1,5 +1,5 @@
 # Georgian translation for phosh-mobile-settings.
-# Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
+# Copyright (C) 2024 phosh-mobile-settings's authors.
 # This file is distributed under the same license as the phosh-mobile-settings package.
 # Ekaterine Papava <papava.e@gtu.ge>, 2024-2025.
 #
@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-04 01:19+0000\n"
-"PO-Revision-Date: 2025-05-10 03:31+0200\n"
+"POT-Creation-Date: 2025-05-17 18:42+0000\n"
+"PO-Revision-Date: 2025-05-19 01:20+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:3
 #: src/ui/mobile-settings-window.ui:6
@@ -139,42 +139,70 @@ msgstr "temuri Doghonadze"
 msgid "Device"
 msgstr "მოწყობილობა"
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "ხმის სიმძლავრე"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "გაფრთხილების ხმის დონე"
+
+#: src/ms-audio-devices.c:182
+msgid "Ring Tone Volume"
+msgstr "ტელეფონის დარეკვის ხმის დონე"
+
+#: src/ms-audio-devices.c:184
+msgid "Call volume"
+msgstr "ზარის ხმის დონე"
+
+#: src/ms-audio-devices.c:186
+msgid "Alarm Volume"
+msgstr "განგაშის ხმის დონე"
+
+#: src/ms-audio-devices.c:188
+msgid "Emergency Alerts Volume"
+msgstr "გადაუდებელი განგაშის ხმის დონე"
+
+#: src/ms-feedback-panel.c:184
 msgid "Sound file does not exist"
 msgstr "ხმის ფაილი არ არსებობს"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:186
 msgid "Sound file is corrupt"
 msgstr "ხმის ფაილი დაზიანებულია"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:188
 msgid "Failed to play sound"
 msgstr "ხმის დაკვრა ჩავარდა"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:227
 #, c-format
 msgid "Playing %s"
 msgstr "%s-ის დაკვრა"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:389
 msgid "low"
 msgstr "დაბალი"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:392
 msgid "normal"
 msgstr "ნორმალური"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:395
 msgid "critical"
 msgstr "კრიტიკული"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:399
 msgid "none"
 msgstr "არა"
+
+#: src/ms-feedback-panel.c:661
+msgid "Mobile Settings Volume Control"
+msgstr "მობილურობის მორგების ხმის მართვა"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
@@ -354,6 +382,10 @@ msgstr "_კლავიატურის მალსახმობები"
 msgid "_About Mobile Settings"
 msgstr "მობილურის პარამეტრების შეს_ახებ"
 
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "ხმის სიმაღლე"
+
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
 msgstr "გაშვებული აპლიკაცების შემცირება"
@@ -440,73 +472,81 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "ჩართულია"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:14
+msgid "Sound Settings"
+msgstr "ხმის მორგება"
+
+#: src/ui/ms-feedback-panel.ui:28
+msgid "Feedback Settings"
+msgstr "უკუკავშირის მორგება"
+
+#: src/ui/ms-feedback-panel.ui:31
 msgid "Feedback profile"
 msgstr "უკუკავშირის პროფილი"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:32
 msgid "The global maximum feedback profile"
 msgstr "გლობალური მაქსიმალური უკუკავშირის პროფილი"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer flash"
 msgstr "მირჩევნია განათება"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:48
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "კამერის განათებისთვის სტატუსის LED-ზე მეტი პრიორიტეტის მიცემა, როცა ის "
 "ხელმისაწვდომია"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
+#: src/ui/ms-feedback-panel.ui:54
 msgid "Silence on Vol-"
 msgstr "დადუმება ხმის ჩაწევის ღილაკით"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:55
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
 "როცა დაბლოკილია, დაადუმეთ ტელეფონი ხმის ჩაწევის ღილაკით, როცა გირეკავენ"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Haptic strength"
 msgstr "ვიბრაციის სიმძლავრე"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:63
 msgid "Maximum haptic feedback strength percentage"
 msgstr "მაქსიმალური ვიბრაციის უკუკავშირის სიძლიერის პროცენტულობა"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:82
 msgid "Per Application settings"
 msgstr "პარამეტრები თითოეული აპლიკაციისთვის"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:95
 msgid "Sounds"
 msgstr "ხმები"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:96
 msgid "The sound to use for certain events"
 msgstr "ხმა ზოგიერთი მოვლენისთვის"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:104
 msgid "Phone Calls"
 msgstr "სატელეფონო ზარები"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:110
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:101
+#: src/ui/ms-feedback-panel.ui:116
 msgid "Instant messages"
 msgstr "მყისი შეტყობინებები"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:127
 msgid "Screen Wakeup"
 msgstr "ეკრანის გაღვიძება"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:130
 msgid "Notification urgency that lights up the screen"
 msgstr "გაფრთხილების სასწრაფოობა, რომელიც ეკრანს გაანათებს"
 

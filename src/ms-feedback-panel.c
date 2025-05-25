@@ -10,15 +10,20 @@
 
 #include "mobile-settings-config.h"
 #include "mobile-settings-enums.h"
+#include "ms-audio-devices.h"
+#include "ms-audio-device-row.h"
 #include "ms-enum-types.h"
 #include "ms-feedback-row.h"
 #include "ms-sound-row.h"
 #include "ms-feedback-panel.h"
 #include "ms-util.h"
 
+#include "gvc-mixer-control.h"
+
 #include <phosh-settings-enums.h>
 
 #include <libfeedback.h>
+#include <gmobile.h>
 
 #include <gio/gdesktopappinfo.h>
 #include <glib/gi18n.h>
@@ -35,6 +40,7 @@
 #define NOTIFICATIONS_URGENCY_ENUM "sm.puri.phosh.NotificationUrgency"
 #define NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY "wakeup-screen-triggers"
 #define NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY "wakeup-screen-urgency"
+#define NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY "wakeup-screen-categories"
 
 enum {
   PROP_0,
@@ -42,6 +48,28 @@ enum {
   PROP_LAST_PROP
 };
 static GParamSpec *props[PROP_LAST_PROP];
+
+typedef enum {
+  NOTIFICATION_CATEGORY_CALL,
+  NOTIFICATION_CATEGORY_DEVICE,
+  NOTIFICATION_CATEGORY_EMAIL,
+  NOTIFICATION_CATEGORY_IM,
+  NOTIFICATION_CATEGORY_NETWORK,
+  NOTIFICATION_CATEGORY_PRESENCE,
+  NOTIFICATION_CATEGORY_TRANSFER,
+  NOTIFICATION_CATEGORY_LAST
+} NotificationCategory;
+
+static const char * const notification_category_names[] = {
+  "call",
+  "device",
+  "email",
+  "im",
+  "network",
+  "presence",
+  "transfer",
+  NULL
+};
 
 typedef struct {
   char      *munged_app_id;
@@ -73,9 +101,28 @@ struct _MsFeedbackPanel {
   AdwComboRow               *notificationssettings_row;
   GSettings                 *notifications_settings;
   MsPhoshNotificationUrgency notifications_urgency;
+
+  /* Audio Settings */
+  GvcMixerControl           *mixer_control;
+  MsAudioDevices            *audio_devices;
+  GtkListBox                *audio_devices_listbox;
+  AdwPreferencesGroup       *sound_settings_group;
+
+  GStrv                      notifications_wakeup_categories;
+
+  AdwSwitchRow              *category_switches[NOTIFICATION_CATEGORY_LAST];
 };
 
 G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
+
+
+static GtkWidget *
+create_audio_device_row (gpointer item, gpointer user_data)
+{
+  MsAudioDevice *audio_device = MS_AUDIO_DEVICE (item);
+
+  return GTK_WIDGET (ms_audio_device_row_new (audio_device));
+}
 
 
 static void
@@ -339,7 +386,6 @@ process_app_info (MsFeedbackPanel *self, GAppInfo *app_info)
 }
 
 
-
 static void
 load_apps (MsFeedbackPanel *self)
 {
@@ -386,6 +432,8 @@ static void
 update_wakeup_screen_triggers (MsFeedbackPanel *self)
 {
   gboolean wants_urgency;
+  gboolean wants_category;
+
   PhoshNotifyScreenWakeupFlags flags, new_flags;
 
   switch (self->notifications_urgency) {
@@ -399,15 +447,32 @@ update_wakeup_screen_triggers (MsFeedbackPanel *self)
     wants_urgency = FALSE;
   }
 
+  wants_category = !gm_strv_is_null_or_empty (self->notifications_wakeup_categories);
+
   flags = g_settings_get_flags (self->notifications_settings, NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY);
-  new_flags = flags ^ PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_URGENCY;
+  new_flags = flags ^ (PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_URGENCY |
+                       PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_CATEGORY);
+
   if (wants_urgency)
     new_flags |= PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_URGENCY;
+
+  if (wants_category)
+    new_flags |= PHOSH_NOTIFY_SCREEN_WAKEUP_FLAG_CATEGORY;
 
   if (flags == new_flags)
     return;
 
   g_settings_set_flags (self->notifications_settings, NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY, new_flags);
+}
+
+/* Update the sensitivity of the category switches based on the notification urgency */
+static void
+update_category_switches_sensitivity (MsFeedbackPanel *self)
+{
+  gboolean sensitive = (self->notifications_urgency != MS_PHOSH_NOTIFICATION_NONE);
+
+  for (int i = 0; i < NOTIFICATION_CATEGORY_LAST; i++)
+    gtk_widget_set_sensitive (GTK_WIDGET (self->category_switches[i]), sensitive);
 }
 
 
@@ -457,7 +522,101 @@ change_notifications_settings (MsFeedbackPanel *self)
   if (urgency != MS_PHOSH_NOTIFICATION_NONE)
     g_settings_set_enum (self->notifications_settings, NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY, urgency);
 
+  update_category_switches_sensitivity (self);
   update_wakeup_screen_triggers (self);
+}
+
+
+static void
+sync_category_switch (MsFeedbackPanel *self)
+{
+  for (int i = 0; i < NOTIFICATION_CATEGORY_LAST; i++) {
+    gboolean on = g_strv_contains ((const char *const *)self->notifications_wakeup_categories,
+                                   notification_category_names[i]);
+    adw_switch_row_set_active (self->category_switches[i], on);
+  }
+}
+
+
+static void
+on_wakeup_screen_categories_key_changed (MsFeedbackPanel *self)
+{
+  self->notifications_wakeup_categories = g_settings_get_strv (self->notifications_settings,
+                                                     NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY);
+
+  sync_category_switch (self);
+  update_wakeup_screen_triggers (self);
+}
+
+
+static GStrv
+wakeup_categories_append (const char *const *categories, const char *category)
+{
+  g_autoptr (GStrvBuilder) builder = g_strv_builder_new ();
+
+  if (g_strv_contains (categories, category))
+    return g_strdupv ((GStrv)categories);
+
+  for (int i = 0; categories[i]; i++)
+    g_strv_builder_add (builder, categories[i]);
+
+  g_strv_builder_add (builder, category);
+
+  return g_strv_builder_end (builder);
+}
+
+
+static GStrv
+wakeup_categories_remove (const char *const *categories, const char *category)
+{
+  g_autoptr (GStrvBuilder) builder = g_strv_builder_new ();
+
+  if (!categories)
+    return NULL;
+
+  for (int i = 0; categories[i]; i++) {
+    if (g_str_equal (category, categories[i]))
+      continue;
+    g_strv_builder_add (builder, categories[i]);
+  }
+
+  return g_strv_builder_end (builder);
+}
+
+
+static void
+on_notification_category_activate_changed (MsFeedbackPanel *self,
+                                           GParamSpec      *spec,
+                                           AdwSwitchRow    *switch_)
+{
+  const char *category = NULL;
+  g_auto (GStrv) categories = NULL;
+  gboolean state;
+
+  for (int i = 0; i < NOTIFICATION_CATEGORY_LAST; i++) {
+    if (switch_ == self->category_switches[i]) {
+      category = notification_category_names[i];
+      break;
+    }
+  }
+
+  if (!category) {
+    g_critical ("Unknown notification wakeup switch");
+    return;
+  }
+
+  state = adw_switch_row_get_active (switch_);
+
+  if (state) {
+    categories = wakeup_categories_append (
+      (const char * const *) self->notifications_wakeup_categories, category);
+  } else {
+    categories = wakeup_categories_remove (
+      (const char * const *) self->notifications_wakeup_categories, category);
+  }
+
+  g_settings_set_strv (self->notifications_settings, NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY,
+                       (const char * const *)categories);
 }
 
 
@@ -585,7 +744,10 @@ ms_feedback_panel_dispose (GObject *object)
   g_clear_object (&self->sound_context);
   g_clear_object (&self->settings);
   g_clear_object (&self->notifications_settings);
+  g_strfreev (self->notifications_wakeup_categories);
   g_clear_pointer (&self->known_applications, g_hash_table_unref);
+
+  g_clear_object (&self->mixer_control);
 
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->dispose (object);
 }
@@ -614,9 +776,11 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-feedback-panel.ui");
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, app_listbox);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, audio_devices_listbox);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_adj);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, haptic_strenth_row);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, prefer_flash);
+  gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sound_settings_group);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, sounds_listbox);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, quick_silent_switch);
   gtk_widget_class_bind_template_child (widget_class, MsFeedbackPanel, toast_overlay);
@@ -626,9 +790,40 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_bind_template_callback (widget_class, on_notifications_urgency);
   gtk_widget_class_bind_template_callback (widget_class, change_notifications_settings);
 
-  gtk_widget_class_install_action (widget_class, "sound-player.play", "s",
-                                   play_sound_activated);
+  for (int i = 0; i < NOTIFICATION_CATEGORY_LAST; i++) {
+    g_autofree gchar *widget_name = g_strdup_printf ("%s_notifications_wakeup_switch",
+                                                     notification_category_names[i]);
+    gtk_widget_class_bind_template_child_full (widget_class,
+                                               widget_name,
+                                               FALSE,
+                                               G_STRUCT_OFFSET (MsFeedbackPanel, category_switches[i]));
+  }
+
+  gtk_widget_class_bind_template_callback (widget_class, on_notification_category_activate_changed);
+
+  gtk_widget_class_install_action (widget_class, "sound-player.play", "s", play_sound_activated);
   gtk_widget_class_install_action (widget_class, "sound-player.stop", NULL, stop_sound_activated);
+}
+
+
+static void
+ms_feedback_panel_init_audio (MsFeedbackPanel *self)
+{
+  self->mixer_control = gvc_mixer_control_new (_("Mobile Settings Volume Control"));
+  g_return_if_fail (self->mixer_control);
+  gvc_mixer_control_open (self->mixer_control);
+  self->audio_devices = ms_audio_devices_new (self->mixer_control, FALSE);
+  gtk_list_box_bind_model (self->audio_devices_listbox,
+                           G_LIST_MODEL (self->audio_devices),
+                           create_audio_device_row,
+                           self,
+                           NULL);
+
+  g_object_bind_property (self->audio_devices,
+                          "has-devices",
+                          self->sound_settings_group,
+                          "visible",
+                          G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
 }
 
 
@@ -641,12 +836,28 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
 
   /* Notifications settings */
   self->notifications_settings = g_settings_new (NOTIFICATIONS_SCHEMA);
+  self->notifications_wakeup_categories = g_settings_get_strv (self->notifications_settings,
+                                                     NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY);
 
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
-  g_signal_connect_object (self->notifications_settings, "changed::" NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
-                           G_CALLBACK (on_notifications_settings_changed), self, G_CONNECT_SWAPPED);
+  g_signal_connect_object (self->notifications_settings,
+                           "changed::" NOTIFICATIONS_WAKEUP_SCREEN_URGENCY_KEY,
+                           G_CALLBACK (on_notifications_settings_changed),
+                           self,
+                           G_CONNECT_SWAPPED);
+  g_signal_connect_object (self->notifications_settings,
+                           "changed::"
+                           NOTIFICATIONS_WAKEUP_SCREEN_TRIGGERS_KEY,
+                           G_CALLBACK (on_notifications_settings_changed),
+                           self,
+                           G_CONNECT_SWAPPED);
   on_notifications_settings_changed (self);
+
+  g_signal_connect_swapped (self->notifications_settings,
+                            "changed::" NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY,
+                            G_CALLBACK (on_wakeup_screen_categories_key_changed), self);
+  on_wakeup_screen_categories_key_changed (self);
+
+  update_category_switches_sensitivity (self);
 
   self->known_applications = g_hash_table_new_full (g_str_hash, g_str_equal,
                                                     NULL, g_free);
@@ -654,6 +865,8 @@ ms_feedback_panel_init (MsFeedbackPanel *self)
   self->sound_context = gsound_context_new (NULL, &error);
   if (self->sound_context == NULL)
     g_warning ("Failed to make sound context: %s", error->message);
+
+  ms_feedback_panel_init_audio (self);
 }
 
 
