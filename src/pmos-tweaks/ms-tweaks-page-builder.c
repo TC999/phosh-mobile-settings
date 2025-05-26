@@ -11,6 +11,7 @@
 #include "ms-tweaks-page-builder.h"
 
 #include "ms-tweaks-backend-interface.h"
+#include "ms-tweaks-mappings.h"
 #include "ms-tweaks-utils.h"
 
 
@@ -307,6 +308,10 @@ ms_tweaks_preferences_page_initable_init (GInitable     *initable,
       /* Get widget value. */
       if (MS_TWEAKS_BACKEND_GET_IFACE (backend_state)->get_value != NULL)
         widget_value = MS_TWEAKS_BACKEND_GET_IFACE (backend_state)->get_value (backend_state);
+
+      /* Handle mappings. */
+      if (widget_value)
+        ms_tweaks_mappings_handle_get (widget_value, setting_data);
 
       if (setting_widget_is_valid) {
         switch (setting_data->type) {
