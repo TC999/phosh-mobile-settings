@@ -11,6 +11,7 @@
 #include "ms-tweaks-page-builder.h"
 
 #include "ms-tweaks-backend-interface.h"
+#include "ms-tweaks-callback-handlers.h"
 #include "ms-tweaks-mappings.h"
 #include "ms-tweaks-utils.h"
 
@@ -63,6 +64,11 @@ setting_data_to_boolean_widget (const MsTweaksSetting *setting_data,
   if (widget_value)
     adw_switch_row_set_active (ADW_SWITCH_ROW (switch_row), g_value_get_boolean (widget_value));
 
+  g_signal_connect (switch_row,
+                    "notify::active",
+                    G_CALLBACK (ms_tweaks_callback_handlers_type_boolean),
+                    backend_state);
+
   return switch_row;
 }
 
@@ -112,6 +118,11 @@ setting_data_to_choice_widget (const MsTweaksSetting *setting_data,
 
   set_title_and_subtitle (combo_row, setting_data);
 
+  g_signal_connect (combo_row,
+                    "notify::selected",
+                    G_CALLBACK (ms_tweaks_callback_handlers_type_choice),
+                    backend_state);
+
   return combo_row;
 }
 
@@ -137,7 +148,47 @@ setting_data_to_color_widget (const MsTweaksSetting *setting_data,
   gtk_color_dialog_button_set_rgba (GTK_COLOR_DIALOG_BUTTON (color_dialog_button),
                                     &widget_colour);
 
+  /* Set up listener for listening to colours picked by the widget and setting them in the
+   * backend. */
+  g_signal_connect (color_dialog_button,
+                    "notify::rgba",
+                    G_CALLBACK (ms_tweaks_callback_handlers_type_color),
+                    backend_state);
+
   return action_row;
+}
+
+
+static void
+file_widget_open_file_picker (GtkButton                                 *widget,
+                              GdkEvent                                  *evnt,
+                              MsTweaksPageBuilderOpenFilePickerMetadata *metadata)
+{
+  GtkFileDialog *file_picker_dialog = gtk_file_dialog_new ();
+
+  gtk_file_dialog_open (file_picker_dialog,
+                        NULL,
+                        NULL,
+                        ms_tweaks_callback_handlers_type_file,
+                        metadata);
+}
+
+
+static const char *restrict none_selected_label = "(None selected)";
+
+
+static void
+file_widget_unset (GtkButton                                 *widget,
+                   GdkEvent                                  *evnt,
+                   MsTweaksPageBuilderOpenFilePickerMetadata *metadata)
+{
+  MsTweaksBackendInterface *backend = MS_TWEAKS_BACKEND_GET_IFACE (metadata->backend_state);
+
+  g_assert (backend->set_value);
+
+  backend->set_value (metadata->backend_state, NULL);
+
+  gtk_label_set_label (GTK_LABEL (metadata->file_picker_label), none_selected_label);
 }
 
 
@@ -146,6 +197,7 @@ setting_data_to_file_widget (const MsTweaksSetting *setting_data,
                              MsTweaksBackend       *backend_state,
                              const GValue          *widget_value)
 {
+  MsTweaksPageBuilderOpenFilePickerMetadata *metadata = g_new (MsTweaksPageBuilderOpenFilePickerMetadata, 1);
   GtkWidget *restrict reset_selection_button = gtk_button_new ();
   GtkWidget *restrict file_picker_row = adw_action_row_new ();
   GtkWidget *restrict file_picker_button = gtk_button_new ();
@@ -154,6 +206,9 @@ setting_data_to_file_widget (const MsTweaksSetting *setting_data,
 
   g_assert (setting_data);
   g_assert (MS_IS_TWEAKS_BACKEND (backend_state));
+
+  metadata->backend_state = backend_state;
+  metadata->file_picker_label = gtk_label_new (none_selected_label);
 
   set_title_and_subtitle (file_picker_row, setting_data);
 
@@ -167,7 +222,18 @@ setting_data_to_file_widget (const MsTweaksSetting *setting_data,
   if (widget_value) {
     const char *file_path = g_value_get_string (widget_value);
     g_autofree char *filename = g_path_get_basename (file_path);
+
+    gtk_label_set_text (GTK_LABEL (metadata->file_picker_label), filename);
   }
+
+  g_signal_connect (file_picker_button,
+                    "clicked",
+                    G_CALLBACK (file_widget_open_file_picker),
+                    metadata);
+  g_signal_connect (reset_selection_button,
+                    "clicked",
+                    G_CALLBACK (file_widget_unset),
+                    metadata);
 
   return file_picker_row;
 }
@@ -195,6 +261,11 @@ setting_data_to_font_widget (const MsTweaksSetting *setting_data,
     gtk_font_dialog_button_set_font_desc (GTK_FONT_DIALOG_BUTTON (font_dialog_button), font_desc);
     pango_font_description_free (font_desc);
   }
+
+  g_signal_connect (font_dialog_button,
+                    "notify::font-desc",
+                    G_CALLBACK (ms_tweaks_callback_handlers_type_font),
+                    backend_state);
 
   return action_row;
 }
@@ -240,6 +311,11 @@ setting_data_to_number_widget (const MsTweaksSetting *setting_data,
 
   if (widget_value)
     adw_spin_row_set_value (ADW_SPIN_ROW (spin_row), g_value_get_double (widget_value));
+
+  g_signal_connect (spin_row,
+                    "changed",
+                    G_CALLBACK (ms_tweaks_callback_handlers_type_number),
+                    backend_state);
 
   return spin_row;
 }

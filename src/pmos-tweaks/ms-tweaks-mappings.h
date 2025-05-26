@@ -9,3 +9,4 @@
 #include "ms-tweaks-parser.h"
 
 void ms_tweaks_mappings_handle_get (GValue *from, const MsTweaksSetting *setting_data);
+void ms_tweaks_mappings_handle_set (GValue *value, const MsTweaksSetting *setting_data);

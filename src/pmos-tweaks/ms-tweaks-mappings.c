@@ -12,6 +12,8 @@
 
 #include "ms-tweaks-utils.h"
 
+#include <inttypes.h>
+#include <stdint.h>
 
 static gboolean
 ms_tweaks_mappings_string_to_boolean (const char *from)
@@ -49,10 +51,24 @@ ms_tweaks_mappings_float_to_string (const float from)
 }
 
 
+static intmax_t
+ms_tweaks_mappings_string_to_int (const char *from)
+{
+  return strtoimax (from, NULL, 10);
+}
+
+
 static char *
 ms_tweaks_mappings_int_to_string (const gint from)
 {
   return g_strdup_printf ("%d", from);
+}
+
+
+static uintmax_t
+ms_tweaks_mappings_string_to_uint (const char *from)
+{
+  return strtoumax (from, NULL, 10);
 }
 
 
@@ -145,5 +161,57 @@ ms_tweaks_mappings_handle_get (GValue *value, const MsTweaksSetting *setting_dat
     g_value_init (value, G_TYPE_STRING);
     g_value_set_string (value, mapped);
     break;
+  }
+}
+
+/**
+ * ms_tweaks_mappings_handle_set:
+ * @value: Value to map and convert.
+ * @setting_data: Data to use for mapping and type information.
+ *
+ * Takes a GValue initialised with some data from a widget to prepare it for being provided to a
+ * backend.
+ */
+void
+ms_tweaks_mappings_handle_set (GValue *value, const MsTweaksSetting *setting_data)
+{
+  g_autofree char *normalised = stringify_gvalue (value);
+  const char *mapped = normalised;
+
+  /* setting_data->map has a different purpose in choice widgets than other ones, so don't use it
+   * for this. */
+  if (setting_data->map && setting_data->type != MS_TWEAKS_TYPE_CHOICE)
+    mapped = g_hash_table_lookup (setting_data->map, normalised);
+
+  g_value_unset (value);
+
+  if (setting_data->backend == MS_TWEAKS_BACKEND_IDENTIFIER_GSETTINGS)
+    switch (setting_data->gtype) {
+    case MS_TWEAKS_GTYPE_BOOLEAN:
+      g_value_init (value, G_TYPE_BOOLEAN);
+      g_value_set_boolean (value, ms_tweaks_mappings_string_to_boolean (mapped));
+      break;
+    case MS_TWEAKS_GTYPE_DOUBLE:
+      g_value_init (value, G_TYPE_DOUBLE);
+      g_value_set_double (value, ms_tweaks_mappings_string_to_double (mapped));
+      break;
+    case MS_TWEAKS_GTYPE_FLAGS:
+      g_value_init (value, G_TYPE_FLAGS);
+      g_value_set_flags (value, ms_tweaks_mappings_string_to_uint (mapped));
+      break;
+    case MS_TWEAKS_GTYPE_NUMBER:
+      g_value_init (value, G_TYPE_INT);
+      g_value_set_int (value, ms_tweaks_mappings_string_to_int (mapped));
+      break;
+    case MS_TWEAKS_GTYPE_STRING:
+    case MS_TWEAKS_GTYPE_UNKNOWN:
+    default:
+      g_value_init (value, G_TYPE_STRING);
+      g_value_set_string (value, mapped);
+      break;
+    }
+  else {
+    g_value_init (value, G_TYPE_STRING);
+    g_value_set_string (value, mapped);
   }
 }
