@@ -1,0 +1,10 @@
+pmos_tweaks_sources = files(
+  'ms-tweaks-backend-interface.c',
+  'ms-tweaks-backend-interface.h',
+  'ms-tweaks-page-builder.c',
+  'ms-tweaks-page-builder.h',
+  'ms-tweaks-parser.c',
+  'ms-tweaks-parser.h',
+  'ms-tweaks-utils.c',
+  'ms-tweaks-utils.h',
+)
