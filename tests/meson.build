@@ -32,7 +32,13 @@ if phoc.found()
   test_env_phoc.set('WLR_RENDERER', 'pixman')
   test_env_phoc.set('WLR_BACKENDS', 'headless')
 
-  unit_tests = ['tweaks-page-builder', 'tweaks-parser', 'tweaks-utils']
+  unit_tests = [
+    'tweaks-gtk-utils',
+    'tweaks-mappings',
+    'tweaks-page-builder',
+    'tweaks-parser',
+    'tweaks-utils',
+  ]
 
   foreach test : unit_tests
     t = executable(

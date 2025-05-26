@@ -193,11 +193,11 @@ file_widget_unset (GtkButton                                 *widget,
 
 
 static GtkWidget *
-setting_data_to_file_widget (const MsTweaksSetting *setting_data,
-                             MsTweaksBackend       *backend_state,
-                             const GValue          *widget_value)
+setting_data_to_file_widget (const MsTweaksSetting                     *setting_data,
+                             MsTweaksBackend                           *backend_state,
+                             const GValue                              *widget_value,
+                             MsTweaksPageBuilderOpenFilePickerMetadata *metadata)
 {
-  MsTweaksPageBuilderOpenFilePickerMetadata *metadata = g_new (MsTweaksPageBuilderOpenFilePickerMetadata, 1);
   GtkWidget *restrict reset_selection_button = gtk_button_new ();
   GtkWidget *restrict file_picker_row = adw_action_row_new ();
   GtkWidget *restrict file_picker_button = gtk_button_new ();
@@ -403,7 +403,11 @@ ms_tweaks_preferences_page_initable_init (GInitable     *initable,
           widget_to_add = setting_data_to_color_widget (setting_data, backend_state, widget_value);
           break;
         case MS_TWEAKS_TYPE_FILE:
-          widget_to_add = setting_data_to_file_widget (setting_data, backend_state, widget_value);
+          MsTweaksPageBuilderOpenFilePickerMetadata *metadata = g_new (MsTweaksPageBuilderOpenFilePickerMetadata, 1);
+          widget_to_add = setting_data_to_file_widget (setting_data,
+                                                       backend_state,
+                                                       widget_value,
+                                                       metadata);
           break;
         case MS_TWEAKS_TYPE_FONT:
           widget_to_add = setting_data_to_font_widget (setting_data, backend_state, widget_value);
