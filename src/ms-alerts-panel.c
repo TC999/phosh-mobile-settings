@@ -20,6 +20,7 @@
 #define CBD_CHANNELS_KEY "channels"
 #define CBD_LEVELS_KEY "levels"
 
+#define CBD_CBS_SUPPORTED "CbsSupported"
 
 enum {
   PROP_0,
@@ -50,10 +51,69 @@ struct _MsAlertsPanel {
   MsChannelLevel  levels;
   MsChannelMode   mode;
 
+  GDBusProxy     *cbd_proxy;
+  GCancellable   *cancel;
+
   AdwSwitchRow   *rows[G_N_ELEMENTS (level_names)];
 };
 
 G_DEFINE_TYPE (MsAlertsPanel, ms_alerts_panel, ADW_TYPE_BIN)
+
+
+static void
+set_has_cbs (MsAlertsPanel *self, gboolean has_cbs)
+{
+  if (self->has_cbs == has_cbs)
+    return;
+
+  self->has_cbs = has_cbs;
+  g_object_notify_by_pspec (G_OBJECT (self), props[PROP_HAS_CBS]);
+}
+
+
+static void
+on_cbd_dbus_properties_changed (MsAlertsPanel *self,
+                                GVariant      *changed_properties,
+                                char         **invalidated_properties,
+                                GDBusProxy    *proxy)
+{
+  gboolean success, cbs_supported;
+
+  success = g_variant_lookup (changed_properties, CBD_CBS_SUPPORTED, "b", &cbs_supported);
+  if (!success) {
+    g_warning ("Failed to read " CBD_CBS_SUPPORTED " property from cbd");
+    return;
+  }
+  set_has_cbs (self, cbs_supported);
+}
+
+
+static void
+on_cbd_proxy_ready (GObject *source_object, GAsyncResult *res, gpointer data)
+{
+  g_autoptr (GError) err = NULL;
+  g_autoptr (GVariant) var = NULL;
+  MsAlertsPanel *self = MS_ALERTS_PANEL (data);
+  gboolean cbs_supported;
+
+  self->cbd_proxy = g_dbus_proxy_new_for_bus_finish (res, &err);
+  if (!self->cbd_proxy) {
+    g_warning ("Failed to get Cell Broadcast daemon proxy");
+    return;
+  }
+
+  g_signal_connect_swapped (self->cbd_proxy,
+                            "g-properties-changed",
+                            G_CALLBACK (on_cbd_dbus_properties_changed),
+                            self);
+  var = g_dbus_proxy_get_cached_property (self->cbd_proxy, CBD_CBS_SUPPORTED);
+  if (!var) {
+    g_warning ("Failed to read initial " CBD_CBS_SUPPORTED " property from cbd");
+    return;
+  }
+  cbs_supported = g_variant_get_boolean (var);
+  set_has_cbs (self, cbs_supported);
+}
 
 
 static gboolean
@@ -194,6 +254,10 @@ ms_alerts_panel_finalize (GObject *object)
 {
   MsAlertsPanel *self = MS_ALERTS_PANEL (object);
 
+  g_cancellable_cancel (self->cancel);
+  g_clear_object (&self->cancel);
+
+  g_clear_object (&self->cbd_proxy);
   g_clear_object (&self->settings);
 
   G_OBJECT_CLASS (ms_alerts_panel_parent_class)->finalize (object);
@@ -258,9 +322,6 @@ ms_alerts_panel_init (MsAlertsPanel *self)
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  /* TODO: sync `has-cbs` with cbd (https://gitlab.freedesktop.org/devrtz/cellbroadcastd/-/issues/1) */
-  self->has_cbs = TRUE;
-
   g_object_bind_property_full (self, "has-cbs",
                                self->stack, "visible-child-name",
                                G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE,
@@ -269,6 +330,7 @@ ms_alerts_panel_init (MsAlertsPanel *self)
                                NULL,
                                NULL);
 
+  /* Without a schema there's no point to even check for cbd */
   schema = g_settings_schema_source_lookup (source, CBD_SCHEMA_ID, TRUE);
   if (!schema) {
     g_message ("Necessary schema for Cell Broadcasts not found");
@@ -277,6 +339,16 @@ ms_alerts_panel_init (MsAlertsPanel *self)
 
   self->settings = g_settings_new (CBD_SCHEMA_ID);
   g_settings_bind (self->settings, CBD_LEVELS_KEY, self, "levels", G_SETTINGS_BIND_DEFAULT);
+
+  g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
+                            G_DBUS_PROXY_FLAGS_NONE,
+                            NULL,
+                            "org.freedesktop.cbd",
+                            "/org/freedesktop/cbd",
+                            "org.freedesktop.cbd",
+                            self->cancel,
+                            on_cbd_proxy_ready,
+                            self);
 }
 
 
