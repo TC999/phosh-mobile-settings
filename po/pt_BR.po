@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-17 18:42+0000\n"
-"PO-Revision-Date: 2025-05-18 10:20-0300\n"
+"POT-Creation-Date: 2025-05-24 13:50+0000\n"
+"PO-Revision-Date: 2025-05-28 08:23-0300\n"
 "Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
 "Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
@@ -169,44 +169,44 @@ msgstr "Volume do alarme"
 msgid "Emergency Alerts Volume"
 msgstr "Volume dos alertas de emergência"
 
-#: src/ms-feedback-panel.c:184
+#: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
 msgstr "Arquivo de som não existe"
 
-#: src/ms-feedback-panel.c:186
+#: src/ms-feedback-panel.c:214
 msgid "Sound file is corrupt"
 msgstr "Arquivo de som corrompido"
 
-#: src/ms-feedback-panel.c:188
+#: src/ms-feedback-panel.c:216
 msgid "Failed to play sound"
 msgstr "Falha ao reproduzir o som"
 
-#: src/ms-feedback-panel.c:227
+#: src/ms-feedback-panel.c:255
 #, c-format
 msgid "Playing %s"
 msgstr "Reproduzindo %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:389
+#: src/ms-feedback-panel.c:416
 msgid "low"
 msgstr "baixo"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:392
+#: src/ms-feedback-panel.c:419
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:395
+#: src/ms-feedback-panel.c:422
 msgid "critical"
 msgstr "crítico"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:399
+#: src/ms-feedback-panel.c:426
 msgid "none"
 msgstr "nada"
 
-#: src/ms-feedback-panel.c:661
+#: src/ms-feedback-panel.c:812
 msgid "Mobile Settings Volume Control"
 msgstr "Configurações móveis do controle de volume"
 
@@ -478,36 +478,36 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: src/ui/ms-feedback-panel.ui:14
+#: src/ui/ms-feedback-panel.ui:13
 msgid "Sound Settings"
 msgstr "Configurações de som"
 
-#: src/ui/ms-feedback-panel.ui:28
+#: src/ui/ms-feedback-panel.ui:27
 msgid "Feedback Settings"
 msgstr "Configurações de feedback"
 
-#: src/ui/ms-feedback-panel.ui:31
+#: src/ui/ms-feedback-panel.ui:30
 msgid "Feedback profile"
 msgstr "Perfil de feedback"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:31
 msgid "The global maximum feedback profile"
 msgstr "O perfil de feedback máximo global"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:46
 msgid "Prefer flash"
 msgstr "Preferir flash"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer camera flash over status LED when available"
 msgstr "Prefere o flash da câmera ao LED de status quando disponível"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:54
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Silence on Vol-"
 msgstr "Silencia ao usar Vol-"
 
-#: src/ui/ms-feedback-panel.ui:55
+#: src/ui/ms-feedback-panel.ui:54
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
@@ -515,45 +515,108 @@ msgstr ""
 "em chamadas recebidas"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Haptic strength"
 msgstr "Força de vibração"
 
-#: src/ui/ms-feedback-panel.ui:63
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Porcentagem máxima de força de vibração"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:81
 msgid "Per Application settings"
 msgstr "Configurações por aplicativo"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:94
 msgid "Sounds"
 msgstr "Sons"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "O som a ser usado em determinados eventos"
 
-#: src/ui/ms-feedback-panel.ui:104
+#: src/ui/ms-feedback-panel.ui:103
 msgid "Phone Calls"
 msgstr "Chamadas telefônicas"
 
-#: src/ui/ms-feedback-panel.ui:110
+#: src/ui/ms-feedback-panel.ui:109
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:116
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Instant messages"
 msgstr "Mensagens instantâneas"
 
-#: src/ui/ms-feedback-panel.ui:127
+#: src/ui/ms-feedback-panel.ui:126
 msgid "Screen Wakeup"
 msgstr "Acender tela"
 
-#: src/ui/ms-feedback-panel.ui:130
+#: src/ui/ms-feedback-panel.ui:129
 msgid "Notification urgency that lights up the screen"
 msgstr "Urgência de notificação que ilumina a tela"
+
+#: src/ui/ms-feedback-panel.ui:147
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"Categoria de notificações que ligam a tela independentemente da urgência"
+
+#: src/ui/ms-feedback-panel.ui:150
+msgid "Calls"
+msgstr "Chamadas"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "A generic audio or video call notification"
+msgstr "Um áudio genérico ou notificação de videochamada"
+
+#: src/ui/ms-feedback-panel.ui:157
+msgid "Device events"
+msgstr "Eventos do dispositivo"
+
+#: src/ui/ms-feedback-panel.ui:158
+msgid "A generic device-related notification"
+msgstr "Uma notificação genérica relacionada ao dispositivo"
+
+#: src/ui/ms-feedback-panel.ui:164
+msgid "Emails"
+msgstr "E-mails"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "A generic e-mail-related notification"
+msgstr "Uma notificação genérica relacionada ao e-mail"
+
+#: src/ui/ms-feedback-panel.ui:171
+msgid "Instant Messages"
+msgstr "Mensagens instantâneas"
+
+#: src/ui/ms-feedback-panel.ui:172
+msgid "A generic instant message-related notification"
+msgstr "Uma notificação genérica relacionado às mensagens instantâneas"
+
+#: src/ui/ms-feedback-panel.ui:178
+msgid "Network events"
+msgstr "Eventos de rede"
+
+#: src/ui/ms-feedback-panel.ui:179
+msgid "A generic network notification"
+msgstr "Uma notificação genérica de rede"
+
+#: src/ui/ms-feedback-panel.ui:185
+msgid "Presence changes"
+msgstr "Mudanças presentes"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "A generic presence change notification"
+msgstr "Uma notificação genérica de mudança presente"
+
+#: src/ui/ms-feedback-panel.ui:192
+msgid "File transfers"
+msgstr "Transferência de arquivos"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "A generic file transfer or download notification"
+msgstr "Uma notificação genérica de download ou transferência de arquivos"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
