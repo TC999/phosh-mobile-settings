@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-setti"
 "ngs/-/issues\n"
-"POT-Creation-Date: 2025-05-24 13:50+0000\n"
-"PO-Revision-Date: 2025-05-24 18:39+0300\n"
+"POT-Creation-Date: 2025-05-31 12:44+0000\n"
+"PO-Revision-Date: 2025-05-31 17:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -369,21 +369,82 @@ msgstr "Збіжність"
 msgid "On Screen Keyboard"
 msgstr "Екранна клавіатура"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+#| msgid "Emergency Alerts Volume"
+msgid "Emergency Alerts"
+msgstr "Термінові попередження"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Датчики"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "Експериментальні можливості"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "_Про «Мобільні параметри»"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "Не вдалося отримати попередження"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Неможливо отримати термінові попередження на цьому пристрої, оскільки не"
+" виявлено жодного стільникового модема."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "Термінові та урядові попередження"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "Попередження про надзвичайну загрозу"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Показувати попередження щодо надзвичайних загроз життю та безпеці"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "Попередження про серйозну загрозу"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Показувати попередження щодо серйозних загроз життю та безпеці"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "Попередження цивільного захисту"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "Показувати рекомендовані дії у ситуаціях із загрозою безпеці"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "Тестові попередження"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "Показувати періодичні повідомлення для тестування системи попереджень"
+
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "Бурштинові попередження"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "Показувати повідомлення щодо критичних ситуацій з викраденням дітей"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"
@@ -561,7 +622,6 @@ msgstr ""
 "Категорії сповіщень, які засвічуватимуть екран, незалежно від терміновості"
 
 #: src/ui/ms-feedback-panel.ui:150
-#| msgid "Phone Calls"
 msgid "Calls"
 msgstr "Виклики"
 
@@ -570,7 +630,6 @@ msgid "A generic audio or video call notification"
 msgstr "Загальне сповіщення про звуковий дзвінок або відеодзвінок"
 
 #: src/ui/ms-feedback-panel.ui:157
-#| msgid "Device"
 msgid "Device events"
 msgstr "Події пристрою"
 
@@ -587,7 +646,6 @@ msgid "A generic e-mail-related notification"
 msgstr "Загальне сповіщення щодо електронної пошти"
 
 #: src/ui/ms-feedback-panel.ui:171
-#| msgid "Instant messages"
 msgid "Instant Messages"
 msgstr "Миттєві повідомлення"
 
