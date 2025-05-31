@@ -19,6 +19,8 @@ mobile_settings_sources = [
   'mobile-settings-application.c',
   'mobile-settings-debug-info.h',
   'mobile-settings-debug-info.c',
+  'ms-alerts-panel.c',
+  'ms-alerts-panel.h',
   'ms-audio-device.c',
   'ms-audio-device.h',
   'ms-audio-device-row.c',
