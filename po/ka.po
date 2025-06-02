@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-24 13:50+0000\n"
-"PO-Revision-Date: 2025-05-25 03:54+0200\n"
+"POT-Creation-Date: 2025-05-31 12:44+0000\n"
+"PO-Revision-Date: 2025-06-02 19:18+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -366,21 +366,82 @@ msgstr "კონვერგენცია"
 msgid "On Screen Keyboard"
 msgstr "ეკრანის კლავიატურა"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+msgid "Emergency Alerts"
+msgstr "გადაუდებელი განგაშები"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "სენსორები"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "ექსპერიმენტალური ფუნქციები"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_კლავიატურის მალსახმობები"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "მობილურის პარამეტრების შეს_ახებ"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "განგაშების მირება შეუძლებელია"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"ამ მოწყობილობაზე გადაუდებელი განგაშების მიღება შეუძლებელია, რადგან "
+"გამოყენებადი ფიჭური მოდემი აღმოჩენილი არაა."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "გადაუდებელი და სამთავრობო განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "ექსტრემალური საფრთხის განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr ""
+"განგაშების ჩვენება სიცოცხლის და უსაფრთხოების ექსტრემალური საფრთეებისთვის"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "მძიმე საფრთხის განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "განგაშების ჩვენება სიცოცხლის და უსაფრთხოების მძიმე საფრთეებისთვის"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "საზოგადოებრივი უსაფრთხოების განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "რეკომენდებული ქმედებების ჩვენება უსაფრთხოების რისკის მქონე სიტუაციებში"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "სატესტო განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "პერიოდული შეტყობინებების ჩვენება განგაშების სისტემის შესამოწმებლად"
+
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "ქარვისფერი განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "შეტყობინებების ჩვენება ბავშვის გატაცების საგანგებო სიტუაციების შესახებ"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"
