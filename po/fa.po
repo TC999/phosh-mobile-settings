@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-24 13:50+0000\n"
-"PO-Revision-Date: 2025-05-24 17:33+0330\n"
+"POT-Creation-Date: 2025-05-31 12:44+0000\n"
+"PO-Revision-Date: 2025-06-02 01:01+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
@@ -365,21 +365,81 @@ msgstr "یکپارچگی"
 msgid "On Screen Keyboard"
 msgstr "صفحه‌کلید مجازی"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+msgid "Emergency Alerts"
+msgstr "هشدارهای اضطراری"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "حسگرها"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "ویژگی‌های آزمایشی"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_میان‌برهای صفحه‌کلید"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "_دربارهٔ تنظیمات همراه"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "ناتوان در دریافت هشدارها"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem is "
+"detected."
+msgstr ""
+"از آن‌جا که هیچ مودم سلولی‌ای تشخیص داده نشد نمی‌توان هشدارهای اضطراری را روی این "
+"افزاره دریافت کرد."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "هشدارهای اضطراری و دولتی"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "هشدارهای تهدید فوق‌العاده"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "نمایش هشدارها برای تهدیدهای فوق‌العادهٔ جانی و امنیتی"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "هشدارهای تهدید جدی"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "نمایش هشدارها برای تهدیدهای جدی جانی و امنیتی"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "هشدارهای امنیتی عمومی"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "نمایش کنش‌های توصیه شده برای انجام در مواقعی با خطر بالای امنیتی"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "هشدارهای آزمون"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "نمایش پیام‌های دوره‌ای برای آزمودن سامانهٔ هشدار"
+
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "هشدارهای محیطی"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "نمایش پیام‌های هشدار کودک‌ربایی"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"

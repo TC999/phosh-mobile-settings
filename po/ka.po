@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-17 18:42+0000\n"
-"PO-Revision-Date: 2025-05-19 01:20+0200\n"
+"POT-Creation-Date: 2025-05-31 12:44+0000\n"
+"PO-Revision-Date: 2025-06-02 19:18+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -163,44 +163,44 @@ msgstr "განგაშის ხმის დონე"
 msgid "Emergency Alerts Volume"
 msgstr "გადაუდებელი განგაშის ხმის დონე"
 
-#: src/ms-feedback-panel.c:184
+#: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
 msgstr "ხმის ფაილი არ არსებობს"
 
-#: src/ms-feedback-panel.c:186
+#: src/ms-feedback-panel.c:214
 msgid "Sound file is corrupt"
 msgstr "ხმის ფაილი დაზიანებულია"
 
-#: src/ms-feedback-panel.c:188
+#: src/ms-feedback-panel.c:216
 msgid "Failed to play sound"
 msgstr "ხმის დაკვრა ჩავარდა"
 
-#: src/ms-feedback-panel.c:227
+#: src/ms-feedback-panel.c:255
 #, c-format
 msgid "Playing %s"
 msgstr "%s-ის დაკვრა"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:389
+#: src/ms-feedback-panel.c:416
 msgid "low"
 msgstr "დაბალი"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:392
+#: src/ms-feedback-panel.c:419
 msgid "normal"
 msgstr "ნორმალური"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:395
+#: src/ms-feedback-panel.c:422
 msgid "critical"
 msgstr "კრიტიკული"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:399
+#: src/ms-feedback-panel.c:426
 msgid "none"
 msgstr "არა"
 
-#: src/ms-feedback-panel.c:661
+#: src/ms-feedback-panel.c:812
 msgid "Mobile Settings Volume Control"
 msgstr "მობილურობის მორგების ხმის მართვა"
 
@@ -366,21 +366,82 @@ msgstr "კონვერგენცია"
 msgid "On Screen Keyboard"
 msgstr "ეკრანის კლავიატურა"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+msgid "Emergency Alerts"
+msgstr "გადაუდებელი განგაშები"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "სენსორები"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "ექსპერიმენტალური ფუნქციები"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_კლავიატურის მალსახმობები"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "მობილურის პარამეტრების შეს_ახებ"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "განგაშების მირება შეუძლებელია"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"ამ მოწყობილობაზე გადაუდებელი განგაშების მიღება შეუძლებელია, რადგან "
+"გამოყენებადი ფიჭური მოდემი აღმოჩენილი არაა."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "გადაუდებელი და სამთავრობო განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "ექსტრემალური საფრთხის განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr ""
+"განგაშების ჩვენება სიცოცხლის და უსაფრთხოების ექსტრემალური საფრთეებისთვის"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "მძიმე საფრთხის განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "განგაშების ჩვენება სიცოცხლის და უსაფრთხოების მძიმე საფრთეებისთვის"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "საზოგადოებრივი უსაფრთხოების განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "რეკომენდებული ქმედებების ჩვენება უსაფრთხოების რისკის მქონე სიტუაციებში"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "სატესტო განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "პერიოდული შეტყობინებების ჩვენება განგაშების სისტემის შესამოწმებლად"
+
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "ქარვისფერი განგაშები"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "შეტყობინებების ჩვენება ბავშვის გატაცების საგანგებო სიტუაციების შესახებ"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"
@@ -472,83 +533,147 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "ჩართულია"
 
-#: src/ui/ms-feedback-panel.ui:14
+#: src/ui/ms-feedback-panel.ui:13
 msgid "Sound Settings"
 msgstr "ხმის მორგება"
 
-#: src/ui/ms-feedback-panel.ui:28
+#: src/ui/ms-feedback-panel.ui:27
 msgid "Feedback Settings"
 msgstr "უკუკავშირის მორგება"
 
-#: src/ui/ms-feedback-panel.ui:31
+#: src/ui/ms-feedback-panel.ui:30
 msgid "Feedback profile"
 msgstr "უკუკავშირის პროფილი"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:31
 msgid "The global maximum feedback profile"
 msgstr "გლობალური მაქსიმალური უკუკავშირის პროფილი"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:46
 msgid "Prefer flash"
 msgstr "მირჩევნია განათება"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "კამერის განათებისთვის სტატუსის LED-ზე მეტი პრიორიტეტის მიცემა, როცა ის "
 "ხელმისაწვდომია"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:54
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Silence on Vol-"
 msgstr "დადუმება ხმის ჩაწევის ღილაკით"
 
-#: src/ui/ms-feedback-panel.ui:55
+#: src/ui/ms-feedback-panel.ui:54
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
 "როცა დაბლოკილია, დაადუმეთ ტელეფონი ხმის ჩაწევის ღილაკით, როცა გირეკავენ"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Haptic strength"
 msgstr "ვიბრაციის სიმძლავრე"
 
-#: src/ui/ms-feedback-panel.ui:63
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Maximum haptic feedback strength percentage"
 msgstr "მაქსიმალური ვიბრაციის უკუკავშირის სიძლიერის პროცენტულობა"
 
-#: src/ui/ms-feedback-panel.ui:82
+#: src/ui/ms-feedback-panel.ui:81
 msgid "Per Application settings"
 msgstr "პარამეტრები თითოეული აპლიკაციისთვის"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:94
 msgid "Sounds"
 msgstr "ხმები"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "ხმა ზოგიერთი მოვლენისთვის"
 
-#: src/ui/ms-feedback-panel.ui:104
+#: src/ui/ms-feedback-panel.ui:103
 msgid "Phone Calls"
 msgstr "სატელეფონო ზარები"
 
-#: src/ui/ms-feedback-panel.ui:110
+#: src/ui/ms-feedback-panel.ui:109
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:116
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Instant messages"
 msgstr "მყისი შეტყობინებები"
 
-#: src/ui/ms-feedback-panel.ui:127
+#: src/ui/ms-feedback-panel.ui:126
 msgid "Screen Wakeup"
 msgstr "ეკრანის გაღვიძება"
 
-#: src/ui/ms-feedback-panel.ui:130
+#: src/ui/ms-feedback-panel.ui:129
 msgid "Notification urgency that lights up the screen"
 msgstr "გაფრთხილების სასწრაფოობა, რომელიც ეკრანს გაანათებს"
+
+#: src/ui/ms-feedback-panel.ui:147
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"გაფრთხილების კატეგორიები, რომლებიც გააღვიძებენ ეკრანს მათი გადაუდებლობის "
+"მიუხედავად"
+
+#: src/ui/ms-feedback-panel.ui:150
+msgid "Calls"
+msgstr "ზარები"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "A generic audio or video call notification"
+msgstr "ზოგადი აუდიო ან ვიდეოზარის გაფრთხილება"
+
+#: src/ui/ms-feedback-panel.ui:157
+msgid "Device events"
+msgstr "მოწყობილობის მოვლენები"
+
+#: src/ui/ms-feedback-panel.ui:158
+msgid "A generic device-related notification"
+msgstr "ზოგადი გაფრთხილება მოწყობილობის შესახებ"
+
+#: src/ui/ms-feedback-panel.ui:164
+msgid "Emails"
+msgstr "ელფოსტები"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "A generic e-mail-related notification"
+msgstr "ზოგადი გაფრთხილება ელფოსტის შესახებ"
+
+#: src/ui/ms-feedback-panel.ui:171
+msgid "Instant Messages"
+msgstr "მყისი შეტყობინებები"
+
+#: src/ui/ms-feedback-panel.ui:172
+msgid "A generic instant message-related notification"
+msgstr "ზოგადი გაფრთხილება ჩატის შესახებ"
+
+#: src/ui/ms-feedback-panel.ui:178
+msgid "Network events"
+msgstr "ქსელური მოვლენები"
+
+#: src/ui/ms-feedback-panel.ui:179
+msgid "A generic network notification"
+msgstr "ზოგადი გაფრთხილება ქსელის შესახებ"
+
+#: src/ui/ms-feedback-panel.ui:185
+msgid "Presence changes"
+msgstr "სტატუსის ცვლილებები"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "A generic presence change notification"
+msgstr "ზოგადი გაფრთხილება სტატუსის ცვლილების შესახებ"
+
+#: src/ui/ms-feedback-panel.ui:192
+msgid "File transfers"
+msgstr "ფაილის გადაწერები"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "A generic file transfer or download notification"
+msgstr "ზოგადი გაფრთხილებები ფაილის ატვირთვის ან გადმოწერის შესახებ"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
