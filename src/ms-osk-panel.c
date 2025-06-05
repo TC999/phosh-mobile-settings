@@ -31,6 +31,7 @@
 #define PHOSH_OSK_SETTINGS           "sm.puri.phosh.osk"
 #define WORD_COMPLETION_KEY          "completion-mode"
 #define HW_KEYBOARD_KEY              "ignore-hw-keyboards"
+#define OSK_FEATURES_KEY             "osk-features"
 
 #define PHOSH_OSK_COMPLETER_SETTINGS "sm.puri.phosh.osk.Completers"
 #define DEFAULT_COMPLETER_KEY        "default"
@@ -52,6 +53,13 @@ typedef enum {
 
 
 typedef enum {
+  PHOSH_OSK_FEATURE_DEFAULT  = 0,
+  PHOSH_OSK_FEATURE_KEY_DRAG = (1 << 0),
+  PHOSH_OSK_FEATURE_KEY_INDICATOR = (1 << 1),
+} OskFeatures;
+
+
+typedef enum {
   MS_OSK_APP_UNKNOWN = 0,
   MS_OSK_APP_POS = 1,
   MS_OSK_APP_SQUEEKBOARD = 2
@@ -67,6 +75,8 @@ struct _MsOskPanel {
 
   GSettings        *phosh_settings;
   GtkWidget        *long_press_combo;
+
+  AdwSwitchRow     *key_indicator_switch;
 
   /* Word completion */
   GSettings        *pos_settings;
@@ -214,6 +224,37 @@ on_terminal_shortcuts_changed (MsOskPanel *self)
 
 
 static void
+on_osk_features_key_changed (MsOskPanel *self)
+{
+  OskFeatures feature;
+  gboolean active;
+
+  feature = g_settings_get_flags (self->pos_settings, OSK_FEATURES_KEY);
+  active = !!(feature & PHOSH_OSK_FEATURE_KEY_INDICATOR);
+
+  adw_switch_row_set_active (self->key_indicator_switch, active);
+}
+
+
+static void
+on_key_indicator_switch_activate_changed (MsOskPanel *self, GParamSpec *spec, AdwSwitchRow *switch_)
+{
+  OskFeatures feature_flags;
+  gboolean switch_state;
+
+  switch_state = adw_switch_row_get_active (switch_);
+  feature_flags = g_settings_get_flags (self->pos_settings, OSK_FEATURES_KEY);
+
+  if (switch_state)
+    feature_flags |= PHOSH_OSK_FEATURE_KEY_INDICATOR;
+  else
+    feature_flags &= ~PHOSH_OSK_FEATURE_KEY_INDICATOR;
+
+  g_settings_set_flags (self->pos_settings, OSK_FEATURES_KEY, feature_flags);
+}
+
+
+static void
 on_word_completion_key_changed (MsOskPanel *self)
 {
   self->mode = g_settings_get_flags (self->pos_settings, WORD_COMPLETION_KEY);
@@ -352,6 +393,8 @@ ms_osk_panel_class_init (MsOskPanelClass *klass)
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, hw_keyboard_switch);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, osk_enable_switch);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, osk_layout_prefs);
+  gtk_widget_class_bind_template_child (widget_class, MsOskPanel, key_indicator_switch);
+  gtk_widget_class_bind_template_callback (widget_class, on_key_indicator_switch_activate_changed);
 
   /* OSK handling */
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, long_press_combo);
@@ -596,6 +639,11 @@ ms_osk_panel_init_pos (MsOskPanel *self)
   g_settings_bind (self->pos_settings, HW_KEYBOARD_KEY,
                    self->hw_keyboard_switch, "active",
                    G_SETTINGS_BIND_DEFAULT);
+
+  gtk_widget_set_visible (GTK_WIDGET (self->key_indicator_switch), TRUE);
+  g_signal_connect_swapped (self->pos_settings, "changed::" OSK_FEATURES_KEY,
+                            G_CALLBACK (on_osk_features_key_changed), self);
+  on_osk_features_key_changed (self);
 
   gtk_widget_set_visible (self->completion_group, TRUE);
   self->mode = g_settings_get_flags (self->pos_settings, WORD_COMPLETION_KEY);
