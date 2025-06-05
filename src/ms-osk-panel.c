@@ -309,10 +309,13 @@ is_osk_app (void)
     return MS_OSK_APP_UNKNOWN;
   }
 
-  if (g_str_has_suffix (exe, "/phosh-osk-stub"))
+  if (g_str_has_suffix (exe, "/phosh-osk-stevia") ||
+      g_str_has_suffix (exe, "/phosh-osk-stevia (deleted)")) {
     return MS_OSK_APP_POS;
-  if (g_str_has_suffix (exe, "/squeekboard"))
+  } else if (g_str_has_suffix (exe, "/squeekboard") ||
+             g_str_has_suffix (exe, "/squeekboard (deleted)")) {
     return MS_OSK_APP_SQUEEKBOARD;
+  }
 
   return MS_OSK_APP_UNKNOWN;
 }
