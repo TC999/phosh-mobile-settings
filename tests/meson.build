@@ -8,6 +8,12 @@ test_env_common.set('PYTHONDONTWRITEBYTECODE', 'yes')
 test_env_common.set('MALLOC_CHECK_', '2')
 test_env_common.set('NO_AT_BRIDGE', '1')
 test_env_common.set('GTK_A11Y', 'none')
+test_env_common.set('ASAN_OPTIONS', 'fast_unwind_on_malloc=0')
+test_env_common.set(
+  'LSAN_OPTIONS',
+  'suppressions=@0@/data/leak-suppress.txt'.format(meson.project_source_root()),
+)
+
 if gtk_dep.version().version_compare('>=4.19.1')
   test_env_common.set('GSK_RENDERER', 'opengl')
 else
