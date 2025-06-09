@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-04 01:19+0000\n"
-"PO-Revision-Date: 2025-05-06 14:42+0300\n"
+"POT-Creation-Date: 2025-05-31 12:44+0000\n"
+"PO-Revision-Date: 2025-05-31 17:45+0300\n"
 "Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -141,42 +141,70 @@ msgstr "Artur So"
 msgid "Device"
 msgstr "Устройство"
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "Громкость медиа"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "Громкость уведомлений"
+
+#: src/ms-audio-devices.c:182
+msgid "Ring Tone Volume"
+msgstr "Громкость мелодии вызова"
+
+#: src/ms-audio-devices.c:184
+msgid "Call volume"
+msgstr "Громкость вызова"
+
+#: src/ms-audio-devices.c:186
+msgid "Alarm Volume"
+msgstr "Громкость будильника"
+
+#: src/ms-audio-devices.c:188
+msgid "Emergency Alerts Volume"
+msgstr "Громкость экстренных оповещений"
+
+#: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
 msgstr "Аудиофайл не существует"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:214
 msgid "Sound file is corrupt"
 msgstr "Аудиофайл поврежден"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:216
 msgid "Failed to play sound"
 msgstr "Ошибка при воспроизвести аудио"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:255
 #, c-format
 msgid "Playing %s"
 msgstr "Играет %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:416
 msgid "low"
 msgstr "низкая"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:419
 msgid "normal"
 msgstr "нормальная"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:422
 msgid "critical"
 msgstr "критическая"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:426
 msgid "none"
 msgstr "отсутствует"
+
+#: src/ms-feedback-panel.c:812
+msgid "Mobile Settings Volume Control"
+msgstr "Мобильные настройки регулировки громкости"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
@@ -340,21 +368,87 @@ msgstr "Конвергенция"
 msgid "On Screen Keyboard"
 msgstr "Экранная клавиатура"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+msgid "Emergency Alerts"
+msgstr "Экстренные оповещения"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Датчики"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "Экспериментальные функции"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_Комбинации клавиш"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "_О приложении"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "Невозможно получить оповещения"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Невозможно получить экстренные оповещения на этом устройстве, сотовый модем "
+"не обнаружен."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "Экстренные и правительственные оповещения"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "Оповещения о чрезвычайных угрозах"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Отображение оповещений о чрезвычайных угрозах для жизни и безопасности"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "Оповещения о серьезных угрозах"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Отображение оповещений о серьезных угрозах для жизни и безопасности"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "Оповещения по общественной безопасности"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr ""
+"Показывать рекомендуемые действия в ситуациях, связанных с риском для "
+"безопасности"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "Тестовые оповещения"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "Показывать периодические сообщения для проверки системы оповещения"
+
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "Оповещения системы AMBER"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "Показывать сообщения о происшествиях, связанных с похищением детей"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Громкость"
 
 # Перевод отличается от оригинала, так как описание настройки
 # имеет перенос по словам в отличие от названия. Прошу исправить
@@ -445,8 +539,8 @@ msgid ""
 "Please only enable this if you're aware of the limitations like data "
 "connection loss or missed alarms"
 msgstr ""
-"Пожалуйста, включайте это только в том случае, если вам известны такие "
-"ограничения, как потеря интернет соединения или пропущенные вызовы"
+"Включайте это только в том случае, если вам известны такие ограничения, как "
+"потеря интернет соединения или пропущенные будильники"
 
 #. Translators: setting to enable suspend via the system menu
 #: src/ui/ms-features-panel.ui:40
@@ -454,30 +548,38 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Включено"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Настройки звука"
+
+#: src/ui/ms-feedback-panel.ui:27
+msgid "Feedback Settings"
+msgstr "Настройки обратной связи"
+
+#: src/ui/ms-feedback-panel.ui:30
 msgid "Feedback profile"
 msgstr "Профиль обратной связи"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:31
 msgid "The global maximum feedback profile"
 msgstr "Глобальный профиль обратной связи"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:46
 msgid "Prefer flash"
 msgstr "Предпочитать вспышку"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "Предпочитать вспышку камеры светодиодному индикатору состояния, если он "
 "доступен"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Silence on Vol-"
 msgstr "Беззвучный режим при нажатии Vol-"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:54
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
@@ -485,45 +587,108 @@ msgstr ""
 "кнопки Vol- при входящих вызовах"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Haptic strength"
 msgstr "Тактильная чувствительность"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Максимальный процент тактильной чувствительности"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:81
 msgid "Per Application settings"
 msgstr "Настройки для каждого приложения"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:94
 msgid "Sounds"
 msgstr "Звуки"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "Звук, используемый для определенных событий"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:103
 msgid "Phone Calls"
 msgstr "Телефонные вызовы"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:109
 msgid "SMS"
 msgstr "СМС"
 
-#: src/ui/ms-feedback-panel.ui:101
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Instant messages"
 msgstr "Мгновенные сообщения"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:126
 msgid "Screen Wakeup"
 msgstr "Пробуждение телефона"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:129
 msgid "Notification urgency that lights up the screen"
-msgstr "Срочное уведомление, при котором загорается экран"
+msgstr "Срочность уведомления, при которой загорается экран"
+
+#: src/ui/ms-feedback-panel.ui:147
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"Категории уведомлений, которые пробуждают экран в зависимости от их срочности"
+
+#: src/ui/ms-feedback-panel.ui:150
+msgid "Calls"
+msgstr "Вызовы"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "A generic audio or video call notification"
+msgstr "Общие уведомления об аудио- или видеовызове"
+
+#: src/ui/ms-feedback-panel.ui:157
+msgid "Device events"
+msgstr "События на устройстве"
+
+#: src/ui/ms-feedback-panel.ui:158
+msgid "A generic device-related notification"
+msgstr "Общие уведомления, связанные с устройством"
+
+#: src/ui/ms-feedback-panel.ui:164
+msgid "Emails"
+msgstr "Эл. почта"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "A generic e-mail-related notification"
+msgstr "Общие уведомления, связанные с эл. почтой"
+
+#: src/ui/ms-feedback-panel.ui:171
+msgid "Instant Messages"
+msgstr "Мгновенные сообщения"
+
+#: src/ui/ms-feedback-panel.ui:172
+msgid "A generic instant message-related notification"
+msgstr "Общие уведомления, связанные с мгновенными сообщениями"
+
+#: src/ui/ms-feedback-panel.ui:178
+msgid "Network events"
+msgstr "Сетевые события"
+
+#: src/ui/ms-feedback-panel.ui:179
+msgid "A generic network notification"
+msgstr "Общие сетевые уведомления"
+
+#: src/ui/ms-feedback-panel.ui:185
+msgid "Presence changes"
+msgstr "Изменения в статусе присутствия"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "A generic presence change notification"
+msgstr "Общие уведомления об изменении статуса присутствия"
+
+#: src/ui/ms-feedback-panel.ui:192
+msgid "File transfers"
+msgstr "Передача файлов"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "A generic file transfer or download notification"
+msgstr "Общие уведомления о передаче или загрузке файлов"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
