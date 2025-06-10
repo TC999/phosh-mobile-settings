@@ -1,0 +1,5 @@
+leak:adw_style_manager_ensure
+leak:FcConfigValues
+leak:FcParsePattern
+leak:FcValueListCreate
+leak:FcValueSave

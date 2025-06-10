@@ -541,6 +541,7 @@ sync_category_switch (MsFeedbackPanel *self)
 static void
 on_wakeup_screen_categories_key_changed (MsFeedbackPanel *self)
 {
+  g_strfreev (self->notifications_wakeup_categories);
   self->notifications_wakeup_categories = g_settings_get_strv (self->notifications_settings,
                                                      NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY);
 
