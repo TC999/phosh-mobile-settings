@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-24 13:50+0000\n"
-"PO-Revision-Date: 2025-05-24 08:00+0300\n"
+"POT-Creation-Date: 2025-06-10 13:14+0000\n"
+"PO-Revision-Date: 2025-06-11 08:00+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -136,7 +136,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Mobil ayarlarınızı yönetin"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:443
+#: src/mobile-settings-application.c:445
 msgid "translator-credits"
 msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
@@ -207,7 +207,7 @@ msgstr "kritik"
 msgid "none"
 msgstr "yok"
 
-#: src/ms-feedback-panel.c:812
+#: src/ms-feedback-panel.c:813
 msgid "Mobile Settings Volume Control"
 msgstr "Mobil Ayarlar Ses Denetiemi"
 
@@ -216,15 +216,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "Kilit ekranı duvar kağıdı belirlenemedi"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:548
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:549
 msgid "The default completer selected by the OSK"
 msgstr "OSK tarafından seçilen öntanımlı tamamlayıcı"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:552
 msgid "No information available for this completer"
 msgstr "Bu tamamlayıcı için bilgi yok"
 
@@ -373,21 +373,81 @@ msgstr "Yakınsama"
 msgid "On Screen Keyboard"
 msgstr "Ekran Klavyesi"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+msgid "Emergency Alerts"
+msgstr "Acil Durum Uyarıları"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Algılayıcılar"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "Deneysel Özellikler"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "Mobil Ayarlar _Hakkında"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "Uyarılar Alınamıyor"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Bu aygıtta kullanılabilir hücresel modem saptanmadığından Acil Durum Uyarıları "
+"alınamıyor."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "Acil ve İdari Uyarılar"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "Aşırı Tehdit Uyarıları"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Can ve güvenliğe aşırı tehditler için uyarıları göster"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "Ağır Tehdit Uyarıları"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Can ve güvenliğe ağır tehditler için uyarıları göster"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "Kamu Güvenliği Uyarıları"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "Güvenliği riske sokan durumlar için önerilen eylemleri göster"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "Sınama uyarıları"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "Uyarı sistemini sınamak için dönemsel iletileri göster"
+
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "Yitik çocuk uyarıları"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "Çocuk kaçırma acil durumlarıyla ilgili iletileri göster"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"
@@ -560,8 +620,7 @@ msgid ""
 "Notification categories that wake up the screen independent from their "
 "urgency"
 msgstr ""
-"İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim "
-"kategorileri"
+"İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim kategorileri"
 
 #: src/ui/ms-feedback-panel.ui:150
 msgid "Calls"
