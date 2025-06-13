@@ -173,10 +173,11 @@ create_shortcuts_row (gpointer item, gpointer user_data)
   GtkStringObject *string = GTK_STRING_OBJECT (item);
   GtkWidget *label = gtk_shortcut_label_new (gtk_string_object_get_string (string));
   GtkDragSource *drag_source = gtk_drag_source_new ();
-  GdkContentProvider *type = gdk_content_provider_new_typed (GTK_TYPE_STRING_OBJECT, string);
+  g_autoptr (GdkContentProvider) type = NULL;
   GtkDropTarget *target = gtk_drop_target_new (G_TYPE_INVALID, GDK_ACTION_COPY);
   GType targets[] = { GTK_TYPE_STRING_OBJECT };
 
+  type = gdk_content_provider_new_typed (GTK_TYPE_STRING_OBJECT, string);
   /* drag */
   gtk_drag_source_set_content (drag_source, type);
   g_signal_connect (drag_source, "drag-begin", G_CALLBACK (on_drag_begin), label);
