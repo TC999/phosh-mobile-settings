@@ -531,7 +531,7 @@ ms_osk_panel_init_pos_completer (MsOskPanel *self)
 
     info = g_list_model_get_item (G_LIST_MODEL (self->completer_infos), i);
     if (g_str_equal (ms_completer_info_get_id (info), enabled_completer)) {
-      g_warning ("Current completer is %s", enabled_completer);
+      g_debug ("Current completer is %s", enabled_completer);
       adw_combo_row_set_selected (self->completer_combo, i);
       found = TRUE;
       break;
