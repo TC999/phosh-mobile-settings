@@ -519,7 +519,7 @@ on_completer_selected_item_changed (MsOskPanel *self)
 static void
 ms_osk_panel_init_pos_completer (MsOskPanel *self)
 {
-  char *enabled_completer = NULL;
+  g_autofree char *enabled_completer = NULL;
   gboolean found = FALSE;
 
   ms_osk_panel_parse_pos_completers (self);
