@@ -223,7 +223,7 @@ list_available_panels (GApplication *app)
   g_autoptr (GtkStackPage) page = NULL;
   const char *name;
 
-  // Since we're in the local instance, just get us a window
+  /* Since we're in the local instance, just get us a window */
   adw_init ();
 
   window = g_object_new (MOBILE_SETTINGS_TYPE_WINDOW, NULL);
@@ -237,6 +237,8 @@ list_available_panels (GApplication *app)
 
     g_print ("- %s\n", name);
   }
+
+  gtk_window_destroy (GTK_WINDOW (window));
 }
 
 
