@@ -353,7 +353,8 @@ on_load_osk_layouts_from_stream_ready (JsonParser *parser, GAsyncResult *res, gp
 
   success = json_parser_load_from_stream_finish  (parser, res, &err);
   if (!success) {
-    g_warning ("Failed to load layouts: %s", err->message);
+    if (!g_error_matches (err, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+      g_warning ("Failed to load layouts: %s", err->message);
     return;
   }
 
