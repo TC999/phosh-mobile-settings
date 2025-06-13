@@ -579,9 +579,10 @@ ms_osk_panel_init_pos_completer (MsOskPanel *self)
 static gboolean
 completer_combo_sensitive_mapping (GValue *value, GVariant *variant, gpointer user_data)
 {
-  const char *const *flags = g_variant_get_strv (variant, NULL);
+  const char **flags = g_variant_get_strv (variant, NULL);
 
   g_value_set_boolean (value, !gm_strv_is_null_or_empty (flags));
+  g_free (flags);
 
   return TRUE;
 }
