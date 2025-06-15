@@ -741,13 +741,14 @@ ms_feedback_panel_dispose (GObject *object)
   MsFeedbackPanel *self = MS_FEEDBACK_PANEL (object);
 
   g_clear_object (&self->sound_cancel);
-
   g_clear_object (&self->sound_context);
+
   g_clear_object (&self->settings);
   g_clear_object (&self->notifications_settings);
   g_strfreev (self->notifications_wakeup_categories);
   g_clear_pointer (&self->known_applications, g_hash_table_unref);
 
+  g_clear_object (&self->audio_devices);
   g_clear_object (&self->mixer_control);
 
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->dispose (object);
