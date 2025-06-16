@@ -38,7 +38,7 @@ if phoc.found()
       'test-@0@'.format(opt),
       phoc,
       args: ['-E', '@0@/src/phosh-mobile-settings --@1@'.format(meson.project_build_root(), opt)],
-      depends: pms,
+      depends: [pms, compiled],
       env: test_env_phoc,
     )
   endforeach
