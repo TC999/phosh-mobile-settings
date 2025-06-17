@@ -35,9 +35,16 @@ gio_unix_dep = dependency('gio-unix-2.0', version: glib_ver_cmp)
 gmodule_dep = dependency('gmodule-2.0', version: glib_ver_cmp)
 gmobile_dep = dependency(
   'gmobile',
-  version: '>= 0.2.0',
+  version: '>= 0.4.0',
   fallback: ['gmobile', 'gmobile_dep'],
-  default_options: ['examples=false', 'introspection=false', 'gtk_doc=false', 'tests=false'],
+  default_options: [
+    'examples=false',
+    'introspection=false',
+    'gtk_doc=false',
+    'tests=false',
+    'vapi=false',
+    'hwdb=false',
+  ],
 )
 gnome_desktop_dep = dependency('gnome-desktop-4', version: '>= 44')
 gsound_dep = dependency('gsound')
