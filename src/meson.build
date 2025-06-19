@@ -84,6 +84,7 @@ mobile_settings_sources = [
 mobile_settings_deps = [
   adwaita_dep,
   libfeedback_dep,
+  libcbd_dep,
   gio_dep,
   gio_unix_dep,
   glib_dep,

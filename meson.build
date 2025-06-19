@@ -80,6 +80,13 @@ adwaita_dep = dependency(
   default_options: ['examples=false', 'introspection=disabled', 'tests=false'],
 )
 
+libcbd_dep = dependency(
+  'libcellbroadcast-0.0',
+  version: '>= 0.0.2',
+  fallback: ['libcellbroadcast', 'libcellbroadcast_dep'],
+  default_options: ['daemon=false', 'introspection=disabled', 'tests=false'],
+)
+
 i18n = import('i18n')
 
 gnome = import('gnome')
