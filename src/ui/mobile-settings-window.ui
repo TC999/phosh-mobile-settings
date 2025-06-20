@@ -219,7 +219,17 @@
                         <property name="name">features</property>
                         <property name="icon-name">applications-science-symbolic</property>
                         <property name="child">
-                          <object class="MsFeaturesPanel"/>
+                          <object class="MsFeaturesPanel">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Emergency</item>
+                                  <item translatable="yes">Suspend</item>
+                                  <item translatable="yes">Experimental</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
