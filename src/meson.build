@@ -28,6 +28,8 @@ mobile_settings_sources = [
   'ms-audio-device-row.h',
   'ms-audio-devices.c',
   'ms-audio-devices.h',
+  'ms-cb-message-row.c',
+  'ms-cb-message-row.h',
   'ms-completer-info.c',
   'ms-completer-info.h',
   'ms-compositor-panel.c',
