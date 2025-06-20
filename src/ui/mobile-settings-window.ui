@@ -158,7 +158,14 @@
                         <property name="name">convergence</property>
                         <property name="icon-name">phonelink2-symbolic</property>
                         <property name="child">
-                          <object class="MsConvergencePanel" id="convergence_page"/>
+                          <object class="MsConvergencePanel" id="convergence_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
