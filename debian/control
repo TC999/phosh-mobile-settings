@@ -24,6 +24,9 @@ Build-Depends:
  phoc <!nocheck>,
  phosh (>= 0.40.0~) <!nocheck>,
  xwayland <!nocheck>,
+ libmm-glib-dev (>= 1.24.0),
+ mobile-broadband-provider-info,
+# last two dependencies needed for libcellbroadcast
 Standards-Version: 4.6.0
 Homepage: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/
 Rules-Requires-Root: no
