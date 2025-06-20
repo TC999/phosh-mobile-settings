@@ -400,3 +400,22 @@ ms_normalize_casefold_and_unaccent (const char *str)
 
   return tmp;
 }
+
+
+GtkStringList *
+ms_get_casefolded_string_list (GtkStringList *strlist)
+{
+  GtkStringList *casefolded_strlist;
+
+  g_assert (GTK_IS_STRING_LIST (strlist));
+
+  casefolded_strlist = gtk_string_list_new (NULL);
+
+  for (uint i = 0; i < g_list_model_get_n_items (G_LIST_MODEL (strlist)); ++i) {
+    const char *keyword = gtk_string_list_get_string (strlist, i);
+
+    gtk_string_list_take (casefolded_strlist, ms_normalize_casefold_and_unaccent (keyword));
+  }
+
+  return casefolded_strlist;
+}

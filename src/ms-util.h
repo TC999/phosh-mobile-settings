@@ -40,5 +40,6 @@ GVariant *        ms_bool_to_picture_mode (const GValue       *in_value,
                                            const GVariantType *out_type,
                                            gpointer            data);
 char             *ms_normalize_casefold_and_unaccent (const char *str);
+GtkStringList    *ms_get_casefolded_string_list (GtkStringList *strlist);
 
 G_END_DECLS
