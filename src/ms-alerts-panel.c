@@ -93,14 +93,19 @@ on_cbd_proxy_ready (GObject *source_object, GAsyncResult *res, gpointer data)
 {
   g_autoptr (GError) err = NULL;
   g_autoptr (GVariant) var = NULL;
-  MsAlertsPanel *self = MS_ALERTS_PANEL (data);
+  MsAlertsPanel *self;
+  GDBusProxy *cbd_proxy;
   gboolean cbs_supported;
 
-  self->cbd_proxy = g_dbus_proxy_new_for_bus_finish (res, &err);
-  if (!self->cbd_proxy) {
-    g_warning ("Failed to get Cell Broadcast daemon proxy");
+  cbd_proxy = g_dbus_proxy_new_for_bus_finish (res, &err);
+  if (!cbd_proxy) {
+    if (!g_error_matches (err, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+      g_warning ("Failed to get Cell Broadcast daemon proxy");
     return;
   }
+
+  self = MS_ALERTS_PANEL (data);
+  self->cbd_proxy = cbd_proxy;
 
   g_signal_connect_swapped (self->cbd_proxy,
                             "g-properties-changed",
@@ -339,6 +344,8 @@ ms_alerts_panel_init (MsAlertsPanel *self)
 
   self->settings = g_settings_new (CBD_SCHEMA_ID);
   g_settings_bind (self->settings, CBD_LEVELS_KEY, self, "levels", G_SETTINGS_BIND_DEFAULT);
+
+  self->cancel = g_cancellable_new ();
 
   g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
                             G_DBUS_PROXY_FLAGS_NONE,
