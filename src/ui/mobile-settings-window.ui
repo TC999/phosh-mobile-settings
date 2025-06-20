@@ -172,7 +172,17 @@
                         <property name="name">alerts</property>
                         <property name="icon-name">dialog-warning-symbolic</property>
                         <property name="child">
-                          <object class="MsAlertsPanel"/>
+                          <object class="MsAlertsPanel">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Emergency</item>
+                                  <item translatable="yes">Cell Broadcast</item>
+                                  <item translatable="yes">Danger</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
