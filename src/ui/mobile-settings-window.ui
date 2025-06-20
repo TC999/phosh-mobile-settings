@@ -128,7 +128,15 @@
                         <property name="name">compositor</property>
                         <property name="icon-name">phone-docked-symbolic</property>
                         <property name="child">
-                          <object class="MsCompositorPanel" id="compositor_page"/>
+                          <object class="MsCompositorPanel" id="compositor_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Scaling</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
