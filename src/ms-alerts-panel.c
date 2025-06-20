@@ -12,6 +12,7 @@
 
 #include "mobile-settings-application.h"
 #include "ms-alerts-panel.h"
+#include "ms-cb-message-row.h"
 #include "ms-enum-types.h"
 #include "ms-scale-to-fit-row.h"
 #include "ms-util.h"
@@ -55,6 +56,9 @@ struct _MsAlertsPanel {
   GCancellable   *cancel;
 
   AdwSwitchRow   *rows[G_N_ELEMENTS (level_names)];
+
+  GtkListBox          *message_list;
+  GListModel          *messages;
 };
 
 G_DEFINE_TYPE (MsAlertsPanel, ms_alerts_panel, ADW_TYPE_BIN)
@@ -209,6 +213,43 @@ on_switch_active_changed (MsAlertsPanel *self, GParamSpec *spec, AdwSwitchRow  *
   g_assert_not_reached ();
 }
 
+static GtkWidget *
+on_create_widget_for_message (gpointer item,
+                              gpointer unused)
+{
+  MsCbMessageRow *row = ms_cb_message_row_new (LCB_MESSAGE (item));
+
+  return GTK_WIDGET (row);
+}
+
+static void
+on_messages_ready (GObject      *object,
+                   GAsyncResult *result,
+                   gpointer      data)
+{
+  g_autoptr (GError) error = NULL;
+  MsAlertsPanel *self = data;
+  GListModel *messages;
+
+  messages = lcb_cbd_get_messages_finish (result, &error);
+  if (!messages) {
+    if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+      g_warning ("Could not get cell broadcast messages: %s", error->message);
+    return;
+  }
+
+  g_debug ("Got %u cell broadcast messages", g_list_model_get_n_items (messages));
+
+  g_assert (MS_IS_ALERTS_PANEL (self));
+
+  g_set_object (&self->messages, messages);
+
+  gtk_list_box_bind_model (self->message_list,
+                           self->messages,
+                           on_create_widget_for_message,
+                           NULL, NULL);
+}
+
 
 static void
 ms_alerts_panel_set_property (GObject      *object,
@@ -305,6 +346,7 @@ ms_alerts_panel_class_init (MsAlertsPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-alerts-panel.ui");
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, stack);
+  gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_list);
 
   for (guint i = 0; i < G_N_ELEMENTS (level_names); i++) {
     g_autofree char *name = g_strdup_printf ("%s_alerts", level_names[i]);
@@ -324,6 +366,7 @@ ms_alerts_panel_init (MsAlertsPanel *self)
   GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
   g_autoptr (GSettingsSchema) schema = NULL;
   g_autoptr (GSettings) settings = NULL;
+  g_autoptr (GError) error = NULL;
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
@@ -356,6 +399,15 @@ ms_alerts_panel_init (MsAlertsPanel *self)
                             self->cancel,
                             on_cbd_proxy_ready,
                             self);
+
+  if (!lcb_init (&error)) {
+    g_warning ("Could not initialize libcellbroadcast: %s", error->message);
+    return;
+  }
+
+  lcb_cbd_get_messages (self->cancel, on_messages_ready, self);
+  gtk_widget_add_css_class (GTK_WIDGET (self->message_list), "boxed-list");
+
 }
 
 

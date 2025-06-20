@@ -68,6 +68,16 @@
                         </child>
                       </object>
                     </child>
+                    <!-- -->
+                    <child>
+                      <object class="AdwPreferencesGroup" id="message_group">
+                        <property name="title" translatable="yes">History of Emergency and Governmental Alerts</property>
+                        <child>
+                          <object class="GtkListBox" id="message_list">
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                 </property>
               </object>
