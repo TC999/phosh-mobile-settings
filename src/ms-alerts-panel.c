@@ -57,6 +57,7 @@ struct _MsAlertsPanel {
 
   AdwSwitchRow   *rows[G_N_ELEMENTS (level_names)];
 
+  AdwPreferencesGroup *message_group;
   GtkListBox          *message_list;
   GListModel          *messages;
 };
@@ -250,6 +251,24 @@ on_messages_ready (GObject      *object,
                            NULL, NULL);
 }
 
+static void
+style_message_list_box (MsAlertsPanel *self)
+{
+  gboolean separate_rows;
+
+  g_assert (MS_IS_ALERTS_PANEL (self));
+
+  separate_rows = adw_preferences_group_get_separate_rows (self->message_group);
+
+  if (separate_rows) {
+    gtk_widget_add_css_class (GTK_WIDGET (self->message_list), "boxed-list-separate");
+    gtk_widget_remove_css_class (GTK_WIDGET (self->message_list), "boxed-list");
+  } else {
+    gtk_widget_add_css_class (GTK_WIDGET (self->message_list), "boxed-list");
+    gtk_widget_remove_css_class (GTK_WIDGET (self->message_list), "boxed-list-separate");
+  }
+}
+
 
 static void
 ms_alerts_panel_set_property (GObject      *object,
@@ -346,6 +365,7 @@ ms_alerts_panel_class_init (MsAlertsPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-alerts-panel.ui");
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, stack);
+  gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_group);
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_list);
 
   for (guint i = 0; i < G_N_ELEMENTS (level_names); i++) {
@@ -406,8 +426,11 @@ ms_alerts_panel_init (MsAlertsPanel *self)
   }
 
   lcb_cbd_get_messages (self->cancel, on_messages_ready, self);
-  gtk_widget_add_css_class (GTK_WIDGET (self->message_list), "boxed-list");
 
+  g_signal_connect_swapped (self->message_group, "notify::separate-rows",
+                            G_CALLBACK (style_message_list_box),
+                            self);
+  style_message_list_box (self);
 }
 
 
