@@ -27,6 +27,9 @@
 struct _MobileSettingsWindow {
   AdwApplicationWindow     parent_instance;
 
+  GtkSearchBar            *search_bar;
+  GtkSearchEntry          *search_entry;
+
   AdwNavigationSplitView  *split_view;
   GtkStack                *stack;
   MsPanelSwitcher         *panel_switcher;
@@ -39,6 +42,23 @@ G_DEFINE_TYPE (MobileSettingsWindow, mobile_settings_window, ADW_TYPE_APPLICATIO
 
 
 static void
+on_search_entry_changed (GtkSearchEntry *search_entry,
+                         MobileSettingsWindow *self)
+{
+  ms_panel_switcher_set_search_query (self->panel_switcher,
+                                      gtk_editable_get_text (GTK_EDITABLE (search_entry)));
+}
+
+
+static void
+on_search_entry_activated (GtkSearchEntry *search_entry,
+                           MobileSettingsWindow *self)
+{
+  ms_panel_switcher_set_active_panel_index (self->panel_switcher, 0);
+}
+
+
+static void
 show_content_cb (MobileSettingsWindow *self)
 {
   const char *panelname;
@@ -48,6 +68,12 @@ show_content_cb (MobileSettingsWindow *self)
   panelname = gtk_stack_get_visible_child_name (self->stack);
 
   g_settings_set_string (self->settings, "last-panel", panelname);
+
+  /* Clear search entry to display all panels again */
+  if (gtk_search_bar_get_search_mode (self->search_bar)) {
+    gtk_search_bar_set_search_mode (self->search_bar, FALSE);
+    gtk_editable_delete_text (GTK_EDITABLE (self->search_entry), 0, -1);
+  }
 }
 
 
@@ -141,9 +167,14 @@ mobile_settings_window_class_init (MobileSettingsWindowClass *klass)
 
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/mobile-settings-window.ui");
+  gtk_widget_class_bind_template_child (widget_class, MobileSettingsWindow, search_bar);
+  gtk_widget_class_bind_template_child (widget_class, MobileSettingsWindow, search_entry);
   gtk_widget_class_bind_template_child (widget_class, MobileSettingsWindow, split_view);
   gtk_widget_class_bind_template_child (widget_class, MobileSettingsWindow, stack);
   gtk_widget_class_bind_template_child (widget_class, MobileSettingsWindow, panel_switcher);
+
+  gtk_widget_class_bind_template_callback (widget_class, on_search_entry_changed);
+  gtk_widget_class_bind_template_callback (widget_class, on_search_entry_activated);
   gtk_widget_class_bind_template_callback (widget_class, show_content_cb);
   gtk_widget_class_bind_template_callback (widget_class, stack_child_to_tile);
 }
@@ -156,6 +187,8 @@ mobile_settings_window_init (MobileSettingsWindow *self)
 
   gtk_widget_init_template (GTK_WIDGET (self));
   show_content_cb (self);
+
+  gtk_search_bar_set_key_capture_widget (self->search_bar, GTK_WIDGET (self));
 }
 
 
