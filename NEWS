@@ -1,3 +1,31 @@
+phosh-mobile-settings 0.48~rc1
+------------------------------
+Released June 2025
+* New panel for setting cell broadcast categories
+  This needs cellbroadcast and at least ModemManager 1.25.1.
+* feedback-panel: Allow to configure notification categories
+  that should wake up the screen
+* Make osk-panel aware of the phosh-osk-stub → stevia rename
+* Fix several leaks and run leak checks in CI
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/29
+* Contributors:
+    * Gotam Gorabh
+    * Guido Günther
+    * Stefan Hansson
+    * Suraj Kumar Mahto
+* UI translations:
+    * Álvaro Burns (pt_BR)
+    * Antonio Marin (ro)
+    * Artur S0 (ru)
+    * Danial Behzadi (fa)
+    * Ekaterine Papava (ka)
+    * Emin Tufan Çetin (tr)
+    * Juliano de Souza Camargo (pt_BR)
+    * Martin (sl)
+    * Yaron Shahrabani (he)
+    * Yuri Chornoivan (uk)
+
 phosh-mobile-settings 0.47.0
 ----------------------------
 Released May 2025
