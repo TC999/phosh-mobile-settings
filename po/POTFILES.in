@@ -5,6 +5,7 @@ plugins/librem5/ui/ms-plugin-librem5-panel.ui
 src/gtk/help-overlay.ui
 src/mobile-settings-application.c
 src/mobile-settings-window.c
+src/ms-alerts-panel.c
 src/ms-audio-devices.c
 src/ms-cb-message-row.c
 src/ms-feedback-panel.c

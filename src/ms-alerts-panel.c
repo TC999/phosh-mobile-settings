@@ -17,6 +17,8 @@
 #include "ms-scale-to-fit-row.h"
 #include "ms-util.h"
 
+#include <glib/gi18n-lib.h>
+
 #define CBD_SCHEMA_ID "org.freedesktop.cbd"
 #define CBD_CHANNELS_KEY "channels"
 #define CBD_LEVELS_KEY "levels"
@@ -60,6 +62,7 @@ struct _MsAlertsPanel {
   AdwPreferencesGroup *message_group;
   GtkListBox          *message_list;
   GListModel          *messages;
+  AdwToastOverlay     *toast_overlay;
 };
 
 G_DEFINE_TYPE (MsAlertsPanel, ms_alerts_panel, ADW_TYPE_BIN)
@@ -234,8 +237,14 @@ on_messages_ready (GObject      *object,
 
   messages = lcb_cbd_get_messages_finish (result, &error);
   if (!messages) {
-    if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+    if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
+      if (self->has_cbs) {
+        AdwToast *toast = adw_toast_new (_("Could not get list of cell broadcast messages"));
+
+        adw_toast_overlay_add_toast (self->toast_overlay, toast);
+      }
       g_warning ("Could not get cell broadcast messages: %s", error->message);
+    }
     return;
   }
 
@@ -367,6 +376,7 @@ ms_alerts_panel_class_init (MsAlertsPanelClass *klass)
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, stack);
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_group);
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_list);
+  gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, toast_overlay);
 
   for (guint i = 0; i < G_N_ELEMENTS (level_names); i++) {
     g_autofree char *name = g_strdup_printf ("%s_alerts", level_names[i]);
