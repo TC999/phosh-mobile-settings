@@ -301,6 +301,20 @@ ms_panel_switcher_set_active_panel_name (MsPanelSwitcher *self, const char *pane
 }
 
 
+gboolean
+ms_panel_switcher_set_active_panel_index (MsPanelSwitcher *self, uint idx)
+{
+  g_autoptr (GtkStackPage) page = NULL;
+
+  g_assert (MS_IS_PANEL_SWITCHER (self));
+
+  page = g_list_model_get_item (G_LIST_MODEL (self->filtered_panels), idx);
+
+  return page ? ms_panel_switcher_set_active_panel_name (self,
+                                                         gtk_stack_page_get_name (page)) : FALSE;
+}
+
+
 void
 ms_panel_switcher_set_search_query (MsPanelSwitcher *self, const char *cur_query)
 {
