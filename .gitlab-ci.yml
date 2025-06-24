@@ -39,7 +39,7 @@ variables:
   FDO_UPSTREAM_REPO: World/Phosh/phosh-mobile-settings
   DEBIAN_IMAGE: $CI_REGISTRY/world/phosh/phosh-mobile-settings/debian:v0.0.2025-06-16
   COMMON_BUILD_OPTS: --werror -Db_coverage=true
-  PHOSH_ADDITIONAL_EXPERIMENTAL_PKGS: libgmobile-dev
+  PHOSH_ADDITIONAL_EXPERIMENTAL_PKGS: libgmobile-dev phoc
 
 .trixie_vars: &trixie_vars
   variables:

@@ -47,7 +47,7 @@ if phoc.found()
       dependencies: libms_dep,
       include_directories: include_directories('../src'),
     )
-    test(test, phoc, args: ['-E', t], env: test_env_phoc, suite: ['unit'])
+    test(test, phoc, args: ['--no-xwayland', '-E', t], env: test_env_phoc, suite: ['unit'])
   endforeach
 
   local_opts = ['debug-info', 'help', 'list', 'version']
@@ -57,7 +57,11 @@ if phoc.found()
     test(
       'test-@0@'.format(opt),
       phoc,
-      args: ['-E', '@0@/src/phosh-mobile-settings --@1@'.format(meson.project_build_root(), opt)],
+      args: [
+        '--no-xwayland',
+        '-E',
+        '@0@/src/phosh-mobile-settings --@1@'.format(meson.project_build_root(), opt),
+      ],
       depends: [pms, compiled],
       env: test_env_phoc,
     )
