@@ -160,7 +160,18 @@
                         <property name="name">lockscreen</property>
                         <property name="icon-name">padlock-symbolic</property>
                         <property name="child">
-                          <object class="MsLockscreenPanel" id="lockscreen_page"/>
+                          <object class="MsLockscreenPanel" id="lockscreen_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Wallpaper</item>
+                                  <item translatable="yes">Shuffle</item>
+                                  <item translatable="yes">Widgets</item>
+                                  <item translatable="yes">Password</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
