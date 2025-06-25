@@ -253,7 +253,15 @@
                         <property name="name">sensors</property>
                         <property name="icon-name">computer-chip-symbolic</property>
                         <property name="child">
-                          <object class="MsSensorPanel" id="sensor_page"/>
+                          <object class="MsSensorPanel" id="sensor_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">High Contrast</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
