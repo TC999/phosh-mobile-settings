@@ -117,7 +117,20 @@
                         <property name="name">feedback</property>
                         <property name="icon-name">feedback-quiet-symbolic</property>
                         <property name="child">
-                          <object class="MsFeedbackPanel"/>
+                          <object class="MsFeedbackPanel">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Feedback</item>
+                                  <item translatable="yes">Sounds</item>
+                                  <item translatable="yes">Wakeup</item>
+                                  <item translatable="yes">Vibra</item>
+                                  <item translatable="yes">Haptic</item>
+                                  <item translatable="yes">LED</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
