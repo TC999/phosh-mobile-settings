@@ -106,7 +106,17 @@
                         <property name="name">overview</property>
                         <property name="icon-name">applications-symbolic</property>
                         <property name="child">
-                          <object class="MsOverviewPanel" id="overview_page"/>
+                          <object class="MsOverviewPanel" id="overview_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Favorites</item>
+                                  <item translatable="yes">Filter</item>
+                                  <item translatable="yes">Wallpaper</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
