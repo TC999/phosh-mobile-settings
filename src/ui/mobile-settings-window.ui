@@ -95,7 +95,16 @@
                         <property name="name">topbar</property>
                         <property name="icon-name">focus-top-bar-symbolic</property>
                         <property name="child">
-                          <object class="MsTopbarPanel" id="topbar_page"/>
+                          <object class="MsTopbarPanel" id="topbar_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Quick Settings</item>
+                                  <item translatable="yes">Notches</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
