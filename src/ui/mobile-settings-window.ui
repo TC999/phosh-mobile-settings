@@ -200,7 +200,18 @@
                         <property name="name">osk</property>
                         <property name="icon-name">input-keyboard-symbolic</property>
                         <property name="child">
-                          <object class="MsOskPanel" id="osk_page"/>
+                          <object class="MsOskPanel" id="osk_page">
+                            <property name="keywords">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">Keyboard</item>
+                                  <item translatable="yes">Unfold</item>
+                                  <item translatable="yes">OSK</item>
+                                  <item translatable="yes">Word Completion</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
                         </property>
                       </object>
                     </child>
