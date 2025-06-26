@@ -2,18 +2,18 @@
 # Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2024.
-# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2025.
 # Álvaro Burns <>, 2025.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-31 12:44+0000\n"
-"PO-Revision-Date: 2025-06-01 04:05-0300\n"
-"Last-Translator: Álvaro Burns <>\n"
-"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
+"POT-Creation-Date: 2025-06-26 09:00+0000\n"
+"PO-Revision-Date: 2025-06-26 09:51-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,7 +135,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Gerencia suas configurações móveis"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:443
+#: src/mobile-settings-application.c:447
 msgid "translator-credits"
 msgstr ""
 "Rafael Fontenelle <rafaelff@gnome.org>\n"
@@ -206,7 +206,7 @@ msgstr "crítico"
 msgid "none"
 msgstr "nada"
 
-#: src/ms-feedback-panel.c:812
+#: src/ms-feedback-panel.c:814
 msgid "Mobile Settings Volume Control"
 msgstr "Configurações móveis do controle de volume"
 
@@ -215,15 +215,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "Falha ao configurar papel de parede da tela de bloqueio"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:592
 msgid "Default"
 msgstr "Padrão"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:593
 msgid "The default completer selected by the OSK"
 msgstr "O padrão de autocompletamento selecionado pelo OSK"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:596
 msgid "No information available for this completer"
 msgstr "Nenhuma informação disponível para este autocompletamento"
 
@@ -243,7 +243,7 @@ msgstr "_Cancelar"
 msgid "_Reset"
 msgstr "_Redefinir"
 
-#: src/ms-overview-panel.c:332
+#: src/ms-overview-panel.c:331
 msgid "Failed to set wallpaper for overview"
 msgstr "Falha ao configurar papel de parede da visão geral"
 
@@ -819,62 +819,72 @@ msgid ""
 msgstr ""
 "Se deve mostrar o teclado na tela quando um teclado físico estiver presente"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Janela instantânea de indicação de tecla"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr ""
+"Se deve mostrar uma janela instantânea indicando a tecla pressionada "
+"atualmente"
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "Altura do teclado no modo retrato"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "Quando a tela é mais alta que larga"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "Altura do teclado no modo paisagem"
 
-#: src/ui/ms-osk-panel.ui:69
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "Quando a tela é mais larga que alta"
 
-#: src/ui/ms-osk-panel.ui:93
+#: src/ui/ms-osk-panel.ui:101
 msgid "Text Completion"
 msgstr "Autocompletamento de texto"
 
-#: src/ui/ms-osk-panel.ui:96
+#: src/ui/ms-osk-panel.ui:104
 msgid "Opportunistic word completion"
 msgstr "Autocompletamento oportunístico de palavras"
 
-#: src/ui/ms-osk-panel.ui:97
+#: src/ui/ms-osk-panel.ui:105
 msgid "Enable word completion when the app indicates it is useful"
 msgstr ""
 "Habilita autocompletamento de palavra quando o aplicativo indicar ser útil"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:112
 msgid "Toggle via OSK menu"
 msgstr "Alternar via menu OSK"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:113
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "Permite alternar o autocompletamento de palavras por meio do botão de menu "
 "do teclado"
 
-#: src/ui/ms-osk-panel.ui:111
+#: src/ui/ms-osk-panel.ui:119
 msgid "Default Completer"
 msgstr "Autocompletamento padrão"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:120
 msgid "The default completion engine to use"
 msgstr "O padrão a ser usado no mecanismo de autocompletamento"
 
-#: src/ui/ms-osk-panel.ui:123
+#: src/ui/ms-osk-panel.ui:131
 msgid "Terminal Layout"
 msgstr "Layout do terminal"
 
-#: src/ui/ms-osk-panel.ui:127
+#: src/ui/ms-osk-panel.ui:135
 msgid "Shortcuts"
 msgstr "Atalhos"
 
-#: src/ui/ms-osk-panel.ui:128
+#: src/ui/ms-osk-panel.ui:136
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Os atalhos disponíveis na barra de atalhos"
 
