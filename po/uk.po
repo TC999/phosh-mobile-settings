@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-setti"
 "ngs/-/issues\n"
-"POT-Creation-Date: 2025-05-31 12:44+0000\n"
-"PO-Revision-Date: 2025-05-31 17:55+0300\n"
+"POT-Creation-Date: 2025-06-26 09:00+0000\n"
+"PO-Revision-Date: 2025-06-26 14:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -134,7 +134,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Керування вашими мобільними параметрами"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:443
+#: src/mobile-settings-application.c:447
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
@@ -203,7 +203,7 @@ msgstr "критичний"
 msgid "none"
 msgstr "немає"
 
-#: src/ms-feedback-panel.c:812
+#: src/ms-feedback-panel.c:814
 msgid "Mobile Settings Volume Control"
 msgstr "Параметри керування гучністю мобільного"
 
@@ -212,15 +212,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "Не вдалося встановити фонове зображення вікна блокування"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:592
 msgid "Default"
 msgstr "Типовий"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:593
 msgid "The default completer selected by the OSK"
 msgstr "Типовий засіб доповнення, який вибрано OSK"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:596
 msgid "No information available for this completer"
 msgstr "Немає даних для цього засобу доповнення"
 
@@ -240,7 +240,7 @@ msgstr "_Скасувати"
 msgid "_Reset"
 msgstr "С_кинути"
 
-#: src/ms-overview-panel.c:332
+#: src/ms-overview-panel.c:331
 msgid "Failed to set wallpaper for overview"
 msgstr "Не вдалося встановити фон для огляду"
 
@@ -370,7 +370,6 @@ msgid "On Screen Keyboard"
 msgstr "Екранна клавіатура"
 
 #: src/ui/mobile-settings-window.ui:171
-#| msgid "Emergency Alerts Volume"
 msgid "Emergency Alerts"
 msgstr "Термінові попередження"
 
@@ -399,8 +398,8 @@ msgid ""
 "Cannot receive Emergency Alerts on this device as no usable cellular modem "
 "is detected."
 msgstr ""
-"Неможливо отримати термінові попередження на цьому пристрої, оскільки не"
-" виявлено жодного стільникового модема."
+"Неможливо отримати термінові попередження на цьому пристрої, оскільки не "
+"виявлено жодного стільникового модема."
 
 #: src/ui/ms-alerts-panel.ui:28
 msgid "Emergency and Governmental Alerts"
@@ -819,62 +818,72 @@ msgstr ""
 "Визначає, чи слід показувати екранну клавіатуру, якщо наявна фізична "
 "клавіатура"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Контекстна панель індикатора клавіш"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr ""
+"Визначає, чи слід показувати контекстну панель з індикацією поточної"
+" натиснутої клавіші"
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "Висота клавіатури у книжковому режимі"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "Коли екран вищий, ніж ширший"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "Висота клавіатури у альбомному режимі"
 
-#: src/ui/ms-osk-panel.ui:69
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "Коли екран ширший, ніж вищий"
 
-#: src/ui/ms-osk-panel.ui:93
+#: src/ui/ms-osk-panel.ui:101
 msgid "Text Completion"
 msgstr "Завершення тексту"
 
-#: src/ui/ms-osk-panel.ui:96
+#: src/ui/ms-osk-panel.ui:104
 msgid "Opportunistic word completion"
 msgstr "Гнучке автоматичне доповнення"
 
-#: src/ui/ms-osk-panel.ui:97
+#: src/ui/ms-osk-panel.ui:105
 msgid "Enable word completion when the app indicates it is useful"
 msgstr ""
 "Увімкнути автодоповнення слів, якщо програма вказує на його корисність"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:112
 msgid "Toggle via OSK menu"
 msgstr "Перемикання за меню OSK"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:113
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "Уможливити перемикання автодоповнення слів за допомогою кнопки меню "
 "клавіатури"
 
-#: src/ui/ms-osk-panel.ui:111
+#: src/ui/ms-osk-panel.ui:119
 msgid "Default Completer"
 msgstr "Типовий доповнювач"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:120
 msgid "The default completion engine to use"
 msgstr "Типовий рушій автоматичного доповнення"
 
-#: src/ui/ms-osk-panel.ui:123
+#: src/ui/ms-osk-panel.ui:131
 msgid "Terminal Layout"
 msgstr "Компонування термінала"
 
-#: src/ui/ms-osk-panel.ui:127
+#: src/ui/ms-osk-panel.ui:135
 msgid "Shortcuts"
 msgstr "Скорочення"
 
-#: src/ui/ms-osk-panel.ui:128
+#: src/ui/ms-osk-panel.ui:136
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Скорочення, якими можна скористатися на панелі скорочень"
 
