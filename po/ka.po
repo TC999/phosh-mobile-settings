@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-31 12:44+0000\n"
-"PO-Revision-Date: 2025-06-02 19:18+0200\n"
+"POT-Creation-Date: 2025-06-26 09:00+0000\n"
+"PO-Revision-Date: 2025-06-27 04:45+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -131,7 +131,7 @@ msgid "- Manage your mobile settings"
 msgstr "- მართეთ თქვენი მობილურის პარამეტრები"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:443
+#: src/mobile-settings-application.c:447
 msgid "translator-credits"
 msgstr "temuri Doghonadze"
 
@@ -200,7 +200,7 @@ msgstr "კრიტიკული"
 msgid "none"
 msgstr "არა"
 
-#: src/ms-feedback-panel.c:812
+#: src/ms-feedback-panel.c:814
 msgid "Mobile Settings Volume Control"
 msgstr "მობილურობის მორგების ხმის მართვა"
 
@@ -209,15 +209,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "დაბლოკვის ეკრანის ფონის სურათის დაყენება ჩავარდა"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:592
 msgid "Default"
 msgstr "ნაგულისხმევი"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:593
 msgid "The default completer selected by the OSK"
 msgstr "ნაგულისხმევი დასრულების ძრავა OSK-ის მიერ"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:596
 msgid "No information available for this completer"
 msgstr "ამ დამსრულებლისთვის ინფორმაცია ხელმისაწვდომი არა"
 
@@ -237,7 +237,7 @@ msgstr "გაუ_ქმება"
 msgid "_Reset"
 msgstr "ჩამოყ_რა"
 
-#: src/ms-overview-panel.c:332
+#: src/ms-overview-panel.c:331
 msgid "Failed to set wallpaper for overview"
 msgstr "მიმოხილვის ეკრანის ფონის სურათის დაყენება ჩავარდა"
 
@@ -817,59 +817,67 @@ msgstr ""
 "არის თუ არა ნაჩვენები ეკრანის კლავიატურა, როცა აპარატურული კლავიატურა "
 "არსებობს"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "ღილაკის მაჩვენებლის მხტუნარა"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "გამოჩნდება თუ არა მხტუნარა, რომელიც ამჟამად დაწოლილ ღილაკზე მიუთითებს"
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "კლავიატურის სიმაღლე პორტრეტის რეჟიმში"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "როდესაც ეკრანი უფრო მაღალია, ვიდრე ფართო"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "კლავიატურის სიმაღლე ლანდშაფტის რეჟიმში"
 
-#: src/ui/ms-osk-panel.ui:69
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "როდესაც ეკრანი უფრო ფართოა, ვიდრე მაღალი"
 
-#: src/ui/ms-osk-panel.ui:93
+#: src/ui/ms-osk-panel.ui:101
 msgid "Text Completion"
 msgstr "ტექსტის დასრულება"
 
-#: src/ui/ms-osk-panel.ui:96
+#: src/ui/ms-osk-panel.ui:104
 msgid "Opportunistic word completion"
 msgstr "ოპორტუნისტული სიტყვების დასრულება"
 
-#: src/ui/ms-osk-panel.ui:97
+#: src/ui/ms-osk-panel.ui:105
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "სიტყვის დასრულების ჩართვა, როცა აპი მიუთითებს, რომ ის სასარგებლოა"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:112
 msgid "Toggle via OSK menu"
 msgstr "გადართვა OSK მენიუდან"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:113
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "სიტყვის დასრულების გადართვის ჩართვა კლავიატურის მენიუს ღილაკიდან"
 
-#: src/ui/ms-osk-panel.ui:111
+#: src/ui/ms-osk-panel.ui:119
 msgid "Default Completer"
 msgstr "ნაგულისხმევი დამსრულებელი"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:120
 msgid "The default completion engine to use"
 msgstr "ნაგულისხმევი დასრულების ძრავა გამოსაყენებლად"
 
-#: src/ui/ms-osk-panel.ui:123
+#: src/ui/ms-osk-panel.ui:131
 msgid "Terminal Layout"
 msgstr "ტერმინალის განლაგება"
 
-#: src/ui/ms-osk-panel.ui:127
+#: src/ui/ms-osk-panel.ui:135
 msgid "Shortcuts"
 msgstr "მალსახმობები"
 
-#: src/ui/ms-osk-panel.ui:128
+#: src/ui/ms-osk-panel.ui:136
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "მალსახმობების პანელზე ხელმისაწვდომი მალსახმობები"
 
