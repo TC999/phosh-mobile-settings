@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-06-05 11:05+0000\n"
-"PO-Revision-Date: 2025-06-10 08:52+0300\n"
+"POT-Creation-Date: 2025-06-26 09:00+0000\n"
+"PO-Revision-Date: 2025-06-27 22:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -133,7 +133,7 @@ msgid "- Manage your mobile settings"
 msgstr "- ניהול הגדרות המכשיר הנייד שלך"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:443
+#: src/mobile-settings-application.c:447
 msgid "translator-credits"
 msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
@@ -205,7 +205,7 @@ msgstr "קיצוני"
 msgid "none"
 msgstr "ללא"
 
-#: src/ms-feedback-panel.c:812
+#: src/ms-feedback-panel.c:814
 msgid "Mobile Settings Volume Control"
 msgstr "בקרת עוצמת שמע להגדרות הנייד"
 
@@ -214,15 +214,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "הגדרת רקע למסך הנעילה נכשלה"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:548
+#: src/ms-osk-panel.c:592
 msgid "Default"
 msgstr "ברירת מחדל"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:593
 msgid "The default completer selected by the OSK"
 msgstr "משלים ברירת המחדל שנבחר על ידי המקלדת על גבי המסך"
 
-#: src/ms-osk-panel.c:552
+#: src/ms-osk-panel.c:596
 msgid "No information available for this completer"
 msgstr "אין מידע זמין על המשלים הזה"
 
@@ -242,7 +242,7 @@ msgstr "_ביטול"
 msgid "_Reset"
 msgstr "_איפוס"
 
-#: src/ms-overview-panel.c:332
+#: src/ms-overview-panel.c:331
 msgid "Failed to set wallpaper for overview"
 msgstr "הגדרת רקע לסקירה נכשלה"
 
@@ -811,59 +811,67 @@ msgid ""
 "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr "האם להציג מקלדת מסך גם כשמקלדת פיזית מחוברת"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "חלונית חיווי מקש"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "האם להציג חלונית עליונה שמציינת מה המקש שנלחץ"
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "גובה המקלדת במצב לאורך"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "כאשר המסך יותר גבוה מרחב"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "גובה המקלדת במצב לרוחב"
 
-#: src/ui/ms-osk-panel.ui:69
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "כאשר המסך יותר רחב מארוך"
 
-#: src/ui/ms-osk-panel.ui:93
+#: src/ui/ms-osk-panel.ui:101
 msgid "Text Completion"
 msgstr "השלמת טקסט"
 
-#: src/ui/ms-osk-panel.ui:96
+#: src/ui/ms-osk-panel.ui:104
 msgid "Opportunistic word completion"
 msgstr "השלמת מילים שאפתנית"
 
-#: src/ui/ms-osk-panel.ui:97
+#: src/ui/ms-osk-panel.ui:105
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "הפעלת השלמת מילים כשהיישומון מציין שזה שימושי"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:112
 msgid "Toggle via OSK menu"
 msgstr "החלפת מצב דרך תפריט מקלדת מסך"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:113
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "לאפשר החלפת מצב השלמת מילים דרך כפתור התפריט של המקלדת"
 
-#: src/ui/ms-osk-panel.ui:111
+#: src/ui/ms-osk-panel.ui:119
 msgid "Default Completer"
 msgstr "משלים ברירת מחדל"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:120
 msgid "The default completion engine to use"
 msgstr "מנוע ההשלמה לשימוש כברירת מחדל"
 
-#: src/ui/ms-osk-panel.ui:123
+#: src/ui/ms-osk-panel.ui:131
 msgid "Terminal Layout"
 msgstr "פריסת מסוף"
 
-#: src/ui/ms-osk-panel.ui:127
+#: src/ui/ms-osk-panel.ui:135
 msgid "Shortcuts"
 msgstr "קיצורים"
 
-#: src/ui/ms-osk-panel.ui:128
+#: src/ui/ms-osk-panel.ui:136
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "הקיצורים הזמינים מסרגל הקיצורים"
 
