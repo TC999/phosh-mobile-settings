@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-05-04 01:19+0000\n"
-"PO-Revision-Date: 2025-05-03 23:38+0200\n"
+"POT-Creation-Date: 2025-06-26 09:00+0000\n"
+"PO-Revision-Date: 2025-06-27 02:06+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -133,7 +133,7 @@ msgid "- Manage your mobile settings"
 msgstr "- Hantera dina mobilinställningar"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:443
+#: src/mobile-settings-application.c:447
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -143,57 +143,85 @@ msgstr ""
 msgid "Device"
 msgstr "Enhet"
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "Mediavolym"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "Aviseringsvolym"
+
+#: src/ms-audio-devices.c:182
+msgid "Ring Tone Volume"
+msgstr "Ringsignalvolym"
+
+#: src/ms-audio-devices.c:184
+msgid "Call volume"
+msgstr "Samtalsvolym"
+
+#: src/ms-audio-devices.c:186
+msgid "Alarm Volume"
+msgstr "Alarmvolym"
+
+#: src/ms-audio-devices.c:188
+msgid "Emergency Alerts Volume"
+msgstr "Nödmeddelandevolym"
+
+#: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
 msgstr "Ljudfilen finns inte"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:214
 msgid "Sound file is corrupt"
 msgstr "Ljudfilen är trasig"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:216
 msgid "Failed to play sound"
 msgstr "Misslyckades med att spela upp ljud"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:255
 #, c-format
 msgid "Playing %s"
 msgstr "Spelar %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:416
 msgid "low"
 msgstr "låg"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:419
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:422
 msgid "critical"
 msgstr "kritisk"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:426
 msgid "none"
 msgstr "ingen"
+
+#: src/ms-feedback-panel.c:814
+msgid "Mobile Settings Volume Control"
+msgstr "Volymkontroll för mobilinställningar"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Misslyckades med att ställa in låsskärmens bakgrund"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:592
 msgid "Default"
 msgstr "Standard"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:593
 msgid "The default completer selected by the OSK"
 msgstr "Standardkompletteraren vald av tangentbordet"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:596
 msgid "No information available for this completer"
 msgstr "Ingen information tillgänglig för denna kompletterare"
 
@@ -213,7 +241,7 @@ msgstr "A_vbryt"
 msgid "_Reset"
 msgstr "Å_terställ"
 
-#: src/ms-overview-panel.c:332
+#: src/ms-overview-panel.c:331
 msgid "Failed to set wallpaper for overview"
 msgstr "Misslyckades med att ställa in översiktens bakgrund"
 
@@ -342,21 +370,86 @@ msgstr "Konvergens"
 msgid "On Screen Keyboard"
 msgstr "Skärmtangentbord"
 
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:171
+msgid "Emergency Alerts"
+msgstr "Nödmeddelanden"
+
+#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Sensorer"
 
-#: src/ui/mobile-settings-window.ui:182
+#: src/ui/mobile-settings-window.ui:193
 msgid "Experimental features"
 msgstr "Experimentella funktioner"
 
-#: src/ui/mobile-settings-window.ui:206
+#: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
 msgstr "_Tangentbordsgenvägar"
 
-#: src/ui/mobile-settings-window.ui:210
+#: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "_Om Mobilinställningar"
+
+#: src/ui/ms-alerts-panel.ui:15
+msgid "Unable To Receive Alerts"
+msgstr "Kan inte ta emot varningar"
+
+#: src/ui/ms-alerts-panel.ui:16
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Kan inte ta emot nödmeddelanden på denna enhet då inget användbart mobilt "
+"modem identifierats."
+
+#: src/ui/ms-alerts-panel.ui:28
+msgid "Emergency and Governmental Alerts"
+msgstr "Nödmeddelanden och varningar från myndigheter"
+
+#: src/ui/ms-alerts-panel.ui:31
+msgid "Extreme Threat Alerts"
+msgstr "Varningar för extrema hot"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Visa varningar för extrema hot mot liv och säkerhet"
+
+#: src/ui/ms-alerts-panel.ui:39
+msgid "Severe Threat Alerts"
+msgstr "Varningar för allvarliga hot"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Visa varningar för allvarliga hot mot liv och säkerhet"
+
+#: src/ui/ms-alerts-panel.ui:47
+msgid "Public Safety Alerts"
+msgstr "Varningar om allmän säkerhet"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "Visa rekommenderade åtgärder att vidta i situationer där risk finns"
+
+#: src/ui/ms-alerts-panel.ui:55
+msgid "Test alerts"
+msgstr "Testvarningar"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Show periodic messages to test the alert system"
+msgstr "Visa periodiskt meddelanden som testar varningssystemet"
+
+# USA-specifika meddelanden om bortförda barn.
+#: src/ui/ms-alerts-panel.ui:63
+msgid "Amber alerts"
+msgstr "AMBER Alert"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Show messages about child abduction emergencies"
+msgstr "Visa meddelanden om nödfall kring bortförda barn"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Volym"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -444,72 +537,143 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Ljudinställningar"
+
+#: src/ui/ms-feedback-panel.ui:27
+msgid "Feedback Settings"
+msgstr "Återkopplingsinställningar"
+
+#: src/ui/ms-feedback-panel.ui:30
 msgid "Feedback profile"
 msgstr "Återkopplingsprofil"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:31
 msgid "The global maximum feedback profile"
 msgstr "Den globala profilen för maximal återkoppling"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:46
 msgid "Prefer flash"
 msgstr "Föredra blixt"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:47
 msgid "Prefer camera flash over status LED when available"
 msgstr "Föredra kamerablixt över status-LED när tillgänglig"
 
 #. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Silence on Vol-"
 msgstr "Tysta med Vol-"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:54
 msgid ""
 "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr "När låst, sätt telefonen i tyst läge med Vol- vid inkommande samtal"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Haptic strength"
 msgstr "Haptisk styrka"
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:62
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Maximal styrka i procent för haptisk återkoppling"
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:81
 msgid "Per Application settings"
 msgstr "Inställningar per program"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:94
 msgid "Sounds"
 msgstr "Ljud"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "Ljudet att använda för vissa händelser"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:103
 msgid "Phone Calls"
 msgstr "Telefonsamtal"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:109
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:101
+#: src/ui/ms-feedback-panel.ui:115
 msgid "Instant messages"
 msgstr "Snabbmeddelanden"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:126
 msgid "Screen Wakeup"
 msgstr "Skärmväckning"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:129
 msgid "Notification urgency that lights up the screen"
 msgstr "Aviseringsgrad som lyser upp skärmen"
+
+#: src/ui/ms-feedback-panel.ui:147
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"Aviseringskategorier som väcker skärmen oberoende av hur brådskande de är"
+
+#: src/ui/ms-feedback-panel.ui:150
+msgid "Calls"
+msgstr "Samtal"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "A generic audio or video call notification"
+msgstr "En generisk avisering för ljud- eller videosamtal"
+
+#: src/ui/ms-feedback-panel.ui:157
+msgid "Device events"
+msgstr "Enhetshändelser"
+
+#: src/ui/ms-feedback-panel.ui:158
+msgid "A generic device-related notification"
+msgstr "En generisk enhetsrelaterad avisering"
+
+#: src/ui/ms-feedback-panel.ui:164
+msgid "Emails"
+msgstr "E-postmeddelanden"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "A generic e-mail-related notification"
+msgstr "En generisk e-postrelaterad avisering"
+
+#: src/ui/ms-feedback-panel.ui:171
+msgid "Instant Messages"
+msgstr "Snabbmeddelanden"
+
+#: src/ui/ms-feedback-panel.ui:172
+msgid "A generic instant message-related notification"
+msgstr "En generisk snabbmeddelanderelaterad avisering"
+
+#: src/ui/ms-feedback-panel.ui:178
+msgid "Network events"
+msgstr "Nätverkshändelser"
+
+#: src/ui/ms-feedback-panel.ui:179
+msgid "A generic network notification"
+msgstr "En generisk nätverksavisering"
+
+#: src/ui/ms-feedback-panel.ui:185
+msgid "Presence changes"
+msgstr "Ändringar i närvaro"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "A generic presence change notification"
+msgstr "En generisk avisering för ändring i närvaro"
+
+#: src/ui/ms-feedback-panel.ui:192
+msgid "File transfers"
+msgstr "Filöverföringar"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "A generic file transfer or download notification"
+msgstr "En generisk avisering för filöverföring eller hämtning"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
@@ -653,59 +817,69 @@ msgstr ""
 "Huruvida skärmtangentbordet ska visas när ett fysiskt tangentbord är "
 "tillgängligt"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Tangentindikatorpoppupp"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr ""
+"Huruvida ett kontextfönster som indikerar den aktuellt nedtryckta tangenten "
+"ska visas"
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "Tangentbordshöjd i stående läge"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "När skärmen är högre än den är bred"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "Tangentbordshöjd i liggande läge"
 
-#: src/ui/ms-osk-panel.ui:69
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "När skärmen är bredare än den är hög"
 
-#: src/ui/ms-osk-panel.ui:93
+#: src/ui/ms-osk-panel.ui:101
 msgid "Text Completion"
 msgstr "Textkomplettering"
 
-#: src/ui/ms-osk-panel.ui:96
+#: src/ui/ms-osk-panel.ui:104
 msgid "Opportunistic word completion"
 msgstr "Opportunistisk ordkomplettering"
 
-#: src/ui/ms-osk-panel.ui:97
+#: src/ui/ms-osk-panel.ui:105
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Aktivera ordkomplettering när appen indikerar att det är användbart"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:112
 msgid "Toggle via OSK menu"
 msgstr "Växla via tangentbordsmeny"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:113
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "Tillåt växling av ordkomplettering via tangentbordets menyknapp"
 
-#: src/ui/ms-osk-panel.ui:111
+#: src/ui/ms-osk-panel.ui:119
 msgid "Default Completer"
 msgstr "Standardkompletterare"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:120
 msgid "The default completion engine to use"
 msgstr "Kompletteringsmotorn att använda som standard"
 
-#: src/ui/ms-osk-panel.ui:123
+#: src/ui/ms-osk-panel.ui:131
 msgid "Terminal Layout"
 msgstr "Terminallayout"
 
-#: src/ui/ms-osk-panel.ui:127
+#: src/ui/ms-osk-panel.ui:135
 msgid "Shortcuts"
 msgstr "Kortkommandon"
 
-#: src/ui/ms-osk-panel.ui:128
+#: src/ui/ms-osk-panel.ui:136
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Kortkommandona som är tillgängliga i kortkommandoraden"
 
