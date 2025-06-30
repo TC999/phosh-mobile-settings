@@ -17,6 +17,10 @@
 #include "ms-feedback-panel.h"
 #include "ms-plugin-panel.h"
 
+#include "pmos-tweaks/ms-tweaks-page-builder.h"
+#include "pmos-tweaks/ms-tweaks-parser.h"
+#include "pmos-tweaks/ms-tweaks-utils.h"
+
 #include <glib/gi18n.h>
 
 
@@ -28,6 +32,7 @@ struct _MobileSettingsWindow {
   MsPanelSwitcher         *panel_switcher;
 
   GSettings               *settings;
+  MsTweaksParser          *ms_tweaks_parser;
 };
 
 G_DEFINE_TYPE (MobileSettingsWindow, mobile_settings_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -65,11 +70,30 @@ stack_child_to_tile (gpointer target, GtkStack *stack, GtkWidget *child)
 
 
 static void
+add_ms_tweaks_page (gpointer value, gpointer user_data)
+{
+  MobileSettingsWindow *self = MOBILE_SETTINGS_WINDOW (user_data);
+  MsTweaksPage *page_data = (MsTweaksPage *) value;
+  MsTweaksPreferencesPage *page_widget = ms_tweaks_preferences_page_new (page_data);
+
+  if (page_widget) {
+    GtkStackPage *stack_page = gtk_stack_add_titled (self->stack,
+                                                     GTK_WIDGET (page_widget), page_data->name,
+                                                     page_data->name);
+    /* TODO: Read icon from base64 property of settings definitions. */
+    gtk_stack_page_set_icon_name (stack_page, "applications-science-symbolic");
+  }
+}
+
+
+static void
 ms_settings_window_constructed (GObject *object)
 {
   MobileSettingsWindow *self = MOBILE_SETTINGS_WINDOW (object);
   MobileSettingsApplication *app = MOBILE_SETTINGS_APPLICATION (g_application_get_default ());
   GtkWidget *device_panel;
+  GList *pages_sorted_by_weight = NULL;
+  GHashTable *parser_page_table = NULL;
 
   G_OBJECT_CLASS (mobile_settings_window_parent_class)->constructed (object);
 
@@ -86,6 +110,11 @@ ms_settings_window_constructed (GObject *object)
       gtk_stack_page_set_icon_name (page, "phone-symbolic");
     }
   }
+
+  parser_page_table = ms_tweaks_parser_get_page_table (self->ms_tweaks_parser);
+  pages_sorted_by_weight = ms_tweaks_parser_sort_by_weight (parser_page_table);
+
+  g_list_foreach (pages_sorted_by_weight, add_ms_tweaks_page, self);
 }
 
 
@@ -95,6 +124,7 @@ ms_settings_window_dispose (GObject *object)
   MobileSettingsWindow *self = MOBILE_SETTINGS_WINDOW (object);
 
   g_clear_object (&self->settings);
+  g_clear_object (&self->ms_tweaks_parser);
 
   G_OBJECT_CLASS (mobile_settings_window_parent_class)->dispose (object);
 }
@@ -122,6 +152,7 @@ static void
 mobile_settings_window_init (MobileSettingsWindow *self)
 {
   self->settings = g_settings_new ("mobi.phosh.MobileSettings");
+  self->ms_tweaks_parser = ms_tweaks_parser_new ();
 
   gtk_widget_init_template (GTK_WIDGET (self));
   show_content_cb (self);

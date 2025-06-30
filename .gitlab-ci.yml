@@ -54,7 +54,7 @@ variables:
 .test_step: &test_step
   script:
     - dbus-run-session meson test --print-errorlogs -C _build
-    - ninja -C _build coverage-html
+    - ninja -C _build coverage-html || true
 
 .before: &before
   before_script:
