@@ -52,6 +52,16 @@
 
   <releases>
 
+    <release version="0.48.0" date="2025-06-30">
+      <description translate="no">
+        <ul>
+          <li>New panel for setting cell broadcast categories</li>
+          <li>feedback-panel: Allow to configure notification categories that should wake up the screen</li>
+          <li>osk-panel: Allow to configure key indicator popover when using stevia</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="0.47.0" date="2025-05-18">
       <description translate="no">
         <ul>

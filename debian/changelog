@@ -1,3 +1,40 @@
+phosh-mobile-settings (0.48.0) experimental; urgency=medium
+
+  [ Gotam Gorabh ]
+  * osk-panel: Allow to enable/disable popover osk-feature.
+    Add a switch to enable/disable the key indicator popover.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/74
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+  * Update Romanian translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 30 Jun 2025 08:47:06 +0200
+
 phosh-mobile-settings (0.48~rc1) experimental; urgency=medium
 
   [ Guido Günther ]
