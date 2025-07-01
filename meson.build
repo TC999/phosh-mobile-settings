@@ -25,7 +25,7 @@ gtk_ver_arr = gtk_ver.split('.')
 gtk_ver_str = 'GDK_VERSION_@0@_@1@'.format(gtk_ver_arr[0], gtk_ver_arr[1])
 gtk_ver_cmp = '>=@0@'.format(gtk_ver)
 
-adw_ver = '1.5'
+adw_ver = '1.6'
 adw_ver_str = 'ADW_VERSION_@0@'.format(adw_ver.replace('.', '_'))
 adw_ver_cmp = '>=@0@'.format(adw_ver)
 
@@ -35,9 +35,16 @@ gio_unix_dep = dependency('gio-unix-2.0', version: glib_ver_cmp)
 gmodule_dep = dependency('gmodule-2.0', version: glib_ver_cmp)
 gmobile_dep = dependency(
   'gmobile',
-  version: '>= 0.2.0',
+  version: '>= 0.4.0',
   fallback: ['gmobile', 'gmobile_dep'],
-  default_options: ['examples=false', 'introspection=false', 'gtk_doc=false', 'tests=false'],
+  default_options: [
+    'examples=false',
+    'introspection=false',
+    'gtk_doc=false',
+    'tests=false',
+    'vapi=false',
+    'hwdb=false',
+  ],
 )
 gnome_desktop_dep = dependency('gnome-desktop-4', version: '>= 44')
 gsound_dep = dependency('gsound')
@@ -71,6 +78,13 @@ adwaita_dep = dependency(
   version: adw_ver_cmp,
   fallback: ['libadwaita', 'adwaita_dep'],
   default_options: ['examples=false', 'introspection=disabled', 'tests=false'],
+)
+
+libcbd_dep = dependency(
+  'libcellbroadcast-0.0',
+  version: '>= 0.0.2',
+  fallback: ['libcellbroadcast', 'libcellbroadcast_dep'],
+  default_options: ['daemon=false', 'introspection=disabled', 'tests=false'],
 )
 
 i18n = import('i18n')

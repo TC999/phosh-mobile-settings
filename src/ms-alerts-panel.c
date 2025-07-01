@@ -12,9 +12,12 @@
 
 #include "mobile-settings-application.h"
 #include "ms-alerts-panel.h"
+#include "ms-cb-message-row.h"
 #include "ms-enum-types.h"
 #include "ms-scale-to-fit-row.h"
 #include "ms-util.h"
+
+#include <glib/gi18n-lib.h>
 
 #define CBD_SCHEMA_ID "org.freedesktop.cbd"
 #define CBD_CHANNELS_KEY "channels"
@@ -55,6 +58,11 @@ struct _MsAlertsPanel {
   GCancellable   *cancel;
 
   AdwSwitchRow   *rows[G_N_ELEMENTS (level_names)];
+
+  AdwPreferencesGroup *message_group;
+  GtkListBox          *message_list;
+  GListModel          *messages;
+  AdwToastOverlay     *toast_overlay;
 };
 
 G_DEFINE_TYPE (MsAlertsPanel, ms_alerts_panel, ADW_TYPE_BIN)
@@ -93,14 +101,19 @@ on_cbd_proxy_ready (GObject *source_object, GAsyncResult *res, gpointer data)
 {
   g_autoptr (GError) err = NULL;
   g_autoptr (GVariant) var = NULL;
-  MsAlertsPanel *self = MS_ALERTS_PANEL (data);
+  MsAlertsPanel *self;
+  GDBusProxy *cbd_proxy;
   gboolean cbs_supported;
 
-  self->cbd_proxy = g_dbus_proxy_new_for_bus_finish (res, &err);
-  if (!self->cbd_proxy) {
-    g_warning ("Failed to get Cell Broadcast daemon proxy");
+  cbd_proxy = g_dbus_proxy_new_for_bus_finish (res, &err);
+  if (!cbd_proxy) {
+    if (!g_error_matches (err, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+      g_warning ("Failed to get Cell Broadcast daemon proxy");
     return;
   }
+
+  self = MS_ALERTS_PANEL (data);
+  self->cbd_proxy = cbd_proxy;
 
   g_signal_connect_swapped (self->cbd_proxy,
                             "g-properties-changed",
@@ -204,6 +217,67 @@ on_switch_active_changed (MsAlertsPanel *self, GParamSpec *spec, AdwSwitchRow  *
   g_assert_not_reached ();
 }
 
+static GtkWidget *
+on_create_widget_for_message (gpointer item,
+                              gpointer unused)
+{
+  MsCbMessageRow *row = ms_cb_message_row_new (LCB_MESSAGE (item));
+
+  return GTK_WIDGET (row);
+}
+
+static void
+on_messages_ready (GObject      *object,
+                   GAsyncResult *result,
+                   gpointer      data)
+{
+  g_autoptr (GError) error = NULL;
+  MsAlertsPanel *self = data;
+  GListModel *messages;
+
+  messages = lcb_cbd_get_messages_finish (result, &error);
+  if (!messages) {
+    if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
+      if (self->has_cbs) {
+        AdwToast *toast = adw_toast_new (_("Could not get list of cell broadcast messages"));
+
+        adw_toast_overlay_add_toast (self->toast_overlay, toast);
+      }
+      g_warning ("Could not get cell broadcast messages: %s", error->message);
+    }
+    return;
+  }
+
+  g_debug ("Got %u cell broadcast messages", g_list_model_get_n_items (messages));
+
+  g_assert (MS_IS_ALERTS_PANEL (self));
+
+  g_set_object (&self->messages, messages);
+
+  gtk_list_box_bind_model (self->message_list,
+                           self->messages,
+                           on_create_widget_for_message,
+                           NULL, NULL);
+}
+
+static void
+style_message_list_box (MsAlertsPanel *self)
+{
+  gboolean separate_rows;
+
+  g_assert (MS_IS_ALERTS_PANEL (self));
+
+  separate_rows = adw_preferences_group_get_separate_rows (self->message_group);
+
+  if (separate_rows) {
+    gtk_widget_add_css_class (GTK_WIDGET (self->message_list), "boxed-list-separate");
+    gtk_widget_remove_css_class (GTK_WIDGET (self->message_list), "boxed-list");
+  } else {
+    gtk_widget_add_css_class (GTK_WIDGET (self->message_list), "boxed-list");
+    gtk_widget_remove_css_class (GTK_WIDGET (self->message_list), "boxed-list-separate");
+  }
+}
+
 
 static void
 ms_alerts_panel_set_property (GObject      *object,
@@ -300,6 +374,9 @@ ms_alerts_panel_class_init (MsAlertsPanelClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-alerts-panel.ui");
   gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, stack);
+  gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_group);
+  gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, message_list);
+  gtk_widget_class_bind_template_child (widget_class, MsAlertsPanel, toast_overlay);
 
   for (guint i = 0; i < G_N_ELEMENTS (level_names); i++) {
     g_autofree char *name = g_strdup_printf ("%s_alerts", level_names[i]);
@@ -319,6 +396,7 @@ ms_alerts_panel_init (MsAlertsPanel *self)
   GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
   g_autoptr (GSettingsSchema) schema = NULL;
   g_autoptr (GSettings) settings = NULL;
+  g_autoptr (GError) error = NULL;
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
@@ -340,6 +418,8 @@ ms_alerts_panel_init (MsAlertsPanel *self)
   self->settings = g_settings_new (CBD_SCHEMA_ID);
   g_settings_bind (self->settings, CBD_LEVELS_KEY, self, "levels", G_SETTINGS_BIND_DEFAULT);
 
+  self->cancel = g_cancellable_new ();
+
   g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
                             G_DBUS_PROXY_FLAGS_NONE,
                             NULL,
@@ -349,6 +429,18 @@ ms_alerts_panel_init (MsAlertsPanel *self)
                             self->cancel,
                             on_cbd_proxy_ready,
                             self);
+
+  if (!lcb_init (&error)) {
+    g_warning ("Could not initialize libcellbroadcast: %s", error->message);
+    return;
+  }
+
+  lcb_cbd_get_messages (self->cancel, on_messages_ready, self);
+
+  g_signal_connect_swapped (self->message_group, "notify::separate-rows",
+                            G_CALLBACK (style_message_list_box),
+                            self);
+  style_message_list_box (self);
 }
 
 
