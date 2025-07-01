@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-06-26 14:26+0000\n"
-"PO-Revision-Date: 2025-06-26 18:54+0200\n"
+"POT-Creation-Date: 2025-07-01 08:16+0000\n"
+"PO-Revision-Date: 2025-07-01 11:06+0200\n"
 "Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
@@ -137,9 +137,13 @@ msgstr "- Gestionează reglările pentru mobil"
 msgid "translator-credits"
 msgstr "libre (Antonio Marin)"
 
-#: src/mobile-settings-window.c:85
+#: src/mobile-settings-window.c:109
 msgid "Device"
 msgstr "Aparat"
+
+#: src/ms-alerts-panel.c:242
+msgid "Could not get list of cell broadcast messages"
+msgstr "Nu s-a putut obține lista mesajelor de alertă publică"
 
 #: src/ms-audio-devices.c:178
 msgid "Media Volume"
@@ -164,6 +168,10 @@ msgstr "Volum sonerie ceas"
 #: src/ms-audio-devices.c:188
 msgid "Emergency Alerts Volume"
 msgstr "Volum alerte de urgență"
+
+#: src/ms-cb-message-row.c:98
+msgid "Message of unknown severity"
+msgstr "Mesaj cu nivel de urgență necunoscut"
 
 #: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
@@ -342,7 +350,7 @@ msgstr "Modifică reglările avansate pentru mobil"
 
 #: src/ui/mobile-settings-window.ui:94
 msgid "Top Bar"
-msgstr "Spațiul de sus"
+msgstr "Bara de sus"
 
 #: src/ui/mobile-settings-window.ui:105
 msgid "Overview"
@@ -366,7 +374,7 @@ msgstr "Convergență"
 
 #: src/ui/mobile-settings-window.ui:160
 msgid "On Screen Keyboard"
-msgstr "Tastatura pe ecran"
+msgstr "Tastatură pe ecran"
 
 #: src/ui/mobile-settings-window.ui:171
 msgid "Emergency Alerts"
@@ -382,17 +390,17 @@ msgstr "Caracteristici experimentale"
 
 #: src/ui/mobile-settings-window.ui:217
 msgid "_Keyboard Shortcuts"
-msgstr "_Taste rapide"
+msgstr "Scur_tături"
 
 #: src/ui/mobile-settings-window.ui:221
 msgid "_About Mobile Settings"
 msgstr "_Despre Reglări Mobil"
 
-#: src/ui/ms-alerts-panel.ui:15
+#: src/ui/ms-alerts-panel.ui:17
 msgid "Unable To Receive Alerts"
 msgstr "Nu se pot primi alerte"
 
-#: src/ui/ms-alerts-panel.ui:16
+#: src/ui/ms-alerts-panel.ui:18
 msgid ""
 "Cannot receive Emergency Alerts on this device as no usable cellular modem "
 "is detected."
@@ -400,51 +408,59 @@ msgstr ""
 "Nu se pot primi alerte de urgență cu acest aparat deoarece nu este detectat "
 "niciun modem celular utilizabil."
 
-#: src/ui/ms-alerts-panel.ui:28
+#: src/ui/ms-alerts-panel.ui:30
 msgid "Emergency and Governmental Alerts"
 msgstr "Alerte de urgență și guvernamentale"
 
-#: src/ui/ms-alerts-panel.ui:31
+#: src/ui/ms-alerts-panel.ui:33
 msgid "Extreme Threat Alerts"
 msgstr "Alerte de amenințări extreme"
 
-#: src/ui/ms-alerts-panel.ui:33
+#: src/ui/ms-alerts-panel.ui:35
 msgid "Display alerts for extreme threats to life and safety"
 msgstr ""
 "Afișează alerte în caz de amenințări extreme la adresa vieții și siguranței"
 
-#: src/ui/ms-alerts-panel.ui:39
+#: src/ui/ms-alerts-panel.ui:41
 msgid "Severe Threat Alerts"
 msgstr "Alerte de amenințări grave"
 
-#: src/ui/ms-alerts-panel.ui:41
+#: src/ui/ms-alerts-panel.ui:43
 msgid "Display alerts for severe threats to life and safety"
 msgstr ""
 "Afișează alerte în caz de amenințări grave la adresa vieții și siguranței"
 
-#: src/ui/ms-alerts-panel.ui:47
+#: src/ui/ms-alerts-panel.ui:49
 msgid "Public Safety Alerts"
 msgstr "Alerte de siguranță publică"
 
-#: src/ui/ms-alerts-panel.ui:49
+#: src/ui/ms-alerts-panel.ui:51
 msgid "Show recommended actions to take in situations with a risk to safety"
 msgstr "Arată acțiunile recomandate în situații cu risc pentru siguranță"
 
-#: src/ui/ms-alerts-panel.ui:55
+#: src/ui/ms-alerts-panel.ui:57
 msgid "Test alerts"
 msgstr "Alerte de testare"
 
-#: src/ui/ms-alerts-panel.ui:57
+#: src/ui/ms-alerts-panel.ui:59
 msgid "Show periodic messages to test the alert system"
 msgstr "Arată mesaje periodice pentru a testa sistemul de alertă"
 
-#: src/ui/ms-alerts-panel.ui:63
+#: src/ui/ms-alerts-panel.ui:65
 msgid "Amber alerts"
 msgstr "Alerte Amber"
 
-#: src/ui/ms-alerts-panel.ui:65
+#: src/ui/ms-alerts-panel.ui:67
 msgid "Show messages about child abduction emergencies"
 msgstr "Arată mesaje despre urgențele legate de răpirea copiilor"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Cronologia alertelor de urgență și guvernamentale"
+
+#: src/ui/ms-alerts-panel.ui:81
+msgid "No emergency alerts yet"
+msgstr "Nicio alertă de urgență"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"
