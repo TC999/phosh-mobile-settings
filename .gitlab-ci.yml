@@ -1,6 +1,6 @@
 include:
  - project: 'guidog/meta-phosh'
-   ref: 'a7ec8974bb14258191146c791d8c614322dfd9e1'
+   ref: '47c1f6429850295f62e6b9b213f4819a8b252aa7'
    file: '/ci/phosh-common-jobs.yml'
  - project: 'Infrastructure/freedesktop-ci-templates'
    ref: 'd03cddbcff35f26861429fc816c00323f48e99af'
@@ -39,6 +39,7 @@ variables:
   FDO_UPSTREAM_REPO: World/Phosh/phosh-mobile-settings
   DEBIAN_IMAGE: $CI_REGISTRY/world/phosh/phosh-mobile-settings/debian:v0.0.2025-06-16
   COMMON_BUILD_OPTS: --werror -Db_coverage=true
+  PHOSH_ADDITIONAL_EXPERIMENTAL_PKGS: libgmobile-dev
 
 .trixie_vars: &trixie_vars
   variables:
@@ -53,11 +54,13 @@ variables:
 
 .test_step: &test_step
   script:
+    - !reference [.phosh-prepare-apt]
     - dbus-run-session meson test --print-errorlogs -C _build
     - ninja -C _build coverage-html || true
 
 .before: &before
   before_script:
+    - !reference [.phosh-prepare-apt]
     - apt-get -y update
     - apt-get -y build-dep .
 
