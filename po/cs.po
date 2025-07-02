@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-06-26 09:00+0000\n"
-"PO-Revision-Date: 2025-06-26 14:08+0200\n"
+"POT-Creation-Date: 2025-07-01 08:16+0000\n"
+"PO-Revision-Date: 2025-07-02 14:16+0200\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -136,9 +136,13 @@ msgstr "- Spravujte svá mobilní nastavení"
 msgid "translator-credits"
 msgstr "Daniel Rusek <mail@asciiwolf.com>"
 
-#: src/mobile-settings-window.c:85
+#: src/mobile-settings-window.c:109
 msgid "Device"
 msgstr "Zařízení"
+
+#: src/ms-alerts-panel.c:242
+msgid "Could not get list of cell broadcast messages"
+msgstr "Nezdařilo se získat seznam zpráv mobilního vysílání"
 
 #: src/ms-audio-devices.c:178
 msgid "Media Volume"
@@ -163,6 +167,10 @@ msgstr "Hlasitost budíků"
 #: src/ms-audio-devices.c:188
 msgid "Emergency Alerts Volume"
 msgstr "Hlasitost nouzových výstrah"
+
+#: src/ms-cb-message-row.c:98
+msgid "Message of unknown severity"
+msgstr "Zpráva s neznámou závažností"
 
 #: src/ms-feedback-panel.c:212
 msgid "Sound file does not exist"
@@ -387,11 +395,11 @@ msgstr "_Klávesové zkratky"
 msgid "_About Mobile Settings"
 msgstr "O _aplikaci Mobilní nastavení"
 
-#: src/ui/ms-alerts-panel.ui:15
+#: src/ui/ms-alerts-panel.ui:17
 msgid "Unable To Receive Alerts"
 msgstr "Nelze přijímat výstrahy"
 
-#: src/ui/ms-alerts-panel.ui:16
+#: src/ui/ms-alerts-panel.ui:18
 msgid ""
 "Cannot receive Emergency Alerts on this device as no usable cellular modem "
 "is detected."
@@ -399,51 +407,59 @@ msgstr ""
 "Na tomto zařízení nelze přijímat nouzové výstrahy, protože nebyl detekován "
 "žádný použitelný mobilní modem."
 
-#: src/ui/ms-alerts-panel.ui:28
+#: src/ui/ms-alerts-panel.ui:30
 msgid "Emergency and Governmental Alerts"
 msgstr "Nouzové a vládní výstrahy"
 
-#: src/ui/ms-alerts-panel.ui:31
+#: src/ui/ms-alerts-panel.ui:33
 msgid "Extreme Threat Alerts"
 msgstr "Výstrahy extrémních hrozeb"
 
-#: src/ui/ms-alerts-panel.ui:33
+#: src/ui/ms-alerts-panel.ui:35
 msgid "Display alerts for extreme threats to life and safety"
 msgstr "Zobrazovat výstrahy extrémních ohrožení života a bezpečnosti"
 
-#: src/ui/ms-alerts-panel.ui:39
+#: src/ui/ms-alerts-panel.ui:41
 msgid "Severe Threat Alerts"
 msgstr "Výstrahy vážných hrozeb"
 
-#: src/ui/ms-alerts-panel.ui:41
+#: src/ui/ms-alerts-panel.ui:43
 msgid "Display alerts for severe threats to life and safety"
 msgstr "Zobrazovat výstrahy vážných ohrožení života a bezpečnosti"
 
-#: src/ui/ms-alerts-panel.ui:47
+#: src/ui/ms-alerts-panel.ui:49
 msgid "Public Safety Alerts"
 msgstr "Výstrahy veřejné bezpečnosti"
 
-#: src/ui/ms-alerts-panel.ui:49
+#: src/ui/ms-alerts-panel.ui:51
 msgid "Show recommended actions to take in situations with a risk to safety"
 msgstr ""
 "Ukázat doporučená opatření, která je třeba provést v situacích ohrožujících "
 "bezpečnost"
 
-#: src/ui/ms-alerts-panel.ui:55
+#: src/ui/ms-alerts-panel.ui:57
 msgid "Test alerts"
 msgstr "Testovací výstrahy"
 
-#: src/ui/ms-alerts-panel.ui:57
+#: src/ui/ms-alerts-panel.ui:59
 msgid "Show periodic messages to test the alert system"
 msgstr "Zobrazovat pravidelné zprávy pro otestování systému varování"
 
-#: src/ui/ms-alerts-panel.ui:63
+#: src/ui/ms-alerts-panel.ui:65
 msgid "Amber alerts"
 msgstr "Výstrahy Amber"
 
-#: src/ui/ms-alerts-panel.ui:65
+#: src/ui/ms-alerts-panel.ui:67
 msgid "Show messages about child abduction emergencies"
 msgstr "Zobrazovat zprávy o mimořádných událostech týkajících se únosu dítěte"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Historie nouzových a vládních výstrah"
+
+#: src/ui/ms-alerts-panel.ui:81
+msgid "No emergency alerts yet"
+msgstr "Zatím žádné nouzové výstrahy"
 
 #: src/ui/ms-audio-device-row.ui:32
 msgid "Volume"
