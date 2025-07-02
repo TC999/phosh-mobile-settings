@@ -1,7 +1,6 @@
 usr/include/gmobile/*
 usr/include/libcellbroadcast-0.0/*
 usr/lib/*/libgmobile.*
-usr/lib/*/libcellbroadcast*
 usr/lib/*/pkgconfig/gmobile.pc
 usr/lib/*/pkgconfig/libcellbroadcast-0.0.pc
 # Everything below be dropped once

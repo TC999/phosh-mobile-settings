@@ -1,4 +1,5 @@
 usr/bin/phosh-mobile-settings
+usr/lib/*/libcellbroadcast*
 usr/lib/*/phosh-mobile-settings/plugins/libms-plugin-librem5.so
 usr/share/applications/mobi.phosh.MobileSettings.desktop
 usr/share/dbus-1/services/
