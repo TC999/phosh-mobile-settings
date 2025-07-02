@@ -60,6 +60,8 @@ mobile_settings_sources = [
   'ms-osk-panel.h',
   'ms-overview-panel.c',
   'ms-overview-panel.h',
+  'ms-panel.c',
+  'ms-panel.h',
   'ms-panel-switcher.c',
   'ms-panel-switcher.h',
   'ms-plugin-loader.h',

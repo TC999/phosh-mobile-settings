@@ -67,7 +67,7 @@ typedef enum {
 
 
 struct _MsOskPanel {
-  AdwBin            parent;
+  MsPanel           parent;
 
   GSettings        *a11y_settings;
   GtkWidget        *osk_enable_switch;
@@ -102,7 +102,7 @@ struct _MsOskPanel {
   GtkWidget        *scale_in_vertical_orientation;
 };
 
-G_DEFINE_TYPE (MsOskPanel, ms_osk_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE (MsOskPanel, ms_osk_panel, MS_TYPE_PANEL)
 
 
 static void

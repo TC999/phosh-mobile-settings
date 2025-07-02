@@ -78,7 +78,7 @@ typedef struct {
 } MsFbdApplication;
 
 struct _MsFeedbackPanel {
-  AdwBin                     parent;
+  MsPanel                    parent;
 
   GtkListBox                *app_listbox;
   GtkListBox                *sounds_listbox;
@@ -113,7 +113,7 @@ struct _MsFeedbackPanel {
   AdwSwitchRow              *category_switches[NOTIFICATION_CATEGORY_LAST];
 };
 
-G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, MS_TYPE_PANEL)
 
 
 static GtkWidget *

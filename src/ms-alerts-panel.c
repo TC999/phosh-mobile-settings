@@ -44,7 +44,7 @@ const char *const level_names[] = {
 
 
 struct _MsAlertsPanel {
-  AdwBin          parent;
+  MsPanel         parent;
 
   GtkStack       *stack;
 
@@ -65,7 +65,7 @@ struct _MsAlertsPanel {
   AdwToastOverlay     *toast_overlay;
 };
 
-G_DEFINE_TYPE (MsAlertsPanel, ms_alerts_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE (MsAlertsPanel, ms_alerts_panel, MS_TYPE_PANEL)
 
 
 static void

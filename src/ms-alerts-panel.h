@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include <adwaita.h>
+#include "ms-panel.h"
 
 G_BEGIN_DECLS
 
 #define MS_TYPE_ALERTS_PANEL (ms_alerts_panel_get_type ())
 
-G_DECLARE_FINAL_TYPE (MsAlertsPanel, ms_alerts_panel, MS, ALERTS_PANEL, AdwBin)
+G_DECLARE_FINAL_TYPE (MsAlertsPanel, ms_alerts_panel, MS, ALERTS_PANEL, MsPanel)
 
 MsAlertsPanel *ms_alerts_panel_new (void);
 

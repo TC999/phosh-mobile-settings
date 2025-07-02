@@ -31,7 +31,7 @@
 #define BACKGROUND_KEY_PICTURE_OPTIONS "picture-options"
 
 struct _MsOverviewPanel {
-  AdwBin                   parent;
+  MsPanel                  parent;
 
   GSettings               *settings;
   GSettings               *background_settings;
@@ -50,7 +50,7 @@ struct _MsOverviewPanel {
   AdwToast                *toast;
 };
 
-G_DEFINE_TYPE (MsOverviewPanel, ms_overview_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE (MsOverviewPanel, ms_overview_panel, MS_TYPE_PANEL)
 
 
 static void
