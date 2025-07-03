@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-01 08:16+0000\n"
-"PO-Revision-Date: 2025-07-02 09:01+0200\n"
+"POT-Creation-Date: 2025-07-02 20:56+0000\n"
+"PO-Revision-Date: 2025-07-03 13:17+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -138,7 +138,7 @@ msgstr "- Upravljajte nastavitve svojega mobilnika"
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/mobile-settings-window.c:109
+#: src/mobile-settings-window.c:135
 msgid "Device"
 msgstr "Naprava"
 
@@ -320,81 +320,186 @@ msgid "Choose sound file"
 msgstr "Izberite zvočno datoteko"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:157
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Polno"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:160
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Tiho"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:163
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Tiho"
 
-#: src/ms-util.c:279
+#: src/ms-util.c:292
 msgid "Choose Wallpaper"
 msgstr "Izberite sliko ozadja"
 
-#: src/ui/mobile-settings-window.ui:79
+#. Translators: this is a verb.
+#: src/ui/mobile-settings-window.ui:31
+msgid "Search"
+msgstr "Iskanje"
+
+#: src/ui/mobile-settings-window.ui:48
+msgid "Search settings"
+msgstr "Nastavitve iskanja"
+
+#: src/ui/mobile-settings-window.ui:98
 msgid "Welcome"
 msgstr "Uvodna stran"
 
-#: src/ui/mobile-settings-window.ui:85
+#: src/ui/mobile-settings-window.ui:104
 msgid "Welcome to Mobile Settings"
 msgstr "Dobrodošli v mobilnih nastavitvah"
 
-#: src/ui/mobile-settings-window.ui:86
+#: src/ui/mobile-settings-window.ui:105
 msgid "Tweak advanced mobile settings"
 msgstr "Prilagodi napredne mobilne nastavitve"
 
-#: src/ui/mobile-settings-window.ui:94
+#: src/ui/mobile-settings-window.ui:113
 msgid "Top Bar"
 msgstr "Vrhnja vrstica"
 
-#: src/ui/mobile-settings-window.ui:105
+#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
+msgid "Quick Settings"
+msgstr "Hitre nastavitve"
+
+#: src/ui/mobile-settings-window.ui:122
+msgid "Notches"
+msgstr "Zareze"
+
+#: src/ui/mobile-settings-window.ui:133
 msgid "Overview"
 msgstr "Pregled"
 
-#: src/ui/mobile-settings-window.ui:116
+#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Priljubljeno"
+
+#: src/ui/mobile-settings-window.ui:142
+msgid "Filter"
+msgstr "Filter"
+
+#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
+msgid "Wallpaper"
+msgstr "Slika ozadja"
+
+#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
 msgid "Feedback"
 msgstr "Povratne informacije"
 
-#: src/ui/mobile-settings-window.ui:127
+#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:94
+msgid "Sounds"
+msgstr "Zvoki"
+
+#: src/ui/mobile-settings-window.ui:164
+msgid "Wakeup"
+msgstr "Povrnitev iz pripravljenosti"
+
+#: src/ui/mobile-settings-window.ui:165
+msgid "Vibra"
+msgstr "Vibra"
+
+#: src/ui/mobile-settings-window.ui:166
+msgid "Haptic"
+msgstr "Haptično"
+
+#: src/ui/mobile-settings-window.ui:167
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/mobile-settings-window.ui:178
 msgid "Compositor"
 msgstr "Grafični upodobilnik"
 
-#: src/ui/mobile-settings-window.ui:138
+#: src/ui/mobile-settings-window.ui:186
+msgid "Scaling"
+msgstr "Umerjanje"
+
+#: src/ui/mobile-settings-window.ui:197
 msgid "Lockscreen"
 msgstr "Zaklep zaslona"
 
-#: src/ui/mobile-settings-window.ui:149
+#: src/ui/mobile-settings-window.ui:206
+msgid "Shuffle"
+msgstr "Premešaj"
+
+#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
+msgid "Widgets"
+msgstr "Gradniki"
+
+#: src/ui/mobile-settings-window.ui:208
+msgid "Password"
+msgstr "Geslo"
+
+#: src/ui/mobile-settings-window.ui:219
 msgid "Convergence"
 msgstr "Konvergenca"
 
-#: src/ui/mobile-settings-window.ui:160
+#: src/ui/mobile-settings-window.ui:237
 msgid "On Screen Keyboard"
 msgstr "Zaslonska tipkovnica"
 
-#: src/ui/mobile-settings-window.ui:171
+#: src/ui/mobile-settings-window.ui:245
+msgid "Keyboard"
+msgstr "Tipkovnica"
+
+#: src/ui/mobile-settings-window.ui:246
+msgid "Unfold"
+msgstr "Razgrni"
+
+#: src/ui/mobile-settings-window.ui:247
+msgid "OSK"
+msgstr "Zaslonska tipkovnica"
+
+#: src/ui/mobile-settings-window.ui:248
+msgid "Word Completion"
+msgstr "Dokončanje besed"
+
+#: src/ui/mobile-settings-window.ui:259
 msgid "Emergency Alerts"
 msgstr "Opozorila v sili"
 
-#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
+msgid "Emergency"
+msgstr "V sili"
+
+#: src/ui/mobile-settings-window.ui:268
+msgid "Cell Broadcast"
+msgstr "Obveščanje na telefone"
+
+#: src/ui/mobile-settings-window.ui:269
+msgid "Danger"
+msgstr "Nevarnost"
+
+#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Tipala"
 
-#: src/ui/mobile-settings-window.ui:193
+#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "Visok kontrast"
+
+#: src/ui/mobile-settings-window.ui:299
 msgid "Experimental features"
 msgstr "Poskusne funkcionalnosti"
 
-#: src/ui/mobile-settings-window.ui:217
+#: src/ui/mobile-settings-window.ui:308
+msgid "Suspend"
+msgstr "V pripravljenost"
+
+#: src/ui/mobile-settings-window.ui:309
+msgid "Experimental"
+msgstr "Poskusno"
+
+#: src/ui/mobile-settings-window.ui:333
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice‫"
 
-#: src/ui/mobile-settings-window.ui:221
+#: src/ui/mobile-settings-window.ui:337
 msgid "_About Mobile Settings"
 msgstr "_O programu Mobilne nastavitve"
 
@@ -601,10 +706,6 @@ msgstr "Največji odstotek moči haptičnega odziva"
 msgid "Per Application settings"
 msgstr "Nastavitve za aplikacije"
 
-#: src/ui/ms-feedback-panel.ui:94
-msgid "Sounds"
-msgstr "Zvoki"
-
 #: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "Zvok, ki naj bo uporabljen za določene dogodke"
@@ -734,10 +835,6 @@ msgstr "Uporabi sliko ozadja"
 #: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Ali naj prikažete barvito ozadje"
-
-#: src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "Gradniki"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
@@ -898,10 +995,6 @@ msgstr "Pokaže tipkovne bližnjice"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Bližnjice, ki so na voljo v vrstici z bližnjicami"
 
-#: src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "Priljubljeno"
-
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
 msgstr "Organiziraj priljubljene"
@@ -968,10 +1061,6 @@ msgstr "Svetla"
 msgid "Orientation"
 msgstr "Usmerjenost"
 
-#: src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "Visok kontrast"
-
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
 msgstr "Samodejni visok kontrast"
@@ -1012,10 +1101,6 @@ msgstr "Izogibaj se zarezam"
 msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr ""
 "Elementov uporabniškega vmesnika ne postavljaj pod zareze in izrezke zaslona"
-
-#: src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "Hitre nastavitve"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
