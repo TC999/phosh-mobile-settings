@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-setti"
 "ngs/-/issues\n"
-"POT-Creation-Date: 2025-07-01 08:16+0000\n"
-"PO-Revision-Date: 2025-07-01 16:23+0300\n"
+"POT-Creation-Date: 2025-07-02 20:56+0000\n"
+"PO-Revision-Date: 2025-07-03 08:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -138,7 +138,7 @@ msgstr "- Керування вашими мобільними параметр�
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
-#: src/mobile-settings-window.c:109
+#: src/mobile-settings-window.c:135
 msgid "Device"
 msgstr "Пристрій"
 
@@ -319,81 +319,196 @@ msgid "Choose sound file"
 msgstr "Виберіть звуковий файл"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:157
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Повний"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:160
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Тихо"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:163
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Беззвучно"
 
-#: src/ms-util.c:279
+#: src/ms-util.c:292
 msgid "Choose Wallpaper"
 msgstr "Виберіть фонове зображення"
 
-#: src/ui/mobile-settings-window.ui:79
+#. Translators: this is a verb.
+#: src/ui/mobile-settings-window.ui:31
+msgid "Search"
+msgstr "Шукати"
+
+#: src/ui/mobile-settings-window.ui:48
+#| msgid "Feedback Settings"
+msgid "Search settings"
+msgstr "Пошук параметрів"
+
+#: src/ui/mobile-settings-window.ui:98
 msgid "Welcome"
 msgstr "Вітаємо"
 
-#: src/ui/mobile-settings-window.ui:85
+#: src/ui/mobile-settings-window.ui:104
 msgid "Welcome to Mobile Settings"
 msgstr "Вітаємо у «Мобільних параметрах»"
 
-#: src/ui/mobile-settings-window.ui:86
+#: src/ui/mobile-settings-window.ui:105
 msgid "Tweak advanced mobile settings"
 msgstr "Коригування додаткових налаштувань мобільного"
 
-#: src/ui/mobile-settings-window.ui:94
+#: src/ui/mobile-settings-window.ui:113
 msgid "Top Bar"
 msgstr "Верхня панель"
 
-#: src/ui/mobile-settings-window.ui:105
+#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
+msgid "Quick Settings"
+msgstr "Швидкі параметри"
+
+#: src/ui/mobile-settings-window.ui:122
+#| msgid "Avoid notches"
+msgid "Notches"
+msgstr "Рівні"
+
+#: src/ui/mobile-settings-window.ui:133
 msgid "Overview"
 msgstr "Огляд"
 
-#: src/ui/mobile-settings-window.ui:116
+#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Улюблене"
+
+#: src/ui/mobile-settings-window.ui:142
+msgid "Filter"
+msgstr "Фільтр"
+
+#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
+#| msgid "Use wallpaper"
+msgid "Wallpaper"
+msgstr "Фонове зображення"
+
+#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
 msgid "Feedback"
 msgstr "Зворотний зв'язок"
 
-#: src/ui/mobile-settings-window.ui:127
+#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:94
+msgid "Sounds"
+msgstr "Звуки"
+
+#: src/ui/mobile-settings-window.ui:164
+#| msgid "Screen Wakeup"
+msgid "Wakeup"
+msgstr "Пробудження"
+
+#: src/ui/mobile-settings-window.ui:165
+msgid "Vibra"
+msgstr "ВІдбрація"
+
+#: src/ui/mobile-settings-window.ui:166
+msgid "Haptic"
+msgstr "Тактильно"
+
+#: src/ui/mobile-settings-window.ui:167
+msgid "LED"
+msgstr "Індикатор"
+
+#: src/ui/mobile-settings-window.ui:178
 msgid "Compositor"
 msgstr "Засіб композиції"
 
-#: src/ui/mobile-settings-window.ui:138
+#: src/ui/mobile-settings-window.ui:186
+msgid "Scaling"
+msgstr "Масштабування"
+
+#: src/ui/mobile-settings-window.ui:197
 msgid "Lockscreen"
 msgstr "Вікно блокування"
 
-#: src/ui/mobile-settings-window.ui:149
+#: src/ui/mobile-settings-window.ui:206
+#| msgid "Shuffle keypad"
+msgid "Shuffle"
+msgstr "Перемішати"
+
+#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
+msgid "Widgets"
+msgstr "Віджети"
+
+#: src/ui/mobile-settings-window.ui:208
+msgid "Password"
+msgstr "Пароль"
+
+#: src/ui/mobile-settings-window.ui:219
 msgid "Convergence"
 msgstr "Збіжність"
 
-#: src/ui/mobile-settings-window.ui:160
+#: src/ui/mobile-settings-window.ui:237
 msgid "On Screen Keyboard"
 msgstr "Екранна клавіатура"
 
-#: src/ui/mobile-settings-window.ui:171
+#: src/ui/mobile-settings-window.ui:245
+#| msgid "On Screen Keyboard"
+msgid "Keyboard"
+msgstr "Клавіатура"
+
+#: src/ui/mobile-settings-window.ui:246
+msgid "Unfold"
+msgstr "Розгортання"
+
+#: src/ui/mobile-settings-window.ui:247
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/mobile-settings-window.ui:248
+#| msgid "Text Completion"
+msgid "Word Completion"
+msgstr "Завершення слів"
+
+#: src/ui/mobile-settings-window.ui:259
 msgid "Emergency Alerts"
 msgstr "Термінові попередження"
 
-#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
+#| msgid "Emergency Calls"
+msgid "Emergency"
+msgstr "Екстрений виклик"
+
+#: src/ui/mobile-settings-window.ui:268
+msgid "Cell Broadcast"
+msgstr "Стільникова трансляція"
+
+#: src/ui/mobile-settings-window.ui:269
+msgid "Danger"
+msgstr "Небезпека"
+
+#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Датчики"
 
-#: src/ui/mobile-settings-window.ui:193
+#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "Висока контрастність"
+
+#: src/ui/mobile-settings-window.ui:299
 msgid "Experimental features"
 msgstr "Експериментальні можливості"
 
-#: src/ui/mobile-settings-window.ui:217
+#: src/ui/mobile-settings-window.ui:308
+#| msgid "Suspend device"
+msgid "Suspend"
+msgstr "Призупинити"
+
+#: src/ui/mobile-settings-window.ui:309
+#| msgid "Experimental features"
+msgid "Experimental"
+msgstr "Експериментальний"
+
+#: src/ui/mobile-settings-window.ui:333
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/ui/mobile-settings-window.ui:221
+#: src/ui/mobile-settings-window.ui:337
 msgid "_About Mobile Settings"
 msgstr "_Про «Мобільні параметри»"
 
@@ -454,12 +569,10 @@ msgid "Show messages about child abduction emergencies"
 msgstr "Показувати повідомлення щодо критичних ситуацій з викраденням дітей"
 
 #: src/ui/ms-alerts-panel.ui:76
-#| msgid "Emergency and Governmental Alerts"
 msgid "History of Emergency and Governmental Alerts"
 msgstr "Журнал термінових та урядових попереджень"
 
 #: src/ui/ms-alerts-panel.ui:81
-#| msgid "Emergency Alerts"
 msgid "No emergency alerts yet"
 msgstr "Ще немає термінових попереджень"
 
@@ -603,10 +716,6 @@ msgstr "Максимальний відсоток потужності сенс�
 msgid "Per Application settings"
 msgstr "Параметри для окремих програм"
 
-#: src/ui/ms-feedback-panel.ui:94
-msgid "Sounds"
-msgstr "Звуки"
-
 #: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "Звук, яким слід скористатися для певних подій"
@@ -737,10 +846,6 @@ msgstr "Використовувати фонове зображення"
 #: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Визначає, чи слід використовувати кольорове фонове зображення"
-
-#: src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "Віджети"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
@@ -905,10 +1010,6 @@ msgstr "Скорочення"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Скорочення, якими можна скористатися на панелі скорочень"
 
-#: src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "Улюблене"
-
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
 msgstr "Упорядкувати улюблене"
@@ -975,10 +1076,6 @@ msgstr "Світло"
 msgid "Orientation"
 msgstr "Орієнтація"
 
-#: src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "Висока контрастність"
-
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
 msgstr "Автоматична висока контрастність"
@@ -1020,10 +1117,6 @@ msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr ""
 "Не розташовувати елементи інтерфейсу користувача під засічками і показувати "
 "вирізи"
-
-#: src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "Швидкі параметри"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
