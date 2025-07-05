@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-01 08:16+0000\n"
-"PO-Revision-Date: 2025-07-02 14:16+0200\n"
+"POT-Creation-Date: 2025-07-02 20:56+0000\n"
+"PO-Revision-Date: 2025-07-05 14:18+0200\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -136,7 +136,7 @@ msgstr "- Spravujte svá mobilní nastavení"
 msgid "translator-credits"
 msgstr "Daniel Rusek <mail@asciiwolf.com>"
 
-#: src/mobile-settings-window.c:109
+#: src/mobile-settings-window.c:135
 msgid "Device"
 msgstr "Zařízení"
 
@@ -317,81 +317,186 @@ msgid "Choose sound file"
 msgstr "Vyberte zvukový soubor"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:157
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Plné"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:160
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Nízké"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:163
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Tiché"
 
-#: src/ms-util.c:279
+#: src/ms-util.c:292
 msgid "Choose Wallpaper"
 msgstr "Vyberte pozadí"
 
-#: src/ui/mobile-settings-window.ui:79
+#. Translators: this is a verb.
+#: src/ui/mobile-settings-window.ui:31
+msgid "Search"
+msgstr "Hledat"
+
+#: src/ui/mobile-settings-window.ui:48
+msgid "Search settings"
+msgstr "hledat nastavení"
+
+#: src/ui/mobile-settings-window.ui:98
 msgid "Welcome"
 msgstr "Vítejte"
 
-#: src/ui/mobile-settings-window.ui:85
+#: src/ui/mobile-settings-window.ui:104
 msgid "Welcome to Mobile Settings"
 msgstr "Vítejte v mobilním nastavení"
 
-#: src/ui/mobile-settings-window.ui:86
+#: src/ui/mobile-settings-window.ui:105
 msgid "Tweak advanced mobile settings"
 msgstr "Vylaďte pokročilá mobilní nastavení"
 
-#: src/ui/mobile-settings-window.ui:94
+#: src/ui/mobile-settings-window.ui:113
 msgid "Top Bar"
 msgstr "Horní lišta"
 
-#: src/ui/mobile-settings-window.ui:105
+#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
+msgid "Quick Settings"
+msgstr "Rychlá nastavení"
+
+#: src/ui/mobile-settings-window.ui:122
+msgid "Notches"
+msgstr "Vykrojení"
+
+#: src/ui/mobile-settings-window.ui:133
 msgid "Overview"
 msgstr "Přehled"
 
-#: src/ui/mobile-settings-window.ui:116
+#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Oblíbené"
+
+#: src/ui/mobile-settings-window.ui:142
+msgid "Filter"
+msgstr "Filtr"
+
+#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
+msgid "Wallpaper"
+msgstr "Pozadí"
+
+#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
 msgid "Feedback"
 msgstr "Zpětná vazba"
 
-#: src/ui/mobile-settings-window.ui:127
+#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:94
+msgid "Sounds"
+msgstr "Zvuky"
+
+#: src/ui/mobile-settings-window.ui:164
+msgid "Wakeup"
+msgstr "Probuzení"
+
+#: src/ui/mobile-settings-window.ui:165
+msgid "Vibra"
+msgstr "Vibrace"
+
+#: src/ui/mobile-settings-window.ui:166
+msgid "Haptic"
+msgstr "Haptika"
+
+#: src/ui/mobile-settings-window.ui:167
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/mobile-settings-window.ui:178
 msgid "Compositor"
 msgstr "Kompozitor"
 
-#: src/ui/mobile-settings-window.ui:138
+#: src/ui/mobile-settings-window.ui:186
+msgid "Scaling"
+msgstr "Škálování"
+
+#: src/ui/mobile-settings-window.ui:197
 msgid "Lockscreen"
 msgstr "Zamykací obrazovka"
 
-#: src/ui/mobile-settings-window.ui:149
+#: src/ui/mobile-settings-window.ui:206
+msgid "Shuffle"
+msgstr "Zamíchání"
+
+#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
+msgid "Widgets"
+msgstr "Widgety"
+
+#: src/ui/mobile-settings-window.ui:208
+msgid "Password"
+msgstr "Heslo"
+
+#: src/ui/mobile-settings-window.ui:219
 msgid "Convergence"
 msgstr "Konvergence"
 
-#: src/ui/mobile-settings-window.ui:160
+#: src/ui/mobile-settings-window.ui:237
 msgid "On Screen Keyboard"
 msgstr "Klávesnice na obrazovce"
 
-#: src/ui/mobile-settings-window.ui:171
+#: src/ui/mobile-settings-window.ui:245
+msgid "Keyboard"
+msgstr "Klávesnice"
+
+#: src/ui/mobile-settings-window.ui:246
+msgid "Unfold"
+msgstr "Rozvinutí"
+
+#: src/ui/mobile-settings-window.ui:247
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/mobile-settings-window.ui:248
+msgid "Word Completion"
+msgstr "Doplňování slov"
+
+#: src/ui/mobile-settings-window.ui:259
 msgid "Emergency Alerts"
 msgstr "Nouzové výstrahy"
 
-#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
+msgid "Emergency"
+msgstr "Stav nouze"
+
+#: src/ui/mobile-settings-window.ui:268
+msgid "Cell Broadcast"
+msgstr "Mobilní vysílání"
+
+#: src/ui/mobile-settings-window.ui:269
+msgid "Danger"
+msgstr "Nebezpečí"
+
+#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Senzory"
 
-#: src/ui/mobile-settings-window.ui:193
+#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "Vysoký kontrast"
+
+#: src/ui/mobile-settings-window.ui:299
 msgid "Experimental features"
 msgstr "Experimentální funkce"
 
-#: src/ui/mobile-settings-window.ui:217
+#: src/ui/mobile-settings-window.ui:308
+msgid "Suspend"
+msgstr "Uspání"
+
+#: src/ui/mobile-settings-window.ui:309
+msgid "Experimental"
+msgstr "Experimentální"
+
+#: src/ui/mobile-settings-window.ui:333
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
 
-#: src/ui/mobile-settings-window.ui:221
+#: src/ui/mobile-settings-window.ui:337
 msgid "_About Mobile Settings"
 msgstr "O _aplikaci Mobilní nastavení"
 
@@ -601,10 +706,6 @@ msgstr "Maximální procento síly haptické zpětné vazby"
 msgid "Per Application settings"
 msgstr "Nastavení podle aplikace"
 
-#: src/ui/ms-feedback-panel.ui:94
-msgid "Sounds"
-msgstr "Zvuky"
-
 #: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "Zvuk, který se má použít pro určité události"
@@ -736,10 +837,6 @@ msgstr "Použít pozadí"
 #: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Zda zobrazit barevné pozadí"
-
-#: src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "Widgety"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
@@ -899,10 +996,6 @@ msgstr "Klávesové zkratky"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Zkratky dostupné na panelu zkratek"
 
-#: src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "Oblíbené"
-
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
 msgstr "Uspořádejte si oblíbené"
@@ -968,10 +1061,6 @@ msgstr "Světlé"
 msgid "Orientation"
 msgstr "Orientace"
 
-#: src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "Vysoký kontrast"
-
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
 msgstr "Automatický vysoký kontrast"
@@ -1012,10 +1101,6 @@ msgstr "Vyhnout se vykrojení"
 msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr ""
 "Neumisťovat prvky uživatelského rozhraní pod vykrojení a výřezy displeje"
-
-#: src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "Rychlá nastavení"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
