@@ -295,7 +295,7 @@ on_row_moved (MsOskLayoutPrefs *self, MsOskLayoutRow *dest_row, MsOskLayoutRow *
 
 
 static void
-on_row_removed (MsOskLayoutPrefs *self, MsOskLayoutRow *dest_row, MsOskLayoutRow *row)
+on_row_removed (MsOskLayoutPrefs *self, MsOskLayoutRow *row)
 {
   guint idx;
   MsOskLayout *layout;
