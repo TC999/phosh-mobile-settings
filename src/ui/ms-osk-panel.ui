@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="MsOskPanel" parent="AdwBin">
+  <template class="MsOskPanel" parent="MsPanel">
     <child>
       <object class="GtkScrolledWindow">
         <child>
@@ -38,6 +38,14 @@
                     <property name="title" translatable="yes">Ignore hardware keyboard</property>
                     <property name="subtitle" translatable="yes">Whether to show the on screen keyboard when a physical keyboard is present</property>
                     <property name="visible">False</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSwitchRow" id="key_indicator_switch">
+                    <property name="visible">False</property>
+                    <property name="title" translatable="yes">Key indicator popup</property>
+                    <property name="subtitle" translatable="yes">Whether to show a popover indicating the currently pressed key</property>
+                    <signal name="notify::active" handler="on_key_indicator_switch_activate_changed" swapped="true"/>
                   </object>
                 </child>
               </object>

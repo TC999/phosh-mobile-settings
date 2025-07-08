@@ -1,4 +1,5 @@
 subdir('dbus')
+subdir('pmos-tweaks')
 
 mobile_settings_enum_sources = gnome.mkenums_simple(
   'ms-enum-types',
@@ -27,6 +28,8 @@ mobile_settings_sources = [
   'ms-audio-device-row.h',
   'ms-audio-devices.c',
   'ms-audio-devices.h',
+  'ms-cb-message-row.c',
+  'ms-cb-message-row.h',
   'ms-completer-info.c',
   'ms-completer-info.h',
   'ms-compositor-panel.c',
@@ -57,6 +60,8 @@ mobile_settings_sources = [
   'ms-osk-panel.h',
   'ms-overview-panel.c',
   'ms-overview-panel.h',
+  'ms-panel.c',
+  'ms-panel.h',
   'ms-panel-switcher.c',
   'ms-panel-switcher.h',
   'ms-plugin-loader.h',
@@ -83,6 +88,7 @@ mobile_settings_sources = [
 mobile_settings_deps = [
   adwaita_dep,
   libfeedback_dep,
+  libcbd_dep,
   gio_dep,
   gio_unix_dep,
   glib_dep,
@@ -123,6 +129,7 @@ mobile_settings_generated_sources = [
 ms_lib = static_library(
   'ms',
   mobile_settings_sources,
+  pmos_tweaks_sources,
   mobile_settings_generated_sources,
   dependencies: mobile_settings_deps,
   install: false,
@@ -134,7 +141,7 @@ libms_dep = declare_dependency(
   dependencies: mobile_settings_deps,
 )
 
-executable('phosh-mobile-settings', 'main.c', install: true, dependencies: libms_dep)
+pms = executable('phosh-mobile-settings', 'main.c', install: true, dependencies: libms_dep)
 
 
 # Helpers for plugins */

@@ -78,7 +78,7 @@ typedef struct {
 } MsFbdApplication;
 
 struct _MsFeedbackPanel {
-  AdwBin                     parent;
+  MsPanel                    parent;
 
   GtkListBox                *app_listbox;
   GtkListBox                *sounds_listbox;
@@ -113,7 +113,7 @@ struct _MsFeedbackPanel {
   AdwSwitchRow              *category_switches[NOTIFICATION_CATEGORY_LAST];
 };
 
-G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE (MsFeedbackPanel, ms_feedback_panel, MS_TYPE_PANEL)
 
 
 static GtkWidget *
@@ -541,6 +541,7 @@ sync_category_switch (MsFeedbackPanel *self)
 static void
 on_wakeup_screen_categories_key_changed (MsFeedbackPanel *self)
 {
+  g_strfreev (self->notifications_wakeup_categories);
   self->notifications_wakeup_categories = g_settings_get_strv (self->notifications_settings,
                                                      NOTIFICATIONS_WAKEUP_SCREEN_CATEGORIES_KEY);
 
@@ -740,13 +741,14 @@ ms_feedback_panel_dispose (GObject *object)
   MsFeedbackPanel *self = MS_FEEDBACK_PANEL (object);
 
   g_clear_object (&self->sound_cancel);
-
   g_clear_object (&self->sound_context);
+
   g_clear_object (&self->settings);
   g_clear_object (&self->notifications_settings);
   g_strfreev (self->notifications_wakeup_categories);
   g_clear_pointer (&self->known_applications, g_hash_table_unref);
 
+  g_clear_object (&self->audio_devices);
   g_clear_object (&self->mixer_control);
 
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->dispose (object);

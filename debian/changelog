@@ -1,3 +1,140 @@
+phosh-mobile-settings (0.48.0) experimental; urgency=medium
+
+  [ Gotam Gorabh ]
+  * osk-panel: Allow to enable/disable popover osk-feature.
+    Add a switch to enable/disable the key indicator popover.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/74
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+  * Update Romanian translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 30 Jun 2025 08:47:06 +0200
+
+phosh-mobile-settings (0.48~rc1) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * ci: Update image.
+    The repo moved and we want to use a newer image anyway
+  * ci: Include templates directly.
+    This should avoid the 429 errors
+  * ci: Update shared scripts to a7ec897.
+    This makes us catch misformated meson files automatically.
+  * alerts-panel: New panel for Cell Broadcast.
+    This can also be used for other alert systems we want to support in the future like CAP.
+  * ms-alerts-panel: Detect Cell Broadcast service availability.
+    Show the empty state when we cbd doesn't indicate proper support.
+  * osk-panel: Handle deleted binaries.
+    On package upgrade when the old OSK binary is still running the executable has as `(deleted)`
+    suffix, handle that.
+  * osk-panel: Switch to stevia.
+    Follow the OSK rename. We just handle osk-stub as "unknown keyboard" so there's no fallback
+    necessary.
+  * application: Don't leak debug info.
+    It's harmless as the programm quits afterwards but lets make
+    running under ASAN simpler.
+    Fixes: 6187ea1 ("application: Add local option to print debug info")
+  * feedback-panel: Don't leak categories.
+    We need to free the old value
+    Fixes 5a26621 ("feedback-panel: Allow to enable notification categories")
+  * build: Ensure p-m-s gets rebuilt when running the test.
+    Otherwise we might test an outdated binary
+  * tests: Simplify using ASAN.
+    This ensures we get proper backtraces and suppress adwaita and
+    fontconfig caches.
+  * osk-panel: Silence debug message
+  * osk-layout-prefs: Don't print error when operation got cancelled.
+    Otherwise `--list` might print a pointless warning.
+  * data: Add more suppressions.
+    There's more fontconfig things and we also leak the loaded modules.
+  * feedback-panel: Don't leak audio devices
+  * application: Don't leak window
+  * osk-panel: Don't leak content provider
+  * plugin-list-box: Don't leak rows.
+    We're using widgets in the list model which are floating so make
+    sure we deal with non-floating refs everywhere.
+  * osk-panel: Don't leak enabled completer
+  * osk-panel: Don't leak flags.
+    We need to free the container but not the strings
+  * overview-panel: Don't leak app-info.
+    We already have a ref, no need for another one
+  * plugin-row: Don't leak subtitle
+  * tests: Depend on compiled schemas.
+    Otherwise they're not here when we run the tests
+  * data: Suppress leak in libgallium.
+    This is triggered by gdk_gl_context_create_egl_context so use
+    that so we don't need to pull in mesa symbols too (or ignore
+    the whole library)
+  * ci: Add and use p-m-s CI images.
+    We add the dbgsym packges so the ASAN tests can match the symbols.
+  * ci: Add asan test
+
+  [ Stefan Hansson ]
+  * build: Use static library for building executable.
+    This will later be used in some tests.
+  * build: Fix formatting.
+
+  [ Suraj Kumar Mahto ]
+  * feedback-panel: Allow to enable notification categories.
+    This commit adds switches to toggle categories that can wakeup the screen
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/29
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Emin Tufan Çetin ]
+  * Update Turkish translation
+
+  [ Álvaro Burns ]
+  * Update Brazilian Portuguese translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 21 Jun 2025 12:25:37 +0200
+
 phosh-mobile-settings (0.47.0) experimental; urgency=medium
 
   [ Tomi Lähteenmäki ]
