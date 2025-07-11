@@ -2,18 +2,18 @@
 # Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2024.
-# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2025.
 # Álvaro Burns <>, 2025.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-01 13:51+0000\n"
-"PO-Revision-Date: 2025-07-01 14:46-0300\n"
-"Last-Translator: Álvaro Burns <>\n"
-"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
+"POT-Creation-Date: 2025-07-02 20:56+0000\n"
+"PO-Revision-Date: 2025-07-11 10:11-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -141,7 +141,7 @@ msgstr ""
 "Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Juliano de Souza Camargo <julianosc@pm.me>"
 
-#: src/mobile-settings-window.c:109
+#: src/mobile-settings-window.c:135
 msgid "Device"
 msgstr "Dispositivo"
 
@@ -322,81 +322,186 @@ msgid "Choose sound file"
 msgstr "Escolha o arquivo de som"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:157
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Completo"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:160
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Quieto"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:163
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Silencioso"
 
-#: src/ms-util.c:279
+#: src/ms-util.c:292
 msgid "Choose Wallpaper"
 msgstr "Escolha papel de parede"
 
-#: src/ui/mobile-settings-window.ui:79
+#. Translators: this is a verb.
+#: src/ui/mobile-settings-window.ui:31
+msgid "Search"
+msgstr "Pesquisar"
+
+#: src/ui/mobile-settings-window.ui:48
+msgid "Search settings"
+msgstr "Configurações da pesquisa"
+
+#: src/ui/mobile-settings-window.ui:98
 msgid "Welcome"
 msgstr "Boas vindas"
 
-#: src/ui/mobile-settings-window.ui:85
+#: src/ui/mobile-settings-window.ui:104
 msgid "Welcome to Mobile Settings"
 msgstr "Boas-vindas a Configurações Móveis"
 
-#: src/ui/mobile-settings-window.ui:86
+#: src/ui/mobile-settings-window.ui:105
 msgid "Tweak advanced mobile settings"
 msgstr "Ajuste configurações móveis avançadas"
 
-#: src/ui/mobile-settings-window.ui:94
+#: src/ui/mobile-settings-window.ui:113
 msgid "Top Bar"
 msgstr "Barra superior"
 
-#: src/ui/mobile-settings-window.ui:105
+#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
+msgid "Quick Settings"
+msgstr "Configurações rápidas"
+
+#: src/ui/mobile-settings-window.ui:122
+msgid "Notches"
+msgstr "Notches"
+
+#: src/ui/mobile-settings-window.ui:133
 msgid "Overview"
 msgstr "Visão geral"
 
-#: src/ui/mobile-settings-window.ui:116
+#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
+msgid "Favorites"
+msgstr "Favoritos"
+
+#: src/ui/mobile-settings-window.ui:142
+msgid "Filter"
+msgstr "Filtrar"
+
+#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
+msgid "Wallpaper"
+msgstr "Papel de parede"
+
+#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/ui/mobile-settings-window.ui:127
+#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:94
+msgid "Sounds"
+msgstr "Sons"
+
+#: src/ui/mobile-settings-window.ui:164
+msgid "Wakeup"
+msgstr "Acordar"
+
+#: src/ui/mobile-settings-window.ui:165
+msgid "Vibra"
+msgstr "Vibra"
+
+#: src/ui/mobile-settings-window.ui:166
+msgid "Haptic"
+msgstr "Haptic"
+
+#: src/ui/mobile-settings-window.ui:167
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/mobile-settings-window.ui:178
 msgid "Compositor"
 msgstr "Compositor"
 
-#: src/ui/mobile-settings-window.ui:138
+#: src/ui/mobile-settings-window.ui:186
+msgid "Scaling"
+msgstr "Tamanho"
+
+#: src/ui/mobile-settings-window.ui:197
 msgid "Lockscreen"
 msgstr "Tela de bloqueio"
 
-#: src/ui/mobile-settings-window.ui:149
+#: src/ui/mobile-settings-window.ui:206
+msgid "Shuffle"
+msgstr "Aleatório"
+
+#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
+msgid "Widgets"
+msgstr "Widgets"
+
+#: src/ui/mobile-settings-window.ui:208
+msgid "Password"
+msgstr "Senha"
+
+#: src/ui/mobile-settings-window.ui:219
 msgid "Convergence"
 msgstr "Convergência"
 
-#: src/ui/mobile-settings-window.ui:160
+#: src/ui/mobile-settings-window.ui:237
 msgid "On Screen Keyboard"
 msgstr "Teclado virtual"
 
-#: src/ui/mobile-settings-window.ui:171
+#: src/ui/mobile-settings-window.ui:245
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: src/ui/mobile-settings-window.ui:246
+msgid "Unfold"
+msgstr "Desdobrar"
+
+#: src/ui/mobile-settings-window.ui:247
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/mobile-settings-window.ui:248
+msgid "Word Completion"
+msgstr "Autocompletamento de texto"
+
+#: src/ui/mobile-settings-window.ui:259
 msgid "Emergency Alerts"
 msgstr "Alertas de emergência"
 
-#: src/ui/mobile-settings-window.ui:182 src/ui/ms-sensor-panel.ui:28
+#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
+msgid "Emergency"
+msgstr "Emergência"
+
+#: src/ui/mobile-settings-window.ui:268
+msgid "Cell Broadcast"
+msgstr "Transmissão de célula"
+
+#: src/ui/mobile-settings-window.ui:269
+msgid "Danger"
+msgstr "Perigo"
+
+#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
 msgid "Sensors"
 msgstr "Sensores"
 
-#: src/ui/mobile-settings-window.ui:193
+#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
+msgid "High Contrast"
+msgstr "Alto contraste"
+
+#: src/ui/mobile-settings-window.ui:299
 msgid "Experimental features"
 msgstr "Recursos experimentais"
 
-#: src/ui/mobile-settings-window.ui:217
+#: src/ui/mobile-settings-window.ui:308
+msgid "Suspend"
+msgstr "Suspender"
+
+#: src/ui/mobile-settings-window.ui:309
+msgid "Experimental"
+msgstr "Experimental"
+
+#: src/ui/mobile-settings-window.ui:333
 msgid "_Keyboard Shortcuts"
 msgstr "Atalhos de _teclado"
 
-#: src/ui/mobile-settings-window.ui:221
+#: src/ui/mobile-settings-window.ui:337
 msgid "_About Mobile Settings"
 msgstr "_Sobre o Configurações Móveis"
 
@@ -603,10 +708,6 @@ msgstr "Porcentagem máxima de força de vibração"
 msgid "Per Application settings"
 msgstr "Configurações por aplicativo"
 
-#: src/ui/ms-feedback-panel.ui:94
-msgid "Sounds"
-msgstr "Sons"
-
 #: src/ui/ms-feedback-panel.ui:95
 msgid "The sound to use for certain events"
 msgstr "O som a ser usado em determinados eventos"
@@ -737,10 +838,6 @@ msgstr "Usar papel de parede"
 #: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Se deve mostrar papel de parede colorido"
-
-#: src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "Widgets"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
@@ -904,10 +1001,6 @@ msgstr "Atalhos"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Os atalhos disponíveis na barra de atalhos"
 
-#: src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "Favoritos"
-
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
 msgstr "Organiza favoritos"
@@ -974,10 +1067,6 @@ msgstr "Luz"
 msgid "Orientation"
 msgstr "Orientação"
 
-#: src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "Alto contraste"
-
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
 msgstr "Alto contraste automático"
@@ -1019,10 +1108,6 @@ msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr ""
 "Não coloca elementos da interface de usuário abaixo de notches e recortes de "
 "exibição"
-
-#: src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "Configurações rápidas"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
