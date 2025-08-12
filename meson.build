@@ -1,7 +1,7 @@
 project(
   'phosh-mobile-settings',
   'c',
-  version: '0.48.0',
+  version: '0.49.rc1',
   meson_version: '>= 1.0.0',
   default_options: ['warning_level=2', 'werror=false', 'c_std=gnu11'],
 )
@@ -65,7 +65,7 @@ libgvc_dep = libgvc.get_variable('libgvc_dep')
 gtk_dep = dependency('gtk4', version: gtk_ver_cmp)
 gtk_wayland_dep = dependency('gtk4-wayland', version: gtk_ver_cmp)
 json_glib_dep = dependency('json-glib-1.0', version: '>= 1.6.2')
-libfeedback_dep = dependency('libfeedback-0.0', version: '>= 0.7.0')
+libfeedback_dep = dependency('libfeedback-0.0', version: '>= 0.8.0')
 libportal_dep = dependency('libportal', version: '>= 0.9.1')
 libportal_gtk4_dep = dependency('libportal-gtk4', version: '>= 0.9.1')
 phosh_plugins_dep = dependency('phosh-plugins', version: '>= 0.23.0')
@@ -83,7 +83,7 @@ adwaita_dep = dependency(
 libcbd_dep = dependency(
   'libcellbroadcast-0.0',
   version: '>= 0.0.2',
-  fallback: ['libcellbroadcast', 'libcellbroadcast_dep'],
+  fallback: ['libcellbroadcast', 'libcellbroadcast_static_dep'],
   default_options: ['daemon=false', 'introspection=disabled', 'tests=false'],
 )
 

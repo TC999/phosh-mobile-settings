@@ -40,6 +40,22 @@ G_DEFINE_TYPE (MsCbMessageRow, ms_cb_message_row, ADW_TYPE_EXPANDER_ROW)
 
 
 static gboolean
+transform_text (GBinding     *binding,
+                const GValue *from_value,
+                GValue       *to_value,
+                gpointer      unused)
+{
+  const char *text = g_value_get_string (from_value);
+  g_autofree char* stripped = g_strdup (text);
+
+  g_strstrip (stripped);
+
+  g_value_set_string (to_value, stripped);
+  return TRUE;
+}
+
+
+static gboolean
 transform_timestamp_to_subtitle (GBinding     *binding,
                                  const GValue *from_value,
                                  GValue       *to_value,
@@ -107,9 +123,11 @@ set_message (MsCbMessageRow *self, LcbMessage *msg)
 {
   g_debug ("%p", msg);
 
-  g_object_bind_property (msg, "text",
-                          self->description, "label",
-                          G_BINDING_SYNC_CREATE);
+  g_object_bind_property_full (msg, "text",
+                               self->description, "label",
+                               G_BINDING_SYNC_CREATE,
+                               transform_text,
+                               NULL, NULL, NULL);
 
   g_object_bind_property_full (msg, "timestamp",
                                self, "subtitle",

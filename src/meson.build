@@ -50,6 +50,8 @@ mobile_settings_sources = [
   'ms-main.h',
   'ms-osk-add-layout-dialog.c',
   'ms-osk-add-layout-dialog.h',
+  'ms-osk-add-shortcut-dialog.c',
+  'ms-osk-add-shortcut-dialog.h',
   'ms-osk-layout.c',
   'ms-osk-layout.h',
   'ms-osk-layout-prefs.c',

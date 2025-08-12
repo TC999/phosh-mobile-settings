@@ -57,7 +57,6 @@
 
                     <child>
                       <object class="AdwSpinRow" id="haptic_strenth_row">
-                        <property name="visible">0</property>
                         <property name="title" translatable="yes" comments="Translators: Strength of the haptic motor">Haptic strength</property>
                         <property name="subtitle" translatable="yes">Maximum haptic feedback strength percentage</property>
                         <property name="snap-to-ticks">1</property>

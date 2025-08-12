@@ -76,6 +76,7 @@
                             <property name="title" translatable="yes">History of Emergency and Governmental Alerts</property>
                             <child>
                               <object class="GtkListBox" id="message_list">
+                                <property name="selection-mode">none</property>
                                 <child type="placeholder">
                                   <object class="GtkLabel">
                                     <property name="label" translatable="yes">No emergency alerts yet</property >

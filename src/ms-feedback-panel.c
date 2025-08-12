@@ -685,8 +685,6 @@ static void
 ms_feedback_panel_constructed (GObject *object)
 {
   MsFeedbackPanel *self = MS_FEEDBACK_PANEL (object);
-  GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
-  g_autoptr (GSettingsSchema) schema = NULL;
   gboolean found;
 
   G_OBJECT_CLASS (ms_feedback_panel_parent_class)->constructed (object);
@@ -712,26 +710,20 @@ ms_feedback_panel_constructed (GObject *object)
                                    G_SETTINGS_BIND_DEFAULT);
   gtk_widget_set_visible (GTK_WIDGET (self->quick_silent_switch), found);
 
-  /* TODO: Simplify once we can rely on the schema key being present */
-  schema = g_settings_schema_source_lookup (source, FEEDBACKD_SCHEMA_ID, TRUE);
-  if (g_settings_schema_has_key (schema, FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH)) {
-    gtk_widget_set_visible (GTK_WIDGET (self->haptic_strenth_row), TRUE);
+  g_settings_bind_with_mapping (self->settings,
+                                FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH,
+                                G_OBJECT (self->haptic_strenth_adj),
+                                "value",
+                                G_SETTINGS_BIND_DEFAULT,
+                                max_haptic_strength_get,
+                                max_haptic_strength_set,
+                                NULL,
+                                NULL);
 
-    g_settings_bind_with_mapping (self->settings,
-                                  FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH,
-                                  G_OBJECT (self->haptic_strenth_adj),
-                                  "value",
-                                  G_SETTINGS_BIND_DEFAULT,
-                                  max_haptic_strength_get,
-                                  max_haptic_strength_set,
-                                  NULL,
-                                  NULL);
-
-    g_signal_connect (self->settings,
-                      "changed::" FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH,
-                      G_CALLBACK (on_haptic_strength_changed),
-                      NULL);
-  }
+  g_signal_connect (self->settings,
+                    "changed::" FEEDBACKD_KEY_MAX_HAPTIC_STRENGTH,
+                    G_CALLBACK (on_haptic_strength_changed),
+                    NULL);
 }
 
 

@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-02 20:56+0000\n"
-"PO-Revision-Date: 2025-07-05 14:18+0200\n"
+"POT-Creation-Date: 2025-07-27 18:18+0000\n"
+"PO-Revision-Date: 2025-07-28 15:16+0200\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 3.6\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:3
+#: data/mobi.phosh.MobileSettings.desktop.in:2
 #: src/ui/mobile-settings-window.ui:6
 msgid "Mobile Settings"
 msgstr "Mobilní nastavení"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:13
+#: data/mobi.phosh.MobileSettings.desktop.in:12
 msgid "Mobile;Preferences;MobileSettings;"
 msgstr "Mobilní;Předvolby;MobilníNastavení;"
 
@@ -209,7 +209,7 @@ msgstr "kritické"
 msgid "none"
 msgstr "nic"
 
-#: src/ms-feedback-panel.c:814
+#: src/ms-feedback-panel.c:806
 msgid "Mobile Settings Volume Control"
 msgstr "Ovládání hlasitosti mobilního nastavení"
 
@@ -218,15 +218,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "Nastavení pozadí zamykací obrazovky se nezdařilo"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:592
+#: src/ms-osk-panel.c:746
 msgid "Default"
 msgstr "Výchozí"
 
-#: src/ms-osk-panel.c:593
+#: src/ms-osk-panel.c:747
 msgid "The default completer selected by the OSK"
 msgstr "Výchozí nástroj pro doplnění vybraný OSK"
 
-#: src/ms-osk-panel.c:596
+#: src/ms-osk-panel.c:750
 msgid "No information available for this completer"
 msgstr "Pro tento nástroj pro doplnění nejsou k dispozici žádné informace"
 
@@ -388,7 +388,7 @@ msgstr "Pozadí"
 msgid "Feedback"
 msgstr "Zpětná vazba"
 
-#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:94
+#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:93
 msgid "Sounds"
 msgstr "Zvuky"
 
@@ -412,7 +412,7 @@ msgstr "LED"
 msgid "Compositor"
 msgstr "Kompozitor"
 
-#: src/ui/mobile-settings-window.ui:186
+#: src/ui/mobile-settings-window.ui:186 src/ui/ms-osk-panel.ui:101
 msgid "Scaling"
 msgstr "Škálování"
 
@@ -694,43 +694,43 @@ msgstr ""
 "přepne telefon do tichého režimu"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:60
 msgid "Haptic strength"
 msgstr "Haptická síla"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Maximální procento síly haptické zpětné vazby"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Per Application settings"
 msgstr "Nastavení podle aplikace"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:94
 msgid "The sound to use for certain events"
 msgstr "Zvuk, který se má použít pro určité události"
 
-#: src/ui/ms-feedback-panel.ui:103
+#: src/ui/ms-feedback-panel.ui:102
 msgid "Phone Calls"
 msgstr "Telefonní hovory"
 
-#: src/ui/ms-feedback-panel.ui:109
+#: src/ui/ms-feedback-panel.ui:108
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Instant messages"
 msgstr "Rychlé zprávy"
 
-#: src/ui/ms-feedback-panel.ui:126
+#: src/ui/ms-feedback-panel.ui:125
 msgid "Screen Wakeup"
 msgstr "Probuzení obrazovky"
 
-#: src/ui/ms-feedback-panel.ui:129
+#: src/ui/ms-feedback-panel.ui:128
 msgid "Notification urgency that lights up the screen"
 msgstr "Naléhavost upozornění, které rozsvítí obrazovku"
 
-#: src/ui/ms-feedback-panel.ui:147
+#: src/ui/ms-feedback-panel.ui:146
 msgid ""
 "Notification categories that wake up the screen independent from their "
 "urgency"
@@ -738,59 +738,59 @@ msgstr ""
 "Kategorie upozornění, které probouzejí obrazovku nezávisle na jejich "
 "naléhavosti"
 
-#: src/ui/ms-feedback-panel.ui:150
+#: src/ui/ms-feedback-panel.ui:149
 msgid "Calls"
 msgstr "Hovory"
 
-#: src/ui/ms-feedback-panel.ui:151
+#: src/ui/ms-feedback-panel.ui:150
 msgid "A generic audio or video call notification"
 msgstr "Obecné upozornění na zvukový nebo video hovor"
 
-#: src/ui/ms-feedback-panel.ui:157
+#: src/ui/ms-feedback-panel.ui:156
 msgid "Device events"
 msgstr "Události zařízení"
 
-#: src/ui/ms-feedback-panel.ui:158
+#: src/ui/ms-feedback-panel.ui:157
 msgid "A generic device-related notification"
 msgstr "Obecné upozornění týkající se zařízení"
 
-#: src/ui/ms-feedback-panel.ui:164
+#: src/ui/ms-feedback-panel.ui:163
 msgid "Emails"
 msgstr "E-maily"
 
-#: src/ui/ms-feedback-panel.ui:165
+#: src/ui/ms-feedback-panel.ui:164
 msgid "A generic e-mail-related notification"
 msgstr "Obecné upozornění týkající se e-mailu"
 
-#: src/ui/ms-feedback-panel.ui:171
+#: src/ui/ms-feedback-panel.ui:170
 msgid "Instant Messages"
 msgstr "Rychlé zprávy"
 
-#: src/ui/ms-feedback-panel.ui:172
+#: src/ui/ms-feedback-panel.ui:171
 msgid "A generic instant message-related notification"
 msgstr "Obecné upozornění týkající se rychlých zpráv"
 
-#: src/ui/ms-feedback-panel.ui:178
+#: src/ui/ms-feedback-panel.ui:177
 msgid "Network events"
 msgstr "Události sítě"
 
-#: src/ui/ms-feedback-panel.ui:179
+#: src/ui/ms-feedback-panel.ui:178
 msgid "A generic network notification"
 msgstr "Obecné síťové upozornění"
 
-#: src/ui/ms-feedback-panel.ui:185
+#: src/ui/ms-feedback-panel.ui:184
 msgid "Presence changes"
 msgstr "Změny přítomnosti"
 
-#: src/ui/ms-feedback-panel.ui:186
+#: src/ui/ms-feedback-panel.ui:185
 msgid "A generic presence change notification"
 msgstr "Obecné upozornění na změnu přítomnosti"
 
-#: src/ui/ms-feedback-panel.ui:192
+#: src/ui/ms-feedback-panel.ui:191
 msgid "File transfers"
 msgstr "Přenosy souborů"
 
-#: src/ui/ms-feedback-panel.ui:193
+#: src/ui/ms-feedback-panel.ui:192
 msgid "A generic file transfer or download notification"
 msgstr "Obecné upozornění na přenos nebo stažení souboru"
 
@@ -849,16 +849,48 @@ msgid "Add Layout"
 msgstr "Přidat rozložení"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:16
 msgid "Cancel"
 msgstr "Zrušit"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:22
 msgid "Add"
 msgstr "Přidat"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:40
 msgid "Language"
 msgstr "Jazyk"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+msgid "Add Shortcut"
+msgstr "Přidat zkratku"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:43
+msgid "Choose Shortcut Modifiers"
+msgstr "Vyberte modifikátory zkratek"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:128
+msgid "Choose Shortcut Key"
+msgstr "Vyberte klávesovou zkratku"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:139
+msgid "Enter Shortcut Key"
+msgstr "Zadejte novou zkratku"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Zadejte klávesu, například písmena (jako C nebo V) atd."
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:143
+msgid "_Shortcut Key"
+msgstr "Kláve_sová zkratka"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:153
+msgid "Shortcut Preview"
+msgstr "Náhled zkratky"
 
 #: src/ui/ms-osk-layout-prefs.ui:5
 msgctxt "on screen keyboard"
@@ -956,43 +988,60 @@ msgstr "Výška klávesnice v režimu na šířku"
 msgid "When the screen is wider than tall"
 msgstr "Když je šířka obrazovky větší než výška"
 
-#: src/ui/ms-osk-panel.ui:101
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "Udržovat konstantní fyzickou velikost"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Whether to keep the OSK's size constant in portrait mode"
+msgstr "Zda zachovat konstantní velikost OSK v režimu na výšku"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "Přidat prázdné místo pod klávesy"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"Zda se má pod klávesy OSK přidat prázdná oblast pro jejich posunutí nahoru."
+
+#: src/ui/ms-osk-panel.ui:122
 msgid "Text Completion"
 msgstr "Doplňování textu"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:125
 msgid "Opportunistic word completion"
 msgstr "Oportunistické doplňování slov"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Povolit dokončování slov, když aplikace určí, že je to užitečné"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:133
 msgid "Toggle via OSK menu"
 msgstr "Přepínání pomocí nabídky OSK"
 
-#: src/ui/ms-osk-panel.ui:113
+#: src/ui/ms-osk-panel.ui:134
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "Povolit přepínání dokončování slov pomocí tlačítka nabídky klávesnice"
 
-#: src/ui/ms-osk-panel.ui:119
+#: src/ui/ms-osk-panel.ui:140
 msgid "Default Completer"
 msgstr "Výchozí doplňovací nástroj"
 
-#: src/ui/ms-osk-panel.ui:120
+#: src/ui/ms-osk-panel.ui:141
 msgid "The default completion engine to use"
 msgstr "Výchozí nástroj pro doplnění, který se má použít"
 
-#: src/ui/ms-osk-panel.ui:131
+#: src/ui/ms-osk-panel.ui:152
 msgid "Terminal Layout"
 msgstr "Rozložení terminálu"
 
-#: src/ui/ms-osk-panel.ui:135
+#: src/ui/ms-osk-panel.ui:171
 msgid "Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: src/ui/ms-osk-panel.ui:136
+#: src/ui/ms-osk-panel.ui:172
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Zkratky dostupné na panelu zkratek"
 
