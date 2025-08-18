@@ -229,7 +229,7 @@ compare_by_weight (gconstpointer structure_a, gconstpointer structure_b)
   weight_a = structure_a;
   weight_b = structure_b;
 
-  return *weight_a > *weight_b;
+  return *weight_a - *weight_b;
 }
 
 /**

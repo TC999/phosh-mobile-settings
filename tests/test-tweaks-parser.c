@@ -17,7 +17,7 @@ test_sort_settings_by_weight (void)
 {
   /* This code was written with ease of reading in mind rather than optimising for using GList in a
    * performant way. */
-  GHashTable *unsorted_settings = g_hash_table_new (g_str_hash, g_str_equal);
+  GHashTable *unsorted_settings = g_hash_table_new (g_direct_hash, g_direct_equal);
   GList *sorted_settings_result = NULL;
   GList *sorted_settings_good = NULL;
   MsTweaksSetting settings[SETTING_COUNT];

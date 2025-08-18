@@ -129,8 +129,8 @@
                         <property name="title" translatable="yes">Choose Shortcut Key</property>
                         <child>
                           <object class="GtkFlowBox" id="key_flowbox">
-                            <property name="selection-mode">GTK_SELECTION_SINGLE</property>
-                            <signal name="child-activated" handler="on_key_selected"/>
+                            <property name="selection-mode">none</property>
+                            <signal name="child-activated" handler="on_key_activated" swapped="yes"/>
                           </object>
                         </child>
                       </object>

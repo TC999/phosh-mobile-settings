@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-02 20:56+0000\n"
-"PO-Revision-Date: 2025-07-04 13:53+0300\n"
+"POT-Creation-Date: 2025-08-12 07:49+0000\n"
+"PO-Revision-Date: 2025-08-15 14:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -21,13 +21,13 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:3
+#: data/mobi.phosh.MobileSettings.desktop.in:2
 #: src/ui/mobile-settings-window.ui:6
 msgid "Mobile Settings"
 msgstr "הגדרות הנייד"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:13
+#: data/mobi.phosh.MobileSettings.desktop.in:12
 msgid "Mobile;Preferences;MobileSettings;"
 msgstr "נייד;מובייל;סלולרי;מכשיר;העדפות;הגדרות;הגדרות לנייד;"
 
@@ -172,7 +172,7 @@ msgstr "עוצמת שמע לשעון מעורר"
 msgid "Emergency Alerts Volume"
 msgstr "עוצמת שמע לשיחות חירום"
 
-#: src/ms-cb-message-row.c:98
+#: src/ms-cb-message-row.c:114
 msgid "Message of unknown severity"
 msgstr "הודעה בדרגת חומרה לא ידועה"
 
@@ -213,7 +213,7 @@ msgstr "קיצוני"
 msgid "none"
 msgstr "ללא"
 
-#: src/ms-feedback-panel.c:814
+#: src/ms-feedback-panel.c:806
 msgid "Mobile Settings Volume Control"
 msgstr "בקרת עוצמת שמע להגדרות הנייד"
 
@@ -222,15 +222,15 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "הגדרת רקע למסך הנעילה נכשלה"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:592
+#: src/ms-osk-panel.c:746
 msgid "Default"
 msgstr "ברירת מחדל"
 
-#: src/ms-osk-panel.c:593
+#: src/ms-osk-panel.c:747
 msgid "The default completer selected by the OSK"
 msgstr "משלים ברירת המחדל שנבחר על ידי המקלדת על גבי המסך"
 
-#: src/ms-osk-panel.c:596
+#: src/ms-osk-panel.c:750
 msgid "No information available for this completer"
 msgstr "אין מידע זמין על המשלים הזה"
 
@@ -392,7 +392,7 @@ msgstr "תמונת רקע"
 msgid "Feedback"
 msgstr "משוב"
 
-#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:94
+#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:93
 msgid "Sounds"
 msgstr "צלילים"
 
@@ -416,7 +416,7 @@ msgstr "נורית"
 msgid "Compositor"
 msgstr "ניהול חלונאי"
 
-#: src/ui/mobile-settings-window.ui:186
+#: src/ui/mobile-settings-window.ui:186 src/ui/ms-osk-panel.ui:101
 msgid "Scaling"
 msgstr "קנה־מידה"
 
@@ -562,7 +562,7 @@ msgstr "הצגת הודעות על מקרי חירום של חטיפת ילדי�
 msgid "History of Emergency and Governmental Alerts"
 msgstr "היסטוריית התראות ממשלתיות וחירום"
 
-#: src/ui/ms-alerts-panel.ui:81
+#: src/ui/ms-alerts-panel.ui:82
 msgid "No emergency alerts yet"
 msgstr "אין התראות חירום עדיין"
 
@@ -692,101 +692,101 @@ msgstr ""
 "בשיחות נכנסות"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:60
 msgid "Haptic strength"
 msgstr "עצמת רטט"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Maximum haptic feedback strength percentage"
 msgstr "עצמת רטט מרבית באחוזים"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:80
 msgid "Per Application settings"
 msgstr "הגדרות ברמת יישומון"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:94
 msgid "The sound to use for certain events"
 msgstr "הצלילים שיודיעו על אירועים מסוימים"
 
-#: src/ui/ms-feedback-panel.ui:103
+#: src/ui/ms-feedback-panel.ui:102
 msgid "Phone Calls"
 msgstr "שיחות טלפון"
 
-#: src/ui/ms-feedback-panel.ui:109
+#: src/ui/ms-feedback-panel.ui:108
 msgid "SMS"
 msgstr "מסרון"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Instant messages"
 msgstr "הודעות מיידיות"
 
-#: src/ui/ms-feedback-panel.ui:126
+#: src/ui/ms-feedback-panel.ui:125
 msgid "Screen Wakeup"
 msgstr "התעוררות המסך"
 
-#: src/ui/ms-feedback-panel.ui:129
+#: src/ui/ms-feedback-panel.ui:128
 msgid "Notification urgency that lights up the screen"
 msgstr "דחיפות התראות שמפעילה את המסך"
 
-#: src/ui/ms-feedback-panel.ui:147
+#: src/ui/ms-feedback-panel.ui:146
 msgid ""
 "Notification categories that wake up the screen independent from their "
 "urgency"
 msgstr "קטגוריות התראות שמעירות את המסך ללא תלות בדרגת הדחיפות שלהן"
 
-#: src/ui/ms-feedback-panel.ui:150
+#: src/ui/ms-feedback-panel.ui:149
 msgid "Calls"
 msgstr "שיחות"
 
-#: src/ui/ms-feedback-panel.ui:151
+#: src/ui/ms-feedback-panel.ui:150
 msgid "A generic audio or video call notification"
 msgstr "התראת שיחת שמע או וידאו כללית"
 
-#: src/ui/ms-feedback-panel.ui:157
+#: src/ui/ms-feedback-panel.ui:156
 msgid "Device events"
 msgstr "אירועי מכשיר"
 
-#: src/ui/ms-feedback-panel.ui:158
+#: src/ui/ms-feedback-panel.ui:157
 msgid "A generic device-related notification"
 msgstr "התראה כללית שקשורה במכשיר"
 
-#: src/ui/ms-feedback-panel.ui:164
+#: src/ui/ms-feedback-panel.ui:163
 msgid "Emails"
 msgstr "הודעות דוא״ל"
 
-#: src/ui/ms-feedback-panel.ui:165
+#: src/ui/ms-feedback-panel.ui:164
 msgid "A generic e-mail-related notification"
 msgstr "התראה כללית שקשורה בדוא״ל"
 
-#: src/ui/ms-feedback-panel.ui:171
+#: src/ui/ms-feedback-panel.ui:170
 msgid "Instant Messages"
 msgstr "הודעות מיידיות"
 
-#: src/ui/ms-feedback-panel.ui:172
+#: src/ui/ms-feedback-panel.ui:171
 msgid "A generic instant message-related notification"
 msgstr "התראה כללית שקשורה בהודעות מיידיות"
 
-#: src/ui/ms-feedback-panel.ui:178
+#: src/ui/ms-feedback-panel.ui:177
 msgid "Network events"
 msgstr "אירועי רשת"
 
-#: src/ui/ms-feedback-panel.ui:179
+#: src/ui/ms-feedback-panel.ui:178
 msgid "A generic network notification"
 msgstr "התראת רשת כללית"
 
-#: src/ui/ms-feedback-panel.ui:185
+#: src/ui/ms-feedback-panel.ui:184
 msgid "Presence changes"
 msgstr "שינויי נוכחות"
 
-#: src/ui/ms-feedback-panel.ui:186
+#: src/ui/ms-feedback-panel.ui:185
 msgid "A generic presence change notification"
 msgstr "התראת שינוי נוכחות כללית"
 
-#: src/ui/ms-feedback-panel.ui:192
+#: src/ui/ms-feedback-panel.ui:191
 msgid "File transfers"
 msgstr "העברות קבצים"
 
-#: src/ui/ms-feedback-panel.ui:193
+#: src/ui/ms-feedback-panel.ui:192
 msgid "A generic file transfer or download notification"
 msgstr "התראת העברת קבצים או הורדה כללית"
 
@@ -845,16 +845,48 @@ msgid "Add Layout"
 msgstr "הוספת פריסה"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
 msgid "Cancel"
 msgstr "ביטול"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
 msgid "Add"
 msgstr "הוספה"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:40
 msgid "Language"
 msgstr "שפה"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+msgid "Add Shortcut"
+msgstr "הוספת מקשי קיצור"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "בחירת מקשי החלפה לקיצור"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "בחירת מקש קיצור"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "נא למלא צירוף מקשי קיצור"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "נא להקליד על מקש כגון אותיות (למשל ב או ה), וכו׳."
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "מקש _קיצור"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:154
+msgid "Shortcut Preview"
+msgstr "תצוגה מקדימה של קיצור"
 
 #: src/ui/ms-osk-layout-prefs.ui:5
 msgctxt "on screen keyboard"
@@ -948,43 +980,60 @@ msgstr "גובה המקלדת במצב לרוחב"
 msgid "When the screen is wider than tall"
 msgstr "כאשר המסך יותר רחב מארוך"
 
-#: src/ui/ms-osk-panel.ui:101
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "לשמור על קבוע הגודל הפיזי"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Whether to keep the OSK's size constant in portrait mode"
+msgstr "האם לשמור על קבוע גודל המקלדת על המסך במצב אנכי"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "הוספת רווח ריק מתחת למקשים"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"האם להוסיף אזור ריק מתחת למקשי המקלדת על גבי המסך כדי להסיט אותו למעלה."
+
+#: src/ui/ms-osk-panel.ui:122
 msgid "Text Completion"
 msgstr "השלמת טקסט"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:125
 msgid "Opportunistic word completion"
 msgstr "השלמת מילים שאפתנית"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "הפעלת השלמת מילים כשהיישומון מציין שזה שימושי"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:133
 msgid "Toggle via OSK menu"
 msgstr "החלפת מצב דרך תפריט מקלדת מסך"
 
-#: src/ui/ms-osk-panel.ui:113
+#: src/ui/ms-osk-panel.ui:134
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "לאפשר החלפת מצב השלמת מילים דרך כפתור התפריט של המקלדת"
 
-#: src/ui/ms-osk-panel.ui:119
+#: src/ui/ms-osk-panel.ui:140
 msgid "Default Completer"
 msgstr "משלים ברירת מחדל"
 
-#: src/ui/ms-osk-panel.ui:120
+#: src/ui/ms-osk-panel.ui:141
 msgid "The default completion engine to use"
 msgstr "מנוע ההשלמה לשימוש כברירת מחדל"
 
-#: src/ui/ms-osk-panel.ui:131
+#: src/ui/ms-osk-panel.ui:152
 msgid "Terminal Layout"
 msgstr "פריסת מסוף"
 
-#: src/ui/ms-osk-panel.ui:135
+#: src/ui/ms-osk-panel.ui:171
 msgid "Shortcuts"
 msgstr "קיצורים"
 
-#: src/ui/ms-osk-panel.ui:136
+#: src/ui/ms-osk-panel.ui:172
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "הקיצורים הזמינים מסרגל הקיצורים"
 

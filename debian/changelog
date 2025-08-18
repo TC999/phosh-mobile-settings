@@ -1,3 +1,46 @@
+phosh-mobile-settings (0.49.0) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * build: Link statically against libcellbroadcast subproject.
+    Otherwise installing in parallel with cellbroadcastd
+    or the shared lib becomes cumbersome. This only affects
+    the subproject build.
+  * osk-add-shortcut-dialog: Drop unused modifier enum
+  * osk-add-shortcut-dialog: Don't leak string
+  * osk-add-shortcut-dialog: Don't mark allocated string as const
+  * osk-add-shortcut-dialog: Don't select clicked items.
+    We then don't have to unselect them.
+  * osk-add-shortcut-dialog: Simplify activated signal.
+    Selection is something different so rename it and also use
+    a swapped signal as we do with other callbacks
+  * osk-add-shortcut-dialog: Be more careful when choosing a shortcut.
+    When the user clicks on a shortcut in the "choose shortcut" field
+    preserve the current modifiers and replace any non-modifiers with
+    the clicked one. This avoids "invalid modifiers" on every 2nd click.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/78
+  * osk-add-shortcut-dialog: Properly extract modifiers.
+    When toggling modifiers properly extract the current ones.
+    The current code would result in "invalid modifier" if a
+    non-modifier is already selected.
+  * osk-add-shortcut-dialog: Use update_shortcut
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Stefan Hansson ]
+  * pmos-tweaks: Improve compare_by_weight ()
+    Previously, it would report that A and B were equal if B was bigger than
+    A. With this, all three cases are handled properly.
+  * tests: Fix hash and equal functions in test_sort_settings_by_weight ()
+    This hash table only contains pointers, not strings. Potentially, this
+    could result in more hash collisions and invalid equality. Fix it by
+    using the right types for pointers.
+    Tested on a real s390x machine and confirmed to fix the failure in the
+    tweaks-parser unit test.
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/79
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 15 Aug 2025 10:17:57 +0200
+
 phosh-mobile-settings (0.49~rc1) experimental; urgency=medium
 
   [ Stefan Hansson ]
