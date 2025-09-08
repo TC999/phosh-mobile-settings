@@ -39,6 +39,7 @@ variables:
   FDO_UPSTREAM_REPO: World/Phosh/phosh-mobile-settings
   DEBIAN_IMAGE: $CI_REGISTRY/world/phosh/phosh-mobile-settings/debian:v0.0.2025-06-16
   COMMON_BUILD_OPTS: --werror -Db_coverage=true
+  GCHECK_DIRS: src tests plugins
   PHOSH_ADDITIONAL_EXPERIMENTAL_PKGS: libgmobile-dev phoc
 
 .trixie_vars: &trixie_vars
@@ -133,6 +134,18 @@ format-check:
   stage: style-checks
   extends: .phosh-format-check
   allow_failure: true
+
+check-g-style:
+  stage: style-checks
+  allow_failure: true
+  script:
+    - ./.gitlab-ci/g-style ${GCHECK_DIRS}
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        paths:
+          - "**/*.c"
+          - "**/*.h"
 
 check-meson:
   stage: style-checks

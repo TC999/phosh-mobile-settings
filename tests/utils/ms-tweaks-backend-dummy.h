@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "pmos-tweaks/ms-tweaks-backend-interface.h"
+#include "conf-tweaks/ms-tweaks-backend-interface.h"
 
 G_BEGIN_DECLS
 

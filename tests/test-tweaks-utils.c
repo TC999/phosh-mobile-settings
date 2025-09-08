@@ -8,14 +8,14 @@
 
 #define G_LOG_DOMAIN "test-tweaks-utils"
 
-#include "pmos-tweaks/ms-tweaks-utils.h"
+#include "conf-tweaks/ms-tweaks-utils.h"
 
 
 #define TEST_WARNING_MESSAGE "scary warning: "
 #define TEST_WARNING_MESSAGE_FMT TEST_WARNING_MESSAGE "%s"
 #define TEST_WARNING_STRING "boooooo!!"
 #define TEST_SETTING_NAME "Pageus"
-#define TEST_FULL_WARNING_MESSAGE "[Setting \"" TEST_SETTING_NAME "\"] " TEST_WARNING_MESSAGE \
+#define TEST_FULL_WARNING_MESSAGE "[Setting '" TEST_SETTING_NAME "'] " TEST_WARNING_MESSAGE \
                                   TEST_WARNING_STRING
 
 

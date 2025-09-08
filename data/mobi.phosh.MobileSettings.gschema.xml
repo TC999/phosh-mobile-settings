@@ -10,5 +10,17 @@
         instead.
       </description>
     </key>
+    <key name="enable-conf-tweaks" type="b">
+      <default>false</default>
+      <summary>Whether to parse and display Configurable Tweaks</summary>
+      <description>
+        Controls whether support for Configurable Tweaks is enabled or not.
+        If enabled, the directory specified by the tweaks-data-dir build
+        option will be searched for YAML files which then will be parsed
+        and if successful any additional settings from those files will be
+        added to the application. See src/conf-tweaks/README.md for more
+        documentation.
+      </description>
+    </key>
   </schema>
 </schemalist>

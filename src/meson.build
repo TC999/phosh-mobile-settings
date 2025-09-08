@@ -1,5 +1,5 @@
 subdir('dbus')
-subdir('pmos-tweaks')
+subdir('conf-tweaks')
 
 mobile_settings_enum_sources = gnome.mkenums_simple(
   'ms-enum-types',
@@ -107,6 +107,7 @@ mobile_settings_deps = [
   phosh_plugins_dep,
   phosh_settings_dep,
   wayland_client_dep,
+  yaml_dep,
   cc.find_library('m', required: false),
 ]
 
@@ -131,7 +132,7 @@ mobile_settings_generated_sources = [
 ms_lib = static_library(
   'ms',
   mobile_settings_sources,
-  pmos_tweaks_sources,
+  conf_tweaks_sources,
   mobile_settings_generated_sources,
   dependencies: mobile_settings_deps,
   install: false,

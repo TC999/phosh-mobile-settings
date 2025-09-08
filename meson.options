@@ -1,0 +1,3 @@
+option('tweaks-data-dir',
+       type: 'string', value: '/usr/share/postmarketos-tweaks',
+       description: 'Path at which Configurable Tweaks YAML files will be searched for')

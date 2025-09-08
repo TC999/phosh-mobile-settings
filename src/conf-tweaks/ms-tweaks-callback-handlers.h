@@ -13,17 +13,17 @@
 
 
 /**
- * MsTweaksPageBuilderOpenFilePickerMetadata:
+ * MsTweaksPreferencesPageFilePickerMeta:
  *
  * Yes, the name is ridiculously long. Improvements welcome.
  *
- * Used by file_widget_open_file_picker () in ms-tweaks-page-builder.c, but has to be here in a
+ * Used by file_widget_open_file_picker () in ms-tweaks-preferences-page.c, but has to be here in a
  * different header to avoid circular imports when also used in backends.
  */
 typedef struct {
   MsTweaksBackend *backend_state;
   GtkWidget *file_picker_label;
-} MsTweaksPageBuilderOpenFilePickerMetadata;
+} MsTweaksPreferencesPageFilePickerMeta;
 
 
 void ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow    *switch_row,

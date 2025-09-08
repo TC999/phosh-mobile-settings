@@ -2,7 +2,7 @@ project(
   'phosh-mobile-settings',
   'c',
   version: '0.49.0',
-  meson_version: '>= 1.0.0',
+  meson_version: '>= 1.7.0',
   default_options: ['warning_level=2', 'werror=false', 'c_std=gnu11'],
 )
 
@@ -72,6 +72,7 @@ phosh_plugins_dep = dependency('phosh-plugins', version: '>= 0.23.0')
 phosh_settings_dep = dependency('phosh-settings', version: '>= 0.40.0')
 wayland_client_dep = dependency('wayland-client', version: '>=1.14')
 wayland_protos_dep = dependency('wayland-protocols', version: '>=1.12')
+yaml_dep = dependency('yaml-0.1')
 
 adwaita_dep = dependency(
   'libadwaita-1',
@@ -149,6 +150,7 @@ add_project_arguments(
     '-DADW_VERSION_MIN_REQUIRED=@0@'.format(adw_ver_str),
     '-DADW_VERSION_MAX_ALLOWED=@0@'.format(adw_ver_str),
     '-DLIBFEEDBACK_USE_UNSTABLE_API',
+    '-DTWEAKS_DATA_DIR="@0@"'.format(get_option('tweaks-data-dir')),
   ],
   language: 'c',
 )

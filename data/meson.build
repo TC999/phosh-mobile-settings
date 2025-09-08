@@ -34,7 +34,7 @@ configure_file(
 )
 
 schemas = ['mobi.phosh.MobileSettings.gschema.xml']
-compiled = gnome.compile_schemas(build_by_default: true)
+compiled = gnome.compile_schemas(build_by_default: true, depend_files: schemas)
 
 compile_schemas = find_program('glib-compile-schemas', required: false)
 if compile_schemas.found()

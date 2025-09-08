@@ -54,6 +54,19 @@ typedef enum {
   MS_TWEAKS_TYPE_NUMBER,
 } MsTweaksWidgetType;
 
+enum {
+  MS_TWEAKS_PARSER_ERROR_EMPTY_PAGE_DECLARATION,
+  MS_TWEAKS_PARSER_ERROR_EMPTY_SECTION_DECLARATION,
+  MS_TWEAKS_PARSER_ERROR_EMPTY_SETTING_DECLARATION,
+  MS_TWEAKS_PARSER_ERROR_FAILURE,
+  MS_TWEAKS_PARSER_ERROR_INVALID_BOOLEAN_VALUE_IN_READONLY_PROPERTY,
+  MS_TWEAKS_PARSER_ERROR_INVALID_BOOLEAN_VALUE_IN_SOURCE_EXT_PROPERTY,
+  MS_TWEAKS_PARSER_ERROR_UNEXPECTED_EVENT_IN_STATE,
+  MS_TWEAKS_PARSER_ERROR_UNEXPECTED_SCALAR_IN_PAGE,
+  MS_TWEAKS_PARSER_ERROR_UNEXPECTED_SCALAR_IN_SECTION,
+  MS_TWEAKS_PARSER_ERROR_UNEXPECTED_SCALAR_IN_SETTING,
+};
+
 G_BEGIN_DECLS
 
 #define MS_TYPE_TWEAKS_SETTING (ms_tweaks_setting_get_type ())
@@ -98,9 +111,9 @@ GType ms_tweaks_setting_get_type (void);
 GType ms_tweaks_section_get_type (void);
 GType ms_tweaks_page_get_type (void);
 
-MsTweaksSetting *ms_tweaks_setting_copy (MsTweaksSetting *setting);
-MsTweaksSection *ms_tweaks_section_copy (MsTweaksSection *section);
-MsTweaksPage *ms_tweaks_page_copy (MsTweaksPage *page);
+MsTweaksSetting *ms_tweaks_setting_copy (const MsTweaksSetting *setting);
+MsTweaksSection *ms_tweaks_section_copy (const MsTweaksSection *section);
+MsTweaksPage *ms_tweaks_page_copy (const MsTweaksPage *page);
 
 void ms_tweaks_setting_free (MsTweaksSetting *setting);
 void ms_tweaks_section_free (MsTweaksSection *section);
@@ -109,8 +122,14 @@ void ms_tweaks_page_free (MsTweaksPage *page);
 #define MS_TYPE_TWEAKS_PARSER ms_tweaks_parser_get_type ()
 G_DECLARE_FINAL_TYPE (MsTweaksParser, ms_tweaks_parser, MS, TWEAKS_PARSER, GObject)
 
+GQuark ms_tweaks_parser_error_quark (void);
+#define MS_TWEAKS_PARSER_ERROR ms_tweaks_parser_error_quark ()
+
+const char *pretty_format_backend_identifier (const MsTweaksSettingBackend backend_identifier);
+
 MsTweaksParser *ms_tweaks_parser_new (void);
 
+void ms_tweaks_parser_parse_definition_files (MsTweaksParser *self, const char *tweaks_yaml_path);
 GHashTable *ms_tweaks_parser_get_page_table (MsTweaksParser *self);
 
 GList *ms_tweaks_parser_sort_by_weight (GHashTable *hash_table);

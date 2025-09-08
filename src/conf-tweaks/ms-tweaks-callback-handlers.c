@@ -122,7 +122,7 @@ ms_tweaks_callback_handlers_type_color (GtkColorDialogButton *widget,
 void
 ms_tweaks_callback_handlers_type_file (GObject *source_object, GAsyncResult *result, gpointer data)
 {
-  MsTweaksPageBuilderOpenFilePickerMetadata *metadata = (MsTweaksPageBuilderOpenFilePickerMetadata *) data;
+  MsTweaksPreferencesPageFilePickerMeta *metadata = (MsTweaksPreferencesPageFilePickerMeta *) data;
   g_autoptr (GtkFileDialog) file_picker_dialog = NULL;
   const MsTweaksSetting *setting_data = NULL;
   GValue path_to_picked_file = G_VALUE_INIT;

@@ -6,7 +6,7 @@
  * Author: Stefan Hansson <newbyte@postmarketos.org>
  */
 
-#include "pmos-tweaks/ms-tweaks-mappings.h"
+#include "conf-tweaks/ms-tweaks-mappings.h"
 
 
 typedef struct {

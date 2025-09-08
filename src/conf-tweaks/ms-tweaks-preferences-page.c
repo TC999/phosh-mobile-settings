@@ -6,10 +6,11 @@
  * Author: Stefan Hansson <newbyte@postmarketos.org>
  */
 
-#define G_LOG_DOMAIN "ms-tweaks-page-builder"
+#define G_LOG_DOMAIN "ms-tweaks-preferences-page"
 
-#include "ms-tweaks-page-builder.h"
+#include "ms-tweaks-preferences-page.h"
 
+#include "backends/ms-tweaks-backend-gsettings.h"
 #include "ms-tweaks-backend-interface.h"
 #include "ms-tweaks-callback-handlers.h"
 #include "ms-tweaks-mappings.h"
@@ -25,7 +26,9 @@ static GParamSpec *props[PROP_LAST_PROP];
 
 
 struct _MsTweaksPreferencesPage {
-  AdwPreferencesPage parent_instance;
+  MsPanel parent_instance;
+
+  GtkWidget *page;
 
   const MsTweaksPage *data;
 };
@@ -43,9 +46,11 @@ static GtkStringList *
 get_keys_from_hashtable (GHashTable *hashtable)
 {
   g_autoptr (GPtrArray) hash_table_keys_view = g_hash_table_get_keys_as_ptr_array (hashtable);
-  GtkStringList *hash_table_key_list = gtk_string_list_new ((const char **) hash_table_keys_view->pdata);
 
-  return hash_table_key_list;
+  /* We need to NULL-terminate the array to use the gtk_string_list_new () constructor. */
+  g_ptr_array_add (hash_table_keys_view, NULL);
+
+  return gtk_string_list_new ((const char **) hash_table_keys_view->pdata);
 }
 
 
@@ -160,9 +165,9 @@ setting_data_to_color_widget (const MsTweaksSetting *setting_data,
 
 
 static void
-file_widget_open_file_picker (GtkButton                                 *widget,
-                              GdkEvent                                  *evnt,
-                              MsTweaksPageBuilderOpenFilePickerMetadata *metadata)
+file_widget_open_file_picker (GtkButton                             *widget,
+                              GdkEvent                              *evnt,
+                              MsTweaksPreferencesPageFilePickerMeta *metadata)
 {
   GtkFileDialog *file_picker_dialog = gtk_file_dialog_new ();
 
@@ -178,9 +183,9 @@ static const char *restrict none_selected_label = "(None selected)";
 
 
 static void
-file_widget_unset (GtkButton                                 *widget,
-                   GdkEvent                                  *evnt,
-                   MsTweaksPageBuilderOpenFilePickerMetadata *metadata)
+file_widget_unset (GtkButton                             *widget,
+                   GdkEvent                              *evnt,
+                   MsTweaksPreferencesPageFilePickerMeta *metadata)
 {
   MsTweaksBackendInterface *backend = MS_TWEAKS_BACKEND_GET_IFACE (metadata->backend_state);
 
@@ -193,10 +198,10 @@ file_widget_unset (GtkButton                                 *widget,
 
 
 static GtkWidget *
-setting_data_to_file_widget (const MsTweaksSetting                     *setting_data,
-                             MsTweaksBackend                           *backend_state,
-                             const GValue                              *widget_value,
-                             MsTweaksPageBuilderOpenFilePickerMetadata *metadata)
+setting_data_to_file_widget (const MsTweaksSetting                 *setting_data,
+                             MsTweaksBackend                       *backend_state,
+                             const GValue                          *widget_value,
+                             MsTweaksPreferencesPageFilePickerMeta *metadata)
 {
   GtkWidget *restrict reset_selection_button = gtk_button_new ();
   GtkWidget *restrict file_picker_row = adw_action_row_new ();
@@ -221,7 +226,12 @@ setting_data_to_file_widget (const MsTweaksSetting                     *setting_
 
   if (widget_value) {
     const char *file_path = g_value_get_string (widget_value);
-    g_autofree char *filename = g_path_get_basename (file_path);
+    g_autofree char *filename = NULL;
+
+    /* The GValue received from _get () should never contain NULL. */
+    g_assert (file_path);
+
+    filename = g_path_get_basename (file_path);
 
     gtk_label_set_text (GTK_LABEL (metadata->file_picker_label), filename);
   }
@@ -252,14 +262,14 @@ setting_data_to_font_widget (const MsTweaksSetting *setting_data,
   g_assert (MS_IS_TWEAKS_BACKEND (backend_state));
 
   set_title_and_subtitle (action_row, setting_data);
+  gtk_widget_set_valign (font_dialog_button, GTK_ALIGN_CENTER);
   adw_action_row_add_suffix (ADW_ACTION_ROW (action_row), font_dialog_button);
 
   if (widget_value) {
     const char *font_name = g_value_get_string (widget_value);
-    PangoFontDescription *font_desc = pango_font_description_from_string (font_name);
+    g_autoptr (PangoFontDescription) font_desc = pango_font_description_from_string (font_name);
 
     gtk_font_dialog_button_set_font_desc (GTK_FONT_DIALOG_BUTTON (font_dialog_button), font_desc);
-    pango_font_description_free (font_desc);
   }
 
   g_signal_connect (font_dialog_button,
@@ -300,12 +310,20 @@ setting_data_to_number_widget (const MsTweaksSetting *setting_data,
                                MsTweaksBackend       *backend_state,
                                const GValue          *widget_value)
 {
-  GtkWidget *spin_row = adw_spin_row_new_with_range (setting_data->min,
-                                                     setting_data->max,
-                                                     setting_data->step);
+  GtkWidget *spin_row;
 
   g_assert (setting_data);
   g_assert (MS_IS_TWEAKS_BACKEND (backend_state));
+
+  if (G_APPROX_VALUE (setting_data->step, 0, DBL_EPSILON)) {
+    ms_tweaks_warning (setting_data->name,
+                       "step was %f in number widget, too close to 0",
+                       setting_data->step);
+
+    return NULL;
+  }
+
+  spin_row = adw_spin_row_new_with_range (setting_data->min, setting_data->max, setting_data->step);
 
   set_title_and_subtitle (spin_row, setting_data);
 
@@ -328,19 +346,20 @@ ms_tweaks_preferences_page_initable_init (GInitable     *initable,
 {
   MsTweaksPreferencesPage *self = MS_TWEAKS_PREFERENCES_PAGE (initable);
   const GList *section_list = ms_tweaks_parser_sort_by_weight (self->data->section_table);
+  g_autoptr (GtkStringList) search_keywords = gtk_string_list_new (NULL);
   gboolean page_widget_is_valid = FALSE;
 
   for (const GList *section_iter = section_list; section_iter; section_iter = section_iter->next) {
-    const MsTweaksSection *const section_data = section_iter->data;
+    const MsTweaksSection *section_data = section_iter->data;
     const GList *setting_list = ms_tweaks_parser_sort_by_weight (section_data->setting_table);
-    GtkWidget *const restrict section_preference_group = adw_preferences_group_new ();
+    GtkWidget *restrict section_preference_group = adw_preferences_group_new ();
     gboolean section_widget_is_valid = FALSE;
 
     adw_preferences_group_set_title (ADW_PREFERENCES_GROUP (section_preference_group),
                                      section_data->name);
 
     for (const GList *setting_iter = setting_list; setting_iter; setting_iter = setting_iter->next) {
-      MsTweaksSetting *const setting_data = setting_iter->data;
+      MsTweaksSetting *setting_data = setting_iter->data;
       GtkWidget *restrict widget_to_add = NULL;
       gboolean setting_widget_is_valid = TRUE;
       MsTweaksBackend *backend_state = NULL;
@@ -358,26 +377,30 @@ ms_tweaks_preferences_page_initable_init (GInitable     *initable,
         setting_widget_is_valid = FALSE;
         break;
       case MS_TWEAKS_BACKEND_IDENTIFIER_UNKNOWN:
-        ms_tweaks_warning (setting_data->name,
-                           "Unknown backend type, cannot get value. Is your system up-to-date?");
+        ms_tweaks_debug (setting_data->name,
+                         "Unknown backend type, cannot get value. Is your system up-to-date?");
+        setting_widget_is_valid = FALSE;
+        break;
+      case MS_TWEAKS_BACKEND_IDENTIFIER_GSETTINGS:
+        backend_state = ms_tweaks_backend_gsettings_new (setting_data);
         break;
       case MS_TWEAKS_BACKEND_IDENTIFIER_CSS:
-      case MS_TWEAKS_BACKEND_IDENTIFIER_GSETTINGS:
       case MS_TWEAKS_BACKEND_IDENTIFIER_GTK3SETTINGS:
       case MS_TWEAKS_BACKEND_IDENTIFIER_SYSFS:
       case MS_TWEAKS_BACKEND_IDENTIFIER_XRESOURCES:
       case MS_TWEAKS_BACKEND_IDENTIFIER_SOUNDTHEME:
       case MS_TWEAKS_BACKEND_IDENTIFIER_SYMLINK:
       default:
-        ms_tweaks_warning (setting_data->name,
-                           "Unimplemented backend type \"%i\"",
-                           setting_data->backend);
+        ms_tweaks_debug (setting_data->name,
+                         "Unimplemented backend type '%s'",
+                         pretty_format_backend_identifier (setting_data->backend));
+        setting_widget_is_valid = FALSE;
         break;
       }
 
       /* Ensure that we actually constructed a tweaks backend. */
       if (!MS_IS_TWEAKS_BACKEND (backend_state)) {
-        ms_tweaks_warning (setting_data->name, "Failed to construct backend, ignoring");
+        ms_tweaks_debug (setting_data->name, "Failed to construct backend, ignoring");
         continue;
       }
 
@@ -403,7 +426,7 @@ ms_tweaks_preferences_page_initable_init (GInitable     *initable,
           widget_to_add = setting_data_to_color_widget (setting_data, backend_state, widget_value);
           break;
         case MS_TWEAKS_TYPE_FILE:
-          MsTweaksPageBuilderOpenFilePickerMetadata *metadata = g_new (MsTweaksPageBuilderOpenFilePickerMetadata, 1);
+          MsTweaksPreferencesPageFilePickerMeta *metadata = g_new (MsTweaksPreferencesPageFilePickerMeta, 1);
           widget_to_add = setting_data_to_file_widget (setting_data,
                                                        backend_state,
                                                        widget_value,
@@ -424,29 +447,34 @@ ms_tweaks_preferences_page_initable_init (GInitable     *initable,
           continue;
         default:
           ms_tweaks_critical (setting_data->name,
-                              "Unimplemented setting type \"%i\"",
+                              "Unimplemented setting type '%i'",
                               setting_data->type);
         }
       }
 
-      if (!widget_to_add)
-        setting_widget_is_valid = FALSE;
-
-      if (setting_widget_is_valid) {
+      if (widget_to_add) {
         adw_preferences_group_add (ADW_PREFERENCES_GROUP (section_preference_group), widget_to_add);
+        gtk_string_list_append (search_keywords, setting_data->name);
         section_widget_is_valid = TRUE;
       } else
         ms_tweaks_warning (setting_data->name, "Failed to construct widget");
     }
 
     if (section_widget_is_valid) {
-      adw_preferences_page_add (ADW_PREFERENCES_PAGE (&self->parent_instance),
+      adw_preferences_page_add (ADW_PREFERENCES_PAGE (self->page),
                                 ADW_PREFERENCES_GROUP (section_preference_group));
+      gtk_string_list_append (search_keywords, section_data->name);
       page_widget_is_valid = TRUE;
-    } else
-      g_warning ("No valid settings in section \"%s\" inside page \"%s\", hiding it",
-                 section_data->name,
-                 self->data->name);
+    } else {
+      g_debug ("No valid settings in section '%s' inside page '%s', hiding it",
+               section_data->name,
+               self->data->name);
+    }
+  }
+
+  if (page_widget_is_valid) {
+    gtk_string_list_append (search_keywords, self->data->name);
+    ms_panel_set_keywords (MS_PANEL (self), g_steal_pointer (&search_keywords));
   }
 
   return page_widget_is_valid;
@@ -469,7 +497,7 @@ ms_tweaks_preferences_page_initable_iface_init (GInitableIface *iface)
 
 G_DEFINE_TYPE_WITH_CODE (MsTweaksPreferencesPage,
                          ms_tweaks_preferences_page,
-                         ADW_TYPE_PREFERENCES_PAGE,
+                         MS_TYPE_PANEL,
                          G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE,
                                                 ms_tweaks_preferences_page_initable_iface_init))
 
@@ -477,7 +505,9 @@ G_DEFINE_TYPE_WITH_CODE (MsTweaksPreferencesPage,
 static void
 ms_tweaks_preferences_page_init (MsTweaksPreferencesPage *self)
 {
+  self->page = adw_preferences_page_new ();
 
+  adw_bin_set_child (ADW_BIN (self), self->page);
 }
 
 

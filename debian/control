@@ -16,6 +16,7 @@ Build-Depends:
  libportal-gtk4-dev,
  libsensors-dev,
  libpulse-dev,
+ libyaml-dev,
  meson,
  phosh-dev (>= 0.40.0),
  feedbackd-common (>= 0.0.4) <!nocheck>,

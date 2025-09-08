@@ -785,7 +785,7 @@ ms_feedback_panel_class_init (MsFeedbackPanelClass *klass)
   gtk_widget_class_bind_template_callback (widget_class, change_notifications_settings);
 
   for (int i = 0; i < NOTIFICATION_CATEGORY_LAST; i++) {
-    g_autofree gchar *widget_name = g_strdup_printf ("%s_notifications_wakeup_switch",
+    g_autofree char *widget_name = g_strdup_printf ("%s_notifications_wakeup_switch",
                                                      notification_category_names[i]);
     gtk_widget_class_bind_template_child_full (widget_class,
                                                widget_name,

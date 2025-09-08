@@ -9,13 +9,12 @@
 #pragma once
 
 #include "ms-tweaks-parser.h"
-
-#include <adwaita.h>
+#include "../ms-panel.h"
 
 G_BEGIN_DECLS
 
 #define MS_TYPE_TWEAKS_PREFERENCES_PAGE ms_tweaks_preferences_page_get_type ()
-G_DECLARE_FINAL_TYPE (MsTweaksPreferencesPage, ms_tweaks_preferences_page, MS, TWEAKS_PREFERENCES_PAGE, AdwPreferencesPage)
+G_DECLARE_FINAL_TYPE (MsTweaksPreferencesPage, ms_tweaks_preferences_page, MS, TWEAKS_PREFERENCES_PAGE, MsPanel)
 
 MsTweaksPreferencesPage *ms_tweaks_preferences_page_new (const MsTweaksPage *data);
 
