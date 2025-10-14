@@ -93,18 +93,28 @@ typedef struct {
   double max;
   double step;
   GHashTable *css; /* key: char *, value: char * */
+
+  /* i18n properties. */
+  char *name_i18n;
+  char *help_i18n;
 } MsTweaksSetting;
 
 typedef struct {
   int weight;
   char *name;
   GHashTable *setting_table; /* key: char *, value: MsTweaksSetting * */
+
+  /* i18n properties. */
+  char *name_i18n;
 } MsTweaksSection;
 
 typedef struct {
   int weight;
   char *name;
   GHashTable *section_table; /* key: char *, value: MsTweaksSection * */
+
+  /* i18n properties. */
+  char *name_i18n;
 } MsTweaksPage;
 
 GType ms_tweaks_setting_get_type (void);

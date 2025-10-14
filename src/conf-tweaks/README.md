@@ -32,3 +32,16 @@ first one found will be used.
 The gtype option is used to define which type the gsetting is in case it's
 different than the type of the widget. This is mainly useful when things are
 remapped.
+
+### xresources
+
+```yaml
+backend: xresources
+key: dwm.background
+type: color
+default: #BBBBBB
+```
+
+Reads and writes to ~/.Xresources. If a given key is available in that file, it
+will be read on program startup, otherwise the default value from the setting
+definition is used.

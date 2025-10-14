@@ -134,6 +134,7 @@ ms_lib = static_library(
   mobile_settings_sources,
   conf_tweaks_sources,
   mobile_settings_generated_sources,
+  include_directories: [conf_tweaks_inc],
   dependencies: mobile_settings_deps,
   install: false,
 )

@@ -47,7 +47,7 @@ struct _MsTweaksBackendInterface
   GTypeInterface parent_iface;
 
   GValue *                (* get_value) (MsTweaksBackend *self);
-  void                    (* set_value) (MsTweaksBackend *self, GValue *value);
+  gboolean                (* set_value) (MsTweaksBackend *self, GValue *value, GError **error);
 
   const MsTweaksSetting * (* get_setting_data) (MsTweaksBackend *self);
 

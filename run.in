@@ -23,4 +23,9 @@ export GSETTINGS_BACKEND
 export G_DEBUG
 
 set -x
-exec "${ABS_BUILDDIR}/src/phosh-mobile-settings" $@
+if [ "$1" = '--gdb' ]; then
+  shift
+  gdb --args "${ABS_BUILDDIR}/src/phosh-mobile-settings" $@
+else
+  exec "${ABS_BUILDDIR}/src/phosh-mobile-settings" $@
+fi

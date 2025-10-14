@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-28 15:50+0000\n"
-"PO-Revision-Date: 2025-08-03 03:19+0200\n"
+"POT-Creation-Date: 2025-10-03 16:26+0000\n"
+"PO-Revision-Date: 2025-10-04 07:16+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: data/mobi.phosh.MobileSettings.desktop.in:2
 #: src/ui/mobile-settings-window.ui:6
@@ -111,6 +111,11 @@ msgstr "ელემენტის მუხტი"
 msgid "Battery"
 msgstr "კვების ელემენტი"
 
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "რაღაც ისე ვერ არის: %s"
+
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -135,7 +140,7 @@ msgstr "- მართეთ თქვენი მობილურის პ�
 msgid "translator-credits"
 msgstr "temuri Doghonadze"
 
-#: src/mobile-settings-window.c:135
+#: src/mobile-settings-window.c:148
 msgid "Device"
 msgstr "მოწყობილობა"
 
@@ -167,7 +172,7 @@ msgstr "განგაშის ხმის დონე"
 msgid "Emergency Alerts Volume"
 msgstr "გადაუდებელი განგაშის ხმის დონე"
 
-#: src/ms-cb-message-row.c:98
+#: src/ms-cb-message-row.c:114
 msgid "Message of unknown severity"
 msgstr "უცნობი სიმძიმის შეტყობინება"
 
@@ -492,10 +497,14 @@ msgid "Experimental"
 msgstr "ექსპერიმენტული"
 
 #: src/ui/mobile-settings-window.ui:333
+msgid "_Show Configurable Tweaks"
+msgstr "მორგებადი შე_სწორებების ჩვენება"
+
+#: src/ui/mobile-settings-window.ui:340
 msgid "_Keyboard Shortcuts"
 msgstr "_კლავიატურის მალსახმობები"
 
-#: src/ui/mobile-settings-window.ui:337
+#: src/ui/mobile-settings-window.ui:344
 msgid "_About Mobile Settings"
 msgstr "მობილურის პარამეტრების შეს_ახებ"
 
@@ -560,7 +569,7 @@ msgstr "შეტყობინებების ჩვენება ბა�
 msgid "History of Emergency and Governmental Alerts"
 msgstr "გადაუდებელი და სამთავრობო განგაშების ისტორია"
 
-#: src/ui/ms-alerts-panel.ui:81
+#: src/ui/ms-alerts-panel.ui:82
 msgid "No emergency alerts yet"
 msgstr "გადაუდებელი განგაშები ჯერ არაა"
 
@@ -847,12 +856,12 @@ msgid "Add Layout"
 msgstr "განლაგების დამატება"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:14
-#: src/ui/ms-osk-add-shortcut-dialog.ui:16
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
 msgid "Cancel"
 msgstr "გაუქმება"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:20
-#: src/ui/ms-osk-add-shortcut-dialog.ui:22
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
 msgid "Add"
 msgstr "დამატება"
 
@@ -866,27 +875,27 @@ msgstr "ენა"
 msgid "Add Shortcut"
 msgstr "მალსახმობის დამატება"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:43
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
 msgid "Choose Shortcut Modifiers"
 msgstr "აირჩიეთ მალსახმობის მოდიფიკატორები"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:128
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
 msgid "Choose Shortcut Key"
 msgstr "აირჩიეთ მალსახმობის ღილაკი"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:139
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
 msgid "Enter Shortcut Key"
 msgstr "შეიყვანეთ მალსახმობი ღილაკი"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
 msgid "Type a key such as letters (like C or V), etc."
 msgstr "აკრიფეთ ღილაკი, როგორიცაა ასოები (მაგ: C, ან V) და ა.შ."
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:143
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
 msgid "_Shortcut Key"
 msgstr "მალ_სახმობის ღილაკი"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:153
+#: src/ui/ms-osk-add-shortcut-dialog.ui:154
 msgid "Shortcut Preview"
 msgstr "მალსახმობის მინიატურა"
 

@@ -19,5 +19,6 @@ void             ms_panel_switcher_set_stack (MsPanelSwitcher *self, GtkStack *s
 gboolean         ms_panel_switcher_set_active_panel_name (MsPanelSwitcher *self, const char *panel);
 gboolean         ms_panel_switcher_set_active_panel_index (MsPanelSwitcher *self, uint idx);
 void             ms_panel_switcher_set_search_query (MsPanelSwitcher *self, const char *query);
+void             ms_panel_switcher_refilter (MsPanelSwitcher *self, GtkFilterChange filter_change_hint);
 
 G_END_DECLS

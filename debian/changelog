@@ -1,3 +1,200 @@
+phosh-mobile-settings (0.50.0) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * plugin-list-box: Skip plugins with NoDisplay=true.
+    We don't want to show demo plugins to the user. We also might at
+    some point have plugins that are always enabled. Hence add a way
+    to hide those plugins in the UI.
+  * tweaks-backend-xresources: Simplify includes.
+    Fixes: 95a3da8 ("conf-tweaks: Add Xresources backend")
+  * tweaks-preferences-page: Sink floating ref on failure.
+    If we don't construct a page we need to sink the ref as
+    `g_initable_new()` will drop one on failure. This raises
+    a warning if the ref is floating.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/85
+
+  [ Stefan Hansson ]
+  * conf-tweaks: Propagate errors from backends into toasts.
+    This is currently not used, but it will be used by future backends such
+    as the Xresoruces backend.
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 04 Oct 2025 12:32:23 +0200
+
+phosh-mobile-settings (0.50~rc1) experimental; urgency=medium
+
+  [ Stefan Hansson ]
+  * conf-tweaks: Rename from pmos-tweaks.
+    The name is being changed for two reasons:
+    - While this scheme originated in postmarketOS, it is not strictly
+      related or dependent on postmarketOS.
+    - The name postmarketOS is due to be changed soon, but actually
+      changing it will take a while. Waiting for a new name before landing
+      this doesn't make much sense.
+  * conf-tweaks: Rename page-builder to preferences-page.
+    Now that this file contains a class called PreferencesPage, it makes
+    more sense for it to be named after that.
+  * build: Bump meson dependency to 1.7.0.
+    Later commits introduce a meson.options file for configuring the build.
+    Previously, this file was called meson_options.txt but in Meson 1.1.0
+    that was changed to the new one. To avoid introducing a deprecated name
+    that just will have to be renamed later, bump the minimum Meson version
+    required now. 1.7.0 was chosen as it's the version that will be present
+    in the next Debian stable release. Additionally, the latest Alpine
+    stable at the time of writing has Meson 1.8.1, so this works for
+    postmarketOS too. While it could've been bumped to 1.1.0 instead, 1.7.0
+    means we can wait longer until we have to bump this again.
+  * conf-tweaks: Hide behind GSetting by default.
+    This means it manually has to be opted-into. Eventually, we probably
+    want to expose a button in the UI that allows users to opt in without
+    changing any GSettings.
+  * conf-tweaks: Add tweak definition parsing code.
+    Will be used in later commits.
+  * tests: Add test for tweak definition parser
+  * tests: Add tests for datasources
+  * conf-tweaks: Add GSettings backend
+  * tests: Add test for GSettings backend
+  * conf-tweaks: Plug some leaks.
+    Fixes f8dd824b47e1f1bf630fc62d1dbbcb0133c48855
+  * conf-tweaks: Pretty print backend identifier
+  * conf-tweaks: Clean up PreferencesPage code.
+    Remove some const pointers, fix some minor bugs, make widget addition
+    logic simpler.
+  * tests: Add assertion for warning message in choice widget test.
+    We want this to emit an error, so ensure that it actually happens.
+  * conf-tweaks: Fix crash in get_keys_from_hashtable ()
+    The gtk_string_list_new () constructor assumes a NULL-terminated array,
+    so we need to actually make it so. Otherwise we get crashes when the
+    memory doesn't happen to accidentally be NULL at the right place.
+    Fixes f8dd824b47e1f1bf630fc62d1dbbcb0133c48855
+  * tests: Add test for get_keys_from_hash_table ()
+  * conf-tweaks: Clean up string ms_tweaks_log ()
+    And also adapt test.
+  * conf-tweaks: Use MsPanel as parent instead of AdwPreferencesPage.
+    Without this, we get criticals when searching. This also implements
+    searching through tweaks panels by using their names as search keywords.
+  * conf-tweaks: Use conf-tweaks-symbolic icon for pages.
+    This makes the default distinct from the other pages in the app, as the
+    science icon also is used by the "Experimental features" page.
+    Taken from GNOME Tweaks where it was called
+    "org.gnome.tweaks-symbolic.svg".
+  * conf-tweaks: Rename self_ to backend in GSettings backend.
+    Reference: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/merge_requests/227#note_2540955
+  * run: Add --gdb argument for debugging.
+    This makes it easy to run the program with the gdb debugger without
+    having to execute the executable directly or modify the generated run
+    file, both of which come with their own cans of worms.
+  * conf-tweaks: Add to include path
+  * conf-tweaks: Add i18n support
+  * conf-tweaks: Remove restrict specifiers on pointers.
+     [1]: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/merge_requests/227#note_2545718
+  * conf-tweaks: Add button for toggling visibility.
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/83
+  * conf-tweaks: Only display "Enable Conf Tweaks" if such files exist.
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/84
+  * conf-tweaks: Don't leak toggle_conf_tweaks GAction
+  * conf-tweaks: Add utility function for retrieving a single key.
+    Will be used by most backends.
+  * conf-tweaks: Add Xresources backend
+  * tests: Add test_construct (), test_get (), test_set (), and test_remove ()
+    These can be reused for multiple backends.
+  * tests: Add test for Xresources backend
+  * tests: Update GSettings backend test to use common test utilities
+
+  [ Emin Tufan Çetin ]
+  * Update Turkish translation
+
+  [ Anna (cybertailor) Vyalkova ]
+  * ms-tweaks-utils: Use G_GNUC_PRINTF macro in function declaration
+    gnu_printf is not recognized by Clang.
+    Fixes: f8dd824b4 ("pmos-tweaks: Add initial UI code parts")
+  * ms-tweaks-utils: Ignore -Wformat-nonliteral warning.
+    Otherwise "-Werror=format=2" makes build fail with Clang.
+    Fixes: f8dd824b4 ("pmos-tweaks: Add initial UI code parts")
+
+  [ Guido Günther ]
+  * build: Let schema generation depend on schema file.
+    This triggers a rebuild when the schema changes
+  * doc: Use a matrix.to link.
+    Rather than directing to a specific element instance use the
+    https://matrix.to/ redirect service that works with most clients.
+    While at that move to the canonical name.
+
+  [ Gotam Gorabh ]
+  * ms-feedback-panel: Prefer char over gchar
+  * ci: Add check for gchar.
+    Prefer char over gchar.
+
+  [ Daniel Rusek ]
+  * data: AppStream metadata fixes
+    - Change component type to "desktop-application"
+    - Remove deprecated ".desktop" suffix from app id
+  * Update Czech translation
+
+  [ Philipp Kiemle ]
+  * Update German translation
+
+  [ Nathan Follens ]
+  * Update Dutch translation
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Sabri Ünal ]
+  * Update Turkish translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Kristjan SCHMIDT ]
+  * Add Esperanto translation
+
+  [ twlvnn kraftwerk ]
+  * Update Bulgarian translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 29 Sep 2025 12:16:09 +0200
+
 phosh-mobile-settings (0.49.0) experimental; urgency=medium
 
   [ Guido Günther ]

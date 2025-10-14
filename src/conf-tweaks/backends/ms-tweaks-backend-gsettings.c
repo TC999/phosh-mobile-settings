@@ -9,8 +9,8 @@
 #define G_LOG_DOMAIN "ms-tweaks-backend-gsettings"
 
 #include "ms-tweaks-backend-gsettings.h"
-#include "../ms-tweaks-gtk-utils.h"
-#include "../ms-tweaks-utils.h"
+#include "ms-tweaks-gtk-utils.h"
+#include "ms-tweaks-utils.h"
 
 #include <adwaita.h>
 #include <limits.h>
@@ -29,18 +29,18 @@ struct _MsTweaksBackendGsettings {
 
 
 static const MsTweaksSetting *
-ms_tweaks_backend_gsettings_get_setting_data (MsTweaksBackend *self_)
+ms_tweaks_backend_gsettings_get_setting_data (MsTweaksBackend *backend)
 {
-  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (self_);
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (backend);
 
   return self->setting_data;
 }
 
 
 static GValue *
-backend_gsettings_get_value (MsTweaksBackend *self_)
+backend_gsettings_get_value (MsTweaksBackend *backend)
 {
-  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (self_);
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (backend);
   GValue *return_value = g_new0 (GValue, 1);
 
   if (self->setting_data->type == MS_TWEAKS_TYPE_BOOLEAN
@@ -59,10 +59,10 @@ backend_gsettings_get_value (MsTweaksBackend *self_)
 }
 
 
-static void
-backend_gsettings_set_value (MsTweaksBackend *self_, GValue *value)
+static gboolean
+backend_gsettings_set_value (MsTweaksBackend *backend, GValue *value, GError **error)
 {
-  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (self_);
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (backend);
   GType value_gtype;
 
   if (value) {
@@ -89,7 +89,7 @@ backend_gsettings_set_value (MsTweaksBackend *self_, GValue *value)
       break;
     case G_TYPE_UINT:
       g_settings_set_uint (self->settings, self->key, g_value_get_uint (value));
-      break;;
+      break;
     default:
       ms_tweaks_error (self->setting_data->name,
                        "Unsupported GType type: %s",
@@ -98,13 +98,15 @@ backend_gsettings_set_value (MsTweaksBackend *self_, GValue *value)
     }
   } else
     g_settings_reset (self->settings, self->key);
+
+  return TRUE;
 }
 
 
 static char *
-ms_tweaks_backend_gsettings_get_key (MsTweaksBackend *self_)
+ms_tweaks_backend_gsettings_get_key (MsTweaksBackend *backend)
 {
-  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (self_);
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (backend);
 
   return self->key;
 }

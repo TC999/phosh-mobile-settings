@@ -78,7 +78,7 @@ The result should look something like this:
 ## Getting in Touch
 
 - Issue tracker: <https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/issues>
-- Matrix: <https://im.puri.sm/#/room/#phosh:talk.puri.sm>
+- Matrix: <https://matrix.to/#/#phosh:phosh.mobi>
 
 [main]: https://gitlab.gnome.org/World/Phosh/phosh-mobile-seettings/-/tree/main
 [.gitlab-ci.yml]: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/blob/main/.gitlab-ci.yml

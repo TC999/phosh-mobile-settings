@@ -8,10 +8,17 @@
 
 #define G_LOG_DOMAIN "ms-tweaks-parser"
 
+#include "mobile-settings-config.h"
+
+#undef GETTEXT_PACKAGE
+#define GETTEXT_PACKAGE "conf-tweaks"
+
 #include "ms-tweaks-parser.h"
 
 #include "ms-tweaks-datasources.h"
 #include "ms-tweaks-utils.h"
+
+#include <glib/gi18n-lib.h>
 
 #include <math.h>
 #include <yaml.h>
@@ -248,6 +255,9 @@ ms_tweaks_setting_free (MsTweaksSetting *setting)
   g_free (setting->selector);
   g_free (setting->guard);
 
+  g_free (setting->name_i18n);
+  g_free (setting->help_i18n);
+
   /* Free hash table properties. */
   g_clear_pointer (&setting->map, g_hash_table_unref);
   g_clear_pointer (&setting->css, g_hash_table_unref);
@@ -263,6 +273,7 @@ void
 ms_tweaks_section_free (MsTweaksSection *section)
 {
   g_free (section->name);
+  g_free (section->name_i18n);
 
   g_clear_pointer (&section->setting_table, g_hash_table_unref);
 
@@ -274,6 +285,7 @@ void
 ms_tweaks_page_free (MsTweaksPage *page)
 {
   g_free (page->name);
+  g_free (page->name_i18n);
 
   g_clear_pointer (&page->section_table, g_hash_table_unref);
 
@@ -303,6 +315,8 @@ ms_tweaks_parser_init (MsTweaksParser *self)
                                             (GDestroyNotify) ms_tweaks_page_free);
   /* Initialise it to key as we will always start with a key in mappings. */
   self->setting_mapping_state = MS_TWEAKS_MAPPING_STATE_KEY;
+
+  bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 }
 
 
@@ -438,9 +452,10 @@ merge_settings (MsTweaksSetting *into, const MsTweaksSetting *from)
     g_hash_table_unref (from->map);
   if (into->backend == CONF_TWEAKS_DEFAULT_BACKEND)
     into->backend = from->backend;
-  if (into->help == CONF_TWEAKS_DEFAULT_HELP)
+  if (into->help == CONF_TWEAKS_DEFAULT_HELP) {
     into->help = from->help;
-  else if (from->help)
+    into->help_i18n = from->help_i18n;
+  } else if (from->help)
     g_free (from->help);
   if (into->default_ == CONF_TWEAKS_DEFAULT_DEFAULT_VALUE)
     into->default_ = from->default_;
@@ -643,7 +658,7 @@ str_to_sysfs_type (const char *setting_type_str)
  * Copied from parse.c in libyaml-examples with minor modifications.
  */
 static int
-str_to_bool (const char *restrict string, gboolean *value)
+str_to_bool (const char *string, gboolean *value)
 {
   const char *t[] = { "y", "Y", "yes", "Yes", "YES", "true", "True", "TRUE", "on", "On", "ON", NULL };
   const char *f[] = { "n", "N", "no", "No", "NO", "false", "False", "FALSE", "off", "Off", "OFF", NULL };
@@ -799,6 +814,7 @@ consume_event (MsTweaksParser *self, const yaml_event_t *event, GError **error)
         return FALSE;
       }
 
+      self->current_page->name_i18n = g_strdup (_((char *) event->data.scalar.value));
       self->current_page->name = g_strdup ((char *) event->data.scalar.value);
 
       existing_page = g_hash_table_lookup (self->page_table, self->current_page->name);
@@ -915,6 +931,7 @@ consume_event (MsTweaksParser *self, const yaml_event_t *event, GError **error)
         return FALSE;
       }
 
+      self->current_section->name_i18n = g_strdup (_((char *) event->data.scalar.value));
       self->current_section->name = g_strdup ((char *) event->data.scalar.value);
 
       existing_section = g_hash_table_lookup (self->current_page->section_table,
@@ -1037,6 +1054,9 @@ consume_event (MsTweaksParser *self, const yaml_event_t *event, GError **error)
       self->current_setting->max = NAN;
       self->current_setting->step = NAN;
       self->current_setting->css = CONF_TWEAKS_DEFAULT_CSS;
+
+      self->current_setting->name_i18n = CONF_TWEAKS_DEFAULT_NAME;
+      self->current_setting->help_i18n = CONF_TWEAKS_DEFAULT_HELP;
       /* We don't know the name of the setting yet, so we can't add it to the table. It gets added
        * later in STATE_SETTING_NAME. */
       self->current_setting_inserted = FALSE;
@@ -1105,6 +1125,7 @@ consume_event (MsTweaksParser *self, const yaml_event_t *event, GError **error)
         return FALSE;
       }
 
+      self->current_setting->name_i18n = g_strdup (_((char *) event->data.scalar.value));
       self->current_setting->name = g_strdup ((char *) event->data.scalar.value);
 
       existing_setting = g_hash_table_lookup (self->current_section->setting_table,
@@ -1132,6 +1153,7 @@ consume_event (MsTweaksParser *self, const yaml_event_t *event, GError **error)
     case YAML_SCALAR_EVENT:
       g_assert (self->current_setting);
 
+      self->current_setting->help_i18n = g_strdup (_((char *) event->data.scalar.value));
       self->current_setting->help = g_strdup ((char *) event->data.scalar.value);
       self->state = MS_TWEAKS_STATE_SETTING;
       break;
@@ -1588,8 +1610,8 @@ ms_tweaks_parser_class_init (MsTweaksParserClass *klass)
 static gint
 compare_by_weight (gconstpointer structure_a, gconstpointer structure_b)
 {
-  const int *restrict weight_a;
-  const int *restrict weight_b;
+  const int *weight_a;
+  const int *weight_b;
 
   /* The cast below only works if these assertions hold true, if they fail the sorting will be
    * completely broken. */

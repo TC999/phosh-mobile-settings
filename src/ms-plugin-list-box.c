@@ -297,6 +297,9 @@ ms_plugin_list_box_scan_phosh_plugins (MsPluginListBox *self)
     if (!g_strv_contains ((const char *const *)types, self->plugin_type))
       continue;
 
+    if (g_key_file_get_boolean (keyfile, "Plugin", "NoDisplay", NULL))
+      continue;
+
     enabled = g_strv_contains ((const char * const*)enabled_plugins, name);
     g_debug ("Found plugin %s, name %s, enabled: %d, prefs: %d", filename, name, enabled,
              !!prefs_path);

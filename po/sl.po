@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-07-26 14:21+0000\n"
-"PO-Revision-Date: 2025-07-26 17:05+0200\n"
+"POT-Creation-Date: 2025-10-02 19:54+0000\n"
+"PO-Revision-Date: 2025-10-02 23:20+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -114,6 +114,11 @@ msgstr "Merilnik goriva"
 msgid "Battery"
 msgstr "Baterija"
 
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Nekaj je šlo narobe: %s"
+
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -138,7 +143,7 @@ msgstr "- Upravljajte nastavitve svojega mobilnika"
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/mobile-settings-window.c:135
+#: src/mobile-settings-window.c:148
 msgid "Device"
 msgstr "Naprava"
 
@@ -170,7 +175,7 @@ msgstr "Glasnost alarma"
 msgid "Emergency Alerts Volume"
 msgstr "Glasnost opozoril v sili"
 
-#: src/ms-cb-message-row.c:98
+#: src/ms-cb-message-row.c:114
 msgid "Message of unknown severity"
 msgstr "Sporočilo neznane resnosti"
 
@@ -496,10 +501,14 @@ msgid "Experimental"
 msgstr "Poskusno"
 
 #: src/ui/mobile-settings-window.ui:333
+msgid "_Show Configurable Tweaks"
+msgstr "_Pokaži nastavljive prilagoditve"
+
+#: src/ui/mobile-settings-window.ui:340
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice‫"
 
-#: src/ui/mobile-settings-window.ui:337
+#: src/ui/mobile-settings-window.ui:344
 msgid "_About Mobile Settings"
 msgstr "_O programu Mobilne nastavitve"
 
@@ -563,7 +572,7 @@ msgstr "Pokaži sporočila o nujnih primerih ugrabitve otrok"
 msgid "History of Emergency and Governmental Alerts"
 msgstr "Zgodovina opozoril v sili in vladnih opozoril"
 
-#: src/ui/ms-alerts-panel.ui:81
+#: src/ui/ms-alerts-panel.ui:82
 msgid "No emergency alerts yet"
 msgstr "Ni opozoril v sili"
 
@@ -847,12 +856,12 @@ msgid "Add Layout"
 msgstr "Dodaj postavitev"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:14
-#: src/ui/ms-osk-add-shortcut-dialog.ui:16
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
 msgid "Cancel"
 msgstr "Prekliči"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:20
-#: src/ui/ms-osk-add-shortcut-dialog.ui:22
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
 msgid "Add"
 msgstr "Dodaj"
 
@@ -866,27 +875,27 @@ msgstr "Jezik"
 msgid "Add Shortcut"
 msgstr "Dodaj tipkovno bližnjico"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:43
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
 msgid "Choose Shortcut Modifiers"
 msgstr "Izberite spremenilnike bližnjic"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:128
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
 msgid "Choose Shortcut Key"
 msgstr "Izberite tipke za bližnjice‫"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:139
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
 msgid "Enter Shortcut Key"
 msgstr "Vnesite bližnjico"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
 msgid "Type a key such as letters (like C or V), etc."
 msgstr "Vnesite tipke, kot so črke (na primer C ali V) itn."
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:143
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
 msgid "_Shortcut Key"
 msgstr "_Tipkovna bližnjica"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:153
+#: src/ui/ms-osk-add-shortcut-dialog.ui:154
 msgid "Shortcut Preview"
 msgstr "Predogled bližnjic"
 

@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ms-tweaks-parser.h"
-#include "../ms-panel.h"
+#include "ms-panel.h"
 
 G_BEGIN_DECLS
 

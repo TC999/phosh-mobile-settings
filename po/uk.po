@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settin"
-"gs/-/issues\n"
-"POT-Creation-Date: 2025-07-27 04:33+0000\n"
-"PO-Revision-Date: 2025-07-27 21:17+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-setti"
+"ngs/-/issues\n"
+"POT-Creation-Date: 2025-10-02 23:40+0000\n"
+"PO-Revision-Date: 2025-10-03 09:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -44,7 +44,8 @@ msgstr ""
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
 msgid "Advanced settings for Mobile devices using Phosh"
-msgstr "Додаткові параметри для мобільних пристроїв, де використовується Phosh"
+msgstr ""
+"Додаткові параметри для мобільних пристроїв, де використовується Phosh"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
 msgid "Available panels"
@@ -113,6 +114,11 @@ msgstr "Датчик палива"
 msgid "Battery"
 msgstr "Акумулятор"
 
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Щось пішло не так: %s"
+
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -137,7 +143,7 @@ msgstr "- Керування вашими мобільними параметр�
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
-#: src/mobile-settings-window.c:135
+#: src/mobile-settings-window.c:148
 msgid "Device"
 msgstr "Пристрій"
 
@@ -169,7 +175,7 @@ msgstr "Гучність будильника"
 msgid "Emergency Alerts Volume"
 msgstr "Гучність термінових попереджень"
 
-#: src/ms-cb-message-row.c:98
+#: src/ms-cb-message-row.c:114
 msgid "Message of unknown severity"
 msgstr "Повідомлення невідомої важливості"
 
@@ -494,10 +500,14 @@ msgid "Experimental"
 msgstr "Експериментальний"
 
 #: src/ui/mobile-settings-window.ui:333
+msgid "_Show Configurable Tweaks"
+msgstr "По_казати налаштовувані коригування"
+
+#: src/ui/mobile-settings-window.ui:340
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/ui/mobile-settings-window.ui:337
+#: src/ui/mobile-settings-window.ui:344
 msgid "_About Mobile Settings"
 msgstr "_Про «Мобільні параметри»"
 
@@ -561,7 +571,7 @@ msgstr "Показувати повідомлення щодо критични�
 msgid "History of Emergency and Governmental Alerts"
 msgstr "Журнал термінових та урядових попереджень"
 
-#: src/ui/ms-alerts-panel.ui:81
+#: src/ui/ms-alerts-panel.ui:82
 msgid "No emergency alerts yet"
 msgstr "Ще немає термінових попереджень"
 
@@ -847,12 +857,12 @@ msgid "Add Layout"
 msgstr "Додати компонування"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:14
-#: src/ui/ms-osk-add-shortcut-dialog.ui:16
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
 msgid "Cancel"
 msgstr "Скасувати"
 
 #: src/ui/ms-osk-add-layout-dialog.ui:20
-#: src/ui/ms-osk-add-shortcut-dialog.ui:22
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
 msgid "Add"
 msgstr "Додати"
 
@@ -863,36 +873,30 @@ msgstr "Мова"
 #. Translators: Title for a dialog to add a new on-screen keyboard shortcut
 #. Translators: Label for a button that allows the user to add a new keyboard shortcut
 #: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
-#| msgid "Shortcuts"
 msgid "Add Shortcut"
 msgstr "Додати скорочення"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:43
-#| msgid "Choose sound file"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
 msgid "Choose Shortcut Modifiers"
 msgstr "Виберіть модифікатори скорочення"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:128
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
 msgid "Choose Shortcut Key"
 msgstr "Виберіть клавішу скорочення"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:139
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
 msgid "Enter Shortcut Key"
 msgstr "Введіть клавішу скорочення"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
 msgid "Type a key such as letters (like C or V), etc."
 msgstr "Введіть клавішу у формі літер (наприклад, C або V) тощо"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:143
-#| msgid "Shortcuts"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
 msgid "_Shortcut Key"
 msgstr "С_корочення"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:153
-#| msgid "Shortcuts"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:154
 msgid "Shortcut Preview"
 msgstr "Попередній перегляд скорочення"
 
@@ -1022,7 +1026,8 @@ msgstr "Гнучке автоматичне доповнення"
 
 #: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
-msgstr "Увімкнути автодоповнення слів, якщо програма вказує на його корисність"
+msgstr ""
+"Увімкнути автодоповнення слів, якщо програма вказує на його корисність"
 
 #: src/ui/ms-osk-panel.ui:133
 msgid "Toggle via OSK menu"

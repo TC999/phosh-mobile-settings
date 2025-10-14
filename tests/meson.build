@@ -34,6 +34,7 @@ if phoc.found()
 
   unit_tests = [
     'tweaks-backend-gsettings',
+    'tweaks-backend-xresources',
     'tweaks-datasources',
     'tweaks-gtk-utils',
     'tweaks-mappings',
@@ -47,7 +48,7 @@ if phoc.found()
       'test-@0@'.format(test),
       ['test-@0@.c'.format(test)] + test_utils_sources,
       dependencies: libms_dep,
-      include_directories: include_directories('../src'),
+      include_directories: [conf_tweaks_inc, ms_plugin_inc, dbus_inc],
     )
     test(test, phoc, args: ['--no-xwayland', '-E', t], env: test_env_phoc, suite: ['unit'])
   endforeach

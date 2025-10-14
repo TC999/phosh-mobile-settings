@@ -8,21 +8,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
-"settings/-/issues\n"
-"POT-Creation-Date: 2025-08-21 18:01+0000\n"
-"PO-Revision-Date: 2025-08-22 08:00+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/"
+"issues\n"
+"POT-Creation-Date: 2025-10-05 10:34+0000\n"
+"PO-Revision-Date: 2025-10-07 13:50+0300\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:2
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/mobile-settings-window.ui:6
 msgid "Mobile Settings"
 msgstr "Mobil Ayarlar"
 
@@ -37,8 +36,8 @@ msgstr "Phosh Mobil Ayarları"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
 msgid ""
-"This app allows you to configure some aspects of Phosh that would otherwise "
-"require command line usage."
+"This app allows you to configure some aspects of Phosh that would otherwise require "
+"command line usage."
 msgstr ""
 "Bu uygulama, Phosh’un komut satırı kullanımı gerektiren kimi yönlerini "
 "yapılandırmanızı sağlar."
@@ -114,6 +113,11 @@ msgstr "Yakıt Göstergesi"
 msgid "Battery"
 msgstr "Pil"
 
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Bir şeyler yanlış gitti: %s"
+
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -140,7 +144,7 @@ msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Sabri Ünal <yakushabb@gmail.com>"
 
-#: src/mobile-settings-window.c:135
+#: src/mobile-settings-window.c:148
 msgid "Device"
 msgstr "Aygıt"
 
@@ -497,10 +501,14 @@ msgid "Experimental"
 msgstr "Deneysel"
 
 #: src/ui/mobile-settings-window.ui:333
+msgid "_Show Configurable Tweaks"
+msgstr "Yapılandırılabilir İnce Ayarları _Göster"
+
+#: src/ui/mobile-settings-window.ui:340
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/ui/mobile-settings-window.ui:337
+#: src/ui/mobile-settings-window.ui:344
 msgid "_About Mobile Settings"
 msgstr "Mobil Ayarlar _Hakkında"
 
@@ -510,11 +518,11 @@ msgstr "Uyarılar Alınamıyor"
 
 #: src/ui/ms-alerts-panel.ui:18
 msgid ""
-"Cannot receive Emergency Alerts on this device as no usable cellular modem "
-"is detected."
+"Cannot receive Emergency Alerts on this device as no usable cellular modem is "
+"detected."
 msgstr ""
-"Bu aygıtta kullanılabilir hücresel modem saptanmadığından Acil Durum "
-"Uyarıları alınamıyor."
+"Bu aygıtta kullanılabilir hücresel modem saptanmadığından Acil Durum Uyarıları "
+"alınamıyor."
 
 #: src/ui/ms-alerts-panel.ui:30
 msgid "Emergency and Governmental Alerts"
@@ -627,8 +635,8 @@ msgstr "Acil Çağrılar"
 
 #: src/ui/ms-features-panel.ui:17
 msgid ""
-"Enable emergency calls. Please only enable this if you safely can ensure "
-"that it's working with your provider."
+"Enable emergency calls. Please only enable this if you safely can ensure that it's "
+"working with your provider."
 msgstr ""
 "Acil durum çağrılarını etkinleştir. Lütfen bunu yalnızca sağlayıcınızla "
 "çalıştığından eminseniz etkinleştirin."
@@ -645,8 +653,8 @@ msgstr "Sistem menüsünden askıya almayı etkinleştir"
 
 #: src/ui/ms-features-panel.ui:34
 msgid ""
-"Please only enable this if you're aware of the limitations like data "
-"connection loss or missed alarms"
+"Please only enable this if you're aware of the limitations like data connection loss "
+"or missed alarms"
 msgstr ""
 "Lütfen bunu yalnızca veri bağlantısı yitimi ya da kaçırılan alarmlar gibi "
 "sınırlamaların ayırdındaysanız etkinleştirin"
@@ -687,11 +695,10 @@ msgid "Silence on Vol-"
 msgstr "Sesi azalt ile sessiz"
 
 #: src/ui/ms-feedback-panel.ui:54
-msgid ""
-"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+msgid "When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
-"Kilitlendiğinde, gelen aramalarda sesi azalt tuşuna basıldığında telefonu "
-"sessiz kipe al"
+"Kilitlendiğinde, gelen aramalarda sesi azalt tuşuna basıldığında telefonu sessiz "
+"kipe al"
 
 #. Translators: Strength of the haptic motor
 #: src/ui/ms-feedback-panel.ui:60
@@ -731,11 +738,8 @@ msgid "Notification urgency that lights up the screen"
 msgstr "Ekranı aydınlatan bildirim aciliyeti"
 
 #: src/ui/ms-feedback-panel.ui:146
-msgid ""
-"Notification categories that wake up the screen independent from their "
-"urgency"
-msgstr ""
-"İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim kategorileri"
+msgid "Notification categories that wake up the screen independent from their urgency"
+msgstr "İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim kategorileri"
 
 #: src/ui/ms-feedback-panel.ui:149
 msgid "Calls"
@@ -847,13 +851,11 @@ msgstr "Kilit ekranı için ek parçacıklar"
 msgid "Add Layout"
 msgstr "Düzen Ekle"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:14
-#: src/ui/ms-osk-add-shortcut-dialog.ui:17
+#: src/ui/ms-osk-add-layout-dialog.ui:14 src/ui/ms-osk-add-shortcut-dialog.ui:17
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:20
-#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+#: src/ui/ms-osk-add-layout-dialog.ui:20 src/ui/ms-osk-add-shortcut-dialog.ui:23
 msgid "Add"
 msgstr "Ekle"
 
@@ -930,11 +932,9 @@ msgid "Unfold long-press"
 msgstr "Uzun basma ile aç"
 
 #: src/ui/ms-osk-panel.ui:21
-msgid ""
-"How long to press the center of the home bar to unfold the on screen keyboard"
+msgid "How long to press the center of the home bar to unfold the on screen keyboard"
 msgstr ""
-"Ekran klavyesini açmak için ana ekran çubuğunun ortasına ne kadar basılması "
-"gerektiği"
+"Ekran klavyesini açmak için ana ekran çubuğunun ortasına ne kadar basılması gerektiği"
 
 #. Translators: abbreviation for less than or equal to 0.5 second interval of time
 #: src/ui/ms-osk-panel.ui:26
@@ -957,8 +957,7 @@ msgid "Ignore hardware keyboard"
 msgstr "Donanım klavyesini görmezden gel"
 
 #: src/ui/ms-osk-panel.ui:39
-msgid ""
-"Whether to show the on screen keyboard when a physical keyboard is present"
+msgid "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr "Fiziksel klavye varsa ekran klavyesinin gösterilme durumu"
 
 #: src/ui/ms-osk-panel.ui:46
@@ -1011,8 +1010,7 @@ msgstr "Fırsatçı sözcük tamamlama"
 
 #: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
-msgstr ""
-"Uygulama, yararlı olduğunu belirttiğinde sözcük tamamlamayı etkinleştir"
+msgstr "Uygulama, yararlı olduğunu belirttiğinde sözcük tamamlamayı etkinleştir"
 
 # OSK: On Screen Keyboard
 #: src/ui/ms-osk-panel.ui:133
@@ -1050,8 +1048,7 @@ msgstr "Gözdeleri Düzenle"
 #: src/ui/ms-overview-panel.ui:23
 msgid "Drag and drop the apps below to rearrange your favorite apps"
 msgstr ""
-"Gözde uygulamalarınızı düzenlemek için aşağıdaki uygulamaları sürükleyip "
-"bırakın"
+"Gözde uygulamalarınızı düzenlemek için aşağıdaki uygulamaları sürükleyip bırakın"
 
 #: src/ui/ms-overview-panel.ui:48
 msgid "Reset Favorites"
@@ -1087,11 +1084,10 @@ msgstr "Algılayıcı bulunamadı"
 
 #: src/ui/ms-sensor-panel.ui:17
 msgid ""
-"Either there are no sensors installed on your device or they are disabled by "
-"a killswitch."
+"Either there are no sensors installed on your device or they are disabled by a "
+"killswitch."
 msgstr ""
-"Aygıtınızda kurulu algılayıcı yok ya da kapatma anahtarınca devre dışı "
-"bırakılmış."
+"Aygıtınızda kurulu algılayıcı yok ya da kapatma anahtarınca devre dışı bırakılmış."
 
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
@@ -1147,8 +1143,7 @@ msgstr "Çentiklerden kaçın"
 
 #: src/ui/ms-topbar-panel.ui:24
 msgid "Don't place UI elements beneath notches and display cutouts"
-msgstr ""
-"Kullanıcı arayüz ögelerini çentikler ve ekran kesiklerinin altına yerleştirme"
+msgstr "Kullanıcı arayüz ögelerini çentikler ve ekran kesiklerinin altına yerleştirme"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"

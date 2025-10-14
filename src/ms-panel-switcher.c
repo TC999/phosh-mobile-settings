@@ -12,6 +12,7 @@
 
 #include "ms-panel-switcher.h"
 #include "ms-panel.h"
+#include "ms-tweaks-preferences-page.h"
 #include "ms-util.h"
 
 enum {
@@ -35,6 +36,7 @@ struct _MsPanelSwitcher {
   GtkFilter          *filter;
   GtkFilterListModel *filtered_panels;
   GtkStack           *stack;
+  GSettings          *settings;
 
   char               *query;
   char               *current_panelname;
@@ -66,8 +68,15 @@ panels_filter_func (GObject *item, gpointer user_data)
   const char *panelname = gtk_stack_page_get_name (page);
   g_autofree char *query_normalized = NULL;
   g_auto (GStrv) query_words = NULL;
+  GtkWidget *stack_child;
   MsPanel *panel;
   GtkStringList *keywords;
+
+  stack_child = gtk_stack_page_get_child (page);
+  if (MS_IS_TWEAKS_PREFERENCES_PAGE (stack_child)
+      && !g_settings_get_boolean (self->settings, "enable-conf-tweaks")) {
+    return FALSE;
+  }
 
   if (STR_IS_NULL_OR_EMPTY (self->query))
     return TRUE;
@@ -75,7 +84,7 @@ panels_filter_func (GObject *item, gpointer user_data)
   if (g_strcmp0 (panelname, "welcome") == 0)
     return FALSE;
 
-  panel = MS_PANEL (gtk_stack_page_get_child (page));
+  panel = MS_PANEL (stack_child);
   keywords = ms_panel_get_keywords (panel);
   query_normalized = ms_normalize_casefold_and_unaccent (self->query);
   query_words = g_strsplit (g_strstrip (query_normalized), " ", 0);
@@ -200,6 +209,7 @@ ms_panel_switcher_dispose (GObject *object)
 
   g_clear_object (&self->stack);
   g_clear_object (&self->filtered_panels);
+  g_clear_object (&self->settings);
   g_clear_pointer (&self->query, g_free);
   g_clear_pointer (&self->current_panelname, g_free);
 
@@ -245,6 +255,8 @@ ms_panel_switcher_init (MsPanelSwitcher *self)
   self->filter = GTK_FILTER (gtk_custom_filter_new ((GtkCustomFilterFunc)panels_filter_func,
                                                     self,
                                                     NULL));
+
+  self->settings = g_settings_new ("mobi.phosh.MobileSettings");
 }
 
 
@@ -333,4 +345,11 @@ ms_panel_switcher_set_search_query (MsPanelSwitcher *self, const char *cur_query
                                gtk_list_box_get_row_at_index (self->panels_listbox, idx));
     }
   }
+}
+
+
+void
+ms_panel_switcher_refilter (MsPanelSwitcher *self, GtkFilterChange filter_change_hint)
+{
+  gtk_filter_changed (self->filter, GTK_FILTER_CHANGE_DIFFERENT);
 }

@@ -23,22 +23,30 @@
 typedef struct {
   MsTweaksBackend *backend_state;
   GtkWidget *file_picker_label;
+  AdwToastOverlay *toast_overlay;
 } MsTweaksPreferencesPageFilePickerMeta;
 
 
-void ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow    *switch_row,
-                                               GParamSpec      *unused,
-                                               MsTweaksBackend *backend_state);
-void ms_tweaks_callback_handlers_type_choice (AdwComboRow     *combo_row,
-                                              GParamSpec      *unused,
-                                              MsTweaksBackend *backend_state);
+typedef struct {
+  MsTweaksBackend *backend_state;
+  AdwToastOverlay *toast_overlay;
+} MsTweaksCallbackMeta;
+
+
+void ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow         *switch_row,
+                                               GParamSpec           *unused,
+                                               MsTweaksCallbackMeta *callback_meta);
+void ms_tweaks_callback_handlers_type_choice (AdwComboRow          *combo_row,
+                                              GParamSpec           *unused,
+                                              MsTweaksCallbackMeta *callback_meta);
 void ms_tweaks_callback_handlers_type_color (GtkColorDialogButton *widget,
                                              GParamSpec           *unused,
-                                             MsTweaksBackend      *backend_state);
+                                             MsTweaksCallbackMeta *callback_meta);
 void ms_tweaks_callback_handlers_type_file (GObject      *source_object,
                                             GAsyncResult *result,
                                             gpointer      data);
-void ms_tweaks_callback_handlers_type_font (GtkFontDialogButton *widget,
-                                            GParamSpec          *unused,
-                                            MsTweaksBackend     *backend_state);
-void ms_tweaks_callback_handlers_type_number (AdwSpinRow *spin_row, MsTweaksBackend *backend_state);
+void ms_tweaks_callback_handlers_type_font (GtkFontDialogButton  *widget,
+                                            GParamSpec           *unused,
+                                            MsTweaksCallbackMeta *callback_meta);
+void ms_tweaks_callback_handlers_type_number (AdwSpinRow *spin_row,
+                                              MsTweaksCallbackMeta *callback_meta);

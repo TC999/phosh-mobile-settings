@@ -62,6 +62,25 @@ ms_tweaks_get_filename_extension (const char *filename)
 }
 
 /**
+ * ms_tweaks_util_get_single_key:
+ * @key_array: Array to get the first element of.
+ *
+ * Returns: The key if the array is 1 element long, otherwise NULL.
+ */
+const char *
+ms_tweaks_util_get_single_key (const GPtrArray *key_array)
+{
+  const char *key = NULL;
+
+  if (key_array->len == 1)
+    key = g_ptr_array_index (key_array, 0);
+  else
+    g_warning ("Only single-element key values are allowed");
+
+  return key;
+}
+
+/**
  * ms_tweaks_util_get_key_by_value_string:
  * @hash_table: The GHashTable to find the key in.
  * @value_to_find: The value to find the key of.
@@ -74,11 +93,11 @@ ms_tweaks_get_filename_extension (const char *filename)
  * Returns: The key string if one was found, otherwise NULL.
  */
 char *
-ms_tweaks_util_get_key_by_value_string (GHashTable           *hash_table,
-                                        const char *restrict  value_to_find)
+ms_tweaks_util_get_key_by_value_string (GHashTable *hash_table,
+                                        const char *value_to_find)
 {
-  char *restrict matching_key = NULL;
   gpointer key = NULL, value = NULL;
+  char *matching_key = NULL;
   GHashTableIter iter;
 
   g_assert (hash_table);
@@ -97,14 +116,14 @@ ms_tweaks_util_get_key_by_value_string (GHashTable           *hash_table,
 
 
 void
-ms_tweaks_log (const char *restrict log_domain,
-               GLogLevelFlags       log_level,
-               const char *restrict name,
-               const char *restrict format,
+ms_tweaks_log (const char     *log_domain,
+               GLogLevelFlags  log_level,
+               const char     *name,
+               const char     *format,
                ...)
 {
   va_list args;
-  char *restrict format_with_prefix = g_strconcat ("[Setting '", name, "'] ", format, NULL);
+  char *format_with_prefix = g_strconcat ("[Setting '", name, "'] ", format, NULL);
 
   va_start (args, format);
 #pragma GCC diagnostic push

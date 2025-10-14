@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "../ms-tweaks-backend-interface.h"
-#include "../ms-tweaks-parser.h"
+#include "ms-tweaks-backend-interface.h"
+#include "ms-tweaks-parser.h"
 
 #include <gio/gio.h>
 #include <gtk/gtk.h>

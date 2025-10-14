@@ -115,9 +115,9 @@ build_gtk3theme_hash_table_from_glob (glob_t *glob_results, GHashTable *hash_tab
  * themes.
  */
 static void
-build_theme_hash_table_from_glob (glob_t *glob_results,
+build_theme_hash_table_from_glob (glob_t     *glob_results,
                                   GHashTable *hash_table_to_build,
-                                  const char *restrict theme_type)
+                                  const char *theme_type)
 {
   for (size_t i = 0; i < glob_results->gl_pathc; i++) {
     const char *result = glob_results->gl_pathv[i];

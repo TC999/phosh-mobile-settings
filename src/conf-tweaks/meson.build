@@ -1,5 +1,7 @@
 subdir('backends')
 
+conf_tweaks_inc = include_directories('.')
+
 conf_tweaks_sources = files(
   'ms-tweaks-backend-interface.c',
   'ms-tweaks-backend-interface.h',

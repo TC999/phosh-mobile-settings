@@ -6,16 +6,22 @@
  * Author: Stefan Hansson <newbyte@postmarketos.org>
  */
 
+#include "mobile-settings-config.h"
+
 #include "ms-tweaks-callback-handlers.h"
 #include "ms-tweaks-gtk-utils.h"
 #include "ms-tweaks-mappings.h"
 #include "ms-tweaks-utils.h"
 
+#include <glib/gi18n-lib.h>
+
 
 static void
-do_set_value (MsTweaksBackend *backend_state, GValue *value_to_set)
+do_set_value (MsTweaksBackend *backend_state, GValue *value_to_set, AdwToastOverlay *toast_overlay)
 {
   const MsTweaksSetting *setting_data = NULL;
+  GError *error = NULL;
+  gboolean success;
 
   g_assert (MS_IS_TWEAKS_BACKEND (backend_state));
   g_assert (MS_TWEAKS_BACKEND_GET_IFACE (backend_state)->get_setting_data);
@@ -25,7 +31,15 @@ do_set_value (MsTweaksBackend *backend_state, GValue *value_to_set)
 
   ms_tweaks_mappings_handle_set (value_to_set, setting_data);
 
-  MS_TWEAKS_BACKEND_GET_IFACE (backend_state)->set_value (backend_state, value_to_set);
+  success = MS_TWEAKS_BACKEND_GET_IFACE (backend_state)->set_value (backend_state,
+                                                                    value_to_set,
+                                                                    &error);
+
+  if (!success) {
+    AdwToast *toast = adw_toast_new_format (_("Something went wrong: %s"), error->message);
+
+    adw_toast_overlay_add_toast (toast_overlay, toast);
+  }
 }
 
 /**
@@ -34,14 +48,14 @@ do_set_value (MsTweaksBackend *backend_state, GValue *value_to_set)
  *              g_signal_connect (), see explanation for `unused`.
  * @unused: Property spec as provided by the callback from g_signal_connect () when connected to the
  *          "notify::active" signal.
- * @backend_state: Any MsTweaksBackend.
+ * @callback_meta: Instance of MsTweaksCallbackMeta.
  *
  * Generic handler for MsTweaksBackend types that support MS_TWEAKS_TYPE_BOOLEAN.
  */
 void
-ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow    *switch_row,
-                                          GParamSpec      *unused,
-                                          MsTweaksBackend *backend_state)
+ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow         *switch_row,
+                                          GParamSpec           *unused,
+                                          MsTweaksCallbackMeta *callback_meta)
 {
   const gboolean is_active = adw_switch_row_get_active (switch_row);
   GValue is_active_container = G_VALUE_INIT;
@@ -49,7 +63,7 @@ ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow    *switch_row,
   g_value_init (&is_active_container, G_TYPE_BOOLEAN);
   g_value_set_boolean (&is_active_container, is_active);
 
-  do_set_value (backend_state, &is_active_container);
+  do_set_value (callback_meta->backend_state, &is_active_container, callback_meta->toast_overlay);
 }
 
 /**
@@ -58,16 +72,17 @@ ms_tweaks_callback_handlers_type_boolean (AdwSwitchRow    *switch_row,
  *             g_signal_connect (), see explanation for `unused`.
  * @unused: Property spec as provided by the callback from g_signal_connect () when connected to the
  *          "notify::selected" signal.
- * @backend_state: Any MsTweaksBackend.
+ * @callback_meta: Instance of MsTweaksCallbackMeta.
  *
  * Generic handler for MsTweaksBackend types that support MS_TWEAKS_TYPE_CHOICE.
  */
 void
-ms_tweaks_callback_handlers_type_choice (AdwComboRow     *combo_row,
-                                         GParamSpec      *unused,
-                                         MsTweaksBackend *backend_state)
+ms_tweaks_callback_handlers_type_choice (AdwComboRow          *combo_row,
+                                         GParamSpec           *unused,
+                                         MsTweaksCallbackMeta *callback_meta)
 {
   GtkStringList *list = GTK_STRING_LIST (adw_combo_row_get_model (combo_row));
+  MsTweaksBackend *backend_state = callback_meta->backend_state;
   const guint selected = adw_combo_row_get_selected (combo_row);
   const char *string_repr = gtk_string_list_get_string (list, selected);
   const MsTweaksSetting *setting_data = NULL;
@@ -89,7 +104,7 @@ ms_tweaks_callback_handlers_type_choice (AdwComboRow     *combo_row,
   g_value_init (&value_container, G_TYPE_STRING);
   g_value_set_string (&value_container, value);
 
-  do_set_value (backend_state, &value_container);
+  do_set_value (backend_state, &value_container, callback_meta->toast_overlay);
 }
 
 
@@ -99,14 +114,14 @@ ms_tweaks_callback_handlers_type_choice (AdwComboRow     *combo_row,
  *          g_signal_connect (), see explanation for `unused`.
  * @unused: Property spec as provided by the callback from g_signal_connect () when connected to the
  *          "notify::rgba" signal.
- * @backend_state: Any MsTweaksBackend.
+ * @callback_meta: Instance of MsTweaksCallbackMeta.
  *
  * Generic handler for MsTweaksBackend types that support MS_TWEAKS_TYPE_COLOR.
  */
 void
 ms_tweaks_callback_handlers_type_color (GtkColorDialogButton *widget,
                                         GParamSpec           *unused,
-                                        MsTweaksBackend      *backend_state)
+                                        MsTweaksCallbackMeta *callback_meta)
 {
   const GdkRGBA *picked_colour = gtk_color_dialog_button_get_rgba (widget);
   GValue picked_colour_container = G_VALUE_INIT;
@@ -115,7 +130,9 @@ ms_tweaks_callback_handlers_type_color (GtkColorDialogButton *widget,
   g_value_set_string (&picked_colour_container,
                       ms_tweaks_util_gdkrgba_to_rgb_hex_string (picked_colour));
 
-  do_set_value (backend_state, &picked_colour_container);
+  do_set_value (callback_meta->backend_state,
+                &picked_colour_container,
+                callback_meta->toast_overlay);
 }
 
 
@@ -146,7 +163,7 @@ ms_tweaks_callback_handlers_type_file (GObject *source_object, GAsyncResult *res
   g_value_init (&path_to_picked_file, G_TYPE_STRING);
   g_value_set_string (&path_to_picked_file, g_file_get_path (picked_file));
 
-  do_set_value (metadata->backend_state, &path_to_picked_file);
+  do_set_value (metadata->backend_state, &path_to_picked_file, metadata->toast_overlay);
 
   picked_file_name = g_path_get_basename (g_value_get_string (&path_to_picked_file));
   gtk_label_set_text (GTK_LABEL (metadata->file_picker_label), picked_file_name);
@@ -158,14 +175,14 @@ ms_tweaks_callback_handlers_type_file (GObject *source_object, GAsyncResult *res
  *          g_signal_connect (), see explanation for `unused`.
  * @unused: Property spec as provided by the callback from g_signal_connect () when connected to the
  *          "notify::font-desc" signal.
- * @backend_state: Any MsTweaksBackend.
+ * @callback_meta: Instance of MsTweaksCallbackMeta.
  *
  * Generic handler for MsTweaksBackend types that support MS_TWEAKS_TYPE_FONT.
  */
 void
-ms_tweaks_callback_handlers_type_font (GtkFontDialogButton *widget,
-                                       GParamSpec          *unused,
-                                       MsTweaksBackend     *backend_state)
+ms_tweaks_callback_handlers_type_font (GtkFontDialogButton  *widget,
+                                       GParamSpec           *unused,
+                                       MsTweaksCallbackMeta *callback_meta)
 {
   PangoFontDescription *font_desc = gtk_font_dialog_button_get_font_desc (widget);
   GValue font_container = G_VALUE_INIT;
@@ -173,23 +190,27 @@ ms_tweaks_callback_handlers_type_font (GtkFontDialogButton *widget,
   g_value_init (&font_container, G_TYPE_STRING);
   g_value_set_string (&font_container, pango_font_description_to_string (font_desc));
 
-  do_set_value (backend_state, &font_container);
+  do_set_value (callback_meta->backend_state,
+                &font_container,
+                callback_meta->toast_overlay);
 }
 
 
 void
-ms_tweaks_callback_handlers_type_number (AdwSpinRow *spin_row, MsTweaksBackend *backend_state)
+ms_tweaks_callback_handlers_type_number (AdwSpinRow *spin_row, MsTweaksCallbackMeta *callback_meta)
 {
   const double spin_row_value = adw_spin_row_get_value (spin_row);
   GValue spin_row_value_container = G_VALUE_INIT;
   g_autofree char *spin_row_value_string = NULL;
 
-  g_assert (MS_IS_TWEAKS_BACKEND (backend_state));
+  g_assert (MS_IS_TWEAKS_BACKEND (callback_meta->backend_state));
 
   spin_row_value_string = g_strdup_printf ("%f", spin_row_value);
 
   g_value_init (&spin_row_value_container, G_TYPE_STRING);
   g_value_set_string (&spin_row_value_container, spin_row_value_string);
 
-  do_set_value (backend_state, &spin_row_value_container);
+  do_set_value (callback_meta->backend_state,
+                &spin_row_value_container,
+                callback_meta->toast_overlay);
 }

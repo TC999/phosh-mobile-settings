@@ -44,63 +44,30 @@ test_gsettings_fixture_setup_alternative (BackendTestFixture *fixture, gconstpoi
 
 
 static void
-test_construct (BackendTestFixture *fixture, gconstpointer unused)
-{
-  g_assert_true (fixture->backend);
-}
-
-
-static void
-test_get (BackendTestFixture *fixture, gconstpointer unused)
-{
-  g_autofree GValue *value = NULL;
-
-  g_assert_true (fixture->backend);
-
-  value = MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->get_value (fixture->backend);
-
-  g_assert_true (value);
-
-  g_value_unset (value);
-}
-
-
-static void
-test_set (BackendTestFixture *fixture, gconstpointer unused)
-{
-  g_autofree GValue *value = g_new0 (GValue, 1);
-  g_value_init (value, G_TYPE_STRING);
-  g_value_set_string (value, "prefer-light");
-
-  g_assert_true (fixture->backend);
-
-  MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->set_value (fixture->backend, value);
-
-  g_value_unset (value);
-}
-
-
-static void
 test_set_alternative (BackendTestFixture *fixture, gconstpointer unused)
 {
   g_autofree GValue *value = g_new0 (GValue, 1);
+  g_autoptr (GError) error = NULL;
+
   g_value_init (value, G_TYPE_FLAGS);
   g_value_set_flags (value, 0);
 
   g_assert_true (fixture->backend);
 
-  MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->set_value (fixture->backend, value);
+  MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->set_value (fixture->backend, value, &error);
+
+  g_assert_false (error);
 
   g_value_unset (value);
 }
 
 
-#define BACKEND_TEST_ADD(name, test_func) g_test_add ((name), \
-                                                      BackendTestFixture, \
-                                                      NULL, \
-                                                      test_gsettings_fixture_setup, \
-                                                      (test_func), \
-                                                      test_backend_fixture_teardown)
+#define BACKEND_TEST_ADD(name, string_value, test_func) g_test_add ((name), \
+                                                                    BackendTestFixture, \
+                                                                    (string_value), \
+                                                                    test_gsettings_fixture_setup, \
+                                                                    (test_func), \
+                                                                    test_backend_fixture_teardown)
 
 
 #define BACKEND_TEST_ADD_ALT(name, test_func) g_test_add ((name), \
@@ -117,15 +84,21 @@ main (int argc, char *argv[])
   g_test_init (&argc, &argv, NULL);
 
   BACKEND_TEST_ADD ("/phosh-mobile-settings/test-tweaks-backend-gsettings-construct",
+                    NULL,
                     test_construct);
   BACKEND_TEST_ADD ("/phosh-mobile-settings/test-tweaks-backend-gsettings-get",
+                    NULL,
                     test_get);
   BACKEND_TEST_ADD_ALT ("/phosh-mobile-settings/test-tweaks-backend-gsettings-alternative",
                         test_get);
   BACKEND_TEST_ADD ("/phosh-mobile-settings/test-tweaks-backend-gsettings-set",
+                    "prefer-light",
                     test_set);
   BACKEND_TEST_ADD_ALT ("/phosh-mobile-settings/test-tweaks-backend-gsettings-set-alternative",
                         test_set_alternative);
+  BACKEND_TEST_ADD ("/phosh-mobile-settings/test-tweaks-backend-gsettings-remove",
+                    NULL,
+                    test_remove);
 
   return g_test_run ();
 }
