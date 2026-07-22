@@ -1,9 +1,9 @@
-FROM debian:trixie-slim
+FROM debian:forky-slim
 
 RUN export DEBIAN_FRONTEND=noninteractive \
    && apt-get -y update \
    && apt-get -y install --no-install-recommends wget ca-certificates gnupg eatmydata \
-   && echo "deb http://deb.debian.org/debian-debug/ trixie-debug main" > /etc/apt/sources.list.d/debug.list \
+   && echo "deb http://deb.debian.org/debian-debug/ forky-debug main" > /etc/apt/sources.list.d/debug.list \
    && eatmydata apt-get -y update \
    && eatmydata apt-get -y upgrade \
    && cd /home/user/app \

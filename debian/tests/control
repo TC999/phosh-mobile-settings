@@ -1,4 +1,5 @@
 Test-Command: /usr/bin/phosh-mobile-settings --help
-Restrictions: superficial
+Restrictions:
+ superficial,
 Depends:
  @,

@@ -1,40 +1,38 @@
-# Simple Chinese translation for phosh-mobile-settings.
-# Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
+# Chinese (China) translation for phosh-mobile-settings.
+# Copyright (C) 2026 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
-# TC999 <88823709+TC999@users.noreply.github.com>, 2025.
-# DeepSeek <chat.deepseek.com>, 2025.
-# Copilot <github.com/copilot>, 2025.
-
+# Zeqian Sun <jianshusdd@outlook.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-10-26 06:56+0000\n"
-"PO-Revision-Date: 2025-02-05 12:04+0000\n"
-"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
-"Language-Team: English - United Kingdom <en@li.org>\n"
+"POT-Creation-Date: 2026-07-05 07:40+0000\n"
+"PO-Revision-Date: 2026-07-19 10:20+0800\n"
+"Last-Translator: \n"
+"Language-Team: Chinese (China) <Chinese (China)>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:3
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
-msgstr "手机设置"
+msgstr "移动设备设置"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:13
-msgid "Mobile;Preferences;MobileSettings;"
-msgstr "手机;外观;手机设置;"
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr ""
+"Mobile;Preferences;MobileSettings;Tweaks;移动设备;手机;首选项;偏好;偏好设置;"
+"微调;设置;"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
 msgid "Phosh Mobile Settings"
-msgstr "Phosh 手机设置"
+msgstr "Phosh 移动设置"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
 msgid ""
@@ -53,31 +51,41 @@ msgstr "可用面板"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
 msgid "Compositor panel"
-msgstr "组合面板"
+msgstr "合成器面板"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
 msgid "Feedback panel"
 msgstr "反馈面板"
 
-#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#: plugins/librem5/ms-plugin-librem5-panel.c:215
 #, c-format
 msgid "Critical temperature is %.2f°C"
-msgstr "临界温度：%.2f°C"
+msgstr "临界温度是 %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:24
+msgid "Librem 5"
+msgstr "Librem 5"
 
 #. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:19
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:28
 msgid "U-Boot"
 msgstr "U-Boot"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:31
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:40
 msgid "Suspend device"
 msgstr "挂起设备"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:42
 msgid "Suspend is experimental"
-msgstr "挂起为实验性"
+msgstr "挂起是实验性功能"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:51
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:45
+msgid "suspend now"
+msgstr "立即挂起"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:60
 msgid "Temperatures"
 msgstr "温度"
 

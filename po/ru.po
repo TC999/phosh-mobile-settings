@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-10-03 12:11+0000\n"
-"PO-Revision-Date: 2025-10-04 10:44+0300\n"
+"POT-Creation-Date: 2026-02-12 14:39+0000\n"
+"PO-Revision-Date: 2026-02-13 16:33+0300\n"
 "Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,10 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:2
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
 msgstr "Мобильные настройки"
 
@@ -113,10 +112,29 @@ msgstr "Датчик оборудования"
 msgid "Battery"
 msgstr "Батарея"
 
-#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
 #, c-format
 msgid "Something went wrong: %s"
 msgstr "Что-то пошло не так: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Аутентификация отменена"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "Произошла %i ошибка при сохранении"
+msgstr[1] "Произошло %i ошибки при сохранении"
+msgstr[2] "Произошло %i ошибок при сохранении"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:891
+msgid "You need to authenticate as administrator to save some settings"
+msgstr ""
+"Вам необходимо авторизоваться как администратор, чтобы сохранить некоторые "
+"настройки"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -133,44 +151,40 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Выйти"
 
-#: src/mobile-settings-application.c:36
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Не удалось получить список широковещательных сообщений сотовой связи"
+
+#: src/ms-application.c:37
 msgid "- Manage your mobile settings"
 msgstr "- Управление мобильными настройками"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:447
+#: src/ms-application.c:511
 msgid "translator-credits"
 msgstr "Artur So"
 
-#: src/mobile-settings-window.c:148
-msgid "Device"
-msgstr "Устройство"
-
-#: src/ms-alerts-panel.c:242
-msgid "Could not get list of cell broadcast messages"
-msgstr "Не удалось получить список широковещательных сообщений сотовой связи"
-
-#: src/ms-audio-devices.c:178
+#: src/ms-audio-devices.c:179
 msgid "Media Volume"
 msgstr "Громкость медиа"
 
-#: src/ms-audio-devices.c:180
+#: src/ms-audio-devices.c:182
 msgid "Notification Volume"
 msgstr "Громкость уведомлений"
 
-#: src/ms-audio-devices.c:182
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Громкость голосового вызова"
+
+#: src/ms-audio-devices.c:188
 msgid "Ring Tone Volume"
 msgstr "Громкость мелодии вызова"
 
-#: src/ms-audio-devices.c:184
-msgid "Call volume"
-msgstr "Громкость вызова"
-
-#: src/ms-audio-devices.c:186
+#: src/ms-audio-devices.c:191
 msgid "Alarm Volume"
 msgstr "Громкость будильника"
 
-#: src/ms-audio-devices.c:188
+#: src/ms-audio-devices.c:194
 msgid "Emergency Alerts Volume"
 msgstr "Громкость экстренных оповещений"
 
@@ -178,44 +192,44 @@ msgstr "Громкость экстренных оповещений"
 msgid "Message of unknown severity"
 msgstr "Сообщение неизвестной степени серьезности"
 
-#: src/ms-feedback-panel.c:212
+#: src/ms-feedback-panel.c:309
 msgid "Sound file does not exist"
 msgstr "Аудиофайл не существует"
 
-#: src/ms-feedback-panel.c:214
+#: src/ms-feedback-panel.c:311
 msgid "Sound file is corrupt"
 msgstr "Аудиофайл поврежден"
 
-#: src/ms-feedback-panel.c:216
+#: src/ms-feedback-panel.c:313
 msgid "Failed to play sound"
 msgstr "Ошибка при воспроизвести аудио"
 
-#: src/ms-feedback-panel.c:255
+#: src/ms-feedback-panel.c:352
 #, c-format
 msgid "Playing %s"
 msgstr "Играет %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:416
+#: src/ms-feedback-panel.c:529
 msgid "low"
 msgstr "низкая"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:419
+#: src/ms-feedback-panel.c:532
 msgid "normal"
 msgstr "нормальная"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:422
+#: src/ms-feedback-panel.c:535
 msgid "critical"
 msgstr "критическая"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:426
+#: src/ms-feedback-panel.c:539
 msgid "none"
 msgstr "отсутствует"
 
-#: src/ms-feedback-panel.c:806
+#: src/ms-feedback-panel.c:954
 msgid "Mobile Settings Volume Control"
 msgstr "Мобильные настройки регулировки громкости"
 
@@ -224,35 +238,35 @@ msgid "Failed to set lockscreen wallpaper"
 msgstr "Не удалось установить обои для экрана блокировки"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:746
+#: src/ms-osk-panel.c:747
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/ms-osk-panel.c:747
+#: src/ms-osk-panel.c:748
 msgid "The default completer selected by the OSK"
 msgstr "Завершитель по умолчанию, выбранный OSK"
 
-#: src/ms-osk-panel.c:750
+#: src/ms-osk-panel.c:751
 msgid "No information available for this completer"
 msgstr "Нет информации для этого завершителя"
 
-#: src/ms-overview-panel.c:69
+#: src/ms-overview-panel.c:66
 msgid "Reset favorites?"
 msgstr "Сбросить избранное?"
 
-#: src/ms-overview-panel.c:72
+#: src/ms-overview-panel.c:69
 msgid "Reset list of favorite applications to the default?"
 msgstr "Сбросить список избранных приложений к значениям по умолчанию?"
 
-#: src/ms-overview-panel.c:75
+#: src/ms-overview-panel.c:72
 msgid "_Cancel"
 msgstr "_Отменить"
 
-#: src/ms-overview-panel.c:76
+#: src/ms-overview-panel.c:73
 msgid "_Reset"
 msgstr "_Сбросить"
 
-#: src/ms-overview-panel.c:331
+#: src/ms-overview-panel.c:328
 msgid "Failed to set wallpaper for overview"
 msgstr "Не удалось установить обои для экрана обзора"
 
@@ -314,11 +328,11 @@ msgid "Not available"
 msgstr "Недоступно"
 
 #. Translators: "Custom" is the name of a user-defined sound theme
-#: src/ms-sound-row.c:128
+#: src/ms-sound-row.c:130
 msgid "Custom"
 msgstr "Пользовательская"
 
-#: src/ms-sound-row.c:309
+#: src/ms-sound-row.c:311
 msgid "Choose sound file"
 msgstr "Выбрать аудиофайл"
 
@@ -341,174 +355,25 @@ msgstr "Беззвучный"
 msgid "Choose Wallpaper"
 msgstr "Выбрать обои"
 
-#. Translators: this is a verb.
-#: src/ui/mobile-settings-window.ui:31
-msgid "Search"
-msgstr "Найти"
+#: src/ms-window.c:146
+msgid "Device"
+msgstr "Устройство"
 
-#: src/ui/mobile-settings-window.ui:48
-msgid "Search settings"
-msgstr "Поиск настроек"
+#: src/ui/ms-about-panel.ui:18
+msgid "Phosh logo"
+msgstr "Логотип Phosh"
 
-#: src/ui/mobile-settings-window.ui:98
-msgid "Welcome"
-msgstr "Добро пожаловать"
+#: src/ui/ms-about-panel.ui:29
+msgid "Phosh Version"
+msgstr "Версия Phosh"
 
-#: src/ui/mobile-settings-window.ui:104
-msgid "Welcome to Mobile Settings"
-msgstr "Добро пожаловать в Мобильные настройки"
+#: src/ui/ms-about-panel.ui:37
+msgid "Operating System"
+msgstr "Операционная система"
 
-#: src/ui/mobile-settings-window.ui:105
-msgid "Tweak advanced mobile settings"
-msgstr "Изменение расширенных мобильных настроек"
-
-#: src/ui/mobile-settings-window.ui:113
-msgid "Top Bar"
-msgstr "Верхняя панель"
-
-#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "Быстрые настройки"
-
-#: src/ui/mobile-settings-window.ui:122
-msgid "Notches"
-msgstr "Вырезы"
-
-#: src/ui/mobile-settings-window.ui:133
-msgid "Overview"
-msgstr "Обзор"
-
-#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "Избранное"
-
-#: src/ui/mobile-settings-window.ui:142
-msgid "Filter"
-msgstr "Фильтр"
-
-#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
-msgid "Wallpaper"
-msgstr "Обои"
-
-#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
-msgid "Feedback"
-msgstr "Обратная связь"
-
-#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:93
-msgid "Sounds"
-msgstr "Звуки"
-
-#: src/ui/mobile-settings-window.ui:164
-msgid "Wakeup"
-msgstr "Пробуждение"
-
-#: src/ui/mobile-settings-window.ui:165
-msgid "Vibra"
-msgstr "Вибрация"
-
-#: src/ui/mobile-settings-window.ui:166
-msgid "Haptic"
-msgstr "Тактильность"
-
-#: src/ui/mobile-settings-window.ui:167
-msgid "LED"
-msgstr "Светодиод"
-
-#: src/ui/mobile-settings-window.ui:178
-msgid "Compositor"
-msgstr "Композитор"
-
-#: src/ui/mobile-settings-window.ui:186 src/ui/ms-osk-panel.ui:101
-msgid "Scaling"
-msgstr "Масштабирование"
-
-#: src/ui/mobile-settings-window.ui:197
-msgid "Lockscreen"
-msgstr "Экран блокировки"
-
-#: src/ui/mobile-settings-window.ui:206
-msgid "Shuffle"
-msgstr "Тасовка"
-
-#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "Виджеты"
-
-#: src/ui/mobile-settings-window.ui:208
-msgid "Password"
-msgstr "Пароль"
-
-#: src/ui/mobile-settings-window.ui:219
-msgid "Convergence"
-msgstr "Конвергенция"
-
-#: src/ui/mobile-settings-window.ui:237
-msgid "On Screen Keyboard"
-msgstr "Экранная клавиатура"
-
-#: src/ui/mobile-settings-window.ui:245
-msgid "Keyboard"
-msgstr "Клавиатура"
-
-#: src/ui/mobile-settings-window.ui:246
-msgid "Unfold"
-msgstr "Раскрытие"
-
-#: src/ui/mobile-settings-window.ui:247
-msgid "OSK"
-msgstr "OSK"
-
-#: src/ui/mobile-settings-window.ui:248
-msgid "Word Completion"
-msgstr "Автозавершение слов"
-
-#: src/ui/mobile-settings-window.ui:259
-msgid "Emergency Alerts"
-msgstr "Экстренные оповещения"
-
-#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
-msgid "Emergency"
-msgstr "Экстренная ситуация"
-
-#: src/ui/mobile-settings-window.ui:268
-msgid "Cell Broadcast"
-msgstr "Широковещание"
-
-#: src/ui/mobile-settings-window.ui:269
-msgid "Danger"
-msgstr "Опасность"
-
-#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
-msgid "Sensors"
-msgstr "Датчики"
-
-#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "Высокая контрастность"
-
-#: src/ui/mobile-settings-window.ui:299
-msgid "Experimental features"
-msgstr "Экспериментальные функции"
-
-#: src/ui/mobile-settings-window.ui:308
-msgid "Suspend"
-msgstr "Режим ожидания"
-
-#: src/ui/mobile-settings-window.ui:309
-msgid "Experimental"
-msgstr "Экспериментально"
-
-#: src/ui/mobile-settings-window.ui:333
-msgid "_Show Configurable Tweaks"
-msgstr "_Показать настраиваемые параметры"
-
-#: src/ui/mobile-settings-window.ui:340
-msgid "_Keyboard Shortcuts"
-msgstr "_Комбинации клавиш"
-
-#: src/ui/mobile-settings-window.ui:344
-msgid "_About Mobile Settings"
-msgstr "_О приложении"
+#: src/ui/ms-about-panel.ui:45
+msgid "Hardware Model"
+msgstr "Модель оборудования"
 
 #: src/ui/ms-alerts-panel.ui:17
 msgid "Unable To Receive Alerts"
@@ -682,137 +547,145 @@ msgstr "Включено"
 msgid "Sound Settings"
 msgstr "Настройки звука"
 
-#: src/ui/ms-feedback-panel.ui:27
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Воспроизводить звук при изменении положения ползунков громкости"
+
+#: src/ui/ms-feedback-panel.ui:33
 msgid "Feedback Settings"
 msgstr "Настройки обратной связи"
 
-#: src/ui/ms-feedback-panel.ui:30
+#: src/ui/ms-feedback-panel.ui:36
 msgid "Feedback profile"
 msgstr "Профиль обратной связи"
 
-#: src/ui/ms-feedback-panel.ui:31
+#: src/ui/ms-feedback-panel.ui:37
 msgid "The global maximum feedback profile"
 msgstr "Глобальный профиль обратной связи"
 
-#: src/ui/ms-feedback-panel.ui:46
+#: src/ui/ms-feedback-panel.ui:52
 msgid "Prefer flash"
 msgstr "Предпочитать вспышку"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "Предпочитать вспышку камеры светодиодному индикатору состояния, если он "
 "доступен"
 
-#. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:53
-msgid "Silence on Vol-"
-msgstr "Беззвучный режим при нажатии Vol-"
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Отключение звука нажатием кнопки громкости"
 
-#: src/ui/ms-feedback-panel.ui:54
+#: src/ui/ms-feedback-panel.ui:60
 msgid ""
-"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
 msgstr ""
 "Когда телефон заблокирован, перевести его в беззвучный режим при нажатии "
-"кнопки Vol- при входящих вызовах"
+"кнопки, которая понижает громкость при входящих вызовах"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:60
+#: src/ui/ms-feedback-panel.ui:66
 msgid "Haptic strength"
 msgstr "Тактильная чувствительность"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Максимальный процент тактильной чувствительности"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:86
 msgid "Per Application settings"
 msgstr "Настройки для каждого приложения"
 
-#: src/ui/ms-feedback-panel.ui:94
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:159
+msgid "Sounds"
+msgstr "Звуки"
+
+#: src/ui/ms-feedback-panel.ui:100
 msgid "The sound to use for certain events"
 msgstr "Звук, используемый для определенных событий"
 
-#: src/ui/ms-feedback-panel.ui:102
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Phone Calls"
 msgstr "Телефонные вызовы"
 
-#: src/ui/ms-feedback-panel.ui:108
+#: src/ui/ms-feedback-panel.ui:126
 msgid "SMS"
 msgstr "СМС"
 
-#: src/ui/ms-feedback-panel.ui:114
-msgid "Instant messages"
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
 msgstr "Мгновенные сообщения"
 
-#: src/ui/ms-feedback-panel.ui:125
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Будильник"
+
+#: src/ui/ms-feedback-panel.ui:162
 msgid "Screen Wakeup"
 msgstr "Пробуждение телефона"
 
-#: src/ui/ms-feedback-panel.ui:128
+#: src/ui/ms-feedback-panel.ui:165
 msgid "Notification urgency that lights up the screen"
 msgstr "Срочность уведомления, при которой загорается экран"
 
-#: src/ui/ms-feedback-panel.ui:146
+#: src/ui/ms-feedback-panel.ui:183
 msgid ""
 "Notification categories that wake up the screen independent from their "
 "urgency"
 msgstr ""
 "Категории уведомлений, которые пробуждают экран в зависимости от их срочности"
 
-#: src/ui/ms-feedback-panel.ui:149
+#: src/ui/ms-feedback-panel.ui:186
 msgid "Calls"
 msgstr "Вызовы"
 
-#: src/ui/ms-feedback-panel.ui:150
+#: src/ui/ms-feedback-panel.ui:187
 msgid "A generic audio or video call notification"
 msgstr "Общие уведомления об аудио- или видеовызове"
 
-#: src/ui/ms-feedback-panel.ui:156
+#: src/ui/ms-feedback-panel.ui:193
 msgid "Device events"
 msgstr "События на устройстве"
 
-#: src/ui/ms-feedback-panel.ui:157
+#: src/ui/ms-feedback-panel.ui:194
 msgid "A generic device-related notification"
 msgstr "Общие уведомления, связанные с устройством"
 
-#: src/ui/ms-feedback-panel.ui:163
+#: src/ui/ms-feedback-panel.ui:200
 msgid "Emails"
 msgstr "Эл. почта"
 
-#: src/ui/ms-feedback-panel.ui:164
+#: src/ui/ms-feedback-panel.ui:201
 msgid "A generic e-mail-related notification"
 msgstr "Общие уведомления, связанные с эл. почтой"
 
-#: src/ui/ms-feedback-panel.ui:170
-msgid "Instant Messages"
-msgstr "Мгновенные сообщения"
-
-#: src/ui/ms-feedback-panel.ui:171
+#: src/ui/ms-feedback-panel.ui:208
 msgid "A generic instant message-related notification"
 msgstr "Общие уведомления, связанные с мгновенными сообщениями"
 
-#: src/ui/ms-feedback-panel.ui:177
+#: src/ui/ms-feedback-panel.ui:214
 msgid "Network events"
 msgstr "Сетевые события"
 
-#: src/ui/ms-feedback-panel.ui:178
+#: src/ui/ms-feedback-panel.ui:215
 msgid "A generic network notification"
 msgstr "Общие сетевые уведомления"
 
-#: src/ui/ms-feedback-panel.ui:184
+#: src/ui/ms-feedback-panel.ui:221
 msgid "Presence changes"
 msgstr "Изменения в статусе присутствия"
 
-#: src/ui/ms-feedback-panel.ui:185
+#: src/ui/ms-feedback-panel.ui:222
 msgid "A generic presence change notification"
 msgstr "Общие уведомления об изменении статуса присутствия"
 
-#: src/ui/ms-feedback-panel.ui:191
+#: src/ui/ms-feedback-panel.ui:228
 msgid "File transfers"
 msgstr "Передача файлов"
 
-#: src/ui/ms-feedback-panel.ui:192
+#: src/ui/ms-feedback-panel.ui:229
 msgid "A generic file transfer or download notification"
 msgstr "Общие уведомления о передаче или загрузке файлов"
 
@@ -859,6 +732,10 @@ msgstr "Использовать обои"
 #: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Нужно ли показывать красочные обои"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:203
+msgid "Widgets"
+msgstr "Виджеты"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
@@ -910,7 +787,7 @@ msgstr "Введите клавишу, например, буквы (C или V)
 msgid "_Shortcut Key"
 msgstr "Клавиша _комбинации"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:154
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
 msgid "Shortcut Preview"
 msgstr "Предпросмотр комбинации"
 
@@ -924,15 +801,15 @@ msgstr "Раскладки"
 msgid "No Layouts configured"
 msgstr "Раскладки не настроены"
 
-#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
 msgid "More options…"
 msgstr "Больше опций…"
 
-#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
 msgid "Move Up"
 msgstr "Переместить вверх"
 
-#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
 msgid "Move Down"
 msgstr "Переместить вниз"
 
@@ -1008,13 +885,17 @@ msgstr "Высота клавиатуры в ландшафтном режиме
 msgid "When the screen is wider than tall"
 msgstr "Когда экран больше по ширине, чем по высоте"
 
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:182
+msgid "Scaling"
+msgstr "Масштабирование"
+
 #: src/ui/ms-osk-panel.ui:104
 msgid "Keep physical size constant"
 msgstr "Сохранять постоянный физический размер"
 
 #: src/ui/ms-osk-panel.ui:105
-msgid "Whether to keep the OSK's size constant in portrait mode"
-msgstr "Сохранять ли размер OSK постоянным в портретном режиме"
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr "Убедиться, что OSK достаточно большой при высоком разрешении экрана"
 
 #: src/ui/ms-osk-panel.ui:111
 msgid "Add empty space below keys"
@@ -1066,6 +947,10 @@ msgstr "Комбинации клавиш"
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Комбинации клавиш, доступные на соответствующей панели"
 
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:137
+msgid "Favorites"
+msgstr "Избранное"
+
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
 msgstr "Управление избранным"
@@ -1116,6 +1001,10 @@ msgstr ""
 "Датчики не установлены на вашем устройстве или они отключены через "
 "аппаратные переключатели."
 
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:276
+msgid "Sensors"
+msgstr "Датчики"
+
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
 msgstr "Чтение датчиков"
@@ -1131,6 +1020,10 @@ msgstr "Освещение"
 #: src/ui/ms-sensor-panel.ui:58
 msgid "Orientation"
 msgstr "Ориентация"
+
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:284
+msgid "High Contrast"
+msgstr "Высокая контрастность"
 
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
@@ -1173,9 +1066,170 @@ msgstr "Избегать вырезов"
 msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr "Не размещать элементы интерфейса под выемками и вырезами дисплея"
 
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:117
+msgid "Quick Settings"
+msgstr "Быстрые настройки"
+
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Управление дополнительными быстрыми настройками"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Добро пожаловать в Мобильные настройки"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Изменение расширенных мобильных настроек"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:31
+msgid "Search"
+msgstr "Найти"
+
+#: src/ui/ms-window.ui:48
+msgid "Search settings"
+msgstr "Поиск настроек"
+
+#: src/ui/ms-window.ui:98
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: src/ui/ms-window.ui:109
+msgid "Top Bar"
+msgstr "Верхняя панель"
+
+#: src/ui/ms-window.ui:118
+msgid "Notches"
+msgstr "Вырезы"
+
+#: src/ui/ms-window.ui:129
+msgid "Overview"
+msgstr "Обзор"
+
+#: src/ui/ms-window.ui:138
+msgid "Filter"
+msgstr "Фильтр"
+
+#: src/ui/ms-window.ui:139 src/ui/ms-window.ui:201
+msgid "Wallpaper"
+msgstr "Обои"
+
+#: src/ui/ms-window.ui:150 src/ui/ms-window.ui:158
+msgid "Feedback"
+msgstr "Обратная связь"
+
+#: src/ui/ms-window.ui:160
+msgid "Wakeup"
+msgstr "Пробуждение"
+
+#: src/ui/ms-window.ui:161
+msgid "Vibra"
+msgstr "Вибрация"
+
+#: src/ui/ms-window.ui:162
+msgid "Haptic"
+msgstr "Тактильность"
+
+#: src/ui/ms-window.ui:163
+msgid "LED"
+msgstr "Светодиод"
+
+#: src/ui/ms-window.ui:174
+msgid "Compositor"
+msgstr "Композитор"
+
+#: src/ui/ms-window.ui:193
+msgid "Lockscreen"
+msgstr "Экран блокировки"
+
+#: src/ui/ms-window.ui:202
+msgid "Shuffle"
+msgstr "Тасовка"
+
+#: src/ui/ms-window.ui:204
+msgid "Password"
+msgstr "Пароль"
+
+#: src/ui/ms-window.ui:215
+msgid "Convergence"
+msgstr "Конвергенция"
+
+#: src/ui/ms-window.ui:233
+msgid "On Screen Keyboard"
+msgstr "Экранная клавиатура"
+
+#: src/ui/ms-window.ui:241
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+#: src/ui/ms-window.ui:242
+msgid "Unfold"
+msgstr "Раскрытие"
+
+#: src/ui/ms-window.ui:243
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/ms-window.ui:244
+msgid "Word Completion"
+msgstr "Автозавершение слов"
+
+#: src/ui/ms-window.ui:255
+msgid "Emergency Alerts"
+msgstr "Экстренные оповещения"
+
+#: src/ui/ms-window.ui:263 src/ui/ms-window.ui:303
+msgid "Emergency"
+msgstr "Экстренная ситуация"
+
+#: src/ui/ms-window.ui:264
+msgid "Cell Broadcast"
+msgstr "Широковещание"
+
+#: src/ui/ms-window.ui:265
+msgid "Danger"
+msgstr "Опасность"
+
+#: src/ui/ms-window.ui:295
+msgid "Experimental features"
+msgstr "Экспериментальные функции"
+
+#: src/ui/ms-window.ui:304
+msgid "Suspend"
+msgstr "Режим ожидания"
+
+#: src/ui/ms-window.ui:305
+msgid "Experimental"
+msgstr "Экспериментально"
+
+#: src/ui/ms-window.ui:316 src/ui/ms-window.ui:324
+msgid "About"
+msgstr "О системе"
+
+#: src/ui/ms-window.ui:349
+msgid "_Show Configurable Tweaks"
+msgstr "_Показать настраиваемые параметры"
+
+#: src/ui/ms-window.ui:356
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбинации клавиш"
+
+#: src/ui/ms-window.ui:360
+msgid "_About Mobile Settings"
+msgstr "_О приложении"
+
+#~ msgid "Call volume"
+#~ msgstr "Громкость вызова"
+
+#~ msgid "Whether to keep the OSK's size constant in portrait mode"
+#~ msgstr "Сохранять ли размер OSK постоянным в портретном режиме"
+
+#~ msgid "Silence on Vol-"
+#~ msgstr "Беззвучный режим при нажатии Vol-"
+
+#~ msgid "Instant messages"
+#~ msgstr "Мгновенные сообщения"
 
 #~ msgid "Applications"
 #~ msgstr "Приложения"

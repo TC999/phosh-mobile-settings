@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="MsWelcomePanel" parent="MsPanel">
+    <child>
+      <object class="AdwStatusPage">
+        <property name="icon-name">mobi.phosh.MobileSettings-symbolic</property>
+        <property name="title" translatable="yes">Welcome to Mobile Settings</property>
+        <property name="description" translatable="yes">Tweak advanced mobile settings</property>
+      </object>
+    </child>
+  </template>
+</interface>

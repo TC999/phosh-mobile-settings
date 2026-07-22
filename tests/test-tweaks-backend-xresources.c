@@ -18,11 +18,14 @@ test_xresources_fixture_setup (BackendTestFixture *fixture, gconstpointer unused
   fixture->setting = g_new0 (MsTweaksSetting, 1);
   fixture->setting->name = g_strdup ("Dwm background or something idk");
   fixture->setting->key = g_ptr_array_new_full (1, g_free);
+  fixture->setting->default_ = g_strdup ("#FF00FF");
   g_ptr_array_add (fixture->setting->key, g_strdup ("dwm.background"));
 
   fixture->backend = ms_tweaks_backend_xresources_new (fixture->setting);
-  ms_tweaks_backend_xresources_set_xresources_path (fixture->backend,
-                                                    g_strdup (MS_TWEAKS_BACKEND_TEST_DIRECTORY"/.Xresources"));
+  g_object_set (G_OBJECT (fixture->backend),
+                "xresources-path",
+                MS_TWEAKS_BACKEND_TEST_DIRECTORY "/.Xresources",
+                NULL);
 }
 
 

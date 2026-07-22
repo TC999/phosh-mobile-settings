@@ -1,6 +1,6 @@
 include:
- - project: 'guidog/meta-phosh'
-   ref: '47c1f6429850295f62e6b9b213f4819a8b252aa7'
+ - project: 'World/Phosh/meta-phosh'
+   ref: '4a59c2bce9fe230614431a21638a05f3a30da7f3'
    file: '/ci/phosh-common-jobs.yml'
  - project: 'Infrastructure/freedesktop-ci-templates'
    ref: 'd03cddbcff35f26861429fc816c00323f48e99af'
@@ -37,26 +37,26 @@ workflow:
 variables:
   # For ci-fairy
   FDO_UPSTREAM_REPO: World/Phosh/phosh-mobile-settings
-  DEBIAN_IMAGE: $CI_REGISTRY/world/phosh/phosh-mobile-settings/debian:v0.0.2025-06-16
+  DEBIAN_IMAGE: $CI_REGISTRY/world/phosh/phosh-mobile-settings/debian:v0.0.2026-06-10
   COMMON_BUILD_OPTS: --werror -Db_coverage=true
   GCHECK_DIRS: src tests plugins
-  PHOSH_ADDITIONAL_EXPERIMENTAL_PKGS: libgmobile-dev phoc
+  PHOC: dbus-launch phoc --no-xwayland
+  WLR_BACKENDS: headless
 
-.trixie_vars: &trixie_vars
+.forky_vars: &forky_vars
   variables:
-    DIST: trixie
+    DIST: forky
     BUILD_OPTS:  ${COMMON_BUILD_OPTS}
 
 .build_step: &build_step
   script:
     - 'echo "Build opts: ${BUILD_OPTS}"'
-    - meson setup ${BUILD_OPTS} . _build
+    - meson setup -Dtweaks-data-dir= ${BUILD_OPTS} . _build
     - meson compile -C _build
 
 .test_step: &test_step
   script:
-    - !reference [.phosh-prepare-apt]
-    - dbus-run-session meson test --print-errorlogs -C _build
+    - XDG_RUNTIME_DIR=$PWD ${PHOC} -E "meson test --print-errorlogs -C _build"
     - ninja -C _build coverage-html || true
 
 .before: &before
@@ -81,54 +81,107 @@ sanity:
   rules:
     - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME'
 
-build:native-debian-trixie:
+build:native-debian-forky:
   stage: build
   image: ${DEBIAN_IMAGE}
   <<: *before
-  <<: *trixie_vars
+  <<: *forky_vars
   <<: *build_step
   artifacts:
     paths:
       - _build
 
-test:native-debian-trixie:
+test:native-debian-forky:
   stage: test
   image: ${DEBIAN_IMAGE}
   needs:
-    - build:native-debian-trixie
+    - build:native-debian-forky
   <<: *before
-  <<: *trixie_vars
+  <<: *forky_vars
   <<: *test_step
   coverage: '/^lines:\s+([\d.]+\%)\s+/'
   artifacts:
     when: always
     reports:
       junit: _build/meson-logs/testlog.junit.xml
-  except:
-    variables:
-      - $PKG_ONLY == '1'
 
-asan-test-native-debian-trixie:
+asan-test-native-debian-forky:
   stage: test
   image: ${DEBIAN_IMAGE}
   tags: [asan]
   needs: []
   <<: *before
   script:
-    - meson setup -Db_sanitize=address _build-asan
-    - dbus-run-session meson test --print-errorlogs -C _build-asan
+    - meson setup -Db_sanitize=address -Dtweaks-data-dir=$PWD/tests/data _build-asan
+    - XDG_RUNTIME_DIR=$PWD ${PHOC} -E "meson test --print-errorlogs -C _build-asan"
   allow_failure: true
+  artifacts:
+    paths:
+      - _build-asan
+
+asan-app-native-debian-forky:
+  stage: test
+  image: ${DEBIAN_IMAGE}
+  variables:
+    PMS_BUS_NAME: mobi.phosh.MobileSettings
+  tags: [asan]
+  needs: ['asan-test-native-debian-forky']
+  <<: *before
+  script: |
+    set -e
+    # Make sure everything is built
+    meson compile -C _build-asan
+    # `run` enables all debugging when G_MESSAGES_DEBUG is unset
+    export G_MESSAGES_DEBUG=doesnotmatter
+    # Make ASAN output useful
+    export LSAN_OPTIONS=suppressions=$PWD/data/leak-suppress.txt
+    export ASAN_OPTIONS=fast_unwind_on_malloc=0
+    # No a11y
+    export GTK_A11Y=none
+    # CI has no DRM devices
+    export GSK_RENDERER=cairo
+
+    set -x
+    export XDG_RUNTIME_DIR="$(mktemp -d)"
+    eval $(dbus-launch --sh-syntax)
+    phoc --no-xwayland -E $PWD/_build-asan/run &
+    PMS_PID=$!
+    echo "pid is $PMS_PID, waiting for bus name"
+    gdbus wait --timeout 20 --session "${PMS_BUS_NAME}"
+    sleep 1
+    echo "Found ${PMS_BUS_NAME}, killing process"
+    kill -TERM "${PMS_PID}"
+    wait "${PMS_PID}"
+  allow_failure: true
+
+check-pkgconf:
+  stage: test
+  image: ${DEBIAN_IMAGE}
+  <<: *before
+  script:
+    - !reference [.build_step, script]
+    - |
+      export PKG_CONFIG_PATH=$PWD/_build/meson-uninstalled:$PKG_CONFIG_PATH
+      export LD_LIBRARY_PATH=$PWD/_build/libpms:$LD_LIBRARY_PATH
+      make -C examples/
+      GTK_A11Y=none XDG_RUNTIME_DIR=$PWD ${PHOC} -E ./examples/pms-prefs-example --help
+      make -C examples/ clean
 
 check-po:
   stage: test
   extends: .phosh-check-po
-  except:
-    variables:
-      - $PKG_ONLY == "1"
 
 check-consistency:
   stage: test
   extends: .phosh-check-consistency
+
+check-dist:
+  stage: test
+  image: ${DEBIAN_IMAGE}
+  <<: *before
+  script:
+    - meson setup _build-dist ${MESON_OPTIONS}
+    - XDG_RUNTIME_DIR=$PWD ${PHOC} -E "meson dist --include-subprojects -C _build-dist ${MESON_DIST_OPTIONS}"
 
 format-check:
   stage: style-checks
@@ -137,15 +190,11 @@ format-check:
 
 check-g-style:
   stage: style-checks
-  allow_failure: true
-  script:
-    - ./.gitlab-ci/g-style ${GCHECK_DIRS}
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        paths:
-          - "**/*.c"
-          - "**/*.h"
+  variables:
+    PHOSH_BANNED_TYPES: "gchar gfloat gdouble gint"
+    PHOSH_EXCLUDE_DIRS: "libpms/lang/"
+  extends:
+    - .phosh-check-g-style
 
 check-meson:
   stage: style-checks
@@ -155,5 +204,5 @@ check-meson:
 check-markdown:
   stage: style-checks
   variables:
-    PHOSH_MARKDOWN_PATHS: "*.md"
+    PHOSH_MARKDOWN_PATHS: "*.md src/conf-tweaks/*.md"
   extends: .phosh-check-markdown

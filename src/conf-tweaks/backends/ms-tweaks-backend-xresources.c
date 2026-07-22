@@ -16,39 +16,22 @@
 #include <gio/gio.h>
 
 
+enum {
+  PROP_0,
+  PROP_SETTING_DATA,
+  PROP_XRESOURCES_PATH,
+  PROP_LAST_PROP,
+};
+static GParamSpec *props[PROP_LAST_PROP];
+
+
 struct _MsTweaksBackendXresources {
   MsTweaksBackendInterface parent_interface;
 
-  const MsTweaksSetting *setting_data;
-
-  const char            *key;
-
-  char                  *xresources_path;
+  MsTweaksSetting         *setting_data;
+  const char              *key;
+  char                    *xresources_path;
 };
-
-
-static char *
-ms_tweaks_backend_xresources_get_xresources_path (MsTweaksBackendXresources *self)
-{
-  GPathBuf *xresources_path;
-
-  if (self->xresources_path)
-    xresources_path = g_path_buf_new_from_path (self->xresources_path);
-  else {
-    xresources_path = g_path_buf_new_from_path (g_get_home_dir ());
-    g_path_buf_push (xresources_path, ".Xresources");
-  }
-
-  return g_path_buf_free_to_path (xresources_path);
-}
-
-
-void
-ms_tweaks_backend_xresources_set_xresources_path (MsTweaksBackend *backend, char *xresources_path)
-{
-  MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (backend);
-  self->xresources_path = xresources_path;
-}
 
 
 static GValue *
@@ -57,24 +40,24 @@ ms_tweaks_backend_xresources_get_value (MsTweaksBackend *backend)
   MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (backend);
   g_autoptr (GDataInputStream) input_stream = NULL;
   g_autoptr (GFileInputStream) file_input_stream;
-  g_autofree char *xresources_path;
   g_autoptr (GError) error = NULL;
   g_autoptr (GFile) input_file;
   g_autofree char *line = NULL;
   GValue *value;
 
-  xresources_path = ms_tweaks_backend_xresources_get_xresources_path (self);
-  input_file = g_file_new_for_path (xresources_path);
+  input_file = g_file_new_for_path (self->xresources_path);
   file_input_stream = g_file_read (input_file, NULL, &error);
 
-  value = g_new0 (GValue, 1);
-  g_value_init (value, G_TYPE_STRING);
-  g_value_set_string (value, self->setting_data->default_);
+  value = NULL;
+
+  /* Only allocate a value if we actually have a default so we don't end up
+   * returning a GValue with NULL inside. */
+  if (self->setting_data->default_)
+    value = ms_tweaks_string_value_new_from_default (self->setting_data->default_);
 
   if (!file_input_stream) {
-    /* Only warn once for "No such file or directory" as it otherwise may get printed many times. */
     if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
-      g_warning_once ("Failed to read: %s", error->message);
+      ms_tweaks_debug (self->setting_data->name, "Failed to read: %s", error->message);
     else
       ms_tweaks_warning (self->setting_data->name, "Failed to read: %s", error->message);
 
@@ -93,6 +76,11 @@ ms_tweaks_backend_xresources_get_value (MsTweaksBackend *backend)
 
         if (g_strv_length (key_value_pair) == 2) {
           g_strstrip (key_value_pair[1]);
+
+          /* We may not have initialised value earlier if we had no default. */
+          if (!value)
+            value = ms_tweaks_string_value_new_from_default (self->setting_data->default_);
+
           g_value_set_string (value, key_value_pair[1]);
           break;
         } else {
@@ -139,7 +127,7 @@ rewrite_existing_xresources (MsTweaksBackendXresources  *self,
   else
     line_to_insert = g_strdup (""); /* Remove the entry by replacing it with an empty string. */
 
-  g_debug ("Rewriting existing Xresources at \"%s\"", xresources_path);
+  g_debug ("Rewriting existing Xresources at '%s'", xresources_path);
   /* If there is more than one identical entry, something is weird anyway. */
   g_string_replace (contents_string, line_to_replace, line_to_insert, 1);
 
@@ -154,14 +142,7 @@ rewrite_existing_xresources (MsTweaksBackendXresources  *self,
     g_string_append_printf (contents_string, "%s\n", line_to_insert);
   }
 
-  if (!g_file_set_contents (xresources_path, contents_string->str, -1, error)) {
-    g_warning ("Error while writing to Xresources at \"%s\": %s",
-               xresources_path,
-               (*error)->message);
-    return FALSE;
-  }
-
-  return TRUE;
+  return g_file_set_contents (xresources_path, contents_string->str, -1, error);
 }
 
 
@@ -174,14 +155,9 @@ write_new_xresources (MsTweaksBackendXresources  *self,
   g_autofree char *new_xresources = g_strconcat (self->key, ": ", new_value, NULL);
   g_autofree char *xresources_dir_path = g_path_get_dirname (xresources_path);
 
-  g_debug ("xresources doesn't exist at \"%s\", creating new one (error: %s)",
-           xresources_path,
-           (*error)->message);
-  g_clear_error (error);
-
   if (g_mkdir_with_parents (xresources_dir_path, 0700) == -1) {
     ms_tweaks_warning (self->setting_data->name,
-                       "failed to create leading directories \"%s\": %s",
+                       "failed to create leading directories '%s': %s",
                        xresources_dir_path,
                        strerror (errno));
     g_set_error (error,
@@ -191,15 +167,7 @@ write_new_xresources (MsTweaksBackendXresources  *self,
     return FALSE;
   }
 
-  if (!g_file_set_contents (xresources_path, new_xresources, -1, error)) {
-    ms_tweaks_warning (self->setting_data->name,
-                       "error while writing to xresources at \"%s\": %s",
-                       xresources_path,
-                       (*error)->message);
-    return FALSE;
-  }
-
-  return TRUE;
+  return g_file_set_contents (xresources_path, new_xresources, -1, error);
 }
 
 
@@ -210,21 +178,26 @@ ms_tweaks_backend_xresources_set_value (MsTweaksBackend *backend,
 {
   MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (backend);
   const char *new_value = new_value_ ? g_value_get_string (new_value_) : NULL;
-  g_autofree char *xresources_path = NULL;
   g_autofree char *contents = NULL;
-  gboolean success;
-
-  xresources_path = ms_tweaks_backend_xresources_get_xresources_path (self);
+  gboolean success = FALSE;
 
   if (!self->key) {
-    ms_tweaks_warning (self->setting_data->name, "key was NULL. Can't set property.");
+    g_set_error (error,
+                 MS_TWEAKS_BACKEND_XRESOURCES_ERROR,
+                 MS_TWEAKS_BACKEND_XRESOURCES_ERROR_NULL_KEY,
+                 "key was NULL. Can't set property.");
     return FALSE;
   }
 
-  if (g_file_get_contents (xresources_path, &contents, NULL, error))
-    success = rewrite_existing_xresources (self, contents, xresources_path, new_value, error);
-  else
-    success = write_new_xresources (self, xresources_path, new_value, error);
+  if (g_file_get_contents (self->xresources_path, &contents, NULL, error)) {
+    success = rewrite_existing_xresources (self, contents, self->xresources_path, new_value, error);
+  } else if (g_error_matches (*error, G_FILE_ERROR, G_FILE_ERROR_NOENT)) {
+    g_debug ("xresources doesn't exist at '%s', creating new one (error: %s)",
+             self->xresources_path,
+             (*error)->message);
+    g_clear_error (error);
+    success = write_new_xresources (self, self->xresources_path, new_value, error);
+  }
 
   return success;
 }
@@ -256,17 +229,68 @@ G_DEFINE_QUARK (ms-tweaks-backend-xresources-error-quark, ms_tweaks_backend_xres
 
 
 static void
-ms_tweaks_backend_xresources_init (MsTweaksBackendXresources *self)
-{
-}
-
-
-static void
 ms_tweaks_backend_xresources_dispose (GObject *object)
 {
   MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (object);
 
   g_clear_pointer (&self->xresources_path, g_free);
+  g_clear_pointer (&self->setting_data, ms_tweaks_setting_free);
+}
+
+
+static void
+ms_tweaks_backend_xresources_set_property (GObject      *object,
+                                           guint         property_id,
+                                           const GValue *value,
+                                           GParamSpec   *pspec)
+{
+  MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (object);
+
+  switch (property_id) {
+  case PROP_SETTING_DATA:
+    self->setting_data = g_value_dup_boxed (value);
+    break;
+  case PROP_XRESOURCES_PATH:
+    /* Free any previous value, like the default value. */
+    g_clear_pointer (&self->xresources_path, g_free);
+
+    self->xresources_path = g_value_dup_string (value);
+    break;
+  default:
+    G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
+    break;
+  }
+}
+
+
+static void
+ms_tweaks_backend_xresources_get_property (GObject    *object,
+                                           guint       property_id,
+                                           GValue     *value,
+                                           GParamSpec *pspec)
+{
+  MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (object);
+
+  switch (property_id) {
+  case PROP_SETTING_DATA:
+    g_value_set_boxed (value, self->setting_data);
+    break;
+  case PROP_XRESOURCES_PATH:
+    g_value_set_string (value, self->xresources_path);
+    break;
+  default:
+    G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
+    break;
+  }
+}
+
+
+static void
+ms_tweaks_backend_xresources_constructed (GObject *object)
+{
+  MsTweaksBackendXresources *self = MS_TWEAKS_BACKEND_XRESOURCES (object);
+
+  self->key = ms_tweaks_util_get_single_key (self->setting_data->key);
 }
 
 
@@ -276,16 +300,43 @@ ms_tweaks_backend_xresources_class_init (MsTweaksBackendXresourcesClass *klass)
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
   object_class->dispose = ms_tweaks_backend_xresources_dispose;
+  object_class->constructed = ms_tweaks_backend_xresources_constructed;
+  object_class->set_property = ms_tweaks_backend_xresources_set_property;
+  object_class->get_property = ms_tweaks_backend_xresources_get_property;
+
+  props[PROP_SETTING_DATA] = g_param_spec_boxed ("setting-data",
+                                                 NULL,
+                                                 NULL,
+                                                 MS_TYPE_TWEAKS_SETTING,
+                                                 G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT_ONLY);
+  props[PROP_XRESOURCES_PATH] = g_param_spec_string ("xresources-path",
+                                                     NULL,
+                                                     NULL,
+                                                     NULL,
+                                                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+
+  g_object_class_install_properties (object_class, G_N_ELEMENTS (props), props);
+}
+
+
+static void
+ms_tweaks_backend_xresources_init (MsTweaksBackendXresources *self)
+{
+  GPathBuf *xresources_path_buf;
+
+  xresources_path_buf = g_path_buf_new_from_path (g_get_home_dir ());
+  g_path_buf_push (xresources_path_buf, ".Xresources");
+  self->xresources_path = g_path_buf_free_to_path (xresources_path_buf);
 }
 
 
 MsTweaksBackend *
 ms_tweaks_backend_xresources_new (const MsTweaksSetting *setting_data)
 {
-  MsTweaksBackendXresources *self = g_object_new (MS_TYPE_TWEAKS_BACKEND_XRESOURCES, NULL);
-
-  self->setting_data = setting_data;
-  self->key = ms_tweaks_util_get_single_key (setting_data->key);
+  MsTweaksBackendXresources *self = g_object_new (MS_TYPE_TWEAKS_BACKEND_XRESOURCES,
+                                                  "setting-data",
+                                                  setting_data,
+                                                  NULL);
 
   return MS_TWEAKS_BACKEND (self);
 }

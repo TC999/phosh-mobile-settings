@@ -1,0 +1,1486 @@
+# Japanese translation for phosh-mobile-settings.
+# Copyright (C) 2026 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2026-06-30 20:20+0000\n"
+"PO-Revision-Date: 2026-07-03 20:39+0900\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
+msgid "Mobile Settings"
+msgstr "モバイル設定"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr ""
+"Mobile;Preferences;MobileSettings;Tweaks;モバイル;設定;モバイル設定;微調整;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Phosh モバイル設定"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr "コマンドラインを使わなければ設定できない Phosh の設定を変更できます。"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Phosh を搭載するモバイルデバイス向けの高度な設定"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "利用可能なパネル"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "コンポジタパネル"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "フィードバックパネル"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:215
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "最大許容温度は %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:24
+msgid "Librem 5"
+msgstr "Librem 5"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:28
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:40
+msgid "Suspend device"
+msgstr "デバイスをサスペンド"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:42
+msgid "Suspend is experimental"
+msgstr "サスペンドは試験機能です"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:45
+msgid "suspend now"
+msgstr "今すぐサスペンド"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:60
+msgid "Temperatures"
+msgstr "温度"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:64
+msgid "CPU"
+msgstr "CPU"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:83
+msgid "GPU"
+msgstr "GPU"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:102
+msgid "VPU"
+msgstr "VPU"
+
+# 参考: https://www.renesas.com/ja/products/power-management/battery-management/battery-fuel-gauges
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:120
+msgid "Fuel Gauge"
+msgstr "バッテリー残量ゲージ"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:138
+msgid "Battery"
+msgstr "バッテリー"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:13
+msgid "Add Layout"
+msgstr "レイアウトを追加"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17 src/ui/ms-updates-panel.ui:82
+#: src/ui/ms-updates-panel.ui:126
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "追加"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-lang-panel.ui:14
+#: src/ui/ms-window.ui:318 src/ui/ms-window.ui:326
+msgid "Language"
+msgstr "言語"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "レイアウト"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:29
+msgid "No Layouts configured"
+msgstr "設定済みのレイアウトなし"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "追加のオプション…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "上へ"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "下へ"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "削除"
+
+#: libpms/lang/ms-common-language.c:312
+msgid "Other…"
+msgstr "その他…"
+
+#: libpms/lang/ms-language-chooser.ui:4
+msgid "Select Language"
+msgstr "言語を選択"
+
+#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:108
+#: src/ui/ms-hidden-apps-dialog.ui:15
+msgid "_Cancel"
+msgstr "キャンセル(_C)"
+
+#: libpms/lang/ms-language-chooser.ui:23 src/ui/ms-hidden-apps-dialog.ui:23
+msgid "_Select"
+msgstr "選択(_S)"
+
+#: libpms/lang/ms-language-chooser.ui:44
+msgid "Language or country"
+msgstr "言語や国"
+
+#: libpms/lang/ms-language-chooser.ui:68
+msgid "No languages found"
+msgstr "言語が見つかりません"
+
+#: libpms/lang/ms-language-chooser.ui:79
+msgid "More…"
+msgstr "さらに…"
+
+#: libpms/lang/ms-util.c:130
+msgid "Today"
+msgstr "今日"
+
+#: libpms/lang/ms-util.c:134
+msgid "Yesterday"
+msgstr "昨日"
+
+#. Translators: This is a date format string in the style of "Feb 24".
+#: libpms/lang/ms-util.c:142
+#, no-c-format
+msgid "%b %e"
+msgstr "%B%-e日"
+
+#. Translators: This is a date format string in the style of "Feb 24, 2013".
+#: libpms/lang/ms-util.c:147
+msgid "%b %e, %Y"
+msgstr "%Y年%B%-e日"
+
+#. TRANSLATORS: This is the datetime format in the style of
+#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
+#. and "Yesterday, 10:10:10 AM"
+#: libpms/lang/ms-util.c:166
+#, c-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: libpms/lang/ms-util.c:186
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d 時間"
+
+#: libpms/lang/ms-util.c:187
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d 分"
+
+#: libpms/lang/ms-util.c:188
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d 秒"
+
+#. 5 hours 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:195
+#, c-format
+msgctxt "hours minutes seconds"
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. 5 hours 2 minutes
+#: libpms/lang/ms-util.c:200
+#, c-format
+msgctxt "hours minutes"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 5 hours
+#: libpms/lang/ms-util.c:205
+#, c-format
+msgctxt "hours"
+msgid "%s"
+msgstr "%s"
+
+#. 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:213
+#, c-format
+msgctxt "minutes seconds"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 2 minutes
+#: libpms/lang/ms-util.c:218
+#, c-format
+msgctxt "minutes"
+msgid "%s"
+msgstr "%s"
+
+#. 0 seconds
+#: libpms/lang/ms-util.c:229
+msgid "0 seconds"
+msgstr "0 秒"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "何か問題が発生しました: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "認証がキャンセルされました"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "保存中に %i 件のエラーが発生しました"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr "一部の設定を保存するには管理者として認証が必要です"
+
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "セルブロードキャストメッセージの一覧を取得できませんでした"
+
+#: src/ms-application.c:37
+msgid "- Manage your mobile settings"
+msgstr "- モバイル設定を管理します"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/ms-application.c:541
+msgid "translator-credits"
+msgstr "Ryo Nakano <ryonakaknock3@gmail.com>"
+
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr "メディアの音量"
+
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr "通知の音量"
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "通話の音量"
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr "着信の音量"
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr "アラームの音量"
+
+#: src/ms-audio-devices.c:194
+msgid "Emergency Alerts Volume"
+msgstr "緊急警報の音量"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "重要度不明のメッセージ"
+
+#: src/ms-feedback-panel.c:338
+msgid "Sound file does not exist"
+msgstr "音声ファイルが存在しません"
+
+#: src/ms-feedback-panel.c:340
+msgid "Sound file is corrupt"
+msgstr "音声ファイルが破損しています"
+
+#: src/ms-feedback-panel.c:342
+msgid "Failed to play sound"
+msgstr "音声を再生できませんでした"
+
+#: src/ms-feedback-panel.c:381
+#, c-format
+msgid "Playing %s"
+msgstr "%s を再生中"
+
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:579
+msgid "low"
+msgstr "低"
+
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:582
+msgid "normal"
+msgstr "標準"
+
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:585
+msgid "critical"
+msgstr "緊急"
+
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:589
+msgid "none"
+msgstr "なし"
+
+#: src/ms-feedback-panel.c:1008
+msgid "Mobile Settings Volume Control"
+msgstr "モバイル設定音量コントロール"
+
+#: src/ms-lang-panel.c:80
+msgid "Failed to set system locale"
+msgstr "システムのロケールを設定できませんでした"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "ロック画面の壁紙を設定できませんでした"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:751
+msgid "Default"
+msgstr "デフォルト"
+
+#: src/ms-osk-panel.c:752
+msgid "The default completer selected by the OSK"
+msgstr "オンスクリーンキーボードによって選択されたデフォルトの補完エンジン"
+
+#: src/ms-osk-panel.c:755
+msgid "No information available for this completer"
+msgstr "この補完エンジンに関する情報なし"
+
+#: src/ms-overview-panel.c:62
+#, c-format
+msgid "%u App Made Visible Again"
+msgid_plural "%u Apps Made Visible Again"
+msgstr[0] "%u 個のアプリを再表示しました"
+
+#: src/ms-overview-panel.c:102
+msgid "Reset favorites?"
+msgstr "お気に入りをリセットしますか?"
+
+#: src/ms-overview-panel.c:105
+msgid "Reset list of favorite applications to the default?"
+msgstr "お気に入りのアプリケーションの一覧をデフォルトにリセットしますか?"
+
+#: src/ms-overview-panel.c:109
+msgid "_Reset"
+msgstr "リセット(_R)"
+
+#: src/ms-overview-panel.c:364
+msgid "Failed to set wallpaper for overview"
+msgstr "アクティビティ画面の壁紙を設定できませんでした"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
+msgid "Normal"
+msgstr "縦向き"
+
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
+msgid "Bottom up"
+msgstr "上下逆"
+
+# 「本体の左側が上向き」ということ
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
+msgid "Left up"
+msgstr "右向き"
+
+# 「本体の右側が上向き」ということ
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
+msgid "Right up"
+msgstr "左向き"
+
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
+msgid "Undefined"
+msgstr "不明"
+
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
+msgid "Near"
+msgstr "近い"
+
+#: src/ms-sensor-panel.c:142
+msgid "Far"
+msgstr "遠い"
+
+#: src/ms-sensor-panel.c:260
+msgid "Updating…"
+msgstr "更新中…"
+
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
+msgid "Not available"
+msgstr "利用不可"
+
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "利用不可"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "利用不可"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:130
+msgid "Custom"
+msgstr "カスタム"
+
+#: src/ms-sound-row.c:311
+msgid "Choose sound file"
+msgstr "音声ファイルを選択"
+
+#. Translators: %s is a OS version number like 0.20260614
+#: src/ms-updates-panel.c:151
+#, c-format
+msgid "Update to %s"
+msgstr "%s にアップデート"
+
+#: src/ms-updates-panel.c:184 src/ms-updates-panel.c:220
+#, c-format
+msgid "OS update failed: %s"
+msgstr "OS のアップデートに失敗しました: %s"
+
+#: src/ms-updates-panel.c:270
+#, c-format
+msgid "Canceling OS update failed: %s"
+msgstr "OS のアップデートのキャンセルに失敗しました: %s"
+
+#: src/ms-updates-panel.c:333
+msgid "OS Update already in progress"
+msgstr "OS のアップデートはすでに進行中です"
+
+#. Translators %s is an os version number like 0.20260614
+#: src/ms-updates-panel.c:341
+#, c-format
+msgid "Updating to %s…"
+msgstr "%s にアップデート中…"
+
+#: src/ms-updates-panel.c:361
+msgid "OS update in progress"
+msgstr "OS のアップデートが進行中"
+
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:170
+msgid "Full"
+msgstr "完全"
+
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:173
+msgid "Quiet"
+msgstr "マナー"
+
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:176
+msgid "Silent"
+msgstr "サイレント"
+
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "壁紙を選択"
+
+#: src/ms-window.c:131
+msgid "Configurable Tweaks"
+msgstr "設定可能項目"
+
+#: src/ms-window.c:182
+msgid "Device"
+msgstr "デバイス"
+
+#: src/ui/ms-about-panel.ui:19
+msgid "Phosh logo"
+msgstr "Phosh ロゴ"
+
+#: src/ui/ms-about-panel.ui:30
+msgid "Phosh Version"
+msgstr "Phosh バージョン"
+
+#: src/ui/ms-about-panel.ui:38
+msgid "Operating System"
+msgstr "オペレーティングシステム"
+
+#: src/ui/ms-about-panel.ui:46
+msgid "Operating System Version"
+msgstr "オペレーティングシステムのバージョン"
+
+#: src/ui/ms-about-panel.ui:54
+msgid "Hardware Model"
+msgstr "ハードウェアモデル"
+
+#: src/ui/ms-about-panel.ui:66
+msgid "Support Phosh"
+msgstr "Phosh を支援する"
+
+#: src/ui/ms-about-panel.ui:67
+msgid "Your donations make our work possible"
+msgstr "あなたの寄付が開発を可能にします"
+
+#: src/ui/ms-about-panel.ui:70
+msgid "D_onate"
+msgstr "寄付(_O)"
+
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "警報を受信できません"
+
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"利用可能なセルラーモデムが検出されないため、このデバイスでは緊急警報を受信で"
+"きません。"
+
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "緊急警報/行政機関が発令する警報"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "重大な脅威に関する警告"
+
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "命や身の安全に関わる重大な脅威に関する警告を表示します"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "極めて重大な脅威に関する警告"
+
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr "命や身の安全に関わる極めて重大な脅威に関する警告を表示します"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "公共安全警報"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "身の安全に関わる危険性がある状況下において推奨される行動を表示します"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "警報をテスト"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "警報システムのテストメッセージを定期的に表示します"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "アンバーアラート"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "児童誘拐事件に関するメッセージを表示します"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "過去に受信した緊急警報/行政機関が発令する警報"
+
+#: src/ui/ms-alerts-panel.ui:82
+msgid "No emergency alerts yet"
+msgstr "緊急警報は未受信です"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "音量"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "実行中のアプリケーションの拡大率を下げる"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr "画面に収まらず正しく表示されないアプリに対してのみ有効にしてください"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "すべてのアプリケーションの拡大率を下げる"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr ""
+"すべてのアプリケーションの拡大率を強制的に下げます。最終手段としてお使いくだ"
+"さい。"
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "すべてのアプリの拡大率を下げる"
+
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
+msgid "Enabled"
+msgstr "有効"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "既知のドッキングステーションが検出されません"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "内臓タッチスクリーンをマッピング"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "有効"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "試験機能"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "まだ完全に安定しているとはみなされていない機能"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "緊急電話"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"緊急電話を有効にします。お使いの通信事業者が確実に対応している場合にのみ、有"
+"効にしてください。"
+
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "有効"
+
+#: src/ui/ms-features-panel.ui:32
+msgid "Enable suspend via the system menu"
+msgstr "システムメニューからサスペンドできるようにする"
+
+#: src/ui/ms-features-panel.ui:34
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"データ接続が切断される、アラームが鳴らないなどの制限があることを認識したうえ"
+"で、有効にしてください"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "有効"
+
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "サウンド設定"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "音量ボタン操作時に音を鳴らす"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Feedback Settings"
+msgstr "フィードバック設定"
+
+#: src/ui/ms-feedback-panel.ui:36
+msgid "Feedback profile"
+msgstr "フィードバックのプロファイル"
+
+#: src/ui/ms-feedback-panel.ui:37
+msgid "The global maximum feedback profile"
+msgstr "最優先されるシステム全体のフィードバックプロファイル"
+
+#: src/ui/ms-feedback-panel.ui:52
+msgid "Prefer flash"
+msgstr "フラッシュを使う"
+
+#: src/ui/ms-feedback-panel.ui:53
+msgid "Prefer camera flash over status LED when available"
+msgstr ""
+"利用可能な場合はステータス LED ではなくカメラのフラッシュを発光させます"
+
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "音量ボタンを押したらサイレントモードにする"
+
+#: src/ui/ms-feedback-panel.ui:60
+msgid ""
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
+msgstr ""
+"ロック中に着信した時に音量を下げるボタンを押すと、サイレントモードに切り替え"
+"ます"
+
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:66
+msgid "Haptic strength"
+msgstr "触覚フィードバックの強さ"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Maximum haptic feedback strength percentage"
+msgstr "触覚フィードバックの最大の強さ (%)"
+
+#: src/ui/ms-feedback-panel.ui:86
+msgid "Per Application settings"
+msgstr "アプリケーションごとの設定"
+
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:161
+msgid "Sounds"
+msgstr "サウンド"
+
+#: src/ui/ms-feedback-panel.ui:100
+msgid "The sound to use for certain events"
+msgstr "特定のイベントに対して使うサウンド"
+
+#: src/ui/ms-feedback-panel.ui:114
+msgid "Phone Calls"
+msgstr "着信"
+
+#: src/ui/ms-feedback-panel.ui:126
+msgid "SMS"
+msgstr "SMS"
+
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
+msgstr "インスタントメッセージ"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "アラーム"
+
+#: src/ui/ms-feedback-panel.ui:162
+msgid "Screen Wakeup"
+msgstr "画面の点灯"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "Notification urgency that lights up the screen"
+msgstr "画面を点灯する通知の優先度"
+
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr "優先度とは関係なく画面を点灯させる通知カテゴリー"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "Calls"
+msgstr "通話"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "音声通話/ビデオ通話に関する一般的な通知"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "Device events"
+msgstr "デバイスのイベント"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "デバイスに関する一般的な通知"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "メール"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "メールに関する一般的な通知"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr "インスタントメッセージに関する一般的な通知"
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr "ネットワークのイベント"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr "ネットワークに関する一般的な通知"
+
+#. Translators: "presence change" means coming online or going offline,
+#. like in an instant messenger.
+#: src/ui/ms-feedback-panel.ui:223
+msgid "Presence changes"
+msgstr "アクティビティステータスの変化"
+
+#: src/ui/ms-feedback-panel.ui:224
+msgid "A generic presence change notification"
+msgstr "アクティビティステータスの変化に関する一般的な通知"
+
+#: src/ui/ms-feedback-panel.ui:230
+msgid "File transfers"
+msgstr "ファイル転送"
+
+#: src/ui/ms-feedback-panel.ui:231
+msgid "A generic file transfer or download notification"
+msgstr "ファイル転送/ダウンロードに関する一般的な通知"
+
+#: src/ui/ms-hidden-app-row.ui:5 src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "アプリケーション"
+
+#: src/ui/ms-hidden-apps-dialog.ui:4
+msgid "Hidden Apps"
+msgstr "非表示のアプリ"
+
+#: src/ui/ms-hidden-apps-dialog.ui:83
+msgid "No Apps are Currently Hidden"
+msgstr "現在非表示のアプリなし"
+
+#: src/ui/ms-lang-panel.ui:15
+msgid "The language of the user interface"
+msgstr "ユーザーインターフェースの言語"
+
+#: src/ui/ms-lang-panel.ui:18
+msgid "_Language"
+msgstr "言語(_L)"
+
+#: src/ui/ms-lang-panel.ui:45
+msgid "Language change requires logout or restart"
+msgstr "言語変更にはログアウトまたは再起動が必要です"
+
+#: src/ui/ms-lang-panel.ui:46
+msgid "Logout"
+msgstr "ログアウト"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Locking and unlocking"
+msgstr "ロックとロック解除"
+
+#: src/ui/ms-lockscreen-panel.ui:18
+msgid "Shuffle keypad"
+msgstr "数字キーをランダムにする"
+
+#: src/ui/ms-lockscreen-panel.ui:19
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "キーパッド上の数字の順番をランダムにするかどうか"
+
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "ロック解除に認証を必要とする"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr ""
+"PIN またはパスワードを入力しないとデバイスをロック解除できないようにします"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "自動画面ロックまでの時間"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "画面が暗くなってからロックするまでの秒数"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:94
+msgid "Background"
+msgstr "背景"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:100
+msgid "_Select Wallpaper…"
+msgstr "壁紙を選択(_S)…"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:112
+msgid "Use wallpaper"
+msgstr "壁紙を使う"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:113
+msgid "Whether to show a colorful wallpaper"
+msgstr "カラフルな壁紙を表示するかどうか"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:205
+msgid "Widgets"
+msgstr "ウィジェット"
+
+#: src/ui/ms-lockscreen-panel.ui:80
+msgid "Additional widgets for the lock screen"
+msgstr "ロック画面の追加ウィジェット"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:168
+msgid "Add Shortcut"
+msgstr "ショートカットを追加"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "ショートカットの修飾キーを選択"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "ショートカットキーを選択"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "ショートカットキーを入力"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "文字 (C や V) などのキーを入力してください。"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "ショートカットキー(_S)"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+msgid "Shortcut Preview"
+msgstr "ショートカットのプレビュー"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "オンスクリーンキーボードを有効にする(_O)"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "必要な場合にオンスクリーンキーボードを表示するかどうか"
+
+#: src/ui/ms-osk-panel.ui:20
+msgid "Unfold long-press"
+msgstr "表示するまでの長押しの長さ"
+
+#: src/ui/ms-osk-panel.ui:21
+msgid ""
+"How long to press the center of the home bar to unfold the on screen keyboard"
+msgstr ""
+"ホームバーの中央をどのくらい押し続けるとオンスクリーンキーボードを表示するか"
+
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
+msgid "short"
+msgstr "短い"
+
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "標準"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
+msgid "long"
+msgstr "長い"
+
+#: src/ui/ms-osk-panel.ui:38
+msgid "Ignore hardware keyboard"
+msgstr "ハードウェアキーボードを無視"
+
+#: src/ui/ms-osk-panel.ui:39
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr ""
+"物理キーボードが存在する場合にオンスクリーンキーボードを表示するかどうか"
+
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "キー入力をポップアップ表示"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "入力されたキーを示すポップオーバーを表示するかどうか"
+
+#: src/ui/ms-osk-panel.ui:59
+msgid "Keyboard height in portrait mode"
+msgstr "縦方向モードでのキーボードの高さ"
+
+#: src/ui/ms-osk-panel.ui:60
+msgid "When the screen is taller than wide"
+msgstr "画面の高さが幅よりも長い場合"
+
+#: src/ui/ms-osk-panel.ui:76
+msgid "Keyboard height in landscape mode"
+msgstr "横方向モードでのキーボードの高さ"
+
+#: src/ui/ms-osk-panel.ui:77
+msgid "When the screen is wider than tall"
+msgstr "画面の幅が高さよりも長い場合"
+
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:184
+msgid "Scaling"
+msgstr "サイズ調整"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "見た目上のサイズを常に同じにする"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr ""
+"高解像度の場合にオンスクリーンキーボードが十分な大きさになるようにします"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "キーの下に何もない領域を追加"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"オンスクリーンキーボードの位置を上に移動するために、キーの下に何もない領域を"
+"追加するかどうか。"
+
+#: src/ui/ms-osk-panel.ui:122
+msgid "Text Completion"
+msgstr "テキスト補完"
+
+#: src/ui/ms-osk-panel.ui:125
+msgid "Opportunistic word completion"
+msgstr "必要に応じて単語補完を有効にする"
+
+#: src/ui/ms-osk-panel.ui:126
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "アプリが有用だと判断した場合に単語補完を有効にします"
+
+#: src/ui/ms-osk-panel.ui:133
+msgid "Toggle via OSK menu"
+msgstr "オンスクリーンキーボードのメニューから切り替える"
+
+#: src/ui/ms-osk-panel.ui:134
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr "キーボードのメニューボタンから単語補完を切り替えられるようにします"
+
+#: src/ui/ms-osk-panel.ui:140
+msgid "Default Completer"
+msgstr "デフォルトの補完エンジン"
+
+#: src/ui/ms-osk-panel.ui:141
+msgid "The default completion engine to use"
+msgstr "デフォルトで使用する補完エンジン"
+
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:150
+msgid "Handle space around punctuation characters"
+msgstr "約物の前後のスペースを調整"
+
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:152
+msgid ""
+"This also swaps the space and punctuation characters after word completion"
+msgstr "これは単語補完の後にスペースと約物を入れ替えます"
+
+#: src/ui/ms-osk-panel.ui:160
+msgid "Terminal Layout"
+msgstr "端末のレイアウト"
+
+#: src/ui/ms-osk-panel.ui:179
+msgid "Shortcuts"
+msgstr "ショートカット"
+
+#: src/ui/ms-osk-panel.ui:180
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "ショートカットバーで利用可能なショートカット"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:139
+msgid "Favorites"
+msgstr "お気に入り"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "お気に入りを並べ替え"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"お気に入りのアプリを並べ替えるには、以下のアプリをドラッグ &amp; ドロップして"
+"ください"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "お気に入りをリセット"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "お気に入りのアプリの一覧をデフォルトに復元します"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "リセット"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "App Filtering and Hiding"
+msgstr "アプリのフィルター表示と非表示"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "アプリケーションフィルターモードを設定"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "アクティビティ画面でモバイル対応アプリのみを表示します"
+
+#: src/ui/ms-overview-panel.ui:74
+msgid "_Manage Hidden Apps"
+msgstr "非表示のアプリを管理(_M)"
+
+#: src/ui/ms-overview-panel.ui:75
+msgid "Make apps you disabled in the overview visible again"
+msgstr "アクティビティ画面で非表示にしたアプリを再表示します"
+
+#: src/ui/ms-panel-switcher.ui:11
+msgid "No Matching Panels"
+msgstr "一致するパネルなし"
+
+#: src/ui/ms-panel-switcher.ui:12
+msgid "Try a different search"
+msgstr "他のキーワードを試してください"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "センサーが見つかりません"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"お使いのデバイスにセンサーが搭載されていないか、物理キルスイッチによって無効"
+"になっています。"
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:278
+msgid "Sensors"
+msgstr "センサー"
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "センサーの読み取り値"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "近接センサー"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "環境光センサー"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "ジャイロスコープ"
+
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:286
+msgid "High Contrast"
+msgstr "ハイコントラスト"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "自動ハイコントラスト"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "環境光センサーにより制御されます"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "照度のしきい値"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "しきい値を越えるとハイコントラストテーマに切り替えます"
+
+#: src/ui/ms-sound-row.ui:33
+msgid "Toggle Play"
+msgstr "再生/一時停止"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "音声ファイル (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "UI 要素"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "バッテリー残量の割合を表示"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "トップバーに正確なバッテリー残量を表示します"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "ノッチを避ける"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr "ノッチやディスプレイの切り欠き部分に UI 要素を配置しないようにします"
+
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:119
+msgid "Quick Settings"
+msgstr "クイック設定"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organize your additional Quick Settings"
+msgstr "追加のクイック設定を整理します"
+
+#: src/ui/ms-updates-panel.ui:12
+msgid "OS updates require a system restart"
+msgstr "OS のアップデートにはシステムの再起動が必要です"
+
+#: src/ui/ms-updates-panel.ui:13
+msgid "Restart"
+msgstr "再起動"
+
+#: src/ui/ms-updates-panel.ui:30
+msgid "Everything up to date"
+msgstr "すべて最新の状態"
+
+#: src/ui/ms-updates-panel.ui:31
+msgid "There are no OS updates available"
+msgstr "利用可能な OS のアップデートはありません"
+
+#: src/ui/ms-updates-panel.ui:42
+msgid "Updates available"
+msgstr "アップデート利用可能"
+
+#: src/ui/ms-updates-panel.ui:43
+msgid "There are OS updates available"
+msgstr "OS のアップデートが利用可能です"
+
+#: src/ui/ms-updates-panel.ui:65
+msgid "Fetching OS update…"
+msgstr "OS のアップデートを取得中…"
+
+#: src/ui/ms-updates-panel.ui:109
+msgid "Installing OS update…"
+msgstr "OS のアップデートをインストール中…"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "“モバイル設定”にようこそ"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "高度なモバイル設定を調整します"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:32
+msgid "Search"
+msgstr "検索"
+
+#. Translators: Placeholder text for the search bar input
+#: src/ui/ms-window.ui:50
+msgid "Search settings"
+msgstr "設定を検索"
+
+#: src/ui/ms-window.ui:100
+msgid "Welcome"
+msgstr "ようこそ"
+
+#: src/ui/ms-window.ui:111
+msgid "Top Bar"
+msgstr "トップバー"
+
+#: src/ui/ms-window.ui:120
+msgid "Notches"
+msgstr "ノッチ"
+
+#: src/ui/ms-window.ui:131
+msgid "Overview"
+msgstr "アクティビティ画面"
+
+#: src/ui/ms-window.ui:140
+msgid "Filter"
+msgstr "フィルター"
+
+#: src/ui/ms-window.ui:141 src/ui/ms-window.ui:203
+msgid "Wallpaper"
+msgstr "壁紙"
+
+#: src/ui/ms-window.ui:152 src/ui/ms-window.ui:160
+msgid "Feedback"
+msgstr "フィードバック"
+
+# コンテキスト: 通知が来たら画面を点灯する機能
+#: src/ui/ms-window.ui:162
+msgid "Wakeup"
+msgstr "点灯"
+
+#: src/ui/ms-window.ui:163
+msgid "Vibra"
+msgstr "バイブレーション"
+
+#: src/ui/ms-window.ui:164
+msgid "Haptic"
+msgstr "触覚"
+
+#: src/ui/ms-window.ui:165
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:176
+msgid "Compositor"
+msgstr "コンポジタ"
+
+#: src/ui/ms-window.ui:195
+msgid "Lockscreen"
+msgstr "ロック画面"
+
+# コンテキスト: ロック画面の数字キーをランダムにする機能
+#: src/ui/ms-window.ui:204
+msgid "Shuffle"
+msgstr "ランダム"
+
+#: src/ui/ms-window.ui:206
+msgid "Password"
+msgstr "パスワード"
+
+# 直訳「コンバージェンス」はあまり知名度がないと判断しました
+#: src/ui/ms-window.ui:217
+msgid "Convergence"
+msgstr "デスクトップモード"
+
+#: src/ui/ms-window.ui:235
+msgid "On Screen Keyboard"
+msgstr "オンスクリーンキーボード"
+
+#: src/ui/ms-window.ui:243
+msgid "Keyboard"
+msgstr "キーボード"
+
+# コンテキスト: ホームバーの中央を押しつづけるとオンスクリーンキーボードを表示する機能
+#: src/ui/ms-window.ui:244
+msgid "Unfold"
+msgstr "表示"
+
+# 「OSK」という単語が日本語にはあまり浸透していないと判断しました
+#: src/ui/ms-window.ui:245
+msgid "OSK"
+msgstr "オンスクリーンキーボード"
+
+#: src/ui/ms-window.ui:246
+msgid "Word Completion"
+msgstr "単語補完"
+
+#: src/ui/ms-window.ui:257
+msgid "Emergency Alerts"
+msgstr "緊急警報"
+
+#: src/ui/ms-window.ui:265 src/ui/ms-window.ui:305
+msgid "Emergency"
+msgstr "緊急"
+
+#: src/ui/ms-window.ui:266
+msgid "Cell Broadcast"
+msgstr "セルブロードキャスト"
+
+#: src/ui/ms-window.ui:267
+msgid "Danger"
+msgstr "危険"
+
+#: src/ui/ms-window.ui:297
+msgid "Experimental features"
+msgstr "試験機能"
+
+#: src/ui/ms-window.ui:306
+msgid "Suspend"
+msgstr "サスペンド"
+
+#: src/ui/ms-window.ui:307
+msgid "Experimental"
+msgstr "試験機能"
+
+#: src/ui/ms-window.ui:327
+msgid "Locale"
+msgstr "ロケール"
+
+#: src/ui/ms-window.ui:338
+msgid "OS Updates"
+msgstr "OS のアップデート"
+
+#: src/ui/ms-window.ui:346
+msgid "Updates"
+msgstr "アップデート"
+
+#: src/ui/ms-window.ui:358 src/ui/ms-window.ui:366
+msgid "About"
+msgstr "このシステムについて"
+
+#: src/ui/ms-window.ui:391
+msgid "_Show Configurable Tweaks"
+msgstr "設定可能項目を表示(_S)"
+
+#: src/ui/ms-window.ui:398
+msgid "_Keyboard Shortcuts"
+msgstr "キーボードショートカット(_K)"
+
+#: src/ui/ms-window.ui:402
+msgid "_About Mobile Settings"
+msgstr "“モバイル設定”について(_A)"
+
+#: src/ui/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "全般"
+
+#: src/ui/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "ショートカットを表示する"
+
+#: src/ui/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "検索する"
+
+#: src/ui/shortcuts-dialog.ui:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "終了する"

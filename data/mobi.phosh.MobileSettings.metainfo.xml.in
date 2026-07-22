@@ -52,6 +52,70 @@
 
   <releases>
 
+    <release version="0.56.0" date="2026-07-05">
+      <description translate="no">
+        <ul>
+          <li>New os-updates panel to install atomic OS updates on immutable distributions</li>
+          <li>Improved about panel now shows the OS image version</li>
+          <li>Move conf-tweaks to their own section</li>
+          <li>Overview panel allows to re-enable hidden apps</li>
+          <li>The convergence panel now supports the NexDock 2025</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.55.0" date="2026-05-17">
+      <description translate="no">
+        <ul>
+          <li>New panel to set the language</li>
+          <li>Option to set on-screen keyboard automatic space handling</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.54.0" date="2026-04-05">
+      <description translate="no">
+        <ul>
+          <li>feedback panel: Play sound for voice call media role too</li>
+          <li>Add manual page</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.53.0" date="2026-02-15">
+      <description translate="no">
+        <ul>
+          <li>New about panel</li>
+          <li>feedback panel: Give audible feedback when adjusting media role volumes</li>
+          <li>feedback panel: List apps showing notifications in app list too</li>
+          <li>feedback panel: Sort per apps list alphabetically</li>
+          <li>osk panel: Improve shortcuts dialog</li>
+          <li>osk panel: Set landscape sizing flag too</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.52.0" date="2026-01-04">
+      <description translate="no">
+        <ul>
+          <li>conf-tweaks: Add sysfs backend</li>
+          <li>Details of settings panels can now by activated via actions</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.51.0" date="2025-11-15">
+      <description translate="no">
+        <ul>
+          <li>feedback panel: Allow to set alarm clock sound when clock app supports it</li>
+          <li>top-bar panel: Show icon for quick settings plugins</li>
+          <li>feedback-panel: Improve role-based audio volume settings</li>
+          <li>conf-tweaks: Better error handling, error reporting and bug fixes</li>
+          <li>conf-tweaks: Add Gtk3Settings</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="0.50.0" date="2025-10-04">
       <description translate="no">
         <ul>

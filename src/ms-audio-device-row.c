@@ -15,8 +15,6 @@
 
 #include "gvc-mixer-control.h"
 
-#define ADJUSTMENT_MAX_NORMAL PA_VOLUME_NORM
-
 /**
  * MsAudioDeviceRow:
  *
@@ -26,6 +24,7 @@
 enum {
   PROP_0,
   PROP_AUDIO_DEVICE,
+  PROP_VOLUME,
   PROP_LAST_PROP
 };
 static GParamSpec *props[PROP_LAST_PROP];
@@ -39,6 +38,7 @@ struct _MsAudioDeviceRow {
   GtkLabel          *description;
   GtkScale          *scale;
   GtkAdjustment     *adjustment;
+  double             volume;
   gboolean           setting_volume;
 };
 G_DEFINE_TYPE (MsAudioDeviceRow, ms_audio_device_row, ADW_TYPE_PREFERENCES_ROW)
@@ -79,7 +79,7 @@ transform_icon_name_to_icon (GBinding     *binding,
   if (icon_name == NULL)
     icon_name = "audio-speakers-symbolic";
 
-  icon = g_themed_icon_new_with_default_fallbacks (icon_name);
+  icon = g_themed_icon_new (icon_name);
 
   g_value_take_object (to_value, icon);
   return TRUE;
@@ -87,9 +87,23 @@ transform_icon_name_to_icon (GBinding     *binding,
 
 
 static void
+ms_audio_device_row_set_volume (MsAudioDeviceRow *self, double volume)
+{
+  g_debug ("Adjusting volume to %f", volume);
+
+  self->setting_volume = TRUE;
+  self->volume = volume;
+  gtk_adjustment_set_value (self->adjustment, volume);
+  g_object_notify_by_pspec (G_OBJECT (self), props[PROP_VOLUME]);
+  self->setting_volume = FALSE;
+}
+
+
+static void
 on_stream_volume_changed (MsAudioDeviceRow *self)
 {
   GvcMixerStream *stream;
+  pa_volume_t vol;
 
   if (self->setting_volume)
     return;
@@ -97,10 +111,8 @@ on_stream_volume_changed (MsAudioDeviceRow *self)
   stream = ms_audio_device_get_stream (self->audio_device);
   g_return_if_fail (stream);
 
-  self->setting_volume = TRUE;
-  g_debug ("Adjusting volume to %d", gvc_mixer_stream_get_volume (stream));
-  gtk_adjustment_set_value (self->adjustment, gvc_mixer_stream_get_volume (stream));
-  self->setting_volume = FALSE;
+  vol = gvc_mixer_stream_get_volume (stream);
+  ms_audio_device_row_set_volume (self, vol);
 }
 
 
@@ -144,6 +156,9 @@ ms_audio_device_row_set_property (GObject      *object,
   case PROP_AUDIO_DEVICE:
     set_audio_device (self, g_value_get_object (value));
     break;
+  case PROP_VOLUME:
+    ms_audio_device_row_set_volume (self, g_value_get_double (value));
+    break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
     break;
@@ -162,6 +177,9 @@ ms_audio_device_row_get_property (GObject    *object,
   switch (property_id) {
   case PROP_AUDIO_DEVICE:
     g_value_set_object (value, self->audio_device);
+    break;
+  case PROP_VOLUME:
+    g_value_set_double (value, self->volume);
     break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -196,6 +214,11 @@ ms_audio_device_row_class_init (MsAudioDeviceRowClass *klass)
                          MS_TYPE_AUDIO_DEVICE,
                          G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY | G_PARAM_EXPLICIT_NOTIFY);
 
+  props[PROP_VOLUME] =
+    g_param_spec_double ("volume", "", "",
+                         0.0, AUDIO_DEVICE_ROW_MAX_NORMAL, 0.0,
+                         G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_EXPLICIT_NOTIFY);
+
   g_object_class_install_properties (object_class, PROP_LAST_PROP, props);
 
   gtk_widget_class_set_template_from_resource (widget_class,
@@ -215,9 +238,9 @@ ms_audio_device_row_init (MsAudioDeviceRow *self)
 {
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  gtk_adjustment_set_upper (self->adjustment, ADJUSTMENT_MAX_NORMAL);
-  gtk_adjustment_set_step_increment (self->adjustment, ADJUSTMENT_MAX_NORMAL / 100.0);
-  gtk_adjustment_set_page_increment (self->adjustment, ADJUSTMENT_MAX_NORMAL / 10.0);
+  gtk_adjustment_set_upper (self->adjustment, AUDIO_DEVICE_ROW_MAX_NORMAL);
+  gtk_adjustment_set_step_increment (self->adjustment, AUDIO_DEVICE_ROW_MAX_NORMAL / 100.0);
+  gtk_adjustment_set_page_increment (self->adjustment, AUDIO_DEVICE_ROW_MAX_NORMAL / 10.0);
 }
 
 
@@ -243,4 +266,21 @@ ms_audio_device_row_get_audio_device (MsAudioDeviceRow *self)
   g_return_val_if_fail (MS_IS_AUDIO_DEVICE_ROW (self), NULL);
 
   return self->audio_device;
+}
+
+
+/**
+ * ms_audio_device_row_get_volume:
+ * @self: An audio device row
+ *
+ * Get the volume of the audio device associated with this row
+ *
+ * Returns:(transfer none): Volume value
+ */
+double
+ms_audio_device_row_get_volume (MsAudioDeviceRow *self)
+{
+  g_return_val_if_fail (MS_IS_AUDIO_DEVICE_ROW (self), 0.0);
+
+  return self->volume;
 }

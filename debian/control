@@ -3,31 +3,40 @@ Section: x11
 Priority: optional
 Maintainer: Guido Günther <agx@sigxcpu.org>
 Build-Depends:
- appstream,
  debhelper-compat (= 13),
+ dh-sequence-gir <!nocheck>,
+ appstream,
+ dbus-x11 <!nocheck>,
  desktop-file-utils,
- libadwaita-1-dev (>= 1.5),
- libfeedback-dev (>= 0.7.0),
- libgsound-dev,
- libgmobile-dev (>= 0.4.0),
- libgnome-desktop-4-dev,
- libgtk-4-dev,
- libjson-glib-dev,
- libportal-gtk4-dev,
- libsensors-dev,
- libpulse-dev,
- libyaml-dev,
- meson,
- phosh-dev (>= 0.40.0),
  feedbackd-common (>= 0.0.4) <!nocheck>,
+ gir1.2-adw-1-dev <!nogir>,
+ gir1.2-gio-2.0-dev <!nogir>,
+ gir1.2-gtk-4.0-dev <!nogir>,
  gnome-settings-daemon <!nocheck>,
  gsettings-desktop-schemas <!nocheck>,
+ gstreamer1.0-plugins-good,
+ libaccountsservice-dev,
+ libadwaita-1-dev (>= 1.5),
+ libcellbroadcast-dev (>= 0.0.3),
+ libfeedback-dev (>= 0.7.0),
+ libgirepository1.0-dev <!nogir>,
+ libgmobile-dev (>= 0.4.0),
+ libgnome-desktop-4-dev,
+ libgsound-dev,
+ libgtk-4-dev,
+ libjson-glib-dev,
+ libpolkit-gobject-1-dev,
+ libportal-gtk4-dev,
+ libpulse-dev,
+ libsensors-dev,
+ libyaml-dev,
+ libxml2-utils <!nocheck>,
+ meson,
  phoc <!nocheck>,
  phosh (>= 0.40.0~) <!nocheck>,
- xwayland <!nocheck>,
- libmm-glib-dev (>= 1.24.0),
- mobile-broadband-provider-info,
-# last two dependencies needed for libcellbroadcast
+ phosh-dev (>= 0.40.0),
+ phosh-plugins (>= 0.40.0~) <!nocheck>,
+ python3-docutils <!nodoc>,
 Standards-Version: 4.6.0
 Homepage: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/
 Rules-Requires-Root: no
@@ -36,8 +45,10 @@ Package: phosh-mobile-settings
 Architecture: any
 Depends:
  feedbackd (>= 0.8.0~),
+ libpms-1.0-0 (>= ${binary:Version}),
  phoc (>= 0.34.0~),
  phosh (>= 0.40.0~),
+ phosh-osk-stevia (>= 0.56~),
  xdg-desktop-portal-phosh (>= 0.46~),
  ${misc:Depends},
  ${shlibs:Depends},
@@ -47,3 +58,69 @@ Breaks:
 Description: Phosh and related settings for mobile
  Mobile Settings allows to configure some advanced settings of the Phosh mobile
  environment that would otherwise involve using the command line.
+
+Package: libpms-1.0-common
+Architecture: any
+Section: libs
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Breaks:
+ phosh-mobile-settings (<< 0.54~),
+Replaces:
+ phosh-mobile-settings (<< 0.54~),
+Description: Phosh and related settings for mobile - common files
+ Mobile Settings allows to configure some advanced settings of the Phosh mobile
+ environment that would otherwise involve using the command line.
+ .
+ This package contains the architecture independent files
+
+Package: libpms-1.0-0
+Architecture: any
+Section: libs
+Depends:
+ libpms-1.0-common (>= ${source:Version}),
+ phosh-osk-stevia (>= 0.53~),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Breaks:
+ phosh-osk-stub (<< 0.42~),
+ phosh-plugins (<< 0.44~),
+Description: Phosh and related settings for mobile - shared libraries
+ Mobile Settings allows to configure some advanced settings of the Phosh mobile
+ environment that would otherwise involve using the command line.
+ .
+ This package contains the shared library.
+
+Package: libpms-dev
+Architecture: any
+Section: libdevel
+Depends:
+ gir1.2-pms-1.0 (= ${binary:Version}),
+ libadwaita-1-dev,
+ libgtk-4-dev,
+ libpms-1.0-0 (>= ${binary:Version}),
+ ${misc:Depends},
+Provides:
+ ${gir:Provides},
+Breaks:
+ phosh-osk-stub (<< 0.42~),
+ phosh-plugins (<< 0.44~),
+Description: Phosh and related settings for mobile - library development files
+ Mobile Settings allows to configure some advanced settings of the Phosh mobile
+ environment that would otherwise involve using the command line.
+ .
+ This package contains the development files.
+
+Package: gir1.2-pms-1.0
+Architecture: any
+Multi-Arch: same
+Section: introspection
+Depends:
+ ${gir:Depends},
+ ${misc:Depends},
+Description: GObject introspection data for libpms
+ Mobile Settings allows to configure some advanced settings of the Phosh mobile
+ environment that would otherwise involve using the command line.
+ .
+ This package contains introspection data for the gmoible library.

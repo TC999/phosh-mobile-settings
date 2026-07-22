@@ -16,6 +16,8 @@
 #include "ms-feedback-panel.h"
 #include "ms-sound-row.h"
 
+#include "gmobile.h"
+
 #include <gsound.h>
 #include <glib/gi18n.h>
 
@@ -23,7 +25,7 @@
 #define CUSTOM_SOUND_THEME_NAME "__custom"
 #define DIR_MODE 0700
 
-#define STR_IS_NULL_OR_EMPTY(x) ((x) == NULL || (x)[0] == '\0')
+#define GM_STR_IS_NULL_OR_EMPTY(x) ((x) == NULL || (x)[0] == '\0')
 
 /**
  * MsSoundRow:
@@ -257,7 +259,7 @@ play_sound_activated  (GtkWidget *widget,  const char* action_name, GVariant *pa
 {
   MsSoundRow *self = MS_SOUND_ROW (widget);
 
-  g_return_if_fail (!STR_IS_NULL_OR_EMPTY (self->filename));
+  g_return_if_fail (!GM_STR_IS_NULL_OR_EMPTY (self->filename));
 
   if (self->playing) {
     gtk_widget_activate_action (GTK_WIDGET (self), "sound-player.stop", NULL, NULL);
@@ -309,7 +311,7 @@ open_filechooser_activated (GtkWidget *widget,  const char* action_name, GVarian
   gtk_file_dialog_set_title (filechooser, _("Choose sound file"));
   gtk_file_dialog_set_default_filter (filechooser, self->sound_filter);
 
-  if (!STR_IS_NULL_OR_EMPTY (self->filename)) {
+  if (!GM_STR_IS_NULL_OR_EMPTY (self->filename)) {
     g_autoptr (GFile) current_file = g_file_new_for_path (self->filename);
     if (current_file)
       gtk_file_dialog_set_initial_file (filechooser, current_file);
@@ -324,9 +326,18 @@ set_effect_name (MsSoundRow *self, const char *effect_name)
 {
   g_autofree char *target = NULL;
 
-  self->effect_name = g_strdup (effect_name);
-  target = ms_sound_row_get_target (self);
+  if (!g_set_str (&self->effect_name, effect_name))
+    return;
+
+  if (gm_str_is_null_or_empty (self->effect_name))
+    target = NULL;
+  else
+    target = ms_sound_row_get_target (self);
+
   ms_sound_row_set_filename (self, target);
+
+  g_object_notify_by_pspec (G_OBJECT (self), props[PROP_EFFECT_NAME]);
+
 }
 
 
@@ -414,7 +425,7 @@ ms_sound_row_class_init (MsSoundRowClass *klass)
   props[PROP_EFFECT_NAME] =
     g_param_spec_string ("effect-name", "", "",
                          NULL,
-                         G_PARAM_CONSTRUCT_ONLY | G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+                         G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_EXPLICIT_NOTIFY);
 
   g_object_class_install_properties (object_class, PROP_LAST_PROP, props);
 
@@ -474,15 +485,15 @@ ms_sound_row_set_filename (MsSoundRow *self, const char *filename)
   g_return_if_fail (MS_IS_SOUND_ROW (self));
 
   if (g_strcmp0 (self->filename, filename) == 0)
-      return;
+    return;
 
   g_free (self->filename);
   self->filename = g_strdup (filename);
 
   gtk_widget_action_set_enabled (GTK_WIDGET (self), "sound-row.clear-filename",
-                                 !STR_IS_NULL_OR_EMPTY (self->filename));
+                                 !GM_STR_IS_NULL_OR_EMPTY (self->filename));
   gtk_widget_action_set_enabled (GTK_WIDGET (self), "sound-row.play-sound",
-                                 !STR_IS_NULL_OR_EMPTY (self->filename));
+                                 !GM_STR_IS_NULL_OR_EMPTY (self->filename));
   gtk_widget_activate_action (GTK_WIDGET (self), "sound-player.stop", NULL, NULL);
   ms_sound_row_set_playing (self, FALSE);
 

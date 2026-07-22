@@ -16,5 +16,6 @@ G_DECLARE_FINAL_TYPE (MsPluginRow, ms_plugin_row, MS, PLUGIN_ROW, AdwActionRow)
 
 const char    *ms_plugin_row_get_name      (MsPluginRow *self);
 gboolean       ms_plugin_row_get_enabled   (MsPluginRow *self);
+void           ms_plugin_row_open_prefs (MsPluginRow *self);
 
 G_END_DECLS

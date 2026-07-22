@@ -1,15 +1,15 @@
 # Hungarian translation for phosh-mobile-settings.
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024, 2026 Free Software Foundation, Inc.
 # This file is distributed under the same license as the phosh-mobile-settings package.
 #
-# Balázs Úr <ur.balazs at fsf dot hu>, 2024.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settin"
 "gs/-/issues\n"
-"POT-Creation-Date: 2024-09-11 10:34+0000\n"
-"PO-Revision-Date: 2024-09-13 17:07+0200\n"
+"POT-Creation-Date: 2026-03-09 10:21+0000\n"
+"PO-Revision-Date: 2026-03-10 13:52+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -17,15 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 25.08.1\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:3
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
 msgstr "Mobilbeállítások"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:13
+#: data/mobi.phosh.MobileSettings.desktop.in:12
 msgid "Mobile;Preferences;MobileSettings;"
 msgstr "Mobil;Beállítások;Mobilbeállítások;"
 
@@ -62,45 +61,126 @@ msgstr "Visszajelzés panel"
 msgid "Critical temperature is %.2f°C"
 msgstr "A kritikus hőmérséklet %.2f°C"
 
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+msgid "Librem 5"
+msgstr "Librem 5"
+
 #. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:19
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
 msgid "U-Boot"
 msgstr "U-Boot"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:31
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
 msgid "Suspend device"
 msgstr "Eszköz felfüggesztése"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
 msgid "Suspend is experimental"
 msgstr "A felfüggesztés kísérleti"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:51
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+msgid "suspend now"
+msgstr "felfüggesztés most"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
 msgid "Temperatures"
 msgstr "Hőmérsékletek"
 
 #. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:55
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
 msgid "CPU"
 msgstr "CPU"
 
 #. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:74
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
 msgid "GPU"
 msgstr "GPU"
 
 #. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:93
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
 msgid "VPU"
 msgstr "VPU"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:111
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
 msgid "Fuel Gauge"
 msgstr "Üzemanyagmérő"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:129
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
 msgid "Battery"
 msgstr "Akkumulátor"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:14
+#| msgctxt "on screen keyboard"
+#| msgid "Add Layout"
+msgid "Add Layout"
+msgstr "Elrendezés hozzáadása"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
+msgid "Cancel"
+msgstr "Mégse"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Hozzáadás"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "Nyelv"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Elrendezések"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:30
+#| msgctxt "on screen keyboard"
+#| msgid "No Layouts configured"
+msgid "No Layouts configured"
+msgstr "Nincsenek elrendezések beállítva"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "További beállítások…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Mozgatás fel"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Mozgatás le"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Valami probléma történt: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Hitelesítés megszakítva"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "%i hiba történt mentés közben"
+msgstr[1] "%i hiba történt mentés közben"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr "Rendszergazdaként kell hitelesítenie magát néhány beállítás mentéséhez"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -117,203 +197,313 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Kilépés"
 
-#: src/mobile-settings-application.c:34
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Nem sikerült lekérni a cellás üzenetszórásos üzenetek listáját"
+
+#: src/ms-application.c:37
 msgid "- Manage your mobile settings"
 msgstr "– mobilbeállítások kezelése"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:426
+#: src/ms-application.c:511
 msgid "translator-credits"
-msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2024."
+msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2024, 2026."
 
-#: src/mobile-settings-window.c:85
-msgid "Device"
-msgstr "Eszköz"
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr "Média hangereje"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr "Értesítés hangereje"
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Hanghívás hangereje"
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr "Csengőhang hangereje"
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr "Riasztás hangereje"
+
+#: src/ms-audio-devices.c:194
+#| msgid "Emergency Calls"
+msgid "Emergency Alerts Volume"
+msgstr "Vészhelyzeti riasztások hangereje"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "Ismeretlen súlyosságú üzenet"
+
+#: src/ms-feedback-panel.c:338
 msgid "Sound file does not exist"
 msgstr "A hangfájl nem létezik"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:340
 msgid "Sound file is corrupt"
 msgstr "A hangfájl sérült"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:342
 msgid "Failed to play sound"
 msgstr "Nem sikerült lejátszani a hangot"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:381
 #, c-format
 msgid "Playing %s"
 msgstr "%s lejátszása"
 
-#: src/ms-feedback-panel.c:344 src/ms-feedback-panel.c:352
-msgid "none"
-msgstr "nincs"
-
-#: src/ms-feedback-panel.c:346
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:579
 msgid "low"
 msgstr "alacsony"
 
-#. 1.0
-#: src/ms-feedback-panel.c:348 src/ui/ms-osk-panel.ui:36
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:582
 msgid "normal"
 msgstr "normál"
 
-#: src/ms-feedback-panel.c:350
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:585
 msgid "critical"
 msgstr "kritikus"
 
-#: src/ms-sensor-panel.c:92
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:589
+msgid "none"
+msgstr "nincs"
+
+#: src/ms-feedback-panel.c:1008
+#| msgid "Mobile Settings"
+msgid "Mobile Settings Volume Control"
+msgstr "Mobilbeállítások hangerőszabályzója"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Nem sikerült beállítani a zárolási képernyő háttérképét"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:748
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: src/ms-osk-panel.c:749
+msgid "The default completer selected by the OSK"
+msgstr ""
+"A képernyő-billentyűzet által kiválasztott alapértelmezett szókiegészítő"
+
+#: src/ms-osk-panel.c:752
+msgid "No information available for this completer"
+msgstr "Nem érhetők el információk erről a szókiegészítőről"
+
+#: src/ms-overview-panel.c:66
+#| msgid "Reset Favorites"
+msgid "Reset favorites?"
+msgstr "Visszaállítja a kedvenceket?"
+
+#: src/ms-overview-panel.c:69
+#| msgid "Set list of favorite apps back to the default"
+msgid "Reset list of favorite applications to the default?"
+msgstr "Visszaállítja a kedvenc alkalmazások listáját az alapértelmezettre?"
+
+#: src/ms-overview-panel.c:72
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "_Mégse"
+
+#: src/ms-overview-panel.c:73
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "_Visszaállítás"
+
+#: src/ms-overview-panel.c:328
+msgid "Failed to set wallpaper for overview"
+msgstr "Nem sikerült beállítani az áttekintés háttérképét"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
 msgid "Normal"
 msgstr "Normál"
 
-#: src/ms-sensor-panel.c:94
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
 msgid "Bottom up"
 msgstr "Lentről felfelé"
 
-#: src/ms-sensor-panel.c:96
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
 msgid "Left up"
 msgstr "Balról felfelé"
 
-#: src/ms-sensor-panel.c:98
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
 msgid "Right up"
 msgstr "Jobbról felfelé"
 
-#: src/ms-sensor-panel.c:100
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
 msgid "Undefined"
 msgstr "Nincs meghatározva"
 
-#: src/ms-sensor-panel.c:135
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
 msgid "Near"
 msgstr "Közel"
 
-#: src/ms-sensor-panel.c:135
+#: src/ms-sensor-panel.c:142
 msgid "Far"
 msgstr "Távol"
 
-#: src/ms-sensor-panel.c:253
+#: src/ms-sensor-panel.c:260
 msgid "Updating…"
 msgstr "Frissítés…"
 
-#: src/ms-sensor-panel.c:269 src/ms-sensor-panel.c:270
-#: src/ms-sensor-panel.c:271
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+#| msgid "Not available"
+msgctxt "proximity sensor data"
 msgid "Not available"
 msgstr "Nem érhető el"
 
-#: src/ms-sound-row.c:127
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+#| msgid "Not available"
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Nem érhető el"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+#| msgid "Not available"
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Nem érhető el"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:130
 msgid "Custom"
 msgstr "Egyéni"
 
-#: src/ms-sound-row.c:308
+#: src/ms-sound-row.c:311
 msgid "Choose sound file"
 msgstr "Hangfájl kiválasztása"
 
-#: src/ms-util.c:150
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Teljes"
 
-#: src/ms-util.c:152
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Csendes"
 
-#: src/ms-util.c:154
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Néma"
 
-#: src/ui/mobile-settings-window.ui:75
-msgid "Welcome"
-msgstr "Üdvözöljük"
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Háttérkép kiválasztása"
 
-#: src/ui/mobile-settings-window.ui:81
-msgid "Welcome to Mobile Settings"
-msgstr "Üdvözöljük a mobilbeállításokban"
+#: src/ms-window.c:146
+msgid "Device"
+msgstr "Eszköz"
 
-#: src/ui/mobile-settings-window.ui:82
-msgid "Tweak advanced mobile settings"
-msgstr "Speciális mobilbeállítások finomhangolása"
+#: src/ui/ms-about-panel.ui:18
+msgid "Phosh logo"
+msgstr "Phosh logó"
 
-#: src/ui/mobile-settings-window.ui:90
-msgid "Top Bar"
-msgstr "Felső sáv"
+#: src/ui/ms-about-panel.ui:29
+msgid "Phosh Version"
+msgstr "Phosh verzió"
 
-#: src/ui/mobile-settings-window.ui:101
-msgid "Applications"
-msgstr "Alkalmazások"
+#: src/ui/ms-about-panel.ui:37
+msgid "Operating System"
+msgstr "Operációs rendszer"
 
-#: src/ui/mobile-settings-window.ui:112
-msgid "Feedback"
-msgstr "Visszajelzés"
+#: src/ui/ms-about-panel.ui:45
+msgid "Hardware Model"
+msgstr "Hardvermodell"
 
-#: src/ui/mobile-settings-window.ui:123
-msgid "Compositor"
-msgstr "Összeállító"
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "Nem lehet riasztásokat fogadni"
 
-#: src/ui/mobile-settings-window.ui:134
-msgid "Lockscreen"
-msgstr "Zárolási képernyő"
-
-#: src/ui/mobile-settings-window.ui:145
-msgid "Convergence"
-msgstr "Konvergencia"
-
-#: src/ui/mobile-settings-window.ui:156
-msgid "On Screen Keyboard"
-msgstr "Képernyő-billentyűzet"
-
-#: src/ui/mobile-settings-window.ui:167 src/ui/ms-sensor-panel.ui:28
-msgid "Sensors"
-msgstr "Érzékelők"
-
-#: src/ui/mobile-settings-window.ui:178
-msgid "Experimental features"
-msgstr "Kísérleti funkciók"
-
-#: src/ui/mobile-settings-window.ui:202
-msgid "_Keyboard Shortcuts"
-msgstr "_Gyorsbillentyűk"
-
-#: src/ui/mobile-settings-window.ui:206
-msgid "_About Mobile Settings"
-msgstr "A Mobilbeállítások _névjegye"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Kedvencek"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Kedvencek rendszerezése"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
 msgstr ""
-"Fogd és vidd módon mozgassa az alábbi alkalmazásokat a kedvenc alkalmazások "
-"átrendezéséhez"
+"Nem lehet vészhelyzeti riasztásokat fogadni ezen az eszközön, mivel nem észlel"
+"hető használható mobilmodem."
 
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Kedvencek visszaállítása"
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "Vészhelyzeti és kormányzati riasztások"
 
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "A kedvenc alkalmazások listájának visszaállítása az alapértelmezettre"
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "Rendkívüli fenyegetési riasztások"
 
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Visszaállítás"
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr ""
+"Riasztások megjelenítése az életet és biztonságot veszélyeztető rendkívüli fen"
+"yegetésekről"
 
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Mobilalkalmazások szűrése"
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "Súlyos fenyegetési riasztások"
 
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Alkalmazásszűrő mód beállítása"
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr ""
+"Riasztások megjelenítése az életet és biztonságot veszélyeztető súlyos fenyege"
+"tésekről"
 
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Csak mobilalkalmazások megjelenítése az áttekintőben"
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "Közbiztonsági riasztások"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr ""
+"A biztonságot veszélyeztető helyzetekben ajánlott intézkedések megjelenítése"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "Teszt riasztások"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "Időszakos üzenetek megjelenítése a riasztási rendszer teszteléséhez"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "Amber-riasztások"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "Gyermekrablási vészhelyzetekkel kapcsolatos üzenetek megjelenítése"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Vészhelyzeti és kormányzati riasztások előzményei"
+
+#: src/ui/ms-alerts-panel.ui:82
+#| msgid "Emergency Calls"
+msgid "No emergency alerts yet"
+msgstr "Még nincsenek vészhelyzeti riasztások"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Hangerő"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -339,11 +529,11 @@ msgstr ""
 msgid "Scale down all apps"
 msgstr "Összes alkalmazás méretének csökkentése"
 
-#: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
-#: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
-#: src/ui/ms-lockscreen-panel.ui:37 src/ui/ms-osk-panel.ui:20
-#: src/ui/ms-osk-panel.ui:72 src/ui/ms-osk-panel.ui:88
-#: src/ui/ms-scale-to-fit-row.ui:11
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+#| msgid "Enabled"
+msgctxt "scale to fit setting"
 msgid "Enabled"
 msgstr "Engedélyezve"
 
@@ -354,6 +544,13 @@ msgstr "Nem találhatók ismert dokkok"
 #: src/ui/ms-convergence-panel.ui:29
 msgid "Map built-in touch screen"
 msgstr "Beépített érintőképernyő leképezése"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+#| msgid "Enabled"
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Engedélyezve"
 
 #: src/ui/ms-features-panel.ui:11
 msgid "Experimental Features"
@@ -375,11 +572,18 @@ msgstr ""
 "A segélyhívások engedélyezése. Ezt csak akkor engedélyezze, ha biztonságosan "
 "tudja biztosítani, hogy ez működik a szolgáltatójánál."
 
-#: src/ui/ms-features-panel.ui:31
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+#| msgid "Enabled"
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Engedélyezve"
+
+#: src/ui/ms-features-panel.ui:32
 msgid "Enable suspend via the system menu"
 msgstr "A rendszermenün keresztüli felfüggesztés engedélyezése"
 
-#: src/ui/ms-features-panel.ui:33
+#: src/ui/ms-features-panel.ui:34
 msgid ""
 "Please only enable this if you're aware of the limitations like data "
 "connection loss or missed alarms"
@@ -387,138 +591,255 @@ msgstr ""
 "Ezt csak akkor engedélyezze, ha tisztában van a korlátozásokkal, mint "
 "például az adatkapcsolat elvesztése vagy az elmaradt riasztások"
 
-#: src/ui/ms-feedback-panel.ui:16
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+#| msgid "Enabled"
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Engedélyezve"
+
+#: src/ui/ms-feedback-panel.ui:13
+#| msgid "Quick Settings"
+msgid "Sound Settings"
+msgstr "Hangbeállítások"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Hang lejátszása a hangerőcsúszkák beállításakor"
+
+#: src/ui/ms-feedback-panel.ui:33
+#| msgid "Quick Settings"
+msgid "Feedback Settings"
+msgstr "Visszajelzési beállítások"
+
+#: src/ui/ms-feedback-panel.ui:36
 msgid "Feedback profile"
 msgstr "Visszajelzési profil"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:37
 msgid "The global maximum feedback profile"
 msgstr "A globálisan legnagyobb visszajelzési profil"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:52
 msgid "Prefer flash"
 msgstr "Villanófény előnyben részesítése"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "A kamera villanófényének előnyben részesítése az állapotjelző LED-del "
 "szemben, ha elérhető"
 
-#. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
-msgid "Silence on Vol-"
-msgstr "Csendesítés a hangerő csökkentése gombbal"
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Csend a hangerőgomb megnyomásával"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:60
+#| msgid ""
+#| "When locked put the phone in silent mode when pressing Vol- on incoming "
+#| "calls"
 msgid ""
-"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
 msgstr ""
-"Ha zárolva van, akkor a telefont néma módba helyezi a bejövő hívásoknál a "
-"hangerő csökkentése gomb megnyomásakor."
+"Ha zárolva van, akkor bejövő hívásoknál csendes módba helyezi a telefont annak"
+" a gombnak a megnyomásakor, amely csökkenti a hangerőt"
 
-#: src/ui/ms-feedback-panel.ui:48
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:66
+msgid "Haptic strength"
+msgstr "Tapintási erősség"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Legnagyobb tapintás-visszajelzési erősség százalékban"
+
+#: src/ui/ms-feedback-panel.ui:86
 msgid "Per Application settings"
 msgstr "Alkalmazásonkénti beállítások"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:159
 msgid "Sounds"
 msgstr "Hangok"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:100
 msgid "The sound to use for certain events"
 msgstr "A bizonyos eseményekhez használandó hang"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Phone Calls"
 msgstr "Telefonhívások"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:126
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:82
-msgid "Instant messages"
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+#| msgid "Instant messages"
+msgid "Instant Messages"
 msgstr "Azonnali üzenetek"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Ébresztőóra"
+
+#: src/ui/ms-feedback-panel.ui:162
 msgid "Screen Wakeup"
 msgstr "Képernyő felébresztése"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:165
 msgid "Notification urgency that lights up the screen"
 msgstr "Értesítési sürgősség, amely felvillantja a képernyőt"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"Értesítési kategóriák, amelyek felébresztik a képernyőt a sürgősségüktől függe"
+"tlenül"
+
+#: src/ui/ms-feedback-panel.ui:186
+#| msgid "Phone Calls"
+msgid "Calls"
+msgstr "Hívások"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "Általános hang- vagy videohívási értesítés"
+
+#: src/ui/ms-feedback-panel.ui:193
+#| msgid "Device"
+msgid "Device events"
+msgstr "Eszközesemények"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "Általános, eszközzel kapcsolatos értesítés"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "E-mailek"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "Általános, e-maillel kapcsolatos értesítés"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr "Általános, azonnali üzenettel kapcsolatos értesítés"
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr "Hálózati események"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr "Általános hálózati értesítés"
+
+#: src/ui/ms-feedback-panel.ui:221
+msgid "Presence changes"
+msgstr "Jelenlétváltozások"
+
+#: src/ui/ms-feedback-panel.ui:222
+msgid "A generic presence change notification"
+msgstr "Általános jelenlétváltozási értesítés"
+
+#: src/ui/ms-feedback-panel.ui:228
+msgid "File transfers"
+msgstr "Fájlátvitelek"
+
+#: src/ui/ms-feedback-panel.ui:229
+msgid "A generic file transfer or download notification"
+msgstr "Általános fájlátviteli vagy letöltési értesítés"
+
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "Zárolás és feloldás"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "Automatikus képernyőzárolás késleltetése"
-
-#: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "A képernyő kiürítésétől a képernyő zárolásáig eltelt másodpercek"
-
-#: src/ui/ms-lockscreen-panel.ui:30
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "Számbillentyűzet keverése"
 
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "Meg kell-e keverni a számokat a számbillentyűzeten"
 
-#: src/ui/ms-lockscreen-panel.ui:48
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Hitelesítés megkövetelése a feloldáshoz"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr "PIN-kód vagy jelszó beírásának megkövetelése az eszköz feloldásához"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Automatikus képernyőzárolás késleltetése"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "A képernyő kiürítésétől a képernyő zárolásáig eltelt másodpercek"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
+msgid "Background"
+msgstr "Háttér"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
+msgid "_Select Wallpaper…"
+msgstr "Háttérkép _kiválasztása…"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
+msgid "Use wallpaper"
+msgstr "Háttérkép használata"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
+msgid "Whether to show a colorful wallpaper"
+msgstr "Megjelenjen-e színes háttérkép"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:203
 msgid "Widgets"
 msgstr "Felületi elemek"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "További felületi elemek a zárolási képernyőhöz"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:4 src/ui/ms-osk-layout-prefs.ui:13
-msgctxt "on screen keyboard"
-msgid "Add Layout"
-msgstr "Elrendezés hozzáadása"
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+#| msgid "Shortcuts"
+msgid "Add Shortcut"
+msgstr "Gyorsbillentyű hozzáadása"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:13
-msgid "Cancel"
-msgstr "Mégse"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+#| msgid "Choose sound file"
+msgid "Choose Shortcut Modifiers"
+msgstr "Gyorsbillentyű-módosítók kiválasztása"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:19
-msgid "Add"
-msgstr "Hozzáadás"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Choose Shortcut Key"
+msgstr "Gyorsbillentyű kiválasztása"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:39
-msgid "Language"
-msgstr "Nyelv"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "Gyorsbillentyű megadása"
 
-#: src/ui/ms-osk-layout-prefs.ui:5
-msgctxt "on screen keyboard"
-msgid "Layouts"
-msgstr "Elrendezések"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Írjon be egy billentyűt, például betűket (például C vagy V) stb."
 
-#: src/ui/ms-osk-layout-prefs.ui:28
-msgctxt "on screen keyboard"
-msgid "No Layouts configured"
-msgstr "Nincsenek elrendezések beállítva"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+#| msgid "Shortcuts"
+msgid "_Shortcut Key"
+msgstr "_Gyorsbillentyű"
 
-#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
-msgid "More options…"
-msgstr "További beállítások…"
-
-#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
-msgid "Move Up"
-msgstr "Mozgatás fel"
-
-#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
-msgid "Move Down"
-msgstr "Mozgatás le"
-
-#: src/ui/ms-osk-layout-row.ui:49
-msgid "Remove"
-msgstr "Eltávolítás"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+#| msgid "Shortcuts"
+msgid "Shortcut Preview"
+msgstr "Gyorsbillentyű előnézete"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
@@ -528,72 +849,179 @@ msgstr "_Képernyő-billentyűzet engedélyezése"
 msgid "Whether to show the on screen keyboard when needed"
 msgstr "Meg kell-e jeleníteni a képernyő-billentyűzetet, ha szükséges"
 
-#: src/ui/ms-osk-panel.ui:28
+#: src/ui/ms-osk-panel.ui:20
 msgid "Unfold long-press"
 msgstr "Kibontás hosszú nyomással"
 
-#: src/ui/ms-osk-panel.ui:29
+#: src/ui/ms-osk-panel.ui:21
 msgid ""
 "How long to press the center of the home bar to unfold the on screen keyboard"
 msgstr ""
 "Milyen hosszan kell nyomni a kezdősáv közepét a képernyő-billentyűzet "
 "kibontásához"
 
-#. 0.5
-#: src/ui/ms-osk-panel.ui:34
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
 msgid "short"
 msgstr "rövid"
 
-#. 2.0
-#: src/ui/ms-osk-panel.ui:38
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+#| msgid "normal"
+msgctxt "press interval"
+msgid "normal"
+msgstr "normál"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
 msgid "long"
 msgstr "hosszú"
 
-#: src/ui/ms-osk-panel.ui:46
+#: src/ui/ms-osk-panel.ui:38
 msgid "Ignore hardware keyboard"
 msgstr "Hardveres billentyűzet mellőzése"
 
-#: src/ui/ms-osk-panel.ui:47
+#: src/ui/ms-osk-panel.ui:39
 msgid ""
 "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr ""
 "Meg kell-e jeleníteni a képernyő-billentyűzetet, ha fizikai billentyűzettel "
 "rendelkezik"
 
-#: src/ui/ms-osk-panel.ui:61
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Billentyűjelző felugró"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "Megjelenjen-e az aktuálisan lenyomott billentyűt jelző felugró ablak"
+
+#: src/ui/ms-osk-panel.ui:59
+msgid "Keyboard height in portrait mode"
+msgstr "Billentyűzet magassága álló módban"
+
+#: src/ui/ms-osk-panel.ui:60
+msgid "When the screen is taller than wide"
+msgstr "Ha a képernyő magasabb a szélességnél"
+
+#: src/ui/ms-osk-panel.ui:76
+msgid "Keyboard height in landscape mode"
+msgstr "Billentyűzet magassága fekvő módban"
+
+#: src/ui/ms-osk-panel.ui:77
+msgid "When the screen is wider than tall"
+msgstr "Ha a képernyő szélesebb a magasságnál"
+
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:182
+msgid "Scaling"
+msgstr "Méretezés"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "Fizikai méret állandóan tartása"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr ""
+"Győződjön meg arról, hogy a képernyő-billentyűzet elég nagy-e magas kijelzőfel"
+"bontásokban"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "Üres tér hozzáadása a billentyűk alatt"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"Adjon-e hozzá üres területet a képernyő-billentyűzet billentyűi alatt a felfel"
+"é toláshoz."
+
+#: src/ui/ms-osk-panel.ui:122
 msgid "Text Completion"
 msgstr "Szövegkiegészítés"
 
-#: src/ui/ms-osk-panel.ui:64
+#: src/ui/ms-osk-panel.ui:125
 msgid "Opportunistic word completion"
 msgstr "Megalkuvó szókiegészítés"
 
-#: src/ui/ms-osk-panel.ui:65
+#: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
 msgstr ""
 "Szókiegészítés engedélyezése, ha az alkalmazás azt jelzi, hogy ez hasznos"
 
-#: src/ui/ms-osk-panel.ui:80
+#: src/ui/ms-osk-panel.ui:133
 msgid "Toggle via OSK menu"
 msgstr "Be- és kikapcsolás az OSK menün keresztül"
 
-#: src/ui/ms-osk-panel.ui:81
+#: src/ui/ms-osk-panel.ui:134
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "A szókiegészítés be- és kikapcsolásának lehetővé tétele a billentyűzet "
 "menügombján keresztül"
 
-#: src/ui/ms-osk-panel.ui:99
+#: src/ui/ms-osk-panel.ui:140
+#| msgid "Text Completion"
+msgid "Default Completer"
+msgstr "Alapértelmezett szókiegészítő"
+
+#: src/ui/ms-osk-panel.ui:141
+msgid "The default completion engine to use"
+msgstr "A használandó alapértelmezett szókiegészítő-motor"
+
+#: src/ui/ms-osk-panel.ui:152
 msgid "Terminal Layout"
 msgstr "Terminál elrendezése"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:171
 msgid "Shortcuts"
 msgstr "Gyorsbillentyűk"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:172
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "A gyorsbillentyűsávon elérhető gyorsbillentyűk"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:137
+msgid "Favorites"
+msgstr "Kedvencek"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Kedvencek rendszerezése"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Fogd és vidd módon mozgassa az alábbi alkalmazásokat a kedvenc alkalmazások "
+"átrendezéséhez"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Kedvencek visszaállítása"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "A kedvenc alkalmazások listájának visszaállítása az alapértelmezettre"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Visszaállítás"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Mobilalkalmazások szűrése"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Alkalmazásszűrő mód beállítása"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Csak mobilalkalmazások megjelenítése az áttekintőben"
+
+#: src/ui/ms-scale-to-fit-row.ui:5
+#| msgid "Applications"
+msgid "Application"
+msgstr "Alkalmazás"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
@@ -606,6 +1034,10 @@ msgid ""
 msgstr ""
 "Vagy nincsenek érzékelők telepítve a készülékre, vagy le vannak tiltva egy "
 "fizikai kapcsolóval."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:276
+msgid "Sensors"
+msgstr "Érzékelők"
 
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
@@ -623,7 +1055,7 @@ msgstr "Fény"
 msgid "Orientation"
 msgstr "Tájolás"
 
-#: src/ui/ms-sensor-panel.ui:69
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:284
 msgid "High Contrast"
 msgstr "Nagy kontraszt"
 
@@ -669,7 +1101,7 @@ msgstr ""
 "Ne helyezzen felhasználói felületi elemeket a bevágások és a "
 "kijelzőkivágások mögé"
 
-#: src/ui/ms-topbar-panel.ui:34
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:117
 msgid "Quick Settings"
 msgstr "Gyors beállítások"
 
@@ -677,3 +1109,157 @@ msgstr "Gyors beállítások"
 msgid "Organize your additional Quick Settings"
 msgstr "További gyors beállítások rendszerezése"
 
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Üdvözöljük a mobilbeállításokban"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Speciális mobilbeállítások finomhangolása"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:31
+msgid "Search"
+msgstr "Keresés"
+
+#: src/ui/ms-window.ui:48
+#| msgid "Quick Settings"
+msgid "Search settings"
+msgstr "Beállítások keresése"
+
+#: src/ui/ms-window.ui:98
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#: src/ui/ms-window.ui:109
+msgid "Top Bar"
+msgstr "Felső sáv"
+
+#: src/ui/ms-window.ui:118
+#| msgid "Avoid notches"
+msgid "Notches"
+msgstr "Bevágások"
+
+#: src/ui/ms-window.ui:129
+msgid "Overview"
+msgstr "Áttekintés"
+
+#: src/ui/ms-window.ui:138
+msgid "Filter"
+msgstr "Szűrő"
+
+#: src/ui/ms-window.ui:139 src/ui/ms-window.ui:201
+msgid "Wallpaper"
+msgstr "Háttérkép"
+
+#: src/ui/ms-window.ui:150 src/ui/ms-window.ui:158
+msgid "Feedback"
+msgstr "Visszajelzés"
+
+#: src/ui/ms-window.ui:160
+#| msgid "Screen Wakeup"
+msgid "Wakeup"
+msgstr "Ébresztés"
+
+#: src/ui/ms-window.ui:161
+msgid "Vibra"
+msgstr "Vibrálás"
+
+#: src/ui/ms-window.ui:162
+msgid "Haptic"
+msgstr "Tapintás"
+
+#: src/ui/ms-window.ui:163
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:174
+msgid "Compositor"
+msgstr "Összeállító"
+
+#: src/ui/ms-window.ui:193
+msgid "Lockscreen"
+msgstr "Zárolási képernyő"
+
+#: src/ui/ms-window.ui:202
+#| msgid "Shuffle keypad"
+msgid "Shuffle"
+msgstr "Keverés"
+
+#: src/ui/ms-window.ui:204
+msgid "Password"
+msgstr "Jelszó"
+
+#: src/ui/ms-window.ui:215
+msgid "Convergence"
+msgstr "Konvergencia"
+
+#: src/ui/ms-window.ui:233
+msgid "On Screen Keyboard"
+msgstr "Képernyő-billentyűzet"
+
+#: src/ui/ms-window.ui:241
+#| msgid "On Screen Keyboard"
+msgid "Keyboard"
+msgstr "Billentyűzet"
+
+#: src/ui/ms-window.ui:242
+msgid "Unfold"
+msgstr "Kinyitás"
+
+#: src/ui/ms-window.ui:243
+msgid "OSK"
+msgstr "Képernyő-billentyűzet"
+
+#: src/ui/ms-window.ui:244
+#| msgid "Text Completion"
+msgid "Word Completion"
+msgstr "Szókiegészítés"
+
+#: src/ui/ms-window.ui:255
+#| msgid "Emergency Calls"
+msgid "Emergency Alerts"
+msgstr "Vészhelyzeti riasztások"
+
+#: src/ui/ms-window.ui:263 src/ui/ms-window.ui:303
+#| msgid "Emergency Calls"
+msgid "Emergency"
+msgstr "Vészhelyzet"
+
+#: src/ui/ms-window.ui:264
+msgid "Cell Broadcast"
+msgstr "Cellás üzenetszórás"
+
+#: src/ui/ms-window.ui:265
+msgid "Danger"
+msgstr "Veszély"
+
+#: src/ui/ms-window.ui:295
+msgid "Experimental features"
+msgstr "Kísérleti funkciók"
+
+#: src/ui/ms-window.ui:304
+#| msgid "Suspend device"
+msgid "Suspend"
+msgstr "Felfüggesztés"
+
+#: src/ui/ms-window.ui:305
+#| msgid "Experimental features"
+msgid "Experimental"
+msgstr "Kísérleti"
+
+#: src/ui/ms-window.ui:316 src/ui/ms-window.ui:324
+msgid "About"
+msgstr "Névjegy"
+
+#: src/ui/ms-window.ui:349
+msgid "_Show Configurable Tweaks"
+msgstr "Beállítható finomhangolások _megjelenítése"
+
+#: src/ui/ms-window.ui:356
+msgid "_Keyboard Shortcuts"
+msgstr "_Gyorsbillentyűk"
+
+#: src/ui/ms-window.ui:360
+msgid "_About Mobile Settings"
+msgstr "A Mobilbeállítások _névjegye"

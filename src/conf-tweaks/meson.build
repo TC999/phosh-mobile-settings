@@ -9,6 +9,7 @@ conf_tweaks_sources = files(
   'ms-tweaks-callback-handlers.h',
   'ms-tweaks-datasources.c',
   'ms-tweaks-datasources.h',
+  'ms-tweaks-files-poison.h',
   'ms-tweaks-gtk-utils.c',
   'ms-tweaks-gtk-utils.h',
   'ms-tweaks-mappings.c',

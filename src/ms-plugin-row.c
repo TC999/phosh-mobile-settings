@@ -21,27 +21,30 @@ enum {
   PROP_ENABLED,
   PROP_FILENAME,
   PROP_HAS_PREFS,
+  PROP_ICON,
   PROP_LAST_PROP
 };
 static GParamSpec *props[PROP_LAST_PROP];
 
 
 enum {
-  SIGNAL_MOVE_ROW,
-  SIGNAL_LAST
+  MOVE_ROW,
+  N_SIGNALS
 };
-static guint signals[SIGNAL_LAST];
+static guint signals[N_SIGNALS];
 
 
 struct _MsPluginRow {
   AdwActionRow parent;
 
+  GtkImage    *plugin_icon;
   GtkSwitch   *toggle;
   GtkWidget   *prefs;
 
   char        *name;
   char        *subtitle;
   char        *filename;
+  char        *icon_name;
   gboolean     enabled;
   gboolean     has_prefs;
 
@@ -61,9 +64,7 @@ on_open_prefs_activated (GSimpleAction *action,
 {
   MsPluginRow *self = MS_PLUGIN_ROW (data);
 
-  gtk_widget_activate_action (GTK_WIDGET (self),
-                              "plugin-list-box.open-plugin-prefs",
-                              "s", self->filename);
+  ms_plugin_row_open_prefs (self);
 }
 
 
@@ -92,6 +93,10 @@ ms_plugin_row_set_property (GObject      *object,
     break;
   case PROP_HAS_PREFS:
     self->has_prefs = g_value_get_boolean (value);
+    break;
+  case PROP_ICON:
+    self->icon_name = g_value_dup_string (value);
+    gtk_image_set_from_icon_name (self->plugin_icon, self->icon_name);
     break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -124,6 +129,9 @@ ms_plugin_row_get_property (GObject    *object,
   case PROP_HAS_PREFS:
     g_value_set_boolean (value, self->has_prefs);
     break;
+  case PROP_ICON:
+    g_value_set_string (value, self->icon_name);
+    break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
     break;
@@ -142,7 +150,7 @@ on_move_up_activated (GtkWidget *widget, const char *action_name, GVariant *para
   if (previous_row == NULL)
     return;
 
-  g_signal_emit (self, signals[SIGNAL_MOVE_ROW], 0, previous_row);
+  g_signal_emit (self, signals[MOVE_ROW], 0, previous_row);
 }
 
 
@@ -157,7 +165,7 @@ on_move_down_activated (GtkWidget *widget, const char *action_name, GVariant *pa
   if (next_row == NULL)
     return;
 
-  g_signal_emit (next_row, signals[SIGNAL_MOVE_ROW], 0, self);
+  g_signal_emit (next_row, signals[MOVE_ROW], 0, self);
 }
 
 
@@ -185,6 +193,7 @@ on_drag_begin (MsPluginRow *self, GdkDrag *drag)
                              "enabled", self->enabled,
                              "filename", self->filename,
                              "has-prefs", self->has_prefs,
+                             "icon", self->icon_name,
                              NULL);
 
   gtk_widget_set_size_request (GTK_WIDGET (plugin_row),
@@ -212,8 +221,28 @@ on_drop (MsPluginRow *self, const GValue *value, gdouble x, gdouble y)
 
   source = g_value_get_object (value);
 
-  g_signal_emit (source, signals[SIGNAL_MOVE_ROW], 0, self);
+  g_signal_emit (source, signals[MOVE_ROW], 0, self);
 
+  return TRUE;
+}
+
+
+static gboolean
+transform_icon_to_icon_visible (GBinding     *binding,
+                                const GValue *from_value,
+                                GValue       *to_value,
+                                gpointer      user_data)
+{
+  MsPluginRow *self = MS_PLUGIN_ROW (user_data);
+
+  /* Show icon only when the row has a valid icon name (i.e. quick-setting plugin) */
+  gboolean visible = FALSE;
+
+  /* For locksreen plugins, icon_name is NULL */
+  if (self->icon_name && *self->icon_name)
+    visible = TRUE;
+
+  g_value_set_boolean (to_value, visible);
   return TRUE;
 }
 
@@ -227,6 +256,7 @@ ms_plugin_row_finalize (GObject *object)
   g_clear_pointer (&self->subtitle, g_free);
   g_clear_pointer (&self->filename, g_free);
   g_clear_object (&self->action_group);
+  g_clear_pointer (&self->icon_name, g_free);
 
   G_OBJECT_CLASS (ms_plugin_row_parent_class)->finalize (object);
 }
@@ -276,9 +306,19 @@ ms_plugin_row_class_init (MsPluginRowClass *klass)
                           FALSE,
                           G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY);
 
+  /**
+   * MsPluginRow:icon:
+   *
+   * Name of icon that represent enabled plugin
+   */
+  props[PROP_ICON] =
+    g_param_spec_string ("icon", "", "",
+                         NULL,
+                         G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY);
+
   g_object_class_install_properties (object_class, PROP_LAST_PROP, props);
 
-  signals[SIGNAL_MOVE_ROW] =
+  signals[MOVE_ROW] =
     g_signal_new ("move-row",
                   G_TYPE_FROM_CLASS (object_class),
                   G_SIGNAL_RUN_LAST,
@@ -293,6 +333,7 @@ ms_plugin_row_class_init (MsPluginRowClass *klass)
 
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-plugin-row.ui");
+  gtk_widget_class_bind_template_child (widget_class, MsPluginRow, plugin_icon);
   gtk_widget_class_bind_template_child (widget_class, MsPluginRow, toggle);
   gtk_widget_class_bind_template_child (widget_class, MsPluginRow, prefs);
 }
@@ -313,6 +354,9 @@ ms_plugin_row_init (MsPluginRow *self)
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
+  gtk_icon_theme_add_search_path (gtk_icon_theme_get_for_display (gdk_display_get_default()),
+                                  MOBILE_SETTINGS_PHOSH_PLUGINS_ICON_DIR);
+
   drag_source = gtk_drag_source_new ();
   gtk_drag_source_set_actions (drag_source, GDK_ACTION_MOVE);
   g_signal_connect_swapped (drag_source, "prepare", G_CALLBACK (on_drag_prepare), self);
@@ -328,6 +372,14 @@ ms_plugin_row_init (MsPluginRow *self)
                           self->toggle,
                           "active",
                           G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+
+  g_object_bind_property_full (self, "icon",
+                               self->plugin_icon, "visible",
+                               G_BINDING_SYNC_CREATE,
+                               transform_icon_to_icon_visible,
+                               NULL,
+                               self,
+                               NULL);
 
   self->action_group = g_simple_action_group_new ();
   g_action_map_add_action_entries (G_ACTION_MAP (self->action_group),
@@ -358,4 +410,19 @@ ms_plugin_row_get_enabled (MsPluginRow *self)
   g_return_val_if_fail (MS_IS_PLUGIN_ROW (self), FALSE);
 
   return self->enabled;
+}
+
+
+void
+ms_plugin_row_open_prefs (MsPluginRow *self)
+{
+  g_assert (MS_IS_PLUGIN_ROW (self));
+
+  if (!self->has_prefs)
+    return;
+
+  gtk_widget_activate_action (GTK_WIDGET (self),
+                              "plugin-list-box.open-plugin-prefs",
+                              "s",
+                              self->filename);
 }

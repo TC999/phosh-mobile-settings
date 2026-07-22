@@ -10,7 +10,7 @@
 
 #include "mobile-settings-config.h"
 
-#include "mobile-settings-application.h"
+#include "ms-application.h"
 #include "ms-compositor-panel.h"
 #include "ms-scale-to-fit-row.h"
 #include "ms-util.h"
@@ -80,9 +80,9 @@ create_scale_to_fit_row (gpointer object, gpointer user_data)
 }
 
 static void
-on_toplevel_tracker_changed (MsCompositorPanel *self, GParamSpec *spec, MobileSettingsApplication *app)
+on_toplevel_tracker_changed (MsCompositorPanel *self, GParamSpec *spec, MsApplication *app)
 {
-  MsToplevelTracker *tracker = mobile_settings_application_get_toplevel_tracker (app);
+  MsToplevelTracker *tracker = ms_application_get_toplevel_tracker (app);
   g_auto (GStrv) app_ids = NULL;
 
   if (tracker == NULL)
@@ -137,7 +137,7 @@ ms_compositor_panel_class_init (MsCompositorPanelClass *klass)
 static void
 ms_compositor_panel_init (MsCompositorPanel *self)
 {
-  MobileSettingsApplication *app;
+  MsApplication *app;
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
@@ -154,11 +154,10 @@ ms_compositor_panel_init (MsCompositorPanel *self)
                    "active",
                    G_SETTINGS_BIND_DEFAULT);
 
-  app = MOBILE_SETTINGS_APPLICATION (g_application_get_default ());
+  app = MS_APPLICATION (g_application_get_default ());
   g_signal_connect_swapped (app, "notify::toplevel-tracker",
                             G_CALLBACK (on_toplevel_tracker_changed), self);
-  on_toplevel_tracker_changed(self, NULL,
-                              MOBILE_SETTINGS_APPLICATION (g_application_get_default ()));
+  on_toplevel_tracker_changed(self, NULL, MS_APPLICATION (g_application_get_default ()));
 }
 
 

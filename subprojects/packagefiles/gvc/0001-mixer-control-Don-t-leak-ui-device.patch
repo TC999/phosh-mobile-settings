@@ -1,0 +1,33 @@
+From 7f71ef4ad42ea27338915efc589a292858a7822e Mon Sep 17 00:00:00 2001
+Message-ID: <7f71ef4ad42ea27338915efc589a292858a7822e.1767178926.git.agx@sigxcpu.org>
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+Date: Wed, 31 Dec 2025 11:55:41 +0100
+Subject: [PATCH] mixer-control: Don't leak ui device
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+We have a ref when creating the `device` object, use that for inserting
+into the hash table as otherwise we leak that reference.
+
+Signed-off-by: Guido Günther <agx@sigxcpu.org>
+---
+ gvc-mixer-control.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gvc-mixer-control.c b/gvc-mixer-control.c
+index 5704270..6742826 100644
+--- a/gvc-mixer-control.c
++++ b/gvc-mixer-control.c
+@@ -1352,7 +1352,7 @@ sync_devices (GvcMixerControl *control,
+ 
+                 g_hash_table_insert (is_output ? control->priv->ui_outputs : control->priv->ui_inputs,
+                                      GUINT_TO_POINTER (gvc_mixer_ui_device_get_id (device)),
+-                                     g_object_ref (device));
++                                     device);
+ 
+                 g_signal_emit (G_OBJECT (control),
+                                signals[is_output ? OUTPUT_ADDED : INPUT_ADDED],
+-- 
+2.51.0
+

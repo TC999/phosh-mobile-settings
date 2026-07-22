@@ -8,7 +8,7 @@
 
 #define G_LOG_DOMAIN "ms-plugin-librem5"
 
-#include "mobile-settings-plugin.h"
+#include "ms-plugin.h"
 
 #include "ms-plugin-librem5-panel.h"
 

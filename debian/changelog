@@ -1,3 +1,1136 @@
+phosh-mobile-settings (0.56.0) experimental; urgency=medium
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Guido Günther ]
+  * build: Use libadwaita 1.9. We want to use AdwSidebar
+  * panel-switcher: Use AdwSidebar.
+    This will allow us to use sections.
+    This is inspired by AdwViewSwitcherSidebar which we can't use directly
+    as it doesn't allow us to get the page.
+  * window: Use a separate section for the conf tweaks
+  * window: Use adaptive shortcuts dialog
+  * window: Init auto variable.
+    It's too easy to break on refactors otherwise
+  * window: Activate search via CTRL-F
+  * panel-switcher: Use page mode when narrow.
+    Makes the UI easier to understand.
+  * panel-switcher: Select proper item by index.
+    When search wants to activate the topmost item we need to look
+    up the new selected item in the filtered list.
+  * panel-switcher: Add empty state.
+    Show a status page when no results are found
+    Helps: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/work_items/120
+  * panel-switcher: Drop unused current_panelname
+  * panel-switcher: Don't activate disabled panels.
+    Otherwise users could bring up disabled panels by passing
+    them on the command line.
+  * plugin-panel: Base on MsPanel.
+    All panels must use `MsPanel` as base class
+    Fixes: 3c31bddc ("ms-panel: Create base class for standard panels")
+  * librem5-panel: Add keyword.
+    This allows it to be found in search
+  * updates-panel: Simplify uninhibit
+  * updates-panel: Uninhibit on dispose.
+    This makes sure the inhibitor is dropped when the app is closed
+    by other means (and we cancel the OS update in that case as well).
+  * updates-panel: Uninhibit when we fail to cancel the update.
+    There's no point in keeping the inhibitor
+  * sysupdate: Don't return error when we cancelling an absent job.
+    If we can't find the job it's already gone, so there's nothing to
+    cancel.
+  * window: Add a list model with enabled pages.
+    This allows other parts to use that instead of checking for enabled
+    in multiple places.
+  * application: Only list enabled panels
+  * window: Notify about `enabled` changes
+    although not relevant for listing panels atm we need to inform the
+    enabled_panel list model about panel state changes too.
+  * systemd-sysupdate: Warn when using session bus
+  * updates-panel: Don't disable by default
+  * updates-panel: Sync `enabled` initially
+  * systemd-sysupdate: Don't warn when getting target proxy got cancelled.
+    Otherwise we might see errors on `--list`.
+  * systemd-sysupdate: Perform initial target check sync.
+  * systemd-sysupdate: Track jobs that finish early.
+  * panel-switcher: Make sure we show the content view.
+
+  [ Yuri Chornoivan ]
+  * Fix minor typo
+  * Update Ukrainian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ burns ]
+  * Update Brazilian Portuguese translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Ryo Nakano ]
+  * Update Japanese translation
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translation
+
+  [ Марко Костић ]
+  * Update Serbian translation
+
+  [ Victoria Niedzielska ]
+  * Update Polish translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 05 Jul 2026 09:10:33 +0200
+
+phosh-mobile-settings (0.56~rc2) experimental; urgency=medium
+
+  [ Martin ]
+  * Update Slovenian translation.
+    Co-authored-by: Martin <miles@filmsi.net>
+
+  [ Antonio Marin ]
+  * Update Romanian translation.
+    Co-authored-by: Antonio Marin <gnmer.6qxyg@slmail.me>
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation.
+    Co-authored-by: Yaron Shahrabani <sh.yaron@gmail.com>
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation.
+    Co-authored-by: Yuri Chornoivan <yurchor@ukr.net>
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation.
+    Co-authored-by: Ekaterine Papava <papava.e@gtu.ge>
+
+  [ Rafael Fontenelle ]
+  * Update Brazilian Portuguese translation.
+    Co-authored-by: Rafael Fontenelle <rafaelff@gnome.org>
+
+  [ Guido Günther ]
+  * update-panel: Take inhibitor during OS updates.
+    We don't want the system to suspend or the user to log out
+    until done.
+  * osk-layout-prefs: Push context after attaching it to the main loop.
+    Otherwise we might end up with e.g. DBus calls seemingly not finishing. In our
+    case this manifested as `ListActivatableNames` never reaching it's ready
+    handler.
+    Fixes: fb189ede ("osk-layout-prefs: Provide proper async variant")
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 27 Jun 2026 15:49:05 +0200
+
+phosh-mobile-settings (0.56~rc1) experimental; urgency=medium
+
+  [ nicole mikołajczyk ]
+  * po: Update POTFILES.in
+  * settings-window: Add a comment for the search placeholder string
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translation
+
+  [ Tomi Lähteenmäki ]
+  * polkit: Allow to specify group.
+    Don't install the rules file if the group is empty.
+
+  [ Guido Günther ]
+  * packaging: Drop polkit rule.
+    Not installed by default
+  * lang-panel: Don't access lang panel early.
+    It might already be gone if the call got canceled.
+  * ci: Update image
+  * window: Use lowercase name for language panel.
+    All others are lowercase too
+  * util: Ignore pixbuf related warning.
+    It's the current loader and we can always open code
+    it later on.
+  * leak-suppress: Ignore leak in GtkSvg fixed upstream already
+  * build: Bump GTK dependency.
+    Needed for GtkSvg
+  * build: Split private sources
+  * about: Add image version row
+  * about: Add donate button
+  * about: Add a bit of top margin
+  * css: Add style file
+  * panel: Add enabled property.
+    Indicates whether the panel should be enabled
+  * panel-switcher: Ignore disabled panels.
+    This allows to disable panels easily
+  * window: Refilter when a panel state changes
+  * ms-util: Move end session helper here.
+    Allows it to be reused
+  * tree: Use GM_STR_IS_NULL_OR_EMPTY.
+    We have that in gmobile since ages
+  * libpms: Add os-updater class.
+    This will allow to implement different update methods
+  * libpms: Implement os updates via org.freedesktop.sysupdate1.
+    This adds an interface that allows to inspect and install host updates
+    via systemd-sysupdated's DBus interface. This will be replaced by
+    varlink in systemd later:
+    https://salsa.debian.org/systemd-team/systemd/-/merge_requests/317
+    We hence only add a minimal interface.
+    The proviced mock can be used via
+    ```sh
+    python3 -m dbusmock --template tests/mock/sysupdate.py
+    ```
+  * libpms: Add os updater getter.
+    We don't want to hardcode an updater so add a method
+    that allows to get the default one.
+  * window: Add updates panel.
+    Enabled based on whether sysupdates are available
+  * updates-panel: Drop translations from icon names.
+    Thanks to Anders Jonsson for pointing this out.
+  * updates-panel: Drop superfluous icon.
+    We have a paintable there too.
+  * libpms: Don't make layout-dialog public.
+    THe prefs widget is all that needs to be exported
+  * libpms: Install enum headers.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/work_items/123
+  * libpms: Don't export osk-layout
+  * osk-layout: Add language and flavor.
+    This makes matching on locale possible
+  * osk-layout-prefs: Set visible by default.
+    It's the default in GTK4
+  * osk-layout-prefs: Construct fewer layouts.
+    Reuse the ones from the avaible layouts rather than creating
+    new ones. This makes sure all data is in sync with what we
+    loaded from JSON.
+  * packaging: Bump stevia dependency.
+    Needed for layout information
+  * osk-layout-prefs: Allow to add layouts by locale.
+    This allows us to prefill the widget / configure default
+    input sources.
+  * osk-layout-prefs: Provide proper async variant.
+    The current code just triggered load and hoped for the best.
+    Convert that to a proper sync version and add an async version
+    as well.
+  * example: Use `-` as word separator.
+    It's what we do elsewhere
+  * example: Make it more useful.
+    Show the widget instead of only constructing it
+  * example: Demo adding layout by locale
+  * packaging: Add xmllint.
+    Needed for UI file validation
+  * overview-panel: Add dialog to reenable hidden apps.
+    This allows to make apps visible again that were hidden from Phosh's overview.
+    The Shell's UI can open the dialog directly via:
+    ```sh
+    gdbus call --session --dest mobi.phosh.MobileSettings --object-path /mobi/phosh/MobileSettings --method org.gtk.Actions.Activate "set-panel" "[<('overview',[<'hidden-apps'>])>]" "{}"
+    ```
+    Helps: https://gitlab.gnome.org/World/Phosh/phosh/-/work_items/1318
+
+  [ Brian Hom ]
+  * convergence-panel: Use the head's serial if dock entry has no serial.
+    If a dock entry does not define a serial number because it may vary in
+    the EDID data, we use the head's serial number instead.
+    Co-authored-by: Jonathon Hall <jonathon.hall@puri.sm>
+  * convergence-panel: Add NexDock 2025 dock.
+    The NexDock 2025 seems to use the date of manufacture as the serial
+    number in hexadecimal format such as the string "0x20250607". Since this
+    value may not be consistent between different NexDock 2025 devices, the
+    serial number is set to NULL to generically match the device.
+    Co-authored-by: Jonathon Hall <jonathon.hall@puri.sm>
+
+  [ Sabri Ünal ]
+  * Update Turkish translation
+
+  [ Asier Saratsua Garmendia ]
+  * Update Basque translation
+
+  [ Марко Костић ]
+  * Update Serbian translation
+
+  [ Luiggi R. Cardoso ]
+  * Update Brazilian Portuguese translation
+
+  [ Victoria Niedzielska ]
+  * Update Polish translation.
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 24 Jun 2026 16:59:20 +0200
+
+phosh-mobile-settings (0.55.0) experimental; urgency=medium
+
+  [ nicole mikołajczyk ]
+  * l10n: Add missing string as translatable
+  * Add Polish translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Ryo Nakano ]
+  * Update Japanese translation
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Arun Mani J ]
+  * feedback-panel: Clarify what presence change means
+
+  [ Марко Костић ]
+  * Update Serbian translation
+
+  [ Pierre Michel Augustin ]
+  * Update Haitian Creole translation
+
+  [ Guido Günther ]
+  * osk: Drop schema check.
+    We can assume recent enough stevia nowadays
+  * osk-panel: Allow to configure automatic space handling.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/work_items/117
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 17 May 2026 08:59:14 +0200
+
+phosh-mobile-settings (0.55~rc1) experimental; urgency=medium
+
+  [ Stefan Hansson ]
+  * editorconfig: Add YAML style
+    conf-tweaks uses YAML files, so let's add that here.
+  * test-tweaks-mappings: Add tests for stringify_gvalue()
+  * data: Also install nobuiltins desktop file.
+    Fixes 04bebde2c60cff079aa7e7b3f61f457ec273650c
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/116
+  * run: Don't pass --gdb to gdb.
+    Otherwise gdb ends up being passed "--gdb" as an argument and interprets
+    it as if this is the file we want to run, effectively breaking this
+    option. Fix this by reintroducing the shift.
+    Fixes 49ce918fde1f4e2cc92c3f69227b757d6e6e3e8c
+  * data: Remove DBusActivatable from nobuiltins desktop file.
+    As there is no matching nobuiltins service file this does not work.
+    Fixes 04bebde2c60cff079aa7e7b3f61f457ec273650c
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/119
+  * tests/data/widget-types.yml: Add boolean widget
+  * ms-tweaks-backend-xresources: Only allocate value early with default.
+    Otherwise we end up returning GValues containing NULL, which we don't
+    want.
+  * ms-tweaks-backend-gtk3settings: Only allocate value early with default.
+    Otherwise we end up returning GValues containing NULL, which we don't
+    want.
+  * ms-tweaks-backend-interface: Clarify return value if no value exists
+  * ms-tweaks-mappings: Raise critrical on unsupported GType.
+    This is a programming error, so it should not just be a warning.
+  * ms-tweaks-mappings: Assert on NULL normalised value.
+    This should never happen unless a backend is broken.
+  * ms-tweaks-backend-gtk3settings: Minor formatting fixes
+  * test-tweaks-backend-xresources: Minor formatting fix
+  * conf-tweaks: Refactor default string value creation.
+    Reduces repetition and helps readability.
+  * data: Add "Tweaks" keyword to desktop files.
+    Makes it easier for users looking for a "tweaks application" to find
+    p-m-s.
+
+  [ Guido Günther ]
+  * shortcut-dialog: Use new schema location.
+    Reported-by: Val Packett
+  * panels/overview: Drop unused variable
+  * main: Sort types alphabetically
+  * pms: Add language chooser from Settings.
+    This is from gnome-control-center 48.6 as this is the last
+    version with ui files instead of blueprint.
+  * pms/lang: Make it build.
+    Minimal set of changes to make things compile
+  * pms/lang: Move to ms namespace.
+    Otherwise introspection will be troublesome
+  * libpms/lang: Use our namespace
+  * libpms/lang: Silence deprecations
+  * libpms/lang: Set i18n domain
+  * panels: Add language panel.
+    We need a demo for the language selection so let's add a panel.
+    This is heavily inspired about what Settings does and ensures
+    the language selector is working.
+    Note that this currently won't work on Debian due to
+    /usr/share/dbus-1/system.d/org.freedesktop.locale1.read-only.conf
+    See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1133781
+  * build: Preserver header file path.
+    Otherwise building against the installed headers fails
+  * libpms: Add functions to lookup language from locale.
+    We simply wrap existing functions so we don't need to create rust
+    bindings for a whole library.
+
+  [ Jiri Grönroos ]
+  * Update Finnish translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Christian Kirbach ]
+  * Update German translation
+
+  [ Pierre Michel Augustin ]
+  * Update Haitian Creole translation
+
+  [ Sabri Ünal ]
+  * Update Turkish translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 08 May 2026 18:18:36 +0200
+
+phosh-mobile-settings (0.54.0) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * tweaks-preferences-page: Don't set NULL subtitle.
+    Newer libadwaita 1.9~beta throws a critical in that case
+  * leak-suppress: Silence GTK leak.
+    Silence the leak until our fix made it into a release.
+    See https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/9724
+  * packaging: Wrap-and-sort
+  * ci: Update CI image
+  * ci: Drop superfluous step
+    `before` already does this
+  * build: Set tweaks directory to empty.
+    The tests set them to test data when needed and users of the
+    conf tweaks set it to a matching path.
+    This avoids a warning during the tests when no tweaks are present
+    an the binary is built with the default options.
+  * ci: Check dist tarball builds.
+    Avoids surprises when releasing
+  * debug-info: Fix license.
+    The code base is GPL3.
+  * news: Add missing bug number
+  * build: Drop version check.
+    We require meson 1.7 anyway
+  * build: Add option summary.
+    Makes the current build config simpler to spot
+  * osk-add-layout: Guard against NULL button
+
+  [ Bruce Cowan ]
+  * Update British English translation
+
+  [ Baurzhan Muftakhidinov ]
+  * Add Kazakh translation
+
+  [ Rudra Pratap Singh ]
+  * libpms: Add example in Python.
+    Utilizing the bindings generated via
+    GObject Introspection. Also set the appropriate
+    flags in run.in to allow running the example,
+    via _build/run examples/pms-prefs-example.py.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/107
+
+  [ Ryo Nakano ]
+  * Add Japanese translation
+
+  [ Stefan Hansson ]
+  * ms-application: Allow hiding built-in panels.
+    With the conf-tweaks support integrated, Phosh Mobile Settings is useful
+    in other desktop environments too. But in these the Phosh-specific
+    settings aren't particularly useful. So, allow hiding them for such
+    use-cases.
+  * ms-panel-switcher: Update filtering when only_tweaks is set
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 05 Apr 2026 08:47:20 +0200
+
+phosh-mobile-settings (0.54~rc1) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * news: Fix wording.
+    Metainfo has it correct
+  * osk: Move OSK handling to shared library.
+    Helps: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/107
+  * osk-layout: Make private.
+    Not needed in the public API
+  * pms: Add single file header.
+    That way we can restructure headers without breaking API
+  * libpms: Relicense library bits under LGPL.
+    Seems I'm the only author of that code. Let's also move copyright
+    to Phosh.mobi e.V. while at that.
+  * packaging: Set tweaks data dir to empty.
+    Avoids a warning during the build
+  * libpms: Export single include header.
+    Fixes: 5f7f095 ("pms: Add single file header")
+  * libpms: Enable introspection.
+    This will allow us to add language bindings
+    Helps: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/107
+  * osk-panel: Move settings mobi.phosh.osk.
+    See https://gitlab.gnome.org/World/Phosh/stevia/-/merge_requests/276
+  * packaging: Bump dependency.
+    This ensures we have recent schema
+  * gvc: Switch back to blessed repo.
+    It has all our patches
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/113
+
+  [ Álvaro Burns ]
+  * Update Brazilian Portuguese translation
+
+  [ Davide Ferracin ]
+  * Add Italian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Rudra Pratap Singh ]
+  * audio-device-row: Make ADJUSTMENT_MAX_NORMAL a public constant.
+    And rename it to AUDIO_DEVICE_ROW_MAX_NORMAL.
+  * feedback-panel: Add helper function to display a toast
+  * audio-device-row: Introduce volume property in place of signal.
+    Instead of emitting the `volume-changed` signal,
+    we add a `volume` property that users can listen
+    for changes and query value of accordingly.
+  * feedback-panel: Play sound for Voice Call volume slider.
+    We bundle a custom sound file for the 'phone'
+    media role and play it via GtkMediaStream API,
+    for which we depend on gstreamer1.0-plugins-good.
+    As we don't invoke gsound for it, we query
+    the volume of that stream manually when playing.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/106
+  * libpms: Add pkgconfig file.
+    We also require 'libadwaita-1' package as without
+    it programs that link to libpms will fail to
+    compile (as libpms depends on it).
+  * libpms: Add a simple C example app utilizing libpms
+  * ci: Add CI job to test .pc file.
+    Reusing the C example we can check if the
+    pkgconfig file was generated correctly.
+
+  [ Hugo Carvalho ]
+  * Add Portuguese translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Stefan Hansson ]
+  * tests: Add basic conf-tweaks testdata and use it
+  * ms-tweaks-preferences-page: Don't leak widget_value
+  * ms-tweaks-parser: Improve handling of nonexistent conf-tweaks dirs.
+    Allow people building p-m-s to set the tweaks-data-dir build option to
+    an empty string as a means of disabling conf-tweaks entirely. For other
+    situations, print a warning if no valid files are found or if the
+    directory doesn't exist at all.
+    Also, update the CI scripts to use this to avoid failures.
+  * ms-tweaks-backend-xresources: Debug print on missing ~/.Xresources.
+    We need to be able to start up without any warnings in the tests, so use
+    a debug print here. This does have the unfortunate side-effect of that
+    it no longer just prints once, but maybe it's fine since it's now only
+    printed with more verbose logging options.
+
+  [ Emin Tufan Çetin ]
+  * Update Turkish translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+  [ Jordi Mas ]
+  * Update Catalan translation
+
+  [ Balázs Úr ]
+  * Update Hungarian translation
+
+  [ Марко Костић ]
+  * Add Serbian translation
+
+  [ Gotam Gorabh ]
+  * ms-plugin: Rename 'MOBILE_SETTINGS_ASSUME_DEVICE' env var.
+    Rename to 'MS_FORCE_DEVICE' for consistencies.
+  * tree: Add man page.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/77
+  * ci: Update shared scripts to 4a59c2b
+  * ci: Use common g-style check.
+    Drop the local `g-style` script and use the shared CI check
+    from meta-phosh instead. This check is configured to detect
+    gchar, gdouble, gfloat, and gint usages.
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 25 Mar 2026 09:14:11 +0100
+
+phosh-mobile-settings (0.53.0) experimental; urgency=medium
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+  [ twlvnn kraftwerk ]
+  * Update Bulgarian translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Rudra Pratap Singh ]
+  * feedback-panel: Clear toast object on dismissal
+  * feedback-panel: Reindent UI file.
+    No functional change.
+  * audio-device: Add 'role' property.
+    The 'media-role' associated with this device.
+    For now, these roles are the same as given in the
+    feedbackd repository:
+    https://gitlab.freedesktop.org/agx/feedbackd/-/blob/main/data/media-role-nodes.conf
+  * audio-device-row: Add 'volume-changed' signal.
+    Emitted whenever volume slider gets adjusted.
+    Useful for e.g., playing a feedback sound upon
+    any adjustment.
+  * feedback-panel: Play sound on adjusting sliders
+
+  [ Tomi Lähteenmäki ]
+  * tests: Fix crash in setting_data_to_boolean_widget()
+    The "name_i18n" needs to be non-null or assert in
+    adw_preferences_row_set_title() fails and "help_i18n" needs to be
+    non-null or assert in adw_action_row_set_subtitle() fails.
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Gotam Gorabh ]
+  * ms-osk-add-shortcut-dialog: Keep preview always visible.
+    Move the shortcut preview section from the scrollable content area to
+    the bottom toolbar area so it remains visible
+    at all times, even when scrolling through modifier and key selection
+    options.
+  * ms-osk-add-shortcut-dialog: Preserve key and sync modifiers.
+    Ensure the selected key is not dropped when changing or toggling
+    modifiers. Also synchronize the “Choose Shortcut Modifier” checkboxes
+    with the currently previewed shortcut during validation.
+    closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/80
+  * tests: Add test for MsOskAddShortcutDialog's functions
+
+  [ Quentin PAGÈS ]
+  * Add Occitan translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Guido Günther ]
+  * feedback-panel: Filter out system services.
+    We only want to filter in applications. Services that
+    should be listed would get `X-Phosh-UsesFeedback`
+    added.
+    app_is_system_service() is a copy from g-c-c.
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 15 Feb 2026 09:14:31 +0100
+
+phosh-mobile-settings (0.53~rc1) experimental; urgency=medium
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Efstathios Iosifidis ]
+  * Update Greek translation
+
+  [ Guido Günther ]
+  * about: Panel with device information.
+    It seems people want to show their Phosh, distro and device
+    information. Make that possible without resorting to the terminal.
+  * debug-info: Add more env vars.
+    There are more debug related vars in GTK and we also want to know about
+    the XDG_* ones.
+  * gvc: Update subproject.
+    While the crash fixes are merged upstream the leak fix is still not
+    so use our own branch.
+  * feedback-panel: Add apps that indicate notification usage too.
+    Thought we'd done that ages ago already.
+  * feedback-panel: Sort apps.
+    With more apps it will otherwise be hard to find a specific one.
+    Search can be a follow up.
+  * tweaks-backend-xresources: Make sure success is inited.
+    Otherwise we might return an unitialized value.
+    Spotted-by: gcc
+  * osk: Move Squeekboard functions to separate method too.
+    Don't clutter init
+  * osk-panel: Upscale in landscape too when enabled
+  * packaging: Add stevia dependency.
+    We want the schema and we install it via meta-phosh anyway
+    at the moment.
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Sabri Ünal ]
+  * Update Turkish translation
+
+  [ twlvnn kraftwerk ]
+  * Update Bulgarian translation
+
+  [ Flynn Peck ]
+  * Add Cornish translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 09 Feb 2026 12:29:58 +0100
+
+phosh-mobile-settings (0.52.0) experimental; urgency=medium
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Stefan Hansson ]
+  * conf-tweaks: Document why css backend was omitted.
+    And also make some minor adjustments to the order of paragraphs.
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Guido Günther ]
+  * main: Handle SIGTERM gracefully.
+    This allows us to quit with a zero exit status
+  * data: Update leak suppresion for new GTK
+  * ci: Use updated image.
+    We want a phoc that shuts down the client on SIGTERM
+  * ci: Run app under ASAN.
+    Let's make sure we at least shut down cleanly.
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 04 Jan 2026 12:02:27 +0100
+
+phosh-mobile-settings (0.52~rc2) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * tweaks-preferences-page: Don't leak keywords
+  * panel-switcher: Don't track pages.
+    The reference is swallowed by gtk_filter_list_model_new right away
+  * panel-switcher: Don't track filter.
+    The reference is swallowed by gtk_filter_list_model_new and thus
+    we don't need to track a dangling pointer that we could unref
+    accidentally.
+  * panel-switcher: Avoid cast for filter func.
+    Let's just use the correct signature
+  * panel-switcher: Ensure model gets cleared on NULL stack
+  * application: Don't leak stack.
+    This prevented all panels from disposing.
+    Fixes: a4cdb97 ("mobile-settings-application: Add 'active-panel' property")
+  * audio-devices: Don't leak devices
+  * audio-devices: Don't leak description.
+    Fixes: 41b2611 ("audio-devices: New class that allows to track loopback devices")
+  * audio-device: Don't leak stream
+  * gvc: Fix UI device leak.
+    See https://gitlab.gnome.org/GNOME/libgnome-volume-control/-/merge_requests/29
+
+  [ Stefan Hansson ]
+  * build: Bump libadwaita dependency to 1.7.
+    We want to be able to use adw_banner_set_button_style () and it requires
+    this version.
+  * conf-tweaks: Allow backend to request save as administrator
+  * conf-tweaks: Add support for saving settings with escalated privileges
+  * conf-tweaks: Remove get_name from backend interface.
+    Unused.
+  * conf-tweaks: Remove set_source_ext documentation from backend interface.
+    This was a relic of some previous code that no longer exists. Remove it.
+  * conf-tweaks: Make get_key return a const in backend interface.
+    And also adapt implementations.
+  * conf-tweaks: Add implementations to backend interface.
+    Allows simplifying caller code.
+  * conf-tweaks: Add Sysfs backend
+  * tests: Add test for Sysfs backend
+  * ms-tweaks-backend-gsettings: Don't leak key during construction
+  * ms-tweaks-parser: Don't leak YAML filepath
+  * ms-tweaks-preferences-page: Don't leak sorted lists
+  * ms-window: Don't leak sorted page list
+  * tests: Add test for pretty_format_cmd ()
+  * ms-tweaks-parser: Also copy i18n-related properties in *_copy.
+    Fixes fcb46d7608a8963b2f49097cd1ebd65c5afcc4d5
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/95
+  * ms-tweaks-parser: Replace gpointer with actual types.
+    Makes for easier debugging.
+  * ms-tweaks-callback-handlers: Add ctor and dtor for MsTweaksCallbackMeta
+  * ms-tweaks-preferences-page: Don't leak callback_meta.
+    Also rework how we construct it.
+    Related: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/100
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 01 Jan 2026 17:53:38 +0100
+
+phosh-mobile-settings (0.52~rc1) experimental; urgency=medium
+
+  [ Evangelos Ribeiro Tzaras ]
+  * feedback-panel: Rephrase silencing calls.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/65
+  * alerts-panel: Drop enums in favor of libcellbroadcast types.
+    We're using the library since some time now.
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Martin ]
+  * Update Slovenian translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Rafael Fontenelle ]
+  * Update Brazilian Portuguese translation
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+  [ Asier Saratsua Garmendia ]
+  * Add Basque translation
+  * Update Basque translation
+  * Update Basque translation
+
+  [ Jürgen Benvenuti ]
+  * Update German translation
+
+  [ Guido Günther ]
+  * settings-application: Simplify include paths.
+    We set proto_inc, so let's use it
+  * debug-info: Remove pointless WIN32 compile guards.
+    Fixes: 8e9df9d ("Add Troubleshooting Tab")
+  * mobile-settings-window: Remove unused includes
+  * ms-application: Rename application singleton.
+    This was incorrectly named from the beginning
+    Fixes: b5788fd ("Initial commit")
+  * ms-window: Rename main window.
+    This was incorrectly named from the beginning
+    Fixes: b5788fd ("Initial commit")
+  * ms-settings-debug-info: Use correct namespace.
+    Fixes: 8e9df9d ("Add Troubleshooting Tab")
+  * treewide: Remove unused enum headers.
+    We'll rename the file so lets drop it (as well as other unused
+    ones).
+  * build: Rename enum header.
+    Fixes: b5788fd ("Initial commit")
+  * sound-row: Handle NULL filename.
+    Otherwise we might pick up a `(null).ogg`.
+  * ms-sound-row: Prop can't be construct only.
+    That way it never gets filled with a proper effect
+    Fixes: 8c47656 ("Allow to configure ring tone and sms sounds")
+  * feedback-panel: Show icons for sound file selection rows.
+    This makes it easier to spot what they're for.
+    The nice icons were taken from org.gnome.design.IconLibrary
+  * ci: Update shared scripts to 08786b5
+  * tests: Don't set XDG_RUNTIME_DIR.
+    Otherwise GTK won't find the Wayland socket
+  * ci: Switch to phoc.
+    No need for any X11 so we sidestep the ASAN failure.
+  * ci: Update shared scripts to 38648e8
+
+  [ Rudra Pratap Singh ]
+  * welcome-panel: Make 'Welcome' panel an MsPanel.
+    This then makes it easier as we no longer need
+    to handle the panel specially.
+  * ms-panel: Add public virtual function for handling options.
+    With this, panels can handle options passed
+    to them via custom logic by overriding
+    `handle_options`.
+  * panel-switcher: Add API to get stack
+  * mobile-settings-application: Add 'active-panel' property.
+    This way we can keep track of the currently
+    acitve panel in the window.
+  * application: Handle options for active panel.
+    These options can be sent via e.g., a dbus method
+    call and the active panel would handle them
+    appropriately.
+  * plugin-row: Add API for opening preferences dialog
+  * plugin-list-box: Add API to open prefs dialog for a plugin
+  * topbar-panel: Override `handle_options` virtual function.
+    Currently, topbar panel allows managing the
+    quick-settings plugins. For now, we handle opening
+    of the prefs dialog box for a given plugin.
+  * plugin-list-box: Open one prefs dialog window at a time.
+    As otherwise, dialog windows get stacked on top
+    without closing previous ones.
+
+  [ Emin Tufan Çetin ]
+  * Update Turkish translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Stefan Hansson ]
+  * conf-tweaks: Document differences from postmarketOS Tweaks
+  * ci: Add src/conf-tweaks/*.md to MARKDOWN_PATHS
+  * doc: Link to conf-tweaks documentation
+  * conf-tweaks: Fix linter error
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 29 Dec 2025 18:17:53 +0100
+
+phosh-mobile-settings (0.51.0) experimental; urgency=medium
+
+  [ Stefan Hansson ]
+  * conf-tweaks: Move locale poison to its own file and use it in mappings.
+    We don't want to do locale-specific format handling in the mappings
+    either, so let's poison it there too.
+  * conf-tweaks: Remove use of g_strtod from mappings and poison it.
+    We already poison the non-GLib strtod, poison the GLib variant for the
+    same reason. A better replacemnet is g_ascii_strtod () since it always
+    behaves as if it uses the C locale, which is what we want.
+  * ci: Also run non-ASAN tests in xvfb-run.
+    We need a display for the tests to pass now, so add it here too.
+  * conf-tweaks: Minor style fixes.
+    Similar fixes have been requested elsewhere, let's keep it consistent.
+  * build: Bump GLib dependency to 2.84.
+    To allow using g_string_new_take (), which requires GLib 2.78. Bumping
+    all the way to 2.84 to align with Debian Stable however.
+  * conf-tweaks: Don't leak link and link_target in error path.
+  * conf-tweaks: Replace g_return_val_if_fail with g_assert in symlink backend.
+    Apparently preferred for non-library APIs.
+  * conf-tweaks: Simplify Xresources file writing.
+    We don't need to print messages here this now that we're doing GError
+    handling better.
+
+  [ Artur S0 ]
+  * Update Russian translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 15 Nov 2025 10:57:26 +0100
+
+phosh-mobile-settings (0.51~rc1) experimental; urgency=medium
+
+  [ Stefan Hansson ]
+  * conf-tweaks: Return boolean from value setter methods.
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/86
+  * conf-tweaks: Remove excess semicolon
+  * tests: Add test for constructing an empty MsTweaksPreferencesPage
+  * conf-tweaks: Use g_steal_pointer () to simplify some pointer stealing
+  * conf-tweaks: Add more braces.
+    Stylistic preference, apparently.
+  * conf-tweaks: Use GInitable for the GSettings backend.
+    It's better to put the fallible logic the GInitable init method than in
+    the _new () method.
+  * conf-tweaks: Fix signature for functions connecting to GtkButton::clicked.
+    This was a copy-paste error, I'm not sure how it ever worked. The
+    GtkButton::clicked signal only has two parameters, GtkButton * and
+    gpointer. There is no third argument, and none of them give a GdkEvent.
+    See https://docs.gtk.org/gtk4/signal.Button.clicked.html
+  * conf-tweaks: Add more assertions in file_widget_unset ()
+    Can be useful for catching bugs.
+  * conf-tweaks: Display an error toast if unsetting a file fails.
+    Before, this would just fail silently.
+    Fixes c83aef0f9865f735e5255b098c1597cd15198d43
+  * conf-tweaks: Display an error toast if picking a file fails.
+    Fixes c83aef0f9865f735e5255b098c1597cd15198d43
+  * conf-tweaks: Also append file picker label in file widget.
+    Otherwise you cannot see which file has been picked.
+    Fixes 646c6984047d6637dc3d353e72dfd0ca3075786b
+  * conf-tweaks: Remove nonsensical assertion.
+    I'm not sure why I added this assertion, but my guess would be that
+    either `from` also used to be a pointer, or I just didn't really think
+    about that it wasn't one when adding that. Either way, it makes no sense
+    since it's perfectly valid for the weigh of a setting to be 0. Asserting
+    that `into` is not 0 makes sense since it is a pointer and this function
+    will crash if `into` is a NULL pointer.
+    Closes https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/88
+    Fixes b113b068e26ce11cb645b5570d9f00a999cb8de0
+  * tests: Add tests for merge_weights ()
+  * conf-tweaks: Add ms_tweaks_expand_single () utility function
+  * conf-tweaks: Remove set_source_ext from backend interface.
+    This should've been handled as a property, not like this. Remove this
+    now unused part of the interface.
+  * conf-tweaks: Add utility for checking whether a given path is inside $HOME
+  * conf-tweaks: Add Symlink backend
+  * tests: Add test for Symlink backend
+  * conf-tweaks: Add more braces.
+    Stylistic preference, apparently.
+  * conf-tweaks: Make setting-data a prop in Xresources backend.
+    More consistent with other backends, probably more idiomatic? It also
+    avoids potential use-after-free issues with setting_data by copying it
+    instead of borrowing it.
+  * conf-tweaks: Make xresources-path a prop in Xresources backend.
+    Previously this was implemented using a bespoke default value handling
+    solution rather than the GObject-property one. Make it a GObject
+    property so we don't have to worry about that.
+  * conf-tweaks: Fix error not being set properly in Xresources backend
+  * conf-tweaks: Reorder functions to align with Phosh code style.
+  * conf-tweaks: Add Gtk3settings backend
+  * conf-tweaks: Add tests for Gtk3settings backend
+  * conf-tweaks: Only attempt to create new Xresources on G_FILE_ERROR_NOENT.
+    If there was some other error, we probably don't want to try to make a
+    new file since something is weird with the location we're trying to
+    write to.
+    Additionally, shuffle around some code to make it more readable and
+    clearer what's going on. It seems unexpected to me that
+    write_new_xresources () expects an error that already is filled and then
+    clears it. Move this to the caller.
+  * conf-tweaks: Handle mapping failures gracefully in PreferencesPage.
+    Previously the program could crash due to type errors if the mapping
+    step didn't go through properly. Handle such cases better by just
+    ignoring the problematic setting.
+    Also reorganise some code to make it easier to follow.
+  * conf-tweaks: Simplify G_TYPE_STRING normalisation
+  * conf-tweaks: Add more assertions to ms_tweaks_mappings_handle_get ()
+    Made possible by earlier code reorganisations.
+  * tests: Replace FLT_TRUE_MIN with FLT_EPSILON.
+    Requested during review[1].
+     [1]: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/merge_requests/276#note_2592049
+  * tests: Don't run unit tests in Phoc, use xvfb.
+    Running them in Phoc means that setting brakepoints immediately when you
+    enter gdb becomes a lot trickier and isn't really necessary. This does
+    however mean that you have to run the tests with xvfb-run or equivalent
+    for test-preferences-page to pass.
+
+  [ Nathan Follens ]
+  * Update Dutch translation
+
+  [ Sabri Ünal ]
+  * Update Turkish translation
+  * Update Turkish translation
+
+  [ Guido Günther ]
+  * tweaks-preference-page: Fix file_picker_label life cycle.
+    Appending to a box sinks the ref so we can't sink or unref it
+    later without taking a reference on our own first. But as the label
+    won't outlive the containing widget there's no need for us to
+    keep a reference anyway.
+    Should we ever intend to use the metadata longer than the generated
+    widget we would sink the ref in `setting_data_to_file_widget` and
+    would unref on dispose.
+  * ci: Use check image.
+    No need to reach out to an external registry and install packages
+    every time
+  * ci: Drop PKG_ONLY.
+    Unused since ages
+  * ci: No need to fetch packages from experimental.
+    All in forky now
+  * ci: Update image to forky
+  * ci: Simplify.
+    Use the shared default image from 5cd8a21 now that the
+    code is merged.
+  * feedback-panel: Add sound row for alarm clock
+  * feedback-panel: Check for mobile friendly alarm app.
+    If we find an alarm app that is likely to support feedbackd
+    we enable the sound settings row. This is currenlty based on
+    the app having the `--hidden` option. We might later on check
+    for the DBus name.
+  * feedback-panel: Use header capitalization
+  * audio-devices: Fix ringtone loopback name.
+    Let's make it match https://gitlab.freedesktop.org/xdg/xdg-specs/-/issues/202
+  * audio-device-row: Get volume only once
+  * audio-devices: Handle phone call volume
+  * audio-device-row: Drop fallback.
+    Otherwise we might fallback to incorrect icons for the volume streams.
+  * plugin-list-box: Don't warn on missing icon.
+    Otherwise we fail on every system that has phosh plugins installed.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/92
+    Fixes: 6cd666c ("plugin-list-box: Don't warn on missing icon")
+  * feedback-panel: Don't warn when operation got cancelled.
+    This can happen in tests
+    Fixes: f56f820 ("feedback-panel: Check for mobile friendly alarm app")
+  * packaging: Require phosh plugins during the build.
+    This makes sure we test plugin related code paths which
+    is the common case on phosh installations.
+  * ci: Update images.
+    Make sure we test against recent GTK.
+  * ci: Switch all jobs to forky
+  * ci: Robustify xvfb-run
+  * ci: Don't set renderer.
+    This lets test fail when running under xvfb and everyone should
+    have recent enough GTK nowadays.
+
+  [ Martin ]
+  * Update Slovenian translation
+  * Update Slovenian translation
+
+  [ Daniel Rusek ]
+  * Update Czech translation
+
+  [ Antonio Marin ]
+  * Update Romanian translation
+
+  [ Ekaterine Papava ]
+  * Update Georgian translation
+
+  [ Efstathios Iosifidis ]
+  * Add Greek translation
+
+  [ Yuri Chornoivan ]
+  * Update Ukrainian translation
+
+  [ Gotam Gorabh ]
+  * ms-plugin-row: Display icon for enabled quick settings.
+    Closes: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/56
+
+  [ Juliano de Souza Camargo ]
+  * Update Brazilian Portuguese translation
+
+  [ Danial Behzadi ]
+  * Update Persian translation
+
+  [ Anders Jonsson ]
+  * Update Swedish translation
+
+  [ Yaron Shahrabani ]
+  * Update Hebrew translation
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 09 Nov 2025 12:39:44 +0100
+
 phosh-mobile-settings (0.50.0) experimental; urgency=medium
 
   [ Guido Günther ]

@@ -5,55 +5,61 @@
     <child>
       <object class="AdwToastOverlay" id="toast_overlay">
         <child>
-           <object class="GtkScrolledWindow">
-             <child>
-               <object class="AdwPreferencesPage">
-                 <child>
-                   <object class="AdwPreferencesGroup" id="sound_settings_group">
-                     <property name="title" translatable="yes">Sound Settings</property>
-                     <child>
-                       <object class="GtkListBox" id="audio_devices_listbox">
-                         <property name="selection-mode">none</property>
-                         <style>
-                           <class name="boxed-list"/>
-                         </style>
-                       </object>
-                     </child>
-                   </object>
-                 </child>
+          <object class="GtkScrolledWindow">
+            <child>
+              <object class="AdwPreferencesPage">
+                <child>
+                  <object class="AdwPreferencesGroup" id="sound_settings_group">
+                    <property name="title" translatable="yes">Sound Settings</property>
+                    <property name="header-suffix">
+                      <object class="GtkToggleButton" id="volume_slider_mute_btn">
+                        <property name="icon-name">audio-volume-muted-symbolic</property>
+                        <property name="tooltip-text" translatable="yes">Play sound on adjusting volume sliders</property>
+                      </object>
+                    </property>
+                    <child>
+                      <object class="GtkListBox" id="audio_devices_listbox">
+                        <property name="selection-mode">none</property>
+                        <style>
+                          <class name="boxed-list"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
 
-                 <child>
-                   <object class="AdwPreferencesGroup">
-                     <property name="title" translatable="yes">Feedback Settings</property>
-                     <child>
-                       <object class="AdwComboRow">
-                         <property name="title" translatable="yes">Feedback profile</property>
-                         <property name="subtitle" translatable="yes">The global maximum feedback profile</property>
-                         <property name="model">
-                           <object class="AdwEnumListModel">
-                             <property name="enum-type">MsFeedbackProfile</property>
-                           </object>
-                         </property>
-                         <property name="expression">
-                           <closure type="gchararray" function="item_feedback_profile_name"/>
-                         </property>
-                         <property name="selected" bind-source="MsFeedbackPanel" bind-property="feedback-profile" bind-flags="sync-create|bidirectional"/>
-                       </object>
-                     </child>
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title" translatable="yes">Feedback Settings</property>
+                    <child>
+                      <object class="AdwComboRow">
+                        <property name="title" translatable="yes">Feedback profile</property>
+                        <property name="subtitle" translatable="yes">The global maximum feedback profile</property>
+                        <property name="model">
+                          <object class="AdwEnumListModel">
+                            <property name="enum-type">MsFeedbackProfile</property>
+                          </object>
+                        </property>
+                        <property name="expression">
+                          <closure type="gchararray" function="item_feedback_profile_name"/>
+                        </property>
+                        <property name="selected" bind-source="MsFeedbackPanel" bind-property="feedback-profile" bind-flags="sync-create|bidirectional"/>
+                      </object>
+                    </child>
 
-                     <child>
-                       <object class="AdwSwitchRow" id="prefer_flash">
-                         <property name="title" translatable="yes">Prefer flash</property>
-                         <property name="subtitle" translatable="yes">Prefer camera flash over status LED when available</property>
-                       </object>
-                     </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="prefer_flash">
+                        <property name="title" translatable="yes">Prefer flash</property>
+                        <property name="subtitle" translatable="yes">Prefer camera flash over status LED when available</property>
+                      </object>
+                    </child>
 
-                     <child>
-                       <object class="AdwSwitchRow" id="quick_silent_switch">
-                         <property name="title" translatable="yes" comments="Translators: Vol- means the 'Lower Volume' key">Silence on Vol-</property>
-                         <property name="subtitle" translatable="yes">When locked put the phone in silent mode when pressing Vol- on incoming calls</property>
-                       </object>
-                     </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="quick_silent_switch">
+                        <property name="title" translatable="yes">Silence by volume button press</property>
+                        <property name="subtitle" translatable="yes">When locked put the phone in silent mode when pressing the button that lowers the volume on incoming calls</property>
+                      </object>
+                    </child>
 
                     <child>
                       <object class="AdwSpinRow" id="haptic_strenth_row">
@@ -99,20 +105,51 @@
                         </style>
                         <child>
                           <object class="MsSoundRow">
+                            <child type="prefix">
+                              <object class="GtkImage">
+                                <property name="icon-name">phone-right-facing-symbolic</property>
+                                <property name="icon-size">large</property>
+                              </object>
+                            </child>
                             <property name="title" translatable="yes">Phone Calls</property>
                             <property name="effect-name">phone-incoming-call</property>
                           </object>
                         </child>
                         <child>
                           <object class="MsSoundRow">
+                            <child type="prefix">
+                              <object class="GtkImage">
+                                <property name="icon-name">chat-bubbles-text-symbolic</property>
+                                <property name="icon-size">large</property>
+                              </object>
+                            </child>
                             <property name="title" translatable="yes">SMS</property>
                             <property name="effect-name">message-new-sms</property>
                           </object>
                         </child>
                         <child>
                           <object class="MsSoundRow">
-                            <property name="title" translatable="yes">Instant messages</property>
+                            <child type="prefix">
+                              <object class="GtkImage">
+                                <property name="icon-name">chat-bubbles-empty-symbolic</property>
+                                <property name="icon-size">large</property>
+                              </object>
+                            </child>
+                            <property name="title" translatable="yes">Instant Messages</property>
                             <property name="effect-name">message-new-instant</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="MsSoundRow" id="alarm_clock_sound_row">
+                            <child type="prefix">
+                              <object class="GtkImage">
+                                <property name="icon-name">alarm-symbolic</property>
+                                <property name="icon-size">large</property>
+                              </object>
+                            </child>
+                            <property name="visible">0</property>
+                            <property name="title" translatable="yes">Alarm Clock</property>
+                            <property name="effect-name">alarm-clock-elapsed</property>
                           </object>
                         </child>
                       </object>
@@ -181,6 +218,8 @@
                     </child>
                     <child>
                       <object class="AdwSwitchRow" id="presence_notifications_wakeup_switch">
+                        <!-- Translators: "presence change" means coming online or going offline,
+                             like in an instant messenger. -->
                         <property name="title" translatable="yes">Presence changes</property>
                         <property name="subtitle" translatable="yes">A generic presence change notification</property>
                         <signal name="notify::active" handler="on_notification_category_activate_changed" swapped="true"/>

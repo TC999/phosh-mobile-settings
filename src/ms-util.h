@@ -7,7 +7,7 @@
  */
 #pragma once
 
-#include "mobile-settings-enums.h"
+#include "ms-enums.h"
 
 #include <adwaita.h>
 
@@ -16,7 +16,12 @@
 
 G_BEGIN_DECLS
 
-#define STR_IS_NULL_OR_EMPTY(x) ((x) == NULL || (x)[0] == '\0')
+typedef enum {
+  MS_END_SESSION_MODE_LOGOUT,
+  MS_END_SESSION_MODE_REBOOT,
+} MsEndSessionMode;
+
+#define GM_STR_IS_NULL_OR_EMPTY(x) ((x) == NULL || (x)[0] == '\0')
 
 char             *ms_munge_app_id (const char *app_id);
 GDesktopAppInfo  *ms_get_desktop_app_info_for_app_id (const char *app_id);
@@ -41,5 +46,8 @@ GVariant *        ms_bool_to_picture_mode (const GValue       *in_value,
                                            gpointer            data);
 char             *ms_normalize_casefold_and_unaccent (const char *str);
 GtkStringList    *ms_get_casefolded_string_list (GtkStringList *strlist);
+const char       *ms_get_event_id_for_media_role (MsMediaRole role);
+const char       *ms_get_media_role_as_string (MsMediaRole role);
+void              ms_util_end_session (MsEndSessionMode mode);
 
 G_END_DECLS

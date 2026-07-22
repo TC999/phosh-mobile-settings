@@ -19,12 +19,13 @@
 #include "ms-tweaks-utils.h"
 
 #include <glib/gi18n-lib.h>
+#include <gmobile.h>
 
 #include <math.h>
 #include <yaml.h>
 
-/* Tweaks files use C locale so make sure we don't accidentally use locale-aware functions. */
-#pragma GCC poison strtof strtod strtold
+#define MS_TWEAKS_NO_LOCALE_FORMATTING
+#include "ms-tweaks-files-poison.h"
 
 /* Undocumented default from settingstree.py in postmarketos-tweaks. */
 #define CONF_TWEAKS_DEFAULT_WEIGHT 50
@@ -64,29 +65,29 @@ typedef enum {
   MS_TWEAKS_STATE_PAGE_WEIGHT,        /* Page weight. */
 
   MS_TWEAKS_STATE_SECTION,            /* Section entry. */
-  MS_TWEAKS_STATE_SECTION_NAME,	      /* Section name. */
-  MS_TWEAKS_STATE_SECTION_WEIGHT,	    /* Section weight. */
+  MS_TWEAKS_STATE_SECTION_NAME,       /* Section name. */
+  MS_TWEAKS_STATE_SECTION_WEIGHT,     /* Section weight. */
 
   MS_TWEAKS_STATE_SETTING,            /* Setting information. */
-  MS_TWEAKS_STATE_SETTING_NAME,	      /* Setting name. */
-  MS_TWEAKS_STATE_SETTING_WEIGHT,	    /* Setting weight. */
-  MS_TWEAKS_STATE_SETTING_TYPE,	      /* Setting type. */
+  MS_TWEAKS_STATE_SETTING_NAME,       /* Setting name. */
+  MS_TWEAKS_STATE_SETTING_WEIGHT,     /* Setting weight. */
+  MS_TWEAKS_STATE_SETTING_TYPE,       /* Setting type. */
   MS_TWEAKS_STATE_SETTING_GTYPE,      /* Setting GSettings type. */
   MS_TWEAKS_STATE_SETTING_STYPE,      /* Setting sysfs type. */
   MS_TWEAKS_STATE_SETTING_DATA,       /* Setting data source. */
   MS_TWEAKS_STATE_SETTING_MAP,        /* Mapping of multiple values. */
   MS_TWEAKS_STATE_SETTING_BACKEND,    /* Setting backend. */
-  MS_TWEAKS_STATE_SETTING_HELP,	      /* Setting help message. */
+  MS_TWEAKS_STATE_SETTING_HELP,       /* Setting help message. */
   MS_TWEAKS_STATE_SETTING_DEFAULT,    /* Setting default value. */
   MS_TWEAKS_STATE_SETTING_KEY,        /* Setting key. */
-  MS_TWEAKS_STATE_SETTING_READONLY,	  /* Setting readonly property. */
+  MS_TWEAKS_STATE_SETTING_READONLY,   /* Setting readonly property. */
   MS_TWEAKS_STATE_SETTING_SOURCE_EXT, /* Setting source_ext property. */
-  MS_TWEAKS_STATE_SETTING_SELECTOR,	  /* Setting selector (CSS backend). */
+  MS_TWEAKS_STATE_SETTING_SELECTOR,   /* Setting selector (CSS backend). */
   MS_TWEAKS_STATE_SETTING_GUARD,      /* Setting guard (CSS backend). */
   MS_TWEAKS_STATE_SETTING_MULTIPLIER, /* Setting multiplier. */
   MS_TWEAKS_STATE_SETTING_MIN,        /* Setting minimum value. */
   MS_TWEAKS_STATE_SETTING_MAX,        /* Setting maximum value. */
-  MS_TWEAKS_STATE_SETTING_STEP,	      /* Setting step value. */
+  MS_TWEAKS_STATE_SETTING_STEP,       /* Setting step value. */
   MS_TWEAKS_STATE_SETTING_CSS,        /* Setting CSS definition (CSS backend). */
 
   MS_TWEAKS_STATE_STOP,               /* End state. */
@@ -193,6 +194,7 @@ ms_tweaks_setting_copy (const MsTweaksSetting *setting)
 
   new_setting->weight = setting->weight;
   new_setting->name = g_strdup (setting->name);
+  new_setting->name_i18n = g_strdup (setting->name_i18n);
   new_setting->type = setting->type;
   new_setting->gtype = setting->gtype;
   new_setting->stype = setting->stype;
@@ -200,6 +202,7 @@ ms_tweaks_setting_copy (const MsTweaksSetting *setting)
     new_setting->map = g_hash_table_ref (setting->map);
   new_setting->backend = setting->backend;
   new_setting->help = g_strdup (setting->help);
+  new_setting->help_i18n = g_strdup (setting->help_i18n);
   new_setting->default_ = g_strdup (setting->default_);
   new_setting->key = g_ptr_array_ref (setting->key);
   new_setting->readonly = setting->readonly;
@@ -224,6 +227,7 @@ ms_tweaks_section_copy (const MsTweaksSection *section)
 
   new_section->weight = section->weight;
   new_section->name = g_strdup (section->name);
+  new_section->name_i18n = g_strdup (section->name_i18n);
   if (section->setting_table)
     new_section->setting_table = g_hash_table_ref (section->setting_table);
 
@@ -238,6 +242,7 @@ ms_tweaks_page_copy (const MsTweaksPage *page)
 
   new_page->weight = page->weight;
   new_page->name = g_strdup (page->name);
+  new_page->name_i18n = g_strdup (page->name_i18n);
   if (page->section_table)
     new_page->section_table = g_hash_table_ref (page->section_table);
 
@@ -421,7 +426,6 @@ static void
 merge_weights (int *into, const int from)
 {
   g_assert (into);
-  g_assert (from);
 
   /* Only overwrite the weight if it wasn't specified. We assume that even if the default was
    * specified, the original definition didn't care about the weight. */
@@ -505,8 +509,8 @@ merge_sections (MsTweaksSection *into, const MsTweaksSection *from)
   /* Merge settings. */
   g_hash_table_iter_init (&iter, from->setting_table);
   while (g_hash_table_iter_next (&iter, &setting_to_insert_name, &setting_to_insert)) {
-    gpointer setting_to_merge_into = g_hash_table_lookup (into->setting_table,
-                                                          setting_to_insert_name);
+    MsTweaksSetting *setting_to_merge_into = g_hash_table_lookup (into->setting_table,
+                                                                  setting_to_insert_name);
     MsTweaksSetting *setting_to_insert_copy = ms_tweaks_setting_copy (setting_to_insert);
 
     if (setting_to_merge_into) {
@@ -541,8 +545,8 @@ merge_pages (MsTweaksPage *into, const MsTweaksPage *from)
   /* Merge sections. */
   g_hash_table_iter_init (&iter, from->section_table);
   while (g_hash_table_iter_next (&iter, &section_to_insert_name, &section_to_insert)) {
-    gpointer section_to_merge_into = g_hash_table_lookup (into->section_table,
-                                                          section_to_insert_name);
+    MsTweaksSection *section_to_merge_into = g_hash_table_lookup (into->section_table,
+                                                                  section_to_insert_name);
     MsTweaksSection *section_to_insert_copy = ms_tweaks_section_copy (section_to_insert);
 
     if (section_to_merge_into) {
@@ -1560,15 +1564,20 @@ ms_tweaks_parser_parse_definition_files (MsTweaksParser *self, const char *tweak
 
   g_assert (MS_IS_TWEAKS_PARSER (self));
 
+  if (gm_str_is_null_or_empty (tweaks_yaml_path)) {
+    g_debug ("No path configured for conf-tweaks");
+    return;
+  }
+
   if (!yaml_directory) {
-    g_info ("Couldn't open postmarketOS YAML directory at '%s': %s.\nNo tweaks definitions will be read.",
-            tweaks_yaml_path,
-            error->message);
+    g_warning ("Couldn't open conf-tweaks YAML directory at '%s': %s.\nNo tweaks definitions will be read.",
+               tweaks_yaml_path,
+               error->message);
     return;
   }
 
   while ((yaml_filename_current = g_dir_read_name (yaml_directory)) != NULL) {
-    char *yaml_filepath_current = NULL;
+    g_autofree char *yaml_filepath_current = NULL;
     const char *file_extension = NULL;
     g_autofree char *contents = NULL;
     gsize contents_length = 0;
@@ -1594,6 +1603,11 @@ ms_tweaks_parser_parse_definition_files (MsTweaksParser *self, const char *tweak
       g_clear_error (&error);
       continue;
     }
+  }
+
+  if (g_hash_table_size (self->page_table) == 0) {
+    g_warning ("The conf-tweaks YAML directory '%s' doesn't contain any valid tweak definition files",
+               tweaks_yaml_path);
   }
 }
 

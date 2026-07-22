@@ -1,32 +1,32 @@
 # Georgian translation for phosh-mobile-settings.
 # Copyright (C) 2024 phosh-mobile-settings's authors.
 # This file is distributed under the same license as the phosh-mobile-settings package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2024-2025.
+# Ekaterine Papava <papava.e@gtu.ge>, 2024-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-10-03 16:26+0000\n"
-"PO-Revision-Date: 2025-10-04 07:16+0200\n"
+"POT-Creation-Date: 2026-06-30 20:20+0000\n"
+"PO-Revision-Date: 2026-07-01 05:54+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:2
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
 msgstr "მობილურობის მორგება"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
 #: data/mobi.phosh.MobileSettings.desktop.in:12
-msgid "Mobile;Preferences;MobileSettings;"
-msgstr "Mobile;Preferences;MobileSettings;პარამეტრები;მობილური;"
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr "Mobile;Preferences;MobileSettings;პარამეტრები;მობილური;Tweaks;"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
 msgid "Phosh Mobile Settings"
@@ -56,119 +56,282 @@ msgstr "კომპოზიტორის პანელი"
 msgid "Feedback panel"
 msgstr "უკუკავშირის პანელი"
 
-#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#: plugins/librem5/ms-plugin-librem5-panel.c:215
 #, c-format
 msgid "Critical temperature is %.2f°C"
 msgstr "კრიტიკული ტემპერატურაა %.2f°C"
 
 #. Translators "Librem 5" is a smartphone model, usually no need to translate it
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:24
 msgid "Librem 5"
 msgstr "Librem 5"
 
 #. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:28
 msgid "U-Boot"
 msgstr "U-Boot"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:40
 msgid "Suspend device"
 msgstr "მოწყობილობის დაძინება"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:42
 msgid "Suspend is experimental"
 msgstr "დაძინება ექსპერიმენტულია"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:45
 msgid "suspend now"
 msgstr "ახლა დაძინება"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:60
 msgid "Temperatures"
 msgstr "ტემპერატურა"
 
 #. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:64
 msgid "CPU"
 msgstr "CPU"
 
 #. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:83
 msgid "GPU"
 msgstr "GPU"
 
 #. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:102
 msgid "VPU"
 msgstr "VPU"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:120
 msgid "Fuel Gauge"
 msgstr "ელემენტის მუხტი"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:138
 msgid "Battery"
 msgstr "კვების ელემენტი"
 
-#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:13
+msgid "Add Layout"
+msgstr "განლაგების დამატება"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17 src/ui/ms-updates-panel.ui:82
+#: src/ui/ms-updates-panel.ui:126
+msgid "Cancel"
+msgstr "გაუქმება"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "დამატება"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-lang-panel.ui:14
+#: src/ui/ms-window.ui:318 src/ui/ms-window.ui:326
+msgid "Language"
+msgstr "ენა"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "განლაგებები"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:29
+msgid "No Layouts configured"
+msgstr "განლაგებები მორგებული არაა"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "მეტი პარამეტრი…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "აწევა"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "ჩამოწევა"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "წაშლა"
+
+#: libpms/lang/ms-common-language.c:312
+msgid "Other…"
+msgstr "სხვა…"
+
+#: libpms/lang/ms-language-chooser.ui:4
+msgid "Select Language"
+msgstr "აირჩიეთ ენა"
+
+#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:108
+#: src/ui/ms-hidden-apps-dialog.ui:15
+msgid "_Cancel"
+msgstr "გაუ_ქმება"
+
+#: libpms/lang/ms-language-chooser.ui:23 src/ui/ms-hidden-apps-dialog.ui:23
+msgid "_Select"
+msgstr "_მონიშვნა"
+
+#: libpms/lang/ms-language-chooser.ui:44
+msgid "Language or country"
+msgstr "ენა ან ქვეყანა"
+
+#: libpms/lang/ms-language-chooser.ui:68
+msgid "No languages found"
+msgstr "ენები ნაპოვნი არაა"
+
+#: libpms/lang/ms-language-chooser.ui:79
+msgid "More…"
+msgstr "მეტი…"
+
+#: libpms/lang/ms-util.c:130
+msgid "Today"
+msgstr "დღეს"
+
+#: libpms/lang/ms-util.c:134
+msgid "Yesterday"
+msgstr "გუშინ"
+
+#. Translators: This is a date format string in the style of "Feb 24".
+#: libpms/lang/ms-util.c:142
+#, no-c-format
+msgid "%b %e"
+msgstr "%b %e"
+
+#. Translators: This is a date format string in the style of "Feb 24, 2013".
+#: libpms/lang/ms-util.c:147
+msgid "%b %e, %Y"
+msgstr "%b %e, %Y"
+
+#. TRANSLATORS: This is the datetime format in the style of
+#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
+#. and "Yesterday, 10:10:10 AM"
+#: libpms/lang/ms-util.c:166
+#, c-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: libpms/lang/ms-util.c:186
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d საათი"
+msgstr[1] "%d საათი"
+
+#: libpms/lang/ms-util.c:187
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d წუთი"
+msgstr[1] "%d წუთი"
+
+#: libpms/lang/ms-util.c:188
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d წამი"
+msgstr[1] "%d წამი"
+
+#. 5 hours 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:195
+#, c-format
+msgctxt "hours minutes seconds"
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. 5 hours 2 minutes
+#: libpms/lang/ms-util.c:200
+#, c-format
+msgctxt "hours minutes"
+msgid "%s %s"
+msgstr "%s%s"
+
+#. 5 hours
+#: libpms/lang/ms-util.c:205
+#, c-format
+msgctxt "hours"
+msgid "%s"
+msgstr "%s"
+
+#. 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:213
+#, c-format
+msgctxt "minutes seconds"
+msgid "%s %s"
+msgstr "%s%s"
+
+#. 2 minutes
+#: libpms/lang/ms-util.c:218
+#, c-format
+msgctxt "minutes"
+msgid "%s"
+msgstr "%s"
+
+#. 0 seconds
+#: libpms/lang/ms-util.c:229
+msgid "0 seconds"
+msgstr "0 წამი"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
 #, c-format
 msgid "Something went wrong: %s"
 msgstr "რაღაც ისე ვერ არის: %s"
 
-#: src/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "ზოგადი"
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "ავთენტიკაცია გაუქმდა"
 
-#: src/gtk/help-overlay.ui:14
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "მალსახმობების ჩვენება"
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "შენახვისას აღმოჩენილია %i შეცდომა"
+msgstr[1] "შენახვისას აღმოჩენილია %i შეცდომა"
 
-#: src/gtk/help-overlay.ui:20
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "გასვლა"
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr ""
+"ზოგიერთი პარამეტრის შესანახად ადმინისტრატორად ავთენტიკაციის გავლაა საჭირო"
 
-#: src/mobile-settings-application.c:36
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "ფიჭური გადაცემის შეტყობინებების სია ვერ მივიღე"
+
+#: src/ms-application.c:37
 msgid "- Manage your mobile settings"
 msgstr "- მართეთ თქვენი მობილურის პარამეტრები"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:447
+#: src/ms-application.c:541
 msgid "translator-credits"
 msgstr "temuri Doghonadze"
 
-#: src/mobile-settings-window.c:148
-msgid "Device"
-msgstr "მოწყობილობა"
-
-#: src/ms-alerts-panel.c:242
-msgid "Could not get list of cell broadcast messages"
-msgstr "ფიჭური გადაცემის შეტყობინებების სია ვერ მივიღე"
-
-#: src/ms-audio-devices.c:178
+#: src/ms-audio-devices.c:179
 msgid "Media Volume"
 msgstr "ხმის სიმძლავრე"
 
-#: src/ms-audio-devices.c:180
+#: src/ms-audio-devices.c:182
 msgid "Notification Volume"
 msgstr "გაფრთხილების ხმის დონე"
 
-#: src/ms-audio-devices.c:182
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "ხმოვანი ზარის ხმის დონე"
+
+#: src/ms-audio-devices.c:188
 msgid "Ring Tone Volume"
 msgstr "ტელეფონის დარეკვის ხმის დონე"
 
-#: src/ms-audio-devices.c:184
-msgid "Call volume"
-msgstr "ზარის ხმის დონე"
-
-#: src/ms-audio-devices.c:186
+#: src/ms-audio-devices.c:191
 msgid "Alarm Volume"
 msgstr "განგაშის ხმის დონე"
 
-#: src/ms-audio-devices.c:188
+#: src/ms-audio-devices.c:194
 msgid "Emergency Alerts Volume"
 msgstr "გადაუდებელი განგაშის ხმის დონე"
 
@@ -176,81 +339,88 @@ msgstr "გადაუდებელი განგაშის ხმის 
 msgid "Message of unknown severity"
 msgstr "უცნობი სიმძიმის შეტყობინება"
 
-#: src/ms-feedback-panel.c:212
+#: src/ms-feedback-panel.c:338
 msgid "Sound file does not exist"
 msgstr "ხმის ფაილი არ არსებობს"
 
-#: src/ms-feedback-panel.c:214
+#: src/ms-feedback-panel.c:340
 msgid "Sound file is corrupt"
 msgstr "ხმის ფაილი დაზიანებულია"
 
-#: src/ms-feedback-panel.c:216
+#: src/ms-feedback-panel.c:342
 msgid "Failed to play sound"
 msgstr "ხმის დაკვრა ჩავარდა"
 
-#: src/ms-feedback-panel.c:255
+#: src/ms-feedback-panel.c:381
 #, c-format
 msgid "Playing %s"
 msgstr "%s-ის დაკვრა"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:416
+#: src/ms-feedback-panel.c:579
 msgid "low"
 msgstr "დაბალი"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:419
+#: src/ms-feedback-panel.c:582
 msgid "normal"
 msgstr "ნორმალური"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:422
+#: src/ms-feedback-panel.c:585
 msgid "critical"
 msgstr "კრიტიკული"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:426
+#: src/ms-feedback-panel.c:589
 msgid "none"
 msgstr "არა"
 
-#: src/ms-feedback-panel.c:806
+#: src/ms-feedback-panel.c:1008
 msgid "Mobile Settings Volume Control"
 msgstr "მობილურობის მორგების ხმის მართვა"
+
+#: src/ms-lang-panel.c:80
+msgid "Failed to set system locale"
+msgstr "სისტემის ლოკალის დაყენება ჩავარდა"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "დაბლოკვის ეკრანის ფონის სურათის დაყენება ჩავარდა"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:746
+#: src/ms-osk-panel.c:751
 msgid "Default"
 msgstr "ნაგულისხმევი"
 
-#: src/ms-osk-panel.c:747
+#: src/ms-osk-panel.c:752
 msgid "The default completer selected by the OSK"
 msgstr "ნაგულისხმევი დასრულების ძრავა OSK-ის მიერ"
 
-#: src/ms-osk-panel.c:750
+#: src/ms-osk-panel.c:755
 msgid "No information available for this completer"
 msgstr "ამ დამსრულებლისთვის ინფორმაცია ხელმისაწვდომი არა"
 
-#: src/ms-overview-panel.c:69
+#: src/ms-overview-panel.c:62
+#, c-format
+msgid "%u App Made Visible Again"
+msgid_plural "%u Apps Made Visible Again"
+msgstr[0] "%u აპლიკაცია ისევ ხილულია"
+msgstr[1] "%u აპლიკაცია ისევ ხილულია"
+
+#: src/ms-overview-panel.c:102
 msgid "Reset favorites?"
 msgstr "ჩამოვყარო რჩეულები?"
 
-#: src/ms-overview-panel.c:72
+#: src/ms-overview-panel.c:105
 msgid "Reset list of favorite applications to the default?"
 msgstr "ჩამოვყარო რჩეული აპლიკაციების სია ნაგულისხმევზე?"
 
-#: src/ms-overview-panel.c:75
-msgid "_Cancel"
-msgstr "გაუ_ქმება"
-
-#: src/ms-overview-panel.c:76
+#: src/ms-overview-panel.c:109
 msgid "_Reset"
 msgstr "ჩამოყ_რა"
 
-#: src/ms-overview-panel.c:331
+#: src/ms-overview-panel.c:364
 msgid "Failed to set wallpaper for overview"
 msgstr "მიმოხილვის ეკრანის ფონის სურათის დაყენება ჩავარდა"
 
@@ -312,13 +482,43 @@ msgid "Not available"
 msgstr "ხელმიუწვდომელია"
 
 #. Translators: "Custom" is the name of a user-defined sound theme
-#: src/ms-sound-row.c:128
+#: src/ms-sound-row.c:130
 msgid "Custom"
 msgstr "ხელით"
 
-#: src/ms-sound-row.c:309
+#: src/ms-sound-row.c:311
 msgid "Choose sound file"
 msgstr "აირჩიეთ ხმის ფაილი"
+
+#. Translators: %s is a OS version number like 0.20260614
+#: src/ms-updates-panel.c:151
+#, c-format
+msgid "Update to %s"
+msgstr "განახლება %s-ზე"
+
+#: src/ms-updates-panel.c:184 src/ms-updates-panel.c:220
+#, c-format
+msgid "OS update failed: %s"
+msgstr "ოს-ის განახლება ჩავარდა: %s"
+
+#: src/ms-updates-panel.c:270
+#, c-format
+msgid "Canceling OS update failed: %s"
+msgstr "ოს-ის განახლების გაუქმება ჩავარდა: %s"
+
+#: src/ms-updates-panel.c:333
+msgid "OS Update already in progress"
+msgstr "ოს-ის განახლება უკვე მიმდინარეობს"
+
+#. Translators %s is an os version number like 0.20260614
+#: src/ms-updates-panel.c:341
+#, c-format
+msgid "Updating to %s…"
+msgstr "განახლება %s-მდე…"
+
+#: src/ms-updates-panel.c:361
+msgid "OS update in progress"
+msgstr "მიმდინარეობს ოს-ის განახლება"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
 #: src/ms-util.c:170
@@ -339,174 +539,45 @@ msgstr "ჩუმი"
 msgid "Choose Wallpaper"
 msgstr "აირჩიეთ ფონის სურათი"
 
-#. Translators: this is a verb.
-#: src/ui/mobile-settings-window.ui:31
-msgid "Search"
-msgstr "ძებნა"
+#: src/ms-window.c:131
+msgid "Configurable Tweaks"
+msgstr "მორგებადი შესწორებები"
 
-#: src/ui/mobile-settings-window.ui:48
-msgid "Search settings"
-msgstr "ძიების პარამეტრები"
+#: src/ms-window.c:182
+msgid "Device"
+msgstr "მოწყობილობა"
 
-#: src/ui/mobile-settings-window.ui:98
-msgid "Welcome"
-msgstr "მოგესლამებათ"
+#: src/ui/ms-about-panel.ui:19
+msgid "Phosh logo"
+msgstr "Phosh-ის ლოგო"
 
-#: src/ui/mobile-settings-window.ui:104
-msgid "Welcome to Mobile Settings"
-msgstr "მოგესალმებით მობილურის პარამეტრებში"
+#: src/ui/ms-about-panel.ui:30
+msgid "Phosh Version"
+msgstr "Phosh-ის ვერსია"
 
-#: src/ui/mobile-settings-window.ui:105
-msgid "Tweak advanced mobile settings"
-msgstr "შეცვალეთ მობილურის დამატებითი პარამეტრები"
+#: src/ui/ms-about-panel.ui:38
+msgid "Operating System"
+msgstr "ოპერაციული სისტემა"
 
-#: src/ui/mobile-settings-window.ui:113
-msgid "Top Bar"
-msgstr "ზედა ზოლი"
+#: src/ui/ms-about-panel.ui:46
+msgid "Operating System Version"
+msgstr "ოპერაციული სისტემის ვერსია"
 
-#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "სწრაფი მორგება"
+#: src/ui/ms-about-panel.ui:54
+msgid "Hardware Model"
+msgstr "აპარატურის მოდელი"
 
-#: src/ui/mobile-settings-window.ui:122
-msgid "Notches"
-msgstr "ინტერვალები"
+#: src/ui/ms-about-panel.ui:66
+msgid "Support Phosh"
+msgstr "დაუჭირეთ მხარი Phosh-ს"
 
-#: src/ui/mobile-settings-window.ui:133
-msgid "Overview"
-msgstr "მიმოხილვა"
+#: src/ui/ms-about-panel.ui:67
+msgid "Your donations make our work possible"
+msgstr "თქვენი დონაციებით შესაძლებელია, ვიმუშაოთ"
 
-#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "სანიშნეები"
-
-#: src/ui/mobile-settings-window.ui:142
-msgid "Filter"
-msgstr "ფილტრი"
-
-#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
-msgid "Wallpaper"
-msgstr "ფონის სურათი"
-
-#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
-msgid "Feedback"
-msgstr "უკუკავშირი"
-
-#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:93
-msgid "Sounds"
-msgstr "ხმები"
-
-#: src/ui/mobile-settings-window.ui:164
-msgid "Wakeup"
-msgstr "გაღვიძება"
-
-#: src/ui/mobile-settings-window.ui:165
-msgid "Vibra"
-msgstr "ვიბრა"
-
-#: src/ui/mobile-settings-window.ui:166
-msgid "Haptic"
-msgstr "ჰაპტიკური"
-
-#: src/ui/mobile-settings-window.ui:167
-msgid "LED"
-msgstr "LED"
-
-#: src/ui/mobile-settings-window.ui:178
-msgid "Compositor"
-msgstr "კომპოზიტორი"
-
-#: src/ui/mobile-settings-window.ui:186 src/ui/ms-osk-panel.ui:101
-msgid "Scaling"
-msgstr "მასშტაბი"
-
-#: src/ui/mobile-settings-window.ui:197
-msgid "Lockscreen"
-msgstr "ჩაკეტილი ეკრანი"
-
-#: src/ui/mobile-settings-window.ui:206
-msgid "Shuffle"
-msgstr "შემთხვევით"
-
-#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "ვიჯეტები"
-
-#: src/ui/mobile-settings-window.ui:208
-msgid "Password"
-msgstr "პაროლი"
-
-#: src/ui/mobile-settings-window.ui:219
-msgid "Convergence"
-msgstr "კონვერგენცია"
-
-#: src/ui/mobile-settings-window.ui:237
-msgid "On Screen Keyboard"
-msgstr "ეკრანის კლავიატურა"
-
-#: src/ui/mobile-settings-window.ui:245
-msgid "Keyboard"
-msgstr "კლავიატურა"
-
-#: src/ui/mobile-settings-window.ui:246
-msgid "Unfold"
-msgstr "გაშლა"
-
-#: src/ui/mobile-settings-window.ui:247
-msgid "OSK"
-msgstr "OSK"
-
-#: src/ui/mobile-settings-window.ui:248
-msgid "Word Completion"
-msgstr "სიტყვის დასრულება"
-
-#: src/ui/mobile-settings-window.ui:259
-msgid "Emergency Alerts"
-msgstr "გადაუდებელი განგაშები"
-
-#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
-msgid "Emergency"
-msgstr "სასწრაფო"
-
-#: src/ui/mobile-settings-window.ui:268
-msgid "Cell Broadcast"
-msgstr "უჯრედის გადაცემა"
-
-#: src/ui/mobile-settings-window.ui:269
-msgid "Danger"
-msgstr "საფრთხე"
-
-#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
-msgid "Sensors"
-msgstr "სენსორები"
-
-#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "მაღალი კონტრასტი"
-
-#: src/ui/mobile-settings-window.ui:299
-msgid "Experimental features"
-msgstr "ექსპერიმენტალური ფუნქციები"
-
-#: src/ui/mobile-settings-window.ui:308
-msgid "Suspend"
-msgstr "ძილი"
-
-#: src/ui/mobile-settings-window.ui:309
-msgid "Experimental"
-msgstr "ექსპერიმენტული"
-
-#: src/ui/mobile-settings-window.ui:333
-msgid "_Show Configurable Tweaks"
-msgstr "მორგებადი შე_სწორებების ჩვენება"
-
-#: src/ui/mobile-settings-window.ui:340
-msgid "_Keyboard Shortcuts"
-msgstr "_კლავიატურის მალსახმობები"
-
-#: src/ui/mobile-settings-window.ui:344
-msgid "_About Mobile Settings"
-msgstr "მობილურის პარამეტრების შეს_ახებ"
+#: src/ui/ms-about-panel.ui:70
+msgid "D_onate"
+msgstr "შემ_ოწირვა"
 
 #: src/ui/ms-alerts-panel.ui:17
 msgid "Unable To Receive Alerts"
@@ -667,77 +738,90 @@ msgstr "ჩართულია"
 msgid "Sound Settings"
 msgstr "ხმის მორგება"
 
-#: src/ui/ms-feedback-panel.ui:27
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "ნიმუში ხმის დაკვრა ხმის დონის ცვლილებისას"
+
+#: src/ui/ms-feedback-panel.ui:33
 msgid "Feedback Settings"
 msgstr "უკუკავშირის მორგება"
 
-#: src/ui/ms-feedback-panel.ui:30
+#: src/ui/ms-feedback-panel.ui:36
 msgid "Feedback profile"
 msgstr "უკუკავშირის პროფილი"
 
-#: src/ui/ms-feedback-panel.ui:31
+#: src/ui/ms-feedback-panel.ui:37
 msgid "The global maximum feedback profile"
 msgstr "გლობალური მაქსიმალური უკუკავშირის პროფილი"
 
-#: src/ui/ms-feedback-panel.ui:46
+#: src/ui/ms-feedback-panel.ui:52
 msgid "Prefer flash"
 msgstr "მირჩევნია განათება"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "კამერის განათებისთვის სტატუსის LED-ზე მეტი პრიორიტეტის მიცემა, როცა ის "
 "ხელმისაწვდომია"
 
-#. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:53
-msgid "Silence on Vol-"
-msgstr "დადუმება ხმის ჩაწევის ღილაკით"
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "დადუმება ხმის ღილაკებზე დაჭერით"
 
-#: src/ui/ms-feedback-panel.ui:54
+#: src/ui/ms-feedback-panel.ui:60
 msgid ""
-"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
 msgstr ""
-"როცა დაბლოკილია, დაადუმეთ ტელეფონი ხმის ჩაწევის ღილაკით, როცა გირეკავენ"
+"როცა დაბლოკილია, ტელეფონის დადუმებულ რეჟიმში გადართვა იმ ღილაკზე დაჭერით, "
+"რომელიც ხმას დაუწევს შემომავალ ზარებს"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:60
+#: src/ui/ms-feedback-panel.ui:66
 msgid "Haptic strength"
 msgstr "ვიბრაციის სიმძლავრე"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Maximum haptic feedback strength percentage"
 msgstr "მაქსიმალური ვიბრაციის უკუკავშირის სიძლიერის პროცენტულობა"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:86
 msgid "Per Application settings"
 msgstr "პარამეტრები თითოეული აპლიკაციისთვის"
 
-#: src/ui/ms-feedback-panel.ui:94
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:161
+msgid "Sounds"
+msgstr "ხმები"
+
+#: src/ui/ms-feedback-panel.ui:100
 msgid "The sound to use for certain events"
 msgstr "ხმა ზოგიერთი მოვლენისთვის"
 
-#: src/ui/ms-feedback-panel.ui:102
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Phone Calls"
 msgstr "სატელეფონო ზარები"
 
-#: src/ui/ms-feedback-panel.ui:108
+#: src/ui/ms-feedback-panel.ui:126
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:114
-msgid "Instant messages"
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
 msgstr "მყისი შეტყობინებები"
 
-#: src/ui/ms-feedback-panel.ui:125
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "მაღვიძარა"
+
+#: src/ui/ms-feedback-panel.ui:162
 msgid "Screen Wakeup"
 msgstr "ეკრანის გაღვიძება"
 
-#: src/ui/ms-feedback-panel.ui:128
+#: src/ui/ms-feedback-panel.ui:165
 msgid "Notification urgency that lights up the screen"
 msgstr "გაფრთხილების სასწრაფოობა, რომელიც ეკრანს გაანათებს"
 
-#: src/ui/ms-feedback-panel.ui:146
+#: src/ui/ms-feedback-panel.ui:183
 msgid ""
 "Notification categories that wake up the screen independent from their "
 "urgency"
@@ -745,61 +829,87 @@ msgstr ""
 "გაფრთხილების კატეგორიები, რომლებიც გააღვიძებენ ეკრანს მათი გადაუდებლობის "
 "მიუხედავად"
 
-#: src/ui/ms-feedback-panel.ui:149
+#: src/ui/ms-feedback-panel.ui:186
 msgid "Calls"
 msgstr "ზარები"
 
-#: src/ui/ms-feedback-panel.ui:150
+#: src/ui/ms-feedback-panel.ui:187
 msgid "A generic audio or video call notification"
 msgstr "ზოგადი აუდიო ან ვიდეოზარის გაფრთხილება"
 
-#: src/ui/ms-feedback-panel.ui:156
+#: src/ui/ms-feedback-panel.ui:193
 msgid "Device events"
 msgstr "მოწყობილობის მოვლენები"
 
-#: src/ui/ms-feedback-panel.ui:157
+#: src/ui/ms-feedback-panel.ui:194
 msgid "A generic device-related notification"
 msgstr "ზოგადი გაფრთხილება მოწყობილობის შესახებ"
 
-#: src/ui/ms-feedback-panel.ui:163
+#: src/ui/ms-feedback-panel.ui:200
 msgid "Emails"
 msgstr "ელფოსტები"
 
-#: src/ui/ms-feedback-panel.ui:164
+#: src/ui/ms-feedback-panel.ui:201
 msgid "A generic e-mail-related notification"
 msgstr "ზოგადი გაფრთხილება ელფოსტის შესახებ"
 
-#: src/ui/ms-feedback-panel.ui:170
-msgid "Instant Messages"
-msgstr "მყისი შეტყობინებები"
-
-#: src/ui/ms-feedback-panel.ui:171
+#: src/ui/ms-feedback-panel.ui:208
 msgid "A generic instant message-related notification"
 msgstr "ზოგადი გაფრთხილება ჩატის შესახებ"
 
-#: src/ui/ms-feedback-panel.ui:177
+#: src/ui/ms-feedback-panel.ui:214
 msgid "Network events"
 msgstr "ქსელური მოვლენები"
 
-#: src/ui/ms-feedback-panel.ui:178
+#: src/ui/ms-feedback-panel.ui:215
 msgid "A generic network notification"
 msgstr "ზოგადი გაფრთხილება ქსელის შესახებ"
 
-#: src/ui/ms-feedback-panel.ui:184
+#. Translators: "presence change" means coming online or going offline,
+#. like in an instant messenger.
+#: src/ui/ms-feedback-panel.ui:223
 msgid "Presence changes"
 msgstr "სტატუსის ცვლილებები"
 
-#: src/ui/ms-feedback-panel.ui:185
+#: src/ui/ms-feedback-panel.ui:224
 msgid "A generic presence change notification"
 msgstr "ზოგადი გაფრთხილება სტატუსის ცვლილების შესახებ"
 
-#: src/ui/ms-feedback-panel.ui:191
+#: src/ui/ms-feedback-panel.ui:230
 msgid "File transfers"
 msgstr "ფაილის გადაწერები"
 
-#: src/ui/ms-feedback-panel.ui:192
+#: src/ui/ms-feedback-panel.ui:231
 msgid "A generic file transfer or download notification"
 msgstr "ზოგადი გაფრთხილებები ფაილის ატვირთვის ან გადმოწერის შესახებ"
+
+#: src/ui/ms-hidden-app-row.ui:5 src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "პროგრამა"
+
+#: src/ui/ms-hidden-apps-dialog.ui:4
+msgid "Hidden Apps"
+msgstr "დამალული აპები"
+
+#: src/ui/ms-hidden-apps-dialog.ui:83
+msgid "No Apps are Currently Hidden"
+msgstr "ამჟამად აპები დამალული არაა"
+
+#: src/ui/ms-lang-panel.ui:15
+msgid "The language of the user interface"
+msgstr "მომხმარებლის ინტერფეისის ენა"
+
+#: src/ui/ms-lang-panel.ui:18
+msgid "_Language"
+msgstr "_ენა"
+
+#: src/ui/ms-lang-panel.ui:45
+msgid "Language change requires logout or restart"
+msgstr "ენის ცვლილება სისტემიდან გასვლას, ან გადატვირთვას მოითხოვს"
+
+#: src/ui/ms-lang-panel.ui:46
+msgid "Logout"
+msgstr "გასვლა"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
@@ -829,49 +939,33 @@ msgstr "ეკრანის ავტომატური დაბლოკ�
 msgid "Seconds from screen blank to screen lock"
 msgstr "ეკრანის დასაბლოკად მისი დაბნელების დრო"
 
-#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:94
 msgid "Background"
 msgstr "ფონი"
 
-#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:100
 msgid "_Select Wallpaper…"
 msgstr "ფონის _სურათის არჩევა…"
 
-#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:112
 msgid "Use wallpaper"
 msgstr "ფონის სურათის გამოყენება"
 
-#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:113
 msgid "Whether to show a colorful wallpaper"
 msgstr "იქნება, თუ არა გამოყენებული ფერადი ფონი"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:205
+msgid "Widgets"
+msgstr "ვიჯეტები"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "დამატებითი ვიჯეტები დაბლოკვის ეკრანისთვის"
 
-#. Translators: Title for a dialog to add a new on-screen keyboard layout
-#. Translators: Label for a button that allows the user to add a new keyboard layout
-#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
-msgid "Add Layout"
-msgstr "განლაგების დამატება"
-
-#: src/ui/ms-osk-add-layout-dialog.ui:14
-#: src/ui/ms-osk-add-shortcut-dialog.ui:17
-msgid "Cancel"
-msgstr "გაუქმება"
-
-#: src/ui/ms-osk-add-layout-dialog.ui:20
-#: src/ui/ms-osk-add-shortcut-dialog.ui:23
-msgid "Add"
-msgstr "დამატება"
-
-#: src/ui/ms-osk-add-layout-dialog.ui:40
-msgid "Language"
-msgstr "ენა"
-
 #. Translators: Title for a dialog to add a new on-screen keyboard shortcut
 #. Translators: Label for a button that allows the user to add a new keyboard shortcut
-#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:168
 msgid "Add Shortcut"
 msgstr "მალსახმობის დამატება"
 
@@ -895,35 +989,9 @@ msgstr "აკრიფეთ ღილაკი, როგორიცაა �
 msgid "_Shortcut Key"
 msgstr "მალ_სახმობის ღილაკი"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:154
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
 msgid "Shortcut Preview"
 msgstr "მალსახმობის მინიატურა"
-
-#: src/ui/ms-osk-layout-prefs.ui:5
-msgctxt "on screen keyboard"
-msgid "Layouts"
-msgstr "განლაგებები"
-
-#. Translators: Message displayed when there are no keyboard layouts configured
-#: src/ui/ms-osk-layout-prefs.ui:30
-msgid "No Layouts configured"
-msgstr "განლაგებები მორგებული არაა"
-
-#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
-msgid "More options…"
-msgstr "მეტი პარამეტრი…"
-
-#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
-msgid "Move Up"
-msgstr "აწევა"
-
-#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
-msgid "Move Down"
-msgstr "ჩამოწევა"
-
-#: src/ui/ms-osk-layout-row.ui:49
-msgid "Remove"
-msgstr "წაშლა"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
@@ -995,13 +1063,17 @@ msgstr "კლავიატურის სიმაღლე ლანდშ�
 msgid "When the screen is wider than tall"
 msgstr "როდესაც ეკრანი უფრო ფართოა, ვიდრე მაღალი"
 
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:184
+msgid "Scaling"
+msgstr "მასშტაბი"
+
 #: src/ui/ms-osk-panel.ui:104
 msgid "Keep physical size constant"
 msgstr "ფიზიკური ზომის მუდმივად შენარჩუნება"
 
 #: src/ui/ms-osk-panel.ui:105
-msgid "Whether to keep the OSK's size constant in portrait mode"
-msgstr "იქნება თუ არა OSK-ის ზომა მუდმივი პორტრეტის რეჟიმში"
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr "დარწმუნდით, რომ OSK საკმარისად დიდია ეკრანის მაღალ გარჩევადობებში"
 
 #: src/ui/ms-osk-panel.ui:111
 msgid "Add empty space below keys"
@@ -1040,17 +1112,34 @@ msgstr "ნაგულისხმევი დამსრულებელ�
 msgid "The default completion engine to use"
 msgstr "ნაგულისხმევი დასრულების ძრავა გამოსაყენებლად"
 
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:150
+msgid "Handle space around punctuation characters"
+msgstr "პუნქტუაციის სიმბოლოებს შორის ადგილის მართვა"
+
+#. Translators: Space is the ' ' character here
 #: src/ui/ms-osk-panel.ui:152
+msgid ""
+"This also swaps the space and punctuation characters after word completion"
+msgstr ""
+"ეს ასევე შეუცვლის ადგილს ჰარეს და პუნქტუაციის სიმბოლოებს სიტყვის დასრულების "
+"შემდეგ"
+
+#: src/ui/ms-osk-panel.ui:160
 msgid "Terminal Layout"
 msgstr "ტერმინალის განლაგება"
 
-#: src/ui/ms-osk-panel.ui:171
+#: src/ui/ms-osk-panel.ui:179
 msgid "Shortcuts"
 msgstr "მალსახმობები"
 
-#: src/ui/ms-osk-panel.ui:172
+#: src/ui/ms-osk-panel.ui:180
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "მალსახმობების პანელზე ხელმისაწვდომი მალსახმობები"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:139
+msgid "Favorites"
+msgstr "სანიშნეები"
 
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
@@ -1073,8 +1162,8 @@ msgid "Reset"
 msgstr "საწყის მნიშვნელობებზე დაბრუნება"
 
 #: src/ui/ms-overview-panel.ui:64
-msgid "Mobile App Filtering"
-msgstr "მობილური აპების გაფილტვრა"
+msgid "App Filtering and Hiding"
+msgstr "აპების გაფილტვრა და დამალვა"
 
 #: src/ui/ms-overview-panel.ui:67
 msgid "Set Application Filter Mode"
@@ -1084,9 +1173,21 @@ msgstr "აპლიკაციის ფილტრის რეჟიმი�
 msgid "Show only mobile apps in the overview"
 msgstr "გადახედვაში, მხოლოდ, მობილური აპების ჩვენება"
 
-#: src/ui/ms-scale-to-fit-row.ui:5
-msgid "Application"
-msgstr "პროგრამა"
+#: src/ui/ms-overview-panel.ui:74
+msgid "_Manage Hidden Apps"
+msgstr "დამალული აპების _მართვა"
+
+#: src/ui/ms-overview-panel.ui:75
+msgid "Make apps you disabled in the overview visible again"
+msgstr "გახადეთ ისევ ხილული აპები, რომლებიც მიმოხილვაში დამალეთ"
+
+#: src/ui/ms-panel-switcher.ui:11
+msgid "No Matching Panels"
+msgstr "შესაბამისი პანელის გარეშე"
+
+#: src/ui/ms-panel-switcher.ui:12
+msgid "Try a different search"
+msgstr "სცადეთ სხვა ძებნა"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
@@ -1097,6 +1198,10 @@ msgid ""
 "Either there are no sensors installed on your device or they are disabled by "
 "a killswitch."
 msgstr "სენსორები ან დაყენებული არაა, ან გადასართველითაა გათიშული."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:278
+msgid "Sensors"
+msgstr "სენსორები"
 
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
@@ -1114,6 +1219,10 @@ msgstr "მსუბუქი"
 msgid "Orientation"
 msgstr "ორიენტაცია"
 
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:286
+msgid "High Contrast"
+msgstr "მაღალი კონტრასტი"
+
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
 msgstr "ავტომატური მაღალი კონტრასტი"
@@ -1129,6 +1238,10 @@ msgstr "სინათლის ინტენსივობის ზღვ�
 #: src/ui/ms-sensor-panel.ui:85
 msgid "Theme will switch to high contrast above the threshold"
 msgstr "ზღვარს ზემოთ თემა მაღალ კონტრასტზე გადაირთვება"
+
+#: src/ui/ms-sound-row.ui:33
+msgid "Toggle Play"
+msgstr "მედიის დაკვრის გადართვა"
 
 #: src/ui/ms-sound-row.ui:54
 msgid "Sound files (ogg)"
@@ -1156,9 +1269,238 @@ msgstr ""
 "ინტერფეისის ელემენტების ჭდეების მიღმა დალაგება და ამონაჭრების ჩვენება არ "
 "მოხდება"
 
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:119
+msgid "Quick Settings"
+msgstr "სწრაფი მორგება"
+
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "მოირგეთ თქვენი დამატებითი სწრაფი პარამეტრები"
+
+#: src/ui/ms-updates-panel.ui:12
+msgid "OS updates require a system restart"
+msgstr "ოს-ის განახლებებს სისტემის გადატვირთვა სჭირდება"
+
+#: src/ui/ms-updates-panel.ui:13
+msgid "Restart"
+msgstr "გადატვირთვა"
+
+#: src/ui/ms-updates-panel.ui:30
+msgid "Everything up to date"
+msgstr "ყველაფერი განახლებულია"
+
+#: src/ui/ms-updates-panel.ui:31
+msgid "There are no OS updates available"
+msgstr "ოს-ის განახლებები ხელმისაწვდომი არაა"
+
+#: src/ui/ms-updates-panel.ui:42
+msgid "Updates available"
+msgstr "ხელმისაწვდომი განახლებები"
+
+#: src/ui/ms-updates-panel.ui:43
+msgid "There are OS updates available"
+msgstr "ხელმისაწვდომია ოს-ის განახლებები"
+
+#: src/ui/ms-updates-panel.ui:65
+msgid "Fetching OS update…"
+msgstr "ოს-ის განახლების გამოთხოვა…"
+
+#: src/ui/ms-updates-panel.ui:109
+msgid "Installing OS update…"
+msgstr "მიმდინარეობს ოს-ის განახლების დაყენება…"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "მოგესალმებით მობილურის პარამეტრებში"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "შეცვალეთ მობილურის დამატებითი პარამეტრები"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:32
+msgid "Search"
+msgstr "ძებნა"
+
+#. Translators: Placeholder text for the search bar input
+#: src/ui/ms-window.ui:50
+msgid "Search settings"
+msgstr "ძიების პარამეტრები"
+
+#: src/ui/ms-window.ui:100
+msgid "Welcome"
+msgstr "მოგესლამებათ"
+
+#: src/ui/ms-window.ui:111
+msgid "Top Bar"
+msgstr "ზედა ზოლი"
+
+#: src/ui/ms-window.ui:120
+msgid "Notches"
+msgstr "ინტერვალები"
+
+#: src/ui/ms-window.ui:131
+msgid "Overview"
+msgstr "მიმოხილვა"
+
+#: src/ui/ms-window.ui:140
+msgid "Filter"
+msgstr "ფილტრი"
+
+#: src/ui/ms-window.ui:141 src/ui/ms-window.ui:203
+msgid "Wallpaper"
+msgstr "ფონის სურათი"
+
+#: src/ui/ms-window.ui:152 src/ui/ms-window.ui:160
+msgid "Feedback"
+msgstr "უკუკავშირი"
+
+#: src/ui/ms-window.ui:162
+msgid "Wakeup"
+msgstr "გაღვიძება"
+
+#: src/ui/ms-window.ui:163
+msgid "Vibra"
+msgstr "ვიბრა"
+
+#: src/ui/ms-window.ui:164
+msgid "Haptic"
+msgstr "ჰაპტიკური"
+
+#: src/ui/ms-window.ui:165
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:176
+msgid "Compositor"
+msgstr "კომპოზიტორი"
+
+#: src/ui/ms-window.ui:195
+msgid "Lockscreen"
+msgstr "ჩაკეტილი ეკრანი"
+
+#: src/ui/ms-window.ui:204
+msgid "Shuffle"
+msgstr "შემთხვევით"
+
+#: src/ui/ms-window.ui:206
+msgid "Password"
+msgstr "პაროლი"
+
+#: src/ui/ms-window.ui:217
+msgid "Convergence"
+msgstr "კონვერგენცია"
+
+#: src/ui/ms-window.ui:235
+msgid "On Screen Keyboard"
+msgstr "ეკრანის კლავიატურა"
+
+#: src/ui/ms-window.ui:243
+msgid "Keyboard"
+msgstr "კლავიატურა"
+
+#: src/ui/ms-window.ui:244
+msgid "Unfold"
+msgstr "გაშლა"
+
+#: src/ui/ms-window.ui:245
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/ms-window.ui:246
+msgid "Word Completion"
+msgstr "სიტყვის დასრულება"
+
+#: src/ui/ms-window.ui:257
+msgid "Emergency Alerts"
+msgstr "გადაუდებელი განგაშები"
+
+#: src/ui/ms-window.ui:265 src/ui/ms-window.ui:305
+msgid "Emergency"
+msgstr "სასწრაფო"
+
+#: src/ui/ms-window.ui:266
+msgid "Cell Broadcast"
+msgstr "უჯრედის გადაცემა"
+
+#: src/ui/ms-window.ui:267
+msgid "Danger"
+msgstr "საფრთხე"
+
+#: src/ui/ms-window.ui:297
+msgid "Experimental features"
+msgstr "ექსპერიმენტალური ფუნქციები"
+
+#: src/ui/ms-window.ui:306
+msgid "Suspend"
+msgstr "ძილი"
+
+#: src/ui/ms-window.ui:307
+msgid "Experimental"
+msgstr "ექსპერიმენტული"
+
+#: src/ui/ms-window.ui:327
+msgid "Locale"
+msgstr "ენა"
+
+#: src/ui/ms-window.ui:338
+msgid "OS Updates"
+msgstr "ოს-ის განახლებები"
+
+#: src/ui/ms-window.ui:346
+msgid "Updates"
+msgstr "განახლებები"
+
+#: src/ui/ms-window.ui:358 src/ui/ms-window.ui:366
+msgid "About"
+msgstr "შესახებ"
+
+#: src/ui/ms-window.ui:391
+msgid "_Show Configurable Tweaks"
+msgstr "მორგებადი შე_სწორებების ჩვენება"
+
+#: src/ui/ms-window.ui:398
+msgid "_Keyboard Shortcuts"
+msgstr "_კლავიატურის მალსახმობები"
+
+#: src/ui/ms-window.ui:402
+msgid "_About Mobile Settings"
+msgstr "მობილურის პარამეტრების შეს_ახებ"
+
+#: src/ui/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "ზოგადი"
+
+#: src/ui/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "მალსახმობების ჩვენება"
+
+#: src/ui/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "ძებნა"
+
+#: src/ui/shortcuts-dialog.ui:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "გასვლა"
+
+#~ msgid "Mobile App Filtering"
+#~ msgstr "მობილური აპების გაფილტვრა"
+
+#~ msgid "Call volume"
+#~ msgstr "ზარის ხმის დონე"
+
+#~ msgid "Whether to keep the OSK's size constant in portrait mode"
+#~ msgstr "იქნება თუ არა OSK-ის ზომა მუდმივი პორტრეტის რეჟიმში"
+
+#~ msgid "Silence on Vol-"
+#~ msgstr "დადუმება ხმის ჩაწევის ღილაკით"
+
+#~ msgid "Instant messages"
+#~ msgstr "მყისი შეტყობინებები"
 
 #~ msgid "Applications"
 #~ msgstr "აპლიკაციები"

@@ -17,15 +17,24 @@
 #include <stdlib.h>
 
 
+enum {
+  PROP_0,
+  PROP_SETTING_DATA,
+  PROP_LAST_PROP,
+};
+static GParamSpec *props[PROP_LAST_PROP];
+
+
 struct _MsTweaksBackendGsettings {
   MsTweaksBackendInterface parent_interface;
 
-  const MsTweaksSetting *setting_data;
-
+  MsTweaksSetting *setting_data;
   char *key;
-
   GSettings *settings;
 };
+
+
+static void ms_tweaks_backend_gsettings_initable_iface_init (GInitableIface *iface);
 
 
 static const MsTweaksSetting *
@@ -96,14 +105,15 @@ backend_gsettings_set_value (MsTweaksBackend *backend, GValue *value, GError **e
                        g_type_name (value_gtype));
       break;
     }
-  } else
+  } else {
     g_settings_reset (self->settings, self->key);
+  }
 
   return TRUE;
 }
 
 
-static char *
+static const char *
 ms_tweaks_backend_gsettings_get_key (MsTweaksBackend *backend)
 {
   MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (backend);
@@ -126,7 +136,9 @@ ms_tweaks_backend_gsettings_interface_init (MsTweaksBackendInterface *iface)
 
 G_DEFINE_TYPE_WITH_CODE (MsTweaksBackendGsettings, ms_tweaks_backend_gsettings, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (MS_TYPE_TWEAKS_BACKEND,
-                                                ms_tweaks_backend_gsettings_interface_init))
+                                                ms_tweaks_backend_gsettings_interface_init)
+                         G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE,
+                                                ms_tweaks_backend_gsettings_initable_iface_init))
 
 
 static void
@@ -142,6 +154,45 @@ ms_tweaks_backend_gsettings_dispose (GObject *object)
 
   g_clear_pointer (&self->key, g_free);
   g_clear_pointer (&self->settings, g_object_unref);
+  g_clear_pointer (&self->setting_data, ms_tweaks_setting_free);
+}
+
+
+static void
+ms_tweaks_backend_gsettings_set_property (GObject      *object,
+                                          guint         property_id,
+                                          const GValue *value,
+                                          GParamSpec   *pspec)
+{
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (object);
+
+  switch (property_id) {
+  case PROP_SETTING_DATA:
+    self->setting_data = g_value_dup_boxed (value);
+    break;
+  default:
+    G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
+    break;
+  }
+}
+
+
+static void
+ms_tweaks_backend_gsettings_get_property (GObject    *object,
+                                           guint       property_id,
+                                           GValue     *value,
+                                           GParamSpec *pspec)
+{
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (object);
+
+  switch (property_id) {
+  case PROP_SETTING_DATA:
+    g_value_set_boxed (value, self->setting_data);
+    break;
+  default:
+    G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
+    break;
+  }
 }
 
 
@@ -151,31 +202,42 @@ ms_tweaks_backend_gsettings_class_init (MsTweaksBackendGsettingsClass *klass)
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
   object_class->dispose = ms_tweaks_backend_gsettings_dispose;
+  object_class->set_property = ms_tweaks_backend_gsettings_set_property;
+  object_class->get_property = ms_tweaks_backend_gsettings_get_property;
+
+  props[PROP_SETTING_DATA] = g_param_spec_boxed ("setting-data",
+                                                 NULL,
+                                                 NULL,
+                                                 MS_TYPE_TWEAKS_SETTING,
+                                                 G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT_ONLY);
+
+  g_object_class_install_properties (object_class, G_N_ELEMENTS (props), props);
 }
 
 
-MsTweaksBackend *
-ms_tweaks_backend_gsettings_new (const MsTweaksSetting *setting_data)
+static gboolean
+ms_tweaks_backend_gsettings_initialise (GInitable *initable,
+                                        GCancellable *cancellable,
+                                        GError **error)
 {
   GSettingsSchemaSource *default_schema_source = g_settings_schema_source_get_default ();
-  MsTweaksBackendGsettings *self = g_object_new (MS_TYPE_TWEAKS_BACKEND_GSETTINGS, NULL);
+  MsTweaksBackendGsettings *self = MS_TWEAKS_BACKEND_GSETTINGS (initable);
 
-  if (setting_data->gtype == MS_TWEAKS_GTYPE_UNKNOWN) {
-    ms_tweaks_warning (setting_data->name,
+  if (self->setting_data->gtype == MS_TWEAKS_GTYPE_UNKNOWN) {
+    ms_tweaks_warning (self->setting_data->name,
                        "Cannot create GSettings backend with gtype == GTYPE_UNKNOWN");
     g_object_unref (self);
-    return NULL;
+    return FALSE;
   }
 
-  self->setting_data = setting_data;
-
-  for (guint i = 0; i < setting_data->key->len; i++) {
-    const char *key_entry = g_ptr_array_index (setting_data->key, i);
+  for (guint i = 0; i < self->setting_data->key->len; i++) {
+    const char *key_entry = g_ptr_array_index (self->setting_data->key, i);
     char **parts = g_strsplit (key_entry, ".", 0);
     guint parts_length = g_strv_length (parts);
     g_autoptr (GSettingsSchema) schema = NULL;
     g_autofree char *base_key = NULL;
     gboolean schema_found = FALSE;
+    g_autofree char *key = NULL;
     char **schema_keys = NULL;
 
     if (parts_length < 3) {
@@ -186,10 +248,9 @@ ms_tweaks_backend_gsettings_new (const MsTweaksSetting *setting_data)
       continue;
     }
 
-    self->key = g_strdup (parts[parts_length - 1]);
+    key = g_strdup (parts[parts_length - 1]);
     /* We don't want the last segment in the "base key", so replace it with NULL. */
-    g_free (parts[parts_length - 1]);
-    parts[parts_length - 1] = NULL;
+    g_free (g_steal_pointer (&parts[parts_length - 1]));
 
     base_key = g_strjoinv (".", parts);
     g_strfreev (parts);
@@ -205,7 +266,7 @@ ms_tweaks_backend_gsettings_new (const MsTweaksSetting *setting_data)
     schema_keys = g_settings_schema_list_keys (schema);
 
     for (guint j = 0; j < g_strv_length (schema_keys); j++)
-      if (strcmp (schema_keys[j], self->key) == 0)
+      if (strcmp (schema_keys[j], key) == 0)
         schema_found = true;
 
     g_strfreev (schema_keys);
@@ -213,19 +274,36 @@ ms_tweaks_backend_gsettings_new (const MsTweaksSetting *setting_data)
     if (!schema_found) {
       ms_tweaks_debug (self->setting_data->name,
                        "Schema key '%s' was not found in schema '%s' (this may be okay if there are multiple ones specified)",
-                       self->key,
+                       key,
                        base_key);
       continue;
     }
 
+    self->key = g_steal_pointer (&key);
     self->settings = g_settings_new (base_key);
     break;
   }
 
-  if (!self->settings) {
-    ms_tweaks_warning (self->setting_data->name, "Failed to create backend!");
-    return NULL;
-  }
+  return self->settings != NULL;
+}
+
+
+MsTweaksBackend *
+ms_tweaks_backend_gsettings_new (const MsTweaksSetting *setting_data)
+{
+  MsTweaksBackendGsettings *self = g_initable_new (MS_TYPE_TWEAKS_BACKEND_GSETTINGS,
+                                                   NULL,
+                                                   NULL,
+                                                   "setting-data",
+                                                    setting_data,
+                                                    NULL);
 
   return MS_TWEAKS_BACKEND (self);
+}
+
+
+static void
+ms_tweaks_backend_gsettings_initable_iface_init (GInitableIface *iface)
+{
+  iface->init = ms_tweaks_backend_gsettings_initialise;
 }

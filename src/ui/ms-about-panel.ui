@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="MsAboutPanel" parent="MsPanel">
+    <child>
+      <object class="GtkScrolledWindow">
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="margin-top">6</property>
+            <child>
+              <object class="AdwClamp">
+                <property name="orientation">vertical</property>
+                <property name="maximum-size">256</property>
+                <property name="child">
+                  <object class="GtkPicture" id="logo">
+                    <property name="can-shrink">1</property>
+                    <property name="content-fit">scale-down</property>
+                    <property name="alternative-text" translatable="yes">Phosh logo</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesPage">
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <child>
+                      <object class="AdwActionRow" id="version_row">
+                        <property name="title" translatable="yes">Phosh Version</property>
+                        <style>
+                          <class name="property"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="os_row">
+                        <property name="title" translatable="yes">Operating System</property>
+                        <style>
+                          <class name="property"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="image_row">
+                        <property name="title" translatable="yes">Operating System Version</property>
+                        <style>
+                          <class name="property"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="device_row">
+                        <property name="title" translatable="yes">Hardware Model</property>
+                        <style>
+                          <class name="property"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">Support Phosh</property>
+                        <property name="subtitle" translatable="yes">Your donations make our work possible</property>
+                        <child type="suffix">
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">D_onate</property>
+                            <property name="use-underline">1</property>
+                            <property name="valign">center</property>
+                            <signal name="clicked" handler="on_donate_clicked" swapped="true"/>
+                            <style>
+                              <class name="suggested-action"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

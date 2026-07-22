@@ -7,6 +7,17 @@ desktop_file = i18n.merge_file(
   install_dir: join_paths(get_option('datadir'), 'applications'),
 )
 
+if get_option('tweaks-data-dir') != ''
+  desktop_file_nobuiltins = i18n.merge_file(
+    input: 'mobi.phosh.MobileSettings.nobuiltins.desktop.in',
+    output: 'mobi.phosh.MobileSettings.nobuiltins.desktop',
+    type: 'desktop',
+    po_dir: '../po',
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'applications'),
+  )
+endif
+
 appstream_file = i18n.merge_file(
   input: 'mobi.phosh.MobileSettings.metainfo.xml.in',
   output: 'mobi.phosh.MobileSettings.metainfo.xml',
@@ -46,5 +57,19 @@ if compile_schemas.found()
 endif
 
 install_data(schemas, install_dir: 'share/glib-2.0/schemas')
+
+polkit_group = get_option('polkit-group')
+if polkit_group != ''
+  polkit_conf = configuration_data()
+  polkit_conf.set('polkit-group', polkit_group)
+  polkit_rules = 'phosh-mobile-settings.rules'
+  configure_file(
+    input: polkit_rules + '.in',
+    output: polkit_rules,
+    install: true,
+    install_dir: polkitdir,
+    configuration: polkit_conf,
+  )
+endif
 
 subdir('icons')

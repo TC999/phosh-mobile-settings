@@ -1,0 +1,18 @@
+- name: Widget gallery
+  weight: 90
+  sections:
+    - name: Section 1
+      weight: 0
+      settings:
+        - name: Choice
+          backend: xresources
+          key: dwm.choier
+          type: choice
+          map:
+            Option A: #FF00FF
+            Option B: #000000
+          default: #FF00FF
+        - name: Boolean
+          backend: xresources
+          key: dwm.boolean
+          type: boolean

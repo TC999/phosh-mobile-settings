@@ -10,6 +10,11 @@
 
 #include "ms-tweaks-utils.h"
 
+#include <wordexp.h>
+
+
+G_DEFINE_QUARK (ms-tweaks-utils-error-quark, ms_tweaks_utils_error)
+
 
 const char *
 ms_tweaks_util_boolean_to_string (const gboolean value)
@@ -36,6 +41,73 @@ ms_tweaks_util_string_to_boolean (const char *string)
     return TRUE;
   else
     return FALSE;
+}
+
+
+GValue *
+ms_tweaks_string_value_new_from_default (const char *default_)
+{
+  GValue *value = g_new0 (GValue, 1);
+  g_value_init (value, G_TYPE_STRING);
+  g_value_set_string (value, default_);
+
+  return value;
+}
+
+/**
+ * ms_tweaks_expand_single:
+ * @to_expand: String to expand.
+ * @error: Filled in the case of an error.
+ *
+ * Expands a tilde (~).
+ *
+ * Returns: Copy string provided in @to_expand with the tilde expanded, or NULL on error.
+ */
+char *
+ms_tweaks_expand_single (const char *to_expand, GError **error)
+{
+  char *expanded_string = NULL;
+  wordexp_t expansion_result;
+  int ret = INT_MAX;
+
+  if ((ret = wordexp (to_expand, &expansion_result, WRDE_NOCMD | WRDE_SHOWERR | WRDE_UNDEF)) != 0) {
+    const char *reason = NULL;
+
+    switch (ret) {
+    case WRDE_BADCHAR:
+      reason = "WRDE_BADCHAR: Illegal occurrence of newline or one of |, &, ;, <, >, (, ), {, }";
+      break;
+    case WRDE_CMDSUB:
+      reason = "WRDE_CMDSUB: Command substitution is not allowed";
+      break;
+    case WRDE_NOSPACE:
+      reason = "WRDE_NOSPACE: Out of memory";
+      break;
+    case WRDE_SYNTAX:
+      reason = "Shell syntax error, such as unbalanced parentheses or unmatched quotes";
+      break;
+    case WRDE_BADVAL:
+      reason = "An undefined shell variable was expanded";
+      break;
+    default:
+      reason = "Unknown failure";
+      break;
+    }
+
+    g_set_error (error,
+                 MS_TWEAKS_UTILS_ERROR,
+                 MS_TWEAKS_UTILS_ERROR_WORDEXP_FAILED,
+                 "Failed to expand key '%s': %s",
+                 to_expand,
+                 reason);
+
+    return NULL;
+  }
+
+  expanded_string = g_strdup (expansion_result.we_wordv[0]);
+  wordfree (&expansion_result);
+
+  return expanded_string;
 }
 
 /**
@@ -132,4 +204,18 @@ ms_tweaks_log (const char     *log_domain,
 #pragma GCC diagnostic pop
   va_end (args);
   g_free (format_with_prefix);
+}
+
+/**
+ * ms_tweaks_is_path_inside_user_home_directory:
+ * @path: Absolute path without any variables or other things that need to be expanded.
+ *
+ * Determines whether a given path is inside of the current user's home directory.
+ *
+ * Returns: TRUE if it is within the user's home directory, FALSE otherwise.
+ */
+gboolean
+ms_tweaks_is_path_inside_user_home_directory (const char *path)
+{
+  return g_str_has_prefix (path, g_get_home_dir ());
 }

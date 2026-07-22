@@ -1,0 +1,4 @@
+usr/include/pms-1.0/
+usr/lib/*/libpms-1.0.so
+usr/lib/*/pkgconfig/pms-1.0.pc
+usr/share/gir-1.0/Pms-1.0.gir

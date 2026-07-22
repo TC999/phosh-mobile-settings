@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2025-03-17 11:16+0000\n"
-"PO-Revision-Date: 2025-03-18 22:32+0100\n"
+"POT-Creation-Date: 2026-03-09 10:21+0000\n"
+"PO-Revision-Date: 2026-03-10 22:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
@@ -18,13 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:3
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
 msgstr "Paràmetres del mòbil"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:13
+#: data/mobi.phosh.MobileSettings.desktop.in:12
 msgid "Mobile;Preferences;MobileSettings;"
 msgstr "Mòbil;Preferències;Paràmetresdelmòbil;"
 
@@ -59,7 +58,7 @@ msgstr "Panell de comentaris"
 #: plugins/librem5/ms-plugin-librem5-panel.c:214
 #, c-format
 msgid "Critical temperature is %.2f°C"
-msgstr "La temperatura crítica és %2f°C"
+msgstr "La temperatura crítica és %.2f°C"
 
 #. Translators "Librem 5" is a smartphone model, usually no need to translate it
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
@@ -111,6 +110,73 @@ msgstr ""
 msgid "Battery"
 msgstr "Bateria"
 
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "Afegeix una disposició"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Afegeix"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "Idioma"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Disposicions de teclat"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "No s'ha configurat cap disposició"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Més opcions…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Mou amunt"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Mou avall"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Suprimeix"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr ""
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr ""
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr ""
+
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -126,76 +192,138 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Surt"
 
-#: src/mobile-settings-application.c:34
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr ""
+
+#: src/ms-application.c:37
 msgid "- Manage your mobile settings"
 msgstr "- Gestioneu els paràmetres del mòbil"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:427
+#: src/ms-application.c:511
 msgid "translator-credits"
 msgstr "poc senderi <pocsenderi@protonmail.com>"
 
-#: src/mobile-settings-window.c:85
-msgid "Device"
-msgstr "Dispositiu"
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr ""
 
-#: src/ms-feedback-panel.c:165
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr ""
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr ""
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr ""
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr ""
+
+#: src/ms-audio-devices.c:194
+#, fuzzy
+#| msgid "Emergency Calls"
+msgid "Emergency Alerts Volume"
+msgstr "Trucades d'emergència"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr ""
+
+#: src/ms-feedback-panel.c:338
 msgid "Sound file does not exist"
 msgstr "El fitxer de so no existeix"
 
-#: src/ms-feedback-panel.c:167
+#: src/ms-feedback-panel.c:340
 msgid "Sound file is corrupt"
 msgstr "El fitxer de so està corromput"
 
-#: src/ms-feedback-panel.c:169
+#: src/ms-feedback-panel.c:342
 msgid "Failed to play sound"
 msgstr "No s'ha pogut reproduir cap so"
 
-#: src/ms-feedback-panel.c:208
+#: src/ms-feedback-panel.c:381
 #, c-format
 msgid "Playing %s"
 msgstr "S'està reproduïnt %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:370
+#: src/ms-feedback-panel.c:579
 msgid "low"
 msgstr "baix"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:373
+#: src/ms-feedback-panel.c:582
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:376
+#: src/ms-feedback-panel.c:585
 msgid "critical"
 msgstr "crític"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:380
+#: src/ms-feedback-panel.c:589
 msgid "none"
 msgstr "cap"
 
-#: src/ms-lockscreen-panel.c:85
+#: src/ms-feedback-panel.c:1008
+#, fuzzy
+#| msgid "Mobile Settings"
+msgid "Mobile Settings Volume Control"
+msgstr "Paràmetres del mòbil"
+
+#: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "No s'ha pogut establir el fons de pantalla de la pantalla de bloqueig"
 
-#: src/ms-lockscreen-panel.c:136
-msgid "Choose Wallpaper"
-msgstr "Trieu un fons de pantalla"
-
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:748
 msgid "Default"
 msgstr "Predeterminat"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:749
 msgid "The default completer selected by the OSK"
 msgstr "El completador predeterminat seleccionat per l'OSK"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:752
 msgid "No information available for this completer"
 msgstr "No hi ha informació disponible d'aquest completador"
+
+#: src/ms-overview-panel.c:66
+#, fuzzy
+#| msgid "Reset Favorites"
+msgid "Reset favorites?"
+msgstr "Restableix els favorits"
+
+#: src/ms-overview-panel.c:69
+#, fuzzy
+#| msgid "Set list of favorite apps back to the default"
+msgid "Reset list of favorite applications to the default?"
+msgstr "Restableix la llista d'aplicacions favorites al valor predeterminat"
+
+#: src/ms-overview-panel.c:72
+#, fuzzy
+#| msgid "Cancel"
+msgid "_Cancel"
+msgstr "Cancel·la"
+
+#: src/ms-overview-panel.c:73
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "Restableix"
+
+#: src/ms-overview-panel.c:328
+#, fuzzy
+#| msgid "Failed to set lockscreen wallpaper"
+msgid "Failed to set wallpaper for overview"
+msgstr "No s'ha pogut establir el fons de pantalla de la pantalla de bloqueig"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -255,122 +383,120 @@ msgid "Not available"
 msgstr "No està disponible"
 
 #. Translators: "Custom" is the name of a user-defined sound theme
-#: src/ms-sound-row.c:128
+#: src/ms-sound-row.c:130
 msgid "Custom"
 msgstr "Personalitzat"
 
-#: src/ms-sound-row.c:309
+#: src/ms-sound-row.c:311
 msgid "Choose sound file"
 msgstr "Tria un fitxer de so"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Complet"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Silenciós"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Silenciós"
 
-#: src/ui/mobile-settings-window.ui:79
-msgid "Welcome"
-msgstr "Benvinguts"
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Trieu un fons de pantalla"
 
-#: src/ui/mobile-settings-window.ui:85
-msgid "Welcome to Mobile Settings"
-msgstr "Us donem la benvinguda als Mobile Settings"
+#: src/ms-window.c:146
+msgid "Device"
+msgstr "Dispositiu"
 
-#: src/ui/mobile-settings-window.ui:86
-msgid "Tweak advanced mobile settings"
-msgstr "Ajusta els paràmetres avançats del mòbil"
-
-#: src/ui/mobile-settings-window.ui:94
-msgid "Top Bar"
-msgstr "Barra superior"
-
-#: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Aplicacions"
-
-#: src/ui/mobile-settings-window.ui:116
-msgid "Feedback"
-msgstr "Comentaris"
-
-#: src/ui/mobile-settings-window.ui:127
-msgid "Compositor"
-msgstr "Compositor"
-
-#: src/ui/mobile-settings-window.ui:138
-msgid "Lockscreen"
-msgstr "Pantalla de bloqueig"
-
-#: src/ui/mobile-settings-window.ui:149
-msgid "Convergence"
-msgstr "Convergència"
-
-#: src/ui/mobile-settings-window.ui:160
-msgid "On Screen Keyboard"
-msgstr "Teclat en pantalla"
-
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
-msgid "Sensors"
-msgstr "Sensors"
-
-#: src/ui/mobile-settings-window.ui:182
-msgid "Experimental features"
-msgstr "Funcionalitats experimentals"
-
-#: src/ui/mobile-settings-window.ui:206
-msgid "_Keyboard Shortcuts"
-msgstr "_Dreceres de teclat"
-
-#: src/ui/mobile-settings-window.ui:210
-msgid "_About Mobile Settings"
-msgstr "Quant al Mobile Settings"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Preferits"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Organitza els favorits"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
+#: src/ui/ms-about-panel.ui:18
+msgid "Phosh logo"
 msgstr ""
-"Arrossegueu i deixeu anar les aplicacions de sota per reorganitzar les "
-"vostres aplicacions preferides"
 
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Restableix els favorits"
+#: src/ui/ms-about-panel.ui:29
+msgid "Phosh Version"
+msgstr ""
 
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Restableix la llista d'aplicacions favorites al valor predeterminat"
+#: src/ui/ms-about-panel.ui:37
+msgid "Operating System"
+msgstr ""
 
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Restableix"
+#: src/ui/ms-about-panel.ui:45
+msgid "Hardware Model"
+msgstr ""
 
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Filtre d'aplicacions mòbils"
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr ""
 
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Estableix el mode de filtre d'aplicacions"
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
 
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Mostra només aplicacions mòbils a la vista general"
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr ""
+
+#: src/ui/ms-alerts-panel.ui:82
+#, fuzzy
+#| msgid "Emergency Calls"
+msgid "No emergency alerts yet"
+msgstr "Trucades d'emergència"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr ""
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -458,76 +584,164 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:13
+#, fuzzy
+#| msgid "Quick Settings"
+msgid "Sound Settings"
+msgstr "Configuració ràpida"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:33
+#, fuzzy
+#| msgid "Quick Settings"
+msgid "Feedback Settings"
+msgstr "Configuració ràpida"
+
+#: src/ui/ms-feedback-panel.ui:36
 msgid "Feedback profile"
 msgstr "Perfil de comentaris"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:37
 msgid "The global maximum feedback profile"
 msgstr "El perfil global de retroalimentació màxima"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:52
 msgid "Prefer flash"
 msgstr "Prefereix el flaix"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
 msgstr ""
 "Quan estigui disponible, dóna preferència al flaix de la càmera per davant "
 "del LED d'estat"
 
-#. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
-msgid "Silence on Vol-"
-msgstr "Silencia amb «Vol-»"
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr ""
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:60
+#, fuzzy
+#| msgid ""
+#| "When locked put the phone in silent mode when pressing Vol- on incoming "
+#| "calls"
 msgid ""
-"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
 msgstr ""
 "Quan està bloquejat, posa el telèfon en mode silenciós en prémer «Vol-» en "
 "les trucades entrants"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:66
 msgid "Haptic strength"
 msgstr ""
 
-#: src/ui/ms-feedback-panel.ui:48
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Maximum haptic feedback strength percentage"
 msgstr ""
 
-#: src/ui/ms-feedback-panel.ui:67
+#: src/ui/ms-feedback-panel.ui:86
 msgid "Per Application settings"
 msgstr "Configuració per aplicació"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:159
 msgid "Sounds"
 msgstr "Sons"
 
-#: src/ui/ms-feedback-panel.ui:81
+#: src/ui/ms-feedback-panel.ui:100
 msgid "The sound to use for certain events"
 msgstr "El so a usar per a certs esdeveniments"
 
-#: src/ui/ms-feedback-panel.ui:89
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Phone Calls"
 msgstr "Trucades telefòniques"
 
-#: src/ui/ms-feedback-panel.ui:95
+#: src/ui/ms-feedback-panel.ui:126
 msgid "SMS"
 msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:101
-msgid "Instant messages"
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+#, fuzzy
+#| msgid "Instant messages"
+msgid "Instant Messages"
 msgstr "Missatges instantanis"
 
-#: src/ui/ms-feedback-panel.ui:112
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:162
 msgid "Screen Wakeup"
 msgstr "Activació de la pantalla"
 
-#: src/ui/ms-feedback-panel.ui:115
+#: src/ui/ms-feedback-panel.ui:165
 msgid "Notification urgency that lights up the screen"
 msgstr "Urgència de notificació que il·lumina la pantalla"
+
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:186
+#, fuzzy
+#| msgid "Phone Calls"
+msgid "Calls"
+msgstr "Trucades telefòniques"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:193
+#, fuzzy
+#| msgid "Device"
+msgid "Device events"
+msgstr "Dispositiu"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:221
+msgid "Presence changes"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:222
+msgid "A generic presence change notification"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:228
+msgid "File transfers"
+msgstr ""
+
+#: src/ui/ms-feedback-panel.ui:229
+msgid "A generic file transfer or download notification"
+msgstr ""
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
@@ -558,23 +772,23 @@ msgstr "Retard del bloqueig automàtic de la pantalla"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Segons entre el posar la pantalla en blanc i el bloquejar-la"
 
-#: src/ui/ms-lockscreen-panel.ui:52
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
 msgid "Background"
 msgstr "Segon pla"
 
-#: src/ui/ms-lockscreen-panel.ui:58
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
 msgid "_Select Wallpaper…"
 msgstr "_Seleccioneu un fons de pantalla…"
 
-#: src/ui/ms-lockscreen-panel.ui:70
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
 msgid "Use wallpaper"
 msgstr "Usa el fons de pantalla"
 
-#: src/ui/ms-lockscreen-panel.ui:71
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
 msgid "Whether to show a colorful wallpaper"
 msgstr "Si s'ha de mostrar un fons de pantalla acolorit"
 
-#: src/ui/ms-lockscreen-panel.ui:79
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:203
 msgid "Widgets"
 msgstr "Ginys"
 
@@ -582,49 +796,46 @@ msgstr "Ginys"
 msgid "Additional widgets for the lock screen"
 msgstr "Ginys addicionals per a la pantalla de bloqueig"
 
-#. Translators: Title for a dialog to add a new on-screen keyboard layout
-#. Translators: Label for a button that allows the user to add a new keyboard layout
-#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
-msgid "Add Layout"
-msgstr "Afegeix una disposició"
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+#, fuzzy
+#| msgid "Shortcuts"
+msgid "Add Shortcut"
+msgstr "Dreceres"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:14
-msgid "Cancel"
-msgstr "Cancel·la"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+#, fuzzy
+#| msgid "Choose sound file"
+msgid "Choose Shortcut Modifiers"
+msgstr "Tria un fitxer de so"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:20
-msgid "Add"
-msgstr "Afegeix"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Choose Shortcut Key"
+msgstr "Mostra les dreceres"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:40
-msgid "Language"
-msgstr "Idioma"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr ""
 
-#: src/ui/ms-osk-layout-prefs.ui:5
-msgctxt "on screen keyboard"
-msgid "Layouts"
-msgstr "Disposicions de teclat"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr ""
 
-#. Translators: Message displayed when there are no keyboard layouts configured
-#: src/ui/ms-osk-layout-prefs.ui:30
-msgid "No Layouts configured"
-msgstr "No s'ha configurat cap disposició"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+#, fuzzy
+#| msgid "Shortcuts"
+msgid "_Shortcut Key"
+msgstr "Dreceres"
 
-#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
-msgid "More options…"
-msgstr "Més opcions…"
-
-#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
-msgid "Move Up"
-msgstr "Mou amunt"
-
-#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
-msgid "Move Down"
-msgstr "Mou avall"
-
-#: src/ui/ms-osk-layout-row.ui:49
-msgid "Remove"
-msgstr "Suprimeix"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+#, fuzzy
+#| msgid "Shortcuts"
+msgid "Shortcut Preview"
+msgstr "Dreceres"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
@@ -670,63 +881,129 @@ msgid ""
 "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr "Si s'ha de mostrar el teclat en pantalla quan n'hi ha un de físic"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "Alçada del teclat en mode vertical"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "Quan la pantalla és més alta que no pas ampla"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "Alçada del teclat en mode horitzontal"
 
-#: src/ui/ms-osk-panel.ui:69
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "Quan la pantalla és més ampla que no pas alta"
 
-#: src/ui/ms-osk-panel.ui:93
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:182
+msgid "Scaling"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+
+#: src/ui/ms-osk-panel.ui:122
 msgid "Text Completion"
 msgstr "Compleció de text"
 
-#: src/ui/ms-osk-panel.ui:96
+#: src/ui/ms-osk-panel.ui:125
 msgid "Opportunistic word completion"
 msgstr "Compleció de paraules oportunística"
 
-#: src/ui/ms-osk-panel.ui:97
+#: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Activa la compleció de paraules quan l'aplicació indiqui que és útil"
 
-#: src/ui/ms-osk-panel.ui:104
+#: src/ui/ms-osk-panel.ui:133
 msgid "Toggle via OSK menu"
 msgstr "Commuta mitjançant el menú OSK"
 
-#: src/ui/ms-osk-panel.ui:105
+#: src/ui/ms-osk-panel.ui:134
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr ""
 "Permet commutar la compleció de paraules mitjançant el botó de menú del "
 "teclat"
 
-#: src/ui/ms-osk-panel.ui:111
+#: src/ui/ms-osk-panel.ui:140
 msgid "Default Completer"
 msgstr "Completador predeterminat"
 
-#: src/ui/ms-osk-panel.ui:112
+#: src/ui/ms-osk-panel.ui:141
 msgid "The default completion engine to use"
 msgstr "El motor de compleció predeterminat a usar"
 
-#: src/ui/ms-osk-panel.ui:123
+#: src/ui/ms-osk-panel.ui:152
 msgid "Terminal Layout"
 msgstr "Disposició del terminal"
 
-#: src/ui/ms-osk-panel.ui:127
+#: src/ui/ms-osk-panel.ui:171
 msgid "Shortcuts"
 msgstr "Dreceres"
 
-#: src/ui/ms-osk-panel.ui:128
+#: src/ui/ms-osk-panel.ui:172
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Les dreceres disponibles a la barra de dreceres"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:137
+msgid "Favorites"
+msgstr "Preferits"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organitza els favorits"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Arrossegueu i deixeu anar les aplicacions de sota per reorganitzar les "
+"vostres aplicacions preferides"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Restableix els favorits"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Restableix la llista d'aplicacions favorites al valor predeterminat"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Restableix"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Filtre d'aplicacions mòbils"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Estableix el mode de filtre d'aplicacions"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Mostra només aplicacions mòbils a la vista general"
 
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
@@ -744,6 +1021,10 @@ msgstr ""
 "O bé no hi ha cap sensor instal·lat al dispositiu o bé estan desactivats per "
 "un interruptor."
 
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:276
+msgid "Sensors"
+msgstr "Sensors"
+
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
 msgstr "Lectures del sensor"
@@ -760,7 +1041,7 @@ msgstr "Llum"
 msgid "Orientation"
 msgstr "Orientació"
 
-#: src/ui/ms-sensor-panel.ui:69
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:284
 msgid "High Contrast"
 msgstr "Contrast alt"
 
@@ -804,10 +1085,183 @@ msgstr "Evita els «notch»"
 msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr ""
 
-#: src/ui/ms-topbar-panel.ui:34
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:117
 msgid "Quick Settings"
 msgstr "Configuració ràpida"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Organitzeu la configuració ràpida addicional"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Us donem la benvinguda als Mobile Settings"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Ajusta els paràmetres avançats del mòbil"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:31
+msgid "Search"
+msgstr ""
+
+#: src/ui/ms-window.ui:48
+#, fuzzy
+#| msgid "Quick Settings"
+msgid "Search settings"
+msgstr "Configuració ràpida"
+
+#: src/ui/ms-window.ui:98
+msgid "Welcome"
+msgstr "Benvinguts"
+
+#: src/ui/ms-window.ui:109
+msgid "Top Bar"
+msgstr "Barra superior"
+
+#: src/ui/ms-window.ui:118
+#, fuzzy
+#| msgid "Avoid notches"
+msgid "Notches"
+msgstr "Evita els «notch»"
+
+#: src/ui/ms-window.ui:129
+msgid "Overview"
+msgstr ""
+
+#: src/ui/ms-window.ui:138
+msgid "Filter"
+msgstr ""
+
+#: src/ui/ms-window.ui:139 src/ui/ms-window.ui:201
+#, fuzzy
+#| msgid "Use wallpaper"
+msgid "Wallpaper"
+msgstr "Usa el fons de pantalla"
+
+#: src/ui/ms-window.ui:150 src/ui/ms-window.ui:158
+msgid "Feedback"
+msgstr "Comentaris"
+
+#: src/ui/ms-window.ui:160
+#, fuzzy
+#| msgid "Screen Wakeup"
+msgid "Wakeup"
+msgstr "Activació de la pantalla"
+
+#: src/ui/ms-window.ui:161
+msgid "Vibra"
+msgstr ""
+
+#: src/ui/ms-window.ui:162
+msgid "Haptic"
+msgstr ""
+
+#: src/ui/ms-window.ui:163
+msgid "LED"
+msgstr ""
+
+#: src/ui/ms-window.ui:174
+msgid "Compositor"
+msgstr "Compositor"
+
+#: src/ui/ms-window.ui:193
+msgid "Lockscreen"
+msgstr "Pantalla de bloqueig"
+
+#: src/ui/ms-window.ui:202
+#, fuzzy
+#| msgid "Shuffle keypad"
+msgid "Shuffle"
+msgstr "Barreja el teclat numèric"
+
+#: src/ui/ms-window.ui:204
+msgid "Password"
+msgstr ""
+
+#: src/ui/ms-window.ui:215
+msgid "Convergence"
+msgstr "Convergència"
+
+#: src/ui/ms-window.ui:233
+msgid "On Screen Keyboard"
+msgstr "Teclat en pantalla"
+
+#: src/ui/ms-window.ui:241
+#, fuzzy
+#| msgid "On Screen Keyboard"
+msgid "Keyboard"
+msgstr "Teclat en pantalla"
+
+#: src/ui/ms-window.ui:242
+msgid "Unfold"
+msgstr ""
+
+#: src/ui/ms-window.ui:243
+msgid "OSK"
+msgstr ""
+
+#: src/ui/ms-window.ui:244
+#, fuzzy
+#| msgid "Text Completion"
+msgid "Word Completion"
+msgstr "Compleció de text"
+
+#: src/ui/ms-window.ui:255
+#, fuzzy
+#| msgid "Emergency Calls"
+msgid "Emergency Alerts"
+msgstr "Trucades d'emergència"
+
+#: src/ui/ms-window.ui:263 src/ui/ms-window.ui:303
+#, fuzzy
+#| msgid "Emergency Calls"
+msgid "Emergency"
+msgstr "Trucades d'emergència"
+
+#: src/ui/ms-window.ui:264
+msgid "Cell Broadcast"
+msgstr ""
+
+#: src/ui/ms-window.ui:265
+msgid "Danger"
+msgstr ""
+
+#: src/ui/ms-window.ui:295
+msgid "Experimental features"
+msgstr "Funcionalitats experimentals"
+
+#: src/ui/ms-window.ui:304
+#, fuzzy
+#| msgid "Suspend device"
+msgid "Suspend"
+msgstr "Suspèn el dispositiu"
+
+#: src/ui/ms-window.ui:305
+#, fuzzy
+#| msgid "Experimental features"
+msgid "Experimental"
+msgstr "Funcionalitats experimentals"
+
+#: src/ui/ms-window.ui:316 src/ui/ms-window.ui:324
+msgid "About"
+msgstr ""
+
+#: src/ui/ms-window.ui:349
+msgid "_Show Configurable Tweaks"
+msgstr ""
+
+#: src/ui/ms-window.ui:356
+msgid "_Keyboard Shortcuts"
+msgstr "_Dreceres de teclat"
+
+#: src/ui/ms-window.ui:360
+msgid "_About Mobile Settings"
+msgstr "Quant al Mobile Settings"
+
+#~ msgid "Applications"
+#~ msgstr "Aplicacions"
+
+#~ msgid "Silence on Vol-"
+#~ msgstr "Silencia amb «Vol-»"

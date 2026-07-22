@@ -9,7 +9,7 @@
 #define G_LOG_DOMAIN "ms-feedback-row"
 
 #include "mobile-settings-config.h"
-#include "mobile-settings-enums.h"
+#include "ms-enums.h"
 #include "ms-enum-types.h"
 #include "ms-util.h"
 #include "ms-feedback-row.h"

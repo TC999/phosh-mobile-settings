@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024 The Phosh Developers
+ * Copyright (C) 2023-2026 The Phosh Developers
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -9,13 +9,12 @@
 #define G_LOG_DOMAIN "ms-osk-panel"
 
 #include "mobile-settings-config.h"
-#include "mobile-settings-enums.h"
 #include "ms-completer-info.h"
-#include "ms-enum-types.h"
-#include "ms-osk-layout-prefs.h"
 #include "ms-osk-add-shortcut-dialog.h"
 #include "ms-osk-panel.h"
 #include "ms-util.h"
+
+#include "libpms.h"
 
 #include <gmobile.h>
 
@@ -29,17 +28,18 @@
 #define PHOSH_SETTINGS               "sm.puri.phosh"
 #define OSK_UNFOLD_DELAY_KEY         "osk-unfold-delay"
 
-#define PHOSH_OSK_SETTINGS           "sm.puri.phosh.osk"
+#define PHOSH_OSK_SETTINGS           "mobi.phosh.osk"
 #define WORD_COMPLETION_KEY          "completion-mode"
 #define HW_KEYBOARD_KEY              "ignore-hw-keyboards"
 #define OSK_FEATURES_KEY             "osk-features"
 #define OSK_SCALING_KEY              "scaling"
 
-#define PHOSH_OSK_COMPLETER_SETTINGS "sm.puri.phosh.osk.Completers"
+#define PHOSH_OSK_COMPLETER_SETTINGS "mobi.phosh.osk.Completers"
 #define DEFAULT_COMPLETER_KEY        "default"
+#define AUTO_SPACE_KEY               "auto-space"
 #define POS_COMPLETER_SUFFIX         ".completer"
 
-#define PHOSH_OSK_TERMINAL_SETTINGS  "sm.puri.phosh.osk.Terminal"
+#define PHOSH_OSK_TERMINAL_SETTINGS  "mobi.phosh.osk.Terminal"
 #define SHORTCUTS_KEY                "shortcuts"
 
 #define SQUEEKBOARD_SETTINGS         "sm.puri.Squeekboard"
@@ -57,6 +57,7 @@ typedef enum {
 typedef enum {
   PHOSH_OSK_SCALING_NONE = 0,
   PHOSH_OSK_SCALING_AUTO_PORTRAIT = (1 << 0),
+  PHOSH_OSK_SCALING_AUTO_LANDSCAPE = (1 << 1),
   PHOSH_OSK_SCALING_BOTTOM_DEAD_ZONE = (1 << 2),
 } PhoshOskScalingFlags;
 
@@ -94,6 +95,7 @@ struct _MsOskPanel {
   GtkWidget        *completion_group;
   AdwSwitchRow     *app_completion_switch;
   AdwSwitchRow     *menu_completion_switch;
+  AdwSwitchRow     *auto_space_switch;
   CompletionMode    mode;
   gboolean          updating_flags;
   AdwComboRow      *completer_combo;
@@ -108,7 +110,7 @@ struct _MsOskPanel {
 
   /* Automatic scaling */
   AdwPreferencesGroup *osk_scaling_group;
-  AdwSwitchRow        *osk_scaling_auto_portrait_switch;
+  AdwSwitchRow        *osk_scaling_auto_scale_up_switch;
   AdwSwitchRow        *osk_scaling_bottom_dead_zone_switch;
   PhoshOskScalingFlags scaling;
 
@@ -396,8 +398,10 @@ on_osk_scaling_key_changed (MsOskPanel *self)
   self->scaling = g_settings_get_flags (self->pos_settings, OSK_SCALING_KEY);
   self->updating_flags = TRUE;
 
-  adw_switch_row_set_active (self->osk_scaling_auto_portrait_switch,
-                             self->scaling & PHOSH_OSK_SCALING_AUTO_PORTRAIT);
+  /* Either portrait or landscape is enough for active */
+  adw_switch_row_set_active (self->osk_scaling_auto_scale_up_switch,
+                             self->scaling & (PHOSH_OSK_SCALING_AUTO_PORTRAIT |
+                                              PHOSH_OSK_SCALING_AUTO_LANDSCAPE));
   adw_switch_row_set_active (self->osk_scaling_bottom_dead_zone_switch,
                              self->scaling & PHOSH_OSK_SCALING_BOTTOM_DEAD_ZONE);
   self->updating_flags = FALSE;
@@ -413,8 +417,8 @@ on_osk_scaling_switch_changed (MsOskPanel *self, GParamSpec *spec, AdwSwitchRow 
   if (self->updating_flags)
     return;
 
-  if (switch_ == self->osk_scaling_auto_portrait_switch) {
-    flag = PHOSH_OSK_SCALING_AUTO_PORTRAIT;
+  if (switch_ == self->osk_scaling_auto_scale_up_switch) {
+    flag = PHOSH_OSK_SCALING_AUTO_PORTRAIT | PHOSH_OSK_SCALING_AUTO_LANDSCAPE;
   } else if (switch_ == self->osk_scaling_bottom_dead_zone_switch) {
     flag = PHOSH_OSK_SCALING_BOTTOM_DEAD_ZONE;
   } else {
@@ -546,6 +550,7 @@ ms_osk_panel_class_init (MsOskPanelClass *klass)
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, long_press_combo);
 
   /* Completion group */
+  gtk_widget_class_bind_template_child (widget_class, MsOskPanel, auto_space_switch);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, completer_combo);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, completion_group);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, app_completion_switch);
@@ -560,7 +565,7 @@ ms_osk_panel_class_init (MsOskPanelClass *klass)
   /* Stevia scaling */
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel, osk_scaling_group);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel,
-                                        osk_scaling_auto_portrait_switch);
+                                        osk_scaling_auto_scale_up_switch);
   gtk_widget_class_bind_template_child (widget_class, MsOskPanel,
                                         osk_scaling_bottom_dead_zone_switch);
   gtk_widget_class_bind_template_callback (widget_class, on_osk_scaling_switch_changed);
@@ -788,7 +793,6 @@ completer_combo_sensitive_mapping (GValue *value, GVariant *variant, gpointer us
 static void
 ms_osk_panel_init_pos (MsOskPanel *self)
 {
-  GSettingsSchemaSource *source = g_settings_schema_source_get_default ();
   g_autoptr (GSettingsSchema) schema = NULL;
 
   gtk_widget_set_visible (self->hw_keyboard_switch, TRUE);
@@ -833,17 +837,41 @@ ms_osk_panel_init_pos (MsOskPanel *self)
 
   self->pos_completer_settings = g_settings_new (PHOSH_OSK_COMPLETER_SETTINGS);
   ms_osk_panel_init_pos_completer (self);
+  g_settings_bind (self->pos_completer_settings, AUTO_SPACE_KEY,
+                   self->auto_space_switch, "active", G_SETTINGS_BIND_DEFAULT);
+  /* Only useful when we completion is on */
+  g_object_bind_property (self->completer_combo, "sensitive",
+                          self->auto_space_switch, "sensitive",
+                          G_BINDING_DEFAULT);
 
-  schema = g_settings_schema_source_lookup (source, PHOSH_OSK_SETTINGS, TRUE);
-  if (g_settings_schema_has_key (schema, OSK_SCALING_KEY)) {
-    gtk_widget_set_visible (GTK_WIDGET (self->osk_scaling_group), TRUE);
+  gtk_widget_set_visible (GTK_WIDGET (self->osk_scaling_group), TRUE);
+  self->scaling = g_settings_get_flags (self->pos_settings, OSK_SCALING_KEY);
+  g_signal_connect_swapped (self->pos_settings, "changed::" OSK_SCALING_KEY,
+                            G_CALLBACK (on_osk_scaling_key_changed),
+                            self);
+  on_osk_scaling_key_changed (self);
+}
 
-    self->scaling = g_settings_get_flags (self->pos_settings, OSK_SCALING_KEY);
-    g_signal_connect_swapped (self->pos_settings, "changed::" OSK_SCALING_KEY,
-                              G_CALLBACK (on_osk_scaling_key_changed),
-                              self);
-    on_osk_scaling_key_changed (self);
-  }
+
+static void
+ms_osk_panel_init_squeek (MsOskPanel *self)
+{
+  gboolean found_key_horizontal;
+  gboolean found_key_vertical;
+
+  found_key_horizontal = ms_schema_bind_property (SQUEEKBOARD_SETTINGS,
+                                                  SCALE_WHEN_HORIZONTAL_KEY,
+                                                  G_OBJECT (self->scale_in_horizontal_orientation),
+                                                  "value", G_SETTINGS_BIND_DEFAULT);
+  gtk_widget_set_visible (self->scale_in_horizontal_orientation, found_key_horizontal);
+
+  found_key_vertical = ms_schema_bind_property (SQUEEKBOARD_SETTINGS,
+                                                SCALE_WHEN_VERTICAL_KEY,
+                                                G_OBJECT (self->scale_in_vertical_orientation),
+                                                "value", G_SETTINGS_BIND_DEFAULT);
+  gtk_widget_set_visible (self->scale_in_vertical_orientation, found_key_vertical);
+
+  gtk_widget_set_visible (self->keyboard_height_prefs, found_key_horizontal | found_key_vertical);
 }
 
 
@@ -866,25 +894,10 @@ ms_osk_panel_init (MsOskPanel *self)
                                 self,
                                 NULL);
 
-  if (is_osk_app () == MS_OSK_APP_POS) {
+  if (is_osk_app () == MS_OSK_APP_POS)
     ms_osk_panel_init_pos (self);
-  } else if (is_osk_app () == MS_OSK_APP_SQUEEKBOARD) {
-    gboolean found_key_horizontal;
-    gboolean found_key_vertical;
-
-    found_key_horizontal = ms_schema_bind_property (SQUEEKBOARD_SETTINGS, SCALE_WHEN_HORIZONTAL_KEY,
-                                                    G_OBJECT (self->scale_in_horizontal_orientation),
-                                                    "value", G_SETTINGS_BIND_DEFAULT);
-    gtk_widget_set_visible (self->scale_in_horizontal_orientation, found_key_horizontal);
-
-    found_key_vertical = ms_schema_bind_property (SQUEEKBOARD_SETTINGS, SCALE_WHEN_VERTICAL_KEY,
-                                                  G_OBJECT (self->scale_in_vertical_orientation),
-                                                  "value", G_SETTINGS_BIND_DEFAULT);
-    gtk_widget_set_visible (self->scale_in_vertical_orientation, found_key_vertical);
-
-    gtk_widget_set_visible (self->keyboard_height_prefs,
-                            found_key_horizontal | found_key_vertical);
-  }
+  else if (is_osk_app () == MS_OSK_APP_SQUEEKBOARD)
+    ms_osk_panel_init_squeek (self);
 }
 
 

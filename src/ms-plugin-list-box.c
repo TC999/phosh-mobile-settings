@@ -34,22 +34,29 @@ enum {
 static GParamSpec *props[PROP_LAST_PROP];
 
 struct _MsPluginListBox {
-  AdwBin              parent;
+  AdwBin                parent;
 
-  GSettings          *settings;
-  char               *settings_key;
-  GtkWidget          *list_box;
-  GListStore         *store;
+  GSettings            *settings;
+  char                 *settings_key;
+  GtkWidget            *list_box;
+  GListStore           *store;
 
-  MsPluginRow        *selected_row;
+  MsPluginRow          *selected_row;
+  AdwPreferencesDialog *prefs_dialog;
 
-  GSimpleActionGroup *action_group;
+  GSimpleActionGroup   *action_group;
 
-  char               *plugin_type;
-  char               *prefs_extension_point;
+  char                 *plugin_type;
+  char                 *prefs_extension_point;
 };
 G_DEFINE_TYPE (MsPluginListBox, ms_plugin_list_box, ADW_TYPE_BIN)
 
+
+static void
+on_prefs_dialog_closed (MsPluginListBox *self)
+{
+  self->prefs_dialog = NULL;
+}
 
 
 static AdwPreferencesDialog *
@@ -75,7 +82,6 @@ static void
 open_plugin_prefs_activated (GSimpleAction *action, GVariant *parameter, gpointer data)
 {
   MsPluginListBox *self = MS_PLUGIN_LIST_BOX (data);
-  AdwPreferencesDialog *prefs;
   GtkWindow *parent;
   g_autoptr (GError) error = NULL;
   g_autoptr (GKeyFile) keyfile = g_key_file_new ();
@@ -96,10 +102,18 @@ open_plugin_prefs_activated (GSimpleAction *action, GVariant *parameter, gpointe
     GTK_APPLICATION (g_application_get_default ()));
   g_assert (parent);
 
-  prefs = load_prefs_window (self, name);
-  g_return_if_fail (ADW_IS_DIALOG (prefs));
+  if (self->prefs_dialog)
+    adw_dialog_close (ADW_DIALOG (self->prefs_dialog));
 
-  adw_dialog_present (ADW_DIALOG (prefs), GTK_WIDGET (parent));
+  self->prefs_dialog = load_prefs_window (self, name);
+  g_return_if_fail (ADW_IS_DIALOG (self->prefs_dialog));
+
+  g_signal_connect_object (self->prefs_dialog,
+                           "closed",
+                           G_CALLBACK (on_prefs_dialog_closed),
+                           self,
+                           G_CONNECT_SWAPPED);
+  adw_dialog_present (ADW_DIALOG (self->prefs_dialog), GTK_WIDGET (parent));
 }
 
 
@@ -261,6 +275,7 @@ ms_plugin_list_box_scan_phosh_plugins (MsPluginListBox *self)
     g_autoptr (GError) error = NULL;
     g_autoptr (GKeyFile) keyfile = g_key_file_new ();
     g_auto (GStrv) types = NULL;
+    g_autofree char *icon_name = NULL;
 
     if (!g_str_has_prefix (filename, PHOSH_PLUGIN_PREFIX) ||
         !g_str_has_suffix (filename, PHOSH_PLUGIN_SUFFIX))
@@ -290,9 +305,13 @@ ms_plugin_list_box_scan_phosh_plugins (MsPluginListBox *self)
     title = g_key_file_get_locale_string (keyfile, "Plugin", "Name", NULL, NULL);
     description = g_key_file_get_locale_string (keyfile, "Plugin", "Comment", NULL, NULL);
     types = g_key_file_get_string_list (keyfile, "Plugin", "Types", NULL, NULL);
+    icon_name = g_key_file_get_string (keyfile, "Plugin", "Icon", NULL);
 
     if (types == NULL)
       g_warning ("Plugin '%s' has no type. Please fix", name);
+
+    if (icon_name == NULL)
+      g_debug ("Failed to get icon for %s plugin", name);
 
     if (!g_strv_contains ((const char *const *)types, self->plugin_type))
       continue;
@@ -310,6 +329,7 @@ ms_plugin_list_box_scan_phosh_plugins (MsPluginListBox *self)
                         "enabled", enabled,
                         "has-prefs", !!prefs_path,
                         "filename", path,
+                        "icon", icon_name,
                         NULL);
     g_signal_connect_object (row,
                              "notify::enabled",
@@ -394,6 +414,7 @@ ms_plugin_list_box_dispose (GObject *object)
   g_clear_object (&self->settings);
   g_clear_object (&self->store);
   g_clear_object (&self->action_group);
+  g_clear_object (&self->prefs_dialog);
 
   G_OBJECT_CLASS (ms_plugin_list_box_parent_class)->dispose (object);
 }
@@ -496,7 +517,6 @@ ms_plugin_list_box_init (MsPluginListBox *self)
   gtk_widget_insert_action_group (GTK_WIDGET (self),
                                   "plugin-list-box",
                                   G_ACTION_GROUP (self->action_group));
-
 }
 
 
@@ -504,4 +524,21 @@ MsPluginListBox *
 ms_plugin_list_box_new (void)
 {
   return g_object_new (MS_TYPE_PLUGIN_LIST_BOX, NULL);
+}
+
+
+void
+ms_plugin_list_box_open_plugin_prefs (MsPluginListBox *self, const char *plugin_name)
+{
+  g_assert (MS_IS_PLUGIN_LIST_BOX (self));
+
+  for (uint i = 0; i < g_list_model_get_n_items (G_LIST_MODEL (self->store)); i++) {
+    g_autoptr (MsPluginRow) row = g_list_model_get_item (G_LIST_MODEL (self->store), i);
+
+    if (!g_strcmp0 (plugin_name, ms_plugin_row_get_name (row))) {
+      ms_plugin_row_open_prefs (row);
+
+      break;
+    }
+  }
 }

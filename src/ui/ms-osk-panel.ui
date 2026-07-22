@@ -100,9 +100,9 @@
                 <property name="visible">False</property>
                 <property name="title" translatable="yes">Scaling</property>
                 <child>
-                  <object class="AdwSwitchRow" id="osk_scaling_auto_portrait_switch">
+                  <object class="AdwSwitchRow" id="osk_scaling_auto_scale_up_switch">
                     <property name="title" translatable="yes">Keep physical size constant</property>
-                    <property name="subtitle" translatable="yes">Whether to keep the OSK's size constant in portrait mode</property>
+                    <property name="subtitle" translatable="yes">Ensure OSK is large enough in high screen resolutions</property>
                     <signal name="notify::active" handler="on_osk_scaling_switch_changed" swapped="true"/>
                   </object>
                 </child>
@@ -142,6 +142,14 @@
                     <property name="expression">
                       <lookup name="name" type="MsCompleterInfo"/>
                     </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSwitchRow" id="auto_space_switch">
+                    <!-- Translators: Space is the ' ' character here -->
+                    <property name="title" translatable="yes">Handle space around punctuation characters</property>
+                    <!-- Translators: Space is the ' ' character here -->
+                    <property name="subtitle" translatable="yes">This also swaps the space and punctuation characters after word completion</property>
                   </object>
                 </child>
               </object>

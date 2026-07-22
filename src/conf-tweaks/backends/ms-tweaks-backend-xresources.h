@@ -15,6 +15,7 @@
 
 enum {
   MS_TWEAKS_BACKEND_XRESOURCES_ERROR_FAILED_TO_CREATE_PARENTS,
+  MS_TWEAKS_BACKEND_XRESOURCES_ERROR_NULL_KEY,
 };
 
 G_BEGIN_DECLS
@@ -26,8 +27,5 @@ GQuark ms_tweaks_backend_xresources_error_quark (void);
 #define MS_TWEAKS_BACKEND_XRESOURCES_ERROR ms_tweaks_backend_xresources_error_quark ()
 
 MsTweaksBackend *ms_tweaks_backend_xresources_new (const MsTweaksSetting *setting_data);
-
-void ms_tweaks_backend_xresources_set_xresources_path (MsTweaksBackend *backend,
-                                                       char *xresources_path);
 
 G_END_DECLS

@@ -1,34 +1,34 @@
 # Turkish translation for phosh-mobile-settings.
-# Copyright (C) 2024 phosh-mobile-settings's COPYRIGHT HOLDER
+# Copyright (C) 2024-2026 phosh-mobile-settings's COPYRIGHT HOLDER
 # This file is distributed under the same license as the phosh-mobile-settings package.
 #
-# Sabri Ünal <yakushabb@gmail.com>, 2024.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2024-2025.
+# Sabri Ünal <yakushabb@gmail.com>, 2024, 2026.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2024-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: phosh-mobile-settings main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/"
-"issues\n"
-"POT-Creation-Date: 2025-10-05 10:34+0000\n"
-"PO-Revision-Date: 2025-10-07 13:50+0300\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2026-06-30 20:20+0000\n"
+"PO-Revision-Date: 2026-07-06 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
 msgstr "Mobil Ayarlar"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
 #: data/mobi.phosh.MobileSettings.desktop.in:12
-msgid "Mobile;Preferences;MobileSettings;"
-msgstr "Mobil;Yeğler;Tercihler;Ayarlar;MobilAyarlar;Mobile;Preferences;MobileSettings;"
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr "Mobile;Preferences;MobileSettings;Tweaks;Mobil;Yeğler;Tercihler;Ayarlar;MobilAyarlar;İnceAyarlar;inceayarlar;"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
 msgid "Phosh Mobile Settings"
@@ -36,8 +36,8 @@ msgstr "Phosh Mobil Ayarları"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
 msgid ""
-"This app allows you to configure some aspects of Phosh that would otherwise require "
-"command line usage."
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
 msgstr ""
 "Bu uygulama, Phosh’un komut satırı kullanımı gerektiren kimi yönlerini "
 "yapılandırmanızı sağlar."
@@ -58,121 +58,279 @@ msgstr "Dizgeleyici paneli"
 msgid "Feedback panel"
 msgstr "Geri bildirim paneli"
 
-#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#: plugins/librem5/ms-plugin-librem5-panel.c:215
 #, c-format
 msgid "Critical temperature is %.2f°C"
 msgstr "Kritik sıcaklık %.2f°C"
 
 #. Translators "Librem 5" is a smartphone model, usually no need to translate it
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:24
 msgid "Librem 5"
 msgstr "Librem 5"
 
 #. translators: U-boot is the brand of a bootloader
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:28
 msgid "U-Boot"
 msgstr "U-Boot"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:40
 msgid "Suspend device"
 msgstr "Aygıtı askıya al"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:42
 msgid "Suspend is experimental"
 msgstr "Askıya alma deneyseldir"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:45
 msgid "suspend now"
 msgstr "şimdi askıya al"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:60
 msgid "Temperatures"
 msgstr "Sıcaklık"
 
 #. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:64
 msgid "CPU"
 msgstr "Merkezi İşlemci"
 
 #. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:83
 msgid "GPU"
 msgstr "Grafik İşlemci"
 
 #. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:102
 msgid "VPU"
 msgstr "Video İşlemci"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:120
 msgid "Fuel Gauge"
 msgstr "Yakıt Göstergesi"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:138
 msgid "Battery"
 msgstr "Pil"
 
-#: src/conf-tweaks/ms-tweaks-callback-handlers.c:36
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:13
+msgid "Add Layout"
+msgstr "Düzen Ekle"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17 src/ui/ms-updates-panel.ui:82
+#: src/ui/ms-updates-panel.ui:126
+msgid "Cancel"
+msgstr "İptal"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Ekle"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-lang-panel.ui:14
+#: src/ui/ms-window.ui:318 src/ui/ms-window.ui:326
+msgid "Language"
+msgstr "Dil"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Düzenler"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:29
+msgid "No Layouts configured"
+msgstr "Düzen yapılandırılmadı"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Daha çok seçenek…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Kaldır"
+
+#: libpms/lang/ms-common-language.c:312
+msgid "Other…"
+msgstr "Diğer…"
+
+#: libpms/lang/ms-language-chooser.ui:4
+msgid "Select Language"
+msgstr "Dil Seç"
+
+#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:108
+#: src/ui/ms-hidden-apps-dialog.ui:15
+msgid "_Cancel"
+msgstr "İ_ptal"
+
+#: libpms/lang/ms-language-chooser.ui:23 src/ui/ms-hidden-apps-dialog.ui:23
+msgid "_Select"
+msgstr "_Seç"
+
+#: libpms/lang/ms-language-chooser.ui:44
+msgid "Language or country"
+msgstr "Dil ya da ülke"
+
+#: libpms/lang/ms-language-chooser.ui:68
+msgid "No languages found"
+msgstr "Dil bulunamadı"
+
+#: libpms/lang/ms-language-chooser.ui:79
+msgid "More…"
+msgstr "Daha Çok…"
+
+#: libpms/lang/ms-util.c:130
+msgid "Today"
+msgstr "Bugün"
+
+#: libpms/lang/ms-util.c:134
+msgid "Yesterday"
+msgstr "Dün"
+
+#. Translators: This is a date format string in the style of "Feb 24".
+#: libpms/lang/ms-util.c:142
+#, no-c-format
+msgid "%b %e"
+msgstr "%e %b"
+
+#. Translators: This is a date format string in the style of "Feb 24, 2013".
+#: libpms/lang/ms-util.c:147
+msgid "%b %e, %Y"
+msgstr "%e %b %Y"
+
+#. TRANSLATORS: This is the datetime format in the style of
+#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
+#. and "Yesterday, 10:10:10 AM"
+#: libpms/lang/ms-util.c:166
+#, c-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: libpms/lang/ms-util.c:186
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d saat"
+
+#: libpms/lang/ms-util.c:187
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d dakika"
+
+#: libpms/lang/ms-util.c:188
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d saniye"
+
+#. 5 hours 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:195
+#, c-format
+msgctxt "hours minutes seconds"
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. 5 hours 2 minutes
+#: libpms/lang/ms-util.c:200
+#, c-format
+msgctxt "hours minutes"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 5 hours
+#: libpms/lang/ms-util.c:205
+#, c-format
+msgctxt "hours"
+msgid "%s"
+msgstr "%s"
+
+#. 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:213
+#, c-format
+msgctxt "minutes seconds"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 2 minutes
+#: libpms/lang/ms-util.c:218
+#, c-format
+msgctxt "minutes"
+msgid "%s"
+msgstr "%s"
+
+#. 0 seconds
+#: libpms/lang/ms-util.c:229
+msgid "0 seconds"
+msgstr "0 saniye"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
 #, c-format
 msgid "Something went wrong: %s"
 msgstr "Bir şeyler yanlış gitti: %s"
 
-#: src/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Genel"
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Kimlik doğrulaması iptal edildi"
 
-#: src/gtk/help-overlay.ui:14
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Kısayolları Göster"
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "Kaydederken %i hata oluştu"
 
-#: src/gtk/help-overlay.ui:20
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Çık"
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr "Kimi ayarları kaydetmek için yönetici olarak kimlik doğrulamalısınız"
 
-#: src/mobile-settings-application.c:36
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Hücre yayını iletilerinin listesi alınamadı"
+
+#: src/ms-application.c:37
 msgid "- Manage your mobile settings"
 msgstr "- Mobil ayarlarınızı yönetin"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:447
+#: src/ms-application.c:541
 msgid "translator-credits"
 msgstr ""
 "Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Sabri Ünal <yakushabb@gmail.com>"
 
-#: src/mobile-settings-window.c:148
-msgid "Device"
-msgstr "Aygıt"
-
-#: src/ms-alerts-panel.c:242
-msgid "Could not get list of cell broadcast messages"
-msgstr "Hücre yayını iletilerinin listesi alınamadı"
-
-#: src/ms-audio-devices.c:178
+#: src/ms-audio-devices.c:179
 msgid "Media Volume"
 msgstr "Ortam Sesi"
 
-#: src/ms-audio-devices.c:180
+#: src/ms-audio-devices.c:182
 msgid "Notification Volume"
 msgstr "Bildirim Sesi"
 
-#: src/ms-audio-devices.c:182
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Sesli Arama Ses Düzeyi"
+
+#: src/ms-audio-devices.c:188
 msgid "Ring Tone Volume"
 msgstr "Arama Zili Sesi"
 
-#: src/ms-audio-devices.c:184
-msgid "Call volume"
-msgstr "Çağrı sesi"
-
-#: src/ms-audio-devices.c:186
+#: src/ms-audio-devices.c:191
 msgid "Alarm Volume"
 msgstr "Alarm Sesi"
 
-#: src/ms-audio-devices.c:188
+#: src/ms-audio-devices.c:194
 msgid "Emergency Alerts Volume"
 msgstr "Acil Durum Alarm Sesi"
 
@@ -180,81 +338,87 @@ msgstr "Acil Durum Alarm Sesi"
 msgid "Message of unknown severity"
 msgstr "Bilinmeyen önemdeki ileti"
 
-#: src/ms-feedback-panel.c:212
+#: src/ms-feedback-panel.c:338
 msgid "Sound file does not exist"
 msgstr "Ses dosyası yok"
 
-#: src/ms-feedback-panel.c:214
+#: src/ms-feedback-panel.c:340
 msgid "Sound file is corrupt"
 msgstr "Ses dosyası bozuk"
 
-#: src/ms-feedback-panel.c:216
+#: src/ms-feedback-panel.c:342
 msgid "Failed to play sound"
 msgstr "Ses oynatılamadı"
 
-#: src/ms-feedback-panel.c:255
+#: src/ms-feedback-panel.c:381
 #, c-format
 msgid "Playing %s"
 msgstr "%s oynatılıyor"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:416
+#: src/ms-feedback-panel.c:579
 msgid "low"
 msgstr "düşük"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:419
+#: src/ms-feedback-panel.c:582
 msgid "normal"
 msgstr "normal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:422
+#: src/ms-feedback-panel.c:585
 msgid "critical"
 msgstr "kritik"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:426
+#: src/ms-feedback-panel.c:589
 msgid "none"
 msgstr "yok"
 
-#: src/ms-feedback-panel.c:806
+#: src/ms-feedback-panel.c:1008
 msgid "Mobile Settings Volume Control"
 msgstr "Mobil Ayarlar Ses Denetiemi"
+
+#: src/ms-lang-panel.c:80
+msgid "Failed to set system locale"
+msgstr "Sistem yereli ayarlanamadı"
 
 #: src/ms-lockscreen-panel.c:62
 msgid "Failed to set lockscreen wallpaper"
 msgstr "Kilit ekranı duvar kağıdı belirlenemedi"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:746
+#: src/ms-osk-panel.c:751
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: src/ms-osk-panel.c:747
+#: src/ms-osk-panel.c:752
 msgid "The default completer selected by the OSK"
 msgstr "Ekran klavyesince seçilen öntanımlı tamamlayıcı"
 
-#: src/ms-osk-panel.c:750
+#: src/ms-osk-panel.c:755
 msgid "No information available for this completer"
 msgstr "Bu tamamlayıcı için bilgi yok"
 
-#: src/ms-overview-panel.c:69
+#: src/ms-overview-panel.c:62
+#, c-format
+msgid "%u App Made Visible Again"
+msgid_plural "%u Apps Made Visible Again"
+msgstr[0] "%u Uygulama Yeniden Görünür Yapıldı"
+
+#: src/ms-overview-panel.c:102
 msgid "Reset favorites?"
 msgstr "Gözdeler sıfırlansın mı?"
 
-#: src/ms-overview-panel.c:72
+#: src/ms-overview-panel.c:105
 msgid "Reset list of favorite applications to the default?"
 msgstr "Gözde uygulamalar listesi öntanımlıya sıfırlansın mı?"
 
-#: src/ms-overview-panel.c:75
-msgid "_Cancel"
-msgstr "İ_ptal"
-
-#: src/ms-overview-panel.c:76
+#: src/ms-overview-panel.c:109
 msgid "_Reset"
 msgstr "_Sıfırla"
 
-#: src/ms-overview-panel.c:331
+#: src/ms-overview-panel.c:364
 msgid "Failed to set wallpaper for overview"
 msgstr "Genel görünüm için duvar kağıdı belirlenemedi"
 
@@ -316,13 +480,43 @@ msgid "Not available"
 msgstr "Kullanılamaz"
 
 #. Translators: "Custom" is the name of a user-defined sound theme
-#: src/ms-sound-row.c:128
+#: src/ms-sound-row.c:130
 msgid "Custom"
 msgstr "Özel"
 
-#: src/ms-sound-row.c:309
+#: src/ms-sound-row.c:311
 msgid "Choose sound file"
 msgstr "Ses dosyası seç"
+
+#. Translators: %s is a OS version number like 0.20260614
+#: src/ms-updates-panel.c:151
+#, c-format
+msgid "Update to %s"
+msgstr "%s sürümüne güncelle"
+
+#: src/ms-updates-panel.c:184 src/ms-updates-panel.c:220
+#, c-format
+msgid "OS update failed: %s"
+msgstr "İşletim sistemi güncellemesi başarısız oldu: %s"
+
+#: src/ms-updates-panel.c:270
+#, c-format
+msgid "Canceling OS update failed: %s"
+msgstr "İşletim sistemi güncellemesi iptali başarısız oldu: %s"
+
+#: src/ms-updates-panel.c:333
+msgid "OS Update already in progress"
+msgstr "İşletim Sistemi Güncellemesi hâlihazırda sürüyor"
+
+#. Translators %s is an os version number like 0.20260614
+#: src/ms-updates-panel.c:341
+#, c-format
+msgid "Updating to %s…"
+msgstr "%s sürümüne güncelleniyor…"
+
+#: src/ms-updates-panel.c:361
+msgid "OS update in progress"
+msgstr "İşletim sistemi güncellemesi sürüyor"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
 #: src/ms-util.c:170
@@ -343,174 +537,45 @@ msgstr "Sessiz"
 msgid "Choose Wallpaper"
 msgstr "Duvar Kağıdı Seç"
 
-#. Translators: this is a verb.
-#: src/ui/mobile-settings-window.ui:31
-msgid "Search"
-msgstr "Ara"
+#: src/ms-window.c:131
+msgid "Configurable Tweaks"
+msgstr "Yapılandırılabilir İnce Ayarlar"
 
-#: src/ui/mobile-settings-window.ui:48
-msgid "Search settings"
-msgstr "Ayarları ara"
+#: src/ms-window.c:182
+msgid "Device"
+msgstr "Aygıt"
 
-#: src/ui/mobile-settings-window.ui:98
-msgid "Welcome"
-msgstr "Hoş Geldiniz"
+#: src/ui/ms-about-panel.ui:19
+msgid "Phosh logo"
+msgstr "Phosh logosu"
 
-#: src/ui/mobile-settings-window.ui:104
-msgid "Welcome to Mobile Settings"
-msgstr "Mobil Ayarlara Hoş Geldiniz"
+#: src/ui/ms-about-panel.ui:30
+msgid "Phosh Version"
+msgstr "Phosh Sürümü"
 
-#: src/ui/mobile-settings-window.ui:105
-msgid "Tweak advanced mobile settings"
-msgstr "Gelişmiş mobil ayarları değiştirin"
+#: src/ui/ms-about-panel.ui:38
+msgid "Operating System"
+msgstr "İşletim Sistemi"
 
-#: src/ui/mobile-settings-window.ui:113
-msgid "Top Bar"
-msgstr "Üst Çubuk"
+#: src/ui/ms-about-panel.ui:46
+msgid "Operating System Version"
+msgstr "İşletim Sistemi Sürümü"
 
-#: src/ui/mobile-settings-window.ui:121 src/ui/ms-topbar-panel.ui:34
-msgid "Quick Settings"
-msgstr "Hızlı Ayarlar"
+#: src/ui/ms-about-panel.ui:54
+msgid "Hardware Model"
+msgstr "Donanım Modeli"
 
-#: src/ui/mobile-settings-window.ui:122
-msgid "Notches"
-msgstr "Çentikler"
+#: src/ui/ms-about-panel.ui:66
+msgid "Support Phosh"
+msgstr "Phoshʼu Destekle"
 
-#: src/ui/mobile-settings-window.ui:133
-msgid "Overview"
-msgstr "Genel Görünüm"
+#: src/ui/ms-about-panel.ui:67
+msgid "Your donations make our work possible"
+msgstr "Bağışlarınız çalışmalarımızı olanaklı kılıyor"
 
-#: src/ui/mobile-settings-window.ui:141 src/ui/ms-overview-panel.ui:13
-msgid "Favorites"
-msgstr "Gözdeler"
-
-#: src/ui/mobile-settings-window.ui:142
-msgid "Filter"
-msgstr "Süzgeç"
-
-#: src/ui/mobile-settings-window.ui:143 src/ui/mobile-settings-window.ui:205
-msgid "Wallpaper"
-msgstr "Duvar Kağıdı"
-
-#: src/ui/mobile-settings-window.ui:154 src/ui/mobile-settings-window.ui:162
-msgid "Feedback"
-msgstr "Geri Bildirim"
-
-#: src/ui/mobile-settings-window.ui:163 src/ui/ms-feedback-panel.ui:93
-msgid "Sounds"
-msgstr "Sesler"
-
-#: src/ui/mobile-settings-window.ui:164
-msgid "Wakeup"
-msgstr "Uyandırma"
-
-#: src/ui/mobile-settings-window.ui:165
-msgid "Vibra"
-msgstr "Titreşim"
-
-#: src/ui/mobile-settings-window.ui:166
-msgid "Haptic"
-msgstr "Dokunsal"
-
-#: src/ui/mobile-settings-window.ui:167
-msgid "LED"
-msgstr "LED"
-
-#: src/ui/mobile-settings-window.ui:178
-msgid "Compositor"
-msgstr "Dizgileyici"
-
-#: src/ui/mobile-settings-window.ui:186 src/ui/ms-osk-panel.ui:101
-msgid "Scaling"
-msgstr "Ölçekleme"
-
-#: src/ui/mobile-settings-window.ui:197
-msgid "Lockscreen"
-msgstr "Kilit Ekranı"
-
-#: src/ui/mobile-settings-window.ui:206
-msgid "Shuffle"
-msgstr "Karıştır"
-
-#: src/ui/mobile-settings-window.ui:207 src/ui/ms-lockscreen-panel.ui:79
-msgid "Widgets"
-msgstr "Parçacıklar"
-
-#: src/ui/mobile-settings-window.ui:208
-msgid "Password"
-msgstr "Parola"
-
-#: src/ui/mobile-settings-window.ui:219
-msgid "Convergence"
-msgstr "Yakınsama"
-
-#: src/ui/mobile-settings-window.ui:237
-msgid "On Screen Keyboard"
-msgstr "Ekran Klavyesi"
-
-#: src/ui/mobile-settings-window.ui:245
-msgid "Keyboard"
-msgstr "Klavye"
-
-#: src/ui/mobile-settings-window.ui:246
-msgid "Unfold"
-msgstr "Aç"
-
-#: src/ui/mobile-settings-window.ui:247
-msgid "OSK"
-msgstr "Ekran Klavyesi"
-
-#: src/ui/mobile-settings-window.ui:248
-msgid "Word Completion"
-msgstr "Sözcük Tamamlama"
-
-#: src/ui/mobile-settings-window.ui:259
-msgid "Emergency Alerts"
-msgstr "Acil Durum Uyarıları"
-
-#: src/ui/mobile-settings-window.ui:267 src/ui/mobile-settings-window.ui:307
-msgid "Emergency"
-msgstr "Acil"
-
-#: src/ui/mobile-settings-window.ui:268
-msgid "Cell Broadcast"
-msgstr "Hücre Yayını"
-
-#: src/ui/mobile-settings-window.ui:269
-msgid "Danger"
-msgstr "Tehlike"
-
-#: src/ui/mobile-settings-window.ui:280 src/ui/ms-sensor-panel.ui:28
-msgid "Sensors"
-msgstr "Algılayıcılar"
-
-#: src/ui/mobile-settings-window.ui:288 src/ui/ms-sensor-panel.ui:69
-msgid "High Contrast"
-msgstr "Yüksek Karşıtlık"
-
-#: src/ui/mobile-settings-window.ui:299
-msgid "Experimental features"
-msgstr "Deneysel Özellikler"
-
-#: src/ui/mobile-settings-window.ui:308
-msgid "Suspend"
-msgstr "Askıya Al"
-
-#: src/ui/mobile-settings-window.ui:309
-msgid "Experimental"
-msgstr "Deneysel"
-
-#: src/ui/mobile-settings-window.ui:333
-msgid "_Show Configurable Tweaks"
-msgstr "Yapılandırılabilir İnce Ayarları _Göster"
-
-#: src/ui/mobile-settings-window.ui:340
-msgid "_Keyboard Shortcuts"
-msgstr "_Klavye Kısayolları"
-
-#: src/ui/mobile-settings-window.ui:344
-msgid "_About Mobile Settings"
-msgstr "Mobil Ayarlar _Hakkında"
+#: src/ui/ms-about-panel.ui:70
+msgid "D_onate"
+msgstr "_Bağış Yap"
 
 #: src/ui/ms-alerts-panel.ui:17
 msgid "Unable To Receive Alerts"
@@ -518,11 +583,11 @@ msgstr "Uyarılar Alınamıyor"
 
 #: src/ui/ms-alerts-panel.ui:18
 msgid ""
-"Cannot receive Emergency Alerts on this device as no usable cellular modem is "
-"detected."
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
 msgstr ""
-"Bu aygıtta kullanılabilir hücresel modem saptanmadığından Acil Durum Uyarıları "
-"alınamıyor."
+"Bu aygıtta kullanılabilir hücresel modem saptanmadığından Acil Durum "
+"Uyarıları alınamıyor."
 
 #: src/ui/ms-alerts-panel.ui:30
 msgid "Emergency and Governmental Alerts"
@@ -635,8 +700,8 @@ msgstr "Acil Çağrılar"
 
 #: src/ui/ms-features-panel.ui:17
 msgid ""
-"Enable emergency calls. Please only enable this if you safely can ensure that it's "
-"working with your provider."
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
 msgstr ""
 "Acil durum çağrılarını etkinleştir. Lütfen bunu yalnızca sağlayıcınızla "
 "çalıştığından eminseniz etkinleştirin."
@@ -653,8 +718,8 @@ msgstr "Sistem menüsünden askıya almayı etkinleştir"
 
 #: src/ui/ms-features-panel.ui:34
 msgid ""
-"Please only enable this if you're aware of the limitations like data connection loss "
-"or missed alarms"
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
 msgstr ""
 "Lütfen bunu yalnızca veri bağlantısı yitimi ya da kaçırılan alarmlar gibi "
 "sınırlamaların ayırdındaysanız etkinleştirin"
@@ -669,133 +734,176 @@ msgstr "Etkin"
 msgid "Sound Settings"
 msgstr "Ses Ayarları"
 
-#: src/ui/ms-feedback-panel.ui:27
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Ses yüksekliğini ayarlarken ses çıkar"
+
+#: src/ui/ms-feedback-panel.ui:33
 msgid "Feedback Settings"
 msgstr "Geri Bildirim Ayarları"
 
-#: src/ui/ms-feedback-panel.ui:30
+#: src/ui/ms-feedback-panel.ui:36
 msgid "Feedback profile"
 msgstr "Geri bildirim profili"
 
-#: src/ui/ms-feedback-panel.ui:31
+#: src/ui/ms-feedback-panel.ui:37
 msgid "The global maximum feedback profile"
 msgstr "Genel azami geri bildirim profili"
 
-#: src/ui/ms-feedback-panel.ui:46
+#: src/ui/ms-feedback-panel.ui:52
 msgid "Prefer flash"
 msgstr "Flaşı yeğle"
 
-#: src/ui/ms-feedback-panel.ui:47
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
 msgstr "Oluyorsa durum LEDʼi yerine kamera flaşını yeğle"
 
-#. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:53
-msgid "Silence on Vol-"
-msgstr "Sesi azalt ile sessiz"
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Ses düğmesi basımıyla sessiz kip"
 
-#: src/ui/ms-feedback-panel.ui:54
-msgid "When locked put the phone in silent mode when pressing Vol- on incoming calls"
+#: src/ui/ms-feedback-panel.ui:60
+msgid ""
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
 msgstr ""
-"Kilitlendiğinde, gelen aramalarda sesi azalt tuşuna basıldığında telefonu sessiz "
-"kipe al"
+"Kilitlendiğinde, gelen aramalarda sesi azaltan düğmeye basıldığında telefonu "
+"sessiz kipe al"
 
 #. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:60
+#: src/ui/ms-feedback-panel.ui:66
 msgid "Haptic strength"
 msgstr "Dokunsal güç"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:67
 msgid "Maximum haptic feedback strength percentage"
 msgstr "Azami dokunsal geri bildirim gücü yüzdesi"
 
-#: src/ui/ms-feedback-panel.ui:80
+#: src/ui/ms-feedback-panel.ui:86
 msgid "Per Application settings"
 msgstr "Uygulama Başına ayarlar"
 
-#: src/ui/ms-feedback-panel.ui:94
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:161
+msgid "Sounds"
+msgstr "Sesler"
+
+#: src/ui/ms-feedback-panel.ui:100
 msgid "The sound to use for certain events"
 msgstr "Belirli olaylar için kullanılacak ses"
 
-#: src/ui/ms-feedback-panel.ui:102
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Phone Calls"
 msgstr "Telefon Çağrıları"
 
-#: src/ui/ms-feedback-panel.ui:108
+#: src/ui/ms-feedback-panel.ui:126
 msgid "SMS"
 msgstr "Kısa İleti"
 
-#: src/ui/ms-feedback-panel.ui:114
-msgid "Instant messages"
-msgstr "Anlık iletiler"
-
-#: src/ui/ms-feedback-panel.ui:125
-msgid "Screen Wakeup"
-msgstr "Ekran Uyandırma"
-
-#: src/ui/ms-feedback-panel.ui:128
-msgid "Notification urgency that lights up the screen"
-msgstr "Ekranı aydınlatan bildirim aciliyeti"
-
-#: src/ui/ms-feedback-panel.ui:146
-msgid "Notification categories that wake up the screen independent from their urgency"
-msgstr "İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim kategorileri"
-
-#: src/ui/ms-feedback-panel.ui:149
-msgid "Calls"
-msgstr "Çağrılar"
-
-#: src/ui/ms-feedback-panel.ui:150
-msgid "A generic audio or video call notification"
-msgstr "Sesli ya da görüntülü çağrı bildirimi"
-
-#: src/ui/ms-feedback-panel.ui:156
-msgid "Device events"
-msgstr "Aygıt olayları"
-
-#: src/ui/ms-feedback-panel.ui:157
-msgid "A generic device-related notification"
-msgstr "Aygıtla ilişkili bildirim"
-
-#: src/ui/ms-feedback-panel.ui:163
-msgid "Emails"
-msgstr "E-Postalar"
-
-#: src/ui/ms-feedback-panel.ui:164
-msgid "A generic e-mail-related notification"
-msgstr "E-postayla ilişkili bildirim"
-
-#: src/ui/ms-feedback-panel.ui:170
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
 msgid "Instant Messages"
 msgstr "Anlık İletiler"
 
-#: src/ui/ms-feedback-panel.ui:171
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Çalar Saat"
+
+#: src/ui/ms-feedback-panel.ui:162
+msgid "Screen Wakeup"
+msgstr "Ekran Uyandırma"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "Notification urgency that lights up the screen"
+msgstr "Ekranı aydınlatan bildirim aciliyeti"
+
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr ""
+"İvediliklerinden bağımsız olarak ekranı uyandırabilecek bildirim kategorileri"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "Calls"
+msgstr "Çağrılar"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "Sesli ya da görüntülü çağrı bildirimi"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "Device events"
+msgstr "Aygıt olayları"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "Aygıtla ilişkili bildirim"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "E-Postalar"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "E-postayla ilişkili bildirim"
+
+#: src/ui/ms-feedback-panel.ui:208
 msgid "A generic instant message-related notification"
 msgstr "Anlık iletiyle ilişkili bildirim"
 
-#: src/ui/ms-feedback-panel.ui:177
+#: src/ui/ms-feedback-panel.ui:214
 msgid "Network events"
 msgstr "Ağ olayları"
 
-#: src/ui/ms-feedback-panel.ui:178
+#: src/ui/ms-feedback-panel.ui:215
 msgid "A generic network notification"
 msgstr "Ağ bildirimi"
 
-#: src/ui/ms-feedback-panel.ui:184
+#. Translators: "presence change" means coming online or going offline,
+#. like in an instant messenger.
+#: src/ui/ms-feedback-panel.ui:223
 msgid "Presence changes"
 msgstr "Bulunuşluk değişimleri"
 
-#: src/ui/ms-feedback-panel.ui:185
+#: src/ui/ms-feedback-panel.ui:224
 msgid "A generic presence change notification"
 msgstr "Bulunuşluk değişimi bildirimi"
 
-#: src/ui/ms-feedback-panel.ui:191
+#: src/ui/ms-feedback-panel.ui:230
 msgid "File transfers"
 msgstr "Dosya aktarımları"
 
-#: src/ui/ms-feedback-panel.ui:192
+#: src/ui/ms-feedback-panel.ui:231
 msgid "A generic file transfer or download notification"
 msgstr "Dosya aktarma ya da indirme bildirimi"
+
+#: src/ui/ms-hidden-app-row.ui:5 src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "Uygulama"
+
+#: src/ui/ms-hidden-apps-dialog.ui:4
+msgid "Hidden Apps"
+msgstr "Gizli Uygulamalar"
+
+#: src/ui/ms-hidden-apps-dialog.ui:83
+msgid "No Apps are Currently Hidden"
+msgstr "Henüz Gizli Uygulama Yok"
+
+#: src/ui/ms-lang-panel.ui:15
+msgid "The language of the user interface"
+msgstr "Kullanıcı arayüzü dili"
+
+#: src/ui/ms-lang-panel.ui:18
+msgid "_Language"
+msgstr "_Dil"
+
+#: src/ui/ms-lang-panel.ui:45
+msgid "Language change requires logout or restart"
+msgstr ""
+"Dil değişimi oturumun kapatılmasını ya da yeniden başlatmayı gerektirir"
+
+#: src/ui/ms-lang-panel.ui:46
+msgid "Logout"
+msgstr "Oturumu Kapat"
 
 #: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
@@ -825,47 +933,33 @@ msgstr "Kendiliğinden ekran kilidi gecikmesi"
 msgid "Seconds from screen blank to screen lock"
 msgstr "Boş ekrandan ekran kilidine dek geçen saniye"
 
-#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:94
 msgid "Background"
 msgstr "Arka Plan"
 
-#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:100
 msgid "_Select Wallpaper…"
 msgstr "Duvar Kağıdı _Seç…"
 
-#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:112
 msgid "Use wallpaper"
 msgstr "Duvar kağıdı kullan"
 
-#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:113
 msgid "Whether to show a colorful wallpaper"
 msgstr "Renkli duvar kağıdının gösterilmesi"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:205
+msgid "Widgets"
+msgstr "Parçacıklar"
 
 #: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
 msgstr "Kilit ekranı için ek parçacıklar"
 
-#. Translators: Title for a dialog to add a new on-screen keyboard layout
-#. Translators: Label for a button that allows the user to add a new keyboard layout
-#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
-msgid "Add Layout"
-msgstr "Düzen Ekle"
-
-#: src/ui/ms-osk-add-layout-dialog.ui:14 src/ui/ms-osk-add-shortcut-dialog.ui:17
-msgid "Cancel"
-msgstr "İptal"
-
-#: src/ui/ms-osk-add-layout-dialog.ui:20 src/ui/ms-osk-add-shortcut-dialog.ui:23
-msgid "Add"
-msgstr "Ekle"
-
-#: src/ui/ms-osk-add-layout-dialog.ui:40
-msgid "Language"
-msgstr "Dil"
-
 #. Translators: Title for a dialog to add a new on-screen keyboard shortcut
 #. Translators: Label for a button that allows the user to add a new keyboard shortcut
-#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:168
 msgid "Add Shortcut"
 msgstr "Kısayol Ekle"
 
@@ -889,35 +983,9 @@ msgstr "Anahtar olarak harf gir (C ya da V gibi)"
 msgid "_Shortcut Key"
 msgstr "_Kısayol Anahtarı"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:154
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
 msgid "Shortcut Preview"
 msgstr "Kısayol Ön İzlemesi"
-
-#: src/ui/ms-osk-layout-prefs.ui:5
-msgctxt "on screen keyboard"
-msgid "Layouts"
-msgstr "Düzenler"
-
-#. Translators: Message displayed when there are no keyboard layouts configured
-#: src/ui/ms-osk-layout-prefs.ui:30
-msgid "No Layouts configured"
-msgstr "Düzen yapılandırılmadı"
-
-#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
-msgid "More options…"
-msgstr "Daha çok seçenek…"
-
-#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
-msgid "Move Up"
-msgstr "Yukarı Taşı"
-
-#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
-msgid "Move Down"
-msgstr "Aşağı Taşı"
-
-#: src/ui/ms-osk-layout-row.ui:49
-msgid "Remove"
-msgstr "Kaldır"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
@@ -932,9 +1000,11 @@ msgid "Unfold long-press"
 msgstr "Uzun basma ile aç"
 
 #: src/ui/ms-osk-panel.ui:21
-msgid "How long to press the center of the home bar to unfold the on screen keyboard"
+msgid ""
+"How long to press the center of the home bar to unfold the on screen keyboard"
 msgstr ""
-"Ekran klavyesini açmak için ana ekran çubuğunun ortasına ne kadar basılması gerektiği"
+"Ekran klavyesini açmak için ana ekran çubuğunun ortasına ne kadar basılması "
+"gerektiği"
 
 #. Translators: abbreviation for less than or equal to 0.5 second interval of time
 #: src/ui/ms-osk-panel.ui:26
@@ -957,7 +1027,8 @@ msgid "Ignore hardware keyboard"
 msgstr "Donanım klavyesini görmezden gel"
 
 #: src/ui/ms-osk-panel.ui:39
-msgid "Whether to show the on screen keyboard when a physical keyboard is present"
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr "Fiziksel klavye varsa ekran klavyesinin gösterilme durumu"
 
 #: src/ui/ms-osk-panel.ui:46
@@ -984,13 +1055,19 @@ msgstr "Yatay kipte klavye yüksekliği"
 msgid "When the screen is wider than tall"
 msgstr "Ekran boydan daha geniş olduğunda"
 
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:184
+msgid "Scaling"
+msgstr "Ölçekleme"
+
 #: src/ui/ms-osk-panel.ui:104
 msgid "Keep physical size constant"
 msgstr "Fiziksel boyutu değişmez kıl"
 
 #: src/ui/ms-osk-panel.ui:105
-msgid "Whether to keep the OSK's size constant in portrait mode"
-msgstr "Dikey kipte ekran klavyesi boyutunun değişmez kılınması"
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr ""
+"Yüksek ekran çözünürlüklerinde ekran klavyesinin yeterince büyük olduğundan "
+"emin ol"
 
 #: src/ui/ms-osk-panel.ui:111
 msgid "Add empty space below keys"
@@ -998,7 +1075,7 @@ msgstr "Tuşların altına boş alan ekle"
 
 #: src/ui/ms-osk-panel.ui:112
 msgid "Whether to add an empty area below the OSK's keys to shift it upward."
-msgstr "Ekran klavyesini yukarı kaydırmak için alta boş alan eklenmesi"
+msgstr "Ekran klavyesini yukarı kaydırmak için alta boş alan eklenmesi."
 
 #: src/ui/ms-osk-panel.ui:122
 msgid "Text Completion"
@@ -1010,7 +1087,8 @@ msgstr "Fırsatçı sözcük tamamlama"
 
 #: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
-msgstr "Uygulama, yararlı olduğunu belirttiğinde sözcük tamamlamayı etkinleştir"
+msgstr ""
+"Uygulama, yararlı olduğunu belirttiğinde sözcük tamamlamayı etkinleştir"
 
 # OSK: On Screen Keyboard
 #: src/ui/ms-osk-panel.ui:133
@@ -1029,17 +1107,34 @@ msgstr "Öntanımlı Tamamlayıcı"
 msgid "The default completion engine to use"
 msgstr "Kullanılacak öntanımlı tamamlama motoru"
 
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:150
+msgid "Handle space around punctuation characters"
+msgstr "Noktalama imlerinin çevresindeki boşluğu işle"
+
+#. Translators: Space is the ' ' character here
 #: src/ui/ms-osk-panel.ui:152
+msgid ""
+"This also swaps the space and punctuation characters after word completion"
+msgstr ""
+"Bu, sözcük tamamlama sonrasında boşluk ve noktalama imlerini de yer "
+"değiştirir"
+
+#: src/ui/ms-osk-panel.ui:160
 msgid "Terminal Layout"
 msgstr "Uçbirim Yerleşimi"
 
-#: src/ui/ms-osk-panel.ui:171
+#: src/ui/ms-osk-panel.ui:179
 msgid "Shortcuts"
 msgstr "Kısayollar"
 
-#: src/ui/ms-osk-panel.ui:172
+#: src/ui/ms-osk-panel.ui:180
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Kısayollar çubuğundaki kısayollar"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:139
+msgid "Favorites"
+msgstr "Gözdeler"
 
 #: src/ui/ms-overview-panel.ui:22
 msgid "Organize Favorites"
@@ -1048,7 +1143,8 @@ msgstr "Gözdeleri Düzenle"
 #: src/ui/ms-overview-panel.ui:23
 msgid "Drag and drop the apps below to rearrange your favorite apps"
 msgstr ""
-"Gözde uygulamalarınızı düzenlemek için aşağıdaki uygulamaları sürükleyip bırakın"
+"Gözde uygulamalarınızı düzenlemek için aşağıdaki uygulamaları sürükleyip "
+"bırakın"
 
 #: src/ui/ms-overview-panel.ui:48
 msgid "Reset Favorites"
@@ -1063,8 +1159,8 @@ msgid "Reset"
 msgstr "Sıfırla"
 
 #: src/ui/ms-overview-panel.ui:64
-msgid "Mobile App Filtering"
-msgstr "Mobil Uygulama Süzme"
+msgid "App Filtering and Hiding"
+msgstr "Uygulama Süzme ve Gizleme"
 
 #: src/ui/ms-overview-panel.ui:67
 msgid "Set Application Filter Mode"
@@ -1074,9 +1170,22 @@ msgstr "Uygulama Süzme Kipini Ayarla"
 msgid "Show only mobile apps in the overview"
 msgstr "Genel görünümde yalnızca mobil uygulamaları göster"
 
-#: src/ui/ms-scale-to-fit-row.ui:5
-msgid "Application"
-msgstr "Uygulama"
+#: src/ui/ms-overview-panel.ui:74
+msgid "_Manage Hidden Apps"
+msgstr "Gizli Uygulamaları _Yönet"
+
+#: src/ui/ms-overview-panel.ui:75
+msgid "Make apps you disabled in the overview visible again"
+msgstr ""
+"Genel görünümde devre dışı bıraktığınız uygulamaları yeniden görünür yapın"
+
+#: src/ui/ms-panel-switcher.ui:11
+msgid "No Matching Panels"
+msgstr "Eşleşen Panel Yok"
+
+#: src/ui/ms-panel-switcher.ui:12
+msgid "Try a different search"
+msgstr "Başka arama dene"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
@@ -1084,10 +1193,15 @@ msgstr "Algılayıcı bulunamadı"
 
 #: src/ui/ms-sensor-panel.ui:17
 msgid ""
-"Either there are no sensors installed on your device or they are disabled by a "
-"killswitch."
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
 msgstr ""
-"Aygıtınızda kurulu algılayıcı yok ya da kapatma anahtarınca devre dışı bırakılmış."
+"Aygıtınızda kurulu algılayıcı yok ya da kapatma anahtarınca devre dışı "
+"bırakılmış."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:278
+msgid "Sensors"
+msgstr "Algılayıcılar"
 
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
@@ -1105,13 +1219,17 @@ msgstr "Işık"
 msgid "Orientation"
 msgstr "Yönelim"
 
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:286
+msgid "High Contrast"
+msgstr "Yüksek Karşıtlık"
+
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
 msgstr "Kendiliğinden Yüksek Karşıtlık"
 
 #: src/ui/ms-sensor-panel.ui:73
 msgid "Controlled by the Ambient Light Sensor"
-msgstr "Ortam Işığı Algılayıcısı tarafından denetlenir"
+msgstr "Ortam Işığı Algılayıcısınca denetlenir"
 
 #: src/ui/ms-sensor-panel.ui:84
 msgid "Light intensity threshold"
@@ -1120,6 +1238,10 @@ msgstr "Işık yoğunluğu eşiği"
 #: src/ui/ms-sensor-panel.ui:85
 msgid "Theme will switch to high contrast above the threshold"
 msgstr "Tema, eşiğin üzerinde yüksek karşıtlığa geçer"
+
+#: src/ui/ms-sound-row.ui:33
+msgid "Toggle Play"
+msgstr "Çal ya da Durdur"
 
 #: src/ui/ms-sound-row.ui:54
 msgid "Sound files (ogg)"
@@ -1143,8 +1265,224 @@ msgstr "Çentiklerden kaçın"
 
 #: src/ui/ms-topbar-panel.ui:24
 msgid "Don't place UI elements beneath notches and display cutouts"
-msgstr "Kullanıcı arayüz ögelerini çentikler ve ekran kesiklerinin altına yerleştirme"
+msgstr ""
+"Kullanıcı arayüz ögelerini çentikler ve ekran kesiklerinin altına yerleştirme"
+
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:119
+msgid "Quick Settings"
+msgstr "Hızlı Ayarlar"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Ek Hızlı Ayarlar’ınızı düzenleyin"
+
+#: src/ui/ms-updates-panel.ui:12
+msgid "OS updates require a system restart"
+msgstr ""
+"İşletim sistemi güncellemeleri sistemin yeniden başlatılmasını gerektirir"
+
+#: src/ui/ms-updates-panel.ui:13
+msgid "Restart"
+msgstr "Yeniden Başlat"
+
+#: src/ui/ms-updates-panel.ui:30
+msgid "Everything up to date"
+msgstr "Her şey güncel"
+
+#: src/ui/ms-updates-panel.ui:31
+msgid "There are no OS updates available"
+msgstr "Kullanılabilir işletim sistemi güncellemesi yok"
+
+#: src/ui/ms-updates-panel.ui:42
+msgid "Updates available"
+msgstr "Güncelleme var"
+
+#: src/ui/ms-updates-panel.ui:43
+msgid "There are OS updates available"
+msgstr "İşletim sistemi güncellemeleri var"
+
+#: src/ui/ms-updates-panel.ui:65
+msgid "Fetching OS update…"
+msgstr "İşletim sistemi güncellemesi alınıyor…"
+
+#: src/ui/ms-updates-panel.ui:109
+msgid "Installing OS update…"
+msgstr "İşletim sistemi güncellemesi kuruluyor…"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Mobil Ayarlara Hoş Geldiniz"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Gelişmiş mobil ayarları değiştirin"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:32
+msgid "Search"
+msgstr "Ara"
+
+#. Translators: Placeholder text for the search bar input
+#: src/ui/ms-window.ui:50
+msgid "Search settings"
+msgstr "Ayarları ara"
+
+#: src/ui/ms-window.ui:100
+msgid "Welcome"
+msgstr "Hoş Geldiniz"
+
+#: src/ui/ms-window.ui:111
+msgid "Top Bar"
+msgstr "Üst Çubuk"
+
+#: src/ui/ms-window.ui:120
+msgid "Notches"
+msgstr "Çentikler"
+
+#: src/ui/ms-window.ui:131
+msgid "Overview"
+msgstr "Genel Görünüm"
+
+#: src/ui/ms-window.ui:140
+msgid "Filter"
+msgstr "Süzgeç"
+
+#: src/ui/ms-window.ui:141 src/ui/ms-window.ui:203
+msgid "Wallpaper"
+msgstr "Duvar Kağıdı"
+
+#: src/ui/ms-window.ui:152 src/ui/ms-window.ui:160
+msgid "Feedback"
+msgstr "Geri Bildirim"
+
+#: src/ui/ms-window.ui:162
+msgid "Wakeup"
+msgstr "Uyandırma"
+
+#: src/ui/ms-window.ui:163
+msgid "Vibra"
+msgstr "Titreşim"
+
+#: src/ui/ms-window.ui:164
+msgid "Haptic"
+msgstr "Dokunsal"
+
+#: src/ui/ms-window.ui:165
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:176
+msgid "Compositor"
+msgstr "Dizgileyici"
+
+#: src/ui/ms-window.ui:195
+msgid "Lockscreen"
+msgstr "Kilit Ekranı"
+
+#: src/ui/ms-window.ui:204
+msgid "Shuffle"
+msgstr "Karıştır"
+
+#: src/ui/ms-window.ui:206
+msgid "Password"
+msgstr "Parola"
+
+#: src/ui/ms-window.ui:217
+msgid "Convergence"
+msgstr "Yakınsama"
+
+#: src/ui/ms-window.ui:235
+msgid "On Screen Keyboard"
+msgstr "Ekran Klavyesi"
+
+#: src/ui/ms-window.ui:243
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: src/ui/ms-window.ui:244
+msgid "Unfold"
+msgstr "Aç"
+
+#: src/ui/ms-window.ui:245
+msgid "OSK"
+msgstr "Ekran Klavyesi"
+
+#: src/ui/ms-window.ui:246
+msgid "Word Completion"
+msgstr "Sözcük Tamamlama"
+
+#: src/ui/ms-window.ui:257
+msgid "Emergency Alerts"
+msgstr "Acil Durum Uyarıları"
+
+#: src/ui/ms-window.ui:265 src/ui/ms-window.ui:305
+msgid "Emergency"
+msgstr "Acil"
+
+#: src/ui/ms-window.ui:266
+msgid "Cell Broadcast"
+msgstr "Hücre Yayını"
+
+#: src/ui/ms-window.ui:267
+msgid "Danger"
+msgstr "Tehlike"
+
+#: src/ui/ms-window.ui:297
+msgid "Experimental features"
+msgstr "Deneysel Özellikler"
+
+#: src/ui/ms-window.ui:306
+msgid "Suspend"
+msgstr "Askıya Al"
+
+#: src/ui/ms-window.ui:307
+msgid "Experimental"
+msgstr "Deneysel"
+
+#: src/ui/ms-window.ui:327
+msgid "Locale"
+msgstr "Yerel"
+
+#: src/ui/ms-window.ui:338
+msgid "OS Updates"
+msgstr "İşletim Sistemi Güncellemeleri"
+
+#: src/ui/ms-window.ui:346
+msgid "Updates"
+msgstr "Güncellemeler"
+
+#: src/ui/ms-window.ui:358 src/ui/ms-window.ui:366
+msgid "About"
+msgstr "Hakkında"
+
+#: src/ui/ms-window.ui:391
+msgid "_Show Configurable Tweaks"
+msgstr "Yapılandırılabilir İnce Ayarları _Göster"
+
+#: src/ui/ms-window.ui:398
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: src/ui/ms-window.ui:402
+msgid "_About Mobile Settings"
+msgstr "Mobil Ayarlar _Hakkında"
+
+#: src/ui/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Genel"
+
+#: src/ui/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Kısayolları Göster"
+
+#: src/ui/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Ara"
+
+#: src/ui/shortcuts-dialog.ui:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"

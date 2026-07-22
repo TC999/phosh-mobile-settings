@@ -8,25 +8,25 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
 "settings/-/issues\n"
-"POT-Creation-Date: 2024-11-17 14:50+0000\n"
-"PO-Revision-Date: 2024-11-18 11:57-0500\n"
+"POT-Creation-Date: 2026-05-13 09:10+0000\n"
+"PO-Revision-Date: 2026-05-16 01:14-0400\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ht\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"Last-Translator: \n"
-"Language: ht\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: data/mobi.phosh.MobileSettings.desktop.in:3
-#: src/ui/mobile-settings-window.ui:6
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
 msgid "Mobile Settings"
-msgstr ""
+msgstr "Paramèt Mobil"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/mobi.phosh.MobileSettings.desktop.in:13
-msgid "Mobile;Preferences;MobileSettings;"
-msgstr "Mobil;Preferans;MobilParamèt;"
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr "Mobil;Preferans;MobilParamèt;Ajisteman;"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
 msgid "Phosh Mobile Settings"
@@ -65,12 +65,12 @@ msgstr "Tanperati kritik se %.2f°C"
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
 msgid "Librem 5"
-msgstr ""
+msgstr "Librem 5"
 
 #. translators: U-boot is the brand of a bootloader
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
 msgid "U-Boot"
-msgstr ""
+msgstr "U-Boot"
 
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
 msgid "Suspend device"
@@ -91,17 +91,17 @@ msgstr "Tanperati"
 #. translators: The central processing unit of a smart phone
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #. translators: The graphics processing unit of a smart phone
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
 msgid "GPU"
-msgstr ""
+msgstr "GPU"
 
 #. translators: The video processing unit of a smart phone
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
 msgid "VPU"
-msgstr ""
+msgstr "VPU"
 
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
 msgid "Fuel Gauge"
@@ -110,6 +110,190 @@ msgstr "Kalib gaz"
 #: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
 msgid "Battery"
 msgstr "Batri"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "Ajoute Layout"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
+msgid "Cancel"
+msgstr "Anile"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Ajoute"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-window.ui:316
+#: src/ui/ms-window.ui:324
+msgid "Language"
+msgstr "Lang"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Layouts"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "Pa gen Layoutsn konfigire"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Plis opsyon yo…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Deplase anwo"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Deplase anba"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Efase"
+
+#: libpms/lang/ms-common-language.c:312
+msgid "Other…"
+msgstr "Lòt…"
+
+#: libpms/lang/ms-language-chooser.ui:4
+msgid "Select Language"
+msgstr "Chwazi Lang"
+
+#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:71
+msgid "_Cancel"
+msgstr "_Anile"
+
+#: libpms/lang/ms-language-chooser.ui:23
+msgid "_Select"
+msgstr "_Chwazi"
+
+#: libpms/lang/ms-language-chooser.ui:44
+msgid "Language or country"
+msgstr "Lang oswa peyi"
+
+#: libpms/lang/ms-language-chooser.ui:68
+msgid "No languages found"
+msgstr "Pa jwenn okenn lang"
+
+#: libpms/lang/ms-language-chooser.ui:79
+msgid "More…"
+msgstr "More…"
+
+#: libpms/lang/ms-util.c:130
+msgid "Today"
+msgstr "Jodi a"
+
+#: libpms/lang/ms-util.c:134
+msgid "Yesterday"
+msgstr "Yè"
+
+#. Translators: This is a date format string in the style of "Feb 24".
+#: libpms/lang/ms-util.c:142
+#, no-c-format
+msgid "%b %e"
+msgstr "%b %e"
+
+#. Translators: This is a date format string in the style of "Feb 24, 2013".
+#: libpms/lang/ms-util.c:147
+msgid "%b %e, %Y"
+msgstr "%b %e, %Y"
+
+#. TRANSLATORS: This is the datetime format in the style of
+#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
+#. and "Yesterday, 10:10:10 AM"
+#: libpms/lang/ms-util.c:166
+#, c-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: libpms/lang/ms-util.c:186
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d lè"
+msgstr[1] "%d lè yo"
+
+#: libpms/lang/ms-util.c:187
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minit"
+msgstr[1] "%d minit"
+
+#: libpms/lang/ms-util.c:188
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d segonn"
+msgstr[1] "%d segonn"
+
+#. 5 hours 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:195
+#, c-format
+msgctxt "hours minutes seconds"
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. 5 hours 2 minutes
+#: libpms/lang/ms-util.c:200
+#, c-format
+msgctxt "hours minutes"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 5 hours
+#: libpms/lang/ms-util.c:205
+#, c-format
+msgctxt "hours"
+msgid "%s"
+msgstr "%s"
+
+#. 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:213
+#, c-format
+msgctxt "minutes seconds"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 2 minutes
+#: libpms/lang/ms-util.c:218
+#, c-format
+msgctxt "minutes"
+msgid "%s"
+msgstr "%s"
+
+#. 0 seconds
+#: libpms/lang/ms-util.c:229
+msgid "0 seconds"
+msgstr "0 segonn"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Yon bagay te ale mal: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Otantifikasyon anile"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "Erè %i te rive pandan anrejistreman an"
+msgstr[1] "Erè %i te rive pandan anrejistreman an"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr "Ou bezwen otantifye kòm administratè pou sove kèk paramèt"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -126,68 +310,124 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Kite"
 
-#: src/mobile-settings-application.c:34
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Pa t kapab jwenn lis mesaj difizyon selilè yo"
+
+#: src/ms-application.c:37
 msgid "- Manage your mobile settings"
 msgstr "- Jere paramèt mobil ou yo"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/mobile-settings-application.c:426
+#: src/ms-application.c:542
 msgid "translator-credits"
 msgstr "tradiktè-kredi"
 
-#: src/mobile-settings-window.c:85
-msgid "Device"
-msgstr "Aparèy"
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr "Volim Medya"
 
-#: src/ms-feedback-panel.c:140
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr "Volim Notifikasyon"
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Volim Apèl Vwa"
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr "Volim Son"
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr "Volim Alam"
+
+#: src/ms-audio-devices.c:194
+msgid "Emergency Alerts Volume"
+msgstr "Volim Alèt Ijans"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "Mesaj ki gen gravite enkoni"
+
+#: src/ms-feedback-panel.c:338
 msgid "Sound file does not exist"
 msgstr "Fichye son pa egziste"
 
-#: src/ms-feedback-panel.c:142
+#: src/ms-feedback-panel.c:340
 msgid "Sound file is corrupt"
 msgstr "Fichye son fin gate"
 
-#: src/ms-feedback-panel.c:144
+#: src/ms-feedback-panel.c:342
 msgid "Failed to play sound"
 msgstr "Echwe pou jwe son"
 
-#: src/ms-feedback-panel.c:183
+#: src/ms-feedback-panel.c:381
 #, c-format
 msgid "Playing %s"
 msgstr "Ap jwe %s"
 
 #. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:345
+#: src/ms-feedback-panel.c:579
 msgid "low"
 msgstr "ba"
 
 #. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:348
+#: src/ms-feedback-panel.c:582
 msgid "normal"
 msgstr "nòmal"
 
 #. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:351
+#: src/ms-feedback-panel.c:585
 msgid "critical"
 msgstr "kritik"
 
 #. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:355
+#: src/ms-feedback-panel.c:589
 msgid "none"
 msgstr "okenn"
 
+#: src/ms-feedback-panel.c:1008
+msgid "Mobile Settings Volume Control"
+msgstr "Kontwòl Volim Paramèt Mobil"
+
+#: src/ms-lang-panel.c:104
+msgid "Failed to set system locale"
+msgstr "Echèk pou defini lokal sistèm lan"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Echèk pou mete imaj fon ekran fèmen an"
+
 #. Translators: The default completer
-#: src/ms-osk-panel.c:545
+#: src/ms-osk-panel.c:748
 msgid "Default"
 msgstr "Defo"
 
-#: src/ms-osk-panel.c:546
+#: src/ms-osk-panel.c:749
 msgid "The default completer selected by the OSK"
 msgstr "Konpitè a defo chwazi pa OSK la"
 
-#: src/ms-osk-panel.c:549
+#: src/ms-osk-panel.c:752
 msgid "No information available for this completer"
 msgstr "Pa gen okenn enfòmasyon ki disponib pou completer sa a"
+
+#: src/ms-overview-panel.c:65
+msgid "Reset favorites?"
+msgstr "Reyajiste favoris yo?"
+
+#: src/ms-overview-panel.c:68
+msgid "Reset list of favorite applications to the default?"
+msgstr "Reyajiste lis aplikasyon pi renmen yo nan valè pa defo a?"
+
+#: src/ms-overview-panel.c:72
+msgid "_Reset"
+msgstr "_Retabli"
+
+#: src/ms-overview-panel.c:327
+msgid "Failed to set wallpaper for overview"
+msgstr "Echèk pou mete imaj fon pou apèsi a"
 
 #. Translators: "Normal" represents the standard or default orientation
 #: src/ms-sensor-panel.c:93
@@ -247,121 +487,122 @@ msgid "Not available"
 msgstr "Pa disponib"
 
 #. Translators: "Custom" is the name of a user-defined sound theme
-#: src/ms-sound-row.c:128
+#: src/ms-sound-row.c:130
 msgid "Custom"
 msgstr "Pèsonalize"
 
-#: src/ms-sound-row.c:309
+#: src/ms-sound-row.c:311
 msgid "Choose sound file"
 msgstr "Chwazi fichye son"
 
 #. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:151
+#: src/ms-util.c:170
 msgid "Full"
 msgstr "Konplè"
 
 #. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:154
+#: src/ms-util.c:173
 msgid "Quiet"
 msgstr "Trankil"
 
 #. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:157
+#: src/ms-util.c:176
 msgid "Silent"
 msgstr "Silansye"
 
-#: src/ui/mobile-settings-window.ui:79
-msgid "Welcome"
-msgstr "Byenvini"
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Chwazi Fon"
 
-#: src/ui/mobile-settings-window.ui:85
-msgid "Welcome to Mobile Settings"
-msgstr "Byenvini nan Paramèt Mobil"
+#: src/ms-window.c:146
+msgid "Device"
+msgstr "Aparèy"
 
-#: src/ui/mobile-settings-window.ui:86
-msgid "Tweak advanced mobile settings"
-msgstr "Fixe paramèt mobil avanse"
+#: src/ui/ms-about-panel.ui:18
+msgid "Phosh logo"
+msgstr "Logo Phosh la"
 
-#: src/ui/mobile-settings-window.ui:94
-msgid "Top Bar"
-msgstr "Ba Anwo"
+#: src/ui/ms-about-panel.ui:29
+msgid "Phosh Version"
+msgstr "Vèsyon Phosh"
 
-#: src/ui/mobile-settings-window.ui:105
-msgid "Applications"
-msgstr "Aplikasyon yo"
+#: src/ui/ms-about-panel.ui:37
+msgid "Operating System"
+msgstr "Sistèm Operativ"
 
-#: src/ui/mobile-settings-window.ui:116
-msgid "Feedback"
-msgstr "Retou"
+#: src/ui/ms-about-panel.ui:45
+msgid "Hardware Model"
+msgstr "Modèl Materyèl"
 
-#: src/ui/mobile-settings-window.ui:127
-msgid "Compositor"
-msgstr "Konpozitè"
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "Pa kapab resevwa alèt"
 
-#: src/ui/mobile-settings-window.ui:138
-msgid "Lockscreen"
-msgstr "Fèmen ekran"
-
-#: src/ui/mobile-settings-window.ui:149
-msgid "Convergence"
-msgstr "Konvèjans"
-
-#: src/ui/mobile-settings-window.ui:160
-msgid "On Screen Keyboard"
-msgstr "Sou klavye ekran"
-
-#: src/ui/mobile-settings-window.ui:171 src/ui/ms-sensor-panel.ui:28
-msgid "Sensors"
-msgstr "Detèktè"
-
-#: src/ui/mobile-settings-window.ui:182
-msgid "Experimental features"
-msgstr "Karakteristik eksperimantal"
-
-#: src/ui/mobile-settings-window.ui:206
-msgid "_Keyboard Shortcuts"
-msgstr "_Klavye rakoursi yo"
-
-#: src/ui/mobile-settings-window.ui:210
-msgid "_About Mobile Settings"
-msgstr "_Apwopo Paramèt Mobil"
-
-#: src/ui/ms-applications-panel.ui:11
-msgid "Favorites"
-msgstr "Favori"
-
-#: src/ui/ms-applications-panel.ui:20
-msgid "Organize Favorites"
-msgstr "Òganize favori"
-
-#: src/ui/ms-applications-panel.ui:21
-msgid "Drag and drop the apps below to rearrange your favorite apps"
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
 msgstr ""
-"Trennen ak gout aplikasyon ki anba yo nan lod aplikasyon yo pi renmen ou"
+"Pa ka resevwa Alèt Ijans sou aparèy sa a paske pa gen okenn modèm selilè ki "
+"ka itilize ki detekte."
 
-#: src/ui/ms-applications-panel.ui:46
-msgid "Reset Favorites"
-msgstr "Reyajiste favori"
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "Alèt Ijans ak Gouvènmantal"
 
-#: src/ui/ms-applications-panel.ui:47
-msgid "Set list of favorite apps back to the default"
-msgstr "Mete lis aplikasyon pi renmen tounen nan defo la"
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "Alèt Menas Ekstrèm"
 
-#: src/ui/ms-applications-panel.ui:51
-msgid "Reset"
-msgstr "Retabli"
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Montre alèt pou menas ekstrèm pou lavi ak sekirite"
 
-#: src/ui/ms-applications-panel.ui:62
-msgid "Mobile App Filtering"
-msgstr "Mobil aplikasyon filtraj"
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "Alèt Menas Grav"
 
-#: src/ui/ms-applications-panel.ui:65
-msgid "Set Application Filter Mode"
-msgstr "Mete mòd aplikasyon filtraj"
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Montre alèt pou menas grav pou lavi ak sekirite"
 
-#: src/ui/ms-applications-panel.ui:66
-msgid "Show only mobile apps in the overview"
-msgstr "Montre sèlman aplikasyon yo mobil nan afich la"
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "Alèt Sekirite Piblik"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr ""
+"Montre aksyon rekòmande pou pran nan sitiyasyon ki gen yon risk pou sekirite "
+"a"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "Alèt tès yo"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "Montre mesaj peryodik pou teste sistèm alèt la"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "Alèt jòn"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "Montre mesaj sou ijans anlèvman timoun"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Istwa Alèt Ijans ak Gouvènmantal yo"
+
+#: src/ui/ms-alerts-panel.ui:82
+msgid "No emergency alerts yet"
+msgstr "Pa gen alèt ijans pou kounye a"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Volim"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
@@ -449,147 +690,236 @@ msgctxt "suspend setting"
 msgid "Enabled"
 msgstr "Aktive"
 
-#: src/ui/ms-feedback-panel.ui:16
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Paramèt Son yo"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Jwe son lè w ap ajiste kurseur volim yo"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Feedback Settings"
+msgstr "Paramèt Retou"
+
+#: src/ui/ms-feedback-panel.ui:36
 msgid "Feedback profile"
 msgstr "Retou pwofil"
 
-#: src/ui/ms-feedback-panel.ui:17
+#: src/ui/ms-feedback-panel.ui:37
 msgid "The global maximum feedback profile"
 msgstr "Global pwofil la retou maksimòm"
 
-#: src/ui/ms-feedback-panel.ui:32
+#: src/ui/ms-feedback-panel.ui:52
 msgid "Prefer flash"
 msgstr "Pito flash"
 
-#: src/ui/ms-feedback-panel.ui:33
+#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
 msgstr "Pito kamera flash sou estati LED ki ap dirije lè disponib"
 
-#. Translators: Vol- means the 'Lower Volume' key
-#: src/ui/ms-feedback-panel.ui:39
-msgid "Silence on Vol-"
-msgstr "Silans sou vol-"
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Silans lè w peze bouton volim nan"
 
-#: src/ui/ms-feedback-panel.ui:40
+#: src/ui/ms-feedback-panel.ui:60
 msgid ""
-"When locked put the phone in silent mode when pressing Vol- on incoming calls"
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
 msgstr ""
-"Lè fèmen mete telefòn lan nan mòd silans lè peze volim- sou apèl fèk ap "
-"rantre"
+"Lè telefòn nan bloke, mete l an silans lè w ap peze bouton ki bese volim nan "
+"lè gen apèl k ap antre"
 
-#: src/ui/ms-feedback-panel.ui:48
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:66
+msgid "Haptic strength"
+msgstr "Fòs aptik"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Pousantaj maksimòm fòs retou aptik"
+
+#: src/ui/ms-feedback-panel.ui:86
 msgid "Per Application settings"
 msgstr "Pou chak paramèt aplikasyon"
 
-#: src/ui/ms-feedback-panel.ui:61
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:159
 msgid "Sounds"
 msgstr "Son yo"
 
-#: src/ui/ms-feedback-panel.ui:62
+#: src/ui/ms-feedback-panel.ui:100
 msgid "The sound to use for certain events"
 msgstr "Son an pou itilize pou sèten evènman"
 
-#: src/ui/ms-feedback-panel.ui:70
+#: src/ui/ms-feedback-panel.ui:114
 msgid "Phone Calls"
 msgstr "Apèl Telefòn"
 
-#: src/ui/ms-feedback-panel.ui:76
+#: src/ui/ms-feedback-panel.ui:126
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
-#: src/ui/ms-feedback-panel.ui:82
-msgid "Instant messages"
-msgstr "Mesaj enstantane"
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
+msgstr "Mesaj enstantane yo"
 
-#: src/ui/ms-feedback-panel.ui:93
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Revèy"
+
+#: src/ui/ms-feedback-panel.ui:162
 msgid "Screen Wakeup"
 msgstr "Ekran revèy"
 
-#: src/ui/ms-feedback-panel.ui:96
+#: src/ui/ms-feedback-panel.ui:165
 msgid "Notification urgency that lights up the screen"
 msgstr "Notifikasyon ijans ki limyè moute ekran an"
 
-#: src/ui/ms-lockscreen-panel.ui:12
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr "Kategori notifikasyon ki reveye ekran an endepandan de ijans yo"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "Calls"
+msgstr "Apèl yo"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "Yon notifikasyon apèl odyo oswa videyo jenerik"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "Device events"
+msgstr "Evènman aparèy yo"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "Yon notifikasyon jeneral ki gen rapò ak aparèy la"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "Imèl yo"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "Yon notifikasyon jeneral ki gen rapò ak imèl"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr "Yon notifikasyon jeneral ki gen rapò ak mesaj enstantane"
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr "Evènman rezo yo"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr "Yon notifikasyon rezo jenerik"
+
+#. Translators: "presence change" means coming online or going offline,
+#. like in an instant messenger.
+#: src/ui/ms-feedback-panel.ui:223
+msgid "Presence changes"
+msgstr "Chanjman prezans"
+
+#: src/ui/ms-feedback-panel.ui:224
+msgid "A generic presence change notification"
+msgstr "Yon notifikasyon chanjman prezans jenerik"
+
+#: src/ui/ms-feedback-panel.ui:230
+msgid "File transfers"
+msgstr "Transfè dosye"
+
+#: src/ui/ms-feedback-panel.ui:231
+msgid "A generic file transfer or download notification"
+msgstr "Yon notifikasyon transfè oswa telechajman dosye jenerik"
+
+#: src/ui/ms-lockscreen-panel.ui:14
 msgid "Locking and unlocking"
 msgstr "Bloke ak debloke"
 
-#: src/ui/ms-lockscreen-panel.ui:15
-msgid "Automatic screen lock delay"
-msgstr "Otomatik ekran tan fèmen"
-
-#: src/ui/ms-lockscreen-panel.ui:16
-msgid "Seconds from screen blank to screen lock"
-msgstr "Segonn soti nan ekran vid ekran fèmen"
-
-#: src/ui/ms-lockscreen-panel.ui:30
+#: src/ui/ms-lockscreen-panel.ui:18
 msgid "Shuffle keypad"
 msgstr "Melanj bouton pad"
 
-#: src/ui/ms-lockscreen-panel.ui:31
+#: src/ui/ms-lockscreen-panel.ui:19
 msgid "Whether to shuffle the numbers on the keypad"
 msgstr "Si wi ou non melaj nimewo yo sou klavye a"
 
-#. Translators: setting to shuffle the numbers on the keypad
-#: src/ui/ms-lockscreen-panel.ui:38
-msgctxt "shuffle keypad setting"
-msgid "Enabled"
-msgstr "Aktive"
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Mande otantifikasyon pou debloke"
 
-#: src/ui/ms-lockscreen-panel.ui:49
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr "Mande pou tape yon PIN oswa yon modpas pou debloke aparèy la"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Otomatik ekran tan fèmen"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Segonn soti nan ekran vid ekran fèmen"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
+msgid "Background"
+msgstr "Istorik"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
+msgid "_Select Wallpaper…"
+msgstr "_Select Wallpaper…"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
+msgid "Use wallpaper"
+msgstr "Sèvi ak fon"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
+msgid "Whether to show a colorful wallpaper"
+msgstr "Si pou montre yon fon dekoratif kolore"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:203
 msgid "Widgets"
-msgstr ""
+msgstr "Widjèt"
 
-#: src/ui/ms-lockscreen-panel.ui:50
+#: src/ui/ms-lockscreen-panel.ui:80
 msgid "Additional widgets for the lock screen"
-msgstr "Lòt widgets pou ekran an fèmen"
+msgstr "Widjèt adisyonèl pou ekran fèmen an"
 
-#. Translators: Title for a dialog to add a new on-screen keyboard layout
-#. Translators: Label for a button that allows the user to add a new keyboard layout
-#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
-msgid "Add Layout"
-msgstr "Ajoute Layout"
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+msgid "Add Shortcut"
+msgstr "Ajoute yon rakoursi"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:14
-msgid "Cancel"
-msgstr "Anile"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "Chwazi Modifikatè Rakoursi"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:20
-msgid "Add"
-msgstr "Ajoute"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "Chwazi rakoursi kle"
 
-#: src/ui/ms-osk-add-layout-dialog.ui:40
-msgid "Language"
-msgstr "Lang"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "Antre rakoursi kle"
 
-#: src/ui/ms-osk-layout-prefs.ui:5
-msgctxt "on screen keyboard"
-msgid "Layouts"
-msgstr ""
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Tape yon kle tankou lèt (tankou C oubyen V), eksetera."
 
-#. Translators: Message displayed when there are no keyboard layouts configured
-#: src/ui/ms-osk-layout-prefs.ui:30
-msgid "No Layouts configured"
-msgstr "Pa gen Layoutsn konfigire"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "_Kle rakoursi"
 
-#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
-msgid "More options…"
-msgstr "Plis opsyon yo…"
-
-#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
-msgid "Move Up"
-msgstr "Deplase anwo"
-
-#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
-msgid "Move Down"
-msgstr "Deplase anba"
-
-#: src/ui/ms-osk-layout-row.ui:49
-msgid "Remove"
-msgstr "Efase"
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+msgid "Shortcut Preview"
+msgstr "Apèsi rakoursi"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
-msgstr "Aktive sou klavye ekran"
+msgstr "Aktive _Sou Klavye Ekran"
 
 #: src/ui/ms-osk-panel.ui:14
 msgid "Whether to show the on screen keyboard when needed"
@@ -630,61 +960,126 @@ msgid ""
 msgstr ""
 "Si wi ou non yo montre klavye a sou ekran lè yon klavye fizik ki prezan"
 
-#: src/ui/ms-osk-panel.ui:51
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Endikatè kle pop-up la"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "Si pou montre yon fenèt popover ki endike kle ki aktyèlman peze a"
+
+#: src/ui/ms-osk-panel.ui:59
 msgid "Keyboard height in portrait mode"
 msgstr "Wotè klavye nan mòd pòtrè"
 
-#: src/ui/ms-osk-panel.ui:52
+#: src/ui/ms-osk-panel.ui:60
 msgid "When the screen is taller than wide"
 msgstr "Lè ekran an pi wo pase lajè"
 
-#: src/ui/ms-osk-panel.ui:67
+#: src/ui/ms-osk-panel.ui:76
 msgid "Keyboard height in landscape mode"
 msgstr "Wotè klavye nan mòd jaden flè"
 
-#: src/ui/ms-osk-panel.ui:68
+#: src/ui/ms-osk-panel.ui:77
 msgid "When the screen is wider than tall"
 msgstr "Lè ekran an pi laj pase wotè"
 
-#: src/ui/ms-osk-panel.ui:91
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:182
+msgid "Scaling"
+msgstr "Eskalad"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "Kenbe gwosè fizik la konstan"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr "Asire w ke OSK a ase gwo nan rezolisyon ekran ki wo yo"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "Ajoute espas vid anba kle yo"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr "Si pou ajoute yon zòn vid anba kle OSK yo pou deplase l anlè."
+
+#: src/ui/ms-osk-panel.ui:122
 msgid "Text Completion"
 msgstr "Konplete tèks"
 
-#: src/ui/ms-osk-panel.ui:94
+#: src/ui/ms-osk-panel.ui:125
 msgid "Opportunistic word completion"
 msgstr "Opòtinis fini mo"
 
-#: src/ui/ms-osk-panel.ui:95
+#: src/ui/ms-osk-panel.ui:126
 msgid "Enable word completion when the app indicates it is useful"
 msgstr "Aktive fini mo lè app a endike li itil"
 
-#: src/ui/ms-osk-panel.ui:102
+#: src/ui/ms-osk-panel.ui:133
 msgid "Toggle via OSK menu"
 msgstr "Baskile via meni an OSK"
 
-#: src/ui/ms-osk-panel.ui:103
+#: src/ui/ms-osk-panel.ui:134
 msgid "Allow to toggle word completion via the keyboard's menu button"
 msgstr "Pèmèt aktive fini mo atravè bouton meni klavye a"
 
-#: src/ui/ms-osk-panel.ui:109
+#: src/ui/ms-osk-panel.ui:140
 msgid "Default Completer"
 msgstr "Defo konplete"
 
-#: src/ui/ms-osk-panel.ui:110
+#: src/ui/ms-osk-panel.ui:141
 msgid "The default completion engine to use"
 msgstr "Motè a fini defo yo itilize"
 
-#: src/ui/ms-osk-panel.ui:121
+#: src/ui/ms-osk-panel.ui:152
 msgid "Terminal Layout"
 msgstr "Layout tèminal"
 
-#: src/ui/ms-osk-panel.ui:125
+#: src/ui/ms-osk-panel.ui:171
 msgid "Shortcuts"
 msgstr "Rakousi"
 
-#: src/ui/ms-osk-panel.ui:126
+#: src/ui/ms-osk-panel.ui:172
 msgid "The shortcuts available in the shortcuts bar"
 msgstr "Rakoursi ki disponib nan ba rakoursi"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:137
+msgid "Favorites"
+msgstr "Favori"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Òganize favori"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Trennen ak gout aplikasyon ki anba yo nan lod aplikasyon yo pi renmen ou"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Reyajiste favori"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Mete lis aplikasyon pi renmen tounen nan defo la"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Retabli"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Mobil aplikasyon filtraj"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Mete mòd aplikasyon filtraj"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Montre sèlman aplikasyon yo mobil nan afich la"
 
 #: src/ui/ms-scale-to-fit-row.ui:5
 msgid "Application"
@@ -702,6 +1097,10 @@ msgstr ""
 "Swa pa gen okenn detèktè enstale sou aparèy ou an oswa yo enfim pa yon "
 "KillSwitch."
 
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:276
+msgid "Sensors"
+msgstr "Detèktè"
+
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
 msgstr "Lekti Kaptè"
@@ -718,7 +1117,7 @@ msgstr "Limyè"
 msgid "Orientation"
 msgstr "Oriyantasyon"
 
-#: src/ui/ms-sensor-panel.ui:69
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:284
 msgid "High Contrast"
 msgstr "Segondè kontras"
 
@@ -737,6 +1136,10 @@ msgstr "Limyè entansite limyè"
 #: src/ui/ms-sensor-panel.ui:85
 msgid "Theme will switch to high contrast above the threshold"
 msgstr "Tèm pral chanje a segondè kontras pi wo a papòt la"
+
+#: src/ui/ms-sound-row.ui:33
+msgid "Toggle Play"
+msgstr "Chanje Jwe"
 
 #: src/ui/ms-sound-row.ui:54
 msgid "Sound files (ogg)"
@@ -762,10 +1165,169 @@ msgstr "Evite tach"
 msgid "Don't place UI elements beneath notches and display cutouts"
 msgstr "Pa mete eleman UI anba antay ak dekoupaj ekspozisyon"
 
-#: src/ui/ms-topbar-panel.ui:34
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:117
 msgid "Quick Settings"
 msgstr "Paramèt Rapid yo"
 
 #: src/ui/ms-topbar-panel.ui:35
 msgid "Organize your additional Quick Settings"
 msgstr "Òganize lòt Paramèt Rapid ou yo"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Byenvini nan Paramèt Mobil"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Fixe paramèt mobil avanse"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:31
+msgid "Search"
+msgstr "Rechèch"
+
+#: src/ui/ms-window.ui:48
+msgid "Search settings"
+msgstr "Paramèt Rechèch yo"
+
+#: src/ui/ms-window.ui:98
+msgid "Welcome"
+msgstr "Byenvini"
+
+#: src/ui/ms-window.ui:109
+msgid "Top Bar"
+msgstr "Ba Anwo"
+
+#: src/ui/ms-window.ui:118
+msgid "Notches"
+msgstr "Echank"
+
+#: src/ui/ms-window.ui:129
+msgid "Overview"
+msgstr "Apèsi"
+
+#: src/ui/ms-window.ui:138
+msgid "Filter"
+msgstr "Filtre"
+
+#: src/ui/ms-window.ui:139 src/ui/ms-window.ui:201
+msgid "Wallpaper"
+msgstr "Fon"
+
+#: src/ui/ms-window.ui:150 src/ui/ms-window.ui:158
+msgid "Feedback"
+msgstr "Retou"
+
+#: src/ui/ms-window.ui:160
+msgid "Wakeup"
+msgstr "Reveye"
+
+#: src/ui/ms-window.ui:161
+msgid "Vibra"
+msgstr "Vibra"
+
+#: src/ui/ms-window.ui:162
+msgid "Haptic"
+msgstr "Aptik"
+
+#: src/ui/ms-window.ui:163
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:174
+msgid "Compositor"
+msgstr "Konpozitè"
+
+#: src/ui/ms-window.ui:193
+msgid "Lockscreen"
+msgstr "Fèmen ekran"
+
+#: src/ui/ms-window.ui:202
+msgid "Shuffle"
+msgstr "Melanje"
+
+#: src/ui/ms-window.ui:204
+msgid "Password"
+msgstr "Modpas"
+
+#: src/ui/ms-window.ui:215
+msgid "Convergence"
+msgstr "Konvèjans"
+
+#: src/ui/ms-window.ui:233
+msgid "On Screen Keyboard"
+msgstr "Sou klavye ekran"
+
+#: src/ui/ms-window.ui:241
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: src/ui/ms-window.ui:242
+msgid "Unfold"
+msgstr "Dewoule"
+
+#: src/ui/ms-window.ui:243
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/ms-window.ui:244
+msgid "Word Completion"
+msgstr "Konpleksyon Mo"
+
+#: src/ui/ms-window.ui:255
+msgid "Emergency Alerts"
+msgstr "Alèt Ijans"
+
+#: src/ui/ms-window.ui:263 src/ui/ms-window.ui:303
+msgid "Emergency"
+msgstr "Ijans"
+
+#: src/ui/ms-window.ui:264
+msgid "Cell Broadcast"
+msgstr "Emisyon Selilè"
+
+#: src/ui/ms-window.ui:265
+msgid "Danger"
+msgstr "Danje"
+
+#: src/ui/ms-window.ui:295
+msgid "Experimental features"
+msgstr "Karakteristik eksperimantal"
+
+#: src/ui/ms-window.ui:304
+msgid "Suspend"
+msgstr "Sispann"
+
+#: src/ui/ms-window.ui:305
+msgid "Experimental"
+msgstr "Eksperimantal"
+
+#: src/ui/ms-window.ui:325
+msgid "Locale"
+msgstr "Lokal"
+
+#: src/ui/ms-window.ui:336 src/ui/ms-window.ui:344
+msgid "About"
+msgstr "A pwopo"
+
+#: src/ui/ms-window.ui:369
+msgid "_Show Configurable Tweaks"
+msgstr "_Montre Ajisteman Konfigirab yo"
+
+#: src/ui/ms-window.ui:376
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye rakoursi yo"
+
+#: src/ui/ms-window.ui:380
+msgid "_About Mobile Settings"
+msgstr "_Apwopo Paramèt Mobil"
+
+#~ msgid "Applications"
+#~ msgstr "Aplikasyon yo"
+
+#~ msgid "Silence on Vol-"
+#~ msgstr "Silans sou vol-"
+
+#~ msgctxt "shuffle keypad setting"
+#~ msgid "Enabled"
+#~ msgstr "Aktive"

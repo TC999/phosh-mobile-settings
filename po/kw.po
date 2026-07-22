@@ -1,0 +1,1200 @@
+# Cornish translation for phosh-mobile-settings.
+# Copyright (C) 2026 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2026-01-09 15:10+0000\n"
+"PO-Revision-Date: 2026-01-24 15:20+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: phosh-mobile-settings\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
+msgid "Mobile Settings"
+msgstr "Settyansow Kellgowser"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;"
+msgstr "Kellgowser;Settyansow;SettyansowKellgowser;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Settyansow Kellgowser Phosh"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"An app ma gasa ty selya nebes gwedhow Phosh poken rekwirya usadow linen-"
+"arghadow."
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Settyansow avonsys rag devisyow gwayadow ow devnydhya Phosh"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "Panellow kavadow"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "Panel olsettyer"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "Panel dasliv"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "Tempredh kritikel yw %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+msgid "Librem 5"
+msgstr "Librem 5"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+msgid "Suspend device"
+msgstr "Koska devis"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
+msgid "Suspend is experimental"
+msgstr "Koska yw arbrovel"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+msgid "suspend now"
+msgstr "koska lemmyn"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
+msgid "Temperatures"
+msgstr "Tempredhow"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
+msgid "CPU"
+msgstr "CPU"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
+msgid "GPU"
+msgstr "GPU"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
+msgid "VPU"
+msgstr "VPU"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
+msgid "Fuel Gauge"
+msgstr "Nivel Keunysen"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
+msgid "Battery"
+msgstr "Batri"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Yma hager vargen: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Omgelmyans hedhys"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "%i error happys dres sawyans"
+msgstr[1] "%i errors happys dres sawyans"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:891
+msgid "You need to authenticate as administrator to save some settings"
+msgstr "Ty res omgelmi avel menystrer rag sawya nebes settyansow"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Ollgemmyn"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Diskwedhes Kesunyansow Bysowek"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Kwytya"
+
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Y fyllis kerghes rol messajys darlesans kell"
+
+#: src/ms-application.c:37
+msgid "- Manage your mobile settings"
+msgstr "- Dyghtya dha settyansow kellgowser"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/ms-application.c:511
+msgid "translator-credits"
+msgstr "Flynn"
+
+#: src/ms-audio-devices.c:178
+msgid "Media Volume"
+msgstr "Ughelder Media"
+
+#: src/ms-audio-devices.c:180
+msgid "Notification Volume"
+msgstr "Ughelder Gwarnyansow"
+
+#: src/ms-audio-devices.c:182
+msgid "Voice Call Volume"
+msgstr "Ughelder Tev-Galowyow"
+
+#: src/ms-audio-devices.c:184
+msgid "Ring Tone Volume"
+msgstr "Ughelder Galow-Ton"
+
+#: src/ms-audio-devices.c:186
+msgid "Call volume"
+msgstr "Ughelder galow"
+
+#: src/ms-audio-devices.c:188
+msgid "Alarm Volume"
+msgstr "Ughelder Alarm"
+
+#: src/ms-audio-devices.c:190
+msgid "Emergency Alerts Volume"
+msgstr "Ughelder Alarmow Goredhom"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "Messach a hardigras ankoth"
+
+#: src/ms-feedback-panel.c:215
+msgid "Sound file does not exist"
+msgstr "Restren son na eksistya"
+
+#: src/ms-feedback-panel.c:217
+msgid "Sound file is corrupt"
+msgstr "Restren son yw legrys"
+
+#: src/ms-feedback-panel.c:219
+msgid "Failed to play sound"
+msgstr "Y fyllis seni son"
+
+#: src/ms-feedback-panel.c:258
+#, c-format
+msgid "Playing %s"
+msgstr "Ow seni %s"
+
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:419
+msgid "low"
+msgstr "isel"
+
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:422
+msgid "normal"
+msgstr "normal"
+
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:425
+msgid "critical"
+msgstr "kritikel"
+
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:429
+msgid "none"
+msgstr "vyth"
+
+#: src/ms-feedback-panel.c:813
+msgid "Mobile Settings Volume Control"
+msgstr "Routyans Ughelder Settyansow Kellgowser"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Y fyllis gorra paper fos skrin-alhwedh"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:744
+msgid "Default"
+msgstr "Defowt"
+
+#: src/ms-osk-panel.c:745
+msgid "The default completer selected by the OSK"
+msgstr "An kowlwulyer defowt dewisys gans an bysowek"
+
+#: src/ms-osk-panel.c:748
+msgid "No information available for this completer"
+msgstr "Kedhlow kavadow vyth rag an kowlwuler ma"
+
+#: src/ms-overview-panel.c:66
+msgid "Reset favorites?"
+msgstr "Dasgorra drudh?"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset list of favorite applications to the default?"
+msgstr "Dasgorra rol appys drudh dhe an defowt?"
+
+#: src/ms-overview-panel.c:72
+msgid "_Cancel"
+msgstr "_Hedhi"
+
+#: src/ms-overview-panel.c:73
+msgid "_Reset"
+msgstr "_Dasgorra"
+
+#: src/ms-overview-panel.c:328
+msgid "Failed to set wallpaper for overview"
+msgstr "Y fyllis gorra paper fos rag gorwolok"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
+msgid "Normal"
+msgstr "Normal"
+
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
+msgid "Bottom up"
+msgstr "Goles war-vann"
+
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
+msgid "Left up"
+msgstr "Kledh war-vann"
+
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
+msgid "Right up"
+msgstr "Dyghow war-vann"
+
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
+msgid "Undefined"
+msgstr "Anstyrys"
+
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
+msgid "Near"
+msgstr "Ogas"
+
+#: src/ms-sensor-panel.c:142
+msgid "Far"
+msgstr "Pell"
+
+#: src/ms-sensor-panel.c:260
+msgid "Updating…"
+msgstr "Ow Nowdhi…"
+
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
+msgid "Not available"
+msgstr "Ankavadow"
+
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Ankavadow"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Ankavadow"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:130
+msgid "Custom"
+msgstr "A-Vusur"
+
+#: src/ms-sound-row.c:311
+msgid "Choose sound file"
+msgstr "Dewis restren son"
+
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:170
+msgid "Full"
+msgstr "Leun"
+
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:173
+msgid "Quiet"
+msgstr "Tawel"
+
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:176
+msgid "Silent"
+msgstr "Tawesek"
+
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Dewis Paper Fos"
+
+#: src/ms-window.c:146
+msgid "Device"
+msgstr "Devis"
+
+#: src/ui/ms-about-panel.ui:18
+msgid "Phosh logo"
+msgstr "Logo Phosh"
+
+#: src/ui/ms-about-panel.ui:29
+msgid "Phosh Version"
+msgstr "Versyon Phosh"
+
+#: src/ui/ms-about-panel.ui:37
+msgid "Operating System"
+msgstr "System Oberyans"
+
+#: src/ui/ms-about-panel.ui:45
+msgid "Hardware Model"
+msgstr "Patron Kalesweyth"
+
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "Anabel Degemeres G"
+
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Na gallos degemeres Alarmow Goredhom war an devis ma drefen modem vyth yw "
+"helerghys."
+
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "Alarmow Goredhom ha Governans"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "Alarmow Godros Purra"
+
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Diskwedhes alarmow rag godrosow purra dhe bewnans ha sawder"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "Alarmow Godros Kales"
+
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Diskwedhes alarmow rag godrosow kales dhe bewnans ha sawder"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "Alarmow Sawder Poblek"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "Diskwedhes gwriansow komendys yn plitys gans unn peryl dhe sawder"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "Alarmow provow"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "Diskwedhes messajys periodek rag previ an system alarm"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "Alarmow Amber"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "Diskwedhes messajys a-dro goredhommow denladransow flogh"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Istori Alarmow Goredhom ha Governans"
+
+#: src/ui/ms-alerts-panel.ui:82
+msgid "No emergency alerts yet"
+msgstr "Alarmow goredhom vyth hwath"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Ughelder"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "Ow lehe appys owth eksekutya"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr "Gallosegi ma hepken rag appys terrys na desedha an skrin"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "Lehe oll appys"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr "Ynia lehe oll appys. Devnydhya ma hepken avel mar ty res."
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "Lehe oll appys"
+
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
+msgid "Enabled"
+msgstr "Byw"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "Kayys aswonys vyth helerghys"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "Mappya tochskrin pervedhek"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Byw"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "Nasyow Arbrovel"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "Nasyow fast na hwath"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "Galowyow Goredhom"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"Gallosegi galowyow goredhom. Mar pleg gallosegi ma hepken mar ty gallos "
+"surhe heb danjer yth oberi gans dha provier."
+
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Byw"
+
+#: src/ui/ms-features-panel.ui:32
+msgid "Enable suspend via the system menu"
+msgstr "Gallosegi koska der an rol system"
+
+#: src/ui/ms-features-panel.ui:34
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"Mar pleg gallosegi ma hepken mar ty yw war an finyow kepar ha koll data "
+"kellgowser po alarmow fyllis"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Byw"
+
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Settyansow Son"
+
+#: src/ui/ms-feedback-panel.ui:27
+msgid "Feedback Settings"
+msgstr "Settyansow Dasliv"
+
+#: src/ui/ms-feedback-panel.ui:30
+msgid "Feedback profile"
+msgstr "Profil dasliv"
+
+#: src/ui/ms-feedback-panel.ui:31
+msgid "The global maximum feedback profile"
+msgstr "An profil dasliv olldalghus moyha"
+
+#: src/ui/ms-feedback-panel.ui:46
+msgid "Prefer flash"
+msgstr "Prefera lughesen"
+
+#: src/ui/ms-feedback-panel.ui:47
+msgid "Prefer camera flash over status LED when available"
+msgstr "Preferya lughesen kamera a-ugh LED studh pan kavadow"
+
+#: src/ui/ms-feedback-panel.ui:53
+msgid "Silence by volume button press"
+msgstr "Taw gans tava boton ughelder"
+
+#: src/ui/ms-feedback-panel.ui:54
+msgid ""
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
+msgstr ""
+"Pan alhwedhys settya an kellgowser yn fordh tawesek pan ow tava an boton "
+"iselhe an ughelder war galowyow ow degemeres"
+
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:60
+msgid "Haptic strength"
+msgstr "Krevder krenans"
+
+#: src/ui/ms-feedback-panel.ui:61
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Kansran dasliv krevder krenans moyha"
+
+#: src/ui/ms-feedback-panel.ui:80
+msgid "Per Application settings"
+msgstr "Settyansow Der App"
+
+#: src/ui/ms-feedback-panel.ui:93 src/ui/ms-window.ui:159
+msgid "Sounds"
+msgstr "Sowndys"
+
+#: src/ui/ms-feedback-panel.ui:94
+msgid "The sound to use for certain events"
+msgstr "An sownd rag devnydh gans nebes darvosow "
+
+#: src/ui/ms-feedback-panel.ui:108
+msgid "Phone Calls"
+msgstr "Galowyow Kellgowser"
+
+#: src/ui/ms-feedback-panel.ui:120
+msgid "SMS"
+msgstr "SMS"
+
+#: src/ui/ms-feedback-panel.ui:132 src/ui/ms-feedback-panel.ui:201
+msgid "Instant Messages"
+msgstr "Messajys Desempis"
+
+#: src/ui/ms-feedback-panel.ui:145
+msgid "Alarm Clock"
+msgstr "Difunell"
+
+#: src/ui/ms-feedback-panel.ui:156
+msgid "Screen Wakeup"
+msgstr "Difuna Skrin"
+
+#: src/ui/ms-feedback-panel.ui:159
+msgid "Notification urgency that lights up the screen"
+msgstr "Yniadow gwarnyans rag golowhe an skrin"
+
+#: src/ui/ms-feedback-panel.ui:177
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr "Klassys gwarnyansow rag difuna an skrin anserghek dhyworth an yniadow"
+
+#: src/ui/ms-feedback-panel.ui:180
+msgid "Calls"
+msgstr "Galowyow"
+
+#: src/ui/ms-feedback-panel.ui:181
+msgid "A generic audio or video call notification"
+msgstr "Unn gwarnyans ollgemmyn galow son po gwydhyow"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "Device events"
+msgstr "Darvosow devis"
+
+#: src/ui/ms-feedback-panel.ui:188
+msgid "A generic device-related notification"
+msgstr "Unn gwarnyans ollgemmyn devis-unwos"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "Emails"
+msgstr "Ebostow"
+
+#: src/ui/ms-feedback-panel.ui:195
+msgid "A generic e-mail-related notification"
+msgstr "Unn gwarnyans ollgemmyn ebost-unwos"
+
+#: src/ui/ms-feedback-panel.ui:202
+msgid "A generic instant message-related notification"
+msgstr "Unn gwarnyasn ollgemmyn messach-dhesempis-unwos"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "Network events"
+msgstr "Darvosow rosweyth"
+
+#: src/ui/ms-feedback-panel.ui:209
+msgid "A generic network notification"
+msgstr "Unn gwarnyans ollgemmyn rosweyth"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "Presence changes"
+msgstr "Chanjyow lok"
+
+#: src/ui/ms-feedback-panel.ui:216
+msgid "A generic presence change notification"
+msgstr "Unn gwarnyans ollgemmyn lok-chanj"
+
+#: src/ui/ms-feedback-panel.ui:222
+msgid "File transfers"
+msgstr "Treusworransow restrennow"
+
+#: src/ui/ms-feedback-panel.ui:223
+msgid "A generic file transfer or download notification"
+msgstr "Unn gwarnyans ollgemmyn treusworrans po iskarg"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Locking and unlocking"
+msgstr "Owth alhwedha hag ow dialhwedha"
+
+#: src/ui/ms-lockscreen-panel.ui:18
+msgid "Shuffle keypad"
+msgstr "Chonsya aray niverpad"
+
+#: src/ui/ms-lockscreen-panel.ui:19
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "Mar chonsya an niverow war an niverpad"
+
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Rekwirya omgelmyans rag dialhwedha"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr "Rekwirya ow jynnskrifa PIN po ger-tremena rag dialhwedha an devis"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Ardak skrin-alhwedha awtomatek"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Eylennow dhyworth skrin-gwagen dhe skrin-alwedha"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
+msgid "Background"
+msgstr "Kilva"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
+msgid "_Select Wallpaper…"
+msgstr "_Dewis Paper Fos…"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
+msgid "Use wallpaper"
+msgstr "Devnydhya paper fos"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
+msgid "Whether to show a colorful wallpaper"
+msgstr "Mar diskwedhes unn paper fos liwus"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:203
+msgid "Widgets"
+msgstr "Fenestri"
+
+#: src/ui/ms-lockscreen-panel.ui:80
+msgid "Additional widgets for the lock screen"
+msgstr "Fenestri keworransel rag an alwedh-skrin"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: src/ui/ms-osk-add-layout-dialog.ui:5 src/ui/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "Addya Aray"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
+msgid "Cancel"
+msgstr "Hedhi"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Addya"
+
+#: src/ui/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "Yeth"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+msgid "Add Shortcut"
+msgstr "Addya Kesunyans Bysowek"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "Dewis Chanjyoryon Kesunyans"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "Dewis Alhwedhen Kesunyans"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "Ynworrans Alhwedhen Kesunyans"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Jynnskrif unn alhwedhen kepar ha lytherennow (haval dhe C po V), h.e."
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "Alwedhen _Kesunyans"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:154
+msgid "Shortcut Preview"
+msgstr "Ragwolok Kesunyans"
+
+#: src/ui/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Arayys"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: src/ui/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "Arayys selys vyth"
+
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Moy dewisyow…"
+
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Yskynna"
+
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Diyskynna"
+
+#: src/ui/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Remova"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "Gallosegi _Bysowek War-Skrin"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "Mar diskwedhes an bysowek war-skrin pan res"
+
+#: src/ui/ms-osk-panel.ui:20
+msgid "Unfold long-press"
+msgstr "Lesa hir-tava"
+
+#: src/ui/ms-osk-panel.ui:21
+msgid ""
+"How long to press the center of the home bar to unfold the on screen keyboard"
+msgstr ""
+"Pygemmys termyn rag tava an kres an barr ter rag lesa an bysowek war-skrin"
+
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
+msgid "short"
+msgstr "berr"
+
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "normal"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
+msgid "long"
+msgstr "hir"
+
+#: src/ui/ms-osk-panel.ui:38
+msgid "Ignore hardware keyboard"
+msgstr "Skonya aswon bysowek kalesweyth"
+
+#: src/ui/ms-osk-panel.ui:39
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr "Mar diskwedhes an bysowek war-skin pan unn bysowek fisegel yw omma"
+
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Menek alhwedhen"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "Mar diskwedhes unn menek an alhwedhen tava lemmyn"
+
+#: src/ui/ms-osk-panel.ui:59
+msgid "Keyboard height in portrait mode"
+msgstr "Ughelder bysowek yn fordh plommwedhek"
+
+#: src/ui/ms-osk-panel.ui:60
+msgid "When the screen is taller than wide"
+msgstr "Pan an skrin yw moy ughel es efan"
+
+#: src/ui/ms-osk-panel.ui:76
+msgid "Keyboard height in landscape mode"
+msgstr "Ughelder bysowek yn fordh gorwelyek"
+
+#: src/ui/ms-osk-panel.ui:77
+msgid "When the screen is wider than tall"
+msgstr "Pan an skrin yw moy efan es ughel"
+
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:182
+msgid "Scaling"
+msgstr "Braster"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "Gwitha braster fisegel kesson"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Whether to keep the OSK's size constant in portrait mode"
+msgstr "Mar gwitha an braster bysowek kesson yn fordh plommwedhek"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "Addya spas gwag a-woles alhwedhennow"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"Mar addya unn arenebedh gwag a-woles an alwedhennow bysowek rag yth yskynna."
+
+#: src/ui/ms-osk-panel.ui:122
+msgid "Text Completion"
+msgstr "Kowlwulyer Tekst"
+
+#: src/ui/ms-osk-panel.ui:125
+msgid "Opportunistic word completion"
+msgstr "Kowlwulyans ger opportunyek"
+
+#: src/ui/ms-osk-panel.ui:126
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "Gallosegi kowlwulyans ger pan an app sinya yth yw gwerek"
+
+#: src/ui/ms-osk-panel.ui:133
+msgid "Toggle via OSK menu"
+msgstr "Dewis dre rol bysowek"
+
+#: src/ui/ms-osk-panel.ui:134
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr "Gasa dewis kowlwulyans ger der an boton rol bysowek"
+
+#: src/ui/ms-osk-panel.ui:140
+msgid "Default Completer"
+msgstr "Kowlwulyer Defowt"
+
+#: src/ui/ms-osk-panel.ui:141
+msgid "The default completion engine to use"
+msgstr "An jynn kowlwulyans defowt rag devnydh"
+
+#: src/ui/ms-osk-panel.ui:152
+msgid "Terminal Layout"
+msgstr "Aray Termynal"
+
+#: src/ui/ms-osk-panel.ui:171
+msgid "Shortcuts"
+msgstr "Kesunyansow Bysowek"
+
+#: src/ui/ms-osk-panel.ui:172
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "An kesunyansow bysowek kavadow yn an barr kesunyansow"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:137
+msgid "Favorites"
+msgstr "Drudh"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Orna Drudh"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "Draylya ha droppya an appys a-woles rag dasaraya dhe appys drudh"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Dasgorra Drudh"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Gorra an rol appys rudh dhe an defowt"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Dasgorra"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Sidhlans Appys Gwayadow"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Gorra Fordh Sidhel Appys"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Diskwedhes appys gwayadow hepken yn an gorwolok"
+
+#: src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "App"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "Helerghellow kavosys vyths"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"Po yma helerghellow vyth war dha devis po yma ungallosegys gans unn ladha-"
+"skwychell."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:276
+msgid "Sensors"
+msgstr "Helerghellow"
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "Lenansow Helerghellow"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "Nester"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "Golow"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "Tuedhder"
+
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:284
+msgid "High Contrast"
+msgstr "Gorthwedh Ughel"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "Gorthwedh Ughel Awtomatek"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "Routys gans an Helerghell Golow Kerghynnek"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "Treudhow krevder golow"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "Gis a wra skwychella dhe gorthwedh ughel a-ugh an treudhow"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "Restrennow son (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "Darnow Ynterfas"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "Diskwedhes kansrans batri"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "Diskwedhes nivel batri kewar y'n pennbarr"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "Avodya bolghow"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr "Na lea darnow ynterfas yn-dann bolghow ha torrvaow"
+
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:117
+msgid "Quick Settings"
+msgstr "Settyansow Uskis"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organize your additional Quick Settings"
+msgstr "Orna dha Settyansow Uskis keworransel"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Dynnargh dhe Settyansow Kellgowser"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Chanjya settyansow avonsys kellgowser"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:31
+msgid "Search"
+msgstr "Hwithrans"
+
+#: src/ui/ms-window.ui:48
+msgid "Search settings"
+msgstr "Settyansow hwithrans"
+
+#: src/ui/ms-window.ui:98
+msgid "Welcome"
+msgstr "Dynnargh"
+
+#: src/ui/ms-window.ui:109
+msgid "Top Bar"
+msgstr "Pennbarr"
+
+#: src/ui/ms-window.ui:118
+msgid "Notches"
+msgstr "Torrvaow"
+
+#: src/ui/ms-window.ui:129
+msgid "Overview"
+msgstr "Gorwolok"
+
+#: src/ui/ms-window.ui:138
+msgid "Filter"
+msgstr "Sidhel"
+
+#: src/ui/ms-window.ui:139 src/ui/ms-window.ui:201
+msgid "Wallpaper"
+msgstr "Paper Fos"
+
+#: src/ui/ms-window.ui:150 src/ui/ms-window.ui:158
+msgid "Feedback"
+msgstr "Dasliv"
+
+#: src/ui/ms-window.ui:160
+msgid "Wakeup"
+msgstr "Dalleth"
+
+#: src/ui/ms-window.ui:161
+msgid "Vibra"
+msgstr "Krenans"
+
+#: src/ui/ms-window.ui:162
+msgid "Haptic"
+msgstr "Toch-Krenans"
+
+#: src/ui/ms-window.ui:163
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:174
+msgid "Compositor"
+msgstr "Olsettyer"
+
+#: src/ui/ms-window.ui:193
+msgid "Lockscreen"
+msgstr "Alwedh-Skrin"
+
+#: src/ui/ms-window.ui:202
+msgid "Shuffle"
+msgstr "Chonsya"
+
+#: src/ui/ms-window.ui:204
+msgid "Password"
+msgstr "Ger-Tremena"
+
+#: src/ui/ms-window.ui:215
+msgid "Convergence"
+msgstr "Keskeveryans"
+
+#: src/ui/ms-window.ui:233
+msgid "On Screen Keyboard"
+msgstr "Bysowek War-Skrin"
+
+#: src/ui/ms-window.ui:241
+msgid "Keyboard"
+msgstr "Bysowek"
+
+#: src/ui/ms-window.ui:242
+msgid "Unfold"
+msgstr "Lesa"
+
+#: src/ui/ms-window.ui:243
+msgid "OSK"
+msgstr "BWS"
+
+#: src/ui/ms-window.ui:244
+msgid "Word Completion"
+msgstr "Kowlwulyans Ger"
+
+#: src/ui/ms-window.ui:255
+msgid "Emergency Alerts"
+msgstr "Alarmow Goredhom"
+
+#: src/ui/ms-window.ui:263 src/ui/ms-window.ui:303
+msgid "Emergency"
+msgstr "Goredhom"
+
+#: src/ui/ms-window.ui:264
+msgid "Cell Broadcast"
+msgstr "Darlesans Kellgowser"
+
+#: src/ui/ms-window.ui:265
+msgid "Danger"
+msgstr "Peryl"
+
+#: src/ui/ms-window.ui:295
+msgid "Experimental features"
+msgstr "Nasyow arbrovel"
+
+#: src/ui/ms-window.ui:304
+msgid "Suspend"
+msgstr "Koska"
+
+#: src/ui/ms-window.ui:305
+msgid "Experimental"
+msgstr "Arbrovel"
+
+#: src/ui/ms-window.ui:316 src/ui/ms-window.ui:324
+msgid "About"
+msgstr "A-Dro"
+
+#: src/ui/ms-window.ui:349
+msgid "_Show Configurable Tweaks"
+msgstr "Diskwedhes Chanjyow _Selyadow"
+
+#: src/ui/ms-window.ui:356
+msgid "_Keyboard Shortcuts"
+msgstr "_Kesunyansow Bysowek"
+
+#: src/ui/ms-window.ui:360
+msgid "_About Mobile Settings"
+msgstr "_A-dro Settyanow Kellgowser"

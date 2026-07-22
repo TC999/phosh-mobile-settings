@@ -1,3 +1,198 @@
+phosh-mobile-settings 0.56.0
+----------------------------
+Released July 2026
+* New panels:
+  * os-updates: Allow atomic OS updates on immutable distros. The
+    currently implemented backend supports systemd-sysupdate and is
+    only enabled when the service is usable.
+* Improve sidebar by using `AdwSidebar` and moving conf-tweaks to their
+  own section.
+* Improved panels:
+  * about: Add image version. This is useful on immutable images like
+    BengalOS to check if everything is up to date.
+  * overview: Allow to re-enable hidden apps. This is useful on immutable
+    distros as apps shiped in the immutable parts can't be uninstalled.
+  * convergence: Support NexDock 2025
+* Unbreak Librem 5 panel so it can be found in search
+* libpms: Allow to add OSK layout that matches the current locale
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/work_items/123
+* Contributors:
+    * Brian Hom
+    * Guido Günther
+    * nicole mikołajczyk
+    * Tomi Lähteenmäki
+    * Yuri Chornoivan
+* UI translations:
+    * Anders Jonsson (sv)
+    * Antonio Marin (ro)
+    * Asier Saratsua Garmendia (eu)
+    * Danial Behzadi (fa)
+    * Daniel Rusek (cs)
+    * Ekaterine Papava (ka)
+    * Hugo Carvalho (pt)
+    * Luiggi R. Cardoso (pt_BR)
+    * Martin (sl)
+    * Rafael Fontenelle (pt_BR)
+    * Ryo Nakano (ja)
+    * Sabri Ünal (tr)
+    * Victoria Niedzielska (pl)
+    * Yaron Shahrabani (he)
+    * Yuri Chornoivan (uk)
+    * burns (pt_BR)
+    * Марко Костић (sr)
+
+phosh-mobile-settings 0.55.0
+----------------------------
+Released May 2026
+* Various conf-tweaks improvements
+* New language panel
+* osk panel: Allow to configure automatic space handling
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/work_items/117
+* Contributors:
+    * Arun Mani J
+    * Guido Günther
+    * Stefan Hansson
+    * nicole mikołajczyk
+* UI translations:
+    * Anders Jonsson (sv)
+    * Antonio Marin (ro)
+    * Christian Kirbach (de)
+    * Danial Behzadi (fa)
+    * Daniel Rusek (cs)
+    * Ekaterine Papava (ka)
+    * Hugo Carvalho (pt)
+    * Jiri Grönroos (fi)
+    * Martin (sl)
+    * Pierre Michel Augustin (ht)
+    * Ryo Nakano (ja)
+    * Sabri Ünal (tr)
+    * Yuri Chornoivan (uk)
+    * nicole mikołajczyk (pl)
+    * Марко Костић (sr)
+
+phosh-mobile-settings 0.54.0
+----------------------------
+Released April 2026
+* feedback-panel: Play sound for voice call media role too
+* Introduce library with common widgets
+* Allow to disable built-in panels for use in non-Phosh systems
+* Add a man page
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/113
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/107
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/106
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/77
+* Contributors:
+    * Evangelos Ribeiro Tzaras
+    * Gotam Gorabh
+    * Guido Günther
+    * Rudra Pratap Singh
+    * Stefan Hansson
+* UI translations:
+    * Asier Saratsua Garmendia (eu)
+    * Balázs Úr (hu)
+    * Baurzhan Muftakhidinov (kk)
+    * Bruce Cowan (en_GB)
+    * Daniel Rusek (cs)
+    * Davide Ferracin (it)
+    * Ekaterine Papava (ka)
+    * Emin Tufan Çetin (tr)
+    * Hugo Carvalho (pt)
+    * Jordi Mas (ca)
+    * Ryo Nakano (ja)
+    * Yaron Shahrabani (he)
+    * Álvaro Burns (pt_BR)
+    * Марко Костић (sr)
+
+phosh-mobile-settings 0.53.0
+----------------------------
+Released February 2026
+* New about panel
+* feedback panel: Give audible feedback when adjusting media role volumes
+* feedback panel: List apps showing notifications in app list too
+* feedback panel: Sort per apps list alphabetically
+* osk panel: Improve shortcuts dialog
+* osk panel: Set landscape sizing flag too
+* Contributors:
+    * Gotam Gorabh
+    * Guido Günther
+    * Rudra Pratap Singh
+    * Tomi Lähteenmäki
+* UI translations:
+    * Anders Jonsson (sv)
+    * Antonio Marin (ro)
+    * Artur S0 (ru)
+    * Danial Behzadi (fa)
+    * Efstathios Iosifidis (el)
+    * Ekaterine Papava (ka)
+    * Flynn Peck (kw)
+    * Juliano de Souza Camargo (pt_BR)
+    * Martin (sl)
+    * Quentin PAGÈS (oc)
+    * Sabri Ünal (tr)
+    * Yuri Chornoivan (uk)
+    * twlvnn kraftwerk (bg)
+
+phosh-mobile-settings 0.52.0
+----------------------------
+Released January 2026
+* Allow `set-panel` to have options. This allows to e.g. open a specific quick
+  settings config dialog via DBus.
+* conf-tweaks: Add sysfs backend
+* Leak fixes and internal cleanups
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/65
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/95
+* Contributors:
+    * Evangelos Ribeiro Tzaras
+    * Guido Günther
+    * Rudra Pratap Singh
+    * Stefan Hansson
+* UI translations:
+    * Anders Jonsson (sv)
+    * Antonio Marin (ro)
+    * Artur S0 (ru)
+    * Asier Saratsua Garmendia (eu)
+    * Danial Behzadi (fa)
+    * Ekaterine Papava (ka)
+    * Emin Tufan Çetin (tr)
+    * Jürgen Benvenuti (de)
+    * Martin (sl)
+    * Rafael Fontenelle (pt_BR)
+    * Yuri Chornoivan (uk)
+
+phosh-mobile-settings 0.51.0
+----------------------------
+Released November 2025
+* feedback panel: Allow to set alarm clock sound when clock app supports it
+* top-bar panel: Show icon for quick settings plugins
+* feedback-panel: Improve role-based audio volume settings
+* conf-tweaks: Better error handling, error reporting and bug fixes
+* conf-tweaks: Add Gtk3Settings
+* Issues fixed:
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/92
+    * https://gitlab.gnome.org/World/Phosh/phosh-mobile-settings/-/issues/56
+* Contributors:
+    * Gotam Gorabh
+    * Guido Günther
+    * Stefan Hansson
+* UI translations:
+    * Anders Jonsson (sv)
+    * Antonio Marin (ro)
+    * Artur S0 (ru)
+    * Danial Behzadi (fa)
+    * Daniel Rusek (cs)
+    * Efstathios Iosifidis (el)
+    * Ekaterine Papava (ka)
+    * Juliano de Souza Camargo (pt_BR)
+    * Martin (sl)
+    * Nathan Follens (nl)
+    * Sabri Ünal (tr)
+    * Yaron Shahrabani (he)
+    * Yuri Chornoivan (uk)
+
 phosh-mobile-settings 0.50.0
 ----------------------------
 Released October 2025
@@ -503,8 +698,8 @@ Released: January 2023
 * Make plugin window scrollable
 * Tidy plugin list
 * Contributors:
-       Andrey Skvortsov
-       Guido Günther
+    * Andrey Skvortsov
+    * Guido Günther
 
 phosh-mobile-settings 0.23.1
 ----------------------------
@@ -523,7 +718,7 @@ Released: September 2022
 * Minor fixes
 * Sync version with phosh
 * Contributors:
-       Guido Günther
+    * Guido Günther
 
 phosh-mobile-settings 0.21.1
 ----------------------------
@@ -531,8 +726,8 @@ Released: September 2022
 * Work around UI overflow
 * Add UPERFECT X Mini lapdock to detected docks
 * Contributors:
-       Guido Günther
-       Kyle Rankin
+    * Guido Günther
+    * Kyle Rankin
 
 phosh-mobile-settings 0.21.0
 ----------------------------
@@ -540,8 +735,8 @@ Released: September 2022
 * Allow to enable/disable lockscreen widgets
 * Fix Librem 5 sensor names
 * Contributors:
-	Guido Günther
-	Sebastian Krzyszkowiak
+    * Guido Günther
+    * Sebastian Krzyszkowiak
 
 phosh-mobile-settings 0.20.0
 ----------------------------
@@ -557,8 +752,8 @@ This is a beta release
 * Add convergence panel
 * Multiple fixes
 * Contributors:
-	Guido Günther
-	Sam Hewitt
+    * Guido Günther
+    * Sam Hewitt
 
 phosh-mobile-settings 0.0.1
 ----------------------------

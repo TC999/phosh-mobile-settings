@@ -1,11 +1,13 @@
 /*
  * Copyright (C) 2022 Purism SPC
+ *               2023-2026 Phosh.mobi e.V.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * Author: Guido Günther <agx@sigxcpu.org>
  */
 
+#include "ms-panel.h"
 #include "ms-plugin-panel.h"
 
 enum {
@@ -25,7 +27,7 @@ typedef struct _MsPluginPanelPrivate {
   char *title;
 } MsPluginPanelPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsPluginPanel, ms_plugin_panel, ADW_TYPE_BIN)
+G_DEFINE_TYPE_WITH_PRIVATE (MsPluginPanel, ms_plugin_panel, MS_TYPE_PANEL)
 
 
 static void

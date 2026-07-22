@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Purism SPC
+ * Copyright (C) 2022, 2026 Purism SPC
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -10,7 +10,7 @@
 
 #include "mobile-settings-config.h"
 
-#include "mobile-settings-application.h"
+#include "ms-application.h"
 #include "ms-convergence-panel.h"
 #include "ms-scale-to-fit-row.h"
 #include "ms-util.h"
@@ -36,6 +36,7 @@ struct _MsConvergencePanel {
   MsPanel              parent;
 
   const MsDock        *dock;
+  MsHead              *head;
   AdwPreferencesGroup *dock_pref_group;
   GtkStack            *dock_stack;
   GSettings           *touch_settings;
@@ -93,6 +94,21 @@ static const MsDock docks[] = {
     .touch_usb_vendor = 0x27c6,
     .touch_usb_id = 0x0818,
   },
+  {
+    /*
+     * Manufacturer: NEX
+     * Model: 9492
+     *
+     * This entry will generically match on all NexDock docks.
+     */
+    .name = "NexDock 2025",
+    .make = "Nexgen Mediatech Inc.,",
+    .model = "NexDock",
+    .serial = NULL,
+
+    .touch_usb_vendor = 0x222a,
+    .touch_usb_id = 0x0001,
+  },
   /* more docks go here */
 };
 
@@ -108,9 +124,9 @@ static const MsDock *
 find_dock (MsHead *head)
 {
   for (guint i = 0; i < G_N_ELEMENTS (docks); i++) {
-    if ((STR_IS_NULL_OR_EMPTY (docks[i].make) || g_strcmp0 (docks[i].make, head->make) == 0) &&
-        (STR_IS_NULL_OR_EMPTY (docks[i].model) || g_strcmp0 (docks[i].model, head->model) == 0) &&
-        (STR_IS_NULL_OR_EMPTY (docks[i].serial) || g_strcmp0 (docks[i].serial, head->serial_number) == 0)) {
+    if ((GM_STR_IS_NULL_OR_EMPTY (docks[i].make) || g_strcmp0 (docks[i].make, head->make) == 0) &&
+        (GM_STR_IS_NULL_OR_EMPTY (docks[i].model) || g_strcmp0 (docks[i].model, head->model) == 0) &&
+        (GM_STR_IS_NULL_OR_EMPTY (docks[i].serial) || g_strcmp0 (docks[i].serial, head->serial_number) == 0)) {
       return &docks[i];
     }
   }
@@ -120,9 +136,9 @@ find_dock (MsHead *head)
 
 
 static gboolean
-touch_mapping_get (GValue *value,
+touch_mapping_get (GValue   *value,
                    GVariant *variant,
-                   gpointer user_data)
+                   gpointer  user_data)
 {
   g_autofree const char **vals = NULL;
   gsize len;
@@ -135,9 +151,9 @@ touch_mapping_get (GValue *value,
   }
 
   /* TODO: what if it's mapped but not to our output? */
-  if  (STR_IS_NULL_OR_EMPTY (vals[0]) &&
-       STR_IS_NULL_OR_EMPTY (vals[1]) &&
-       STR_IS_NULL_OR_EMPTY (vals[2])) {
+  if  (GM_STR_IS_NULL_OR_EMPTY (vals[0]) &&
+       GM_STR_IS_NULL_OR_EMPTY (vals[1]) &&
+       GM_STR_IS_NULL_OR_EMPTY (vals[2])) {
     mapped = FALSE;
   } else {
     mapped = TRUE;
@@ -150,19 +166,22 @@ touch_mapping_get (GValue *value,
 
 
 static GVariant *
-touch_mapping_set (const GValue *value,
+touch_mapping_set (const GValue       *value,
                    const GVariantType *expected_type,
-                   gpointer user_data)
+                   gpointer            user_data)
 {
   MsConvergencePanel *self = MS_CONVERGENCE_PANEL (user_data);
   GVariantBuilder builder;
 
-  g_variant_builder_init(&builder, G_VARIANT_TYPE("as"));
+  g_variant_builder_init (&builder, G_VARIANT_TYPE("as"));
 
   if (g_value_get_boolean (value)) {
     g_variant_builder_add_value (&builder, g_variant_new ("s", self->dock->make));
     g_variant_builder_add_value (&builder, g_variant_new ("s", self->dock->model));
-    g_variant_builder_add_value (&builder, g_variant_new ("s", self->dock->serial));
+    if (GM_STR_IS_NULL_OR_EMPTY (self->dock->serial))
+      g_variant_builder_add_value (&builder, g_variant_new ("s", self->head->serial_number));
+    else
+      g_variant_builder_add_value (&builder, g_variant_new ("s", self->dock->serial));
   } else {
     g_variant_builder_add_value (&builder, g_variant_new ("s", ""));
     g_variant_builder_add_value (&builder, g_variant_new ("s", ""));
@@ -185,6 +204,7 @@ on_head_added (MsConvergencePanel *self,
 
   self->dock = find_dock (head);
   if (self->dock != NULL) {
+    self->head = ms_head_ref (head);
     adw_preferences_group_set_title (self->dock_pref_group, self->dock->name);
     gtk_stack_set_visible_child_name (self->dock_stack, "dock");
     gtk_widget_set_sensitive (GTK_WIDGET (self->map_touch_screen_row),
@@ -224,13 +244,14 @@ on_head_removed (MsConvergencePanel *self,
   gtk_widget_set_sensitive (GTK_WIDGET (self->map_touch_screen_row), FALSE);
   g_clear_pointer (&self->touch_settings, g_object_unref);
   self->dock = NULL;
+  g_clear_pointer (&self->head, ms_head_unref);
 }
 
 
 static void
-on_head_tracker_changed (MsConvergencePanel *self, GParamSpec *spec, MobileSettingsApplication *app)
+on_head_tracker_changed (MsConvergencePanel *self, GParamSpec *spec, MsApplication *app)
 {
-  MsHeadTracker *tracker = mobile_settings_application_get_head_tracker (app);
+  MsHeadTracker *tracker = ms_application_get_head_tracker (app);
   GPtrArray *heads;
 
   if (tracker == NULL)
@@ -262,6 +283,7 @@ ms_convergence_panel_finalize (GObject *object)
 
   g_clear_object (&self->tracker);
   g_clear_object (&self->touch_settings);
+  g_clear_pointer (&self->head, ms_head_unref);
 
   G_OBJECT_CLASS (ms_convergence_panel_parent_class)->finalize (object);
 }
@@ -287,15 +309,14 @@ ms_convergence_panel_class_init (MsConvergencePanelClass *klass)
 static void
 ms_convergence_panel_init (MsConvergencePanel *self)
 {
-  MobileSettingsApplication *app;
+  MsApplication *app;
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  app = MOBILE_SETTINGS_APPLICATION (g_application_get_default ());
+  app = MS_APPLICATION (g_application_get_default ());
   g_signal_connect_swapped (app, "notify::head-tracker",
                             G_CALLBACK (on_head_tracker_changed), self);
-  on_head_tracker_changed(self, NULL,
-                          MOBILE_SETTINGS_APPLICATION (g_application_get_default ()));
+  on_head_tracker_changed(self, NULL, MS_APPLICATION (g_application_get_default ()));
 }
 
 

@@ -11,6 +11,8 @@
 #include "mobile-settings-config.h"
 
 #include "ms-audio-device.h"
+#include "ms-util.h"
+#include "ms-enum-types.h"
 
 /**
  * MsAudioDevice:
@@ -24,6 +26,7 @@ enum {
   PROP_STREAM,
   PROP_ICON_NAME,
   PROP_DESCRIPTION,
+  PROP_ROLE,
   PROP_LAST_PROP
 };
 static GParamSpec *props[PROP_LAST_PROP];
@@ -35,6 +38,7 @@ struct _MsAudioDevice {
   GvcMixerStream *stream;
   char           *icon_name;
   char           *description;
+  MsMediaRole     role;
 };
 G_DEFINE_TYPE (MsAudioDevice, ms_audio_device, G_TYPE_OBJECT)
 
@@ -59,6 +63,9 @@ ms_audio_device_set_property (GObject      *object,
     break;
   case PROP_DESCRIPTION:
     self->description = g_value_dup_string (value);
+    break;
+  case PROP_ROLE:
+    self->role = g_value_get_enum (value);
     break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -88,6 +95,9 @@ ms_audio_device_get_property (GObject    *object,
   case PROP_DESCRIPTION:
     g_value_set_string (value, self->description);
     break;
+  case PROP_ROLE:
+    g_value_set_enum (value, self->role);
+    break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
     break;
@@ -100,6 +110,7 @@ ms_audio_device_finalize (GObject *object)
 {
   MsAudioDevice *self = MS_AUDIO_DEVICE (object);
 
+  g_clear_object (&self->stream);
   g_clear_pointer (&self->icon_name, g_free);
   g_clear_pointer (&self->description, g_free);
 
@@ -136,6 +147,12 @@ ms_audio_device_class_init (MsAudioDeviceClass *klass)
                          NULL,
                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT_ONLY);
 
+  props[PROP_ROLE] =
+    g_param_spec_enum ("role", "", "",
+                       MS_TYPE_MEDIA_ROLE,
+                       MS_MEDIA_ROLE_DEFAULT,
+                       G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT_ONLY);
+
   g_object_class_install_properties (object_class, PROP_LAST_PROP, props);
 }
 
@@ -150,13 +167,15 @@ MsAudioDevice *
 ms_audio_device_new (guint           id,
                      GvcMixerStream *stream,
                      const char     *icon_name,
-                     const char     *description)
+                     const char     *description,
+                     MsMediaRole     role)
 {
   return g_object_new (MS_TYPE_AUDIO_DEVICE,
                        "id", id,
                        "stream", stream,
                        "icon-name", icon_name,
                        "description", description,
+                       "role", role,
                        NULL);
 }
 
@@ -185,4 +204,13 @@ ms_audio_device_get_stream (MsAudioDevice *self)
   g_return_val_if_fail (MS_IS_AUDIO_DEVICE (self), 0);
 
   return self->stream;
+}
+
+
+MsMediaRole
+ms_audio_device_get_role (MsAudioDevice *self)
+{
+  g_return_val_if_fail (MS_IS_AUDIO_DEVICE (self), MS_MEDIA_ROLE_DEFAULT);
+
+  return self->role;
 }

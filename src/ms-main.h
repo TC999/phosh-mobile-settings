@@ -11,7 +11,7 @@
 
 G_BEGIN_DECLS
 
-void ms_init (void);
-void ms_uninit (void);
+void ms_internal_init (void);
+void ms_internal_uninit (void);
 
 G_END_DECLS

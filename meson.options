@@ -1,3 +1,15 @@
 option('tweaks-data-dir',
-       type: 'string', value: '/usr/share/postmarketos-tweaks',
+       type: 'string', value: '',
        description: 'Path at which Configurable Tweaks YAML files will be searched for')
+
+option('introspection', type: 'boolean', value: true,
+       description : 'Build introspection data (requires gobject-introspection)')
+
+option('examples', type: 'boolean', value: false,
+       description: 'Whether to compile the examples')
+
+option('man', type: 'boolean', value: false,
+       description: 'Generate man pages (requires rst2man)')
+
+option('polkit-group', type: 'string', value: '',
+       description: 'Allow users in this group, typically sudo or wheel, to modify system settings like locale without requiring a password')

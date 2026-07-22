@@ -2,19 +2,20 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <template class="MsPanelSwitcher" parent="AdwBin">
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkListBox" id="panels_listbox">
-            <property name="selection-mode">single</property>
-            <signal name="row-activated" handler="on_row_activated" swapped="yes"/>
+    <property name="child">
+      <object class="AdwSidebar" id="sidebar">
+        <signal name="activated" handler="on_activated" swapped="yes"/>
+        <property name="placeholder">
+          <object class="AdwStatusPage">
+            <property name="icon-name">system-search-symbolic</property>
+            <property name="title" translatable="yes">No Matching Panels</property>
+            <property name="description" translatable="yes">Try a different search</property>
             <style>
-              <class name="navigation-sidebar"/>
+              <class name="compact"/>
             </style>
           </object>
-        </child>
+        </property>
       </object>
-    </child>
+    </property>
   </template>
 </interface>

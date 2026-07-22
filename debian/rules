@@ -2,7 +2,13 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-MESON_OPTS=--wrap-mode=default
+MESON_OPTS=--wrap-mode=default -Dtweaks-data-dir=''
+
+ifeq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+  MESON_OPTS+=-Dman=true
+else
+  MESON_OPTS+=-Dman=false
+endif
 
 %:
 	dh $@ --builddirectory=_build

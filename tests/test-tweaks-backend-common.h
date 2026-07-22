@@ -37,7 +37,7 @@ test_get (BackendTestFixture *fixture, gconstpointer unused)
 
   g_assert_nonnull (fixture->backend);
 
-  value = MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->get_value (fixture->backend);
+  value = ms_tweaks_backend_get_value (fixture->backend);
 
   g_assert_nonnull (value);
 
@@ -56,7 +56,7 @@ test_set (BackendTestFixture *fixture, gconstpointer string_value)
 
   g_assert_nonnull (fixture->backend);
 
-  MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->set_value (fixture->backend, value, &error);
+  ms_tweaks_backend_set_value (fixture->backend, value, &error);
 
   g_assert_false (error);
 
@@ -71,7 +71,7 @@ test_remove (BackendTestFixture *fixture, gconstpointer unused)
 
   g_assert_nonnull (fixture->backend);
 
-  MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->set_value (fixture->backend, NULL, &error);
+  ms_tweaks_backend_set_value (fixture->backend, NULL, &error);
 
   g_assert_false (error);
 }

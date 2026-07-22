@@ -1,0 +1,1508 @@
+# Serbian translation for phosh-mobile-settings.
+# Copyright (C) 2026 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# Марко Костић <marko.m.kostic@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2026-06-30 13:38+0000\n"
+"PO-Revision-Date: 2026-06-30 21:26+0200\n"
+"Last-Translator: Марко Костић <marko.m.kostic@gmail.com>\n"
+"Language-Team: Serbian <Serbian>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
+msgid "Mobile Settings"
+msgstr "Подешавања мобилног"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr ""
+"Mobile;Preferences;MobileSettings;Tweaks;Мобилни;Поставке;Подешавања "
+"мобилног;Лицкања;mobilni;postavke;podešavanja mobilnog;lickanja;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Фош подешавања мобилног"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"Ова апликација вам омогућава да подесите неке аспекте Фоша који би иначе "
+"захтевали коришћење командне линије."
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Напредна подешавања за мобилне уређаје који користе Фош"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "Доступне површи"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "Површ композитора"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "Површ повратних података"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:215
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "Критична температура је %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:24
+msgid "Librem 5"
+msgstr "Либрем 5"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:28
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:40
+msgid "Suspend device"
+msgstr "Обустави уређај"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:42
+msgid "Suspend is experimental"
+msgstr "Обустава је експериментална"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:45
+msgid "suspend now"
+msgstr "обустави сада"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:60
+msgid "Temperatures"
+msgstr "Температуре"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:64
+msgid "CPU"
+msgstr "Процесор"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:83
+msgid "GPU"
+msgstr "ГПЈ"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:102
+msgid "VPU"
+msgstr "ВПЈ"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:120
+msgid "Fuel Gauge"
+msgstr "Мерач горива"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:138
+msgid "Battery"
+msgstr "Батерија"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:13
+msgid "Add Layout"
+msgstr "Додај распоред"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17 src/ui/ms-updates-panel.ui:82
+#: src/ui/ms-updates-panel.ui:126
+msgid "Cancel"
+msgstr "Откажи"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Додај"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-lang-panel.ui:14
+#: src/ui/ms-window.ui:318 src/ui/ms-window.ui:326
+msgid "Language"
+msgstr "Језик"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Распореди"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:29
+msgid "No Layouts configured"
+msgstr "Нису подешени распореди"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Више опција…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Помери горе"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Помера доле"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Уклони"
+
+#: libpms/lang/ms-common-language.c:312
+msgid "Other…"
+msgstr "Друго…"
+
+#: libpms/lang/ms-language-chooser.ui:4
+msgid "Select Language"
+msgstr "Изабери језик"
+
+#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:108
+#: src/ui/ms-hidden-apps-dialog.ui:15
+msgid "_Cancel"
+msgstr "От_кажи"
+
+#: libpms/lang/ms-language-chooser.ui:23 src/ui/ms-hidden-apps-dialog.ui:23
+msgid "_Select"
+msgstr "_Изабери"
+
+#: libpms/lang/ms-language-chooser.ui:44
+msgid "Language or country"
+msgstr "Језик или држава"
+
+#: libpms/lang/ms-language-chooser.ui:68
+msgid "No languages found"
+msgstr "Није пронађен ниједан језик"
+
+#: libpms/lang/ms-language-chooser.ui:79
+msgid "More…"
+msgstr "Више…"
+
+#: libpms/lang/ms-util.c:130
+msgid "Today"
+msgstr "Данас"
+
+#: libpms/lang/ms-util.c:134
+msgid "Yesterday"
+msgstr "Јуче"
+
+#. Translators: This is a date format string in the style of "Feb 24".
+#: libpms/lang/ms-util.c:142
+#, no-c-format
+msgid "%b %e"
+msgstr "%e %b"
+
+#. Translators: This is a date format string in the style of "Feb 24, 2013".
+#: libpms/lang/ms-util.c:147
+msgid "%b %e, %Y"
+msgstr "%e %b %Y"
+
+#. TRANSLATORS: This is the datetime format in the style of
+#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
+#. and "Yesterday, 10:10:10 AM"
+#: libpms/lang/ms-util.c:166
+#, c-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: libpms/lang/ms-util.c:186
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d сат"
+msgstr[1] "%d сата"
+msgstr[2] "%d сати"
+msgstr[3] "%d сат"
+
+#: libpms/lang/ms-util.c:187
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d минут"
+msgstr[1] "%d минута"
+msgstr[2] "%d минута"
+msgstr[3] "%d минут"
+
+#: libpms/lang/ms-util.c:188
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d секунд"
+msgstr[1] "%d секунде"
+msgstr[2] "%d секунди"
+msgstr[3] "%d секунд"
+
+#. 5 hours 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:195
+#, c-format
+msgctxt "hours minutes seconds"
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. 5 hours 2 minutes
+#: libpms/lang/ms-util.c:200
+#, c-format
+msgctxt "hours minutes"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 5 hours
+#: libpms/lang/ms-util.c:205
+#, c-format
+msgctxt "hours"
+msgid "%s"
+msgstr "%s"
+
+#. 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:213
+#, c-format
+msgctxt "minutes seconds"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 2 minutes
+#: libpms/lang/ms-util.c:218
+#, c-format
+msgctxt "minutes"
+msgid "%s"
+msgstr "%s"
+
+#. 0 seconds
+#: libpms/lang/ms-util.c:229
+msgid "0 seconds"
+msgstr "0 секунди"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Нешто је пошло наопако: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Потврда идентитета је отказана"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "Јавила се %i грешка приликом чувања"
+msgstr[1] "Јавиле су се %i грешке приликом чувања"
+msgstr[2] "Јавило се %i грешака приликом чувања"
+msgstr[3] "Јавило се %i грешка приликом чувања"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr "Морате се потврдити као администратор да бисте сачували неке поставке"
+
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Не могу да добавим списак порука емитовања у ћелији"
+
+#: src/ms-application.c:37
+msgid "- Manage your mobile settings"
+msgstr "- управљајте вашим подешавањима мобилног"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/ms-application.c:541
+msgid "translator-credits"
+msgstr ""
+"Марко Костић <marko.m.kostic@gmail.com>\n"
+"Превод на српски језик https://гном.срб"
+
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr "Гласност медија"
+
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr "Гласност обавештења"
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Гласност говорног позива"
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr "Гласност звона"
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr "Гласност будилника"
+
+#: src/ms-audio-devices.c:194
+msgid "Emergency Alerts Volume"
+msgstr "Гласност хитних упозорења"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "Порука непознате озбиљности"
+
+#: src/ms-feedback-panel.c:338
+msgid "Sound file does not exist"
+msgstr "Звучна датотека не постоји"
+
+#: src/ms-feedback-panel.c:340
+msgid "Sound file is corrupt"
+msgstr "Звучна датотека је оштећена"
+
+#: src/ms-feedback-panel.c:342
+msgid "Failed to play sound"
+msgstr "Нисам успео да пустим звук"
+
+#: src/ms-feedback-panel.c:381
+#, c-format
+msgid "Playing %s"
+msgstr "Пуштам %s"
+
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:579
+msgid "low"
+msgstr "ниска"
+
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:582
+msgid "normal"
+msgstr "нормална"
+
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:585
+msgid "critical"
+msgstr "критична"
+
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:589
+msgid "none"
+msgstr "ништа"
+
+#: src/ms-feedback-panel.c:1008
+msgid "Mobile Settings Volume Control"
+msgstr "Управљање гласношћу мобилних подешавања"
+
+#: src/ms-lang-panel.c:80
+msgid "Failed to set system locale"
+msgstr "Неуспешно постављање системског локалитета"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Нисам успео да поставим позадину закључаног екрана"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:751
+msgid "Default"
+msgstr "Подразумевано"
+
+#: src/ms-osk-panel.c:752
+msgid "The default completer selected by the OSK"
+msgstr "Подразумевани допуњавач који је изабрао ТНК"
+
+#: src/ms-osk-panel.c:755
+msgid "No information available for this completer"
+msgstr "Нема доступних података за овај допуњавач"
+
+#: src/ms-overview-panel.c:62
+#, c-format
+msgid "%u App Made Visible Again"
+msgid_plural "%u Apps Made Visible Again"
+msgstr[0] "%u програм поново видљив"
+msgstr[1] "%u програма поново видљива"
+msgstr[2] "%u програма поново видљива"
+msgstr[3] "Један програм поново видљив"
+
+#: src/ms-overview-panel.c:102
+msgid "Reset favorites?"
+msgstr "Вратити омиљене?"
+
+#: src/ms-overview-panel.c:105
+msgid "Reset list of favorite applications to the default?"
+msgstr "Вратити списак омиљених програма на подразумевано?"
+
+#: src/ms-overview-panel.c:109
+msgid "_Reset"
+msgstr "В_рати"
+
+#: src/ms-overview-panel.c:364
+msgid "Failed to set wallpaper for overview"
+msgstr "Нисам успео да поставим позадину за преглед"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
+msgid "Normal"
+msgstr "Обично"
+
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
+msgid "Bottom up"
+msgstr "Одоздо нагоре"
+
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
+msgid "Left up"
+msgstr "Лево горе"
+
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
+msgid "Right up"
+msgstr "Десно горе"
+
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
+msgid "Undefined"
+msgstr "Неодређено"
+
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
+msgid "Near"
+msgstr "Близу"
+
+#: src/ms-sensor-panel.c:142
+msgid "Far"
+msgstr "Далеко"
+
+#: src/ms-sensor-panel.c:260
+msgid "Updating…"
+msgstr "Освежавам…"
+
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
+msgid "Not available"
+msgstr "Није доступно"
+
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Није доступно"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Није доступно"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:130
+msgid "Custom"
+msgstr "Произвољно"
+
+#: src/ms-sound-row.c:311
+msgid "Choose sound file"
+msgstr "Изаберите звучну датотеку"
+
+#. Translators: %s is a OS version number like 0.20260614
+#: src/ms-updates-panel.c:151
+#, c-format
+msgid "Update to %s"
+msgstr "Ажурирај на %s"
+
+#: src/ms-updates-panel.c:184 src/ms-updates-panel.c:220
+#, c-format
+msgid "OS update failed: %s"
+msgstr "Ажурирање ОС-а није успело: %s"
+
+#: src/ms-updates-panel.c:270
+#, c-format
+msgid "Canceling OS update failed: %s"
+msgstr "Отказивање ажурирања ОС-а није успело: %s"
+
+#: src/ms-updates-panel.c:333
+msgid "OS Update already in progress"
+msgstr "Ажурирање ОС-а је већ у току"
+
+#. Translators %s is an os version number like 0.20260614
+#: src/ms-updates-panel.c:341
+#, c-format
+#| msgid "Updating…"
+msgid "Updating to %s…"
+msgstr "Ажурирам на %s…"
+
+#: src/ms-updates-panel.c:361
+msgid "OS update in progress"
+msgstr "Ажурирање ОС-а у току"
+
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:170
+msgid "Full"
+msgstr "Потпуно"
+
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:173
+msgid "Quiet"
+msgstr "Тихо"
+
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:176
+msgid "Silent"
+msgstr "Утишано"
+
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Изаберите позадину"
+
+#: src/ms-window.c:131
+#| msgid "_Show Configurable Tweaks"
+msgid "Configurable Tweaks"
+msgstr "Подесива лицкања"
+
+#: src/ms-window.c:182
+msgid "Device"
+msgstr "Уређај"
+
+#: src/ui/ms-about-panel.ui:19
+msgid "Phosh logo"
+msgstr "Фошов лого"
+
+#: src/ui/ms-about-panel.ui:30
+msgid "Phosh Version"
+msgstr "Издање Фоша"
+
+#: src/ui/ms-about-panel.ui:38
+msgid "Operating System"
+msgstr "Оперативни систем"
+
+#: src/ui/ms-about-panel.ui:46
+#| msgid "Operating System"
+msgid "Operating System Version"
+msgstr "Издање оперативног система"
+
+#: src/ui/ms-about-panel.ui:54
+msgid "Hardware Model"
+msgstr "Модел хардвера"
+
+#: src/ui/ms-about-panel.ui:66
+msgid "Support Phosh"
+msgstr "Подржите Фош"
+
+#: src/ui/ms-about-panel.ui:67
+msgid "Your donations make our work possible"
+msgstr "Ваше донације омогућавају наш рад"
+
+#: src/ui/ms-about-panel.ui:70
+msgid "D_onate"
+msgstr "Д_онирај"
+
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "Не могу да примим упозорења"
+
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Не могу да примим хитна упозорења на овом уређају јер није откривен "
+"употребљив мобилни модем."
+
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "Хитна и државна упозорења"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "Упозорења о екстремним претњама"
+
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Прикажи упозорења за екстремне претње по живот и безбедност"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "Упозорења о озбиљним претњама"
+
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Прикажи упозорења за озбиљне претње по живот и безбедност"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "Упозорења о јавној безбедности"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr ""
+"Прикажи препоручене радње које треба предузети у ситуацијама са ризиком по "
+"безбедност"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "Пробна упозорења"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "Прикажи периодичне поруке за тестирање система упозоравања"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "„Пронађи ме“ упозорења"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "Прикажи поруке о хитним случајевима отмице деце"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Историјат хитних и државних упозорења"
+
+#: src/ui/ms-alerts-panel.ui:82
+msgid "No emergency alerts yet"
+msgstr "За сада нема хитних упозорења"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Јачина звука"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "Смањивање величине покренутих програма"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr "Ово укључите само за неисправне програме који не стају на екран"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "Смањи величину свих програма"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr ""
+"Присилно смањи величину свих програма. Ово користите само као последње "
+"решење."
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "Смањи величину свих програма"
+
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
+msgid "Enabled"
+msgstr "Укључено"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "Није откривена ниједна позната прикључна станица"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "Мапирај уграђени екран на додир"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Укључено"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "Експерименталне могућности"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "Могућности које се још увек не сматрају потпуно стабилним"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "Хитни позиви"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"Омогући хитне позиве. Ово укључите само ако сте сигурни да то ради код вашег "
+"пружаоца услуга."
+
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Укључено"
+
+#: src/ui/ms-features-panel.ui:32
+msgid "Enable suspend via the system menu"
+msgstr "Омогући обуставу преко системског изборника"
+
+#: src/ui/ms-features-panel.ui:34
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"Ово укључите само ако сте свесни ограничења као што су губитак везе за "
+"податке или пропуштени аларми"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Укључено"
+
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Подешавања звука"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Пуштај звук при подешавању клизача јачине"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Feedback Settings"
+msgstr "Подешавања одзива"
+
+#: src/ui/ms-feedback-panel.ui:36
+msgid "Feedback profile"
+msgstr "Профил одзива"
+
+#: src/ui/ms-feedback-panel.ui:37
+msgid "The global maximum feedback profile"
+msgstr "Општи највећи профил одзива"
+
+#: src/ui/ms-feedback-panel.ui:52
+msgid "Prefer flash"
+msgstr "Предност блицу"
+
+#: src/ui/ms-feedback-panel.ui:53
+msgid "Prefer camera flash over status LED when available"
+msgstr "Дај предност блицу фото-апарата над ЛЕД стањем када је доступан"
+
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Утишај притиском на дугме јачине звука"
+
+#: src/ui/ms-feedback-panel.ui:60
+msgid ""
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
+msgstr ""
+"Када је закључано, стави телефон у нечујни режим при притиску на дугме за "
+"смањивање јачине звука код долазних позива"
+
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:66
+msgid "Haptic strength"
+msgstr "Јачина тактилног одзива"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Проценат највеће јачине тактилног одзива"
+
+#: src/ui/ms-feedback-panel.ui:86
+msgid "Per Application settings"
+msgstr "Подешавања по апликацији"
+
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:161
+msgid "Sounds"
+msgstr "Звукови"
+
+#: src/ui/ms-feedback-panel.ui:100
+msgid "The sound to use for certain events"
+msgstr "Звук који се користи за одређене догађаје"
+
+#: src/ui/ms-feedback-panel.ui:114
+msgid "Phone Calls"
+msgstr "Телефонски позиви"
+
+#: src/ui/ms-feedback-panel.ui:126
+msgid "SMS"
+msgstr "СМС"
+
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
+msgstr "Брзе поруке"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Будилник"
+
+#: src/ui/ms-feedback-panel.ui:162
+msgid "Screen Wakeup"
+msgstr "Буђење екрана"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "Notification urgency that lights up the screen"
+msgstr "Хитност обавештења која пали екран"
+
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr "Категорије обавештења које буде екран независно од њихове хитности"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "Calls"
+msgstr "Позиви"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "Опште обавештење о звучном или видео позиву"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "Device events"
+msgstr "Догађаји уређаја"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "Опште обавештење везано за уређај"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "Е-пошта"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "Опште обавештење везано за е-пошту"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr "Опште обавештење везано за брзе поруке"
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr "Мрежни догађаји"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr "Опште мрежно обавештење"
+
+#. Translators: "presence change" means coming online or going offline,
+#. like in an instant messenger.
+#: src/ui/ms-feedback-panel.ui:223
+msgid "Presence changes"
+msgstr "Промене присутности"
+
+#: src/ui/ms-feedback-panel.ui:224
+msgid "A generic presence change notification"
+msgstr "Опште обавештење о промени присутности"
+
+#: src/ui/ms-feedback-panel.ui:230
+msgid "File transfers"
+msgstr "Преноси датотека"
+
+#: src/ui/ms-feedback-panel.ui:231
+msgid "A generic file transfer or download notification"
+msgstr "Опште обавештење о преносу или преузимању датотеке"
+
+#: src/ui/ms-hidden-app-row.ui:5 src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "Програм"
+
+#: src/ui/ms-hidden-apps-dialog.ui:4
+msgid "Hidden Apps"
+msgstr "Скривени програми"
+
+#: src/ui/ms-hidden-apps-dialog.ui:83
+msgid "No Apps are Currently Hidden"
+msgstr "Ниједан програм није скривен тренутно"
+
+#: src/ui/ms-lang-panel.ui:15
+msgid "The language of the user interface"
+msgstr "Језик корисничког прочеља"
+
+#: src/ui/ms-lang-panel.ui:18
+msgid "_Language"
+msgstr "_Језик"
+
+#: src/ui/ms-lang-panel.ui:45
+msgid "Language change requires logout or restart"
+msgstr "Промена језика захтева одјаву или поновно покретање"
+
+#: src/ui/ms-lang-panel.ui:46
+msgid "Logout"
+msgstr "Одјави се"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Locking and unlocking"
+msgstr "Закључавање и откључавање"
+
+#: src/ui/ms-lockscreen-panel.ui:18
+msgid "Shuffle keypad"
+msgstr "Насумична тастатура"
+
+#: src/ui/ms-lockscreen-panel.ui:19
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "Да ли да се насумично распореде бројеви на тастатури"
+
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Захтевај потврду идентитета за откључавање"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr "Захтевај куцање ПИН-а или лозинке за откључавање уређаја"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Застој аутоматског закључавања екрана"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Секунде од гашења екрана до закључавања екрана"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:94
+msgid "Background"
+msgstr "Позадина"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:100
+msgid "_Select Wallpaper…"
+msgstr "_Изабери позадину…"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:112
+msgid "Use wallpaper"
+msgstr "Користи позадину"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:113
+msgid "Whether to show a colorful wallpaper"
+msgstr "Да ли да прикаже обојену позадину"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:205
+msgid "Widgets"
+msgstr "Елементи"
+
+#: src/ui/ms-lockscreen-panel.ui:80
+msgid "Additional widgets for the lock screen"
+msgstr "Додатни елементи за екран закључавања"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:168
+msgid "Add Shortcut"
+msgstr "Додај пречицу"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "Изаберите измењиваче пречице"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "Изаберите тастер пречице"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "Унесите тастер пречице"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Укуцајте тастер као што су слова (нпр. C или V), итд."
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "Тастер _пречице"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+msgid "Shortcut Preview"
+msgstr "Преглед пречице"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "_Омогући тастатуру на екрану"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "Да ли да прикаже тастатуру на екрану када је потребна"
+
+#: src/ui/ms-osk-panel.ui:20
+msgid "Unfold long-press"
+msgstr "Размотај дугим притиском"
+
+#: src/ui/ms-osk-panel.ui:21
+msgid ""
+"How long to press the center of the home bar to unfold the on screen keyboard"
+msgstr ""
+"Колико дуго треба притиснути средину почетне траке за размотавање екранске "
+"тастатуре"
+
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:26
+msgid "short"
+msgstr "кратко"
+
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "обично"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:30
+msgid "long"
+msgstr "дуго"
+
+#: src/ui/ms-osk-panel.ui:38
+msgid "Ignore hardware keyboard"
+msgstr "Занемари хардверску тастатуру"
+
+#: src/ui/ms-osk-panel.ui:39
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr ""
+"Да ли да се прикаже тастатура на екрану када је присутна физичка тастатура"
+
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Искачући прозор показатеља тастера"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr "Да ли да се прикаже искок који показује тренутно притиснути тастер"
+
+#: src/ui/ms-osk-panel.ui:59
+msgid "Keyboard height in portrait mode"
+msgstr "Висина тастатуре у усправном режиму"
+
+#: src/ui/ms-osk-panel.ui:60
+msgid "When the screen is taller than wide"
+msgstr "Када је екран виши него што је широк"
+
+#: src/ui/ms-osk-panel.ui:76
+msgid "Keyboard height in landscape mode"
+msgstr "Висина тастатуре у положеном режиму"
+
+#: src/ui/ms-osk-panel.ui:77
+msgid "When the screen is wider than tall"
+msgstr "Када је екран шири него што је висок"
+
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:184
+msgid "Scaling"
+msgstr "Промена величине"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "Задржи физичку величину константном"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr ""
+"Осигурајте да је екранска тастатура довољно велика на високим резолуцијама "
+"екрана"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "Додај празан простор испод тастера"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"Да ли да се дода празна област испод тастера екранске тастатуре како би се "
+"померила нагоре."
+
+#: src/ui/ms-osk-panel.ui:122
+msgid "Text Completion"
+msgstr "Довршавање текста"
+
+#: src/ui/ms-osk-panel.ui:125
+msgid "Opportunistic word completion"
+msgstr "Пригодно довршавање речи"
+
+#: src/ui/ms-osk-panel.ui:126
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "Омогући довршавање речи када програм укаже да је то корисно"
+
+#: src/ui/ms-osk-panel.ui:133
+msgid "Toggle via OSK menu"
+msgstr "Промени стање преко менија екранске тастатуре"
+
+#: src/ui/ms-osk-panel.ui:134
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr "Дозволи промену стања довршавања речи преко дугмета менија тастатуре"
+
+#: src/ui/ms-osk-panel.ui:140
+msgid "Default Completer"
+msgstr "Подразумевани довршавач"
+
+#: src/ui/ms-osk-panel.ui:141
+msgid "The default completion engine to use"
+msgstr "Подразумевани мотор за довршавање који се користи"
+
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:150
+msgid "Handle space around punctuation characters"
+msgstr "Рукуј размаком око интерпункцијских знакова"
+
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:152
+msgid ""
+"This also swaps the space and punctuation characters after word completion"
+msgstr "Ово такође мења размак и интерпункцијске знакове након довршавања речи"
+
+#: src/ui/ms-osk-panel.ui:160
+msgid "Terminal Layout"
+msgstr "Распоред терминала"
+
+#: src/ui/ms-osk-panel.ui:179
+msgid "Shortcuts"
+msgstr "Пречице"
+
+#: src/ui/ms-osk-panel.ui:180
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "Пречице доступне у траци са пречицама"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:139
+msgid "Favorites"
+msgstr "Омиљене"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Организуј омиљене"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr ""
+"Превуците и пустите програме испод да бисте преуредили ваше омиљене програме"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Врати омиљене"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Врати списак омиљених програма на подразумевано"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Поново постави"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "App Filtering and Hiding"
+msgstr "Филтрирање и сакривање програма"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Подеси режим филтрирања програма"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Прикажи само мобилне програме у прегледу"
+
+#: src/ui/ms-overview-panel.ui:74
+msgid "_Manage Hidden Apps"
+msgstr "Управљај сакривеним програ_мима"
+
+#: src/ui/ms-overview-panel.ui:75
+msgid "Make apps you disabled in the overview visible again"
+msgstr "Учините онемогућене програме видљивим у прегледу поново"
+
+#: src/ui/ms-panel-switcher.ui:11
+msgid "No Matching Panels"
+msgstr "Нема подударних површи"
+
+#: src/ui/ms-panel-switcher.ui:12
+msgid "Try a different search"
+msgstr "Покушајте другачију претрагу"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "Нису пронађени сензори"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"Или нема сензора инсталираних на вашем уређају или су онемогућени прекидачем."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:278
+msgid "Sensors"
+msgstr "Сензори"
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "Очитавања сензора"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "Близина"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "Светлост"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "Усмерење"
+
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:286
+msgid "High Contrast"
+msgstr "Велики контраст"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "Самостални велики контраст"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "Контролише сензор осветљености окружења"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "Праг интензитета светлости"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "Тема ће прећи на велики контраст изнад прага"
+
+#: src/ui/ms-sound-row.ui:33
+msgid "Toggle Play"
+msgstr "Окините пуштање"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "Звучне датотеке (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "Елементи корисничког прочеља"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "Прикажи проценат батерије"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "Прикажи тачан ниво напуњености у горњој траци"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "Избегавај урезе"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr "Не постављај елементе корисничког прочеља испод уреза и исечака екрана"
+
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:119
+msgid "Quick Settings"
+msgstr "Брза подешавања"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organize your additional Quick Settings"
+msgstr "Организујте ваша додатна брза подешавања"
+
+#: src/ui/ms-updates-panel.ui:12
+msgid "OS updates require a system restart"
+msgstr "Ажурирања ОС-а захтевају поновно покретање"
+
+#: src/ui/ms-updates-panel.ui:13
+msgid "Restart"
+msgstr "Поново покрени"
+
+#: src/ui/ms-updates-panel.ui:30
+msgid "Everything up to date"
+msgstr "Све је ажурно"
+
+#: src/ui/ms-updates-panel.ui:31
+msgid "There are no OS updates available"
+msgstr "Нема доступних ажурирања ОС-а"
+
+#: src/ui/ms-updates-panel.ui:42
+#| msgctxt "proximity sensor data"
+#| msgid "Not available"
+msgid "Updates available"
+msgstr "Ажурирања су доступна"
+
+#: src/ui/ms-updates-panel.ui:43
+msgid "There are OS updates available"
+msgstr "Доступна су ажурирања ОС-а"
+
+#: src/ui/ms-updates-panel.ui:65
+msgid "Fetching OS update…"
+msgstr "Добављам ажурирање ОС-а…"
+
+#: src/ui/ms-updates-panel.ui:109
+msgid "Installing OS update…"
+msgstr "Инсталирам ажурирање ОС-а…"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Добро дошли у подешавања мобилног"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Лицкајте напредна подешавања мобилног"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:32
+msgid "Search"
+msgstr "Потражи"
+
+#. Translators: Placeholder text for the search bar input
+#: src/ui/ms-window.ui:50
+msgid "Search settings"
+msgstr "Подешавања претраге"
+
+#: src/ui/ms-window.ui:100
+msgid "Welcome"
+msgstr "Добро дошли"
+
+#: src/ui/ms-window.ui:111
+msgid "Top Bar"
+msgstr "Горња трака"
+
+#: src/ui/ms-window.ui:120
+msgid "Notches"
+msgstr "Урези"
+
+#: src/ui/ms-window.ui:131
+msgid "Overview"
+msgstr "Преглед"
+
+#: src/ui/ms-window.ui:140
+msgid "Filter"
+msgstr "Филтер"
+
+#: src/ui/ms-window.ui:141 src/ui/ms-window.ui:203
+msgid "Wallpaper"
+msgstr "Позадина"
+
+#: src/ui/ms-window.ui:152 src/ui/ms-window.ui:160
+msgid "Feedback"
+msgstr "Повратни подаци"
+
+#: src/ui/ms-window.ui:162
+msgid "Wakeup"
+msgstr "Буђење"
+
+#: src/ui/ms-window.ui:163
+msgid "Vibra"
+msgstr "Вибра"
+
+#: src/ui/ms-window.ui:164
+msgid "Haptic"
+msgstr "Тактилни"
+
+#: src/ui/ms-window.ui:165
+msgid "LED"
+msgstr "ЛЕД"
+
+#: src/ui/ms-window.ui:176
+msgid "Compositor"
+msgstr "Композитор"
+
+#: src/ui/ms-window.ui:195
+msgid "Lockscreen"
+msgstr "Закључани екран"
+
+#: src/ui/ms-window.ui:204
+msgid "Shuffle"
+msgstr "Насумично"
+
+#: src/ui/ms-window.ui:206
+msgid "Password"
+msgstr "Лозинка"
+
+#: src/ui/ms-window.ui:217
+msgid "Convergence"
+msgstr "Конвергенција"
+
+#: src/ui/ms-window.ui:235
+msgid "On Screen Keyboard"
+msgstr "Тастатура на екрану"
+
+#: src/ui/ms-window.ui:243
+msgid "Keyboard"
+msgstr "Тастатура"
+
+#: src/ui/ms-window.ui:244
+msgid "Unfold"
+msgstr "Размотај"
+
+#: src/ui/ms-window.ui:245
+msgid "OSK"
+msgstr "ТНК"
+
+#: src/ui/ms-window.ui:246
+msgid "Word Completion"
+msgstr "Довршавање речи"
+
+#: src/ui/ms-window.ui:257
+msgid "Emergency Alerts"
+msgstr "Хитна упозорења"
+
+#: src/ui/ms-window.ui:265 src/ui/ms-window.ui:305
+msgid "Emergency"
+msgstr "Хитни позив"
+
+#: src/ui/ms-window.ui:266
+msgid "Cell Broadcast"
+msgstr "Ћелијско емитовање"
+
+#: src/ui/ms-window.ui:267
+msgid "Danger"
+msgstr "Опасност"
+
+#: src/ui/ms-window.ui:297
+msgid "Experimental features"
+msgstr "Експерименталне могућности"
+
+#: src/ui/ms-window.ui:306
+msgid "Suspend"
+msgstr "Обустави"
+
+#: src/ui/ms-window.ui:307
+msgid "Experimental"
+msgstr "Експериментално"
+
+#: src/ui/ms-window.ui:327
+msgid "Locale"
+msgstr "Локалитет"
+
+#: src/ui/ms-window.ui:338
+msgid "OS Updates"
+msgstr "Ажурирања ОС-а"
+
+#: src/ui/ms-window.ui:347
+msgid "Updates"
+msgstr "Ажурирања"
+
+#: src/ui/ms-window.ui:359 src/ui/ms-window.ui:367
+msgid "About"
+msgstr "О програму"
+
+#: src/ui/ms-window.ui:392
+msgid "_Show Configurable Tweaks"
+msgstr "_Прикажи подесива лицкања"
+
+#: src/ui/ms-window.ui:399
+msgid "_Keyboard Shortcuts"
+msgstr "_Пречице тастатуре"
+
+#: src/ui/ms-window.ui:403
+msgid "_About Mobile Settings"
+msgstr "_О подешавањима мобилног"
+
+#: src/ui/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Опште"
+
+#: src/ui/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Прикажи пречице"
+
+#: src/ui/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Претрага"
+
+#: src/ui/shortcuts-dialog.ui:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Изађи"
+
+#~ msgid "Mobile App Filtering"
+#~ msgstr "Филтрирање мобилних програма"

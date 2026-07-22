@@ -1,0 +1,1225 @@
+# Kazakh translation for phosh-mobile-settings.
+# Copyright (C) 2026 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2026-03-25 10:53+0000\n"
+"PO-Revision-Date: 2026-03-31 21:06+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
+msgid "Mobile Settings"
+msgstr "Мобильді баптаулар"
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;"
+msgstr "Мобильді;Баптаулар;MobileSettings;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Phosh мобильді баптаулары"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"Бұл қолданба Phosh-тың кейбір аспектілерін баптауға мүмкіндік береді, "
+"әйтпесе олар үшін командалық жолды қолдану керек болар еді."
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Phosh қолданатын мобильді құрылғыларға арналған кеңейтілген баптаулар"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "Қолжетімді панельдер"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "Композитор панелі"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "Кері байланыс панелі"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:214
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "Критикалық температура: %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate
+#. it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:17
+msgid "Librem 5"
+msgstr "Librem 5"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:21
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:33
+msgid "Suspend device"
+msgstr "Құрылғыны күту режиміне өткізу"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:35
+msgid "Suspend is experimental"
+msgstr "Күту режимі эксперименталды күйде"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:38
+msgid "suspend now"
+msgstr "қазір күту режиміне өту"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:53
+msgid "Temperatures"
+msgstr "Температуралар"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:57
+msgid "CPU"
+msgstr "Орталық процессор"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:76
+msgid "GPU"
+msgstr "Графикалық процессор"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:95
+msgid "VPU"
+msgstr "Видеопроцессор"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:113
+msgid "Fuel Gauge"
+msgstr "Заряд деңгейін өлшегіш"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:131
+msgid "Battery"
+msgstr "Батарея"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard
+#. layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:14
+msgid "Add Layout"
+msgstr "Жайманы қосу"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17
+msgid "Cancel"
+msgstr "Бас тарту"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Қосу"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40
+msgid "Language"
+msgstr "Тіл"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Жаймалар"
+
+#. Translators: Message displayed when there are no keyboard layouts
+#. configured
+#: libpms/ms-osk-layout-prefs.ui:30
+msgid "No Layouts configured"
+msgstr "Бапталған жаймалар жоқ"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Қосымша опциялар…"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Жоғары жылжыту"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Төмен жылжыту"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Өшіру"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Бірдеңе дұрыс болмады: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Аутентификациядан бас тартылды"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "Сақтау кезінде %i қате орын алды"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
+msgid "You need to authenticate as administrator to save some settings"
+msgstr ""
+"Кейбір баптауларды сақтау үшін әкімші ретінде аутентификациядан өтуіңіз "
+"керек"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Жалпы"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Жарлықтарды көрсету"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Шығу"
+
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Ұялы хабар тарату хабарламаларының тізімін алу мүмкін болмады"
+
+#: src/ms-application.c:37
+msgid "- Manage your mobile settings"
+msgstr "- Мобильді баптауларды басқару"
+
+#. Translators: Replace "translator-credits" with your names, one name per
+#. line
+#: src/ms-application.c:511
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr "Медиа дыбыс деңгейі"
+
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr "Хабарландырудың дыбыс деңгейі"
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Дауыстық қоңырау дыбыс деңгейі"
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr "Қоңырау үнінің дыбыс деңгейі"
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr "Оятар дыбыс деңгейі"
+
+#: src/ms-audio-devices.c:194
+msgid "Emergency Alerts Volume"
+msgstr "Төтенше хабарламалар дыбыс деңгейі"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "Маңыздылығы белгісіз хабарлама"
+
+#: src/ms-feedback-panel.c:338
+msgid "Sound file does not exist"
+msgstr "Дыбыс файлы жоқ"
+
+#: src/ms-feedback-panel.c:340
+msgid "Sound file is corrupt"
+msgstr "Дыбыс файлы зақымдалған"
+
+#: src/ms-feedback-panel.c:342
+msgid "Failed to play sound"
+msgstr "Дыбысты ойнату сәтсіз аяқталды"
+
+#: src/ms-feedback-panel.c:381
+#, c-format
+msgid "Playing %s"
+msgstr "%s ойнатылуда"
+
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:579
+msgid "low"
+msgstr "төмен"
+
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:582
+msgid "normal"
+msgstr "қалыпты"
+
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:585
+msgid "critical"
+msgstr "критикалық"
+
+#. Translators: "none" is the default for notifications with no specified
+#. importance
+#: src/ms-feedback-panel.c:589
+msgid "none"
+msgstr "жоқ"
+
+#: src/ms-feedback-panel.c:1008
+msgid "Mobile Settings Volume Control"
+msgstr "Мобильді баптаулар дыбыс деңгейін басқару"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Құлыптау экранының тұсқағазын орнату сәтсіз аяқталды"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:748
+msgid "Default"
+msgstr "Бастапқы"
+
+#: src/ms-osk-panel.c:749
+msgid "The default completer selected by the OSK"
+msgstr "Экрандағы пернетақта таңдаған әдепкі аяқтаушы"
+
+#: src/ms-osk-panel.c:752
+msgid "No information available for this completer"
+msgstr "Бұл аяқтаушы туралы ақпарат жоқ"
+
+#: src/ms-overview-panel.c:66
+msgid "Reset favorites?"
+msgstr "Таңдаулыларды тастау керек пе?"
+
+#: src/ms-overview-panel.c:69
+msgid "Reset list of favorite applications to the default?"
+msgstr "Таңдаулы қолданбалар тізімін бастапқы күйіне қайтару керек пе?"
+
+#: src/ms-overview-panel.c:72
+msgid "_Cancel"
+msgstr "Ба_с тарту"
+
+#: src/ms-overview-panel.c:73
+msgid "_Reset"
+msgstr "Қалпына келті_ру"
+
+#: src/ms-overview-panel.c:328
+msgid "Failed to set wallpaper for overview"
+msgstr "Шолу үшін тұсқағазды орнату сәтсіз аяқталды"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
+msgid "Normal"
+msgstr "Қалыпты"
+
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
+msgid "Bottom up"
+msgstr "Төменнен жоғары"
+
+#. Translators: "Left up" indicates the orientation of a device with left side
+#. up
+#: src/ms-sensor-panel.c:99
+msgid "Left up"
+msgstr "Солдан жоғары"
+
+#. Translators: "Right up" indicates the orientation of a device with right
+#. side up
+#: src/ms-sensor-panel.c:102
+msgid "Right up"
+msgstr "Оңнан жоғары"
+
+#. Translators: "Undefined" is shown when the orientation of the device is not
+#. recognized
+#: src/ms-sensor-panel.c:105
+msgid "Undefined"
+msgstr "Анықталмаған"
+
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
+msgid "Near"
+msgstr "Жақын"
+
+#: src/ms-sensor-panel.c:142
+msgid "Far"
+msgstr "Алыс"
+
+#: src/ms-sensor-panel.c:260
+msgid "Updating…"
+msgstr "Жаңартылуда…"
+
+#. Translators: "Not available" indicates that the proximity sensor data is
+#. unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
+msgid "Not available"
+msgstr "Қолжетімді емес"
+
+#. Translators: "Not available" indicates that the light sensor data is
+#. unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Қолжетімді емес"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data
+#. is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Қолжетімді емес"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:130
+msgid "Custom"
+msgstr "Таңдауыңызша"
+
+#: src/ms-sound-row.c:311
+msgid "Choose sound file"
+msgstr "Дыбыс файлын таңдау"
+
+#. Translators: "Full" represents the feedback profile with maximum haptic,
+#. led and sounds
+#: src/ms-util.c:170
+msgid "Full"
+msgstr "Толық"
+
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:173
+msgid "Quiet"
+msgstr "Тыныш"
+
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:176
+msgid "Silent"
+msgstr "Дыбыссыз"
+
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Тұсқағазды таңдау"
+
+#: src/ms-window.c:146
+msgid "Device"
+msgstr "Құрылғы"
+
+#: src/ui/ms-about-panel.ui:18
+msgid "Phosh logo"
+msgstr "Phosh логотипі"
+
+#: src/ui/ms-about-panel.ui:29
+msgid "Phosh Version"
+msgstr "Phosh нұсқасы"
+
+#: src/ui/ms-about-panel.ui:37
+msgid "Operating System"
+msgstr "Операциялық жүйе"
+
+#: src/ui/ms-about-panel.ui:45
+msgid "Hardware Model"
+msgstr "Аппараттық модель"
+
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "Хабарламаларды алу мүмкін емес"
+
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Жұмыс істейтін ұялы модем табылмағандықтан, бұл құрылғыда төтенше жағдай "
+"хабарламаларын алу мүмкін емес."
+
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "Төтенше жағдайлар және мемлекеттік хабарламалар"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "Өте қауіпті қатерлер туралы хабарламалар"
+
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr ""
+"Өмірге және қауіпсіздікке өте қауіпті қатерлер туралы хабарламаларды көрсету"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "Ауыр қатерлер туралы хабарламалар"
+
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Өмірге және қауіпсіздікке ауыр қатерлер туралы хабарламаларды көрсету"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "Қоғамдық қауіпсіздік хабарламалары"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr ""
+"Қауіпсіздікке қатер төнетін жағдайларда ұсынылатын әрекеттерді көрсету"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "Тесттік хабарламалар"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "Хабарлау жүйесін тексеру үшін мерзімді хабарламаларды көрсету"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "Amber хабарламалары"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "Балаларды ұрлау төтенше жағдайлары туралы хабарламаларды көрсету"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Төтенше жағдайлар және мемлекеттік хабарламалар тарихы"
+
+#: src/ui/ms-alerts-panel.ui:82
+msgid "No emergency alerts yet"
+msgstr "Төтенше жағдайлар хабарламалары әлі жоқ"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Дыбыс деңгейі"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "Орындалып жатқан қолданбалардың масштабын кішірейту"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr ""
+"Бұны тек экранға сыймайтын, дұрыс жасалмаған қолданбалар үшін іске қосыңыз"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "Барлық қолданбалардың масштабын кішірейту"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr ""
+"Барлық қолданбалардың масштабын мәжбүрлі түрде кішірейту. Бұны тек соңғы "
+"шара ретінде қолданыңыз."
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "Барлық қолданбалар масштабын кішірейту"
+
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
+msgid "Enabled"
+msgstr "Іске қосылған"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "Белгілі док-станциялар табылған жоқ"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "Кірістірілген сенсорлық экранды сәйкестендіру"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Іске қосылған"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "Эксперименталды мүмкіндіктер"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "Әлі толық тұрақты деп танылмаған мүмкіндіктер"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "Төтенше жағдай қоңыраулары"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"Төтенше жағдай қоңырауларын іске қосу. Бұны тек операторыңызбен дұрыс жұмыс "
+"істейтініне көз жеткізсеңіз ғана қосыңыз."
+
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Іске қосылған"
+
+#: src/ui/ms-features-panel.ui:32
+msgid "Enable suspend via the system menu"
+msgstr "Жүйелік мәзір арқылы күту режиміне өтуді іске қосу"
+
+#: src/ui/ms-features-panel.ui:34
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"Мұны тек деректер байланысының үзілуі немесе өткізіп алған дабылдар сияқты "
+"шектеулерді білсеңіз ғана іске қосыңыз"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Іске қосылған"
+
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Дыбыс баптаулары"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Дыбыс деңгейі жүгірткілерін реттегенде дыбысты ойнату"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Feedback Settings"
+msgstr "Кері байланыс баптаулары"
+
+#: src/ui/ms-feedback-panel.ui:36
+msgid "Feedback profile"
+msgstr "Кері байланыс профилі"
+
+#: src/ui/ms-feedback-panel.ui:37
+msgid "The global maximum feedback profile"
+msgstr "Глобалды максималды кері байланыс профилі"
+
+#: src/ui/ms-feedback-panel.ui:52
+msgid "Prefer flash"
+msgstr "Жарқылды қолдану"
+
+#: src/ui/ms-feedback-panel.ui:53
+msgid "Prefer camera flash over status LED when available"
+msgstr ""
+"Қолжетімді болғанда, күй жарық диодының орнына камера жарқылын қолдану"
+
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Дыбыс батырмасын басу арқылы дыбыссыз режимге өту"
+
+#: src/ui/ms-feedback-panel.ui:60
+msgid ""
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
+msgstr ""
+"Құлыптаулы күйде кіріс қоңырау кезінде дыбысты азайту батырмасын басса, "
+"телефонды дыбыссыз режимге қою"
+
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:66
+msgid "Haptic strength"
+msgstr "Діріл күші"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Максималды діріл кері байланысының күш пайызы"
+
+#: src/ui/ms-feedback-panel.ui:86
+msgid "Per Application settings"
+msgstr "Әр қолданбаға арналған баптаулар"
+
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:159
+msgid "Sounds"
+msgstr "Дыбыстар"
+
+#: src/ui/ms-feedback-panel.ui:100
+msgid "The sound to use for certain events"
+msgstr "Белгілі бір оқиғалар үшін қолданылатын дыбыс"
+
+#: src/ui/ms-feedback-panel.ui:114
+msgid "Phone Calls"
+msgstr "Телефон қоңыраулары"
+
+#: src/ui/ms-feedback-panel.ui:126
+msgid "SMS"
+msgstr "SMS"
+
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
+msgstr "Жедел хабарламалар"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Оятар"
+
+#: src/ui/ms-feedback-panel.ui:162
+msgid "Screen Wakeup"
+msgstr "Экранды ояту"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "Notification urgency that lights up the screen"
+msgstr "Экранды жарықтандыратын хабарландырудың шұғылдығы"
+
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr "Шұғылдығына қарамастан экранды оятатын хабарландыру санаттары"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "Calls"
+msgstr "Қоңыраулар"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "Жалпы аудио немесе видео қоңырау хабарландыруы"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "Device events"
+msgstr "Құрылғы оқиғалары"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "Құрылғыға қатысты жалпы хабарландыру"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "Электрондық пошталар"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "Электрондық поштаға қатысты жалпы хабарландыру"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr "Жедел хабарларға қатысты жалпы хабарландыру"
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr "Желілік оқиғалар"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr "Жалпы желілік хабарландыру"
+
+#: src/ui/ms-feedback-panel.ui:221
+msgid "Presence changes"
+msgstr "Желіде болу күйінің өзгеруі"
+
+#: src/ui/ms-feedback-panel.ui:222
+msgid "A generic presence change notification"
+msgstr "Күйдің өзгеруі туралы жалпы хабарландыру"
+
+#: src/ui/ms-feedback-panel.ui:228
+msgid "File transfers"
+msgstr "Файлдарды жіберу"
+
+#: src/ui/ms-feedback-panel.ui:229
+msgid "A generic file transfer or download notification"
+msgstr "Файлдарды жіберу немесе жүктеп алу туралы жалпы хабарландыру"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Locking and unlocking"
+msgstr "Құлыптау және құлпын ашу"
+
+#: src/ui/ms-lockscreen-panel.ui:18
+msgid "Shuffle keypad"
+msgstr "Пернетақтаны араластыру"
+
+#: src/ui/ms-lockscreen-panel.ui:19
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "Пернетақтадағы сандарды араластыру керек пе"
+
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Құлпын ашу үшін аутентификацияны талап ету"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr "Құрылғының құлпын ашу үшін PIN немесе пароль енгізуді талап ету"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Экранды автоматты құлыптау кідірісі"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Экран өшкеннен бастап экранды құлыптауға дейінгі секундтар"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:77
+msgid "Background"
+msgstr "Фон"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:83
+msgid "_Select Wallpaper…"
+msgstr "_Тұсқағазды таңдау…"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:95
+msgid "Use wallpaper"
+msgstr "Тұсқағазды қолдану"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:96
+msgid "Whether to show a colorful wallpaper"
+msgstr "Түрлі-түсті тұсқағазды көрсету керек пе"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:203
+msgid "Widgets"
+msgstr "Виджеттер"
+
+#: src/ui/ms-lockscreen-panel.ui:80
+msgid "Additional widgets for the lock screen"
+msgstr "Құлыптау экранына арналған қосымша виджеттер"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard
+#. shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:160
+msgid "Add Shortcut"
+msgstr "Жарлықты қосу"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "Жарлық модификаторларын таңдау"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "Жарлық пернесін таңдау"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "Жарлық пернесін енгізіңіз"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Әріптер (C немесе V сияқты) және т.б. пернені басыңыз"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "_Жарлық пернесі"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+msgid "Shortcut Preview"
+msgstr "Жарлықты алдын ала қарау"
+
+#: src/ui/ms-osk-panel.ui:13
+msgid "Enable _On Screen Keyboard"
+msgstr "_Экрандағы пернетақтаны іске қосу"
+
+#: src/ui/ms-osk-panel.ui:14
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "Қажет болған кезде экрандағы пернетақтаны көрсету керек пе"
+
+#: src/ui/ms-osk-panel.ui:20
+msgid "Unfold long-press"
+msgstr "Ұзақ басу арқылы жаймалау"
+
+#: src/ui/ms-osk-panel.ui:21
+msgid ""
+"How long to press the center of the home bar to unfold the on screen "
+"keyboard"
+msgstr ""
+"Экрандағы пернетақтаны жаймалау үшін үй батырмасының ортасын қанша уақыт "
+"басу керек"
+
+#. Translators: abbreviation for less than or equal to 0.5 second interval of
+#. time
+#: src/ui/ms-osk-panel.ui:26
+msgid "short"
+msgstr "қысқа"
+
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgctxt "press interval"
+msgid "normal"
+msgstr "қалыпты"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval
+#. of time
+#: src/ui/ms-osk-panel.ui:30
+msgid "long"
+msgstr "ұзақ"
+
+#: src/ui/ms-osk-panel.ui:38
+msgid "Ignore hardware keyboard"
+msgstr "Физикалық пернетақтаны елемеу"
+
+#: src/ui/ms-osk-panel.ui:39
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr ""
+"Физикалық пернетақта болған кезде экрандағы пернетақтаны көрсету керек пе"
+
+#: src/ui/ms-osk-panel.ui:46
+msgid "Key indicator popup"
+msgstr "Басылған перне индикаторы"
+
+#: src/ui/ms-osk-panel.ui:47
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr ""
+"Қазіргі уақытта басылған пернені көрсететін хабарламаны шығару керек пе"
+
+#: src/ui/ms-osk-panel.ui:59
+msgid "Keyboard height in portrait mode"
+msgstr "Портрет режиміндегі пернетақта биіктігі"
+
+#: src/ui/ms-osk-panel.ui:60
+msgid "When the screen is taller than wide"
+msgstr "Экран енінен биіктігі үлкен болғанда"
+
+#: src/ui/ms-osk-panel.ui:76
+msgid "Keyboard height in landscape mode"
+msgstr "Альбомдық режимдегі пернетақта биіктігі"
+
+#: src/ui/ms-osk-panel.ui:77
+msgid "When the screen is wider than tall"
+msgstr "Экран биіктігінен ені үлкен болғанда"
+
+#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:182
+msgid "Scaling"
+msgstr "Масштабтау"
+
+#: src/ui/ms-osk-panel.ui:104
+msgid "Keep physical size constant"
+msgstr "Физикалық өлшемді тұрақты сақтау"
+
+#: src/ui/ms-osk-panel.ui:105
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr ""
+"Экран ажыратымдылығы жоғары болса да экрандағы пернетақтаның жеткілікті "
+"үлкен болуын қамтамасыз ету"
+
+#: src/ui/ms-osk-panel.ui:111
+msgid "Add empty space below keys"
+msgstr "Пернелердің астына бос орын қосу"
+
+#: src/ui/ms-osk-panel.ui:112
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"Экрандағы пернетақтаны жоғары жылжыту үшін оның пернелерінің астына бос "
+"орын қосу керек пе."
+
+#: src/ui/ms-osk-panel.ui:122
+msgid "Text Completion"
+msgstr "Мәтінді аяқтау"
+
+#: src/ui/ms-osk-panel.ui:125
+msgid "Opportunistic word completion"
+msgstr "Сөздерді оңтайлы аяқтау"
+
+#: src/ui/ms-osk-panel.ui:126
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "Қолданба пайдалы деп көрсеткен кезде сөздерді аяқтауды іске қосу"
+
+#: src/ui/ms-osk-panel.ui:133
+msgid "Toggle via OSK menu"
+msgstr "Экрандағы пернетақта мәзірі арқылы ауыстыру"
+
+#: src/ui/ms-osk-panel.ui:134
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr ""
+"Пернетақтаның мәзір батырмасы арқылы сөздерді аяқтауды ауыстыруға рұқсат ету"
+
+#: src/ui/ms-osk-panel.ui:140
+msgid "Default Completer"
+msgstr "Әдепкі аяқтаушы"
+
+#: src/ui/ms-osk-panel.ui:141
+msgid "The default completion engine to use"
+msgstr "Қолданылатын әдепкі аяқтау жүйесі"
+
+#: src/ui/ms-osk-panel.ui:152
+msgid "Terminal Layout"
+msgstr "Терминал жаймасы"
+
+#: src/ui/ms-osk-panel.ui:171
+msgid "Shortcuts"
+msgstr "Жарлықтар"
+
+#: src/ui/ms-osk-panel.ui:172
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "Жарлықтар панелінде қолжетімді жарлықтар"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:137
+msgid "Favorites"
+msgstr "Таңдаулылар"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Таңдаулыларды реттеу"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "Таңдаулы қолданбаларды реттеу үшін оларды төменде сүйреп апарыңыз"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Таңдаулыларды тастау"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Таңдаулы қолданбалар тізімін бастапқы күйіне қайтару"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Қалпына келтіру"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "Mobile App Filtering"
+msgstr "Мобильді қолданбаларды сүзгілеу"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Қолданба сүзгісі режимін орнату"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Шолуда тек мобильді қолданбаларды көрсету"
+
+#: src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "Қолданба"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "Сенсорлар табылған жоқ"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled "
+"by a killswitch."
+msgstr ""
+"Құрылғыңызда сенсорлар орнатылмаған немесе олар сөндіргішпен сөндірілген."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:276
+msgid "Sensors"
+msgstr "Сенсорлар"
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "Сенсор көрсеткіштері"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "Жақындау"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "Жарық"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "Бағдарлау"
+
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:284
+msgid "High Contrast"
+msgstr "Жоғары контраст"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "Автоматты жоғары контраст"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "Сыртқы жарық сенсорымен басқарылады"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "Жарық қарқындылығының шегі"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "Тема осы шектен асқанда жоғары контрастқа ауысады"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "Дыбыс файлдары (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "Интерфейс элементтері"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "Батарея пайызын көрсету"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "Жоғарғы панельде нақты заряд деңгейін көрсету"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "Ойықтарды айналып өту"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr ""
+"Интерфейс элементтерін экран ойықтары мен кесінділерінің астына "
+"орналастырмау"
+
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:117
+msgid "Quick Settings"
+msgstr "Жылдам баптаулар"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organize your additional Quick Settings"
+msgstr "Қосымша жылдам баптауларды реттеу"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Мобильді баптауларға қош келдіңіз"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Кеңейтілген мобильді баптауларды реттеу"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:31
+msgid "Search"
+msgstr "Іздеу"
+
+#: src/ui/ms-window.ui:48
+msgid "Search settings"
+msgstr "Іздеу баптаулары"
+
+#: src/ui/ms-window.ui:98
+msgid "Welcome"
+msgstr "Қош келдіңіз"
+
+#: src/ui/ms-window.ui:109
+msgid "Top Bar"
+msgstr "Жоғарғы панель"
+
+#: src/ui/ms-window.ui:118
+msgid "Notches"
+msgstr "Ойықтар"
+
+#: src/ui/ms-window.ui:129
+msgid "Overview"
+msgstr "Шолу"
+
+#: src/ui/ms-window.ui:138
+msgid "Filter"
+msgstr "Сүзгі"
+
+#: src/ui/ms-window.ui:139 src/ui/ms-window.ui:201
+msgid "Wallpaper"
+msgstr "Тұсқағаз"
+
+#: src/ui/ms-window.ui:150 src/ui/ms-window.ui:158
+msgid "Feedback"
+msgstr "Кері байланыс"
+
+#: src/ui/ms-window.ui:160
+msgid "Wakeup"
+msgstr "Ояту"
+
+#: src/ui/ms-window.ui:161
+msgid "Vibra"
+msgstr "Діріл"
+
+#: src/ui/ms-window.ui:162
+msgid "Haptic"
+msgstr "Сенсорлық кері байланыс"
+
+#: src/ui/ms-window.ui:163
+msgid "LED"
+msgstr "Жарық диоды"
+
+#: src/ui/ms-window.ui:174
+msgid "Compositor"
+msgstr "Композитор"
+
+#: src/ui/ms-window.ui:193
+msgid "Lockscreen"
+msgstr "Құлыптау экраны"
+
+#: src/ui/ms-window.ui:202
+msgid "Shuffle"
+msgstr "Араластыру"
+
+#: src/ui/ms-window.ui:204
+msgid "Password"
+msgstr "Пароль"
+
+#: src/ui/ms-window.ui:215
+msgid "Convergence"
+msgstr "Конвергенция"
+
+#: src/ui/ms-window.ui:233
+msgid "On Screen Keyboard"
+msgstr "Экрандағы пернетақта"
+
+#: src/ui/ms-window.ui:241
+msgid "Keyboard"
+msgstr "Пернетақта"
+
+#: src/ui/ms-window.ui:242
+msgid "Unfold"
+msgstr "Жаймалау"
+
+#: src/ui/ms-window.ui:243
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/ms-window.ui:244
+msgid "Word Completion"
+msgstr "Сөздерді аяқтау"
+
+#: src/ui/ms-window.ui:255
+msgid "Emergency Alerts"
+msgstr "Төтенше жағдай хабарламалары"
+
+#: src/ui/ms-window.ui:263 src/ui/ms-window.ui:303
+msgid "Emergency"
+msgstr "Төтенше жағдай"
+
+#: src/ui/ms-window.ui:264
+msgid "Cell Broadcast"
+msgstr "Ұялы хабар тарату"
+
+#: src/ui/ms-window.ui:265
+msgid "Danger"
+msgstr "Қауіп"
+
+#: src/ui/ms-window.ui:295
+msgid "Experimental features"
+msgstr "Эксперименталды мүмкіндіктер"
+
+#: src/ui/ms-window.ui:304
+msgid "Suspend"
+msgstr "Күту режимі"
+
+#: src/ui/ms-window.ui:305
+msgid "Experimental"
+msgstr "Эксперименталды"
+
+#: src/ui/ms-window.ui:316 src/ui/ms-window.ui:324
+msgid "About"
+msgstr "Осы туралы"
+
+#: src/ui/ms-window.ui:349
+msgid "_Show Configurable Tweaks"
+msgstr "_Баптауға болатын түзетулерді көрсету"
+
+#: src/ui/ms-window.ui:356
+msgid "_Keyboard Shortcuts"
+msgstr "_Пернетақта жарлықтары"
+
+#: src/ui/ms-window.ui:360
+msgid "_About Mobile Settings"
+msgstr "Мобильді баптаулар _туралы"

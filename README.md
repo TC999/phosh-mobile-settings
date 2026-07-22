@@ -3,6 +3,9 @@
 Mobile Settings App for [phosh](https://gitlab.gnome.org/World/Phosh/phosh) and
 related components.
 
+Additionally, it supports the [conf-tweaks format](src/conf-tweaks/README.md)
+for defining additional settings in YAML format.
+
 ## License
 
 Phosh Mobile Settings is licensed under the GPLv3+.

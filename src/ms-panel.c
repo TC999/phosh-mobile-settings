@@ -12,6 +12,7 @@
 enum {
   PROP_0,
   PROP_KEYWORDS,
+  PROP_ENABLED,
   PROP_LAST_PROP
 };
 static GParamSpec *props[PROP_LAST_PROP];
@@ -24,6 +25,7 @@ static GParamSpec *props[PROP_LAST_PROP];
  */
 typedef struct {
   GtkStringList *keywords;
+  gboolean       enabled;
 } MsPanelPrivate;
 
 G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (MsPanel, ms_panel, ADW_TYPE_BIN)
@@ -40,6 +42,9 @@ ms_panel_set_property (GObject      *object,
   switch (property_id) {
   case PROP_KEYWORDS:
     ms_panel_set_keywords (self, g_value_get_object (value));
+    break;
+  case PROP_ENABLED:
+    ms_panel_set_enabled (self, g_value_get_boolean (value));
     break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -60,6 +65,9 @@ ms_panel_get_property (GObject    *object,
   switch (property_id) {
   case PROP_KEYWORDS:
     g_value_set_object (value, priv->keywords);
+    break;
+  case PROP_ENABLED:
+    g_value_set_boolean (value, ms_panel_get_enabled (self));
     break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -98,6 +106,15 @@ ms_panel_class_init (MsPanelClass *klass)
     g_param_spec_object ("keywords", "", "",
                          GTK_TYPE_STRING_LIST,
                          G_PARAM_READWRITE | G_PARAM_EXPLICIT_NOTIFY | G_PARAM_STATIC_STRINGS);
+  /**
+   * MsPanel:enabled:
+   *
+   * Whether the panel is currently enabled
+   */
+  props[PROP_ENABLED] =
+    g_param_spec_boolean ("enabled", "", "",
+                          TRUE,
+                          G_PARAM_READWRITE | G_PARAM_EXPLICIT_NOTIFY | G_PARAM_STATIC_STRINGS);
 
   g_object_class_install_properties (object_class, PROP_LAST_PROP, props);
 }
@@ -106,6 +123,9 @@ ms_panel_class_init (MsPanelClass *klass)
 static void
 ms_panel_init (MsPanel *self)
 {
+  MsPanelPrivate *priv = ms_panel_get_instance_private (self);
+
+  priv->enabled = TRUE;
 }
 
 
@@ -139,4 +159,46 @@ ms_panel_set_keywords (MsPanel *self, GtkStringList *keywords)
   priv->keywords = ms_get_casefolded_string_list (keywords);
 
   g_object_notify_by_pspec (G_OBJECT (self), props[PROP_KEYWORDS]);
+}
+
+
+gboolean
+ms_panel_handle_options (MsPanel *self, GVariant *params)
+{
+  MsPanelClass *klass;
+
+  g_return_val_if_fail (MS_IS_PANEL (self), FALSE);
+
+  klass = MS_PANEL_GET_CLASS (self);
+
+  if (klass->handle_options == NULL)
+    return TRUE;
+
+  return klass->handle_options (self, params);
+}
+
+
+void
+ms_panel_set_enabled (MsPanel *self, gboolean enabled)
+{
+  MsPanelPrivate *priv = ms_panel_get_instance_private (self);
+
+  g_return_if_fail (MS_IS_PANEL (self));
+
+  if (priv->enabled == enabled)
+    return;
+
+  priv->enabled = enabled;
+  g_object_notify_by_pspec (G_OBJECT (self), props[PROP_ENABLED]);
+}
+
+
+gboolean
+ms_panel_get_enabled (MsPanel *self)
+{
+  MsPanelPrivate *priv = ms_panel_get_instance_private (self);
+
+  g_return_val_if_fail (MS_IS_PANEL (self), TRUE);
+
+  return priv->enabled;
 }

@@ -9,6 +9,11 @@ ABS_BUILDDIR='@ABS_BUILDDIR@'
 # PSM needs schema from Phosh, which otherwise would be loaded from standard path
 GSETTINGS_SCHEMA_DIR="${ABS_BUILDDIR}/data:${PHOSH_BUILD_DIR}/data:${GSETTINGS_SCHEMA_DIR}"
 export GSETTINGS_SCHEMA_DIR
+# We should point to the GI generated files (.gir and .typelib) in case they're not present on the
+# standard paths so that the examples run fine
+LIBPMS_DIR="${ABS_BUILDDIR}/libpms"
+export GI_TYPELIB_PATH="${LIBPMS_DIR}:${GI_TYPELIB_PATH}"
+export LD_LIBRARY_PATH="${LIBPMS_DIR}:${LD_LIBRARY_PATH}"
 
 # Log DEBUG messages of all domains by default
 [ -n "${G_MESSAGES_DEBUG}" ] || G_MESSAGES_DEBUG=all
@@ -24,8 +29,9 @@ export G_DEBUG
 
 set -x
 if [ "$1" = '--gdb' ]; then
+  # Remove --gdb from the cmdline since we don't want to pass this on to gdb.
   shift
-  gdb --args "${ABS_BUILDDIR}/src/phosh-mobile-settings" $@
-else
-  exec "${ABS_BUILDDIR}/src/phosh-mobile-settings" $@
+  WRAPPER="gdb --args"
 fi
+
+exec $WRAPPER ${@:-${ABS_BUILDDIR}/src/phosh-mobile-settings}

@@ -292,7 +292,9 @@ ms_select_wallpaper_async (AdwBin              *panel,
   gtk_file_dialog_set_title (filechooser, _("Choose Wallpaper"));
 
   filter = gtk_file_filter_new ();
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   gtk_file_filter_add_pixbuf_formats (filter);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
   filters = g_list_store_new (GTK_TYPE_FILE_FILTER);
   g_list_store_append (filters, filter);
@@ -418,4 +420,110 @@ ms_get_casefolded_string_list (GtkStringList *strlist)
   }
 
   return casefolded_strlist;
+}
+
+
+const char *
+ms_get_event_id_for_media_role (MsMediaRole role)
+{
+  const char *event_id;
+
+  switch (role) {
+  case MS_MEDIA_ROLE_ALARM:
+    event_id = "alarm-clock-elapsed";
+    break;
+  case MS_MEDIA_ROLE_ALERT:
+    event_id = "cellbroadcast";
+    break;
+  case MS_MEDIA_ROLE_NOTIFICATION:
+    event_id = "message-new-instant";
+    break;
+  case MS_MEDIA_ROLE_PHONE:
+    event_id = "";
+    break;
+  case MS_MEDIA_ROLE_RINGTONE:
+    event_id = "phone-incoming-call";
+    break;
+  case MS_MEDIA_ROLE_MULTIMEDIA:
+  default:
+    event_id = "complete";
+    break;
+  }
+
+  return event_id;
+}
+
+
+const char *
+ms_get_media_role_as_string (MsMediaRole role)
+{
+  const char *media_role;
+
+  switch (role) {
+  case MS_MEDIA_ROLE_ALARM:
+    media_role = "Alarm";
+    break;
+  case MS_MEDIA_ROLE_ALERT:
+    media_role = "Alert";
+    break;
+  case MS_MEDIA_ROLE_NOTIFICATION:
+    media_role = "Notification";
+    break;
+  case MS_MEDIA_ROLE_PHONE:
+    media_role = "Phone";
+    break;
+  case MS_MEDIA_ROLE_RINGTONE:
+    media_role = "Ringtone";
+    break;
+  case MS_MEDIA_ROLE_MULTIMEDIA:
+  default:
+    media_role = "Multimedia";
+    break;
+  }
+
+  return media_role;
+}
+
+
+void
+ms_util_end_session (MsEndSessionMode mode)
+{
+  g_autoptr (GDBusProxy) proxy = NULL;
+  g_autoptr (GError) err = NULL;
+  g_autoptr (GVariant) ret = NULL;
+  const char *method;
+  GVariant *arg = NULL;
+
+  switch (mode) {
+  case MS_END_SESSION_MODE_REBOOT:
+    method = "Reboot";
+    break;
+  case MS_END_SESSION_MODE_LOGOUT:
+  default:
+    method = "Logout";
+    arg = g_variant_new ("(u)", 0);
+  }
+
+  /* We log out so sync call is fine */
+  proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                         G_DBUS_PROXY_FLAGS_NONE,
+                                         NULL,
+                                         "org.gnome.SessionManager",
+                                         "/org/gnome/SessionManager",
+                                         "org.gnome.SessionManager",
+                                         NULL,
+                                         &err);
+  if (!proxy) {
+    g_warning ("Failed to get session proxy: %s", err->message);
+    return;
+  }
+
+  g_dbus_proxy_call (proxy,
+                     method,
+                     arg,
+                     G_DBUS_CALL_FLAGS_NONE,
+                     -1,
+                     NULL,
+                     NULL,
+                     NULL);
 }

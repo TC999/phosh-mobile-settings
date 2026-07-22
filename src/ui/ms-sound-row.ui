@@ -30,7 +30,7 @@
             <property name="valign">center</property>
             <property name="icon-name">media-playback-start-symbolic</property>
             <property name="action-name">sound-row.play-sound</property>
-            <property name="tooltip-text">Toggle Play</property>
+            <property name="tooltip-text" translatable="yes">Toggle Play</property>
             <style>
               <class name="flat"/>
             </style>

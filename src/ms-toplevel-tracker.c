@@ -12,7 +12,7 @@
 
 #include "ms-toplevel-tracker.h"
 
-#include "protocols/wlr-foreign-toplevel-management-unstable-v1-client-protocol.h"
+#include "wlr-foreign-toplevel-management-unstable-v1-client-protocol.h"
 
 enum {
   PROP_0,

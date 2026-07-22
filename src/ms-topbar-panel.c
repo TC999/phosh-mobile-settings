@@ -24,13 +24,14 @@
 
 
 struct _MsTopbarPanel {
-  MsPanel       parent;
+  MsPanel          parent;
 
-  GSettings    *settings;
-  GSettings    *interface_settings;
+  GSettings       *settings;
+  GSettings       *interface_settings;
 
-  AdwSwitchRow *battery_percentage_switch;
-  AdwSwitchRow *shell_layout_switch;
+  AdwSwitchRow    *battery_percentage_switch;
+  AdwSwitchRow    *shell_layout_switch;
+  MsPluginListBox *plugins_listbox;
 };
 
 G_DEFINE_TYPE (MsTopbarPanel, ms_topbar_panel, MS_TYPE_PANEL)
@@ -65,6 +66,25 @@ on_shell_layout_setting_changed (MsTopbarPanel *self)
 }
 
 
+static gboolean
+ms_topbar_panel_handle_options (MsPanel *panel, GVariant *params)
+{
+  MsTopbarPanel *self = MS_TOPBAR_PANEL (panel);
+  GVariantIter iter;
+  g_autoptr (GVariant) child = NULL;
+
+  g_return_val_if_fail (MS_IS_TOPBAR_PANEL (panel), FALSE);
+
+  g_variant_iter_init (&iter, params);
+  if (!g_variant_iter_next (&iter, "v", &child))
+    return FALSE;
+
+  ms_plugin_list_box_open_plugin_prefs (self->plugins_listbox, g_variant_get_string (child, NULL));
+
+  return TRUE;
+}
+
+
 static void
 ms_topbar_panel_finalize (GObject *object)
 {
@@ -82,8 +102,11 @@ ms_topbar_panel_class_init (MsTopbarPanelClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+  MsPanelClass *parent_class = MS_PANEL_CLASS (klass);
 
   object_class->finalize = ms_topbar_panel_finalize;
+
+  parent_class->handle_options = ms_topbar_panel_handle_options;
 
   g_type_ensure (MS_TYPE_PLUGIN_LIST_BOX);
 
@@ -92,6 +115,7 @@ ms_topbar_panel_class_init (MsTopbarPanelClass *klass)
 
   gtk_widget_class_bind_template_child (widget_class, MsTopbarPanel, battery_percentage_switch);
   gtk_widget_class_bind_template_child (widget_class, MsTopbarPanel, shell_layout_switch);
+  gtk_widget_class_bind_template_child (widget_class, MsTopbarPanel, plugins_listbox);
 
   gtk_widget_class_bind_template_callback (widget_class, on_shell_layout_switch_row_activated);
 }

@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022 Purism SPC
+ *               2023-2026 Phosh.mobi e.V.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -8,7 +9,7 @@
 
 #pragma once
 
-#include "ms-plugin-panel.h"
+#include "ms-panel.h"
 
 #include <adwaita.h>
 
@@ -16,11 +17,11 @@ G_BEGIN_DECLS
 
 #define MS_TYPE_PLUGIN_PANEL (ms_plugin_panel_get_type ())
 
-G_DECLARE_DERIVABLE_TYPE (MsPluginPanel, ms_plugin_panel, MS, PLUGIN_PANEL, AdwBin)
+G_DECLARE_DERIVABLE_TYPE (MsPluginPanel, ms_plugin_panel, MS, PLUGIN_PANEL, MsPanel)
 
 
 struct _MsPluginPanelClass {
-  AdwBinClass parent_class;
+  MsPanelClass parent_class;
 };
 
 

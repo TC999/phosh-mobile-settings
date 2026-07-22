@@ -4,8 +4,13 @@ leak:g_io_modules_scan_all_in_directory_with_scope
 leak:adw_style_manager_ensure
 # GTK (only triggeres with `GTK_A11Y=none`, needs investigation in GTK)
 leak:gtk_widget_list_mnemonic_labels
+# https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/9724
+leak:gtk_gst_uri_handler_set_uri
+# Should be fixed via GTK commit 60406f5a56b1c599e1815408c00c97d9c9bd4659
+leak:gtk_svg_load_from_resource
 # Actually leaks in mesa
 leak:gdk_gl_context_create_egl_context
+leak:gdk_display_init_egl
 # Fontconfig
 leak:FcConfigValues
 leak:FcParsePattern

@@ -1,7 +1,7 @@
 project(
   'phosh-mobile-settings',
   'c',
-  version: '0.50.0',
+  version: '0.56.0',
   meson_version: '>= 1.7.0',
   default_options: ['warning_level=2', 'werror=false', 'c_std=gnu11'],
 )
@@ -15,20 +15,22 @@ libdir = prefix / get_option('libdir')
 pkgdatadir = datadir / meson.project_name()
 pkglibdir = libdir / meson.project_name()
 ms_plugins_dir = prefix / libdir / 'phosh-mobile-settings' / 'plugins'
+polkitdir = datadir / 'polkit-1' / 'rules.d'
 
-glib_ver = '2.76'
+glib_ver = '2.84'
 glib_ver_str = 'GLIB_VERSION_@0@'.format(glib_ver.replace('.', '_'))
 glib_ver_cmp = '>=@0@'.format(glib_ver)
 
-gtk_ver = '4.18.0'
+gtk_ver = '4.22.0'
 gtk_ver_arr = gtk_ver.split('.')
 gtk_ver_str = 'GDK_VERSION_@0@_@1@'.format(gtk_ver_arr[0], gtk_ver_arr[1])
 gtk_ver_cmp = '>=@0@'.format(gtk_ver)
 
-adw_ver = '1.6'
+adw_ver = '1.9'
 adw_ver_str = 'ADW_VERSION_@0@'.format(adw_ver.replace('.', '_'))
 adw_ver_cmp = '>=@0@'.format(adw_ver)
 
+accountsservice_dep = dependency('accountsservice', version: '>= 23.13')
 glib_dep = dependency('glib-2.0', version: glib_ver_cmp)
 gio_dep = dependency('gio-2.0', version: glib_ver_cmp)
 gio_unix_dep = dependency('gio-unix-2.0', version: glib_ver_cmp)
@@ -70,6 +72,7 @@ libportal_dep = dependency('libportal', version: '>= 0.9.1')
 libportal_gtk4_dep = dependency('libportal-gtk4', version: '>= 0.9.1')
 phosh_plugins_dep = dependency('phosh-plugins', version: '>= 0.23.0')
 phosh_settings_dep = dependency('phosh-settings', version: '>= 0.40.0')
+polkit_gobject_dep = dependency('polkit-gobject-1', version: '>= 126')
 wayland_client_dep = dependency('wayland-client', version: '>=1.14')
 wayland_protos_dep = dependency('wayland-protocols', version: '>=1.12')
 yaml_dep = dependency('yaml-0.1')
@@ -93,7 +96,9 @@ i18n = import('i18n')
 gnome = import('gnome')
 
 cc = meson.get_compiler('c')
-global_c_args = []
+global_c_args = [
+  '-DLIBPMS_USE_UNSTABLE_API',
+]
 test_c_args = [
   '-Wcast-align',
   '-Wdate-time',
@@ -174,6 +179,10 @@ config_h.set_quoted(
   'MOBILE_SETTINGS_PHOSH_PREFS_DIR',
   phosh_plugins_dep.get_variable(pkgconfig: 'lockscreen_prefs_dir'),
 )
+config_h.set_quoted(
+  'MOBILE_SETTINGS_PHOSH_PLUGINS_ICON_DIR',
+  datadir / 'phosh' / 'plugins' / 'icons',
+)
 config_h.set_quoted('MOBILE_SETTINGS_OSK_LAYOUTS', datadir / 'phosh-osk-stevia' / 'layouts.json')
 config_h.set_quoted(
   'MOBILE_SETTINGS_OSK_COMPLETERS_DIR',
@@ -186,13 +195,24 @@ add_project_arguments(['-I' + meson.project_build_root()], language: 'c')
 
 subdir('data')
 subdir('protocols')
+subdir('libpms')
 subdir('src')
 subdir('tests')
 subdir('plugins')
 subdir('po')
-
-# Older meson can't handle gnome.post_install but that only
-# matters for distro backports:
-if meson.version().version_compare('>=0.59.0')
-  gnome.post_install(gtk_update_icon_cache: true, update_desktop_database: true)
+subdir('docs')
+if get_option('examples')
+  subdir('examples')
 endif
+
+summary(
+  {
+    'Examples': get_option('examples'),
+    'Introspection': get_option('introspection'),
+    'Man pages': get_option('man'),
+    'Tweaks directory': get_option('tweaks-data-dir'),
+  },
+  bool_yn: true,
+)
+
+gnome.post_install(gtk_update_icon_cache: true, update_desktop_database: true)

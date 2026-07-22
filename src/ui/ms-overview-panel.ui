@@ -61,12 +61,29 @@
 
                 <child>
                   <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">Mobile App Filtering</property>
+                    <property name="title" translatable="yes">App Filtering and Hiding</property>
                     <child>
                       <object class="AdwSwitchRow" id="afm_switch_row">
                         <property name="title" translatable="yes">Set Application Filter Mode</property>
                         <property name="subtitle" translatable="yes">Show only mobile apps in the overview</property>
                         <signal name="notify::active" handler="afm_switch_row_cb" object="MsOverviewPanel" swapped="yes"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="hidden_apps_row">
+                        <property name="title" translatable="yes">_Manage Hidden Apps</property>
+                        <property name="subtitle" translatable="yes">Make apps you disabled in the overview visible again</property>
+                        <property name="use-underline">true</property>
+                        <property name="activatable-widget">hidden_apps_button</property>
+                        <child>
+                          <object class="GtkButton" id="hidden_apps_button">
+                            <property name="icon-name">right-large-symbolic</property>
+                            <property name="action-name">overview-panel.hidden-apps</property>
+                            <style>
+                              <class name="flat"/>
+                            </style>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>

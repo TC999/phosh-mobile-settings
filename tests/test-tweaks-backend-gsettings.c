@@ -54,7 +54,7 @@ test_set_alternative (BackendTestFixture *fixture, gconstpointer unused)
 
   g_assert_true (fixture->backend);
 
-  MS_TWEAKS_BACKEND_GET_IFACE (fixture->backend)->set_value (fixture->backend, value, &error);
+  ms_tweaks_backend_set_value (fixture->backend, value, &error);
 
   g_assert_false (error);
 

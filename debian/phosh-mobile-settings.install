@@ -5,5 +5,5 @@ usr/share/dbus-1/services/
 usr/share/glib-2.0/schemas/mobi.phosh.MobileSettings.gschema.xml
 usr/share/icons/hicolor/scalable/apps/mobi.phosh.MobileSettings.svg
 usr/share/icons/hicolor/symbolic/apps/mobi.phosh.MobileSettings-symbolic.svg
-usr/share/locale/*/*/phosh-mobile-settings.mo
+usr/share/man/man1/phosh-mobile-settings.1
 usr/share/metainfo/mobi.phosh.MobileSettings.metainfo.xml

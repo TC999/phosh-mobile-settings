@@ -12,7 +12,7 @@
 
 #include "ms-head-tracker.h"
 
-#include "protocols/wlr-output-management-unstable-v1-client-protocol.h"
+#include "wlr-output-management-unstable-v1-client-protocol.h"
 
 enum {
   PROP_0,

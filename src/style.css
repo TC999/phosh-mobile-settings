@@ -1,0 +1,11 @@
+/* Avoid darkening of overlapping paths in the SVG */
+statuspage.download-status .icon {
+  color: black;
+  opacity: var(--dim-opacity);
+}
+
+@media (prefers-color-scheme: dark) {
+  statuspage.download-status .icon {
+    color: white;
+  }
+}

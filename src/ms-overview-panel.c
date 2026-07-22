@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2023 Tether Operations Limited
+ *               2026 Phosh.mobi e.V.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -10,11 +11,9 @@
 #define G_LOG_DOMAIN "ms-overview-panel"
 
 #include "mobile-settings-config.h"
-#include "mobile-settings-application.h"
-#include "mobile-settings-enums.h"
-#include "ms-enum-types.h"
-#include "ms-feedback-row.h"
+
 #include "ms-overview-panel.h"
+#include "ms-hidden-apps-dialog.h"
 #include "ms-util.h"
 
 #include <phosh-settings-enums.h>
@@ -47,10 +46,44 @@ struct _MsOverviewPanel {
   AdwSwitchRow            *wallpaper_switch;
 
   AdwToastOverlay         *toast_overlay;
-  AdwToast                *toast;
+
+  MsHiddenAppsDialog      *hidden_apps_dialog;
 };
 
 G_DEFINE_TYPE (MsOverviewPanel, ms_overview_panel, MS_TYPE_PANEL)
+
+
+static void
+on_hidden_apps_done (MsOverviewPanel *self, guint n_items)
+{
+  g_autofree char *msg = NULL;
+  AdwToast *toast;
+
+  msg = g_strdup_printf (ngettext ("%u App Made Visible Again",
+                                   "%u Apps Made Visible Again", n_items),
+                         n_items);
+  toast = adw_toast_new (msg);
+  adw_toast_overlay_add_toast (self->toast_overlay, toast);
+
+  g_clear_pointer ((AdwDialog**)(&self->hidden_apps_dialog), adw_dialog_close);
+  return;
+}
+
+
+static void
+hidden_apps_activated (GtkWidget *widget, const char* action_name, GVariant *parameter)
+{
+  MsOverviewPanel *self = MS_OVERVIEW_PANEL (widget);
+
+  self->hidden_apps_dialog = ms_hidden_apps_dialog_new ();
+
+  g_signal_connect_object (self->hidden_apps_dialog, "done",
+                           G_CALLBACK (on_hidden_apps_done),
+                           self,
+                           G_CONNECT_SWAPPED);
+
+  adw_dialog_present (ADW_DIALOG (self->hidden_apps_dialog), GTK_WIDGET (self));
+}
 
 
 static void
@@ -342,6 +375,33 @@ on_select_wallpaper_clicked (MsOverviewPanel *self)
 }
 
 
+static gboolean
+ms_overview_panel_handle_options (MsPanel *panel, GVariant *params)
+{
+  MsOverviewPanel *self = MS_OVERVIEW_PANEL (panel);
+  g_autoptr (GVariant) child = NULL;
+  const char *dialog;
+  GVariantIter iter;
+
+  g_assert (MS_IS_OVERVIEW_PANEL (panel));
+
+  g_variant_iter_init (&iter, params);
+  if (!g_variant_iter_next (&iter, "v", &child))
+    return FALSE;
+
+  dialog = g_variant_get_string (child, NULL);
+
+  if (g_strcmp0 (dialog, "hidden-apps") == 0) {
+    g_debug("Opening hidden-apps dialog…");
+
+    gtk_widget_activate_action (GTK_WIDGET (self), "overview-panel.hidden-apps", NULL);
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+
 static void
 ms_overview_panel_finalize (GObject *object)
 {
@@ -360,8 +420,14 @@ ms_overview_panel_class_init (MsOverviewPanelClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+  MsPanelClass *parent_class = MS_PANEL_CLASS (klass);
 
   object_class->finalize = ms_overview_panel_finalize;
+
+  parent_class->handle_options = ms_overview_panel_handle_options;
+
+  gtk_widget_class_install_action (widget_class, "overview-panel.hidden-apps", NULL,
+                                   hidden_apps_activated);
 
   gtk_widget_class_set_template_from_resource (widget_class,
                                                "/mobi/phosh/MobileSettings/ui/ms-overview-panel.ui");

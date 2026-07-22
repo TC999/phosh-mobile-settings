@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <mobile-settings-plugin.h>
+#include <ms-plugin.h>
 
 G_BEGIN_DECLS
 

@@ -14,44 +14,41 @@ test_env_common.set(
   'suppressions=@0@/data/leak-suppress.txt'.format(meson.project_source_root()),
 )
 
-if gtk_dep.version().version_compare('>=4.19.1')
-  test_env_common.set('GSK_RENDERER', 'opengl')
-else
-  test_env_common.set('GSK_RENDERER', 'ngl')
-endif
 test_env_common.set('MS_FORCE_OSK', 'unknown')
 
 subdir('utils')
 
 phoc = find_program('phoc', required: false)
 
-if phoc.found()
+unit_tests = [
+  'add-shortcut-dialog',
+  'tweaks-backend-gsettings',
+  'tweaks-backend-gtk3settings',
+  'tweaks-backend-symlink',
+  'tweaks-backend-sysfs',
+  'tweaks-backend-xresources',
+  'tweaks-datasources',
+  'tweaks-gtk-utils',
+  'tweaks-mappings',
+  'tweaks-parser',
+  'tweaks-preferences-page',
+  'tweaks-utils',
+]
 
+foreach test : unit_tests
+  t = executable(
+    'test-@0@'.format(test),
+    ['test-@0@.c'.format(test)] + test_utils_sources,
+    dependencies: libms_dep,
+    include_directories: [conf_tweaks_inc, ms_plugin_inc, dbus_inc],
+  )
+  test(test, t, env: test_env_common, suite: ['unit'])
+endforeach
+
+if phoc.found()
   test_env_phoc = test_env_common
-  test_env_phoc.set('XDG_RUNTIME_DIR', meson.current_build_dir())
   test_env_phoc.set('WLR_RENDERER', 'pixman')
   test_env_phoc.set('WLR_BACKENDS', 'headless')
-
-  unit_tests = [
-    'tweaks-backend-gsettings',
-    'tweaks-backend-xresources',
-    'tweaks-datasources',
-    'tweaks-gtk-utils',
-    'tweaks-mappings',
-    'tweaks-parser',
-    'tweaks-preferences-page',
-    'tweaks-utils',
-  ]
-
-  foreach test : unit_tests
-    t = executable(
-      'test-@0@'.format(test),
-      ['test-@0@.c'.format(test)] + test_utils_sources,
-      dependencies: libms_dep,
-      include_directories: [conf_tweaks_inc, ms_plugin_inc, dbus_inc],
-    )
-    test(test, phoc, args: ['--no-xwayland', '-E', t], env: test_env_phoc, suite: ['unit'])
-  endforeach
 
   local_opts = ['debug-info', 'help', 'list', 'version']
 

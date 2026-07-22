@@ -1,0 +1,94 @@
+<node>
+ <interface name="org.freedesktop.sysupdate1.Manager">
+  <method name="ListTargets">
+   <arg type="a(sso)" name="targets" direction="out"/>
+  </method>
+  <method name="ListJobs">
+   <arg type="a(tsuo)" name="jobs" direction="out"/>
+  </method>
+  <method name="ListAppStream">
+   <arg type="as" name="urls" direction="out"/>
+  </method>
+  <signal name="JobRemoved">
+   <arg type="t" name="id"/>
+   <arg type="o" name="path"/>
+   <arg type="i" name="status"/>
+  </signal>
+ </interface>
+ <interface name="org.freedesktop.sysupdate1.Job">
+  <property name="Id" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Type" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Offline" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Progress" type="u" access="read">
+  </property>
+  <method name="Cancel">
+  </method>
+ </interface>
+ <interface name="org.freedesktop.sysupdate1.Target">
+  <property name="Class" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Name" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <property name="Path" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="const"/>
+  </property>
+  <method name="List">
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="as" name="versions" direction="out"/>
+  </method>
+  <method name="Describe">
+   <arg type="s" name="version" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="json" direction="out"/>
+  </method>
+  <method name="CheckNew">
+   <arg type="s" name="new_version" direction="out"/>
+  </method>
+  <method name="Acquire">
+   <arg type="s" name="new_version" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="new_version" direction="out"/>
+   <arg type="t" name="job_id" direction="out"/>
+   <arg type="o" name="job_path" direction="out"/>
+  </method>
+  <method name="Install">
+   <arg type="s" name="new_version" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="new_version" direction="out"/>
+   <arg type="t" name="job_id" direction="out"/>
+   <arg type="o" name="job_path" direction="out"/>
+  </method>
+  <method name="Vacuum">
+   <arg type="u" name="instances" direction="out"/>
+   <arg type="u" name="disabled_transfers" direction="out"/>
+  </method>
+  <method name="GetAppStream">
+   <arg type="as" name="appstream" direction="out"/>
+  </method>
+  <method name="GetVersion">
+   <arg type="s" name="version" direction="out"/>
+  </method>>
+  <method name="ListFeatures">
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="as" name="features" direction="out"/>
+  </method>
+  <method name="DescribeFeature">
+   <arg type="s" name="feature" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="json" direction="out"/>
+  </method>
+  <method name="SetFeatureEnabled">
+   <arg type="s" name="feature" direction="in"/>
+   <arg type="i" name="enabled" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+  </method>
+ </interface>
+</node>
