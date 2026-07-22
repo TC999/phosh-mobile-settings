@@ -38,11 +38,12 @@ msgstr "Phosh 移动设置"
 msgid ""
 "This app allows you to configure some aspects of Phosh that would otherwise "
 "require command line usage."
-msgstr "此应用可让您配置 Phosh 的某些方面否则这些操作将需要通过命令行完成。"
+msgstr ""
+"通过该应用程序，您可以配置 Phosh 的某些方面，否则就需要使用命令行。"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
 msgid "Advanced settings for Mobile devices using Phosh"
-msgstr "适用于 Phosh 移动设备的高级设置"
+msgstr "使用 Phosh 的移动设备的高级设置"
 
 #: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
 msgid "Available panels"
@@ -89,1371 +90,618 @@ msgid "Temperatures"
 msgstr "温度"
 
 #. translators: The central processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:64
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:55
 msgid "CPU"
-msgstr "CPU"
+msgstr "处理器"
 
 #. translators: The graphics processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:83
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:74
 msgid "GPU"
-msgstr "GPU"
+msgstr "显卡"
 
 #. translators: The video processing unit of a smart phone
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:102
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:93
 msgid "VPU"
 msgstr "VPU"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:120
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:111
 msgid "Fuel Gauge"
-msgstr "电量"
+msgstr "Fuel Gauge"
 
-#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:138
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:129
 msgid "Battery"
 msgstr "电池"
 
-#. Translators: Title for a dialog to add a new on-screen keyboard layout
-#. Translators: Label for a button that allows the user to add a new keyboard layout
-#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:13
-msgid "Add Layout"
-msgstr "添加布局"
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "常规"
 
-#: libpms/ms-osk-add-layout-dialog.ui:14
-#: src/ui/ms-osk-add-shortcut-dialog.ui:17 src/ui/ms-updates-panel.ui:82
-#: src/ui/ms-updates-panel.ui:126
-msgid "Cancel"
-msgstr "取消"
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "显示快捷方式"
 
-#: libpms/ms-osk-add-layout-dialog.ui:20
-#: src/ui/ms-osk-add-shortcut-dialog.ui:23
-msgid "Add"
-msgstr "添加"
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
 
-#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-lang-panel.ui:14
-#: src/ui/ms-window.ui:318 src/ui/ms-window.ui:326
-msgid "Language"
-msgstr "语言"
-
-#: libpms/ms-osk-layout-prefs.ui:5
-msgctxt "on screen keyboard"
-msgid "Layouts"
-msgstr "布局"
-
-#. Translators: Message displayed when there are no keyboard layouts configured
-#: libpms/ms-osk-layout-prefs.ui:29
-msgid "No Layouts configured"
-msgstr "没有已配置的布局"
-
-#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
-msgid "More options…"
-msgstr "更多选项…"
-
-#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
-msgid "Move Up"
-msgstr "上移"
-
-#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
-msgid "Move Down"
-msgstr "下移"
-
-#: libpms/ms-osk-layout-row.ui:49
-msgid "Remove"
-msgstr "移除"
-
-#: libpms/lang/ms-common-language.c:312
-msgid "Other…"
-msgstr "其它…"
-
-#: libpms/lang/ms-language-chooser.ui:4
-msgid "Select Language"
-msgstr "选择语言"
-
-#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:108
-#: src/ui/ms-hidden-apps-dialog.ui:15
-msgid "_Cancel"
-msgstr "取消(_C)"
-
-#: libpms/lang/ms-language-chooser.ui:23 src/ui/ms-hidden-apps-dialog.ui:23
-msgid "_Select"
-msgstr "选择(_S)"
-
-#: libpms/lang/ms-language-chooser.ui:44
-msgid "Language or country"
-msgstr "语言或地区"
-
-#: libpms/lang/ms-language-chooser.ui:68
-msgid "No languages found"
-msgstr "没有找到语言"
-
-#: libpms/lang/ms-language-chooser.ui:79
-msgid "More…"
-msgstr "更多…"
-
-#: libpms/lang/ms-util.c:130
-msgid "Today"
-msgstr "今天"
-
-#: libpms/lang/ms-util.c:134
-msgid "Yesterday"
-msgstr "昨天"
-
-#. Translators: This is a date format string in the style of "Feb 24".
-#: libpms/lang/ms-util.c:142
-#, no-c-format
-msgid "%b %e"
-msgstr "%m月%d日"
-
-#. Translators: This is a date format string in the style of "Feb 24, 2013".
-#: libpms/lang/ms-util.c:147
-msgid "%b %e, %Y"
-msgstr "%Y年%m月%d日"
-
-#. TRANSLATORS: This is the datetime format in the style of
-#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
-#. and "Yesterday, 10:10:10 AM"
-#: libpms/lang/ms-util.c:166
-#, c-format
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: libpms/lang/ms-util.c:186
-#, c-format
-msgid "%d hour"
-msgid_plural "%d hours"
-msgstr[0] ""
-
-#: libpms/lang/ms-util.c:187
-#, c-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] ""
-
-#: libpms/lang/ms-util.c:188
-#, c-format
-msgid "%d second"
-msgid_plural "%d seconds"
-msgstr[0] ""
-
-#. 5 hours 2 minutes 12 seconds
-#: libpms/lang/ms-util.c:195
-#, c-format
-msgctxt "hours minutes seconds"
-msgid "%s %s %s"
-msgstr "%s %s %s"
-
-#. 5 hours 2 minutes
-#: libpms/lang/ms-util.c:200
-#, c-format
-msgctxt "hours minutes"
-msgid "%s %s"
-msgstr "%s %s"
-
-#. 5 hours
-#: libpms/lang/ms-util.c:205
-#, c-format
-msgctxt "hours"
-msgid "%s"
-msgstr "%s"
-
-#. 2 minutes 12 seconds
-#: libpms/lang/ms-util.c:213
-#, c-format
-msgctxt "minutes seconds"
-msgid "%s %s"
-msgstr "%s %s"
-
-#. 2 minutes
-#: libpms/lang/ms-util.c:218
-#, c-format
-msgctxt "minutes"
-msgid "%s"
-msgstr "%s"
-
-#. 0 seconds
-#: libpms/lang/ms-util.c:229
-msgid "0 seconds"
-msgstr ""
-
-#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
-#, c-format
-msgid "Something went wrong: %s"
-msgstr ""
-
-#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
-msgid "Authentication cancelled"
-msgstr ""
-
-#. We had errors while running the commands, so inform the user of this.
-#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
-#, c-format
-msgid "%i error occurred while saving"
-msgid_plural "%i errors occurred while saving"
-msgstr[0] ""
-
-#: src/conf-tweaks/ms-tweaks-preferences-page.c:902
-msgid "You need to authenticate as administrator to save some settings"
-msgstr ""
-
-#: src/ms-alerts-panel.c:238
-msgid "Could not get list of cell broadcast messages"
-msgstr ""
-
-#: src/ms-application.c:37
+#: src/mobile-settings-application.c:34
 msgid "- Manage your mobile settings"
-msgstr ""
+msgstr "- 管理您的手机设置"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/ms-application.c:541
+#: src/mobile-settings-application.c:426
 msgid "translator-credits"
 msgstr ""
+"TC999 <88823709+TC999@users.noreply.github.com>"
 
-#: src/ms-audio-devices.c:179
-msgid "Media Volume"
-msgstr ""
+#: src/mobile-settings-window.c:85
+msgid "Device"
+msgstr "设备"
 
-#: src/ms-audio-devices.c:182
-msgid "Notification Volume"
-msgstr ""
-
-#: src/ms-audio-devices.c:185
-msgid "Voice Call Volume"
-msgstr ""
-
-#: src/ms-audio-devices.c:188
-msgid "Ring Tone Volume"
-msgstr ""
-
-#: src/ms-audio-devices.c:191
-msgid "Alarm Volume"
-msgstr ""
-
-#: src/ms-audio-devices.c:194
-msgid "Emergency Alerts Volume"
-msgstr ""
-
-#: src/ms-cb-message-row.c:114
-msgid "Message of unknown severity"
-msgstr ""
-
-#: src/ms-feedback-panel.c:338
+#: src/ms-feedback-panel.c:140
 msgid "Sound file does not exist"
-msgstr ""
+msgstr "音频文件不存在"
 
-#: src/ms-feedback-panel.c:340
+#: src/ms-feedback-panel.c:142
 msgid "Sound file is corrupt"
-msgstr ""
+msgstr "音频文件已损坏"
 
-#: src/ms-feedback-panel.c:342
+#: src/ms-feedback-panel.c:144
 msgid "Failed to play sound"
-msgstr ""
+msgstr "播放音频失败"
 
-#: src/ms-feedback-panel.c:381
+#: src/ms-feedback-panel.c:183
 #, c-format
 msgid "Playing %s"
-msgstr ""
+msgstr "正在播放 %s"
 
-#. Translators: "low" categorizes notifications with minor importance
-#: src/ms-feedback-panel.c:579
-msgid "low"
-msgstr ""
-
-#. Translators: "normal" categorizes notifications with standard importance
-#: src/ms-feedback-panel.c:582
-msgid "normal"
-msgstr ""
-
-#. Translators: "critical" categorizes notifications with urgent importance
-#: src/ms-feedback-panel.c:585
-msgid "critical"
-msgstr ""
-
-#. Translators: "none" is the default for notifications with no specified importance
-#: src/ms-feedback-panel.c:589
+#: src/ms-feedback-panel.c:344 src/ms-feedback-panel.c:352
 msgid "none"
-msgstr ""
+msgstr "无"
 
-#: src/ms-feedback-panel.c:1008
-msgid "Mobile Settings Volume Control"
-msgstr ""
+#: src/ms-feedback-panel.c:346
+msgid "low"
+msgstr "低"
 
-#: src/ms-lang-panel.c:80
-msgid "Failed to set system locale"
-msgstr ""
+#. 1.0
+#: src/ms-feedback-panel.c:348 src/ui/ms-osk-panel.ui:27
+msgid "normal"
+msgstr "普通"
 
-#: src/ms-lockscreen-panel.c:62
-msgid "Failed to set lockscreen wallpaper"
-msgstr ""
+#: src/ms-feedback-panel.c:350
+msgid "critical"
+msgstr "严重"
 
 #. Translators: The default completer
-#: src/ms-osk-panel.c:751
+#: src/ms-osk-panel.c:534
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
-#: src/ms-osk-panel.c:752
+#: src/ms-osk-panel.c:535
 msgid "The default completer selected by the OSK"
-msgstr ""
+msgstr "由OSK选择的默认补全器"
 
-#: src/ms-osk-panel.c:755
+#: src/ms-osk-panel.c:538
 msgid "No information available for this completer"
-msgstr ""
+msgstr "此补全器无可用信息"
 
-#: src/ms-overview-panel.c:62
-#, c-format
-msgid "%u App Made Visible Again"
-msgid_plural "%u Apps Made Visible Again"
-msgstr[0] ""
-
-#: src/ms-overview-panel.c:102
-msgid "Reset favorites?"
-msgstr ""
-
-#: src/ms-overview-panel.c:105
-msgid "Reset list of favorite applications to the default?"
-msgstr ""
-
-#: src/ms-overview-panel.c:109
-msgid "_Reset"
-msgstr ""
-
-#: src/ms-overview-panel.c:364
-msgid "Failed to set wallpaper for overview"
-msgstr ""
-
-#. Translators: "Normal" represents the standard or default orientation
-#: src/ms-sensor-panel.c:93
+#: src/ms-sensor-panel.c:92
 msgid "Normal"
-msgstr ""
+msgstr "普通"
 
-#. Translators: "Bottom up" indicates the orientation is flipped vertically
-#: src/ms-sensor-panel.c:96
+#: src/ms-sensor-panel.c:94
 msgid "Bottom up"
-msgstr ""
+msgstr "自下而上"
 
-#. Translators: "Left up" indicates the orientation of a device with left side up
-#: src/ms-sensor-panel.c:99
+#: src/ms-sensor-panel.c:96
 msgid "Left up"
-msgstr ""
+msgstr "自左而上"
 
-#. Translators: "Right up" indicates the orientation of a device with right side up
-#: src/ms-sensor-panel.c:102
+#: src/ms-sensor-panel.c:98
 msgid "Right up"
-msgstr ""
+msgstr "自右而上"
 
-#. Translators: "Undefined" is shown when the orientation of the device is not recognized
-#: src/ms-sensor-panel.c:105
+#: src/ms-sensor-panel.c:100
 msgid "Undefined"
-msgstr ""
+msgstr "未定义"
 
-#. Translators: "Near" indicates proximity close to the sensor
-#. * "Far" indicates some distance from the sensor
-#: src/ms-sensor-panel.c:142
+#: src/ms-sensor-panel.c:135
 msgid "Near"
-msgstr ""
+msgstr "近"
 
-#: src/ms-sensor-panel.c:142
+#: src/ms-sensor-panel.c:135
 msgid "Far"
-msgstr ""
+msgstr "远"
 
-#: src/ms-sensor-panel.c:260
+#: src/ms-sensor-panel.c:253
 msgid "Updating…"
-msgstr ""
+msgstr "更新中…"
 
-#. Translators: "Not available" indicates that the proximity sensor data is unavailable
-#: src/ms-sensor-panel.c:277
-msgctxt "proximity sensor data"
+#: src/ms-sensor-panel.c:269 src/ms-sensor-panel.c:270
+#: src/ms-sensor-panel.c:271
 msgid "Not available"
 msgstr "不可用"
 
-#. Translators: "Not available" indicates that the light sensor data is unavailable
-#: src/ms-sensor-panel.c:279
-msgctxt "light sensor data"
-msgid "Not available"
-msgstr "不可用"
-
-#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
-#: src/ms-sensor-panel.c:281
-msgctxt "accelerometer sensor data"
-msgid "Not available"
-msgstr "不可用"
-
-#. Translators: "Custom" is the name of a user-defined sound theme
-#: src/ms-sound-row.c:130
+#: src/ms-sound-row.c:127
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
-#: src/ms-sound-row.c:311
+#: src/ms-sound-row.c:308
 msgid "Choose sound file"
-msgstr ""
+msgstr "选择音频文件"
 
-#. Translators: %s is a OS version number like 0.20260614
-#: src/ms-updates-panel.c:151
-#, c-format
-msgid "Update to %s"
-msgstr ""
-
-#: src/ms-updates-panel.c:184 src/ms-updates-panel.c:220
-#, c-format
-msgid "OS update failed: %s"
-msgstr ""
-
-#: src/ms-updates-panel.c:270
-#, c-format
-msgid "Canceling OS update failed: %s"
-msgstr ""
-
-#: src/ms-updates-panel.c:333
-msgid "OS Update already in progress"
-msgstr ""
-
-#. Translators %s is an os version number like 0.20260614
-#: src/ms-updates-panel.c:341
-#, c-format
-msgid "Updating to %s…"
-msgstr ""
-
-#: src/ms-updates-panel.c:361
-msgid "OS update in progress"
-msgstr ""
-
-#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
-#: src/ms-util.c:170
+#: src/ms-util.c:150
 msgid "Full"
-msgstr ""
+msgstr "完整"
 
-#. Translators: "Quiet" represents a feedback profile with haptic and LED
-#: src/ms-util.c:173
+#: src/ms-util.c:152
 msgid "Quiet"
-msgstr ""
+msgstr "安静"
 
-#. Translators: "Silent" represents a feedback profile with LED only
-#: src/ms-util.c:176
+#: src/ms-util.c:154
 msgid "Silent"
-msgstr ""
+msgstr "静音"
 
-#: src/ms-util.c:292
-msgid "Choose Wallpaper"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:75
+msgid "Welcome"
+msgstr "欢迎"
 
-#: src/ms-window.c:131
-msgid "Configurable Tweaks"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:81
+msgid "Welcome to Mobile Settings"
+msgstr "欢迎使用移动设置"
 
-#: src/ms-window.c:182
-msgid "Device"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:82
+msgid "Tweak advanced mobile settings"
+msgstr "调整高级移动设置"
 
-#: src/ui/ms-about-panel.ui:19
-msgid "Phosh logo"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:90
+msgid "Top Bar"
+msgstr "顶部栏"
 
-#: src/ui/ms-about-panel.ui:30
-msgid "Phosh Version"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:101
+msgid "Applications"
+msgstr "应用程序"
 
-#: src/ui/ms-about-panel.ui:38
-msgid "Operating System"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:112
+msgid "Feedback"
+msgstr "反馈"
 
-#: src/ui/ms-about-panel.ui:46
-msgid "Operating System Version"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:123
+msgid "Compositor"
+msgstr "合成器"
 
-#: src/ui/ms-about-panel.ui:54
-msgid "Hardware Model"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:134
+msgid "Lockscreen"
+msgstr "锁屏"
 
-#: src/ui/ms-about-panel.ui:66
-msgid "Support Phosh"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:145
+msgid "Convergence"
+msgstr "融合"
 
-#: src/ui/ms-about-panel.ui:67
-msgid "Your donations make our work possible"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:156
+msgid "On Screen Keyboard"
+msgstr "屏幕键盘"
 
-#: src/ui/ms-about-panel.ui:70
-msgid "D_onate"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:167 src/ui/ms-sensor-panel.ui:28
+msgid "Sensors"
+msgstr "传感器"
 
-#: src/ui/ms-alerts-panel.ui:17
-msgid "Unable To Receive Alerts"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:178
+msgid "Experimental features"
+msgstr "实验性功能"
 
-#: src/ui/ms-alerts-panel.ui:18
-msgid ""
-"Cannot receive Emergency Alerts on this device as no usable cellular modem "
-"is detected."
-msgstr ""
+#: src/ui/mobile-settings-window.ui:202
+msgid "_Keyboard Shortcuts"
+msgstr "_键盘快捷键"
 
-#: src/ui/ms-alerts-panel.ui:30
-msgid "Emergency and Governmental Alerts"
-msgstr ""
+#: src/ui/mobile-settings-window.ui:206
+msgid "_About Mobile Settings"
+msgstr "_关于移动设置"
 
-#: src/ui/ms-alerts-panel.ui:33
-msgid "Extreme Threat Alerts"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:11
+msgid "Favorites"
+msgstr "收藏夹"
 
-#: src/ui/ms-alerts-panel.ui:35
-msgid "Display alerts for extreme threats to life and safety"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:20
+msgid "Organize Favorites"
+msgstr "整理收藏夹"
 
-#: src/ui/ms-alerts-panel.ui:41
-msgid "Severe Threat Alerts"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:21
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "拖拽下方的应用，以重新排列您的收藏应用"
 
-#: src/ui/ms-alerts-panel.ui:43
-msgid "Display alerts for severe threats to life and safety"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:46
+msgid "Reset Favorites"
+msgstr "重置收藏夹"
 
-#: src/ui/ms-alerts-panel.ui:49
-msgid "Public Safety Alerts"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:47
+msgid "Set list of favorite apps back to the default"
+msgstr "将收藏应用列表恢复为默认设置"
 
-#: src/ui/ms-alerts-panel.ui:51
-msgid "Show recommended actions to take in situations with a risk to safety"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:51
+msgid "Reset"
+msgstr "重置"
 
-#: src/ui/ms-alerts-panel.ui:57
-msgid "Test alerts"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:62
+msgid "Mobile App Filtering"
+msgstr "移动应用过滤"
 
-#: src/ui/ms-alerts-panel.ui:59
-msgid "Show periodic messages to test the alert system"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:65
+msgid "Set Application Filter Mode"
+msgstr "设置应用过滤模式"
 
-#: src/ui/ms-alerts-panel.ui:65
-msgid "Amber alerts"
-msgstr ""
-
-#: src/ui/ms-alerts-panel.ui:67
-msgid "Show messages about child abduction emergencies"
-msgstr ""
-
-#: src/ui/ms-alerts-panel.ui:76
-msgid "History of Emergency and Governmental Alerts"
-msgstr ""
-
-#: src/ui/ms-alerts-panel.ui:82
-msgid "No emergency alerts yet"
-msgstr ""
-
-#: src/ui/ms-audio-device-row.ui:32
-msgid "Volume"
-msgstr ""
+#: src/ui/ms-applications-panel.ui:66
+msgid "Show only mobile apps in the overview"
+msgstr "在概览中仅显示移动应用"
 
 #: src/ui/ms-compositor-panel.ui:11
 msgid "Scaling down of running applications"
-msgstr ""
+msgstr "缩小正在运行应用的显示"
 
 #: src/ui/ms-compositor-panel.ui:12
 msgid "Only enable this for broken apps that don't fit the screen"
-msgstr ""
+msgstr "仅对那些无法适应屏幕的异常应用启用此功能"
 
 #: src/ui/ms-compositor-panel.ui:25
 msgid "Scale down all applications"
-msgstr ""
+msgstr "缩小所有应用"
 
 #: src/ui/ms-compositor-panel.ui:26
 msgid "Forcibly scale down all applications. Only use this as a last resort."
-msgstr ""
+msgstr "强制缩小所有应用，仅在万不得已时使用。"
 
 #: src/ui/ms-compositor-panel.ui:29
 msgid "Scale down all apps"
-msgstr ""
+msgstr "缩小所有应用"
 
-#. Translators: setting to scale down all applications
-#. Translators: setting to scale down a single application
-#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
-msgctxt "scale to fit setting"
+#: src/ui/ms-compositor-panel.ui:35 src/ui/ms-convergence-panel.ui:35
+#: src/ui/ms-features-panel.ui:23 src/ui/ms-features-panel.ui:38
+#: src/ui/ms-lockscreen-panel.ui:37 src/ui/ms-scale-to-fit-row.ui:11
 msgid "Enabled"
-msgstr "已启用"
+msgstr "启用"
 
 #: src/ui/ms-convergence-panel.ui:15
 msgid "No known docks detected"
-msgstr ""
+msgstr "未检测到已知坞站"
 
 #: src/ui/ms-convergence-panel.ui:29
 msgid "Map built-in touch screen"
-msgstr ""
-
-#. Translators: setting to map built-in touch screen
-#: src/ui/ms-convergence-panel.ui:36
-msgctxt "touch setting"
-msgid "Enabled"
-msgstr "已启用"
+msgstr "映射内置触摸屏"
 
 #: src/ui/ms-features-panel.ui:11
 msgid "Experimental Features"
-msgstr ""
+msgstr "实验性功能"
 
 #: src/ui/ms-features-panel.ui:12
 msgid "Features not yet deemed fully stable"
-msgstr ""
+msgstr "功能尚未被认为完全稳定"
 
 #: src/ui/ms-features-panel.ui:16
 msgid "Emergency Calls"
-msgstr ""
+msgstr "紧急呼叫"
 
 #: src/ui/ms-features-panel.ui:17
 msgid ""
 "Enable emergency calls. Please only enable this if you safely can ensure "
 "that it's working with your provider."
 msgstr ""
+"启用紧急呼叫。请仅在您能安全确认该功能与您的服务提供商正常工作时启用。"
 
-#. Translators: setting to enable emergency calls
-#: src/ui/ms-features-panel.ui:24
-msgctxt "emergency calls setting"
-msgid "Enabled"
-msgstr "已启用"
-
-#: src/ui/ms-features-panel.ui:32
+#: src/ui/ms-features-panel.ui:31
 msgid "Enable suspend via the system menu"
-msgstr ""
+msgstr "通过系统菜单启用挂起"
 
-#: src/ui/ms-features-panel.ui:34
+#: src/ui/ms-features-panel.ui:33
 msgid ""
 "Please only enable this if you're aware of the limitations like data "
 "connection loss or missed alarms"
 msgstr ""
+"仅当您了解例如数据连接中断或闹钟遗漏等限制时，请启用此功能"
 
-#. Translators: setting to enable suspend via the system menu
-#: src/ui/ms-features-panel.ui:40
-msgctxt "suspend setting"
-msgid "Enabled"
-msgstr "已启用"
-
-#: src/ui/ms-feedback-panel.ui:13
-msgid "Sound Settings"
-msgstr ""
+#: src/ui/ms-feedback-panel.ui:16
+msgid "Feedback profile"
+msgstr "反馈配置文件"
 
 #: src/ui/ms-feedback-panel.ui:17
-msgid "Play sound on adjusting volume sliders"
-msgstr ""
+msgid "The global maximum feedback profile"
+msgstr "全局最高反馈配置文件"
+
+#: src/ui/ms-feedback-panel.ui:32
+msgid "Prefer flash"
+msgstr "优先使用闪光灯"
 
 #: src/ui/ms-feedback-panel.ui:33
-msgid "Feedback Settings"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:36
-msgid "Feedback profile"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:37
-msgid "The global maximum feedback profile"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:52
-msgid "Prefer flash"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:53
 msgid "Prefer camera flash over status LED when available"
-msgstr ""
+msgstr "在可用时优先使用摄像头闪光灯而非状态LED"
 
-#: src/ui/ms-feedback-panel.ui:59
-msgid "Silence by volume button press"
-msgstr ""
+#. Translators: Vol- means the 'Lower Volume' key
+#: src/ui/ms-feedback-panel.ui:39
+msgid "Silence on Vol-"
+msgstr "按音量减键静音"
 
-#: src/ui/ms-feedback-panel.ui:60
+#: src/ui/ms-feedback-panel.ui:40
 msgid ""
-"When locked put the phone in silent mode when pressing the button that "
-"lowers the volume on incoming calls"
+"When locked put the phone in silent mode when pressing Vol- on incoming calls"
 msgstr ""
+"锁定状态下，接来电时按音量减键将手机设置为静音模式"
 
-#. Translators: Strength of the haptic motor
-#: src/ui/ms-feedback-panel.ui:66
-msgid "Haptic strength"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:67
-msgid "Maximum haptic feedback strength percentage"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:86
+#: src/ui/ms-feedback-panel.ui:48
 msgid "Per Application settings"
-msgstr ""
+msgstr "各应用设置"
 
-#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:161
+#: src/ui/ms-feedback-panel.ui:61
 msgid "Sounds"
-msgstr ""
+msgstr "声音"
 
-#: src/ui/ms-feedback-panel.ui:100
+#: src/ui/ms-feedback-panel.ui:62
 msgid "The sound to use for certain events"
-msgstr ""
+msgstr "用于特定事件的声音"
 
-#: src/ui/ms-feedback-panel.ui:114
+#: src/ui/ms-feedback-panel.ui:70
 msgid "Phone Calls"
-msgstr ""
+msgstr "电话"
 
-#: src/ui/ms-feedback-panel.ui:126
+#: src/ui/ms-feedback-panel.ui:76
 msgid "SMS"
-msgstr ""
+msgstr "短信"
 
-#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
-msgid "Instant Messages"
-msgstr ""
+#: src/ui/ms-feedback-panel.ui:82
+msgid "Instant messages"
+msgstr "即时消息"
 
-#: src/ui/ms-feedback-panel.ui:151
-msgid "Alarm Clock"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:162
+#: src/ui/ms-feedback-panel.ui:93
 msgid "Screen Wakeup"
-msgstr ""
+msgstr "屏幕唤醒"
 
-#: src/ui/ms-feedback-panel.ui:165
+#: src/ui/ms-feedback-panel.ui:96
 msgid "Notification urgency that lights up the screen"
-msgstr ""
+msgstr "通知紧急程度用于点亮屏幕"
 
-#: src/ui/ms-feedback-panel.ui:183
-msgid ""
-"Notification categories that wake up the screen independent from their "
-"urgency"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:186
-msgid "Calls"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:187
-msgid "A generic audio or video call notification"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:193
-msgid "Device events"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:194
-msgid "A generic device-related notification"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:200
-msgid "Emails"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:201
-msgid "A generic e-mail-related notification"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:208
-msgid "A generic instant message-related notification"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:214
-msgid "Network events"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:215
-msgid "A generic network notification"
-msgstr ""
-
-#. Translators: "presence change" means coming online or going offline,
-#. like in an instant messenger.
-#: src/ui/ms-feedback-panel.ui:223
-msgid "Presence changes"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:224
-msgid "A generic presence change notification"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:230
-msgid "File transfers"
-msgstr ""
-
-#: src/ui/ms-feedback-panel.ui:231
-msgid "A generic file transfer or download notification"
-msgstr ""
-
-#: src/ui/ms-hidden-app-row.ui:5 src/ui/ms-scale-to-fit-row.ui:5
-msgid "Application"
-msgstr ""
-
-#: src/ui/ms-hidden-apps-dialog.ui:4
-msgid "Hidden Apps"
-msgstr ""
-
-#: src/ui/ms-hidden-apps-dialog.ui:83
-msgid "No Apps are Currently Hidden"
-msgstr ""
-
-#: src/ui/ms-lang-panel.ui:15
-msgid "The language of the user interface"
-msgstr ""
-
-#: src/ui/ms-lang-panel.ui:18
-msgid "_Language"
-msgstr ""
-
-#: src/ui/ms-lang-panel.ui:45
-msgid "Language change requires logout or restart"
-msgstr ""
-
-#: src/ui/ms-lang-panel.ui:46
-msgid "Logout"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:14
+#: src/ui/ms-lockscreen-panel.ui:12
 msgid "Locking and unlocking"
-msgstr ""
+msgstr "锁定与解锁"
 
-#: src/ui/ms-lockscreen-panel.ui:18
-msgid "Shuffle keypad"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:19
-msgid "Whether to shuffle the numbers on the keypad"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:25
-msgid "Require authentication to unlock"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:26
-msgid "Require typing PIN or password to unlock the device"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:32
+#: src/ui/ms-lockscreen-panel.ui:15
 msgid "Automatic screen lock delay"
-msgstr ""
+msgstr "自动屏幕锁定延迟"
 
-#: src/ui/ms-lockscreen-panel.ui:33
+#: src/ui/ms-lockscreen-panel.ui:16
 msgid "Seconds from screen blank to screen lock"
-msgstr ""
+msgstr "从屏幕变黑到锁定的秒数"
 
-#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:94
-msgid "Background"
-msgstr ""
+#: src/ui/ms-lockscreen-panel.ui:30
+msgid "Shuffle keypad"
+msgstr "随机排列键盘"
 
-#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:100
-msgid "_Select Wallpaper…"
-msgstr ""
+#: src/ui/ms-lockscreen-panel.ui:31
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "是否随机排列键盘上的数字"
 
-#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:112
-msgid "Use wallpaper"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:113
-msgid "Whether to show a colorful wallpaper"
-msgstr ""
-
-#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:205
+#: src/ui/ms-lockscreen-panel.ui:48
 msgid "Widgets"
-msgstr ""
+msgstr "小部件"
 
-#: src/ui/ms-lockscreen-panel.ui:80
+#: src/ui/ms-lockscreen-panel.ui:49
 msgid "Additional widgets for the lock screen"
-msgstr ""
+msgstr "锁屏的附加小部件"
 
-#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
-#. Translators: Label for a button that allows the user to add a new keyboard shortcut
-#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:168
-msgid "Add Shortcut"
-msgstr ""
+#: src/ui/ms-osk-add-layout-dialog.ui:4 src/ui/ms-osk-layout-prefs.ui:13
+msgctxt "on screen keyboard"
+msgid "Add Layout"
+msgstr "添加布局"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:44
-msgid "Choose Shortcut Modifiers"
-msgstr ""
+#: src/ui/ms-osk-add-layout-dialog.ui:13
+msgid "Cancel"
+msgstr "取消"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:129
-msgid "Choose Shortcut Key"
-msgstr ""
+#: src/ui/ms-osk-add-layout-dialog.ui:19
+msgid "Add"
+msgstr "添加"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:140
-msgid "Enter Shortcut Key"
-msgstr ""
+#: src/ui/ms-osk-add-layout-dialog.ui:39
+msgid "Language"
+msgstr "语言"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:141
-msgid "Type a key such as letters (like C or V), etc."
-msgstr ""
+#: src/ui/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "布局"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:144
-msgid "_Shortcut Key"
-msgstr ""
+#: src/ui/ms-osk-layout-prefs.ui:28
+msgctxt "on screen keyboard"
+msgid "No Layouts configured"
+msgstr "未配置布局"
 
-#: src/ui/ms-osk-add-shortcut-dialog.ui:167
-msgid "Shortcut Preview"
-msgstr ""
+#: src/ui/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:41
+msgid "More options…"
+msgstr "更多选项…"
+
+#: src/ui/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:54
+msgid "Move Up"
+msgstr "上移"
+
+#: src/ui/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:58
+msgid "Move Down"
+msgstr "下移"
+
+#: src/ui/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "移除"
 
 #: src/ui/ms-osk-panel.ui:13
 msgid "Enable _On Screen Keyboard"
-msgstr ""
+msgstr "启用 _屏幕键盘"
 
 #: src/ui/ms-osk-panel.ui:14
 msgid "Whether to show the on screen keyboard when needed"
-msgstr ""
+msgstr "需要时是否显示屏幕键盘"
+
+#: src/ui/ms-osk-panel.ui:19
+msgid "Unfold long-press"
+msgstr "展开长按"
 
 #: src/ui/ms-osk-panel.ui:20
-msgid "Unfold long-press"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:21
 msgid ""
-"How long to press the center of the home bar to unfold the on screen keyboard"
+"How long to press the centre of the home bar to unfold the on screen keyboard"
 msgstr ""
+"按住主页栏中心的时间以展开屏幕键盘"
 
-#. Translators: abbreviation for less than or equal to 0.5 second interval of time
-#: src/ui/ms-osk-panel.ui:26
+#: src/ui/ms-osk-panel.ui:25
 msgid "short"
-msgstr ""
+msgstr "短"
 
-#. Translators: abbreviation for 1 second interval of time
-#: src/ui/ms-osk-panel.ui:28
-msgctxt "press interval"
-msgid "normal"
-msgstr "正常"
-
-#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
-#: src/ui/ms-osk-panel.ui:30
+#: src/ui/ms-osk-panel.ui:29
 msgid "long"
-msgstr ""
+msgstr "长"
+
+#: src/ui/ms-osk-panel.ui:37
+msgid "Ignore hardware keyboard"
+msgstr "忽略硬件键盘"
 
 #: src/ui/ms-osk-panel.ui:38
-msgid "Ignore hardware keyboard"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:39
 msgid ""
 "Whether to show the on screen keyboard when a physical keyboard is present"
 msgstr ""
+"当存在物理键盘时是否显示屏幕键盘"
 
-#: src/ui/ms-osk-panel.ui:46
-msgid "Key indicator popup"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:47
-msgid "Whether to show a popover indicating the currently pressed key"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:59
+#: src/ui/ms-osk-panel.ui:50
 msgid "Keyboard height in portrait mode"
-msgstr ""
+msgstr "竖屏模式下键盘高度"
 
-#: src/ui/ms-osk-panel.ui:60
+#: src/ui/ms-osk-panel.ui:51
 msgid "When the screen is taller than wide"
-msgstr ""
+msgstr "当屏幕高度大于宽度时"
 
-#: src/ui/ms-osk-panel.ui:76
+#: src/ui/ms-osk-panel.ui:66
 msgid "Keyboard height in landscape mode"
-msgstr ""
+msgstr "横屏模式下键盘高度"
 
-#: src/ui/ms-osk-panel.ui:77
+#: src/ui/ms-osk-panel.ui:67
 msgid "When the screen is wider than tall"
-msgstr ""
+msgstr "当屏幕宽度大于高度时"
 
-#: src/ui/ms-osk-panel.ui:101 src/ui/ms-window.ui:184
-msgid "Scaling"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:104
-msgid "Keep physical size constant"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:105
-msgid "Ensure OSK is large enough in high screen resolutions"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:111
-msgid "Add empty space below keys"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:112
-msgid "Whether to add an empty area below the OSK's keys to shift it upward."
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:122
+#: src/ui/ms-osk-panel.ui:90
 msgid "Text Completion"
-msgstr ""
+msgstr "文本自动完成"
+
+#: src/ui/ms-osk-panel.ui:93
+msgid "Opportunistic word completion"
+msgstr "机会性单词自动完成"
+
+#: src/ui/ms-osk-panel.ui:94
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "当应用提示有用时启用单词自动完成"
+
+#: src/ui/ms-osk-panel.ui:101
+msgid "Toggle via OSK menu"
+msgstr "通过屏幕键盘菜单切换"
+
+#: src/ui/ms-osk-panel.ui:102
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr "允许通过键盘菜单按钮切换单词自动完成"
+
+#: src/ui/ms-osk-panel.ui:108
+#| msgid "Text Completion"
+msgid "Default Completer"
+msgstr "默认补全器"
+
+#: src/ui/ms-osk-panel.ui:109
+msgid "The default completion engine to use"
+msgstr "使用的默认自动完成引擎"
+
+#: src/ui/ms-osk-panel.ui:120
+msgid "Terminal Layout"
+msgstr "终端布局"
+
+#: src/ui/ms-osk-panel.ui:124
+msgid "Shortcuts"
+msgstr "快捷键"
 
 #: src/ui/ms-osk-panel.ui:125
-msgid "Opportunistic word completion"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:126
-msgid "Enable word completion when the app indicates it is useful"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:133
-msgid "Toggle via OSK menu"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:134
-msgid "Allow to toggle word completion via the keyboard's menu button"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:140
-msgid "Default Completer"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:141
-msgid "The default completion engine to use"
-msgstr ""
-
-#. Translators: Space is the ' ' character here
-#: src/ui/ms-osk-panel.ui:150
-msgid "Handle space around punctuation characters"
-msgstr ""
-
-#. Translators: Space is the ' ' character here
-#: src/ui/ms-osk-panel.ui:152
-msgid ""
-"This also swaps the space and punctuation characters after word completion"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:160
-msgid "Terminal Layout"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:179
-msgid "Shortcuts"
-msgstr ""
-
-#: src/ui/ms-osk-panel.ui:180
 msgid "The shortcuts available in the shortcuts bar"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:139
-msgid "Favorites"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:22
-msgid "Organize Favorites"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:23
-msgid "Drag and drop the apps below to rearrange your favorite apps"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:48
-msgid "Reset Favorites"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:49
-msgid "Set list of favorite apps back to the default"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:53
-msgid "Reset"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:64
-msgid "App Filtering and Hiding"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:67
-msgid "Set Application Filter Mode"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:68
-msgid "Show only mobile apps in the overview"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:74
-msgid "_Manage Hidden Apps"
-msgstr ""
-
-#: src/ui/ms-overview-panel.ui:75
-msgid "Make apps you disabled in the overview visible again"
-msgstr ""
-
-#: src/ui/ms-panel-switcher.ui:11
-msgid "No Matching Panels"
-msgstr ""
-
-#: src/ui/ms-panel-switcher.ui:12
-msgid "Try a different search"
-msgstr ""
+msgstr "快捷键栏中可用的快捷方式"
 
 #: src/ui/ms-sensor-panel.ui:16
 msgid "No Sensors found"
-msgstr ""
+msgstr "未找到传感器"
 
 #: src/ui/ms-sensor-panel.ui:17
 msgid ""
 "Either there are no sensors installed on your device or they are disabled by "
 "a killswitch."
 msgstr ""
-
-#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:278
-msgid "Sensors"
-msgstr ""
+"您的设备上可能未安装传感器，或者它们被杀开关禁用了。"
 
 #: src/ui/ms-sensor-panel.ui:32
 msgid "Sensor Readings"
-msgstr ""
+msgstr "传感器读数"
 
 #: src/ui/ms-sensor-panel.ui:40
 msgid "Proximity"
-msgstr ""
+msgstr "接近"
 
 #: src/ui/ms-sensor-panel.ui:49
 msgid "Light"
-msgstr ""
+msgstr "光"
 
 #: src/ui/ms-sensor-panel.ui:58
 msgid "Orientation"
-msgstr ""
+msgstr "方向"
 
-#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:286
+#: src/ui/ms-sensor-panel.ui:69
 msgid "High Contrast"
-msgstr ""
+msgstr "高对比度"
 
 #: src/ui/ms-sensor-panel.ui:72
 msgid "Automatic High Contrast"
-msgstr ""
+msgstr "自动高对比度"
 
 #: src/ui/ms-sensor-panel.ui:73
 msgid "Controlled by the Ambient Light Sensor"
-msgstr ""
+msgstr "由环境光传感器控制"
 
 #: src/ui/ms-sensor-panel.ui:84
 msgid "Light intensity threshold"
-msgstr ""
+msgstr "光强阈值"
 
 #: src/ui/ms-sensor-panel.ui:85
 msgid "Theme will switch to high contrast above the threshold"
-msgstr ""
-
-#: src/ui/ms-sound-row.ui:33
-msgid "Toggle Play"
-msgstr ""
+msgstr "超过阈值后主题将切换到高对比度"
 
 #: src/ui/ms-sound-row.ui:54
 msgid "Sound files (ogg)"
-msgstr ""
+msgstr "音频文件 (ogg)"
 
 #: src/ui/ms-topbar-panel.ui:12
 msgid "UI Elements"
-msgstr ""
+msgstr "用户界面元素"
 
 #: src/ui/ms-topbar-panel.ui:16
 msgid "Show battery percentage"
-msgstr ""
+msgstr "显示电池百分比"
 
 #: src/ui/ms-topbar-panel.ui:17
 msgid "Show exact charge level in the top bar"
-msgstr ""
+msgstr "在顶部栏显示精确电量"
 
 #: src/ui/ms-topbar-panel.ui:23
 msgid "Avoid notches"
-msgstr ""
+msgstr "避免刘海"
 
 #: src/ui/ms-topbar-panel.ui:24
 msgid "Don't place UI elements beneath notches and display cutouts"
-msgstr ""
+msgstr "不要将用户界面元素放置在刘海和屏幕凹口下方"
 
-#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:119
+#: src/ui/ms-topbar-panel.ui:34
 msgid "Quick Settings"
-msgstr ""
+msgstr "快速设置"
 
 #: src/ui/ms-topbar-panel.ui:35
-msgid "Organize your additional Quick Settings"
-msgstr ""
+msgid "Organise your additional Quick Settings"
+msgstr "整理您的额外快速设置"
 
-#: src/ui/ms-updates-panel.ui:12
-msgid "OS updates require a system restart"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:13
-msgid "Restart"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:30
-msgid "Everything up to date"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:31
-msgid "There are no OS updates available"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:42
-msgid "Updates available"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:43
-msgid "There are OS updates available"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:65
-msgid "Fetching OS update…"
-msgstr ""
-
-#: src/ui/ms-updates-panel.ui:109
-msgid "Installing OS update…"
-msgstr ""
-
-#: src/ui/ms-welcome-panel.ui:8
-msgid "Welcome to Mobile Settings"
-msgstr ""
-
-#: src/ui/ms-welcome-panel.ui:9
-msgid "Tweak advanced mobile settings"
-msgstr ""
-
-#. Translators: this is a verb.
-#: src/ui/ms-window.ui:32
-msgid "Search"
-msgstr ""
-
-#. Translators: Placeholder text for the search bar input
-#: src/ui/ms-window.ui:50
-msgid "Search settings"
-msgstr ""
-
-#: src/ui/ms-window.ui:100
-msgid "Welcome"
-msgstr ""
-
-#: src/ui/ms-window.ui:111
-msgid "Top Bar"
-msgstr ""
-
-#: src/ui/ms-window.ui:120
-msgid "Notches"
-msgstr ""
-
-#: src/ui/ms-window.ui:131
-msgid "Overview"
-msgstr ""
-
-#: src/ui/ms-window.ui:140
-msgid "Filter"
-msgstr ""
-
-#: src/ui/ms-window.ui:141 src/ui/ms-window.ui:203
-msgid "Wallpaper"
-msgstr ""
-
-#: src/ui/ms-window.ui:152 src/ui/ms-window.ui:160
-msgid "Feedback"
-msgstr ""
-
-#: src/ui/ms-window.ui:162
-msgid "Wakeup"
-msgstr ""
-
-#: src/ui/ms-window.ui:163
-msgid "Vibra"
-msgstr ""
-
-#: src/ui/ms-window.ui:164
-msgid "Haptic"
-msgstr ""
-
-#: src/ui/ms-window.ui:165
-msgid "LED"
-msgstr ""
-
-#: src/ui/ms-window.ui:176
-msgid "Compositor"
-msgstr ""
-
-#: src/ui/ms-window.ui:195
-msgid "Lockscreen"
-msgstr ""
-
-#: src/ui/ms-window.ui:204
-msgid "Shuffle"
-msgstr ""
-
-#: src/ui/ms-window.ui:206
-msgid "Password"
-msgstr ""
-
-#: src/ui/ms-window.ui:217
-msgid "Convergence"
-msgstr ""
-
-#: src/ui/ms-window.ui:235
-msgid "On Screen Keyboard"
-msgstr ""
-
-#: src/ui/ms-window.ui:243
-msgid "Keyboard"
-msgstr ""
-
-#: src/ui/ms-window.ui:244
-msgid "Unfold"
-msgstr ""
-
-#: src/ui/ms-window.ui:245
-msgid "OSK"
-msgstr ""
-
-#: src/ui/ms-window.ui:246
-msgid "Word Completion"
-msgstr ""
-
-#: src/ui/ms-window.ui:257
-msgid "Emergency Alerts"
-msgstr ""
-
-#: src/ui/ms-window.ui:265 src/ui/ms-window.ui:305
-msgid "Emergency"
-msgstr ""
-
-#: src/ui/ms-window.ui:266
-msgid "Cell Broadcast"
-msgstr ""
-
-#: src/ui/ms-window.ui:267
-msgid "Danger"
-msgstr ""
-
-#: src/ui/ms-window.ui:297
-msgid "Experimental features"
-msgstr ""
-
-#: src/ui/ms-window.ui:306
-msgid "Suspend"
-msgstr ""
-
-#: src/ui/ms-window.ui:307
-msgid "Experimental"
-msgstr ""
-
-#: src/ui/ms-window.ui:327
-msgid "Locale"
-msgstr ""
-
-#: src/ui/ms-window.ui:338
-msgid "OS Updates"
-msgstr ""
-
-#: src/ui/ms-window.ui:346
-msgid "Updates"
-msgstr ""
-
-#: src/ui/ms-window.ui:358 src/ui/ms-window.ui:366
-msgid "About"
-msgstr ""
-
-#: src/ui/ms-window.ui:391
-msgid "_Show Configurable Tweaks"
-msgstr ""
-
-#: src/ui/ms-window.ui:398
-msgid "_Keyboard Shortcuts"
-msgstr ""
-
-#: src/ui/ms-window.ui:402
-msgid "_About Mobile Settings"
-msgstr ""
-
-#: src/ui/shortcuts-dialog.ui:6
-msgctxt "shortcut window"
-msgid "General"
-msgstr "常规"
-
-#: src/ui/shortcuts-dialog.ui:9
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "显示快捷键"
-
-#: src/ui/shortcuts-dialog.ui:15
-msgctxt "shortcut window"
-msgid "Search"
-msgstr "搜索"
-
-#: src/ui/shortcuts-dialog.ui:21
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "退出"
+#~ msgid "Unlocking"
+#~ msgstr "Unlocking"
