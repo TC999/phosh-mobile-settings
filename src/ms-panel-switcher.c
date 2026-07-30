@@ -221,9 +221,6 @@ panels_filter_func (gpointer item_, gpointer user_data)
   GtkStringList *keywords;
 
   stack_child = adw_view_stack_page_get_child (page);
-  if (MS_IS_TWEAKS_PREFERENCES_PAGE (stack_child)
-      && !g_settings_get_boolean (self->settings, "enable-conf-tweaks"))
-    return FALSE;
 
   if (self->only_tweaks && !MS_IS_TWEAKS_PREFERENCES_PAGE (stack_child))
     return FALSE;
