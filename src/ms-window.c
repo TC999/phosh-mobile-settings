@@ -37,6 +37,9 @@ struct _MsWindow {
 
   GSettings *settings;
   MsTweaksParser         *ms_tweaks_parser;
+
+  guint idle_filter_id;
+  GtkFilterChange         idle_filter_change;
 };
 
 G_DEFINE_TYPE (MsWindow, ms_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -149,15 +152,37 @@ do_toggle_conf_tweaks (GSettings *settings, char *key, gpointer user_data)
 
 
 static void
+on_idle_filter (gpointer data)
+{
+  MsWindow *self = data;
+  GtkFilter *filter;
+
+  self->idle_filter_id = 0;
+
+  filter = gtk_filter_list_model_get_filter (GTK_FILTER_LIST_MODEL (self->enabled_pages));
+
+  ms_panel_switcher_refilter (self->panel_switcher, self->idle_filter_change);
+  gtk_filter_changed (filter, self->idle_filter_change);
+
+  self->idle_filter_change = -1;
+}
+
+
+static void
 on_panel_enabled_changed (MsWindow *self, GParamSpec *pspec, MsPanel *panel)
 {
-  GtkFilter *filter;
   gboolean enabled = ms_panel_get_enabled (panel);
   GtkFilterChange change = enabled ? GTK_FILTER_CHANGE_LESS_STRICT : GTK_FILTER_CHANGE_MORE_STRICT;
 
-  filter = gtk_filter_list_model_get_filter (GTK_FILTER_LIST_MODEL (self->enabled_pages));
-  ms_panel_switcher_refilter (self->panel_switcher, change);
-  gtk_filter_changed (filter, change);
+  if (!self->idle_filter_id) {
+    g_debug ("Scheduling idle filtter");
+    self->idle_filter_id = g_idle_add_once (on_idle_filter, self);
+    self->idle_filter_change = change;
+  } else {
+    g_debug ("Reusing idle filtter %u", self->idle_filter_id);
+    if (self->idle_filter_change != change)
+      self->idle_filter_change = GTK_FILTER_CHANGE_DIFFERENT;
+  }
 }
 
 
@@ -208,6 +233,8 @@ static void
 ms_settings_window_dispose (GObject *object)
 {
   MsWindow *self = MS_WINDOW (object);
+
+  g_clear_handle_id (&self->idle_filter_id, g_source_remove);
 
   g_clear_object (&self->enabled_pages);
   g_clear_object (&self->settings);
@@ -264,6 +291,7 @@ ms_window_init (MsWindow *self)
   GListModel *pages;
   GtkFilter *enabled_filter;
 
+  self->idle_filter_change = -1;
   self->settings = g_settings_new ("mobi.phosh.MobileSettings");
   self->ms_tweaks_parser = ms_tweaks_parser_new ();
 
