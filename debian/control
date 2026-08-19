@@ -38,6 +38,7 @@ Build-Depends:
  phosh-osk-stevia (>= 0.56.0~) <!nocheck>,
  phosh-plugins (>= 0.40.0~) <!nocheck>,
  python3-docutils <!nodoc>,
+ python3-polib,
 # For the g-c-c panel builds
  blueprint-compiler (>= 0.19.0) <!pkg.phosh-mobile-settings.no-gcc-panels>,
  gnome-settings-daemon-dev <!pkg.phosh-mobile-settings.no-gcc-panels>,
