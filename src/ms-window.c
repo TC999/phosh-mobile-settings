@@ -110,6 +110,41 @@ stack_child_to_title (gpointer target, AdwViewStack *stack, GtkWidget *child)
 
 
 static void
+on_idle_filter (gpointer data)
+{
+  MsWindow *self = data;
+  GtkFilter *filter;
+
+  self->idle_filter_id = 0;
+
+  filter = gtk_filter_list_model_get_filter (GTK_FILTER_LIST_MODEL (self->enabled_pages));
+
+  ms_panel_switcher_refilter (self->panel_switcher, self->idle_filter_change);
+  gtk_filter_changed (filter, self->idle_filter_change);
+
+  self->idle_filter_change = -1;
+}
+
+
+static void
+on_panel_enabled_changed (MsWindow *self, GParamSpec *pspec, MsPanel *panel)
+{
+  gboolean enabled = ms_panel_get_enabled (panel);
+  GtkFilterChange change = enabled ? GTK_FILTER_CHANGE_LESS_STRICT : GTK_FILTER_CHANGE_MORE_STRICT;
+
+  if (!self->idle_filter_id) {
+    g_debug ("Scheduling idle filtter");
+    self->idle_filter_id = g_idle_add_once (on_idle_filter, self);
+    self->idle_filter_change = change;
+  } else {
+    g_debug ("Reusing idle filtter %u", self->idle_filter_id);
+    if (self->idle_filter_change != change)
+      self->idle_filter_change = GTK_FILTER_CHANGE_DIFFERENT;
+  }
+}
+
+
+static void
 add_ms_tweaks_page (gpointer value, gpointer user_data)
 {
   MsWindow *self = MS_WINDOW (user_data);
@@ -148,41 +183,6 @@ do_toggle_conf_tweaks (GSettings *settings, char *key, gpointer user_data)
 
   ms_panel_switcher_refilter (self->panel_switcher,
                               conf_tweaks_enabled ? GTK_FILTER_CHANGE_LESS_STRICT : GTK_FILTER_CHANGE_MORE_STRICT);
-}
-
-
-static void
-on_idle_filter (gpointer data)
-{
-  MsWindow *self = data;
-  GtkFilter *filter;
-
-  self->idle_filter_id = 0;
-
-  filter = gtk_filter_list_model_get_filter (GTK_FILTER_LIST_MODEL (self->enabled_pages));
-
-  ms_panel_switcher_refilter (self->panel_switcher, self->idle_filter_change);
-  gtk_filter_changed (filter, self->idle_filter_change);
-
-  self->idle_filter_change = -1;
-}
-
-
-static void
-on_panel_enabled_changed (MsWindow *self, GParamSpec *pspec, MsPanel *panel)
-{
-  gboolean enabled = ms_panel_get_enabled (panel);
-  GtkFilterChange change = enabled ? GTK_FILTER_CHANGE_LESS_STRICT : GTK_FILTER_CHANGE_MORE_STRICT;
-
-  if (!self->idle_filter_id) {
-    g_debug ("Scheduling idle filtter");
-    self->idle_filter_id = g_idle_add_once (on_idle_filter, self);
-    self->idle_filter_change = change;
-  } else {
-    g_debug ("Reusing idle filtter %u", self->idle_filter_id);
-    if (self->idle_filter_change != change)
-      self->idle_filter_change = GTK_FILTER_CHANGE_DIFFERENT;
-  }
 }
 
 
