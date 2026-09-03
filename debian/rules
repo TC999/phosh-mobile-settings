@@ -11,7 +11,7 @@ else
 endif
 
 ifeq ($(filter pkg.phosh-mobile-settings.no-gcc-panels,$(DEB_BUILD_PROFILES)),)
-  MESON_OPTS+=-Dgcc-panels=true
+  MESON_OPTS+=-Dgcc-panels=true -Dgcc-po=true
 else
   MESON_OPTS+=-Dgcc-panels=false
 endif

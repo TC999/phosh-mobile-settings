@@ -16,3 +16,6 @@ option('polkit-group', type: 'string', value: '',
 
 option('gcc-panels', type: 'boolean', value: false,
        description: 'Whether to include GNOME Settings panels')
+
+option('gcc-po', type: 'boolean', value: false,
+       description: 'Whether to include translations from GNOME Settings')

@@ -215,6 +215,7 @@ summary(
     'Man pages': get_option('man'),
     'Tweaks directory': get_option('tweaks-data-dir'),
     'Use GCC panels': get_option('gcc-panels'),
+    'Use GCC po': get_option('gcc-po'),
   },
   bool_yn: true,
 )

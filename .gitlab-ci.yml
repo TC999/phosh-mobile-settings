@@ -187,6 +187,8 @@ check-pkgconf:
 check-po:
   stage: test
   extends: .phosh-check-po
+  before_script:
+    - "sed -i s/^subprojects.*// po/POTFILES.in"
 
 check-consistency:
   stage: test

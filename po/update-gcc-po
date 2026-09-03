@@ -1,0 +1,54 @@
+#!/usr/bin/python3
+#
+# Copyright (C) 2026 Phosh.mobi e.V.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+import glob
+import os
+import subprocess
+import sys
+import polib
+
+
+def merge_po(sourceroot, pofile):
+    print(f"Merging {pofile}")
+    pms_po = polib.pofile(f"{sourceroot}/po/{pofile}")
+
+    gcc_po_path = f"{sourceroot}/subprojects/g-c-c/po/{pofile}"
+    if not os.path.exists(gcc_po_path):
+        print(f"{pofile} not in g-c-c skipping")
+        return
+
+    gcc_po = polib.pofile(gcc_po_path)
+
+    translations = {
+        (e.msgctxt, e.msgid): e
+        for e in gcc_po
+    }
+
+    for entry in pms_po:
+        gcc = translations.get((entry.msgctxt, entry.msgid))
+
+        if gcc is not None and gcc.translated():
+            entry.msgstr = gcc.msgstr
+            entry.msgstr_plural = gcc.msgstr_plural.copy()
+
+    pms_po.save(f"{sourceroot}/po/{pofile}")
+
+
+def merge_all_po(sourceroot, buildroot):
+    subprocess.run(f"cat {sourceroot}/po/POTFILES.gcc.in >> {sourceroot}/po/POTFILES.in", check=True, shell=True)
+    subprocess.run(f"ninja -C {buildroot} phosh-mobile-settings-update-po", check=True, shell=True)
+    for f in glob.glob(f"{sourceroot}/po/*.po"):
+        merge_po(sourceroot, os.path.basename(f))
+
+def main():
+    buildroot = os.getenv("MESON_BUILD_ROOT", "_build")
+    sourceroot = os.getenv("MESON_SOURCE_ROOT", ".")
+    merge_all_po(sourceroot, buildroot)
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
