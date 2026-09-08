@@ -513,7 +513,7 @@ ms_panel_switcher_refilter (MsPanelSwitcher *self, GtkFilterChange filter_change
 {
   GtkFilter *filter = adw_sidebar_get_filter (self->sidebar);
 
-  gtk_filter_changed (filter, GTK_FILTER_CHANGE_DIFFERENT);
+  gtk_filter_changed (filter, filter_change_hint);
 }
 
 
