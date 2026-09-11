@@ -110,48 +110,6 @@ stack_child_to_title (gpointer target, AdwViewStack *stack, GtkWidget *child)
 
 
 static void
-add_ms_tweaks_page (gpointer value, gpointer user_data)
-{
-  MsWindow *self = MS_WINDOW (user_data);
-  MsTweaksPage *page_data = (MsTweaksPage *) value;
-  MsTweaksPreferencesPage *page_widget = ms_tweaks_preferences_page_new (page_data);
-  AdwViewStackPage *stack_page;
-  static gboolean section_started;
-
-  if (!page_widget)
-    return;
-
-  stack_page = adw_view_stack_add_titled (self->stack,
-                                          GTK_WIDGET (page_widget),
-                                          page_data->name_i18n,
-                                          page_data->name_i18n);
-
-  /* TODO: Read icon from base64 property of settings definitions. */
-  adw_view_stack_page_set_icon_name (stack_page, "conf-tweaks-symbolic");
-  if (section_started)
-    return;
-
-  section_started = TRUE;
-  adw_view_stack_page_set_section_title (stack_page, _("Configurable Tweaks"));
-  adw_view_stack_page_set_starts_section (stack_page, TRUE);
-}
-
-
-static void
-do_toggle_conf_tweaks (GSettings *settings, char *key, gpointer user_data)
-{
-  MsWindow *self = MS_WINDOW (user_data);
-  gboolean conf_tweaks_enabled = g_settings_get_boolean (settings, key);
-
-  /* Flip! */
-  conf_tweaks_enabled = !conf_tweaks_enabled;
-
-  ms_panel_switcher_refilter (self->panel_switcher,
-                              conf_tweaks_enabled ? GTK_FILTER_CHANGE_LESS_STRICT : GTK_FILTER_CHANGE_MORE_STRICT);
-}
-
-
-static void
 on_idle_filter (gpointer data)
 {
   MsWindow *self = data;
@@ -183,6 +141,53 @@ on_panel_enabled_changed (MsWindow *self, GParamSpec *pspec, MsPanel *panel)
     if (self->idle_filter_change != change)
       self->idle_filter_change = GTK_FILTER_CHANGE_DIFFERENT;
   }
+}
+
+
+static void
+add_ms_tweaks_page (gpointer value, gpointer user_data)
+{
+  MsWindow *self = MS_WINDOW (user_data);
+  MsTweaksPage *page_data = (MsTweaksPage *) value;
+  MsTweaksPreferencesPage *page_widget = ms_tweaks_preferences_page_new (page_data);
+  AdwViewStackPage *stack_page;
+  static gboolean section_started;
+
+  if (!page_widget)
+    return;
+
+  stack_page = adw_view_stack_add_titled (self->stack,
+                                          GTK_WIDGET (page_widget),
+                                          page_data->name_i18n,
+                                          page_data->name_i18n);
+
+  g_signal_connect_swapped (page_widget,
+                            "notify::enabled",
+                            G_CALLBACK (on_panel_enabled_changed),
+                            self);
+
+  /* TODO: Read icon from base64 property of settings definitions. */
+  adw_view_stack_page_set_icon_name (stack_page, "conf-tweaks-symbolic");
+  if (section_started)
+    return;
+
+  section_started = TRUE;
+  adw_view_stack_page_set_section_title (stack_page, _("Configurable Tweaks"));
+  adw_view_stack_page_set_starts_section (stack_page, TRUE);
+}
+
+
+static void
+do_toggle_conf_tweaks (GSettings *settings, char *key, gpointer user_data)
+{
+  MsWindow *self = MS_WINDOW (user_data);
+  gboolean conf_tweaks_enabled = g_settings_get_boolean (settings, key);
+
+  /* Flip! */
+  conf_tweaks_enabled = !conf_tweaks_enabled;
+
+  ms_panel_switcher_refilter (self->panel_switcher,
+                              conf_tweaks_enabled ? GTK_FILTER_CHANGE_LESS_STRICT : GTK_FILTER_CHANGE_MORE_STRICT);
 }
 
 

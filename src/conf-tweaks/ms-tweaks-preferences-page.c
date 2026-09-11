@@ -895,6 +895,7 @@ G_DEFINE_TYPE_WITH_CODE (MsTweaksPreferencesPage,
 static void
 ms_tweaks_preferences_page_init (MsTweaksPreferencesPage *self)
 {
+  g_autoptr (GSettings) settings = g_settings_new ("mobi.phosh.MobileSettings");
   GtkWidget *box;
 
   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
@@ -914,6 +915,12 @@ ms_tweaks_preferences_page_init (MsTweaksPreferencesPage *self)
                     "button-clicked",
                     G_CALLBACK (on_save_as_administrator_pressed),
                     self);
+
+  g_settings_bind (settings,
+                   "enable-conf-tweaks",
+                   &self->parent_instance,
+                   "enabled",
+                   G_SETTINGS_BIND_DEFAULT);
 
   self->commands_to_run_as_administrator = g_ptr_array_new_with_free_func ((GDestroyNotify) g_strfreev);
 }
