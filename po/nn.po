@@ -1,0 +1,1602 @@
+# Norwegian Nynorsk translation for phosh-mobile-settings.
+# Copyright (C) 2026 phosh-mobile-settings's COPYRIGHT HOLDER
+# This file is distributed under the same license as the phosh-mobile-settings package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phosh-mobile-settings main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Phosh/phosh-mobile-"
+"settings/-/issues\n"
+"POT-Creation-Date: 2026-10-03 10:11+0000\n"
+"PO-Revision-Date: 2026-10-23 12:07+0200\n"
+"Last-Translator: Roy-Magne Mo <rmo@sunnmore.net>\n"
+"Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/mobi.phosh.MobileSettings.desktop.in:2 src/ui/ms-window.ui:6
+msgid "Mobile Settings"
+msgstr "Mobilinnstillingar"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/mobi.phosh.MobileSettings.desktop.in:12
+msgid "Mobile;Preferences;MobileSettings;Tweaks;"
+msgstr "Mobil;Innstillingar;Mobilinnstillingar;Justeringar;"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:4
+msgid "Phosh Mobile Settings"
+msgstr "Mobilinnstillingar for Phosh"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:8
+msgid ""
+"This app allows you to configure some aspects of Phosh that would otherwise "
+"require command line usage."
+msgstr ""
+"Denne appen lèt deg setje opp nokre sider ved Phosh som elles ville krevje "
+"kommandolinja."
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:13
+msgid "Advanced settings for Mobile devices using Phosh"
+msgstr "Avanserte innstillingar for mobile einingar som brukar Phosh"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:19
+msgid "Phosh developers"
+msgstr "Phosh-utviklarar"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:40
+msgid "Available panels"
+msgstr "Tilgjengelege panel"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:44
+msgid "Compositor panel"
+msgstr "Panel for samansetjaren"
+
+#: data/mobi.phosh.MobileSettings.metainfo.xml.in:48
+msgid "Feedback panel"
+msgstr "Panel for tilbakemelding"
+
+#: plugins/librem5/ms-plugin-librem5-panel.c:215
+#, c-format
+msgid "Critical temperature is %.2f°C"
+msgstr "Kritisk temperatur er %.2f°C"
+
+#. Translators "Librem 5" is a smartphone model, usually no need to translate it
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:6
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:24
+msgid "Librem 5"
+msgstr "Librem 5"
+
+#. translators: U-boot is the brand of a bootloader
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:28
+msgid "U-Boot"
+msgstr "U-Boot"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:40
+msgid "Suspend device"
+msgstr "Set eininga i dvale"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:42
+msgid "Suspend is experimental"
+msgstr "Dvale er eksperimentelt"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:45
+msgid "suspend now"
+msgstr "gå i dvale no"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:60
+msgid "Temperatures"
+msgstr "Temperaturar"
+
+#. translators: The central processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:64
+msgid "CPU"
+msgstr "CPU"
+
+#. translators: The graphics processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:83
+msgid "GPU"
+msgstr "GPU"
+
+#. translators: The video processing unit of a smart phone
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:102
+msgid "VPU"
+msgstr "VPU"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:120
+msgid "Fuel Gauge"
+msgstr "Batterimålar"
+
+#: plugins/librem5/ui/ms-plugin-librem5-panel.ui:138
+msgid "Battery"
+msgstr "Batteri"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard layout
+#. Translators: Label for a button that allows the user to add a new keyboard layout
+#: libpms/ms-osk-add-layout-dialog.ui:5 libpms/ms-osk-layout-prefs.ui:13
+msgid "Add Layout"
+msgstr "Legg til oppsett"
+
+#: libpms/ms-osk-add-layout-dialog.ui:14
+#: src/ui/ms-osk-add-shortcut-dialog.ui:17 src/ui/ms-updates-panel.ui:96
+#: src/ui/ms-updates-panel.ui:139
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: libpms/ms-osk-add-layout-dialog.ui:20
+#: src/ui/ms-osk-add-shortcut-dialog.ui:23
+msgid "Add"
+msgstr "Legg til"
+
+#: libpms/ms-osk-add-layout-dialog.ui:40 src/ui/ms-lang-panel.ui:14
+#: src/ui/ms-window.ui:318 src/ui/ms-window.ui:326
+msgid "Language"
+msgstr "Språk"
+
+#: libpms/ms-osk-layout-prefs.ui:5
+msgctxt "on screen keyboard"
+msgid "Layouts"
+msgstr "Oppsett"
+
+#. Translators: Message displayed when there are no keyboard layouts configured
+#: libpms/ms-osk-layout-prefs.ui:29
+msgid "No Layouts configured"
+msgstr "Ingen tastaturoppsett er sette opp"
+
+#: libpms/ms-osk-layout-row.ui:26 src/ui/ms-plugin-row.ui:47
+msgid "More options…"
+msgstr "Fleire val …"
+
+#: libpms/ms-osk-layout-row.ui:39 src/ui/ms-plugin-row.ui:60
+msgid "Move Up"
+msgstr "Flytt opp"
+
+#: libpms/ms-osk-layout-row.ui:43 src/ui/ms-plugin-row.ui:64
+msgid "Move Down"
+msgstr "Flytt ned"
+
+#: libpms/ms-osk-layout-row.ui:49
+msgid "Remove"
+msgstr "Fjern"
+
+#: libpms/lang/ms-common-language.c:312
+msgid "Other…"
+msgstr "Anna …"
+
+#: libpms/lang/ms-language-chooser.ui:4
+msgid "Select Language"
+msgstr "Vel språk"
+
+#: libpms/lang/ms-language-chooser.ui:15 src/ms-overview-panel.c:108
+#: src/ui/ms-hidden-apps-dialog.ui:15
+msgid "_Cancel"
+msgstr "_Avbryt"
+
+#: libpms/lang/ms-language-chooser.ui:23 src/ui/ms-hidden-apps-dialog.ui:23
+msgid "_Select"
+msgstr "_Vel"
+
+#: libpms/lang/ms-language-chooser.ui:44
+msgid "Language or country"
+msgstr "Språk eller land"
+
+#: libpms/lang/ms-language-chooser.ui:68
+msgid "No languages found"
+msgstr "Fann ingen språk"
+
+#: libpms/lang/ms-language-chooser.ui:79
+msgid "More…"
+msgstr "Meir …"
+
+#: libpms/lang/ms-util.c:130
+msgid "Today"
+msgstr "I dag"
+
+#: libpms/lang/ms-util.c:134
+msgid "Yesterday"
+msgstr "I går"
+
+#. Translators: This is a date format string in the style of "Feb 24".
+#: libpms/lang/ms-util.c:142
+#, no-c-format
+msgid "%b %e"
+msgstr "%e. %b"
+
+#. Translators: This is a date format string in the style of "Feb 24, 2013".
+#: libpms/lang/ms-util.c:147
+msgid "%b %e, %Y"
+msgstr "%e. %b %Y"
+
+#. TRANSLATORS: This is the datetime format in the style of
+#. "Aug 1, 10:10:10 PM", "Feb 24, 2013, 10:10:10 PM", "Today, 10:10:10 AM",
+#. and "Yesterday, 10:10:10 AM"
+#: libpms/lang/ms-util.c:166
+#, c-format
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: libpms/lang/ms-util.c:186
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d time"
+msgstr[1] "%d timar"
+
+#: libpms/lang/ms-util.c:187
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minutt"
+msgstr[1] "%d minutt"
+
+#: libpms/lang/ms-util.c:188
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekund"
+msgstr[1] "%d sekund"
+
+#. 5 hours 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:195
+#, c-format
+msgctxt "hours minutes seconds"
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. 5 hours 2 minutes
+#: libpms/lang/ms-util.c:200
+#, c-format
+msgctxt "hours minutes"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 5 hours
+#: libpms/lang/ms-util.c:205
+#, c-format
+msgctxt "hours"
+msgid "%s"
+msgstr "%s"
+
+#. 2 minutes 12 seconds
+#: libpms/lang/ms-util.c:213
+#, c-format
+msgctxt "minutes seconds"
+msgid "%s %s"
+msgstr "%s %s"
+
+#. 2 minutes
+#: libpms/lang/ms-util.c:218
+#, c-format
+msgctxt "minutes"
+msgid "%s"
+msgstr "%s"
+
+#. 0 seconds
+#: libpms/lang/ms-util.c:229
+msgid "0 seconds"
+msgstr "0 sekund"
+
+#: src/conf-tweaks/ms-tweaks-callback-handlers.c:61
+#, c-format
+msgid "Something went wrong: %s"
+msgstr "Noko gjekk galt: %s"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:479
+msgid "Authentication cancelled"
+msgstr "Autentisering avbroten"
+
+#. We had errors while running the commands, so inform the user of this.
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:484
+#, c-format
+msgid "%i error occurred while saving"
+msgid_plural "%i errors occurred while saving"
+msgstr[0] "Det oppstod %i feil under lagring"
+msgstr[1] "Det oppstod %i feil under lagring"
+
+#: src/conf-tweaks/ms-tweaks-preferences-page.c:903
+msgid "You need to authenticate as administrator to save some settings"
+msgstr ""
+"Du må autentisere deg som administrator for å lagre enkelte innstillingar"
+
+#: src/ms-alerts-panel.c:238
+msgid "Could not get list of cell broadcast messages"
+msgstr "Klarte ikkje hente lista over kringkastingsmeldingar frå mobilnettet"
+
+#: src/ms-application.c:37
+msgid "- Manage your mobile settings"
+msgstr "- Handter mobilinnstillingane dine"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/ms-application.c:548
+msgid "translator-credits"
+msgstr "Roy-Magne Mo <rmo@sunnmore.net>"
+
+#: src/ms-audio-devices.c:179
+msgid "Media Volume"
+msgstr "Volum for media"
+
+#: src/ms-audio-devices.c:182
+msgid "Notification Volume"
+msgstr "Volum for varsel"
+
+#: src/ms-audio-devices.c:185
+msgid "Voice Call Volume"
+msgstr "Volum for samtalar"
+
+#: src/ms-audio-devices.c:188
+msgid "Ring Tone Volume"
+msgstr "Volum for ringetone"
+
+#: src/ms-audio-devices.c:191
+msgid "Alarm Volume"
+msgstr "Volum for alarm"
+
+#: src/ms-audio-devices.c:194
+msgid "Emergency Alerts Volume"
+msgstr "Volum for naudvarsel"
+
+#: src/ms-cb-message-row.c:114
+msgid "Message of unknown severity"
+msgstr "Melding med ukjend alvorsgrad"
+
+#: src/ms-feedback-panel.c:338
+msgid "Sound file does not exist"
+msgstr "Lydfila finst ikkje"
+
+#: src/ms-feedback-panel.c:340
+msgid "Sound file is corrupt"
+msgstr "Lydfila er skadd"
+
+#: src/ms-feedback-panel.c:342
+msgid "Failed to play sound"
+msgstr "Klarte ikkje spele av lyd"
+
+#: src/ms-feedback-panel.c:381
+#, c-format
+msgid "Playing %s"
+msgstr "Spelar %s"
+
+#. Translators: "low" categorizes notifications with minor importance
+#: src/ms-feedback-panel.c:579
+msgid "low"
+msgstr "låg"
+
+#. Translators: "normal" categorizes notifications with standard importance
+#: src/ms-feedback-panel.c:582
+msgid "normal"
+msgstr "normal"
+
+#. Translators: "critical" categorizes notifications with urgent importance
+#: src/ms-feedback-panel.c:585
+msgid "critical"
+msgstr "kritisk"
+
+#. Translators: "none" is the default for notifications with no specified importance
+#: src/ms-feedback-panel.c:589
+msgid "none"
+msgstr "ingen"
+
+#: src/ms-feedback-panel.c:1008
+msgid "Mobile Settings Volume Control"
+msgstr "Volumkontroll for mobilinnstillingar"
+
+#: src/ms-lang-panel.c:80
+msgid "Failed to set system locale"
+msgstr "Klarte ikkje setje systemspråket"
+
+#: src/ms-lockscreen-panel.c:62
+msgid "Failed to set lockscreen wallpaper"
+msgstr "Klarte ikkje setje bakgrunnen på låseskjermen"
+
+#: src/ms-osk-panel.c:550
+msgid "Shortcuts reset to defaults"
+msgstr "Snarvegane er tilbakestilte til standard"
+
+#. Translators: This reverts resetting keyboard shortcuts to defaults
+#: src/ms-osk-panel.c:560
+msgctxt "undo shortcuts"
+msgid "_Undo"
+msgstr "_Angre"
+
+#. Translators: The default completer
+#: src/ms-osk-panel.c:818
+msgid "Default"
+msgstr "Standard"
+
+#: src/ms-osk-panel.c:819
+msgid "The default completer selected by the OSK"
+msgstr "Standardfullføraren vald av skjermtastaturet"
+
+#: src/ms-osk-panel.c:822
+msgid "No information available for this completer"
+msgstr "Ingen informasjon tilgjengeleg for denne fullføraren"
+
+#: src/ms-overview-panel.c:62
+#, c-format
+msgid "%u App Made Visible Again"
+msgid_plural "%u Apps Made Visible Again"
+msgstr[0] "%u app er synleg att"
+msgstr[1] "%u appar er synlege att"
+
+#: src/ms-overview-panel.c:102
+msgid "Reset favorites?"
+msgstr "Tilbakestille favorittar?"
+
+#: src/ms-overview-panel.c:105
+msgid "Reset list of favorite applications to the default?"
+msgstr "Tilbakestille lista over favorittappar til standard?"
+
+#: src/ms-overview-panel.c:109
+msgid "_Reset"
+msgstr "_Tilbakestill"
+
+#: src/ms-overview-panel.c:364
+msgid "Failed to set wallpaper for overview"
+msgstr "Klarte ikkje setje bakgrunnsbiletet for oversikta"
+
+#. Translators: "Normal" represents the standard or default orientation
+#: src/ms-sensor-panel.c:93
+msgid "Normal"
+msgstr "Normal"
+
+#. Translators: "Bottom up" indicates the orientation is flipped vertically
+#: src/ms-sensor-panel.c:96
+msgid "Bottom up"
+msgstr "Opp ned"
+
+#. Translators: "Left up" indicates the orientation of a device with left side up
+#: src/ms-sensor-panel.c:99
+msgid "Left up"
+msgstr "Venstre opp"
+
+#. Translators: "Right up" indicates the orientation of a device with right side up
+#: src/ms-sensor-panel.c:102
+msgid "Right up"
+msgstr "Høgre opp"
+
+#. Translators: "Undefined" is shown when the orientation of the device is not recognized
+#: src/ms-sensor-panel.c:105
+msgid "Undefined"
+msgstr "Udefinert"
+
+#. Translators: "Near" indicates proximity close to the sensor
+#. * "Far" indicates some distance from the sensor
+#: src/ms-sensor-panel.c:142
+msgid "Near"
+msgstr "Nær"
+
+#: src/ms-sensor-panel.c:142
+msgid "Far"
+msgstr "Fjern"
+
+#: src/ms-sensor-panel.c:260
+msgid "Updating…"
+msgstr "Oppdaterer …"
+
+#. Translators: "Not available" indicates that the proximity sensor data is unavailable
+#: src/ms-sensor-panel.c:277
+msgctxt "proximity sensor data"
+msgid "Not available"
+msgstr "Ikkje tilgjengeleg"
+
+#. Translators: "Not available" indicates that the light sensor data is unavailable
+#: src/ms-sensor-panel.c:279
+msgctxt "light sensor data"
+msgid "Not available"
+msgstr "Ikkje tilgjengeleg"
+
+#. Translators: "Not available" indicates that the accelerometer sensor data is unavailable
+#: src/ms-sensor-panel.c:281
+msgctxt "accelerometer sensor data"
+msgid "Not available"
+msgstr "Ikkje tilgjengeleg"
+
+#. Translators: "Custom" is the name of a user-defined sound theme
+#: src/ms-sound-row.c:130
+msgid "Custom"
+msgstr "Eigendefinert"
+
+#: src/ms-sound-row.c:311
+msgid "Choose sound file"
+msgstr "Vel lydfil"
+
+#. Translators: %s is a OS version number like 0.20260614
+#: src/ms-updates-panel.c:164
+#, c-format
+msgid "Update to %s"
+msgstr "Oppdater til %s"
+
+#: src/ms-updates-panel.c:197 src/ms-updates-panel.c:233
+#, c-format
+msgid "OS update failed: %s"
+msgstr "Oppdatering av operativsystemet feila: %s"
+
+#: src/ms-updates-panel.c:283
+#, c-format
+msgid "Canceling OS update failed: %s"
+msgstr "Avbryting av OS-oppdatering feila: %s"
+
+#: src/ms-updates-panel.c:346
+msgid "OS Update already in progress"
+msgstr "Oppdatering av OS er allereie i gang"
+
+#. Translators %s is an os version number like 0.20260614
+#: src/ms-updates-panel.c:354
+#, c-format
+msgid "Updating to %s…"
+msgstr "Oppdaterer til %s …"
+
+#: src/ms-updates-panel.c:374
+msgid "OS update in progress"
+msgstr "Oppdaterer operativsystemet"
+
+#. Translators: "Full" represents the feedback profile with maximum haptic, led and sounds
+#: src/ms-util.c:170
+msgid "Full"
+msgstr "Full"
+
+#. Translators: "Quiet" represents a feedback profile with haptic and LED
+#: src/ms-util.c:173
+msgid "Quiet"
+msgstr "Stille"
+
+#. Translators: "Silent" represents a feedback profile with LED only
+#: src/ms-util.c:176
+msgid "Silent"
+msgstr "Lydlaus"
+
+#: src/ms-util.c:292
+msgid "Choose Wallpaper"
+msgstr "Vel bakgrunnsbilete"
+
+#: src/ms-window.c:175
+msgid "Configurable Tweaks"
+msgstr "Justeringar du kan setje opp"
+
+#: src/ms-window.c:213
+msgid "Device"
+msgstr "Eining"
+
+#: src/ui/ms-about-panel.ui:19
+msgid "Phosh logo"
+msgstr "Phosh-logo"
+
+#: src/ui/ms-about-panel.ui:30
+msgid "Phosh Version"
+msgstr "Phosh-versjon"
+
+#: src/ui/ms-about-panel.ui:38
+msgid "Operating System"
+msgstr "Operativsystem"
+
+#: src/ui/ms-about-panel.ui:46
+msgid "Operating System Version"
+msgstr "Operativsystemversjon"
+
+#: src/ui/ms-about-panel.ui:54
+msgid "Hardware Model"
+msgstr "Maskinvaremodell"
+
+#: src/ui/ms-about-panel.ui:66
+msgid "Support Phosh"
+msgstr "Støtt Phosh"
+
+#: src/ui/ms-about-panel.ui:67
+msgid "Your donations make our work possible"
+msgstr "Gåvene dine gjer arbeidet vårt mogleg"
+
+#: src/ui/ms-about-panel.ui:70
+msgid "D_onate"
+msgstr "_Doner"
+
+#: src/ui/ms-alerts-panel.ui:17
+msgid "Unable To Receive Alerts"
+msgstr "Kan ikkje ta imot varsel"
+
+#: src/ui/ms-alerts-panel.ui:18
+msgid ""
+"Cannot receive Emergency Alerts on this device as no usable cellular modem "
+"is detected."
+msgstr ""
+"Kan ikkje ta imot naudvarsel på denne eininga fordi det ikkje er funne noko "
+"brukbart mobilmodem."
+
+#: src/ui/ms-alerts-panel.ui:30
+msgid "Emergency and Governmental Alerts"
+msgstr "Naud- og myndigheitsvarsel"
+
+#: src/ui/ms-alerts-panel.ui:33
+msgid "Extreme Threat Alerts"
+msgstr "Ekstreme trugselvarsel"
+
+#: src/ui/ms-alerts-panel.ui:35
+msgid "Display alerts for extreme threats to life and safety"
+msgstr "Vis varsel for ekstreme truslar mot liv og tryggleik"
+
+#: src/ui/ms-alerts-panel.ui:41
+msgid "Severe Threat Alerts"
+msgstr "Alvorlege trugselvarsel"
+
+#: src/ui/ms-alerts-panel.ui:43
+msgid "Display alerts for severe threats to life and safety"
+msgstr "Vis varsel for alvorlege truslar mot liv og tryggleik"
+
+#: src/ui/ms-alerts-panel.ui:49
+msgid "Public Safety Alerts"
+msgstr "Varsel om allmenn tryggleik"
+
+#: src/ui/ms-alerts-panel.ui:51
+msgid "Show recommended actions to take in situations with a risk to safety"
+msgstr "Vis tilrådde handlingar i situasjonar med risiko for tryggleiken"
+
+#: src/ui/ms-alerts-panel.ui:57
+msgid "Test alerts"
+msgstr "Testvarsel"
+
+#: src/ui/ms-alerts-panel.ui:59
+msgid "Show periodic messages to test the alert system"
+msgstr "Vis periodiske meldingar for å teste varslingssystemet"
+
+#: src/ui/ms-alerts-panel.ui:65
+msgid "Amber alerts"
+msgstr "Amber-varsel"
+
+#: src/ui/ms-alerts-panel.ui:67
+msgid "Show messages about child abduction emergencies"
+msgstr "Vis meldingar om barnebortføringar"
+
+#: src/ui/ms-alerts-panel.ui:76
+msgid "History of Emergency and Governmental Alerts"
+msgstr "Historikk over naud- og myndigheitsvarsel"
+
+#: src/ui/ms-alerts-panel.ui:82
+msgid "No emergency alerts yet"
+msgstr "Enno ingen naudvarsel"
+
+#: src/ui/ms-audio-device-row.ui:32
+msgid "Volume"
+msgstr "Volum"
+
+#: src/ui/ms-compositor-panel.ui:11
+msgid "Scaling down of running applications"
+msgstr "Nedskalering av køyrande appar"
+
+#: src/ui/ms-compositor-panel.ui:12
+msgid "Only enable this for broken apps that don't fit the screen"
+msgstr ""
+"Slå berre på dette for appar som ikkje fungerer og ikkje passar på skjermen"
+
+#: src/ui/ms-compositor-panel.ui:25
+msgid "Scale down all applications"
+msgstr "Skaler ned alle appane"
+
+#: src/ui/ms-compositor-panel.ui:26
+msgid "Forcibly scale down all applications. Only use this as a last resort."
+msgstr "Tving nedskalering av alle appar. Bruk berre dette som siste utveg."
+
+#: src/ui/ms-compositor-panel.ui:29
+msgid "Scale down all apps"
+msgstr "Skaler ned alle appar"
+
+#. Translators: setting to scale down all applications
+#. Translators: setting to scale down a single application
+#: src/ui/ms-compositor-panel.ui:36 src/ui/ms-scale-to-fit-row.ui:12
+msgctxt "scale to fit setting"
+msgid "Enabled"
+msgstr "Slått på"
+
+#: src/ui/ms-convergence-panel.ui:15
+msgid "No known docks detected"
+msgstr "Fann ingen kjende dokkar"
+
+#: src/ui/ms-convergence-panel.ui:29
+msgid "Map built-in touch screen"
+msgstr "Tilordne innebygd berøringsskjerm"
+
+#. Translators: setting to map built-in touch screen
+#: src/ui/ms-convergence-panel.ui:36
+msgctxt "touch setting"
+msgid "Enabled"
+msgstr "Slått på"
+
+#: src/ui/ms-features-panel.ui:11
+msgid "Experimental Features"
+msgstr "Eksperimentelle funksjonar"
+
+#: src/ui/ms-features-panel.ui:12
+msgid "Features not yet deemed fully stable"
+msgstr "Funksjonar som enno ikkje vert rekna som fullt stabile"
+
+#: src/ui/ms-features-panel.ui:16
+msgid "Emergency Calls"
+msgstr "Naudsamtalar"
+
+#: src/ui/ms-features-panel.ui:17
+msgid ""
+"Enable emergency calls. Please only enable this if you safely can ensure "
+"that it's working with your provider."
+msgstr ""
+"Slå på naudsamtalar. Slå berre på dette viss du trygt kan stadfeste at det "
+"fungerer hos leverandøren din."
+
+#. Translators: setting to enable emergency calls
+#: src/ui/ms-features-panel.ui:24
+msgctxt "emergency calls setting"
+msgid "Enabled"
+msgstr "Slått på"
+
+#: src/ui/ms-features-panel.ui:32
+msgid "Enable suspend via the system menu"
+msgstr "Slå på dvale via systemmenyen"
+
+#: src/ui/ms-features-panel.ui:34
+msgid ""
+"Please only enable this if you're aware of the limitations like data "
+"connection loss or missed alarms"
+msgstr ""
+"Slå berre på dette viss du er klar over avgrensingane, som tap av "
+"datatilkopling eller mista alarmar"
+
+#. Translators: setting to enable suspend via the system menu
+#: src/ui/ms-features-panel.ui:40
+msgctxt "suspend setting"
+msgid "Enabled"
+msgstr "Slått på"
+
+#: src/ui/ms-feedback-panel.ui:13
+msgid "Sound Settings"
+msgstr "Lydinnstillingar"
+
+#: src/ui/ms-feedback-panel.ui:17
+msgid "Play sound on adjusting volume sliders"
+msgstr "Spel av lyd når volumglidarane vert justerte"
+
+#: src/ui/ms-feedback-panel.ui:33
+msgid "Feedback Settings"
+msgstr "Tilbakemeldingsinnstillingar"
+
+#: src/ui/ms-feedback-panel.ui:36
+msgid "Feedback profile"
+msgstr "Tilbakemeldingsprofil"
+
+#: src/ui/ms-feedback-panel.ui:37
+msgid "The global maximum feedback profile"
+msgstr "Den globale maksimale tilbakemeldingsprofilen"
+
+#: src/ui/ms-feedback-panel.ui:52
+msgid "Prefer flash"
+msgstr "Føretrekk blits"
+
+#: src/ui/ms-feedback-panel.ui:53
+msgid "Prefer camera flash over status LED when available"
+msgstr "Føretrekk kamerablits framfor status-LED når han er tilgjengeleg"
+
+#: src/ui/ms-feedback-panel.ui:59
+msgid "Silence by volume button press"
+msgstr "Stille ved å trykkje på volumknappen"
+
+#: src/ui/ms-feedback-panel.ui:60
+msgid ""
+"When locked put the phone in silent mode when pressing the button that "
+"lowers the volume on incoming calls"
+msgstr ""
+"Når telefonen er låst, set han i lydlaus modus ved trykk på knappen som "
+"senkar volumet ved innkomande samtalar"
+
+#. Translators: Strength of the haptic motor
+#: src/ui/ms-feedback-panel.ui:66
+msgid "Haptic strength"
+msgstr "Styrke for haptisk motor"
+
+#: src/ui/ms-feedback-panel.ui:67
+msgid "Maximum haptic feedback strength percentage"
+msgstr "Maksimal styrke for haptisk tilbakemelding i prosent"
+
+#: src/ui/ms-feedback-panel.ui:86
+msgid "Per Application settings"
+msgstr "Innstillingar per app"
+
+#: src/ui/ms-feedback-panel.ui:99 src/ui/ms-window.ui:161
+msgid "Sounds"
+msgstr "Lydar"
+
+#: src/ui/ms-feedback-panel.ui:100
+msgid "The sound to use for certain events"
+msgstr "Lyden som skal brukast til visse hendingar"
+
+#: src/ui/ms-feedback-panel.ui:114
+msgid "Phone Calls"
+msgstr "Telefonsamtalar"
+
+#: src/ui/ms-feedback-panel.ui:126
+msgid "SMS"
+msgstr "SMS"
+
+#: src/ui/ms-feedback-panel.ui:138 src/ui/ms-feedback-panel.ui:207
+msgid "Instant Messages"
+msgstr "Direktemeldingar"
+
+#: src/ui/ms-feedback-panel.ui:151
+msgid "Alarm Clock"
+msgstr "Alarmklokke"
+
+#: src/ui/ms-feedback-panel.ui:162
+msgid "Screen Wakeup"
+msgstr "Vekking av skjermen"
+
+#: src/ui/ms-feedback-panel.ui:165
+msgid "Notification urgency that lights up the screen"
+msgstr "Hastegrad for varsel som lyser opp skjermen"
+
+#: src/ui/ms-feedback-panel.ui:183
+msgid ""
+"Notification categories that wake up the screen independent from their "
+"urgency"
+msgstr "Varslingskategoriar som vekkjer skjermen uavhengig av hastegraden"
+
+#: src/ui/ms-feedback-panel.ui:186
+msgid "Calls"
+msgstr "Samtalar"
+
+#: src/ui/ms-feedback-panel.ui:187
+msgid "A generic audio or video call notification"
+msgstr "Eit generelt varsel om lyd- eller videosamtale"
+
+#: src/ui/ms-feedback-panel.ui:193
+msgid "Device events"
+msgstr "Einingshendingar"
+
+#: src/ui/ms-feedback-panel.ui:194
+msgid "A generic device-related notification"
+msgstr "Eit generelt varsel knytt til eininga"
+
+#: src/ui/ms-feedback-panel.ui:200
+msgid "Emails"
+msgstr "E-postar"
+
+#: src/ui/ms-feedback-panel.ui:201
+msgid "A generic e-mail-related notification"
+msgstr "Eit generelt varsel om e-post"
+
+#: src/ui/ms-feedback-panel.ui:208
+msgid "A generic instant message-related notification"
+msgstr "Eit generelt varsel om direktemeldingar"
+
+#: src/ui/ms-feedback-panel.ui:214
+msgid "Network events"
+msgstr "Nettverkshendingar"
+
+#: src/ui/ms-feedback-panel.ui:215
+msgid "A generic network notification"
+msgstr "Eit generelt nettverksvarsel"
+
+#. Translators: "presence change" means coming online or going offline,
+#. like in an instant messenger.
+#: src/ui/ms-feedback-panel.ui:223
+msgid "Presence changes"
+msgstr "Statusendringar"
+
+#: src/ui/ms-feedback-panel.ui:224
+msgid "A generic presence change notification"
+msgstr "Eit generelt varsel om statusendring"
+
+#: src/ui/ms-feedback-panel.ui:230
+msgid "File transfers"
+msgstr "Filoverføringar"
+
+#: src/ui/ms-feedback-panel.ui:231
+msgid "A generic file transfer or download notification"
+msgstr "Eit generelt varsel om filoverføring eller nedlasting"
+
+#: src/ui/ms-hidden-app-row.ui:5 src/ui/ms-scale-to-fit-row.ui:5
+msgid "Application"
+msgstr "App"
+
+#: src/ui/ms-hidden-apps-dialog.ui:4
+msgid "Hidden Apps"
+msgstr "Gøymde appar"
+
+#: src/ui/ms-hidden-apps-dialog.ui:83
+msgid "No Apps are Currently Hidden"
+msgstr "Ingen appar er for tida gøymde"
+
+#: src/ui/ms-lang-panel.ui:15
+msgid "The language of the user interface"
+msgstr "Språket i brukargrensesnittet"
+
+#: src/ui/ms-lang-panel.ui:18
+msgid "_Language"
+msgstr "_Språk"
+
+#: src/ui/ms-lang-panel.ui:45
+msgid "Language change requires logout or restart"
+msgstr "Språkendring krev utlogging eller omstart"
+
+#: src/ui/ms-lang-panel.ui:46
+msgid "Logout"
+msgstr "Logg ut"
+
+#: src/ui/ms-lockscreen-panel.ui:14
+msgid "Locking and unlocking"
+msgstr "Låsing og opplåsing"
+
+#: src/ui/ms-lockscreen-panel.ui:18
+msgid "Shuffle keypad"
+msgstr "Stokk talltastaturet"
+
+#: src/ui/ms-lockscreen-panel.ui:19
+msgid "Whether to shuffle the numbers on the keypad"
+msgstr "Om tastane på tastaturet skal stokkast"
+
+#: src/ui/ms-lockscreen-panel.ui:25
+msgid "Require authentication to unlock"
+msgstr "Krev autentisering for å låse opp"
+
+#: src/ui/ms-lockscreen-panel.ui:26
+msgid "Require typing PIN or password to unlock the device"
+msgstr "Krev at du skriv inn PIN eller passord for å låse opp eininga"
+
+#: src/ui/ms-lockscreen-panel.ui:32
+msgid "Automatic screen lock delay"
+msgstr "Forseinking før automatisk skjermlås"
+
+#: src/ui/ms-lockscreen-panel.ui:33
+msgid "Seconds from screen blank to screen lock"
+msgstr "Sekund frå svart skjerm til skjermlås"
+
+#: src/ui/ms-lockscreen-panel.ui:52 src/ui/ms-overview-panel.ui:94
+msgid "Background"
+msgstr "Bakgrunn"
+
+#: src/ui/ms-lockscreen-panel.ui:58 src/ui/ms-overview-panel.ui:100
+msgid "_Select Wallpaper…"
+msgstr "_Vel bakgrunnsbilete …"
+
+#: src/ui/ms-lockscreen-panel.ui:70 src/ui/ms-overview-panel.ui:112
+msgid "Use wallpaper"
+msgstr "Bruk bakgrunnsbilete"
+
+#: src/ui/ms-lockscreen-panel.ui:71 src/ui/ms-overview-panel.ui:113
+msgid "Whether to show a colorful wallpaper"
+msgstr "Om fargerik bakgrunn skal visast"
+
+#: src/ui/ms-lockscreen-panel.ui:79 src/ui/ms-window.ui:205
+msgid "Widgets"
+msgstr "Komponentar"
+
+#: src/ui/ms-lockscreen-panel.ui:80
+msgid "Additional widgets for the lock screen"
+msgstr "Ekstra komponentar for låseskjermen"
+
+#. Translators: Title for a dialog to add a new on-screen keyboard shortcut
+#. Translators: Label for a button that allows the user to add a new keyboard shortcut
+#: src/ui/ms-osk-add-shortcut-dialog.ui:7 src/ui/ms-osk-panel.ui:170
+msgid "Add Shortcut"
+msgstr "Legg til snarveg"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:44
+msgid "Choose Shortcut Modifiers"
+msgstr "Vel modifikatortastar for snarvegen"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:129
+msgid "Choose Shortcut Key"
+msgstr "Vel tast for snarvegen"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:140
+msgid "Enter Shortcut Key"
+msgstr "Skriv inn tasten for snarvegen"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:141
+msgid "Type a key such as letters (like C or V), etc."
+msgstr "Skriv inn ein tast, til dømes ein bokstav (som C eller V)"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:144
+msgid "_Shortcut Key"
+msgstr "_Tast for snarveg"
+
+#: src/ui/ms-osk-add-shortcut-dialog.ui:167
+msgid "Shortcut Preview"
+msgstr "Førehandsvising av snarveg"
+
+#: src/ui/ms-osk-panel.ui:15
+msgid "Enable _On Screen Keyboard"
+msgstr "_Slå på skjermtastatur"
+
+#: src/ui/ms-osk-panel.ui:16
+msgid "Whether to show the on screen keyboard when needed"
+msgstr "Om det skal visast eit tastatur på skjermen når det trengst"
+
+#: src/ui/ms-osk-panel.ui:22
+msgid "Unfold long-press"
+msgstr "Langtrykk for å vise"
+
+#: src/ui/ms-osk-panel.ui:23
+msgid ""
+"How long to press the center of the home bar to unfold the on screen keyboard"
+msgstr ""
+"Kor lenge ein må trykkje på midten av heimelinja for å få fram "
+"skjermtastaturet"
+
+#. Translators: abbreviation for less than or equal to 0.5 second interval of time
+#: src/ui/ms-osk-panel.ui:28
+msgid "short"
+msgstr "kort"
+
+#. Translators: abbreviation for 1 second interval of time
+#: src/ui/ms-osk-panel.ui:30
+msgctxt "press interval"
+msgid "normal"
+msgstr "normal"
+
+#. Translators: abbreviation for greater than or equal to 1.5 second interval of time
+#: src/ui/ms-osk-panel.ui:32
+msgid "long"
+msgstr "lang"
+
+#: src/ui/ms-osk-panel.ui:40
+msgid "Ignore hardware keyboard"
+msgstr "Ignorer maskinvaretastatur"
+
+#: src/ui/ms-osk-panel.ui:41
+msgid ""
+"Whether to show the on screen keyboard when a physical keyboard is present"
+msgstr "Om det skal visast skjermtastatur når eit fysisk tastatur er tilkopla"
+
+#: src/ui/ms-osk-panel.ui:48
+msgid "Key indicator popup"
+msgstr "Sprettoppvindauge for tast"
+
+#: src/ui/ms-osk-panel.ui:49
+msgid "Whether to show a popover indicating the currently pressed key"
+msgstr ""
+"Om det skal visast eit sprettoppvindauge som viser tasten som vert trykt no"
+
+#: src/ui/ms-osk-panel.ui:61
+msgid "Keyboard height in portrait mode"
+msgstr "Tastaturhøgde i ståande modus"
+
+#: src/ui/ms-osk-panel.ui:62
+msgid "When the screen is taller than wide"
+msgstr "Når skjermen er høgare enn brei"
+
+#: src/ui/ms-osk-panel.ui:78
+msgid "Keyboard height in landscape mode"
+msgstr "Tastaturhøgde i liggjande modus"
+
+#: src/ui/ms-osk-panel.ui:79
+msgid "When the screen is wider than tall"
+msgstr "Når skjermen er breiare enn høg"
+
+#: src/ui/ms-osk-panel.ui:103 src/ui/ms-window.ui:184
+msgid "Scaling"
+msgstr "Skalering"
+
+#: src/ui/ms-osk-panel.ui:106
+msgid "Keep physical size constant"
+msgstr "Hald fysisk storleik konstant"
+
+#: src/ui/ms-osk-panel.ui:107
+msgid "Ensure OSK is large enough in high screen resolutions"
+msgstr "Sjå til at OSK er stor nok ved høge skjermoppløysingar"
+
+#: src/ui/ms-osk-panel.ui:113
+msgid "Add empty space below keys"
+msgstr "Legg til tom plass under tastar"
+
+#: src/ui/ms-osk-panel.ui:114
+msgid "Whether to add an empty area below the OSK's keys to shift it upward."
+msgstr ""
+"Om det skal leggjast til eit tomt område under tastane på skjermtastaturet "
+"for å flytte det oppover."
+
+#: src/ui/ms-osk-panel.ui:124
+msgid "Text Completion"
+msgstr "Tekstfullføring"
+
+#: src/ui/ms-osk-panel.ui:127
+msgid "Opportunistic word completion"
+msgstr "Fullfør ord når det passar"
+
+#: src/ui/ms-osk-panel.ui:128
+msgid "Enable word completion when the app indicates it is useful"
+msgstr "Slå på ordfullføring når appen viser at det er nyttig"
+
+#: src/ui/ms-osk-panel.ui:135
+msgid "Toggle via OSK menu"
+msgstr "Slå av og på via menyen"
+
+#: src/ui/ms-osk-panel.ui:136
+msgid "Allow to toggle word completion via the keyboard's menu button"
+msgstr "Lat tastaturmenyen styre ordfullføring"
+
+#: src/ui/ms-osk-panel.ui:142
+msgid "Default Completer"
+msgstr "Standardfullførar"
+
+#: src/ui/ms-osk-panel.ui:143
+msgid "The default completion engine to use"
+msgstr "Standard fullføringsmotor"
+
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:152
+msgid "Handle space around punctuation characters"
+msgstr "Handter mellomrom rundt skiljeteikn"
+
+#. Translators: Space is the ' ' character here
+#: src/ui/ms-osk-panel.ui:154
+msgid ""
+"This also swaps the space and punctuation characters after word completion"
+msgstr "Dette byter òg om mellomrom og skiljeteikn etter ordfullføring"
+
+#: src/ui/ms-osk-panel.ui:162
+msgid "Terminal Layout"
+msgstr "Terminaloppsett"
+
+#: src/ui/ms-osk-panel.ui:181
+msgid "Shortcuts"
+msgstr "Snarvegar"
+
+#: src/ui/ms-osk-panel.ui:182
+msgid "The shortcuts available in the shortcuts bar"
+msgstr "Snarvegane som er tilgjengelege i snarvegfeltet"
+
+#: src/ui/ms-osk-panel.ui:190
+msgid "Reset to default"
+msgstr "Tilbakestill til standard"
+
+#: src/ui/ms-osk-panel.ui:191
+msgid "Reset the shortcut bar to its default layout"
+msgstr "Tilbakestill snarvegfeltet til standardoppsettet"
+
+#: src/ui/ms-overview-panel.ui:13 src/ui/ms-window.ui:139
+msgid "Favorites"
+msgstr "Favorittar"
+
+#: src/ui/ms-overview-panel.ui:22
+msgid "Organize Favorites"
+msgstr "Organiser favorittar"
+
+#: src/ui/ms-overview-panel.ui:23
+msgid "Drag and drop the apps below to rearrange your favorite apps"
+msgstr "Dra og slepp appane under for å flytte rundt på favorittane dine"
+
+#: src/ui/ms-overview-panel.ui:48
+msgid "Reset Favorites"
+msgstr "Tilbakestill favorittar"
+
+#: src/ui/ms-overview-panel.ui:49
+msgid "Set list of favorite apps back to the default"
+msgstr "Set lista over favorittappar tilbake til standardinnstillinga"
+
+#: src/ui/ms-overview-panel.ui:53
+msgid "Reset"
+msgstr "Tilbakestill"
+
+#: src/ui/ms-overview-panel.ui:64
+msgid "App Filtering and Hiding"
+msgstr "Filtrering og gøyming av appar"
+
+#: src/ui/ms-overview-panel.ui:67
+msgid "Set Application Filter Mode"
+msgstr "Vel filtermodus for appar"
+
+#: src/ui/ms-overview-panel.ui:68
+msgid "Show only mobile apps in the overview"
+msgstr "Vis berre mobilappar i oversikta"
+
+#: src/ui/ms-overview-panel.ui:74
+msgid "_Manage Hidden Apps"
+msgstr "_Handter gøymde appar"
+
+#: src/ui/ms-overview-panel.ui:75
+msgid "Make apps you disabled in the overview visible again"
+msgstr "Gjer appar du har gøymt i oversikta synlege att"
+
+#: src/ui/ms-panel-switcher.ui:11
+msgid "No Matching Panels"
+msgstr "Ingen samsvarande panel"
+
+#: src/ui/ms-panel-switcher.ui:12
+msgid "Try a different search"
+msgstr "Prøv eit anna søk"
+
+#: src/ui/ms-sensor-panel.ui:16
+msgid "No Sensors found"
+msgstr "Ingen sensorar funne"
+
+#: src/ui/ms-sensor-panel.ui:17
+msgid ""
+"Either there are no sensors installed on your device or they are disabled by "
+"a killswitch."
+msgstr ""
+"Anten er det ingen sensorar installerte på eininga di, eller så er dei slått"
+" av med ein maskinvarebrytar."
+
+#: src/ui/ms-sensor-panel.ui:28 src/ui/ms-window.ui:278
+msgid "Sensors"
+msgstr "Sensorar"
+
+#: src/ui/ms-sensor-panel.ui:32
+msgid "Sensor Readings"
+msgstr "Sensormålingar"
+
+#: src/ui/ms-sensor-panel.ui:40
+msgid "Proximity"
+msgstr "Nærleik"
+
+#: src/ui/ms-sensor-panel.ui:49
+msgid "Light"
+msgstr "Lys"
+
+#: src/ui/ms-sensor-panel.ui:58
+msgid "Orientation"
+msgstr "Orientering"
+
+#: src/ui/ms-sensor-panel.ui:69 src/ui/ms-window.ui:286
+msgid "High Contrast"
+msgstr "Høg kontrast"
+
+#: src/ui/ms-sensor-panel.ui:72
+msgid "Automatic High Contrast"
+msgstr "Automatisk høg kontrast"
+
+#: src/ui/ms-sensor-panel.ui:73
+msgid "Controlled by the Ambient Light Sensor"
+msgstr "Styrt av lyssensoren for omgjevnadene"
+
+#: src/ui/ms-sensor-panel.ui:84
+msgid "Light intensity threshold"
+msgstr "Lysintensitetsterskel"
+
+#: src/ui/ms-sensor-panel.ui:85
+msgid "Theme will switch to high contrast above the threshold"
+msgstr "Temaet skiftar til høg kontrast over terskelen"
+
+#: src/ui/ms-sound-row.ui:33
+msgid "Toggle Play"
+msgstr "Spel av/pause"
+
+#: src/ui/ms-sound-row.ui:54
+msgid "Sound files (ogg)"
+msgstr "Lydfiler (ogg)"
+
+#: src/ui/ms-topbar-panel.ui:12
+msgid "UI Elements"
+msgstr "Element i brukargrensesnittet"
+
+#: src/ui/ms-topbar-panel.ui:16
+msgid "Show battery percentage"
+msgstr "Vis batteriprosent"
+
+#: src/ui/ms-topbar-panel.ui:17
+msgid "Show exact charge level in the top bar"
+msgstr "Vis nøyaktig ladingsnivå i toppfeltet"
+
+#: src/ui/ms-topbar-panel.ui:23
+msgid "Avoid notches"
+msgstr "Unngå hakk"
+
+#: src/ui/ms-topbar-panel.ui:24
+msgid "Don't place UI elements beneath notches and display cutouts"
+msgstr ""
+"Ikkje plasser grensesnittelement under hakk og utskjeringar i skjermen"
+
+#: src/ui/ms-topbar-panel.ui:34 src/ui/ms-window.ui:119
+msgid "Quick Settings"
+msgstr "Hurtiginnstillingar"
+
+#: src/ui/ms-topbar-panel.ui:35
+msgid "Organize your additional Quick Settings"
+msgstr "Organiser dei ekstra hurtiginnstillingane dine"
+
+#: src/ui/ms-updates-panel.ui:12
+msgid "OS updates require a system restart"
+msgstr "Oppdateringar av operativsystemet krev omstart"
+
+#: src/ui/ms-updates-panel.ui:13
+msgid "Restart"
+msgstr "Start på nytt"
+
+#: src/ui/ms-updates-panel.ui:34
+msgid "Looking for updates…"
+msgstr "Leitar etter oppdateringar …"
+
+#: src/ui/ms-updates-panel.ui:45
+msgid "Everything up to date"
+msgstr "Alt oppdatert"
+
+#: src/ui/ms-updates-panel.ui:46
+msgid "There are no OS updates available"
+msgstr "Det er ingen OS-oppdateringar tilgjengelege"
+
+#: src/ui/ms-updates-panel.ui:57
+msgid "Updates available"
+msgstr "Oppdateringar tilgjengelege"
+
+#: src/ui/ms-updates-panel.ui:58
+msgid "There are OS updates available"
+msgstr "Det er tilgjengelege OS-oppdateringar"
+
+#: src/ui/ms-updates-panel.ui:79
+msgid "Fetching OS update…"
+msgstr "Hentar OS-oppdatering …"
+
+#: src/ui/ms-updates-panel.ui:122
+msgid "Installing OS update…"
+msgstr "Installerer OS-oppdatering …"
+
+#: src/ui/ms-welcome-panel.ui:8
+msgid "Welcome to Mobile Settings"
+msgstr "Velkomen til Mobilinnstillingar"
+
+#: src/ui/ms-welcome-panel.ui:9
+msgid "Tweak advanced mobile settings"
+msgstr "Juster avanserte innstillingar for mobil"
+
+#. Translators: this is a verb.
+#: src/ui/ms-window.ui:32
+msgid "Search"
+msgstr "Søk"
+
+#. Translators: Placeholder text for the search bar input
+#: src/ui/ms-window.ui:50
+msgid "Search settings"
+msgstr "Søk i innstillingar"
+
+#: src/ui/ms-window.ui:100
+msgid "Welcome"
+msgstr "Velkomen"
+
+#: src/ui/ms-window.ui:111
+msgid "Top Bar"
+msgstr "Topplinje"
+
+#: src/ui/ms-window.ui:120
+msgid "Notches"
+msgstr "Hakk"
+
+#: src/ui/ms-window.ui:131
+msgid "Overview"
+msgstr "Oversikt"
+
+#: src/ui/ms-window.ui:140
+msgid "Filter"
+msgstr "Filter"
+
+#: src/ui/ms-window.ui:141 src/ui/ms-window.ui:203
+msgid "Wallpaper"
+msgstr "Bakgrunnsbilete"
+
+#: src/ui/ms-window.ui:152 src/ui/ms-window.ui:160
+msgid "Feedback"
+msgstr "Tilbakemelding"
+
+#: src/ui/ms-window.ui:162
+msgid "Wakeup"
+msgstr "Vekking"
+
+#: src/ui/ms-window.ui:163
+msgid "Vibra"
+msgstr "Vibrasjon"
+
+#: src/ui/ms-window.ui:164
+msgid "Haptic"
+msgstr "Haptisk"
+
+#: src/ui/ms-window.ui:165
+msgid "LED"
+msgstr "LED"
+
+#: src/ui/ms-window.ui:176
+msgid "Compositor"
+msgstr "Samansetjar"
+
+#: src/ui/ms-window.ui:195
+msgid "Lockscreen"
+msgstr "Låseskjerm"
+
+#: src/ui/ms-window.ui:204
+msgid "Shuffle"
+msgstr "Stokk"
+
+#: src/ui/ms-window.ui:206
+msgid "Password"
+msgstr "Passord"
+
+#: src/ui/ms-window.ui:217
+msgid "Convergence"
+msgstr "Konvergens"
+
+#: src/ui/ms-window.ui:235
+msgid "On Screen Keyboard"
+msgstr "Skjermtastatur"
+
+#: src/ui/ms-window.ui:243
+msgid "Keyboard"
+msgstr "Tastatur"
+
+#: src/ui/ms-window.ui:244
+msgid "Unfold"
+msgstr "Fold ut"
+
+#: src/ui/ms-window.ui:245
+msgid "OSK"
+msgstr "OSK"
+
+#: src/ui/ms-window.ui:246
+msgid "Word Completion"
+msgstr "Ordfullføring"
+
+#: src/ui/ms-window.ui:257
+msgid "Emergency Alerts"
+msgstr "Naudvarsel"
+
+#: src/ui/ms-window.ui:265 src/ui/ms-window.ui:305
+msgid "Emergency"
+msgstr "Naud"
+
+#: src/ui/ms-window.ui:266
+msgid "Cell Broadcast"
+msgstr "Mobilkringkasting"
+
+#: src/ui/ms-window.ui:267
+msgid "Danger"
+msgstr "Fare"
+
+#: src/ui/ms-window.ui:297
+msgid "Experimental features"
+msgstr "Eksperimentelle funksjonar"
+
+#: src/ui/ms-window.ui:306
+msgid "Suspend"
+msgstr "Dvale"
+
+#: src/ui/ms-window.ui:307
+msgid "Experimental"
+msgstr "Eksperimentelt"
+
+#: src/ui/ms-window.ui:327
+msgid "Locale"
+msgstr "Språkområde"
+
+#: src/ui/ms-window.ui:338
+msgid "Sound"
+msgstr "Lyd"
+
+#: src/ui/ms-window.ui:347
+msgid "sound"
+msgstr "lyd"
+
+#: src/ui/ms-window.ui:348
+msgid "audio"
+msgstr "lyd"
+
+#: src/ui/ms-window.ui:349
+msgid "speaker"
+msgstr "høgtalar"
+
+#: src/ui/ms-window.ui:350
+msgid "microphone"
+msgstr "mikrofon"
+
+#: src/ui/ms-window.ui:362
+msgid "OS Updates"
+msgstr "OS-oppdateringar"
+
+#: src/ui/ms-window.ui:370
+msgid "Updates"
+msgstr "Oppdateringar"
+
+#: src/ui/ms-window.ui:382 src/ui/ms-window.ui:390
+msgid "About"
+msgstr "Om"
+
+#: src/ui/ms-window.ui:401
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: src/ui/ms-window.ui:405
+msgid "Connectivity"
+msgstr "Tilkopling"
+
+#: src/ui/ms-window.ui:412
+msgid "wifi"
+msgstr "wifi"
+
+#: src/ui/ms-window.ui:413
+msgid "wlan"
+msgstr "wlan"
+
+#. translators: network is used a a search keyword here
+#: src/ui/ms-window.ui:414 src/ui/ms-window.ui:436
+msgid "network"
+msgstr "nettverk"
+
+#: src/ui/ms-window.ui:426
+msgid "Network"
+msgstr "Nettverk"
+
+#. translators: vpn is used a a search keyword here
+#: src/ui/ms-window.ui:438
+msgid "vpn"
+msgstr "vpn"
+
+#. translators: this is a network proxy
+#: src/ui/ms-window.ui:440
+msgid "proxy"
+msgstr "proxy"
+
+#: src/ui/ms-window.ui:452
+msgid "Bluetooth"
+msgstr "Blåtann"
+
+#: src/ui/ms-window.ui:461
+msgid "bluetooth"
+msgstr "blåtann"
+
+#: src/ui/ms-window.ui:473
+msgid "Cellular"
+msgstr "Mobilnett"
+
+#: src/ui/ms-window.ui:482
+msgid "wwan"
+msgstr "wwan"
+
+#: src/ui/ms-window.ui:483
+msgid "modem"
+msgstr "modem"
+
+#: src/ui/ms-window.ui:484
+msgid "gesm"
+msgstr "gesm"
+
+#: src/ui/ms-window.ui:485
+msgid "lte"
+msgstr "lte"
+
+#: src/ui/ms-window.ui:497
+msgid "Online Accounts"
+msgstr "Nettkontoar"
+
+#: src/ui/ms-window.ui:506
+msgid "account"
+msgstr "konto"
+
+#: src/ui/ms-window.ui:507
+msgid "email"
+msgstr "e-post"
+
+#: src/ui/ms-window.ui:532
+msgid "_Show Configurable Tweaks"
+msgstr "_Vis justeringar som kan setjast opp"
+
+#: src/ui/ms-window.ui:539
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastatursnarvegar"
+
+#: src/ui/ms-window.ui:543
+msgid "_About Mobile Settings"
+msgstr "_Om Mobilinnstillingar"
+
+#: src/ui/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Generelt"
+
+#: src/ui/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Vis snarvegar"
+
+#: src/ui/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "Søk"
+
+#: src/ui/shortcuts-dialog.ui:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avslutt"
